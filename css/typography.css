@@ -1,0 +1,28 @@
+html {
+    /*font-size: 120%;*/
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+    font-family: brandon-grotesque,"Brandon Grotesque","Helvetica Neue",Helvetica,Arial,"Lucida Sans",Geneva,Verdana,sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    color: #E2777A;
+    text-decoration: none;
+}
+
+
+blockquote {
+    border-left: 5px solid #57A3E8;
+    font-style: italic;
+    background: #EEE;
+    font-weight: 400;
+    font-size: .9rem;
+    padding: 10px 20px;
+    margin: 0 0 30px -25px;
+}
+
+h2, h3 {
+    color: #57A3E8;
+}

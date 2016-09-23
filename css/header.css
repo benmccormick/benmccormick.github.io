@@ -1,0 +1,7 @@
+.header-link {
+    color: rgba(100,100,100, 0.7);
+}
+
+.header-link:hover {
+    color: #E2777A;
+}

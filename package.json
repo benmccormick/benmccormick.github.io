@@ -1,0 +1,46 @@
+{
+  "name": "benmccormick.org static",
+  "description": "Ben McCormick's blog",
+  "version": "1.0.0",
+  "author": "Ben McCormick <ben.mccormick@alumni.duke.edu>",
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
+  },
+  "dependencies": {
+    "gatsby": "^0.12.6",
+    "lodash": "^4.15.0",
+    "moment": "^2.14.1",
+    "postscribe": "^2.0.6",
+    "react-helmet": "^3.1.0",
+    "react-responsive-grid": "^0.3.3",
+    "react-typography": "^0.12.0",
+    "safe-access": "^0.1.0",
+    "typography": "^0.13.0",
+    "typography-theme-wordpress-2016": "^0.13.0",
+    "underscore.string": "^3.2.3"
+  },
+  "devDependencies": {
+    "feed": "^0.3.0",
+    "front-matter": "^2.1.0",
+    "gh-pages": "^0.11.0",
+    "markdown-it": "^8.0.0"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+  },
+  "scripts": {
+    "dev": "gatsby develop",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+  }
+}
