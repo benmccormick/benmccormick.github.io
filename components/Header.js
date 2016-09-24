@@ -40,33 +40,32 @@ export class Header extends React.Component {
                   </Link>
                 </h3>
                 <div style={{
-                    //paddingBottom: '1rem',
                     color: 'rgba(100,100,100, 0.7)',
                 }}>
                     <Link
                         className="header-link"
-                        to={prefixLink('/')}
+                        to={prefixLink('/subscribe/')}
                     >
                     Subscribe
                     </Link>
                     <span style={{padding:'0 0.33rem'}}>•</span>
                     <Link
                         className="header-link"
-                        to={prefixLink('/')}
+                        to={prefixLink('/readinglist/')}
                     >
                     Reading List
                     </Link>
                     <span style={{padding:'0 0.33rem'}}>•</span>
-                    <Link
+                    <a
                         className="header-link"
-                        to={prefixLink('/')}
+                        href="http://twitter.com/ben336"
                     >
                     Twitter
-                    </Link>
+                    </a>
                     <span style={{padding:'0 0.33rem'}}>•</span>
                     <Link
                         className="header-link"
-                        to={prefixLink('/')}
+                        to={prefixLink('/about/')}
                     >
                     About
                     </Link>

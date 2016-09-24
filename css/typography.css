@@ -26,3 +26,11 @@ blockquote {
 h2, h3 {
     color: #57A3E8;
 }
+
+.explanation {
+    padding: 10px;
+    background: #eee;
+    border-radius: 10px;
+    margin: 20px auto;
+    font-size: .85em;
+}

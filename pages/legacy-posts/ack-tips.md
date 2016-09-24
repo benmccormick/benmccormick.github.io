@@ -85,7 +85,7 @@ Ok thats a good amount of files.  But how many of them are actually source files
     155
 ```
 
-But thats probably still a bit high, since not all of the JavaScript files are source files.  A quick `ls` shows that we probably want to filter down to the src directory.  
+But thats probably still a bit high, since not all of the JavaScript files are source files.  A quick `ls` shows that we probably want to filter down to the src directory.
 
 ```bash
 ❯ ack -f --js src |wc -l
@@ -202,11 +202,10 @@ Thanks for taking the time to read this post!  Using tools efficiently is one of
 <div class="footnotes">
 <ol>
     <li class="footnote" id="fn:1">
-        <p>
+    <p>
        ack came first; ag was created as a faster version of ack.  ack is written in perl, making it more portable, and has a few more configuration options.  ag is written in C and is generally faster.  Your choice may vary depending on your use case.
-        </p>
-
-        <a href="#fnref:1" title="return to article"> ↩</a></p>
+    </p>
+    <a href="#fnref:1" title="return to article"> ↩</a>
     </li>
     <li class="footnote" id="fn:2">
         <p>
@@ -216,4 +215,3 @@ Thanks for taking the time to read this post!  Using tools efficiently is one of
     </li>
 </ol>
 </div>
-

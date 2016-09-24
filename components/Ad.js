@@ -1,26 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router'
-import postscribe from 'postscribe';
 import { prefixLink } from 'gatsby-helpers'
 export class Ad extends React.Component {
 
     setAdInfoOnWindow() {
-        if (!window) {
-            //not sure if this is needed but no need
-            // to mess with this within node
-            return;
-        }
-        window.amzn_assoc_placement = "adunit0";
-        window.amzn_assoc_search_bar = "false";
-        window.amzn_assoc_tracking_id = "benmccormicko-20";
-        window.amzn_assoc_ad_mode = "manual";
-        window.amzn_assoc_ad_type = "smart";
-        window.amzn_assoc_marketplace = "amazon";
-        window.amzn_assoc_region = "US";
-        window.amzn_assoc_title = "Recommended Books";
-        window.amzn_assoc_linkid = "2ffa49c2cfca0d624a2a33e1672da158";
-        window.amzn_assoc_asins = "0321812182,1680501275,1934356964,020161622X,1593277571";
-        window.amzn_assoc_size = "130x300";
+        // if (!window) {
+        //     //not sure if this is needed but no need
+        //     // to mess with this within node
+        //     return;
+        // }
+        // window.amzn_assoc_placement = "adunit0";
+        // window.amzn_assoc_search_bar = "false";
+        // window.amzn_assoc_tracking_id = "benmccormicko-20";
+        // window.amzn_assoc_ad_mode = "manual";
+        // window.amzn_assoc_ad_type = "smart";
+        // window.amzn_assoc_marketplace = "amazon";
+        // window.amzn_assoc_region = "US";
+        // window.amzn_assoc_title = "Recommended Books";
+        // window.amzn_assoc_linkid = "2ffa49c2cfca0d624a2a33e1672da158";
+        // window.amzn_assoc_asins = "0321812182,1680501275,1934356964,020161622X,1593277571";
+        // window.amzn_assoc_size = "130x300";
     }
 
     insertAdScript() {

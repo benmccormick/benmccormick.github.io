@@ -60,6 +60,13 @@ let buildFeed = (pages) => {
   return feed;
 };
 
+let createRSSFolder = () => {
+    try {
+        fs.mkdirSync(__dirname + "/public/rss/");
+    } catch (e) {
+        //this is fine, it may fail if the file already exists
+    }
+};
 let generateAtomFeed = (feed) => {
   return fs.writeFileSync(__dirname + "/public/atom.xml", feed.render('atom-1.0'));
 };
@@ -69,6 +76,7 @@ let generateRSS = (feed) => {
 
 exports.postBuild = function(pages, callback) {
     let feed = buildFeed(pages)
+    createRSSFolder();
     generateAtomFeed(feed);
     generateRSS(feed);
   return callback();
