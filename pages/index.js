@@ -71,7 +71,7 @@ class BlogIndex extends React.Component {
         <div style={{
             marginBottom: '2rem'
         }}>
-        <Link style={{boxShadow: 'none'}} to={prefixLink('archive/')}> See More Articles »</Link>
+        <Link style={{boxShadow: 'none'}} to={prefixLink('/archive/')}> See More Articles »</Link>
 
         </div>
         <Bio />

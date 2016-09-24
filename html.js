@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from "react-helmet"
 import { prefixLink } from 'gatsby-helpers'
 import { GoogleFont, TypographyStyle } from 'react-typography'
+import {GA} from 'components/GA'
 import typography from './utils/typography'
 
 const BUILD_TIME = new Date().getTime()
@@ -47,6 +48,7 @@ module.exports = React.createClass({
             }}>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: body }} />
           <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
+          <GA />
         </body>
       </html>
     )

@@ -1,6 +1,7 @@
 ---
 title: "Recommended Reading For Developers"
 layout: page
+path: '/readinglist'
 ---
 
 

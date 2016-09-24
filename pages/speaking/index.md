@@ -1,6 +1,7 @@
 ---
 title: "Speaking"
 layout: page
+path: '/speaking'
 ---
 
 I occasionally give talks about JavaScript.  If you're interested in having me speak to your group, feel free to contact me through [email](ben@benmccormick.org).
