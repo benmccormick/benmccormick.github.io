@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Sat, 24 Sep 2016 03:49:43 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 24 Sep 2016 03:51:26 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
@@ -12,7 +12,7 @@
             <title><![CDATA[Subscription Options]]></title>
             <link>https://benmccormick.org/subscribe/</link>
             <guid>https://benmccormick.org/subscribe/</guid>
-            <pubDate>Sat, 24 Sep 2016 03:49:43 GMT</pubDate>
+            <pubDate>Sat, 24 Sep 2016 03:51:26 GMT</pubDate>
             <content:encoded><![CDATA[<h3>Subscribe via Twitter</h3>
 <p><strong>For site updates</strong></p>
 <p><a href="https://twitter.com/benmccormickorg" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @benmccormickorg</a></p>
@@ -83,7 +83,7 @@ hr {
             <title><![CDATA[Speaking]]></title>
             <link>https://benmccormick.org/speaking/</link>
             <guid>https://benmccormick.org/speaking/</guid>
-            <pubDate>Sat, 24 Sep 2016 03:49:43 GMT</pubDate>
+            <pubDate>Sat, 24 Sep 2016 03:51:26 GMT</pubDate>
             <content:encoded><![CDATA[<p>I occasionally give talks about JavaScript.  If you’re interested in having me speak to your group, feel free to contact me through <a href="ben@benmccormick.org">email</a>.</p>
 <p>I am open to talking about pretty much anything that I write about on this blog.  Here are some talks I’ve given in the past:</p>
 <h3>2015</h3>
@@ -110,7 +110,7 @@ hr {
             <title><![CDATA[Recommended Reading For Developers]]></title>
             <link>https://benmccormick.org/readinglist/</link>
             <guid>https://benmccormick.org/readinglist/</guid>
-            <pubDate>Sat, 24 Sep 2016 03:49:43 GMT</pubDate>
+            <pubDate>Sat, 24 Sep 2016 03:51:26 GMT</pubDate>
             <content:encoded><![CDATA[<p>These are the books that have helped me grow most as a developer.  I highly recommend them all.  Please note that the links are affiliate links and a small portion of any purchases you make will go towards the costs of maintaining this site.</p>
 <hr>
 <h2>JavaScript</h2>
@@ -159,7 +159,7 @@ hr {
             <title><![CDATA[Marionette: Explained]]></title>
             <link>https://benmccormick.org/marionette-explained/</link>
             <guid>https://benmccormick.org/marionette-explained/</guid>
-            <pubDate>Sat, 24 Sep 2016 03:49:43 GMT</pubDate>
+            <pubDate>Sat, 24 Sep 2016 03:51:26 GMT</pubDate>
             <content:encoded><![CDATA[<div class="explanation">
 Marionette: Explained was a series of posts I wrote in winter 2014-2015 explaining the whats, whys and hows of Marionette, the Backbone Framework.  Marionette is a powerful set of patterns and components built on top of Backbone.js, a minimalist JavaScript MV* framework. It is widely used in the Backbone community, but since most of the resources I found about it were written prior to it's 2.0 version, and the framework had continued to evolve significantly since then, I felt there was a need for a detailed resource on using it.  This is my attempt at creating that resource.
 </div>
@@ -196,7 +196,7 @@ Marionette: Explained was a series of posts I wrote in winter 2014-2015 explaini
             <title><![CDATA[Learning Vim in 2014]]></title>
             <link>https://benmccormick.org/learning-vim-in-2014/</link>
             <guid>https://benmccormick.org/learning-vim-in-2014/</guid>
-            <pubDate>Sat, 24 Sep 2016 03:49:43 GMT</pubDate>
+            <pubDate>Sat, 24 Sep 2016 03:51:26 GMT</pubDate>
             <content:encoded><![CDATA[<div class="explanation">
 Learning Vim in 2014 was a series of posts I wrote in July & August 2014 documenting a process for newcomers to learn Vim. It was inspired by my own experience learning Vim, running into many out of date resources and online resources that gave me just a quick list of tips, plugins or commands.
 <p>This is a “point in time” snapshot of one man’s advice on how to learn Vim.  It is by no means comprehensive.  I covered some topics in depth, and only skimmed others.  But it’s intended to get new Vim users to a point of comfort where they understand the options available to them in Vim, and can continue learning on their own as they go forward.</p>
@@ -241,7 +241,7 @@ Learning Vim in 2014 was a series of posts I wrote in July & August 2014 documen
             <title><![CDATA[About Me]]></title>
             <link>https://benmccormick.org/about/</link>
             <guid>https://benmccormick.org/about/</guid>
-            <pubDate>Sat, 24 Sep 2016 03:49:43 GMT</pubDate>
+            <pubDate>Sat, 24 Sep 2016 03:51:26 GMT</pubDate>
             <content:encoded><![CDATA[<p>Hi, I’m Ben McCormick.  I’m a web developer, writer, occasional athlete, and a Christian. This is my blog about JavaScript, the Web and development tools.</p>
 <p>I live in Durham NC with my wife Claire and our dog Samoa, and prior to that I grew up in Pittsburgh.  I have plenty of pride in both of my homes.  When I’m not writing code or text, you can find me playing basketball, ultimate frisbee, and board games, relaxing with my wife, or volunteering at my church.  I currently work at <a href="http://www.windsorcircle.com">Windsor Circle</a>, and spend my days there writing a lot of JavaScript.</p>
 <p>If you have thoughts about the blog or want to contact me about related opportunities by email at ben AT <a href="http://benmccormick.org">benmccormick.org</a>.</p>
