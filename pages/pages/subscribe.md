@@ -1,6 +1,7 @@
 ---
 title: "Subscription Options"
 layout: page
+path: '/subscribe'
 ---
 
 

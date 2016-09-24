@@ -1,6 +1,7 @@
 ---
 title: "Marionette: Explained"
 layout: page
+path: '/marionette-explained'
 ---
 
 <div class="explanation">
