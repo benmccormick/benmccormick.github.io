@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://benmccormick.org</id>
+    <title>benmccormick.org</title>
+    <updated>2016-09-24T01:02:13Z</updated>
+    <author>
+        <name>Ben McCormick</name>
+        <email>ben@benmccormick.org</email>
+        <uri>http://benmccormick.org</uri>
+    </author>
+    <link rel="alternate" href="http://benmccormick.org"/>
+    <subtitle>A blog by Ben McCormick</subtitle>
+    <rights>All rights reserved 2016, Ben McCormick</rights>
+    <generator>Feed for Node.js</generator>
+    <contributor>
+        <name>Ben McCormick</name>
+        <email>ben@benmccormick.org</email>
+    </contributor>
+    <entry>
+        <title type="html"><![CDATA[Subscription Options]]></title>
+        <id>https://benmccormick.org/subscribe/</id>
+        <link href="https://benmccormick.org/subscribe/">
+        </link>
+        <updated>2016-09-24T01:02:13Z</updated>
+        <content type="html"><![CDATA[<h3>Subscribe via Twitter</h3>
+<p><strong>For site updates</strong></p>
+<p><a href="https://twitter.com/benmccormickorg" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @benmccormickorg</a></p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<p><strong>My personal account</strong></p>
+<p><a href="https://twitter.com/ben336" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ben336</a></p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<hr>
+<h3>Subscribe To My Mailing List</h3>
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//benmccormick.us8.list-manage.com/subscribe/post?u=115446b80fd9d930ba091cc27&amp;id=f5b9f5acf2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<div id="mc_embed_signup_scroll">
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div class="mc-field-group">
+<label for="mce-FNAME">First Name </label>
+<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+</div>
+<div class="mc-field-group">
+<label for="mce-LNAME">Last Name </label>
+<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+</div>
+<div id="mce-responses" class="clear">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div style="position: absolute; left: -5000px;"><input type="text" name="b_115446b80fd9d930ba091cc27_f5b9f5acf2" tabindex="-1" value=""></div>
+<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</div>
+</form>
+</div>
+<!-- <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script> -->
+<!--End mc_embed_signup-->
+<hr>
+<h3>Subscribe via RSS</h3>
+<p><a href="/rss">Feed link</a></p>
+<style>
+.post-header {
+  margin-bottom:40px;
+}
+hr {
+  width: 100%;
+}
+
+#mc_embed_signup form {
+  padding: 0;
+}
+</style>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Speaking]]></title>
+        <id>https://benmccormick.org/speaking/</id>
+        <link href="https://benmccormick.org/speaking/">
+        </link>
+        <updated>2016-09-24T01:02:13Z</updated>
+        <content type="html"><![CDATA[<p>I occasionally give talks about JavaScript.  If you’re interested in having me speak to your group, feel free to contact me through <a href="ben@benmccormick.org">email</a>.</p>
+<p>I am open to talking about pretty much anything that I write about on this blog.  Here are some talks I’ve given in the past:</p>
+<h3>2015</h3>
+<p><strong>Backbone.js</strong> <em>Triangle JavaScript Meetup</em></p>
+<ul>
+<li><a href="http://www.slideshare.net/BenMcCormick/backbonemeetup">Slides</a></li>
+<li><a href="https://github.com/benmccormick/bb-comments/tree/master">Code</a></li>
+</ul>
+<p>I gave a talk to the Triangle JavaScript Meetup about Backbone and where it fits into today’s JavaScript landscape, specifically comparing it to more “modern” frameworks like Angular and React, and demonstrating how you can incorporate new technologies like Firebase and a virtual DOM into a Backbone app.</p>
+<h3>2014</h3>
+<p><strong>Component Based Development</strong> <em>Triangle DevCon</em></p>
+<ul>
+<li><a href="http://www.slideshare.net/BenMcCormick/component-based-development">Slides</a></li>
+</ul>
+<p>I gave a talk at Triangle DevCon about the web trend towards component based development strategies, going into detail about the Web Components standards as well as the various component implementations from React, Ember, Knockout and Angular.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Recommended Reading For Developers]]></title>
+        <id>https://benmccormick.org/readinglist/</id>
+        <link href="https://benmccormick.org/readinglist/">
+        </link>
+        <updated>2016-09-24T01:02:13Z</updated>
+        <content type="html"><![CDATA[<p>These are the books that have helped me grow most as a developer.  I highly recommend them all.  Please note that the links are affiliate links and a small portion of any purchases you make will go towards the costs of maintaining this site.</p>
+<hr>
+<h2>JavaScript</h2>
+<h4>JavaScript: The Good Parts, By Douglas Crockford</h4>
+<span class="reading-img">
+![JavaScript the Good Parts](/content/images/2014/Jul/goodparts.jpg)
+</span>
+<p>This is the first book I’d recommend for anyone interested in getting started with Front End development and JavaScript.  It’s getting a bit dated now, 6 years after it was published, but I haven’t found anything else that explains as well the basics of the language and how to use it.</p>
+<p>Buy: <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0596517742&linkCode=as2&tag=benmccormicko-20&linkId=XZEWUV7PCEO7DNTY">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=0596517742" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+<h4>Effective JavaScript by David Herman</h4>
+<span class="reading-img">
+![Effective JS](/content/images/2014/Jul/effjs.jpg)
+</span>
+<p>You can find my full review <a href="http://benmccormick.org/2013/01/06/book-review-effective-javascript/">here</a>, but Effective JavaScript is a great read for developers with a good comfort level with the language who want to dig a bit deeper.  It’s presented as a series of imperative tips (do this, don’t do that), and each one is backed up with a tremendous depth of knowledge and insight.  A must read for any JavaScript dev.</p>
+<p>Buy: <a href="http://www.amazon.com/gp/product/0321812182/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0321812182&linkCode=as2&tag=benmccormicko-20&linkId=HOPC6ZNKSVMH3NZ7">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=0321812182" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+<hr>
+<h2>Tools</h2>
+<h4>Practical Vim by Drew Neil</h4>
+<span class="reading-img">
+![Practical Vim](/content/images/2014/Jul/vim.jpg)
+</span>
+<p>Practical Vim is a must have book for anyone who wants to be efficient while editing text.  While it’s a book about Vim, it will challenge you to use your editor more efficiently and powerfully no matter what you use (and maybe convince you to switch to Vim).  Highly recommended for anyone who deals with code or text for a living.</p>
+<p>Buy: <a href="http://www.amazon.com/gp/product/1934356980/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1934356980&linkCode=as2&tag=benmccormicko-20&linkId=FE3JFKHYVRYCUOVS">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=1934356980" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+<h4>Tmux: Mouse Free Productivity By Brian Hogan</h4>
+<span class="reading-img">
+![Tmux](/content/images/2014/Jul/tmux.jpg)
+</span>
+<p>Tmux is a terminal multiplexer, a program that allows you to split and organize your terminal windows.  With an unfriendly <a href="http://tmux.sourceforge.net/">project page</a> and a dearth of great tutorials out there, it can be a bit difficult to get started with.  Tmux: Mouse Free Productivity is a short (88 pages) little guide to using Tmux effectively.  It helped me get up and running with what is now an indispensable tool in my workflow.</p>
+<p>Buy: <a href="http://www.amazon.com/gp/product/1934356964/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1934356964&linkCode=as2&tag=benmccormicko-20&linkId=ITHR5LSXMGMXCPS7">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=1934356964" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+<hr>
+<h2>General Programming</h2>
+<h4>The Pragmatic Programmer by Andrew Hunt and David Thomas</h4>
+<span class="reading-img">
+![The Pragmatic Programmer](/content/images/2014/Jul/pp.jpg)
+</span>
+<p>This is a classic in the programming field, easily the most well known book on this list.  But it also is an indispensible explanation of the process of making great software.  There’s not a lot of code in this book, and thats a feature, not a bug.  This is a book about the techniques of building a software project, not the nitty gritty details.  As such, it’s relevance has lasted a lot longer than instructional books which have come and gone.</p>
+<p>Buy: <a href="http://www.amazon.com/gp/product/020161622X/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=020161622X&linkCode=as2&tag=benmccormicko-20&linkId=OGOUQY6XAPDGUA4T">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=020161622X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Marionette: Explained]]></title>
+        <id>https://benmccormick.org/marionette-explained/</id>
+        <link href="https://benmccormick.org/marionette-explained/">
+        </link>
+        <updated>2016-09-24T01:02:13Z</updated>
+        <content type="html"><![CDATA[<div class="explanation">
+Marionette: Explained was a series of posts I wrote in winter 2014-2015 explaining the whats, whys and hows of Marionette, the Backbone Framework.  Marionette is a powerful set of patterns and components built on top of Backbone.js, a minimalist JavaScript MV* framework. It is widely used in the Backbone community, but since most of the resources I found about it were written prior to it's 2.0 version, and the framework had continued to evolve significantly since then, I felt there was a need for a detailed resource on using it.  This is my attempt at creating that resource.
+</div>
+<ol>
+<li>
+<p><a href="http://benmccormick.org/2014/12/02/the-case-for-marionette-js/">The Case For Marionette.js</a> - A quick overview of what Marionette is and why it’s useful.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2014/12/10/marionette-explained-connecting-your-data-to-your-views/">Connecting Data To Your Views</a> - A look at Marionette’s approach to Views and data-binding</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2014/12/22/building-complex-layouts-with-marionette-js/">Building Complex Layouts with Marionette.js</a> - A post to explain Marionette’s Regions and layout system, with a focus on complex nested layouts.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2015/01/05/marionette-view-life-cycles/">The Life of a Marionette View</a> - A rundown of the various stages of a Marionette View’s life cycle</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2015/01/26/backbone-radio/">Building Modular Web Apps with Backbone.Radio</a> - This post examines how to use Backbone.Radio to improve the maintainability of your Marionette projects.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2015/03/23/staying-dry-with-marionette-behaviors/">Staying DRY with Marionette Behaviors</a> - A look at Behaviors and how they help you avoid repetition in your Backbone code.</p>
+</li>
+</ol>
+<h3>Acknowledgements</h3>
+<p>I’ve had the opportunity to learn a lot from the Marionette team and community through their <a href="https://gitter.im/marionettejs/backbone.marionette">gitter room</a>. These posts have been much more accurate as a result. I also originally began to understand Marionette after reading <a href="https://leanpub.com/building-backbone-plugins?a=3a4Srv2pP9p87WQ_eoDoGp">Building Backbone Plugins</a> by Derick Bailey, the creator of Marionette. I highly recommend both of those resources to anyone interested in Marionette or Backbone development.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Learning Vim in 2014]]></title>
+        <id>https://benmccormick.org/learning-vim-in-2014/</id>
+        <link href="https://benmccormick.org/learning-vim-in-2014/">
+        </link>
+        <updated>2016-09-24T01:02:13Z</updated>
+        <content type="html"><![CDATA[<div class="explanation">
+Learning Vim in 2014 was a series of posts I wrote in July & August 2014 documenting a process for newcomers to learn Vim. It was inspired by my own experience learning Vim, running into many out of date resources and online resources that gave me just a quick list of tips, plugins or commands.
+<p>This is a “point in time” snapshot of one man’s advice on how to learn Vim.  It is by no means comprehensive.  I covered some topics in depth, and only skimmed others.  But it’s intended to get new Vim users to a point of comfort where they understand the options available to them in Vim, and can continue learning on their own as they go forward.</p>
+<p>Below is a collected page of the posts in the series:</p>
+</div>
+<ol>
+<li>
+<p><a href="http://benmccormick.org/2014/06/30/learning-vim-in-2014-the-basics/">The Basics</a> - A quick look at getting started in Vim.  Gives instructions for installing Vim, a minimal vimrc file, and learning the basics of the editor using vimtutor.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/">Vim as Language</a> - An exploration of Vim’s composable command language, and the power that it provides.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2014/07/07/learning-vim-in-2014-working-with-files/">Working With Files</a> - A look at managing files using Vim, both using built-in methods and plugins.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2014/07/14/learning-vim-in-2014-configuring-vim/">Configuring Vim</a> - Vim is a highly configurable editor.  This is a look at the different things you can change, along with some tips and hints.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2014/07/16/learning-vim-in-2014-vim-as-art/">Vim as Art</a> - A look at the power of Vim’s repetition commands, and the tremendous efficiency gains they allow.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2014/07/21/learning-vim-in-2014-getting-more-from-vim-with-plugins/">Getting more from Vim with plugins</a> - A look at how plugins can add to your Vim experience, and when to use them.  I also look at the current (2014) Vim plugin ecosystem and make some suggestions for plugins to meet common use cases.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2014/07/28/learning-vim-in-2014-copy-and-paste-the-vim-way/">Copy And Paste The Vim Way</a> - Vim ignores modern copy and paste conventions in favor of it’s own system, keybindings, and vocabulary.  This piece explains the method behind Vim’s copy and paste madness.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2014/08/04/learning-vim-in-2014-search/">Search</a> -  Good search techniques, either for text or files, is one of the most important things you need when working with large code bases or documents.  This takes a look at different search techniques in Vim and when to use them.</p>
+</li>
+</ol>
+<h3>Acknowledgements</h3>
+<p>I’m heavily indebted to <a href="https://twitter.com/nelstrom">Drew Neil</a> and <a href="http://wynnnetherland.com/">Wynn Netherland</a>. Drew’s book <a href="http://www.amazon.com/gp/product/1934356980/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1934356980&amp;linkCode=as2&amp;tag=benmccormicko-20&amp;linkId=FE3JFKHYVRYCUOVS">Practical Vim</a> helped me to really understand Vim and influenced the posts above.  His <a href="http://vimcasts.org/">Vimcasts</a> site also continues to be the best Vim resource on the internet.  Wynn’s talk at BlendConf 2013 inspired me to get a deeper understanding of Vim, after being frustrated by trying to use it for a while without really understanding it.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[About Me]]></title>
+        <id>https://benmccormick.org/about/</id>
+        <link href="https://benmccormick.org/about/">
+        </link>
+        <updated>2016-09-24T01:02:13Z</updated>
+        <content type="html"><![CDATA[<p>Hi, I’m Ben McCormick.  I’m a web developer, writer, occasional athlete, and a Christian. This is my blog about JavaScript, the Web and development tools.</p>
+<p>I live in Durham NC with my wife Claire and our dog Samoa, and prior to that I grew up in Pittsburgh.  I have plenty of pride in both of my homes.  When I’m not writing code or text, you can find me playing basketball, ultimate frisbee, and board games, relaxing with my wife, or volunteering at my church.  I currently work at <a href="http://www.windsorcircle.com">Windsor Circle</a>, and spend my days there writing a lot of JavaScript.</p>
+<p>If you have thoughts about the blog or want to contact me about related opportunities by email at ben AT <a href="http://benmccormick.org">benmccormick.org</a>.</p>
+<h3>Blog Bookkeeping</h3>
+<p><a href="http://benmccormick.org">benmccormick.org</a> is run on top of the <a href="https://pages.github.com/">Github Pages</a> using <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a>.  I occasionally link to various books and services when I blog.  These links are often affiliate links, for which I receive a small commission on sales.  When this is the case I do my best to disclose that fact.  I only link to products that I have used and can endorse honestly. These links are there to support the cost of hosting the blog.</p>
+<p>All content on the blog was written by me, and I maintain copyright over it.  If you want to reuse or reprint it somewhere else, please contact me.</p>
+<p>All opinions, positions and thoughts on the blog are my own and do not represent the positions or opinions of my employer, my family, my church, my country, etc.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Quick Tip: Take advantage of lodash collections]]></title>
+        <id>https://benmccormick.org/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2/</id>
+        <link href="https://benmccormick.org/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2/">
+        </link>
+        <updated>2016-06-26T21:27:55Z</updated>
+        <content type="html"><![CDATA[<p>One of the more frustrating things about using JavaScript in the browser is the number of different collection types that you need to deal with.  When using native APIs and 3rd party libraries, it’s easy to encounter 3 or more different types of collections, including <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList">NodeLists</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection">HTMLCollections</a>, <a href="https://learn.jquery.com/using-jquery-core/jquery-object/">jQuery Objects</a>, and plain arrays.</p>
+<pre><code class="language-javascript">let a = document.querySelectorAll('div')
+a instanceOf NodeList //true
+
+let b = document.getElementsByTagName('div')
+b instanceOf HTMLCollection //true
+
+let c = $('div') 
+c instanceOf jQuery // true
+
+let d = ['button1', 'button2', 'button3'].map(id =&gt; document.getElementById(id));
+d instance of Array //true
+</code></pre>
+<p>This ends up mattering in practice because not every function that is available on Array is available on NodeList, HTMLCollections, and jQuery objects.</p>
+<pre><code class="language-javascript">let ids = document.querySelectorAll('div').map(el =&gt; el.id)
+// Uncaught TypeError: document.querySelectorAll(...).map is not a function
+
+ids = document.getElementsByTagName('div').map(el =&gt; el.id)
+// Uncaught TypeError: document.getElementsByTagName(...).map is not a function
+
+let numDivs = $('div').reduce((count, el) =&gt; count + 1, 0);
+// Uncaught TypeError: $(...).reduce is not a function
+</code></pre>
+<p>Since we can’t use native array methods on these alternate collections, we end up having to be very careful about knowing where we’ve retrieved data from, and how to convert those collections or how to work around their limitations.</p>
+<p>It’s useful to know about these distinctions, but in practice dealing with them is a pain.  One of the nice properties of <a href="https://lodash.com/docs">lodash</a> is that it abstracts over these incompatibilities.</p>
+<pre><code class="language-javascript">let ids = _.map(document.querySelectorAll('div'), el =&gt; el.id);
+// ['container', 'left-box', 'right-box']
+
+ids = _.map(document.getElementssByTagName('div'), el =&gt; el.id);
+// ['container', 'left-box', 'right-box']
+
+let numDivs = _.reduce($('div'), (count, el) =&gt; count + 1, 0));
+// 3
+</code></pre>
+<p>For methods that iterate over a collection lodash treats all array-like objects (essentially anything with a length property) the same and iterates over their numerical properties from 0 to length-1.  This provides a nice consistency when working with DOM APIs and removes the mental overhead from managing their inconsistencies.</p>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!   JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post <a href="http://benmccormick.org/2014/11/12/underscore-vs-lodash/">comparing lodash and underscore</a>.  I’m also going to be starting a new series of posts soon diving into lodash more in depth.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What are mutable and immutable data structures?]]></title>
+        <id>https://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2/</id>
+        <link href="https://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2/">
+        </link>
+        <updated>2016-06-04T21:52:52Z</updated>
+        <content type="html"><![CDATA[<p>Sometimes concepts and ideas slowly grow in a programming community, sometimes they seem to appear in a flash.  For the first several years I wrote JavaScript, I don’t recall ever seeing anything written online about immutable data.  Since React hit the scene in the last 2 years however, articles mentioning mutable and immutable data seem to have multiplied, as have libraries like Immutable.js and alternate front end languages like Elm that allow users to “use immutable data”.  I’m not going to address those libraries, but thought it would be useful to throw out a quick primer on what immutable data actually is, how it differs from mutable data, and why anyone cares.</p>
+<p>A mutable object is an object whose state can be modified after it is created.  An immutable object is an object whose state cannot be modified after it is created.  Examples of native JavaScript values that are immutable are numbers and strings.  Examples of native JavaScript values that are mutable include objects, arrays, functions, classes, sets, and maps.</p>
+<h3>Implications of mutable object</h3>
+<p>So why does this matter?  Consider the following code examples:</p>
+<pre><code class="language-javascript">let a = {
+    foo: 'bar'
+};
+
+let b = a;
+
+a.foo = 'test';
+
+console.log(b.foo); // test
+console.log(a === b) // true
+</code></pre>
+<pre><code class="language-javascript">let a = 'test';
+let b = a;
+a = a.substring(2);
+
+console.log(a) //st
+console.log(b) //test
+console.log(a === b) //false
+</code></pre>
+<pre><code class="language-javascript">let a = ['foo', 'bar'];
+let b = a;
+
+a.push('baz')
+
+console.log(b); // ['foo', 'bar', 'baz']
+console.log(a === b) // true
+</code></pre>
+<pre><code class="language-javascript">let a = 1;
+let b = a;
+a++;
+
+console.log(a) //2
+console.log(b) //1
+console.log(a === b) //false
+</code></pre>
+<p>What we see is that for mutable values, updating state applies across all <em>references</em> to that variable.  So changing a value in one place, changes it for all references to that object.  For the immutable data types, we have no way of changing the internal state of the data, so the reference always gets reassigned to a new object.  The biggest implication of this is that for immutable data, equality is more reliable since we know that a value’s state won’t be changed out from under us.</p>
+<p>Finally, its worth noting that it’s still possible to treat JavaScript objects as immutable.  This can first be done through <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">Object.freeze</a>, which shallowly renders a JavaScript object immutable.  But it can also be done with programmer discipline.  If we want to rely on object’s being immutable, it’s possible to enforce that all object updates are done through something like
+<code>Object.assign(a, {foo: 'bar'})</code> rather than <code>a.foo = 'bar'</code>, and all array updates are done through functions that generate new arrays like <code>Array.prototype.map</code>, <code>Array.prototype.filter</code>, or <code>Array.prototype.concat</code>, rather than mutating methods like <code>Array.prototype.push</code>, <code>Array.prototye.pop</code>, or <code>Array.prototype.sort</code>.  This is less reliable without language level constraints, but has become popular in the React ecosystem for dealing with data for folks who don’t want to introduce abstractions like Immutable.js.</p>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post on <a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">explaining the different version names of the JavaScript language</a>.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Digging Into React: Choosing Component Styles]]></title>
+        <id>https://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/</id>
+        <link href="https://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/">
+        </link>
+        <updated>2016-05-02T02:32:36Z</updated>
+        <content type="html"><![CDATA[<p>Over the past month I’ve been building my first production features using React.  One of the first things I’ve noticed is the amount of choices that come into a new React project.  A lot of this is about the ecosystem around React (Webpack vs Browserify? Redux vs Relay? Do I need CSS modules or Immutable.js?) but many of the choices are just part of the library, figuring out the best, or at least a consistent, way to do things.</p>
+<p>One such choice is the syntax for defining components that you choose to use.  In React, you can define components in at least 3 different styles: the React.createClass style, the ES6 class style, and the pure functional style [^1]. Each has some advantages and disadvantages.</p>
+<h3>React.createClass</h3>
+<p>React.createClass is the original style for defining React components, and is still the preferred style in the React documentation.</p>
+<p>Here’s what a theoretical SaveButton component looks like in this style.  It is a simple component that listens for clicks and then uses a separate dispatcher object to send a request to save the data on the page.  After saving the button will either show some specified saved text or “Saved”.</p>
+<pre><code class="language-javascript">import React from ‘react’;
+import {dispatcher} from ‘./lib/dispatcher’;
+
+export const SaveButton = React.createClass({
+
+    propTypes: {
+        //text to show after the component is saved
+        savedText: React.PropTypes.string.isRequired,
+        //primary text to show on the button
+        text: React.PropTypes.string.isRequired,
+    },
+
+    getDefaultProps() {
+        return {
+             savedText: ‘Saved’,
+        };
+    },
+
+    getInitialState() {
+        return { saved: false };
+    },
+
+    save() {
+        dispatcher.sendMessage(‘saveData’);
+        this.setState({saved: true});
+    },
+
+    render() {
+        let {text, savedText} = this.props;
+        return (&lt;span className=“button” onClick={this.save}&gt;
+           {this.state.saved ? savedText : text}
+        &lt;/span&gt;);
+    },
+});
+</code></pre>
+<p>One of the best things about this style is its cohesive nature.  Everything about the component is described as a single object passed to React.createClass.  Since it is just an object that React processes, it is also able to accommodate more usage styles than ES6 classes and functional components.  Specifically we can use <a href="https://facebook.github.io/react/docs/reusable-components.html#mixins">mixins</a> and add declarative properties like propTypes directly to the component definition.</p>
+<p>The downside of the createClass approach is the custom nature of it.  External tools can’t inspect a component declaration and know what functions and methods will be available on the final component without either some deep inspection of the React source code or pre-existing knowledge of React.createClass that somebody has to document and maintain.</p>
+<h3>ES6 Classes</h3>
+<p>Last March, with React v0.13, the React team introduced a second syntax for React components using ES6 classes.  The constraints of the ES6 class definition change the component API in a few ways.  With ES6 classes there is no way to add properties to the class property as part of the main definition, they need to be added afterwards [^2].  Some niceties that are possible with React.createClass don’t work with ES6 classes as well.  Mixins aren’t possible, and React will no longer “autobind” your functions to the component instance, so when passing class methods as callbacks in your components it is necessary to bind it to the current context, either by using arrow functions like
+<code>&lt;span onClick= {() =&gt; this.save()} &gt;</code> or by binding the function like <code>this.save = this.save.bind(this)</code>.</p>
+<pre><code class="language-javascript">import React from ‘react’;
+import {dispatcher} from ‘./lib/dispatcher’;
+
+export class SaveButton extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { saved: false };
+    }
+
+    save() {
+        dispatcher.sendMessage(‘saveData’);
+        this.setState({saved: true});
+    },
+
+    render() {
+        let {text, savedText} = this.props;
+        return (&lt;span className=“button” onClick={() =&gt;this.save()}&gt;
+           {this.state.saved ? savedText : text}
+        &lt;/span&gt;);
+    },
+});
+
+SaveButton.propTypes = {
+    //text to show after the component is saved
+    savedText: React.PropTypes.string.isRequired,
+    //primary text to show on the button
+    text: React.PropTypes.string.isRequired,
+};
+
+SaveButton.defaultProps = {
+    savedText: ‘Saved’,
+};
+</code></pre>
+<p>While this approach makes some syntactic compromises and loses mixins, it has the advantage of standardization and tooling support.  A good JavaScript tool can easily tell that a SaveButton should have render and save methods, as well as detecting the methods it inherits from React.Component.  This is useful for things like auto-complete and linting, as well as (theoretically) run-time performance.</p>
+<h3>Pure Functional Components</h3>
+<p>Last fall with React 0.14, React added a 3rd component style.  Functional components dispose of many of the secondary features of React, and focus on the <code>render</code> function.  They are the least powerful of all the component syntaxes.  In addition to losing mixins, pure functional components don’t have the life-cycle functions of the class based syntaxes and also don’t have any internal state.  For these components, all state must be managed externally through something like Redux, or parent components that do have state.</p>
+<pre><code class="language-javascript">import React from ‘react’;
+import {dispatcher} from ‘./lib/dispatcher’;
+
+export const SaveButton = ({text, savedText, isSaved, setSaved}) =&gt; {
+    const save = () =&gt;{
+        dispatcher.sendMessage(‘saveData’);
+        setSaved();
+    },
+    return (&lt;span className=“button” onClick={save}&gt;
+       {isSaved ? savedText : text}
+    &lt;/span&gt;);
+};
+
+SaveButton.propTypes = {
+    //text to show after the component is saved
+    savedText: React.PropTypes.string.isRequired,
+    //primary text to show on the button
+    text: React.PropTypes.string.isRequired,
+    // has the data already been saved?
+    isSaved: React.PropTypes.bool.isRequired,
+    // a function to update the application state and mark the page as saved
+    setSaved: React.PropTypes.func.isRequired,
+};
+
+SaveButton.defaultProps = {
+    savedText: ‘Saved’,
+};
+</code></pre>
+<p>Despite being the least powerful of the 3 component styles, functional components do have some advantages.  First of all, they’re very simple.  It is easy to see what is going on with them, and easy for React to optimize for them.  Like ES6 classes, they’re easy to understand for 3rd party tools since they’re “just functions”, and easy to explain to new developers for the same reason.  They also work well with systems like Redux which already encourages pulling state out of components into global stores.</p>
+<h2>Choosing a component style</h2>
+<p>So given these 3 styles, how do you choose which style to use for a component?  Balance a desire for consistency with a respect for the <a href="https://en.wikipedia.org/wiki/Rule_of_least_power">Principle of Least Power</a>.</p>
+<p>For consistency purposes, don’t use more than 2 of these styles within a single project.  This mostly breaks down to “don’t use createClass and ES6 classes” together in the same project.  There are significant differences in capability and complexity between the first 2 styles and functional components. But the class based styles are similar enough that using both adds complexity but fails to do much in terms of signaling intent.  Switching between 2 different styles of communicating a concept should also indicate a meaningful difference in intent.</p>
+<p>Of course the most consistent approach would be to always use createClass, since it is the most powerful and any component that can be implemented in the other 2 styles can be implemented using createClass.  This is where the principle of least power comes in.  Here is Tim Berners-Lee’s initial description of that principle:</p>
+<blockquote>
+<p>Computer Science in the 1960s to 80s spent a lot of effort making languages which were as powerful as possible. Nowadays we have to appreciate the reasons for picking not the most powerful solution but the least powerful. The reason for this is that the less powerful the language, the more you can do with the data stored in that language. If you write it in a simple declarative from, anyone can write a program to analyze it in many ways. The Semantic Web is an attempt, largely, to map large quantities of existing data onto a common language so that the data can be analyzed in ways never dreamed of by its creators. If, for example, a web page with weather data has RDF describing that data, a user can retrieve it as a table, perhaps average it, plot it, deduce things from it in combination with other information. At the other end of the scale is the weather information portrayed by the cunning Java applet. While this might allow a very cool user interface, it cannot be analyzed at all. The search engine finding the page will have no idea of what the data is or what it is about. This the only way to find out what a Java applet means is to set it running in front of a person.</p>
+</blockquote>
+<p>The less powerful react components styles are the more readable styles, both for humans and computers. That readability also limits the classes of errors and unexpected behaviors we can enact. So we should strive for simple components where we can, while balancing that with our desire for consistency.</p>
+<p>For projects looking into this, there are a few simple questions that you can answer to decide which style to use.</p>
+<ol>
+<li>Do you need to integrate with non-React libraries that modify the DOM?</li>
+<li>Do you need to manage state within your components (IE are you not using an external state management library like Redux)?</li>
+<li>Do you need to use mixins for anything in your project?</li>
+</ol>
+<p>If you answered yes to any of these questions, then you need to include a class based component style in your options for your projects.  If you answered yes to #3, then you will need to use React.createClass.</p>
+<p>Once you’ve made those decisions at the project level, the decisions are easy for an individual component.  If you answered no to all of the questions above (unlikely for a large project, but possible), you should always use functional components.  If not, you can ask the same 3 questions for each new component.  If the answer to all of the questions are no for a component, use a functional component, otherwise use the class based style you’ve chosen for your project.</p>
+<h3>More Resources</h3>
+<ul>
+<li><a href="https://facebook.github.io/react/docs/reusable-components.html#es6-classes">The React documentation</a> is the best place to look at the benefits and tradeoffs of the different component styles</li>
+<li><a href="http://jamesknelson.com/should-i-use-react-createclass-es6-classes-or-stateless-functional-components/">James Nelson wrote a similar guide last year</a> focused on the decision tree of what style to use for a component.  He dismisses the createClass style completely and has a similar but slightly different set of questions to ask.</li>
+<li><a href="https://github.com/facebook/react/issues/5677">This github thread</a> makes the important distinction that functional components are not yet optimized in any special way, though they may be in the future.</li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post on <a href="http://benmccormick.org/2016/01/08/reusable-code-patterns/">reusable code patterns</a>.</p>
+<p>[^1]: Technically you can also use an ES5 class based style, but I’m going to ignore that.  It is not a common idiom for React programs as far as I can tell.</p>
+<p>[^2]: There is a proposal for adding static properties to ES6 classes, but it is still in early stages right now and is not guaranteed to end up as part of the ECMAScript spec.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ack Tips]]></title>
+        <id>https://benmccormick.org/2016/04/30/ack-tips/</id>
+        <link href="https://benmccormick.org/2016/04/30/ack-tips/">
+        </link>
+        <updated>2016-04-30T15:48:25Z</updated>
+        <content type="html"><![CDATA[<p><em>Last summer I briefly considered creating a separate blog focused on command line tools.  The idea is that the articles would be shorter and more practical than the longer pieces I write here.  I ended up scrapping the idea, but had written a few posts on one of my favorite commandd line tools Ack, so I wanted to preserve them here, as a single, longer piece, separated into 3 “tips”</em></p>
+<h3>#1: Prefer ack or ag to grep</h3>
+<p><a href="http://linux.die.net/man/1/grep">grep</a> is one of the most well known unix utilties.  If you’ve had any exposure to the command line at all, you’ve probably searched for something using grep.  grep’s standalone use is searching for content inside of files, but with Unix’s piping philosophy it is useful as a general search and filtering tool.  Originally created for Version 4 Unix 42 years ago, it has been a staple of *Nix operating systems ever since.   If you’ve been using it for even half that time, I’m sure a blog post isn’t enough to convince you to stop.  But for the rest of us, there’s an opportunity to do better.</p>
+<p><a href="http://beyondgrep.com/">ack</a> and <a href="https://github.com/ggreer/the_silver_searcher">ag</a> <sup id="fnref:1"><a href="#fn:1">1</a></sup> are similar projects with the same goal: providing a better experience than grep when searching directories of files, particularly for programmers.  The key selling points:</p>
+<ol>
+<li>Improved speed when searching through directories</li>
+<li>Ignores version control and binary files by default when searching</li>
+<li>Easy filtering by file-type</li>
+<li>A cleaner API for searching directories, without adding complexity to the single file case</li>
+</ol>
+<p>This is easiest to see by comparing commands.</p>
+<h4>Searching for “javascript” in a file</h4>
+<pre><code>grep javascript foo.txt
+</code></pre>
+<pre><code>ack javascript foo.txt
+</code></pre>
+<h4>Searching every file in the current directory for “javascript”</h4>
+<pre><code>grep -r javascript .
+</code></pre>
+<pre><code>ack javascript
+</code></pre>
+<h4>Searching every file in the current directory for “javascript”, excluding a .git directory</h4>
+<pre><code>grep -r javascript . $(find . -type f | grep -v '\.git')
+</code></pre>
+<pre><code>ack javascript
+</code></pre>
+<h4>Searching every HTML file in the current directory for “javascript”, excluding a .git directory</h4>
+<pre><code>grep -r javascript . $(find . -name '*.html' -or -name '*.htm'| grep -v '\.git')
+</code></pre>
+<pre><code>ack --html javascript
+</code></pre>
+<p>Basically, as the complexity of what you’re trying to do increases in terms of multiple files, the overhead of using grep increases proportionately.  Because ack and ag are optimized for common use cases, they’re able to scale much better.</p>
+<h3>#2: Use Ack to get familiar with a new codebase</h3>
+<p><a href="http://beyondgrep.com/">ack</a> is an incredibly useful tool when approaching a new codebase, especially if you’re focused on a specific feature. It allows you to quickly get a view of the codebase, and then zero in on the functionality you’re interested in.  To see how this works, let’s use jQuery’s <a href="https://github.com/jquery/jquery">source repo</a> as an example, and see what happens if we want to get a look at how it implements ajax.</p>
+<pre><code class="language-bash">❯ git clone git@github.com:jquery/jquery.git
+❯ cd jquery
+</code></pre>
+<p>We can start by trying to get a general idea of the size of the codebase.  Running <code>ack -f</code> to show all files in the directory will immediately overrun our terminal, so we can get a file count using <code>wc</code> instead</p>
+<pre><code class="language-bash">❯ ack -f |wc -l
+    249
+</code></pre>
+<p>Ok thats a good amount of files.  But how many of them are actually source files?  We can filter down to just the javascript files.</p>
+<pre><code class="language-bash">❯ ack -f --js |wc -l
+    155
+</code></pre>
+<p>But thats probably still a bit high, since not all of the JavaScript files are source files.  A quick <code>ls</code> shows that we probably want to filter down to the src directory.</p>
+<pre><code class="language-bash">❯ ack -f --js src |wc -l
+    92
+</code></pre>
+<p>Ok so now we’re down to 92 source files.  Still a bit much, but its probably worth printing them with <code>ack -f --js src</code> at this point to get an idea of the directory structure.  When we do that, we can see there’s an ajax folder, which is probably what we’re interested in.  To make sure we’re not missing related files, we can continue on to searching for files with ajax in the file name directly.</p>
+<pre><code class="language-bash">❯ ack -g --js ajax src
+    src/ajax/jsonp.js
+    src/ajax/load.js
+    src/ajax/parseJSON.js
+    src/ajax/parseXML.js
+    src/ajax/script.js
+    src/ajax/var/location.js
+    src/ajax/var/nonce.js
+    src/ajax/var/rquery.js
+    src/ajax/xhr.js
+    src/ajax.js
+    src/event/ajax.js
+</code></pre>
+<p>That gets us down to 11 files to look at.  But we might be getting a bit greedy.  Not every file related to ajax may have ajax in the file path.  We can use the <code>-l</code> option of ack to display the list of files that contain ajax somewhere in their text.</p>
+<pre><code class="language-bash">❯ ack --js -l ajax src
+    src/ajax/jsonp.js
+    src/ajax/load.js
+    src/ajax/script.js
+    src/ajax/xhr.js
+    src/ajax.js
+    src/event/ajax.js
+    src/jquery.js
+    src/manipulation/_evalUrl.js
+    src/serialize.js
+</code></pre>
+<p>Ok that adds 3 additional files with ajax references.  But its not clear that they’re relevant to jQuery’s ajax implementation, it may just be a file reference or comment.  Lets use ack to get a quick look at how ajax is referenced in those files.  This part gets a bit more complicated.  We can use ack’s <code>-v</code> option to invert our matching and find non-matching inputs, then use unix piping to filter our previous command.</p>
+<pre><code class="language-bash">❯ ack --js -l ajax src |ack -v ajax
+    src/jquery.js
+    src/manipulation/_evalUrl.js
+    src/serialize.js
+</code></pre>
+<p>Now we can use ack’s <code>-x</code> argument to search the files piped in through standard input.</p>
+<pre><code>❯ ack --js -l ajax src |ack -v ajax|ack -x ajax
+
+    src/jquery.js
+    20:     &quot;./ajax&quot;,
+    21:     &quot;./ajax/xhr&quot;,
+    22:     &quot;./ajax/script&quot;,
+    23:     &quot;./ajax/jsonp&quot;,
+    24:     &quot;./ajax/load&quot;,
+    25:     &quot;./event/ajax&quot;,
+
+    src/manipulation/_evalUrl.js
+    2:      &quot;../ajax&quot;
+    6:      return jQuery.ajax({
+    9:              // Make this explicit, since user can override this through ajaxSetup (#11264)
+
+    src/serialize.js
+    61:             traditional = jQuery.ajaxSettings &amp;&amp; jQuery.ajaxSettings.traditional;
+</code></pre>
+<p>So we can see pretty quickly that these files are safe to ignore in terms of understanding how ajax works in jQuery.  They’re just module loads, an actual call to the ajax method for other purposes, and settings serialization. It is useful to note that <code>src/ajax</code> is loaded into the main jQuery file first. Its probably worth looking at it as the starting point for our investigation. We’re well on our way to diving into the ajax functionality, able to focus on 11 of the 249 files in the repo immediately, already knowing how those files are loaded into the main library.</p>
+<p>This was just a simple example.  Whenever you’re spelunking into new code territory, consider using ack to get your bearings.  Things go a lot faster when you know the lay of the land in advance.</p>
+<h3>#3: Take advantage of Ack’s configurability</h3>
+<p>One of the nice things about <a href="http://beyondgrep.com/">ack</a> is the fact that it takes an <code>.ackrc</code> configuration file <sup id="fnref:2"><a href="#fn:2">2</a></sup>. These files can be scoped at a directory level, a user level or at a root level, and mirror the options available on the executable itself.  This allows you to extend and customize acks behavior in 3 primary ways.</p>
+<h4>a. Add new filetypes, and bundle existing ones</h4>
+<p>One of ack’s most useful features is the ability to add a <code>--&lt;filetype&gt;</code> flag to your searches to restrict your searches to a specific filetype.   ack comes with 75 builtin types including almost all common languages.  But those aren’t always good enough.  To handle obscure languages, and not so obscure syntaxes like handlebars templates, ack lets you define new filetypes.  You’re also able to modify existing filetypes to add additional file extensions to include under that filetype.  So for instance my ackrc includes these lines:</p>
+<pre><code>--type-add
+hbs=hbs
+--type-add
+js=js,es6
+</code></pre>
+<p>The first 2 lines allow me to specifically search handlebars files, which are where all of the html content for my work projects is stored.  The next 2 lines include es6 files in my JavaScript searches, useful since I append JavaScript files that I intend to process with <a href="https://babeljs.io/">Babel</a> with the <code>.es6</code> extenstion.  Customizing the js extension allows me to search all of my JavaScript together.  You can also define richer types in ackrc <a href="http://beyondgrep.com/documentation/ack-2.14-man.html#defining_your_own_types">based on file names using regular expressions or direct name matching</a>.</p>
+<h4>b. Set default options</h4>
+<p>Any option that the ack executable takes can have a default set or changed in an ackrc file.  This is mainly useful for the display option.  By default ack groups matches from different files and gives the file information above each group of matches.  It also shows all output in color.  Any of those things can be disabled or changed in your ackrc file.</p>
+<h4>c. Exclude unwanted directories or files</h4>
+<p>Oftentimes there are a predictable group of files that you may want to ignore in searches.  Perhaps you have a build directory that mirrors your source code, or documentation files mingled with your source.  You can put <code>--ignore-directory</code> or <code>--ignore-file</code>.  Ignore directory takes a directory name, while ignore-file takes matches in the same format as the custom filetypes mentioned above.</p>
+<p>If you’re starting to use ack, don’t miss the chance to make your searches even more efficient by removing any rough edges with an <code>.ackrc</code>.</p>
+<h4>Installation Instructions</h4>
+<ul>
+<li><a href="http://beyondgrep.com/install/">ack</a></li>
+<li><a href="https://github.com/ggreer/the_silver_searcher#installing">ag</a></li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  Using tools efficiently is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my articles on <a href="http://benmccormick.org/learning-vim-in-2014/">Vim</a>.</p>
+<div class="footnotes">
+<ol>
+    <li class="footnote" id="fn:1">
+    <p>
+       ack came first; ag was created as a faster version of ack.  ack is written in perl, making it more portable, and has a few more configuration options.  ag is written in C and is generally faster.  Your choice may vary depending on your use case.
+    </p>
+    <a href="#fnref:1" title="return to article"> ↩</a>
+    </li>
+    <li class="footnote" id="fn:2">
+        <p>
+       This is also one of the main traits that separates ack from <a href="https://github.com/ggreer/the_silver_searcher">ag</a>.
+        </p>
+        <a href="#fnref:2" title="return to article"> ↩</a></p>
+    </li>
+</ol>
+</div>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+</feed>
