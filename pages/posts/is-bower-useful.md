@@ -7,12 +7,11 @@ path: "/2015/01/22/is-bower-useful"
 
 
 
-![bower logo](/content/images/2015/01/bower-1.png)
+![bower logo](/posts/images/bower-1.png)
 
 I first heard about [Bower][bower] about a year and half ago, and was immediately confused.  Bower is branded as a package manager for the web.  My immediate question: "Why create another package manager for JavaScript, when [npm][npm] was just starting to become a standard?"  I certainly wasn't the only one thinking it.
 
 <blockquote class="twitter-tweet" lang="en"><p>&quot;What&#39;s bower?&quot;&#10;&quot;A package manager, install it with npm.&quot;&#10;&quot;What&#39;s npm?&quot;&#10;&quot;A package manager, you can install it with brew&quot;&#10;&quot;What&#39;s brew?&quot;&#10;...</p>&mdash; Stefan Baumgartner (@ddprrt) <a href="https://twitter.com/ddprrt/status/529909875347030016">November 5, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <style>
 .post-body img {
   margin: 40px auto 20px auto;
@@ -21,7 +20,7 @@ I first heard about [Bower][bower] about a year and half ago, and was immediatel
   max-height:200px;
 }
 </style>
-If you can use npm to install Bower, you can use it to install packages directly.  And if you don't like npm, is it that hard to just pull in your dependencies manually?  Why use a package manager at all?  
+If you can use npm to install Bower, you can use it to install packages directly.  And if you don't like npm, is it that hard to just pull in your dependencies manually?  Why use a package manager at all?
 
 A year later, I now believe Bower is a useful and important part of the web development ecosystem, so in the interest of sharing knowledge and because I can't resist the chance to flout [Betteridge's law of headlines][betterlaw], here's my case for why Bower is useful.
 
@@ -41,15 +40,15 @@ The problem is that it's impossible for tools to optimize for everything. npm ha
 
 npm has a nested dependency tree, where each module also loads all of its dependencies individually.  This is fine on the server, where you can put node_modules into your .gitignore file and effectively pretend those files are not there.  When writing client-side code though, it's important to be efficient with bandwidth.  You can't load multiple versions of a dependency if, for instance, you used multiple libraries that depend on Underscore or jQuery.  That's a problem if you're using browserify, since you'll need to find a way to normalize those dependencies to a single file.  But nested dependencies are also annoying when using other problems, both due to the need to manually figure out what you need and avoid duplication as well as the awkwardness of making deep path references down several layers of node_modules folders.
 
-Lastly, I'd encourage people considering npm for front-end package management to use a tool scoped for their needs. npm started as a package manager for node, and that is still its main use.  There are plenty of packages that can be useful both on node and in the browser, but many things only make sense in one environment.  For instance CSS libraries are not useful within node, and file system libraries won't work in the browser.  I'll admit that this ship may have already sailed though. Many popular browser only libraries like Bootstrap and Angular are available on npm right now as a response to people who are using npm for everything<sup id="fnref:1">[1](#fn:1)</sup>.  
+Lastly, I'd encourage people considering npm for front-end package management to use a tool scoped for their needs. npm started as a package manager for node, and that is still its main use.  There are plenty of packages that can be useful both on node and in the browser, but many things only make sense in one environment.  For instance CSS libraries are not useful within node, and file system libraries won't work in the browser.  I'll admit that this ship may have already sailed though. Many popular browser only libraries like Bootstrap and Angular are available on npm right now as a response to people who are using npm for everything<sup id="fnref:1">[1](#fn:1)</sup>.
 
 ### So Why Bower?
 
-The problems above explain the case for "yet another package manager".  So now we can talk about how Bower is better.  Bower is focused on front-end development, provides a flat dependency structure, and doesn't lock you in to a single way of doing things.  Let me break that down. 
+The problems above explain the case for "yet another package manager".  So now we can talk about how Bower is better.  Bower is focused on front-end development, provides a flat dependency structure, and doesn't lock you in to a single way of doing things.  Let me break that down.
 
 **Bower is focused on the front end.**  If you find a package registered on bower.io, you can be confident that it will useful on the front end, and won't be using node-specific dependencies.
 
-**Bower has a flat dependency structure.**  If multiple libraries require a dependency, Bower will figure out the best version to load and place it in the top level of your bower_components directory.  
+**Bower has a flat dependency structure.**  If multiple libraries require a dependency, Bower will figure out the best version to load and place it in the top level of your bower_components directory.
 
 **Bower doesn't lock you in.** Nothing about Bower is specific to a certain module format or build tool.  You can use it with RequireJS and Grunt, Webpack and Gulp, or by loading scripts directly into your HTML.
 

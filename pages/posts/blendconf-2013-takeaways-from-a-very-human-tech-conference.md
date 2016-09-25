@@ -33,8 +33,6 @@ policy or the talks, it was the uniformly awesome love and energy from
 everyone there.</p>&mdash; Tim Cheadle (@timcheadle) <a
 href="https://twitter.com/timcheadle/statuses/376491690791817217">September
 7, 2013</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js"
-charset="utf-8"></script>
 
 
 [blendconf]:http://blendconf.com/
@@ -48,5 +46,3 @@ charset="utf-8"></script>
 [carl]:https://twitter.com/carlsmith
 [ashe]:https://twitter.com/ashedryden
 [bauges]:https://twitter.com/greggyb
-
-

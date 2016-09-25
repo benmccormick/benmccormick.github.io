@@ -9,23 +9,23 @@ For the past 2 years, ~90% of my coding time has been spent working on a large s
 
 Since then a few things have happened.  First, React has taken off, while Angular and Ember have continued to grow and learn from React and each other. Angular and React have benefited from significant marketing and financial support for a core development team that have helped them grow quickly.  Google Trends gives a pretty good idea of how that has turned out.
 
-![Google trends graph](/content/images/2016/03/Google_Trends_-_Web_Search_interest__angular_js__react_js__backbone_js__ember_js_-_Worldwide__Jan_2010_-_Feb_2016.png)
+![Google trends graph](/posts/images/Google_Trends_-_Web_Search_interest__angular_js__react_js__backbone_js__ember_js_-_Worldwide__Jan_2010_-_Feb_2016.png)
 
 **Update:** *I've changed the above graph from an original that used angular.js, backbone.js, ember.js, and react.js as the search terms.  Only Backbone prefixes itself with a .js that way, and it undersold the other libraries, especially Angular.  I believe that this chart more accurately reflects usage trends.*
 
-Secondly, Backbone's author, [Jeremy Ashkenas](https://twitter.com/jashkenas) made a decision to call Backbone "finished" in terms of API and feature set after the 1.0 release.  This has the advantage of leaving Backbone as by far the most stable major JavaScript framework, but hinders efforts to pull in lessons from other frameworks [^2].  
+Secondly, Backbone's author, [Jeremy Ashkenas](https://twitter.com/jashkenas) made a decision to call Backbone "finished" in terms of API and feature set after the 1.0 release.  This has the advantage of leaving Backbone as by far the most stable major JavaScript framework, but hinders efforts to pull in lessons from other frameworks [^2].
 
-Finally, whether as a result of the first 2 items or due to some other factor, the ecosystem around Backbone has crumbled.  While Backbone's core has stabilized, it still has a team of maintainers who are actively managing the project.  That does not appear to be the case for many of the other libraries in the Backbone ecosystem.  To investigate my perception of this, I decided to look at the contribution graphs of popular Backbone libraries to see the trends over the last 2 years.  I built a list of libraries based on the projects that the bower registry returns for the backbone keyword, looking for projects with at least 400 github stars[^3]. That lead to a list of 24 projects below.  
+Finally, whether as a result of the first 2 items or due to some other factor, the ecosystem around Backbone has crumbled.  While Backbone's core has stabilized, it still has a team of maintainers who are actively managing the project.  That does not appear to be the case for many of the other libraries in the Backbone ecosystem.  To investigate my perception of this, I decided to look at the contribution graphs of popular Backbone libraries to see the trends over the last 2 years.  I built a list of libraries based on the projects that the bower registry returns for the backbone keyword, looking for projects with at least 400 github stars[^3]. That lead to a list of 24 projects below.
 
 To be clear, I'm not posting this as a criticism of anyone.  Open source is a volunteer effort, and maintaining a project is hard and often doesn't make sense when the author has moved on to other challenges.  This is simply an honest look at where the Backbone ecosystem stands, with the goal of helping those of us who are building Backbone applications or considering using it to evaluate the ecosystem honestly.
 
 ### 1. Backbone
 
-![backbone graph](/content/images/2016/03/Contributors_to_jashkenas_backbone.png)
+![backbone graph](/posts/images/Contributors_to_jashkenas_backbone.png)
 
 **Open issues:** 54
 
-**Issues closed in 2016:** 50+ 
+**Issues closed in 2016:** 50+
 
 **Last Release**: 3 days ago (March 3rd 2016)
 
@@ -33,7 +33,7 @@ I'm starting with Backbone itself to give an idea what a stable mature project g
 
 ### 2. Marionette
 
-![mn graph](/content/images/2016/03/Contributors_to_marionettejs_backbone_marionette.png)
+![mn graph](/posts/images/Contributors_to_marionettejs_backbone_marionette.png)
 
 **Open Issues:** 107
 
@@ -41,11 +41,11 @@ I'm starting with Backbone itself to give an idea what a stable mature project g
 
 **Last Release**: November 22 2015
 
-Of all the graphs here, this one is the nearest and dearest to me.  I've contributed code to Marionette, and have written about it [many times](http://benmccormick.org/marionette-explained/) on this blog.  Marionette still is seeing plenty of work, but as the contributors have cycled through, work on a long awaited version 3 with important improvements has sat on a branch for over a year.  This is a great library, but it hasn't been immune to the wider issues in the ecosystem. 
+Of all the graphs here, this one is the nearest and dearest to me.  I've contributed code to Marionette, and have written about it [many times](http://benmccormick.org/marionette-explained/) on this blog.  Marionette still is seeing plenty of work, but as the contributors have cycled through, work on a long awaited version 3 with important improvements has sat on a branch for over a year.  This is a great library, but it hasn't been immune to the wider issues in the ecosystem.
 
 ### 3. Backbone.Relational
 
-![bb-relational](/content/images/2016/03/Contributors_to_PaulUithol_Backbone-relational.png)
+![bb-relational](/posts/images/Contributors_to_PaulUithol_Backbone-relational.png)
 
 **Open Issues:** 122
 
@@ -57,7 +57,7 @@ Backbone.Relational is another "stable" library.  On its own, there's nothing wr
 
 ### 4. backbone-forms
 
-![bb-forms](/content/images/2016/03/Contributors_to_powmedia_backbone-forms.png)
+![bb-forms](/posts/images/Contributors_to_powmedia_backbone-forms.png)
 
 **Open Issues:** 172
 
@@ -68,7 +68,7 @@ Backbone.Relational is another "stable" library.  On its own, there's nothing wr
 
 ### 5. backgrid
 
-![backgrid](/content/images/2016/03/Contributors_to_wyuenho_backgrid.png)
+![backgrid](/posts/images/Contributors_to_wyuenho_backgrid.png)
 
 **Open Issues:** 111
 
@@ -80,7 +80,7 @@ This is the first project on this list that I wouldn't consider to be actively m
 
 ### 6. backbone.localStorage
 
-![localstorage](/content/images/2016/03/Contributors_to_jeromegn_Backbone_localStorage.png)
+![localstorage](/posts/images/Contributors_to_jeromegn_Backbone_localStorage.png)
 
 **Open Issues:** 45
 
@@ -90,7 +90,7 @@ This is the first project on this list that I wouldn't consider to be actively m
 
 ### 7. backbone.stickit
 
-![stickit](/content/images/2016/03/Contributors_to_NYTimes_backbone_stickit.png)
+![stickit](/posts/images/Contributors_to_NYTimes_backbone_stickit.png)
 
 **Open Issues:** 26
 
@@ -100,7 +100,7 @@ This is the first project on this list that I wouldn't consider to be actively m
 
 ### 8. backbone.paginator
 
-![paginator](/content/images/2016/03/Contributors_to_backbone-paginator_backbone_paginator.png)
+![paginator](/posts/images/Contributors_to_backbone-paginator_backbone_paginator.png)
 
 **Open Issues:** 20
 
@@ -110,7 +110,7 @@ This is the first project on this list that I wouldn't consider to be actively m
 
 ### 9. Backbone-validation
 
-![validation](/content/images/2016/03/Contributors_to_thedersen_backbone_validation.png)
+![validation](/posts/images/Contributors_to_thedersen_backbone_validation.png)
 
 **Open Issues:** 79
 
@@ -120,9 +120,9 @@ This is the first project on this list that I wouldn't consider to be actively m
 
 I have personal experience with the abandoned state of this library since my team has been working off a forked version of it for 6 months while waiting on maintainers to address a [pull request](https://github.com/thedersen/backbone.validation/pull/302).  Like many others here, it appears to be a project that the core team moved on from and nobody else had the motivation or time to pick it up.  While there's nothing wrong with that, it makes it hard to rely on these projects.
 
-### 10. Knockback 
+### 10. Knockback
 
-![knockback graph](/content/images/2016/03/Contributors_to_kmalakoff_knockback.png)
+![knockback graph](/posts/images/Contributors_to_kmalakoff_knockback.png)
 
 **Open Issues:** 4
 
@@ -132,7 +132,7 @@ I have personal experience with the abandoned state of this library since my tea
 
 ### 11. Exoskeleton
 
-![exoskeleton graph](/content/images/2016/03/Contributors_to_paulmillr_exoskeleton.png)
+![exoskeleton graph](/posts/images/Contributors_to_paulmillr_exoskeleton.png)
 
 **Open Issues:** 21
 
@@ -142,7 +142,7 @@ I have personal experience with the abandoned state of this library since my tea
 
 ### 12. Backbone.dualstorage
 
-![backbone.dualstorage](/content/images/2016/03/Banners_and_Alerts_and_Contributors_to_nilbus_Backbone_dualStorage.png)
+![backbone.dualstorage](/posts/images/Banners_and_Alerts_and_Contributors_to_nilbus_Backbone_dualStorage.png)
 
 **Open Issues:** 30
 
@@ -152,7 +152,7 @@ I have personal experience with the abandoned state of this library since my tea
 
 ### 13. Backbone-react-component
 
-![backbone react component](/content/images/2016/03/Contributors_to_magalhas_backbone-react-component.png)
+![backbone react component](/posts/images/Contributors_to_magalhas_backbone-react-component.png)
 
 **Open Issues:** 8
 
@@ -162,7 +162,7 @@ I have personal experience with the abandoned state of this library since my tea
 
 ### 14. Backbone-offline
 
-![backbone-offline](/content/images/2016/03/Contributors_to_alekseykulikov_backbone-offline.png)
+![backbone-offline](/posts/images/Contributors_to_alekseykulikov_backbone-offline.png)
 
 **Open Issues:** 30
 
@@ -174,7 +174,7 @@ This project is actually documented as being deprecated and discontinued.  There
 
 ### 15. React.Backbone
 
-![react.backbone](/content/images/2016/03/Contributors_to_clayallsopp_react_backbone.png)
+![react.backbone](/posts/images/Contributors_to_clayallsopp_react_backbone.png)
 
 **Open Issues:** 11
 
@@ -186,7 +186,7 @@ Interesting, and not encouraging, that the 2 newest libraries at this popularity
 
 ### 16. Backbone.expoxy
 
-![backbone.epoxy](/content/images/2016/03/Contributors_to_gmac_backbone_epoxy.png)
+![backbone.epoxy](/posts/images/Contributors_to_gmac_backbone_epoxy.png)
 
 **Open Issues:** 19
 
@@ -196,7 +196,7 @@ Interesting, and not encouraging, that the 2 newest libraries at this popularity
 
 ### 17. backbone.iobind
 
-![backbone.iobind](/content/images/2016/03/Contributors_to_noveogroup_backbone_iobind.png)
+![backbone.iobind](/posts/images/Contributors_to_noveogroup_backbone_iobind.png)
 
 **Open Issues:** 16
 
@@ -206,7 +206,7 @@ Interesting, and not encouraging, that the 2 newest libraries at this popularity
 
 ### 18. backbone-associations
 
-![backbone-associations graph](/content/images/2016/03/Contributors_to_dhruvaray_backbone-associations.png)
+![backbone-associations graph](/posts/images/Contributors_to_dhruvaray_backbone-associations.png)
 
 **Open Issues:** 16
 
@@ -218,7 +218,7 @@ We're really starting to get into the meat of the dead projects now.  While ther
 
 ### 19. backbone-tastypie
 
-![tastypie graph](/content/images/2016/03/Contributors_to_PaulUithol_backbone-tastypie.png)
+![tastypie graph](/posts/images/Contributors_to_PaulUithol_backbone-tastypie.png)
 
 **Open Issues:** 12
 
@@ -226,11 +226,11 @@ We're really starting to get into the meat of the dead projects now.  While ther
 
 **Last Release:** Oct 26 2013
 
-This is a single use case library that presumably was abandoned after solving a problem, but its worth including to illustrate that the 400 star bar isn't that hard to hit. A similar search for React projects on bower yields 46 projects with 400+ stars, and React is only ~3 years old. 
+This is a single use case library that presumably was abandoned after solving a problem, but its worth including to illustrate that the 400 star bar isn't that hard to hit. A similar search for React projects on bower yields 46 projects with 400+ stars, and React is only ~3 years old.
 
 ### 20. backbone.syphon
 
-![syphon graph](/content/images/2016/03/Contributors_to_marionettejs_backbone_syphon.png)
+![syphon graph](/posts/images/Contributors_to_marionettejs_backbone_syphon.png)
 
 **Open Issues:** 19
 
@@ -240,7 +240,7 @@ This is a single use case library that presumably was abandoned after solving a 
 
 ### 21. backbone-nested
 
-![backbone-nested](/content/images/2016/03/Contributors_to_afeld_backbone-nested.png)
+![backbone-nested](/posts/images/Contributors_to_afeld_backbone-nested.png)
 
 **Open Issues:** 45
 
@@ -250,7 +250,7 @@ This is a single use case library that presumably was abandoned after solving a 
 
 ### 22. backbone.radio
 
-![backbone.radio](/content/images/2016/03/Contributors_to_marionettejs_backbone_radio.png)
+![backbone.radio](/posts/images/Contributors_to_marionettejs_backbone_radio.png)
 
 **Open Issues:** 9
 
@@ -262,7 +262,7 @@ Backbone.Radio (along with Backbone.syphon) is part of the marionette project.  
 
 ### 23. backbone-fetch-cache
 
-![backbone-fetch-cache graph](/content/images/2016/03/Contributors_to_madglory_backbone-fetch-cache.png)
+![backbone-fetch-cache graph](/posts/images/Contributors_to_madglory_backbone-fetch-cache.png)
 
 **Open Issues:** 26
 
@@ -272,11 +272,11 @@ Backbone.Radio (along with Backbone.syphon) is part of the marionette project.  
 
 ### 24. backbone-query-parameters
 
-![backbone-query-parameters](/content/images/2016/03/Contributors_to_jhudson8_backbone-query-parameters.png)
+![backbone-query-parameters](/posts/images/Contributors_to_jhudson8_backbone-query-parameters.png)
 
 **Open Issues:** 10
 
-**Issues closed in 2016:** 0 
+**Issues closed in 2016:** 0
 
 **Last Release:** Sep 23 2014
 
@@ -301,7 +301,7 @@ So what does this look like in aggregate.  Of the "top 24" Backbone projects, on
 <tr><td>Dead</td><td> backbone.offline, backbone.iobind,  backbone.epoxy, backbone-associations, backbone-tastypie</td></tr>
 </table>
 
-It is not a pretty picture right now.  If you're part of the Backbone community, I'd love to hear from you on this.  Should we be calling Backbone dead and looking to migrate ASAP?  Do you think I'm overselling this problem?  Are there libraries that I'm not considering right now that are thriving?  Or is focusing on Backbone-specific libraries a mistake because most developers are pasting together multiple libraries that aren't necessarily tightly tied.  
+It is not a pretty picture right now.  If you're part of the Backbone community, I'd love to hear from you on this.  Should we be calling Backbone dead and looking to migrate ASAP?  Do you think I'm overselling this problem?  Are there libraries that I'm not considering right now that are thriving?  Or is focusing on Backbone-specific libraries a mistake because most developers are pasting together multiple libraries that aren't necessarily tightly tied.
 
 ### Subscribe
 

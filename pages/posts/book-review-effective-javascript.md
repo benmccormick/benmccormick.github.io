@@ -14,7 +14,7 @@ path: "/2013/01/06/book-review-effective-javascript"
     margin:0 15px;
   }
 </style>
-![Effective JS](/content/images/2014/Jun/effectivejs.png)
+![Effective JS](/posts/images/effectivejs.png)
 
 After seeing some positive early reviews, I went to Amazon last week and bought "Effective JavaScript" by David Herman.  I'm glad that I did.  The book is a great experience for anyone who wants to deepen their understanding of the JavaScript language in a practical grounded fashion.
 

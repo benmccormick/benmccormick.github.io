@@ -7,7 +7,7 @@ path: "/2014/08/07/component-based-development"
 
 If you look back at the history of JavaScript and the client-side web as a development platform, you can see that there were several critical turning points for the language. Javascript has evolved from a [10-day toy language][jsorigin] to possibly the [most used language in the world][githubstats], but that didn't happen overnight.
 
-![JavaScript timeline](/content/images/2014/Aug/timeline.png)
+![JavaScript timeline](/posts/images/timeline.png)
 
 <style>
 .post-body img{

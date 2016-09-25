@@ -35,7 +35,7 @@ Backbone.Radio builds on this concept to provide a more powerful message bus.  I
 
 Radio Events are the exact same as our simple message bus.  When you create a channel with Radio, they extend Backbone.Events.  That means you can call any Backbone.Events function on them, or pass them to the `listenTo` method of other Backbone objects.  Events provide Radio's publish-subscribe functionality.  Multiple objects can subscribe to an event using `on` or `listenTo`.  And any object can publish an event using `trigger`.  For those of you unfamiliar with Backbone's events, they have two features that you might not expect.  First, unlike native browser events or jQuery events, Backbone events are synchronous; when you trigger an event, all callbacks that are registered on that event run immediately.  Second, it's easy to pass data with Backbone events.  Unlike native browser events which tend to simply consist of an event and a target, any data you pass when you trigger an event gets passed directly to the callback function, making it a true messaging system.
 
-![events diagram](/content/images/2015/01/68747470733a2f2f692e636c6f756475702e636f6d2f75396f433353314c78452e737667.svg)
+![events diagram](/posts/images/68747470733a2f2f692e636c6f756475702e636f6d2f75396f433353314c78452e737667.svg)
 
 **Functions Provided** - `on`, `off`, `trigger`, `once`, `listenTo`, `listenToOnce`, `stopListening`
 
@@ -45,7 +45,7 @@ Radio Events are the exact same as our simple message bus.  When you create a ch
 
 Radio Commands are similar to Events, with the distinction that only a single callback can handle or "comply" to a given command.  Commands do not add any functionality on top of events; instead, they provide a semantic distinction and enforce simpler logic.  When `exampleChannel.command('something')` is called, you know that it is requesting an action be performed, and you can be confident that there will be no side effects.  Only one object will comply to the command.  Commands are a maintenance-friendly tool; they make your code easier to follow by doing less and doing it more obviously.
 
-![commands diagram](/content/images/2015/01/68747470733a2f2f692e636c6f756475702e636f6d2f3765394d35724b464f722e737667.svg)
+![commands diagram](/posts/images/68747470733a2f2f692e636c6f756475702e636f6d2f3765394d35724b464f722e737667.svg)
 
 **Functions Provided** - `comply`, `stopComplying`, `command`, `complyOnce`
 
@@ -54,7 +54,7 @@ Radio Commands are similar to Events, with the distinction that only a single ca
 
 Radio Requests share the one-to-one nature of Commands, but provide functionality not seen in Backbone.Events.  You can use Requests to retrieve information from other objects.  Each request can be serviced by a single response callback, with the request receiving the return value of the callback function.  This is very useful for providing resources in a decoupled manner, where a View or other object doesn't have to know the details of how an object is stored or retrieved.
 
-![commands diagram](/content/images/2015/01/68747470733a2f2f692e636c6f756475702e636f6d2f744556555f74755249582e737667.svg)
+![commands diagram](/posts/images/68747470733a2f2f692e636c6f756475702e636f6d2f744556555f74755249582e737667.svg)
 
 **Functions Provided** - `reply`, `stopReplying`, `request`, `replyOnce`
 

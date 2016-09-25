@@ -12,7 +12,6 @@ I've got a few orders of site business to deal with today.  First, there's a new
 The new feed, [@benmccormickorg][twit], will be a Twitter "RSS Feed" with all of the posts from this site. It's just another option for people who want to subscribe, along with [RSS][rss] and my [mailing list][mail].  You can also find my personal account at [@ben336](http://twitter.com/ben336).
 
 <a href="https://twitter.com/benmccormickorg" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @benmccormickorg</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 <style>
  .post-body img {
@@ -24,10 +23,10 @@ The new feed, [@benmccormickorg][twit], will be a Twitter "RSS Feed" with all of
 
 ### Practical Vim Giveaway
 
-![Practical Vim](/content/images/2014/Jul/vim.jpg)
+![Practical Vim](/posts/images/vim.jpg)
 
 
-To go along with that, and as a thanks for all of the great interest and feedback I've gotten for my posts on Vim recently, I'm going to be giving away 2 copies of Drew Neil's book, Practical Vim. 
+To go along with that, and as a thanks for all of the great interest and feedback I've gotten for my posts on Vim recently, I'm going to be giving away 2 copies of Drew Neil's book, Practical Vim.
 
 [Practical Vim][pv] is the best resource on Vim I've found.  Drew Neil is the creator of [vimcasts][vc], the popular online Vim site.  And this book is his attempt to explain what makes Vim special.  It's bursting cover to cover with practical tips and tricks to help you become a more efficient writer and developer.  Reading it helped me understand the philosophy behind Vim, and I would recommend it for anyone who uses Vim or thinks they might want to.  There's a reason I recommend it as the Vim resource on my [reading list][rl].
 

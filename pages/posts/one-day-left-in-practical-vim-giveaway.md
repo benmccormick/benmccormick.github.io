@@ -12,7 +12,7 @@ My practical Vim giveaway ends tomorrow,  Friday July 25th at midnight.  If you 
 
 ### Giveaway Details
 
-![Practical Vim](/content/images/2014/Jul/vim.jpg)
+![Practical Vim](/posts/images/vim.jpg)
 
 
 As a thanks for all of the great interest and feedback I've gotten for my posts on Vim recently, I'm going to be giving away 2 copies of Drew Neil's book, Practical Vim. 

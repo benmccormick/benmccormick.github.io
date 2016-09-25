@@ -23,13 +23,13 @@ The other serious contender for the title of "best reading device" is the iPad. 
 
 The "original iPad" line, now on its fourth generation, boasts a large ten inch screen- one of the nicest screens you can find on a mobile device. It also hosts three and a half years-worth of apps designed specifically for the iPad's size and form.  It is by almost all accounts the best multipurpose tablet that money can buy.  As a reading device, though, it leaves much to be desired.  At 1.44 lbs, it's heavy and awkward to hold in one hand. It's also expensive: $200-$400 greater than other reading devices.  These factors can easily be overlooked relative to the versatility and utility of the iPad as a productivity and media-consumption device, but they make it difficult to recommend as a pure reader.
 
-![](/content/images/2014/Jun/devicetable.png)
+![](/posts/images/devicetable.png)
 
 The iPad mini, on the other hand, is almost the perfect shape and size for a reader.  It is the lightest high-end tablet on the market, and also feels like much more of a premium device than the Nexus or the Kindle when you hold one in your hand.  It comes at a reasonable cost ($170 less than the "regular" iPad), and like the Retina iPad, it comes with the full support of the Apple ecosystem. The iPad mini is its older sibling's only truly valid competitor for "best multipurpose tablet", and a completely valid choice as a reading device at that.
 
 On the other hand, the iPad mini also has a screen that is completely blown away by all of its competitors.  Compared to any of the other devices mentioned here, its text looks pixelated and less crisp, as you can see in this comparison from [Ars Technica's Nexus 7 review][arsnexus].
 
-![Comparing the text](/content/images/2014/Jun/textcomp.jpg)
+![Comparing the text](/posts/images/textcomp.jpg)
 
 For many uses this is not a big deal, but when reading longform text, I find that the display resolution really makes a difference in how long I'm able to read comfortably.  When I looked at the Mini in my local Apple store, iBooks' text was significantly less crisp than it was on the other devices.  Combined with the extra cost relative to a Kindle or Nexus 7, it becomes difficult to justify recommending an iPad Mini as a reading-focused device.
 

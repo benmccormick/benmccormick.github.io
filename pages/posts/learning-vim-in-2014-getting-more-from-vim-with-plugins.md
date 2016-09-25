@@ -6,7 +6,7 @@ path: "/2014/07/21/learning-vim-in-2014-getting-more-from-vim-with-plugins"
 ---
 
 It's impossible to design a tool that fits everyone's workflow perfectly.  No matter how many cases you hit, somebody will want to do something you don't support, will find your solution for their problem confusing, or they'll try to use your tool in a way you never imagined. Vim tries to deal with situations like that in 2 ways.  First by making it easy to [configure][configpost], and second by making it easy to extend.  Extending Vim happens through plugins. <span class="aside">
-![xkcd workflow](/content/images/2014/Jul/xkcdworkflow.png)
+![xkcd workflow](/posts/images/xkcdworkflow.png)
 </span>
 Vim plugins allow you to enhance, change, or add to Vim's existing behaviors.  They're a powerful tool, and a key part of what has helped Vim remain relevant for 23 years, even as the computing world has changed dramatically around it.  They allow Vim to support languages that didn't exist the last time its core was updated, handle niche use cases that would never get solutions in the main Vim distribution, and also allow for powerful new features that benefit all users.
 
@@ -51,7 +51,7 @@ Another interesting class of Vim plugins are plugins that extend Vim's existing 
 
 - [vim-text-obj-user][txtobj] is an interesting project to make it easy to create plugins that define custom text objects which then can be used with Vim commands like any other text object.  If that sounds scary to you, you can also take a look at the [list][toplugins] of plugins already built with the project, and use any that will be useful to you.
 
-![Vim side by side styles](/content/images/2014/Jul/vimvisuals.png)
+![Vim side by side styles](/posts/images/vimvisuals.png)
 
 #### Help Vim Look Good
 

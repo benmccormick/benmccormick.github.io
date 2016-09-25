@@ -16,7 +16,7 @@ I'll start by standing up for the much maligned vanilla ES5 JavaScript syntax.  
 So what type of advantages can alternatives offer?  The different syntaxes I go through below all provide different strengths, but one mostly shared strength is that they allow you to start using some features of the newest version of JavaScript, EcmaScript 6.  ES6 brings a bunch of new features that make common development patterns easier, and looks to be a great improvement to the language.  By allowing you to take advantage of those features now, alternative syntaxes can speed up development and ease the transition into the new version of the language.  To get an idea of the more specific benefits an alternate syntax can bring, I'm going to go through 4 of the most popular syntaxes and explain why somebody would want to use them.
 
 
-![coffeescript logo](/content/images/2014/11/logo.png)
+![coffeescript logo](/posts/images/logo.png)
 
 CoffeeScript was the first alternative JavaScript syntax to gain popularity, and it is also one of the biggest breaks from the normal syntax.  Rewriting a simple Backbone view from the [TodoMVC project][todomvc] in CoffeeScript would look something like this.
 
@@ -24,7 +24,7 @@ CoffeeScript was the first alternative JavaScript syntax to gain popularity, and
 class AppView extends Backbone.View
     el: '#todoapp'
     statsTemplate: _.template $('#stats-template').html()
-    events: 
+    events:
         'keypress #new-todo': 'createOnEnter'
         'click #clear-completed': 'clearCompleted'
         'click #toggle-all': 'toggleAllComplete'
@@ -61,7 +61,7 @@ class AppView extends Backbone.View
                 .removeClass 'selected'
                 .filter "[href=\"#/#{filter}\"]"
                 .addClass 'selected'
-        else 
+        else
             @$main.hide()
             @$footer.hide()
 
@@ -79,7 +79,7 @@ class AppView extends Backbone.View
    # ... and so on
 ```
 
-As you can see, Coffeescript uses Ruby and Python style significant whitespace, which gives it a very different feel than JavaScript.  But it retains the language's structure, giving it a low learning curve.  All of CoffeeScript's built in structures compile down to ES3-compatible code, so anything you write in CoffeeScript will work in any modern JavaScript environment as long as you don't use any incompatible APIs. 
+As you can see, Coffeescript uses Ruby and Python style significant whitespace, which gives it a very different feel than JavaScript.  But it retains the language's structure, giving it a low learning curve.  All of CoffeeScript's built in structures compile down to ES3-compatible code, so anything you write in CoffeeScript will work in any modern JavaScript environment as long as you don't use any incompatible APIs.
 
 Coffeescript gives you plenty of niceties to help you write faster and more succinct code.  In general it's focused on taking common patterns and finding a short succinct way of representing them.  It removes some of the boilerplate from JavaScript code by replacing `function(){}` and `this.` with `() ->` and `@` respectively.  It's a small change, but giving these common patterns easily recognizable shorthand saves plenty of characters across a code base.  These aren't the only shorthands.  For instance it provides destructuring and string interpolation capabilities, allowing you to do things like this.
 
@@ -100,9 +100,9 @@ In terms of tooling, CoffeeScript has been around a while, and has built up a go
 
 
 
-![TypeScript logo](/content/images/2014/11/CRS-56479.png)
+![TypeScript logo](/posts/images/CRS-56479.png)
 
-TypeScript is a language created by Microsoft to provide static type checking for JavaScript.  It allows you to annotate variables with types, then validates your code when it's compiled into JavaScript. The benefits are pretty obvious.  Type checking forces you to think about the values that will get passed into functions and help you catch bad logic at compile time rather than runtime.   Static types also allow for smart intellisense-style completion.  As a Microsoft creation, this is fully supported in Visual Studio, but it's also available in other IDES like WebStorm, and there's some support for making it work in text editors like Vim and Sublime Text as well. 
+TypeScript is a language created by Microsoft to provide static type checking for JavaScript.  It allows you to annotate variables with types, then validates your code when it's compiled into JavaScript. The benefits are pretty obvious.  Type checking forces you to think about the values that will get passed into functions and help you catch bad logic at compile time rather than runtime.   Static types also allow for smart intellisense-style completion.  As a Microsoft creation, this is fully supported in Visual Studio, but it's also available in other IDES like WebStorm, and there's some support for making it work in text editors like Vim and Sublime Text as well.
 
 Although TypeScript is primarily about types, it also provides some other niceties that fit with it's theme of tools for building large JavaScript applications.  It provides classes that matches JavaScript's ES6 class syntax, and modules that can compile down to AMD or CommonJS format.  You also can use ES6 lambda functions.
 
@@ -129,7 +129,7 @@ TypeScript was obviously built to be tool friendly, and if you're using an IDE l
 
 
 
-![Sweet.js logo](/content/images/2014/11/sweetjs-35aabaff7e0dd24e.png)
+![Sweet.js logo](/posts/images/sweetjs-35aabaff7e0dd24e.png)
 
 Sweet.js is a very different animal than the other syntaxes I'm covering here.  Strictly speaking it's not an alternative syntax at all.  It's a toolkit to building your own your own alternate syntax.  You do that by defining *macros*, which the compiler then loads and uses to transform your code.  For instance the example from [their website][sweetjs] shows how you can define ES6 style classes in your code.
 
@@ -170,14 +170,14 @@ bob.say("Macros are sweet!");
 
 ```
 
-Sweet.js basically removes limits in terms of what your JavaScript syntax looks like.  If you can programatically define a syntax, you can use it.  And because Sweet.js macros are hygienic you can have confidence that you can use them without side effects.  This means that you can wipe away boilerplate, hiding it behind a new operator or keyword.  The modular nature of macros is also a big plus.  Rather than being locked into a syntax and set of capabilities <sup id="fnref:2">[2](#fn:2)</sup>, using macros allows you to mix and match the syntax you need.  
+Sweet.js basically removes limits in terms of what your JavaScript syntax looks like.  If you can programatically define a syntax, you can use it.  And because Sweet.js macros are hygienic you can have confidence that you can use them without side effects.  This means that you can wipe away boilerplate, hiding it behind a new operator or keyword.  The modular nature of macros is also a big plus.  Rather than being locked into a syntax and set of capabilities <sup id="fnref:2">[2](#fn:2)</sup>, using macros allows you to mix and match the syntax you need.
 
-Relative to the other languages on this list though, Sweet.js lacks a lot of the benefits of a community standard. Any macros you write will only be documented to the extent you document them, and while you can run linting tools on the output, pretty much any other tooling out there, including basic stuff like syntax highlighting, is likely to be unable to parse the non-standard syntax created by macros. 
+Relative to the other languages on this list though, Sweet.js lacks a lot of the benefits of a community standard. Any macros you write will only be documented to the extent you document them, and while you can run linting tools on the output, pretty much any other tooling out there, including basic stuff like syntax highlighting, is likely to be unable to parse the non-standard syntax created by macros.
 
 **Why use Sweet.js:** You want your JavaScript syntax to work in a very specific way, and none of the existing options appeal to you, or you find yourself writing a lot of repetitive boilerplate that you can remove with a syntax change.
 
 
-![Traceur logo](/content/images/2014/11/68747470733a2f2f676f6f676c652e6769746875622e636f6d2f747261636575722d636f6d70696c65722f6c6f676f2f74632e737667.svg)
+![Traceur logo](/posts/images/68747470733a2f2f676f6f676c652e6769746875622e636f6d2f747261636575722d636f6d70696c65722f6c6f676f2f74632e737667.svg)
 
 The last alternate syntax that I'm going to be going in depth on is a bit different, because it's technically just JavaScript syntax.  But it's a form of JavaScript syntax that's not supported everywhere yet.  [Traceur][traceur] is a project by Google that allows you to write code that's valid in EcmaScript 6, and transpile it down into browser-compatible ES5 JavaScript.  Effectively it's tomorrow's JavaScript a bit early.  This has some obvious advantages.  First, it will eventually obsolete the compile step as all of the features of ES6 will be supported in browsers someday, and the changing world of browser release policies seem likely to make that sooner than you might expect.  Secondly, tools and other support around ES6 is shaping up nicely, and it's guaranteed to get better, because this is just JavaScript.  It's the future of the web platform.
 
@@ -189,17 +189,14 @@ The case against using Traceur?  Besides the repeated themes of weaker tooling a
 
 ### Other Options
 
-I chose to highlight the 4 syntaxes above because they're the most popular general purpose alternate syntaxes for JavaScript.  But there are a few others worth mentioning here, for the sake of completeness if nothing else. 
+I chose to highlight the 4 syntaxes above because they're the most popular general purpose alternate syntaxes for JavaScript.  But there are a few others worth mentioning here, for the sake of completeness if nothing else.
 
 [JSX][jsx] is seemingly becoming quite popular as an extension to the JavaScript syntax, but I chose not to highlight it here because it is currently so tightly knit to [React][react].  While it is [technically possible][jsxnoreact] to use JSX for things other than React apps, in practice JSX has a limited enough scope <sup id="fnref:3">[3](#fn:3)</sup> that there's no real motivation to do so.  If you're building a React application though, JSX is certainly worth exploring, as is the next syntax.
 
 
-[Flow][flow] is a new JavaScript syntax created by Facebook that uses the same type annotations as TypeScript, but does so in a way that aims to provide better type inference as well as supporting JSX.  I'm very interested to see where it goes, but for now it's still early days as it was only announced [last week][flowannounce].  
+[Flow][flow] is a new JavaScript syntax created by Facebook that uses the same type annotations as TypeScript, but does so in a way that aims to provide better type inference as well as supporting JSX.  I'm very interested to see where it goes, but for now it's still early days as it was only announced [last week][flowannounce].
 
 [AtScript][atscript] also uses TypeScript's type annotations, is mostly tied to a single framework, and in terms of public usage doesn't really even exist yet <sup id="fnref:4">[4](#fn:4)</sup>.  So why is it worth a mention?  Because it is the syntax that AngularJS 2.0 is being developed in, and will be the first class "recommended syntax" for that framework when it is released next year.  Since Angular is currently the [most popular][angularpopular] JavaScript MV* framework, that carries some weight and makes AtScript worth tracking, especially for Angular developers. But in today's world it's not a real contender to be used in a project.
-
-<script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&tz&q=AngularJS,+BackboneJS,+KnockoutJS,+EmberJS,+ReactJS&date=1/2012+35m&cmpt=q&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=500&h=330"></script>
-
 
 ### Decisions
 
@@ -233,7 +230,7 @@ Thanks for taking the time to read this post! JavaScript development is one of t
 <ol>
     <li class="footnote" id="fn:0">
         <p>
-        <a href="http://en.wikipedia.org/wiki/ECMAScript">EcmaScript</a> is the "official" name for the JavaScript language as described in its specification.  EcmaScript 5 was the most recent finalized spec, published in December 2009. In practice though, JavaScript environements are never strict implementations of a specific spec.  Instead they gradually bring in features over time alongside the standards process.    
+        <a href="http://en.wikipedia.org/wiki/ECMAScript">EcmaScript</a> is the "official" name for the JavaScript language as described in its specification.  EcmaScript 5 was the most recent finalized spec, published in December 2009. In practice though, JavaScript environements are never strict implementations of a specific spec.  Instead they gradually bring in features over time alongside the standards process.
         </p>
         <a href="#fnref:0" title="return to article"> ↩</a></p>
     </li>
@@ -245,13 +242,13 @@ Thanks for taking the time to read this post! JavaScript development is one of t
     </li>
     <li class="footnote" id="fn:2">
         <p>
-        For instance it's taken CoffeeScript a looong time to implement support for generators.    
+        For instance it's taken CoffeeScript a looong time to implement support for generators.
         </p>
         <a href="#fnref:2" title="return to article"> ↩</a></p>
     </li>
     <li class="footnote" id="fn:3">
         <p>
-        Effectively all JSX does is allow for a convenient representation of the DOM within JavaScript.  While this is very important for React, and may be useful in some other cases, it does not provide the level of general purpose value of any of the other syntaxes mentioned in this article.    
+        Effectively all JSX does is allow for a convenient representation of the DOM within JavaScript.  While this is very important for React, and may be useful in some other cases, it does not provide the level of general purpose value of any of the other syntaxes mentioned in this article.
         </p>
         <a href="#fnref:3" title="return to article"> ↩</a></p>
     </li>
@@ -290,4 +287,3 @@ Thanks for taking the time to read this post! JavaScript development is one of t
 [largeko]: http://vimeo.com/97519516
 [jstypes]:http://www.2ality.com/2014/10/typed-javascript.html
 [todomvc]:http://todomvc.com/
-

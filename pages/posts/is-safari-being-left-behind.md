@@ -8,9 +8,8 @@ path: "/2015/06/10/is-safari-being-left-behind"
 On Twitter yesterday, [Alex Sexton][sexton] surfaced Apple's fact sheet on what's new with Safari 9:
 
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://t.co/fVg9U9dEq4">https://t.co/fVg9U9dEq4</a>&#10;&#10;Some ES6 and lots of unprefixed CSS (flexbox!), but I really want Intl, ServiceWorkers, PointerEvents, HTTP2, CSP2…</p>&mdash; Alex Sexton (@SlexAxton) <a href="https://twitter.com/SlexAxton/status/608017541173284864">June 8, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Safari 9 is still in developer preview and won't ship till September or so, so this all could change, but Apple's changelog is underwhelming to say the least.   The developer facing changes in Safari 9 consist of only standardized versions of CSS properties (that were already supported with a prefix), and a handful of ES6 features.  
+Safari 9 is still in developer preview and won't ship till September or so, so this all could change, but Apple's changelog is underwhelming to say the least.   The developer facing changes in Safari 9 consist of only standardized versions of CSS properties (that were already supported with a prefix), and a handful of ES6 features.
 
 > The following ECMAScript 6 content is now supported by Safari:
 >
@@ -34,7 +33,7 @@ While it's great to see ES6 support, the truth is that by the time Safari is rel
 }
 </style>
 
-![safari?](/content/images/2015/06/safari-question-1.png)
+![safari?](/posts/images/safari-question-1.png)
 
 So does this mean that Safari is the next IE6?  Not so much.  We've come a long way since the IE6 era, and browsers are more standards compliant than ever.  Tools like [Babel][babel] make it easier for developers to participate in the future of the web without being restricted by slow moving browsers or legacy support concerns.   But there's always going to be some browser that serves as the "bottleneck" for what web developers are able to reasonably use in production.  Currently that is older versions of Internet Explorer and old Android browsers.  But as more and more users upgrade to Android phones using Chrome, and Microsoft makes strong pushes to move users to the [evergreen][evergreen] Edge browser, it's quite likely that Safari could take their place.  It is now the only major browser being updated yearly, and with Microsoft's recent re-emphasis on JavaScript and HTML development, Apple is the only major browser vendor who seems to view the web as a second class platform.
 
@@ -62,4 +61,3 @@ Thanks for taking the time to read this post!  Web development is one of the mai
 [sexton]: https://alexsexton.com/
 [edge]: http://blogs.windows.com/msedgedev/2015/05/12/javascript-moves-forward-in-microsoft-edge-with-ecmascript-6-and-beyond/
 [compat]: http://kangax.github.io/compat-table/es6/
-

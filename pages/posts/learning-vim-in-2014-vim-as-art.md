@@ -45,7 +45,7 @@ The dot command is a nice solution.  If we start on the first occurence of `widg
 
 Of course it would still be a pain to navigate between each widget with hjkl.  Fortunately, Vim has more commands that allow us to avoid unecessary work.  If we start on one instance of `widget`, we can use `*` to search for all occurences of that word.  We can then use `n` to move from occurence to occurence. If we overshoot and go too far, we can use `N` to go backwards.  So if we start with `*` (shift+8 in the gif below) and then use ciw to replace the word, we can then use `n` and `.` to clean up the other widgets in only 5 keystrokes. 
 
-![vim gif](/content/images/2014/Jul/vimdotcommand.gif)
+![vim gif](/posts/images/vimdotcommand.gif)
 
 #### The Vim Way
 

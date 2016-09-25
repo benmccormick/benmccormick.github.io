@@ -15,17 +15,17 @@ Ack performs a subset of grep's functionality, optimizing for the programmer's u
 
 Ack then spits out nicely formatted output with the full file paths and line numbers of each occurence. For instance here is the output of searching the directory containing my blog posts for references to Microsoft.
 
-![ack usage example](/content/images/2014/Jun/ack_msft.png)
+![ack usage example](/posts/images/ack_msft.png)
 
 These are very simple examples.  Because of ack's sensible defaults and focused design, these basic commands cover about 80% of what I'm looking for from a code search tool. But for those who want to do a bit more, ack can be much more powerful.  Because ack is written in perl, any perl-compatible regular expression can be used to search your files.  Ack provides plenty of options for formatting the output and it's also very easy to filter by filetype.
 
 For instance, I have a small side project where I'm creating an event signup site with the front end code written in CoffeeScript.  If I want to see which files I've referenced events in without necessarily seeing all the details, I can use the `-l` flag to only show file names.
 
-![filenames only](/content/images/2014/Jun/ack_signup.png)
+![filenames only](/posts/images/ack_signup.png)
 
 Obviously this search brings up several types of files. Along with the CoffeeScript files I'm interested in, ack shows some html and css files, as well as a random server side file.  It also shows the generated JavaScript files.  I could get rid of these files by specifying a different root directory, but instead I'm going to show ack's  smart filtering by filetype.  To search only coffeescript files, I just need to add the `--coffee` flag to see all CoffeeScript matches.
 
-![ack filetype filtering](/content/images/2014/Jun/ack_event.png)
+![ack filetype filtering](/posts/images/ack_event.png)
 
 Its also easy to add multiple filetype flags in order to search several filetypes, and you can even define custom filetype flags with an .ackrc file.  These also let you specify default options and set certain directories to be ignored on a global or per-project basis.
 

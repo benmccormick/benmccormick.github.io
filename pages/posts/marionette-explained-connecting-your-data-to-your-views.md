@@ -11,7 +11,7 @@ One of the most interesting design choices of [Backbone][backbone] was the decis
 
 ### Rendering and Data-Binding in Marionette
 
-![rendering diagram](/content/images/2014/12/renderpattern-3.png)
+![rendering diagram](/posts/images/renderpattern-3.png)
 
 Marionette.JS handles rendering in a way that is similar to the [Model-View-ViewModel][mvvm] pattern that developers who have used KnockoutJS or Durandal will be familiar with <sup id="fnref:1">[1](#fn:1)</sup>. Marionette implements its render cycle through 2 primary methods available in all of its base View classes.  The first is `serializeData`. serializeData is a function that produces what is essentially a `ViewModel` in the sense of an MVVM application. It takes your data (a Backbone Model or Collection), and pulls it into a simplified form that a View can easily render.  By default Marionette will simply call the Model or Collection's `toJSON` function to serialize the Backbone object down into a simple JavaScript object.  But it's possible to override serializeData to provide more complicated logic.  For instance here's an example from the [Marionette TodoMVC project][marionettetodo] that takes a collection of todos and calculates a few values to show the number of completed todos.
 
