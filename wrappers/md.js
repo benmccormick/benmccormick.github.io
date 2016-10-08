@@ -11,6 +11,7 @@ import TwitterWidgetsLoader from 'twitter-widgets';
 import '../css/zenburn.css'
 import '../css/typography.css'
 import '../css/images.css'
+import '../css/mailchimp.css'
 
 class MarkdownWrapper extends React.Component {
 

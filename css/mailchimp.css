@@ -1,0 +1,26 @@
+.mc-field-group {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.mc-field-group input {
+  border-radius: 3px;
+  min-width: 250px;
+  border: 1px solid #CCC;
+}
+
+#mc-embedded-subscribe {
+  color: white;
+  background: #57A3E8;
+  border-radius: 4px;
+  border: 0px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#mc-embedded-subscribe:hover {
+  background: #3E8ACF;
+}

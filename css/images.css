@@ -3,3 +3,9 @@
    float:right;
    margin:10px;
 }
+
+.article-body img {
+    max-height: 200px;
+    display: block;
+    margin: 40px auto 20px auto;
+}
