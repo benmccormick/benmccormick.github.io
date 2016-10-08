@@ -29,7 +29,7 @@ Before you start installing plugins, it's worth thinking about what you need fro
 
 File management plugins are some of the most important plugins you can use with Vim.  Vim's built-in file management is pretty weak in some ways compared to editors like Sublime Text and TextMate.  Plugins can fill that gap.  The plugins listed below show several approaches to file management.  There's plenty of overlap in functionality here, but they're all worth trying to see which ones fit your style.
 
-- [CtrlP][ctrlp] is probably my most used Vim plugin.  It provides fuzzy finding capabilities for Vim, to allow you to search for files in a similar way to Sublime Text's "Go To Anything" bar. 
+- [CtrlP][ctrlp] is probably my most used Vim plugin.  It provides fuzzy finding capabilities for Vim, to allow you to search for files in a similar way to Sublime Text's "Go To Anything" bar.
 
 - [Ack.vim][ackvim] and [Ag.vim][agvim] are plugins to connect Vim with Ack and Ag respectively.  If you're not using one of these tools for code search, you [really should be][ackarticle].  They're much faster than grep or an IDE's built in search.  These plugins provide seamless integration for each within Vim, allowing you to easily jump to the code you're searching on, opening new tabs or splits if you like.
 
@@ -71,7 +71,7 @@ Vim is not an IDE.  By default it doesn't understand much about code, and very l
 
 - [Syntastic][syntastic] is a syntax checking plugin for Vim that integrates with external syntax checkers to provide in-editor feedback on your code as you make changes.  For instance, it can integrate with jshint, llvm or javac to provide immediate feedback on a file.
 
-- [YouCompleteMe][ycm] is a code completion engine for Vim that builds on Vim's built in autocomplete features to offer "smart completion" for as many situations as possible.  It can integrate with Clang, Jedi, Omnisharp, and Vim's omnicompletion in order to bring smart autocomplete to a variety of languages. 
+- [YouCompleteMe][ycm] is a code completion engine for Vim that builds on Vim's built in autocomplete features to offer "smart completion" for as many situations as possible.  It can integrate with Clang, Jedi, Omnisharp, and Vim's omnicompletion in order to bring smart autocomplete to a variety of languages.
 
 - [Fugitive][fugitive] and [Git-gutter][gitgutter] are 2 plugins that bring Git integration into Vim.  Fugitive provides a wrapper around the Git executable to allow you to easily manage your git actions from within Vim. GitGutter focuses on individual files and lets you see where you've made uncommited modifications in the current file.  They complement each other well, and are both very useful for heavy Git users.
 
@@ -85,7 +85,7 @@ Some plugins exist to provide tighter integration between Vim and external progr
 
 - [Tmux Navigator][tmuxnav] is a must have plugin for [Tmux][tmux] users.  It allows you to easily move between tmux and Vim splits using a single set of keyboard mappings.  It lets Vim and tmux work together in a completely natural way, without the user having to keep track of where one ends and the other begins.  
 
-- [Dash.vim][dash] is an OSX only plugin that provides integration with Dash.app, a documentation manager app for OSX, making it easy to look up library method definitions from within Vim. 
+- [Dash.vim][dash] is an OSX only plugin that provides integration with Dash.app, a documentation manager app for OSX, making it easy to look up library method definitions from within Vim.
 
 #### Grant Vim Superpowers
 
@@ -111,14 +111,6 @@ The last category of plugins are scripts that allow Vim to do things that are to
 
 This was the sixth (and longest) entry in a series of posts on learning Vim in a modern way.  If you made it all the way down here, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). Also check out the [next post](http://benmccormick.org/2014/07/28/learning-vim-in-2014-copy-and-paste-the-vim-way/) in the series, covering Vim's copy and paste functionality.
 
-<style>
-.aside img {
-  width:30%;
-  float:right;
-  margin: 0 10px 10px 25px;
-  padding-top:10px;
-}
-</style>
 
 [configpost]:http://benmccormick.org/2014/07/14/learning-vim-in-2014-configuring-vim/
 [vim2014]: http://benmccormick.org/tag/learning-vim-in-2014/

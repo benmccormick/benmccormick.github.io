@@ -9,15 +9,6 @@ path: "/2015/11/30/es6-patterns-clean-higher-order-functions"
 I've been writing code using the new features defined in the ECMAScript 2015 version of JavaScript (<a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">more commonly known as ES6</a>) since January.  Throughout the year I've seen myself start using a few new patterns that I think make my code better.  I'm going to share them here with a few quick hitter articles, starting with a simpler way of writing higher order functions
 </div>
 
-<style>
-.explanation {
-padding: 10px;
-background: #eee;
-border-radius: 10px;
-margin: 20px auto;
-font-size: .85em;
-}
-</style>
 
 A higher order function is a function that either
 
@@ -36,7 +27,7 @@ function getCommentFromUser(userId) {
     return {
         user: userId,
         comments:commentList.filter(function (comment) {
-            return comment.user === userId 
+            return comment.user === userId
         },
     };
 }
@@ -60,7 +51,7 @@ function getCommentFromUser (comments)
         return {
             user: userId,
             comments: comments.filter(function (comment) {
-                return comment.user === userId 
+                return comment.user === userId
             },
         };
     }
@@ -110,4 +101,3 @@ Thanks for taking the time to read this post!  JavaScript development is one of 
 [esversions]: http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/
 [allonge]: https://leanpub.com/javascriptallongesix
 [2ality]: http://www.2ality.com/2012/04/arrow-functions.html
-

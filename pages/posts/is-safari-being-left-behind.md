@@ -25,13 +25,6 @@ Safari 9 is still in developer preview and won't ship till September or so, so t
 
 While it's great to see ES6 support, the truth is that by the time Safari is released in the fall, [Microsoft Edge][edge] will have been released, and Safari 9 will release as (at best) the [3rd most ES6-compliant browser][compat] among the 4 major desktop browsers.  And due to its yearly schedule, it's basically guaranteed to be in last by the end of the year.  At the same time Safari has neglected other APIs like Internationalization, Pointer Events, Web Components, CSS Variables, Service Workers, or ASM.js optimizations, all of which are supported or in progress by each of the other browsers <sup id="fnref:1">[1](#fn:1)</sup>.  In addition, Safari's developer tools, which were once best in class, have been slowly falling behind Chrome and Firefox, especially in more advanced performance features.
 
-<style>
-.post-body img {
-  width: 200px;
-  float: right;
-  padding: 50px;
-}
-</style>
 
 ![safari?](/posts/images/safari-question-1.png)
 

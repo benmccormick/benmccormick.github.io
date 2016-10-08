@@ -18,13 +18,17 @@
     "twitter-widgets": "^1.0.0",
     "typography": "^0.13.0",
     "typography-theme-wordpress-2016": "^0.13.0",
-    "underscore.string": "^3.2.3"
+    "underscore.string": "^3.2.3",
+    "front-matter": "^2.0.6",
+    "highlight.js": "^9.2.0",
+    "markdown-it": "^8.0.0",
+    "markdown-it-attrs": "^0.7.1",
+    "markdown-it-footnote": "^3.0.1"
   },
   "devDependencies": {
     "feed": "^0.3.0",
     "front-matter": "^2.1.0",
-    "gh-pages": "^0.11.0",
-    "markdown-it": "^8.0.0"
+    "gh-pages": "^0.11.0"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [

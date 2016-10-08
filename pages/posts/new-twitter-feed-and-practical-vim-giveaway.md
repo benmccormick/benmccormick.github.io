@@ -13,13 +13,6 @@ The new feed, [@benmccormickorg][twit], will be a Twitter "RSS Feed" with all of
 
 <a href="https://twitter.com/benmccormickorg" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @benmccormickorg</a>
 
-<style>
- .post-body img {
- 	height: 300px;
-   	float:right;
-    margin:20px 10px 30px 30px;
- }
-</style>
 
 ### Practical Vim Giveaway
 

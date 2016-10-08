@@ -9,13 +9,6 @@ Can we be honest for a moment?  Figuring out a career path is hard for software 
 
 ![Talking with Tech Leads Cover](/posts/images/twtl.png)
 
-<style>
-.post-body img {
-  width: 250px;
-  float: right;
-  padding: 50px;
-}
-</style>
 I'm not that cynical, and hopefully not that dramatic, but as a relatively young developer it's been hard to figure out what I want from a career and harder still to know exactly what different options would look like if I got there.  I know that I love technology; at the same time I want to have real influence on the things that I'm building, and in most places it's the product and people challenges that ultimately determine whether software projects succeed or fail, rather than the pure technical ones.  So what does it look like to build a career leading across these different areas? That's the question that [Talking with Tech Leads][twtl] tries to answer.
 
 Talking with Tech Leads is an eBook about what it's like to pursue a middle path between the two sides of the false dichotomy above.  It's structured as a series of interviews with "Tech Leads", which the author defines as [a developer leading a development team][techleaddef].  Each interview shares a series of questions, as well as an open space for interviewees to share more freeform thoughts and advice.

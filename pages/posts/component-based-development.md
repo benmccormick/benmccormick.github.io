@@ -9,14 +9,6 @@ If you look back at the history of JavaScript and the client-side web as a devel
 
 ![JavaScript timeline](/posts/images/timeline.png)
 
-<style>
-.post-body img{
-display: inline-block;
-float: right;
-max-width: 250px;
-margin: 10px 10px 5px 10px;
-}
-</style>
 
 JavaScript's growth started with its adoption as the lingua franca of the web when it shipped with Netscape and Internet Explorer in the 90s.  The introduction of Ajax and asynchronous data exchange in the mid-aughts was another sea change, bringing the potential for truly responsive web applications like Gmail for the first time.  [jQuery][jquery]'s introduction in 2006 dramatically reduced the pain involved in cross-browser development for rich applications. And the last 5 years have brought 2 more major changes with [Node.JS][node] and a [raft of MVC frameworks][mvc].  NodeJS is a server-side technology, but it has spurred a huge standardization and improvement in tooling for the web platform. That, along with great work by browser vendors on their developer tools, has led to drastically easier workflows for front end developers.  At the same time, frameworks like BackboneJS, AngularJS and EmberJS have brought architecture concepts to the client-side and made a new type of "Single Page App" possible and easy to build.
 
@@ -29,7 +21,7 @@ Those 5 shifts, along with other significant events like Google's creation of Ch
 
 The heart of the component based development movement is a desire to provide greater code reusability and abstraction by bundling functionality into small composable components.  JavaScript applications started as monoliths.  The language doesn't provide private attributes by default, and applications were initially mostly small, so everything lived in the global scope.  As applications have become more complex, this has changed, first with namespacing, then with the module pattern, and again with module loaders like requireJS and Browserify.  The features mapped out by the Web Components standard will build on this trend.  Component based development in general is the natural conclusion of the march to modularity.  Components are intended to be "black box" building materials.  They have an API, but the developer doesn't need to know about the internals, and ideally can't take advantage of that knowledge regardless.
 
-Talking about this type of abstraction is nothing new.  Whether you're using the module pattern or Backbone Views, it's always been a best practice to keep internal implementations hidden.  But web components in particular give this more teeth, by discouraging external CSS and Javascript from accessing the internal dom tree of the element. Other implementations can't rely on that native split yet, but they similarly promote a declarative style that discourages tightly coupled micro-managing code. 
+Talking about this type of abstraction is nothing new.  Whether you're using the module pattern or Backbone Views, it's always been a best practice to keep internal implementations hidden.  But web components in particular give this more teeth, by discouraging external CSS and Javascript from accessing the internal dom tree of the element. Other implementations can't rely on that native split yet, but they similarly promote a declarative style that discourages tightly coupled micro-managing code.
 
 Components also have the potential to provide greater readability.  Compare Google Map's current *Hello World* example, with a web component powered alternative:
 
@@ -82,7 +74,7 @@ Quite a readability difference right?  Of course all of that Javascript and CSS 
 In the end this is just another way of managing complexity.  There is unavoidable complexity associated with connecting to the Google Maps API and styling the map appropriately.  But when that complexity sits inside an element, it reduces the cognitive load of looking at HTML. That allows you to focus on the semantic meanings of element and the document structure. This kind of clarity is much nicer than our current status quo of searching  through a Javascript modified "div soup" to figure out how our generated DOM is structured.  With current MVC frameworks the HTML may tell you nothing about the final DOM without going through several Javascript files.  The transparency of components is a reclamation of one of the Web's original central advantages: a semantic markup language that was both human and machine readable.  The tension between the needs of web "documents" and "applications" has slowly eroded the Web's declarative foundations, but component implementations do their best to embrace it.
 
 
-### So Why Should I Care? 
+### So Why Should I Care?
 
 Did that introduction excite you?  Or are you sitting there yawning?  You may think this is solving problems you don't have. You also might be the guy still supporting IE8, who can't even contemplate worrying about "Web Standards" if they aren't even supported in IE11.  If that's you, it's still worth following this movement, even if you're not coding like this just yet on your current projects.
 
@@ -115,7 +107,7 @@ For anyone invested in the Web Platform, it's time to be informed. Regardless of
 
 ### Subscribe
 
-This was the first entry in a series of posts on component based development.  If you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). 
+This was the first entry in a series of posts on component based development.  If you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon).
 
 [githubstats]:http://adambard.com/blog/top-github-languages-for-2013-so-far/
 [jsorigin]: http://www.computer.org/csdl/mags/co/2012/02/mco2012020007.html
@@ -129,4 +121,3 @@ This was the first entry in a series of posts on component based development.  I
 [jquery]: http://jquery.com/
 [node]: http://nodejs.org/
 [spec]: http://www.w3.org/standards/techs/components#w3c_all
-

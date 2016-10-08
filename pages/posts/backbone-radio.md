@@ -82,18 +82,18 @@ var inboxChannel = Radio.channel('inbox');
 var ContactView = Mn.ItemView.extend({
 
     template: '#contact-template',
-    
+
     initialize: function() {
         this.listenTo(inboxChannel, 'show:email', this.showContact);
         this.listenTo(inboxChannel, 'show:inbox', this.showAd);
     },
 
     showContact: function(emailObject) {
-        //show the contact for the emailObject 
+        //show the contact for the emailObject
     },
 
     showAd: function() {
-        //when we don't have a contact to show, show an ad instead 
+        //when we don't have a contact to show, show an ad instead
     }
 
 });
@@ -158,7 +158,7 @@ In the meantime, though, it's easy to replace Wreqr with Radio.  You can simply 
   }
 }(this, function(Marionette, Radio, _) {
   'use strict';
- 
+
   Marionette.Application.prototype._initChannel = function () {
     this.channelName = _.result(this, 'channelName') || 'global';
     this.channel = _.result(this, 'channel') || Radio.channel(this.channelName);
@@ -178,15 +178,6 @@ It's also worth pointing out that Radio has no direct dependency on Marionette, 
 
 Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out the rest of my [series on Marionette][marionetteexplained].
 
-<style>
-.post-body img {
-  max-width:50%;
-  padding:10px;
-  display:block;
-  margin-top:30px;
-}
-</style>
-
 [marionette]: http://marionettejs.com/
 [marionetteexplained]: http://benmccormick.org/marionette-explained/
 [loosecoupling]:http://en.wikipedia.org/wiki/Loose_coupling
@@ -194,4 +185,3 @@ Thanks for taking the time to read this post!  JavaScript development is one of 
 [radioshim]:https://gist.github.com/thejameskyle/48afb443b8c8c6ee4f46
 [mighty]: https://www.youtube.com/watch?v=rWz8OoVuDls
 [radio]: https://github.com/marionettejs/backbone.radio
-

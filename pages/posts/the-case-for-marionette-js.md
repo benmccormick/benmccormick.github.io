@@ -26,7 +26,7 @@ But the site fails to follow through on explaining the values or philosophy that
 
 Developing with Backbone is an exercise in decision making.  Backbone provides you with a minimalist set of Models and Collections that essentially serve as light wrappers around JavaScript objects synced over Ajax. It provides you lightweight Views that associate an object with a DOM node and some data.  It provides a router that associates URLs with function, and it provides helpers for managing events between all of these options.  That leaves Backbone developers with many questions to answer.
 
-- **How do you render Views?** - By default, Backbone's render method does nothing. To use it, you need to fill in your own rendering function.  That could use a templating system like Underscore templates or Handlebars, jQuery manipulation of the DOM, or simple string inserts with `.innerHTML()`.  You could use the same method for every View, or mix it up and use different methods for different Views. 
+- **How do you render Views?** - By default, Backbone's render method does nothing. To use it, you need to fill in your own rendering function.  That could use a templating system like Underscore templates or Handlebars, jQuery manipulation of the DOM, or simple string inserts with `.innerHTML()`.  You could use the same method for every View, or mix it up and use different methods for different Views.
 - **How do you manage relationships between objects?** - By default Backbone provides a way to manage sets of Models as a Collection, but it doesn't have any built-in utilities for handling nested Models or Collections.  And if you want to nest your Views you're completely on your own.  You can have a View manage it's child Views, have a single object that manages all Views, or let each View manage itself.
 - **How do your Views communicate between each other?** - Views will often need to communicate with each other.  If for instance one View needs to change the contents of another area of the page, it could do so directly through jQuery, could get a direct reference to a View managing that area and call a function on it, change a Model that another View listens to, adjust a URL that a router listens to, or fire an event that another View could respond to. Apps can use some combination of all of these methods.
 - **How do you avoid repeating yourself?** - If you're not careful, Backbone can involve a lot of boilerplate.  Taking the naive approach, you could end up writing rendering code, View management code and event management code over and over again in every View.  If you try to get around that using inheritance, you can end up with brittle designs that require you to make calls down to a Views prototype when you want View specific code.  Avoiding that type of repetition and the maintenance overhead it brings is a challenge.
@@ -41,7 +41,7 @@ That's just a small sample of the type of decision making that you have to make 
 Marionette is an attempt to provide this type of shared solution, capturing Backbone best practices as a set of components and design patterns.  So what value does it provide?  Marionette gives you:
 
 - **A Standardized Rendering process** - Marionette takes an opinionated stand on how Views should be rendered.  Without any additional configuration, it will take a template that you specify with a View's template property, compile it with Underscore's templating function and pass it a model or collection.  If you need to pass it other data, or want to use a different template library, Marionette provides hooks to customize that process in a [DRY][dry] way.
-- **A consistent View lifecycle** - Marionette defines a consistent View life cycle where Views are initialized, rendered, shown, refreshed, and destroyed.  Each of these events has events and callbacks associated it, and any common boilerplate associated with them is handled behind the scenes. 
+- **A consistent View lifecycle** - Marionette defines a consistent View life cycle where Views are initialized, rendered, shown, refreshed, and destroyed.  Each of these events has events and callbacks associated it, and any common boilerplate associated with them is handled behind the scenes.
 - **The ability to define and manage complex layouts** - Marionette provides region objects that define portions of the DOM that can display and swap out Views.  Combined with utilities to manage child views, you can easily create deeply nested View structures with Marionette while minimizing complexity.
 - **A central event bus with semantic events to simplify communication between Views** - Marionette includes Backbone.Wreqr or Backbone Radio as an event bus to allow communication between Views without explicitly coupling them.  
 - **Helpers to help you write DRY Code** - In addition to centralizing the rendering and view management code, Marionette provides hooks to allow you to abstract away details of the DOM and events in your View code, and a mechanism to pull common ui operations out into separate reusable objects
@@ -61,14 +61,6 @@ That's not the complete feature set, but it is the essential sales pitch.  I'll 
 
 Thanks for taking the time to read this post! This post was the first in a series on Marionette.js, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my [recent post][underscorelodash] on choosing between Underscore and Lo-Dash.
 
-<style>
-.post-body img {
-display: block;
-max-height: 200px;
-margin: 30px 5px;
-float: right;
-}
-</style>
 
 [marionette]:http://marionettejs.com/
 [backbone]: http://backbonejs.org/
@@ -80,4 +72,3 @@ float: right;
 [nodevemberlink]:https://www.youtube.com/watch?v=PrQSpdWkN6Q
 [bbp]: https://leanpub.com/building-backbone-plugins?a=3a4Srv2pP9p87WQ_eoDoGp
 [bbpreview]:http://benmccormick.org/2014/07/09/understanding-the-backbone-mindset-a-review-of-building-backbone-plugins-by-derick-bailey/
-

@@ -216,14 +216,6 @@ So how do you decide what JavaScript syntax to use?  My recommendation is to sta
 Thanks for taking the time to read this post! JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my recent post on JavaScript utility libraries comparing [Underscore and Lo-Dash][underlodash].
 
 
-<style>
-.post-body img {
-  margin: 40px auto 20px auto;
-  display:block;
-  max-height:200px;
-}
-</style>
-
 
 
 <div class="footnotes">

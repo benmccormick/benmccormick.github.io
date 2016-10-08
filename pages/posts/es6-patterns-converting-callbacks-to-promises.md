@@ -9,15 +9,6 @@ path: "/2015/12/30/es6-patterns-converting-callbacks-to-promises"
 I've been writing code using the new features defined in the ECMAScript 2015 version of JavaScript (<a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">more commonly known as ES6</a>) since January.  Throughout the year I've seen myself start using a few new patterns that I think make my code better.  I'm going to share them here with a few quick hitter articles.  If you missed it, I wrote about <a href="http://benmccormick.org/2015/11/30/es6-patterns-clean-higher-order-functions/">clean higher order functions</a> earlier this week.  This post focuses on working with asynchronous code in ES6.  
 </div>
 
-<style>
-.explanation {
-padding: 10px;
-background: #eee;
-border-radius: 10px;
-margin: 20px auto;
-font-size: .85em;
-}
-</style>
 
 ### Background
 
@@ -89,7 +80,7 @@ Since we already have an API that can handle callbacks, the implementation of ou
 ```
 function timeout(delay) {
     return new Promise(function(resolve, reject) {
-        setTimeout(resolve, delay); 
+        setTimeout(resolve, delay);
     });
 }
 ```
@@ -101,7 +92,7 @@ Moving on to a more complicated example, let's take our `XMLHttpRequest` code fr
 ```
 const fetch = (url, options = {method:'get'}) => new Promise((resolve, reject) => {
     let request = new XMLHttpRequest();  
-    request.onload = resolve 
+    request.onload = resolve
     request.onerror = reject;
     request.open(options.method, url, true);  
     request.send();
@@ -152,4 +143,3 @@ Thanks for taking the time to read this post!  JavaScript development is one of 
 [jqd]: https://api.jquery.com/category/deferred-object/
 [asynccity]: http://blogs.msdn.com/b/eternalcoding/archive/2015/09/30/javascript-goes-to-asynchronous-city.aspx
 [doublefuncs]: http://benmccormick.org/2015/11/30/es6-patterns-clean-higher-order-functions/
-
