@@ -84,5 +84,5 @@ export class Header extends React.Component {
 
 
 Header.propTypes = {
-    blogTitle: React.PropTypes.isRequired,
+    blogTitle: React.PropTypes.string.isRequired,
 };

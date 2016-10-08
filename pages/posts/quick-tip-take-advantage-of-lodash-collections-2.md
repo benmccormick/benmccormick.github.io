@@ -5,7 +5,7 @@ layout: post
 path: "/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2"
 ---
 
-One of the more frustrating things about using JavaScript in the browser is the number of different collection types that you need to deal with.  When using native APIs and 3rd party libraries, it's easy to encounter 3 or more different types of collections, including [NodeLists][nodelist], [HTMLCollections][htmlcollection], [jQuery Objects][jqobjects], and plain arrays. 
+One of the more frustrating things about using JavaScript in the browser is the number of different collection types that you need to deal with.  When using native APIs and 3rd party libraries, it's easy to encounter 3 or more different types of collections, including [NodeLists][nodelist], [HTMLCollections][htmlcollection], [jQuery Objects][jqobjects], and plain arrays.
 
 ```javascript
 let a = document.querySelectorAll('div')
@@ -14,7 +14,7 @@ a instanceOf NodeList //true
 let b = document.getElementsByTagName('div')
 b instanceOf HTMLCollection //true
 
-let c = $('div') 
+let c = $('div')
 c instanceOf jQuery // true
 
 let d = ['button1', 'button2', 'button3'].map(id => document.getElementById(id));
@@ -34,7 +34,7 @@ let numDivs = $('div').reduce((count, el) => count + 1, 0);
 // Uncaught TypeError: $(...).reduce is not a function
 ```
 
-Since we can't use native array methods on these alternate collections, we end up having to be very careful about knowing where we've retrieved data from, and how to convert those collections or how to work around their limitations. 
+Since we can't use native array methods on these alternate collections, we end up having to be very careful about knowing where we've retrieved data from, and how to convert those collections or how to work around their limitations.
 
 It's useful to know about these distinctions, but in practice dealing with them is a pain.  One of the nice properties of [lodash](https://lodash.com/docs) is that it abstracts over these incompatibilities.  
 

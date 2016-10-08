@@ -7,7 +7,7 @@ path: "/2014/07/09/understanding-the-backbone-mindset-a-review-of-building-backb
 
 As the saying goes, judging a book by its cover is a dangerous business.  A lot of books have titles that promise great things, and content that under-delivers and disappoints.  Every once in a while, though, you find a gem that does the opposite. [Building Backbone Plugins][bbp] sounds like a niche book for library developers.  But it actually is the best resource on [Backbone.JS][backbone] development I've found, a book that will benefit anyone who works with Backbone.
 
-So what's the fuss about?  The book's author, Derick Bailey, is the creator of [Marionette.JS][marionette], a popular application framework for Backbone Apps.  *Building Backbone Plugins* explores the problems that Derick tried to solve with Marionette and then explains the mindset behind Marionette's solutions.  It is not a book exclusively about Marionette though.  The solutions in the book are example code that represents a simplified view of what Marionette does.  Instead the book looks at the common problems any developer will encounter in a Backbone project, and provides a possible solution, while working hard to generalize the lessons and concepts as much as possible. 
+So what's the fuss about?  The book's author, Derick Bailey, is the creator of [Marionette.JS][marionette], a popular application framework for Backbone Apps.  *Building Backbone Plugins* explores the problems that Derick tried to solve with Marionette and then explains the mindset behind Marionette's solutions.  It is not a book exclusively about Marionette though.  The solutions in the book are example code that represents a simplified view of what Marionette does.  Instead the book looks at the common problems any developer will encounter in a Backbone project, and provides a possible solution, while working hard to generalize the lessons and concepts as much as possible.
 
 Building Backbone Plugins is divided into 4 parts.  The first two look at Backbone Views and dealing with the DOM.  The third looks at Models and Collections.  The last part deals with application structure and events.  These are followed by a series of appendices that read as stretched-out blog posts on a variety of related topics that didn't quite fit into one of the 4 buckets that the rest of the book falls into.  
 
@@ -20,7 +20,7 @@ I would not recommend BBP as a "first book" on Backbone.  It assumes plenty of k
 ### More Resources
 
 - [Building Backbone Plugins][bbp] - You can purchase the book on leanpub. (Note: Affiliate Link)
-- [Developing Backbone Applications](http://addyosmani.github.io/backbone-fundamentals/) - This book by Addy Osmani is a great resource for Backbone Beginners who want a more basic introduction to Backbone concepts.  It's available as a free HTMl site on github, but you also can <a href="http://www.amazon.com/gp/product/1449328253/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1449328253&linkCode=as2&tag=productjavasc-20&linkId=5RQTSOTPFIGKMLJK">purchase it as a paperback or ebook.</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=productjavasc-20&l=as2&o=1&a=1449328253" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+- [Developing Backbone Applications](http://addyosmani.github.io/backbone-fundamentals/) - This book by Addy Osmani is a great resource for Backbone Beginners who want a more basic introduction to Backbone concepts.  It's available as a free HTMl site on github, but you also can <a href="http://www.amazon.com/gp/product/1449328253/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1449328253&linkCode=as2&tag=productjavasc-20&linkId=5RQTSOTPFIGKMLJK">purchase it as a paperback or ebook.</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=productjavasc-20&l=as2&o=1&a=1449328253" width="1" height="1" alt="" style="border:none !important; margin:0px !important;" />
 - [Marionette.js][marionette] - This framework serves as the inspiration for Derick's book and is a great way to structure larger Backbone apps.
 
 ---
@@ -30,7 +30,7 @@ I regularly write reviews of the technical books I read, as well as posting on a
 
 
 
- 
+
 
 
 

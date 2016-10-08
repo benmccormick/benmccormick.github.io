@@ -4,9 +4,12 @@ import Helmet from "react-helmet"
 import ReadNext from '../components/ReadNext'
 import { rhythm } from 'utils/typography'
 import { config } from 'config'
-import Bio from 'components/Bio'
+import Bio from '../components/Bio'
+import {Disqus} from '../components/Disqus'
 import forEach from 'lodash/forEach'
+import last from 'lodash/last'
 import TwitterWidgetsLoader from 'twitter-widgets';
+import { prefixLink } from 'gatsby-helpers'
 
 import '../css/zenburn.css'
 import '../css/typography.css'
@@ -30,9 +33,11 @@ class MarkdownWrapper extends React.Component {
     }
 
     render () {
-        const { route } = this.props
+        const { route, location } = this.props
         const post = route.page.data
         let isPage = post.layout === 'page';
+        let slug = last(post.path.split('/'));
+        let url = location.pathname;
         return (
           <div className="markdown" ref={el => this.markdownContainer = el}>
             <Helmet
@@ -62,6 +67,11 @@ class MarkdownWrapper extends React.Component {
             />
             <ReadNext post={post} pages={route.pages} />
             <Bio />
+            {isPage ? null : <Disqus
+              title={post.title}
+              shortName={slug}
+              url={url}
+              />}
           </div>
         )
     }
