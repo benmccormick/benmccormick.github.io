@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2016-09-24T04:00:40Z</updated>
+    <updated>2016-10-09T00:34:31Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -21,66 +21,43 @@
         <id>https://benmccormick.org/subscribe/</id>
         <link href="https://benmccormick.org/subscribe/">
         </link>
-        <updated>2016-09-24T04:00:40Z</updated>
+        <updated>2016-10-09T00:34:31Z</updated>
         <content type="html"><![CDATA[<h3>Subscribe via Twitter</h3>
 <p><strong>For site updates</strong></p>
 <p><a href="https://twitter.com/benmccormickorg" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @benmccormickorg</a></p>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 <p><strong>My personal account</strong></p>
 <p><a href="https://twitter.com/ben336" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ben336</a></p>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 <hr>
 <h3>Subscribe To My Mailing List</h3>
 <!-- Begin MailChimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
 <div id="mc_embed_signup">
 <form action="//benmccormick.us8.list-manage.com/subscribe/post?u=115446b80fd9d930ba091cc27&amp;id=f5b9f5acf2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-<div id="mc_embed_signup_scroll">
-<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+    <div id="mc_embed_signup_scroll">
 <div class="mc-field-group">
-<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-</label>
-<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+	<label for="mce-EMAIL">Email Address </label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 </div>
 <div class="mc-field-group">
-<label for="mce-FNAME">First Name </label>
-<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+	<label for="mce-FNAME">First Name </label>
+	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
 </div>
 <div class="mc-field-group">
-<label for="mce-LNAME">Last Name </label>
-<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+	<label for="mce-LNAME">Last Name </label>
+	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
 </div>
-<div id="mce-responses" class="clear">
-<div class="response" id="mce-error-response" style="display:none"></div>
-<div class="response" id="mce-success-response" style="display:none"></div>
-</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-<div style="position: absolute; left: -5000px;"><input type="text" name="b_115446b80fd9d930ba091cc27_f5b9f5acf2" tabindex="-1" value=""></div>
-<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_115446b80fd9d930ba091cc27_f5b9f5acf2" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
 </form>
 </div>
-<!-- <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script> -->
 <!--End mc_embed_signup-->
 <hr>
 <h3>Subscribe via RSS</h3>
 <p><a href="/rss">Feed link</a></p>
-<style>
-.post-header {
-  margin-bottom:40px;
-}
-hr {
-  width: 100%;
-}
-
-#mc_embed_signup form {
-  padding: 0;
-}
-</style>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
@@ -93,7 +70,7 @@ hr {
         <id>https://benmccormick.org/speaking/</id>
         <link href="https://benmccormick.org/speaking/">
         </link>
-        <updated>2016-09-24T04:00:40Z</updated>
+        <updated>2016-10-09T00:34:31Z</updated>
         <content type="html"><![CDATA[<p>I occasionally give talks about JavaScript.  If you’re interested in having me speak to your group, feel free to contact me through <a href="ben@benmccormick.org">email</a>.</p>
 <p>I am open to talking about pretty much anything that I write about on this blog.  Here are some talks I’ve given in the past:</p>
 <h3>2015</h3>
@@ -121,19 +98,19 @@ hr {
         <id>https://benmccormick.org/readinglist/</id>
         <link href="https://benmccormick.org/readinglist/">
         </link>
-        <updated>2016-09-24T04:00:40Z</updated>
+        <updated>2016-10-09T00:34:31Z</updated>
         <content type="html"><![CDATA[<p>These are the books that have helped me grow most as a developer.  I highly recommend them all.  Please note that the links are affiliate links and a small portion of any purchases you make will go towards the costs of maintaining this site.</p>
 <hr>
 <h2>JavaScript</h2>
 <h4>JavaScript: The Good Parts, By Douglas Crockford</h4>
 <span class="reading-img">
-![JavaScript the Good Parts](/content/images/2014/Jul/goodparts.jpg)
+![JavaScript the Good Parts](/pages/images/goodparts.jpg)
 </span>
 <p>This is the first book I’d recommend for anyone interested in getting started with Front End development and JavaScript.  It’s getting a bit dated now, 6 years after it was published, but I haven’t found anything else that explains as well the basics of the language and how to use it.</p>
 <p>Buy: <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0596517742&linkCode=as2&tag=benmccormicko-20&linkId=XZEWUV7PCEO7DNTY">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=0596517742" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
 <h4>Effective JavaScript by David Herman</h4>
 <span class="reading-img">
-![Effective JS](/content/images/2014/Jul/effjs.jpg)
+![Effective JS](/pages/images/effjs.jpg)
 </span>
 <p>You can find my full review <a href="http://benmccormick.org/2013/01/06/book-review-effective-javascript/">here</a>, but Effective JavaScript is a great read for developers with a good comfort level with the language who want to dig a bit deeper.  It’s presented as a series of imperative tips (do this, don’t do that), and each one is backed up with a tremendous depth of knowledge and insight.  A must read for any JavaScript dev.</p>
 <p>Buy: <a href="http://www.amazon.com/gp/product/0321812182/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0321812182&linkCode=as2&tag=benmccormicko-20&linkId=HOPC6ZNKSVMH3NZ7">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=0321812182" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
@@ -141,13 +118,13 @@ hr {
 <h2>Tools</h2>
 <h4>Practical Vim by Drew Neil</h4>
 <span class="reading-img">
-![Practical Vim](/content/images/2014/Jul/vim.jpg)
+![Practical Vim](/pages/images/vim.jpg)
 </span>
 <p>Practical Vim is a must have book for anyone who wants to be efficient while editing text.  While it’s a book about Vim, it will challenge you to use your editor more efficiently and powerfully no matter what you use (and maybe convince you to switch to Vim).  Highly recommended for anyone who deals with code or text for a living.</p>
 <p>Buy: <a href="http://www.amazon.com/gp/product/1934356980/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1934356980&linkCode=as2&tag=benmccormicko-20&linkId=FE3JFKHYVRYCUOVS">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=1934356980" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
 <h4>Tmux: Mouse Free Productivity By Brian Hogan</h4>
 <span class="reading-img">
-![Tmux](/content/images/2014/Jul/tmux.jpg)
+![Tmux](/pages/images/tmux.jpg)
 </span>
 <p>Tmux is a terminal multiplexer, a program that allows you to split and organize your terminal windows.  With an unfriendly <a href="http://tmux.sourceforge.net/">project page</a> and a dearth of great tutorials out there, it can be a bit difficult to get started with.  Tmux: Mouse Free Productivity is a short (88 pages) little guide to using Tmux effectively.  It helped me get up and running with what is now an indispensable tool in my workflow.</p>
 <p>Buy: <a href="http://www.amazon.com/gp/product/1934356964/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1934356964&linkCode=as2&tag=benmccormicko-20&linkId=ITHR5LSXMGMXCPS7">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=1934356964" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
@@ -155,7 +132,7 @@ hr {
 <h2>General Programming</h2>
 <h4>The Pragmatic Programmer by Andrew Hunt and David Thomas</h4>
 <span class="reading-img">
-![The Pragmatic Programmer](/content/images/2014/Jul/pp.jpg)
+![The Pragmatic Programmer](/pages/images/pp.jpg)
 </span>
 <p>This is a classic in the programming field, easily the most well known book on this list.  But it also is an indispensible explanation of the process of making great software.  There’s not a lot of code in this book, and thats a feature, not a bug.  This is a book about the techniques of building a software project, not the nitty gritty details.  As such, it’s relevance has lasted a lot longer than instructional books which have come and gone.</p>
 <p>Buy: <a href="http://www.amazon.com/gp/product/020161622X/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=020161622X&linkCode=as2&tag=benmccormicko-20&linkId=OGOUQY6XAPDGUA4T">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=020161622X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
@@ -171,7 +148,7 @@ hr {
         <id>https://benmccormick.org/marionette-explained/</id>
         <link href="https://benmccormick.org/marionette-explained/">
         </link>
-        <updated>2016-09-24T04:00:40Z</updated>
+        <updated>2016-10-09T00:34:31Z</updated>
         <content type="html"><![CDATA[<div class="explanation">
 Marionette: Explained was a series of posts I wrote in winter 2014-2015 explaining the whats, whys and hows of Marionette, the Backbone Framework.  Marionette is a powerful set of patterns and components built on top of Backbone.js, a minimalist JavaScript MV* framework. It is widely used in the Backbone community, but since most of the resources I found about it were written prior to it's 2.0 version, and the framework had continued to evolve significantly since then, I felt there was a need for a detailed resource on using it.  This is my attempt at creating that resource.
 </div>
@@ -209,7 +186,7 @@ Marionette: Explained was a series of posts I wrote in winter 2014-2015 explaini
         <id>https://benmccormick.org/learning-vim-in-2014/</id>
         <link href="https://benmccormick.org/learning-vim-in-2014/">
         </link>
-        <updated>2016-09-24T04:00:40Z</updated>
+        <updated>2016-10-09T00:34:31Z</updated>
         <content type="html"><![CDATA[<div class="explanation">
 Learning Vim in 2014 was a series of posts I wrote in July & August 2014 documenting a process for newcomers to learn Vim. It was inspired by my own experience learning Vim, running into many out of date resources and online resources that gave me just a quick list of tips, plugins or commands.
 <p>This is a “point in time” snapshot of one man’s advice on how to learn Vim.  It is by no means comprehensive.  I covered some topics in depth, and only skimmed others.  But it’s intended to get new Vim users to a point of comfort where they understand the options available to them in Vim, and can continue learning on their own as they go forward.</p>
@@ -255,7 +232,7 @@ Learning Vim in 2014 was a series of posts I wrote in July & August 2014 documen
         <id>https://benmccormick.org/about/</id>
         <link href="https://benmccormick.org/about/">
         </link>
-        <updated>2016-09-24T04:00:40Z</updated>
+        <updated>2016-10-09T00:34:31Z</updated>
         <content type="html"><![CDATA[<p>Hi, I’m Ben McCormick.  I’m a web developer, writer, occasional athlete, and a Christian. This is my blog about JavaScript, the Web and development tools.</p>
 <p>I live in Durham NC with my wife Claire and our dog Samoa, and prior to that I grew up in Pittsburgh.  I have plenty of pride in both of my homes.  When I’m not writing code or text, you can find me playing basketball, ultimate frisbee, and board games, relaxing with my wife, or volunteering at my church.  I currently work at <a href="http://www.windsorcircle.com">Windsor Circle</a>, and spend my days there writing a lot of JavaScript.</p>
 <p>If you have thoughts about the blog or want to contact me about related opportunities by email at ben AT <a href="http://benmccormick.org">benmccormick.org</a>.</p>
@@ -283,7 +260,7 @@ a instanceOf NodeList //true
 let b = document.getElementsByTagName('div')
 b instanceOf HTMLCollection //true
 
-let c = $('div') 
+let c = $('div')
 c instanceOf jQuery // true
 
 let d = ['button1', 'button2', 'button3'].map(id =&gt; document.getElementById(id));
