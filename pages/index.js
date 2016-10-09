@@ -64,6 +64,7 @@ class BlogIndex extends React.Component {
         <h1> Recent Articles </h1>
         <ul style={{
             marginLeft: 0,
+            paddingLeft: 0,
             borderBottom: '1px solid rgba(200, 200, 200, 0.5)',
         }}>
           {pageLinks}
