@@ -32,6 +32,9 @@ let buildFeed = (pages) => {
 
   let ref = filter(pages, function(f) {
     var ref, ref1;
+    if (f.data.layout === 'page') {
+      return false;
+    }
     return (((ref = f.data) != null ? ref.title : void 0) != null) && !((ref1 = f.data) != null ? ref1.draft : void 0);
   }).slice(0, 10);
 
