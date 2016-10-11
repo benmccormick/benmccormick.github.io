@@ -1,7 +1,8 @@
-.reading-img img {
+.article-body .reading-img img {
    width:150px;
    float:right;
-   margin:10px;
+   /*margin:10px;*/
+   margin: 0px 10px 20px 10px;
 }
 
 .article-body img {
