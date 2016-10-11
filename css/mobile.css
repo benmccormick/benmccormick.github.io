@@ -1,0 +1,5 @@
+@media all and (max-width: 600px) {
+  .no-mobile {
+    display:none;
+  }
+}

@@ -45,6 +45,7 @@ class BlogIndex extends React.Component {
                 <Link style={{boxShadow: 'none'}} to={prefixLink(page.path)}>{title}</Link>
             </div>
             <span
+                className="no-mobile"
                 style={{
                     color: 'rgba(100,100,100, 0.7)',
                 }}

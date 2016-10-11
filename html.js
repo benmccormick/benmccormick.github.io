@@ -45,6 +45,7 @@ module.exports = React.createClass({
           />
           {head.title.toComponent()}
           {head.meta.toComponent()}
+          <TypographyStyle typography={typography} />
           {css}
         </head>
         <body className="landing-page"

@@ -5,6 +5,7 @@ import { prefixLink } from 'gatsby-helpers'
 import { rhythm, adjustFontSizeToMSValue } from 'utils/typography'
 import { config } from 'config'
 import { Header } from '../components/Header';
+import '../css/mobile.css'
 
 class Template extends React.Component {
   render () {
