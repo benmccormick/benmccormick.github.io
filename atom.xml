@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2016-10-09T01:36:29Z</updated>
+    <updated>2016-10-11T02:24:22Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -16,6 +16,190 @@
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Testing with Jest Snapshots: First Impressions]]></title>
+        <id>https://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/</id>
+        <link href="https://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/">
+        </link>
+        <updated>2016-09-19T12:41:00Z</updated>
+        <content type="html"><![CDATA[<p>Over the past 6 months my team at work has been slowly transitioning a large Backbone application to React.  One of the main goals of the transition has been to build out unit tests as we transition components.  As part of that we switched from using Karma to using Jest for managing our tests.</p>
+<p>Our new setup with Jest has several advantages over our previous setup. All Jest tests run through node using a fake DOM implementation.  We don’t need to start up a browser so tests are faster and less flaky [^1].  Jest makes it possible to mock all modules by default [^2], which works well for us since our code base currently contains a large amount of code that is difficult to test for one reason or another.  Jest provides great integration with Babel, which is helpful since all of our Backbone and React code uses ES6 that we transpile for the browser.  Finally Jest provides a wonderful watch mode that runs only the tests that are relevant to the changes you’ve made and makes it easy to see the result.</p>
+<p>About a month ago, Jest debuted a new feature: Snapshot testing.  It works a bit differently than a normal unit test.  Instead of executing some code and comparing the output against a value provided by a developer, the first time a test is run, the output passed into the test is saved to a “snapshot file”.  Then when the test is run in the future, the output is compared to the snapshot file.  If the output matches the file, the test passes, if the output is different then the file, the test fails and Jest prints a diff.  We’ve been using Jest snapshots for a few weeks now and I wanted to share my initial impressions.</p>
+<h3>What is it like to use a snapshot test ?</h3>
+<p>The process for snapshot testing is a bit different than normal tests.  Most snapshot tests look fairly simple.  Something like this example from the <a href="https://github.com/facebook/jest/tree/master/examples/snapshot">Jest repository</a>:</p>
+<pre><code class="language-javascript">// Link.react.js
+// Copyright 2004-present Facebook. All Rights Reserved.
+
+import React from 'react';
+
+const STATUS = {
+  NORMAL: 'normal',
+  HOVERED: 'hovered',
+};
+
+export default class Link extends React.Component {
+
+  constructor() {
+    super();
+
+    this._onMouseEnter = this._onMouseEnter.bind(this);
+    this._onMouseLeave = this._onMouseLeave.bind(this);
+
+    this.state = {
+      class: STATUS.NORMAL,
+    };
+  }
+
+  _onMouseEnter() {
+    this.setState({class: STATUS.HOVERED});
+  }
+
+  _onMouseLeave() {
+    this.setState({class: STATUS.NORMAL});
+  }
+
+  render() {
+    return (
+      &lt;a
+        className={this.state.class}
+        href={this.props.page || '#'}
+        onMouseEnter={this._onMouseEnter}
+        onMouseLeave={this._onMouseLeave}&gt;
+        {this.props.children}
+      &lt;/a&gt;
+    );
+  }
+
+}
+
+// Link.react-test.js  (partial)
+// Copyright 2004-present Facebook. All Rights Reserved.
+/* eslint-disable no-unused-vars */
+
+'use strict'
+
+import React from 'react';
+import Link from '../Link.react';
+import renderer from 'react-test-renderer';
+
+it('renders correctly', () =&gt; {
+  const tree = renderer.create(
+    &lt;Link page=&quot;http://www.facebook.com&quot;&gt;Facebook&lt;/Link&gt;
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+</code></pre>
+<p>The first time the test is run, a snapshot file is produced.  In this case, running the previous test produces a snapshot file that looks like this:</p>
+<pre><code class="language-javascript">// Link.react-test.js.snap  (partial)
+exports[`test renders correctly 1`] = `
+&lt;a
+  className=&quot;normal&quot;
+  href=&quot;http://www.facebook.com&quot;
+  onMouseEnter={[Function bound _onMouseEnter]}
+  onMouseLeave={[Function bound _onMouseLeave]}&gt;
+  Facebook
+&lt;/a&gt;
+`;
+</code></pre>
+<p>This gives us a baseline for what we expect the UI to look like.  The snapshot is generated in a folder in your <code>__tests__</code> directory, so that it can be checked into source control.</p>
+<p>The next time a test is run, if nothing has changed, the test passes.  However, if we change something (let’s say we add a class), the test fails and shows us a diff.</p>
+<pre><code class="language-javascript">// updated link render method
+
+render() {
+  return (
+    &lt;a
+      className={`link-item ${this.state.class}`}
+      href={this.props.page || '#'}
+      onMouseEnter={this._onMouseEnter}
+      onMouseLeave={this._onMouseLeave}&gt;
+      {this.props.children}
+    &lt;/a&gt;
+  );
+}
+</code></pre>
+<pre><code class="language-diff">
+# jest output
+
+FAIL  __tests__/Link.react-test.js
+ ✕ renders correctly (16ms)
+
+● renders correctly
+
+    Received value does not match the stored snapshot 1.
+
+    - Snapshot
+    + Received
+
+      &lt;a
+-       className=&quot;normal&quot;
++       className=&quot;link-item normal&quot;
+        href=&quot;http://www.facebook.com&quot;
+        onMouseEnter={[Function bound _onMouseEnter]}
+        onMouseLeave={[Function bound _onMouseLeave]}&gt;
+        Facebook
+      &lt;/a&gt;
+
+      at Object.&lt;anonymous&gt; (__tests__/Link.react-test.js:14:16)
+</code></pre>
+<p>We can then choose to accept this change by running <code>jest -u</code> to update the snapshot, or update our code to fix the regression.  If we update the snapshot file, the test will start passing again.</p>
+<h3>Snapshot tests are a complement for conventional tests not a replacement</h3>
+<p>The first thing that became clear to me while using snapshot testing is that they’re not for everything.  They are optimized for a different case than normal assertion-based tests.</p>
+<p>Classic assertion based tests are perfect for testing clearly defined behavior that is expected to remain relatively stable.</p>
+<p>Snapshot tests are great for testing less clearly defined behavior that may change often.</p>
+<p>Snapshot testing is perfect for things that in the past would have raised concern for “overly brittle” tests that slow development teams down.  The classic example of this (and the main focus of discussion around Jest snapshots so far) is UI testing.</p>
+<p>UI components often change in small and trivial ways.  Copy is changed, whitespace is added, a border color is modified. Generally this means that developers have to choose between detailed tests that catch any regression but require constant updates, or less detailed tests that focus on core behaviors but miss smaller regressions.</p>
+<p>Snapshot tests provide a new way of approaching these problems in unit tests.  Because they are easy to write and effortless to update, and provide a clear view of what changed after each update, whether it is major or minor.</p>
+<p>This isn’t without any disadvantage. Snapshot tests preserve a starting point, but don’t give any indication of developer intent to future developers.  Like any other test, if the initial snapshot passes with bugs, or doesn’t capture the full range of cases, the test won’t adequately cover those behaviors.  But unlike traditional tests, snapshot tests don’t provide specific guidance for what the original developer expected beyond the “actual behavior”.  If there are multiple sub-behaviors that interact to produce output, its not clear which of those are essential, and which are incidental.  That’s not something you want for your critical application logic, especially complicated logic with many subtle cases.  But for UI components and other application elements that are likely to change a lot over time, this is a good set of tradeoffs.</p>
+<h3>Snapshot tests are more useful with a healthy code review process</h3>
+<p>I’ve pointed out several times now that snapshot tests are easy to update.  One of the downsides of the current design is that they can be almost too easy to update.  When a snapshot test fails, you have the option of modifying the output so that the test passes again, or updating the snapshot to reflect the new output.  Unfortunately, Jest currently provides no granularity for this updating.  Running <code>jest -u</code> to update the snapshots will update all snapshots.  So if  a single change causes many snapshots to break, it can be easy to accidentally update all of them, and possibly difficult to work through the whole diff to find changes.</p>
+<p>A robust code review process minimizes these problems.  Because snapshots are checked into source, the diffs in the snapshots are checked into source control.  Viewing diffs in a dedicated code review tool like Github, Bitbucket or Gitlab, it’s easier to see exactly what changed over many files than it might be when updating snapshots from the command line, and if you update a snapshot multiple times in a single branch, you can see the net effect on the snapshot through source control diffs better than you can through Jest.</p>
+<h3>Snapshot tests work well with auto-mocking</h3>
+<p>Auto-mocking has been one of Jest’s more controversial features.  Prior to version 15, Jest mocked every module used in tests by default.  To run the actual module code, it was necessary to manually unmock each module used or change Jest configurations.  Though it is now disabled by default, auto-mocking actually works very well with snapshot tests.  One problem with tests that rely on generating DOM in React is the fact that most components of any complexity are actually made up of smaller components, that often use external functions with complex logic to determine what to show.  If we fully render everything, changing any of those pieces can break tests for many components, moving us away from the concept of a “unit test”.  If we mock child components and helper functions and then test them individually though, we can focus our tests to only change based on the logic of the individual component being tested.  This is incredibly easy with Jest, and especially helpful in large code bases that don’t have complete test coverage.  Auto-mocking is considered an “advanced feature” of Jest, but it’s not hard to use.  Most mocked modules produce something non-harmful by default, and when its necessary to override, its not difficult to produce something meaningful without getting too involved.  Just add a file with the same name as the file to be mocked into a <code>__mocks__</code> folder in that directory, and give the mocked module the same interface as the mocked component.  You can either write it from scratch or use <a href="http://facebook.github.io/jest/docs/api.html#jest-genmockfrommodule-modulename">jest.genMockFromModule</a> as a starting place.</p>
+<h3>Summary</h3>
+<p>I’m impressed by Jest snapshots.  When combined with React, they’re providing my first non-frustrating experience unit testing UI components.  I’m excited to use them more going forward, and will be interested to see how they evolve from here.</p>
+<hr>
+<h3>Extra: A few miscellaneous Jest Thoughts</h3>
+<ul>
+<li>The UI output from Jest 15 tests is the best I’ve ever seen from a testing framework.  Aside from the nice diffs on snapshots, they do a good job explaining how output differed from expectations in assertion based tests, and communicating context for test failures, warnings and logging messages.  They also give great guidance when making configuration changes:</li>
+</ul>
+<div style="display:flex; justify-content:center">
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/cpojer">@cpojer</a> This is lovely, thank you! <a href="https://t.co/CX1v11CAVc">pic.twitter.com/CX1v11CAVc</a></p>&mdash; Ben McCormick (@ben336) <a href="https://twitter.com/ben336/status/772906536154894336">September 5, 2016</a></blockquote>
+</div>
+<ul>
+<li>
+<p>I’ve also been super impressed with Jest’s watch mode in Jest 15.  <code>--watch</code> makes it easy to focus on a few files or run tests on all files, and stays up to date as you change code.  If you haven’t worked with Jest in a while, the developer experience alone makes it worth trying out.</p>
+</li>
+<li>
+<p>One potential future annoyance with snapshot tests:  The snapshot format can’t be iterated on without breaking all current tests.  Make sure not to mix functional changes with Jest updates!</p>
+</li>
+</ul>
+<div style="display:flex; justify-content:center">
+<blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">We&#39;ll update the snapshot format sometimes in minor/major releases. When updating Jest, please update snapshots<br><br>See <a href="https://t.co/gPE63dMz8P">https://t.co/gPE63dMz8P</a></p>&mdash; Christoph Pojer (@cpojer) <a href="https://twitter.com/cpojer/status/776623521069805568">September 16, 2016</a></blockquote>
+</div>
+<h3>More Resources</h3>
+<ul>
+<li>
+<p>Randy Coulman has a <a href="http://randycoulman.com/blog/2016/09/06/snapshot-testing-use-with-care/">nice article</a> on some of the reasons to be careful about embracing snapshot testing.  He makes good points about the requirement of human involvement in verifying a change in time-crunched situations and also the potential value of snapshot tests for legacy code.</p>
+</li>
+<li>
+<p>My team uses a mix of <a href="https://github.com/airbnb/enzyme">enzyme</a> and snapshot tests for unit testing React Components.  <a href="https://github.com/trayio/enzyme-to-json?utm_content=buffer6b78b&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer">This repo</a> combines them, allowing you to use enzyme to generate the snapshot output to diff against rather than the renderer provided by Jest. I personally haven’t felt the need to integrate these two tools, but if your team uses enzyme and wants consistency/fewer (used) dependencies, this could be a cool option.</p>
+</li>
+<li>
+<p>Finally here’s <a href="https://blog.grommet.io/post/2016/09/01/how-we-landed-on-jest-snapshot-testing-for-javascript">another article</a> on how Snapshot testing convinced one team to migrate to Jest from Tape</p>
+</li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/">post on choosing which component styles to use in React</a>.</p>
+<p>[^1]: PhantomJS was a tremendous source of pain in our Karma setup.
+[^2]: This used to be the default setting, with Jest 15 it can be configured to work that way.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Quick Tip: Take advantage of lodash collections]]></title>
         <id>https://benmccormick.org/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2/</id>
@@ -820,81 +1004,6 @@ js=js,es6
 <p>In the end, what I hope you as a reader get out of this is not that one strategy is good or bad.  Instead I want to provide a way of thinking about the choices around re-use, so that we as developers can talk intelligently about the options and tradeoffs and make the right choice for a given situation.</p>
 <h3>Subscribe</h3>
 <p>Thanks for taking the time to read this post!  Software development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post on <a href="http://benmccormick.org/2015/11/25/productive-javascript-development/">productive JavaScript development</a>.</p>
-]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2015 Roundup]]></title>
-        <id>https://benmccormick.org/2015/12/31/2015-roundup-2/</id>
-        <link href="https://benmccormick.org/2015/12/31/2015-roundup-2/">
-        </link>
-        <updated>2015-12-31T05:56:04Z</updated>
-        <content type="html"><![CDATA[<p>Thanks to all of you who have followed my blog this year. More people visited the blog this year than in its previous 2 years of existence combined.  I’m excited to continue writing and starting conversations in 2016.</p>
-<h3>Most Read Posts of 2015</h3>
-<ol>
-<li>
-<p><a href="http://benmccormick.org/2015/09/09/what-can-backbone-developers-learn-from-react/">What Backbone Developers Can Learn From React</a> - A look at lessons that Backbone developers can take from the React community.</p>
-</li>
-<li>
-<p><a href="http://benmccormick.org/2015/01/26/backbone-radio/">Building Modular Web Apps With Backbone.Radio</a> - A deep dive into Backbone.Radio, a messaging system for Backbone and Marionette applications.</p>
-</li>
-<li>
-<p><a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">ES5, ES6, ES2016, ES.Next: What’s going on with JavaScript versioning?</a> - An explanation of the weird and confusing naming conventions for JavaScript versions</p>
-</li>
-<li>
-<p><a href="http://benmccormick.org/2015/04/07/es6-classes-and-backbone-js/">Why Backbone.js and ES6 Classes don’t mix</a> - An examination of the problems that developers face trying to use ES6 classes and Backbone together.  A <a href="http://benmccormick.org/2015/07/06/backbone-and-es6-classes-revisited/">followup article</a> explored some potential solutions.</p>
-</li>
-</ol>
-<h3>Code I wrote in 2015</h3>
-<p>Most of the code I wrote this year was for my work at Windsor Circle and on a React based side project that is not yet ready for prime time.  But I did get</p>
-<p>to release a small <a href="http://benmccormick.org/2015/05/25/marionette-service-service-objects-for-marionette/">service library</a> for Marionette developers, and made several contributions to the core Marionette library.</p>
-<h3>Languages and Libraries I started using in 2015</h3>
-<ul>
-<li><a href="https://babeljs.io/">Babel</a> has had by far the biggest impact on my code in 2015.  Being able to write modern JavaScript without compatibility concerns has been a breath of fresh air</li>
-<li>My team switched from Underscore to <a href="https://lodash.com/">lodash</a> at the end of 2014, and I’ve been using it a lot more this year.  Like Babel, it changes the way I write code.</li>
-<li>I don’t use it day to day, but I’ve loved playing with <a href="https://facebook.github.io/react/">React</a> and <a href="https://github.com/rackt/redux">Redux</a>.  I think UI as a pure function of state with a defined set of user actions/mutations is the future.</li>
-</ul>
-<h3>Languages and Libraries I stopped using in 2015</h3>
-<ul>
-<li>With ES6 becoming a valid option, I’ve moved on from <a href="http://coffeescript.org/">Coffeescript</a>.  It’s a beautiful, non-standard language that is never going to develop the tooling that is building up around the standard JavaScript language.</li>
-<li>I haven’t stopped using <a href="http://jquery.com/">jQuery</a>, since Marionette uses it for event handling and ajax, but I’ve begun looking at direct jQuery-style DOM manipulation as a code smell</li>
-<li>This mainly happened early in 2014, but 2015 was the first year I didn’t write a single line of Java.  I haven’t missed it.</li>
-</ul>
-<h3>Languages and Libraries I used (more or less) every day in 2015</h3>
-<p>JavaScript (ES6), Python, Backbone, Marionette, lodash</p>
-<h3>Languages and Libraries I want to try in 2016</h3>
-<p>Elm or ClojureScript, Rust or Go, Flow, Ember, Pandas and other python data analysis libraries</p>
-<h3>Blogs I started following in 2015</h3>
-<ul>
-<li><a href="http://www.2ality.com/">2ality</a> is a great blog by Axel Rauschmayer focused on the JavaScript language</li>
-<li><a href="http://rauchg.com/essays">rauchg.com</a> is not updated often, but all 3 posts so far have been fantastic</li>
-<li><a href="http://raganwald.com/">raganwald.com</a> is a great resource for functional programming fans who write JavaScript</li>
-</ul>
-<h3>Blogs I read every post from in 2015</h3>
-<p>Rands In Repose, Stratechery, <a href="http://Marco.org">Marco.org</a>, <a href="http://rauchg.com">rauchg.com</a>, Little Big Details, Bull City Rising</p>
-<h3>Software I started using in 2015</h3>
-<ul>
-<li>
-<p>I started using <a href="https://atom.io/">Atom</a> this fall as my primary code editor.  There are things about it I like less than Vim or Sublime Text, but it’s configurability and the fact that people have used it to make beautiful, intuitive UIs for tools that I use have sold me for now.  I still use Vim on a regular basis when I want to stay in the terminal, and am keeping an eye on <a href="https://neovim.io/">Neovim</a></p>
-</li>
-<li>
-<p><a href="https://www.ghostery.com/">Ghostery</a> is a fantastic ad blocker that focuses on transparency, showing you the ad networks and trackers that are running on a page and allowing you to selectively block ad networks or sites, helpful for those of us who want to support sites we use and allow analytics but are overwhelmed by the slimy, slow state of the web.</p>
-</li>
-<li>
-<p><a href="https://overcast.fm/">Overcast</a> is a great podcast app for iOS that has convinced me to start listening to podcasts.  (I’ve enjoyed <a href="https://changelog.com/podcast/">The Changelog</a>, <a href="http://exponent.fm/">Exponent</a>, and <a href="https://serialpodcast.org/">Serial</a>).</p>
-</li>
-</ul>
-<h3>Software I stopped using in 2015</h3>
-<ul>
-<li><a href="https://www.mailboxapp.com/">Mailbox</a>: RIP</li>
-<li><a href="https://www.onenote.com/">OneNote</a>: I made an effort to switch from Evernote to OneNote this summer, but it failed because it’s much harder to get stuff into OneNote for those of us who live in Apple-Land.  Not enough integrations</li>
-</ul>
-<h3>Software I used (nearly) every day in 2015</h3>
-<p>OSX/iOS, Google Search, Chrome/Safari, Gmail, Twitter/Tweetbot, Feedbin/Reeder, Instapaper, iMessage, Slack, Trello, 1Password, Atom/Vim, iTerm, Fish Shell, tmux, Bitbucket, Fantastical</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
