@@ -11,7 +11,7 @@ import last from 'lodash/last'
 import TwitterWidgetsLoader from 'twitter-widgets';
 import { prefixLink } from 'gatsby-helpers'
 
-import '../css/zenburn.css'
+import '../css/codeformat.css'
 import '../css/typography.css'
 import '../css/images.css'
 import '../css/mailchimp.css'

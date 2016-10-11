@@ -36,6 +36,11 @@ module.exports = React.createClass({
           />
           <script
             type="text/javascript"
+            async={true}
+            src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          />
+          <script
+            type="text/javascript"
             dangerouslySetInnerHTML={{__html:'try{Typekit.load();}catch(e){}'}}
           />
           {head.title.toComponent()}

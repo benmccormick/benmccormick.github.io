@@ -7,10 +7,16 @@
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
   "dependencies": {
+    "front-matter": "^2.0.6",
     "gatsby": "^0.12.6",
+    "highlight.js": "^9.7.0",
     "lodash": "^4.15.0",
+    "markdown-it": "^8.0.0",
+    "markdown-it-attrs": "^0.7.1",
+    "markdown-it-footnote": "^3.0.1",
     "moment": "^2.14.1",
     "react-disqus-thread": "^0.4.0",
+    "react-google-ad": "^1.0.2",
     "react-helmet": "^3.1.0",
     "react-responsive-grid": "^0.3.3",
     "react-typography": "^0.12.0",
@@ -18,12 +24,7 @@
     "twitter-widgets": "^1.0.0",
     "typography": "^0.13.0",
     "typography-theme-wordpress-2016": "^0.13.0",
-    "underscore.string": "^3.2.3",
-    "front-matter": "^2.0.6",
-    "highlight.js": "^9.2.0",
-    "markdown-it": "^8.0.0",
-    "markdown-it-attrs": "^0.7.1",
-    "markdown-it-footnote": "^3.0.1"
+    "underscore.string": "^3.2.3"
   },
   "devDependencies": {
     "feed": "^0.3.0",
