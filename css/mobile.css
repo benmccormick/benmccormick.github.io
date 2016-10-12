@@ -3,3 +3,9 @@
     display:none;
   }
 }
+
+@media all and (max-width: 321px) {
+  html {
+    font-size: 100% !important;
+  }
+}

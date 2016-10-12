@@ -18,12 +18,32 @@ import '../css/mailchimp.css'
 
 class MarkdownWrapper extends React.Component {
 
+    extractTwitterStatusID(tweetEl) {
+      //this is a bit tricky, we have to grab the link to the tweet and extract the id from it
+      let links = tweetEl.querySelectorAll('a');
+      //it should be the last one
+      let statusLink = last(links);
+      if (!statusLink || !statusLink.href) {
+        return undefined;
+      }
+      // regex magic
+      let re = /status\/(\d+)$/;
+      let result = statusLink.href.match(re);
+
+      if (!result) {
+        return undefined;
+      }
+      return result[1];
+
+    }
+
     componentDidMount() {
         let tweets = this.markdownContainer.querySelectorAll('.twitter-tweet');
         let followButtons = this.markdownContainer.querySelectorAll('.twitter-follow-button');
         TwitterWidgetsLoader.load(twttr => {
             forEach(tweets, tweet => {
-                twttr.widgets.createTweet('20', tweet);
+                let id = this.extractTwitterStatusID(tweet);
+                twttr.widgets.createTweet(id, tweet);
             });
             forEach(followButtons, button => {
                 twttr.widgets.createFollowButton('', button);
