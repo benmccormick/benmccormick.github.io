@@ -6,9 +6,9 @@ import camelCase from 'lodash/camelcase';
 export class Disqus extends React.Component {
 
     render () {
-        let {shortName, title, url} = this.props;
+        let {title, url} = this.props;
         return <ReactDisqusThread
-            shortname={shortName}
+            shortname="benmccormick"
             identifier={camelCase(title)}
             title={title}
             url={url}
@@ -22,6 +22,5 @@ export class Disqus extends React.Component {
 
 Disqus.propTypes = {
     title: React.PropTypes.string.isRequired,
-    shortName: React.PropTypes.string.isRequired,
     url: React.PropTypes.string.isRequired,
 };
