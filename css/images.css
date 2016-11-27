@@ -10,3 +10,7 @@
     display: block;
     margin: 40px auto 20px auto;
 }
+
+.article-body img.full-width {
+  max-height : none;
+}

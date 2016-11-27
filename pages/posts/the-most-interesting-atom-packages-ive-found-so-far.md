@@ -12,11 +12,11 @@ I've been using [Atom][atom] as my primary text editor for the last 3 months.  I
 
 At first use, [Pigments][pigments] seems like a pretty run of the mill color highlighter.  There are similar projects for Sublime Text and Vim that look at color names in a CSS or LESS file and highlight them with the color they represent.
 
-![pigment-preview](/posts/images/color_less_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom.png)
+<img class="full-width" alt="pigment-preview" src="/posts/images/color_less_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom.png">
 
 But Pigments does much more than that.  In addition to highlighting text, Pigments searches your project and creates a directory of all the colors used in your projects.  You can look through your palette and quickly go to the definition of any individual color.  Because pigments tracks everything, it can highlight LESS/SCSS variables as well as plain color names, even if those variables were originally defined in a different file.  Pigments also hooks into Atom's autocomplete, and displays a preview of the color options when autofilling colors.
 
-![Pigments project](/posts/images/Palette_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom_and_Editor_-_benmccormick_org.png)
+<img class="full-width" alt="Pigments project" src="/posts/images/Palette_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom_and_Editor_-_benmccormick_org.png">
 
 It is a rich way of managing colors for a whole project, the best way of seeing at a glance every color used in your CSS project that I've ever seen.
 
@@ -24,13 +24,13 @@ It is a rich way of managing colors for a whole project, the best way of seeing 
 
 [Expose][expose] is a file management tool modeled after Mac OSX's expose feature.  With it, you can instantly display all open files as small thumbnails, and switch quickly between them using the keyboard, which can be super helpful when tabs get out of control.
 
-![expose](/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom_and_Editor_-_benmccormick_org.png)
+<img class="full-width" alt="expose" src="/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom_and_Editor_-_benmccormick_org.png">
 
 ### Autocomplete-plus
 
 [Autocomplete-plus][autocomplete] started as a community package but has now become part of the core editor.  It's also probably the least unique idea I'm listing here.  It's still worth including on this list though, for 2 reasons.  First, autocomplete plus has flexible visual context options, allowing autocomplete providers to show the type of the autocomplete option, a brief description, and potentially a more in depth description.  So users can distinguish between (for instance) completions offering a snippet, a function, a keyword, or an import.
 
-![autocomplete-plus](/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom.png)
+<img class="full-width" alt="autocomplete-plus" src="/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom.png">
 
 Autocomplete-plus is also a great example of the flexible nature of Atom.  Because Atom itself is made up of packages, with a very small core package, it's easy to replace key parts of the editor like the auto-complete package with a community version.  And if that version ends up being better in the long run, it's possible to pull that into the editors core, as happened with autocomplete-plus.
 
@@ -38,7 +38,7 @@ Autocomplete-plus is also a great example of the flexible nature of Atom.  Becau
 
 [Todo-show][todo] is a cool little package that searches your project for comments containing TODO, FIXME, CHANGED, REVIEW and other configurable comment strings, and lists them as a table.  It's a simple idea that formalizes something that many developers do all the time.
 
-![todo-show](/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom-1.png)
+<img class="full-width" alt="todo-show" src="/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom-1.png">
 
 **Update**:  Twitter has pointed out this even crazier riff on this concept that I'd seen a while ago but had been unable to find when I dove back into Atom.  [Imdone](http://imdone.io/) is a trello-like experience in the editor for managing todos.
 
@@ -48,13 +48,13 @@ Autocomplete-plus is also a great example of the flexible nature of Atom.  Becau
 
 Similar to autocomplete-plus, you may think you've seen [Linter][linter] before.  It's similar to Syntastic for Vim and SublimeLinter for Sublime Text.  But Atom's flexibility allows it to be better than both of those.  Like Syntastic and SublimeLinter, Linter integrates with many different linting providers to show errors and warnings that tools pick up on through static analysis in files.  But rather than being limited to the line-by-line gutter warnings or showing collections of warnings through awkward use of UI elements meant for a different purpose, Linter shows you a live collection of errors at the bottom of the file and lets you easily switch back and forth between that and errors for all open project files.
 
-![linter](/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom-2.png)
+<img class="full-width" alt="linter" src="/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom-2.png">
 
 ### git-time-machine
 
 [git-time-machine][time-machine] is the newest package on this list.  It's only a month old, but is quite possibly my favorite example of Atom's potential.  After setting it up, you can use a keyboard shortcut to see a bubble plot of that files git history, and then hover to see the commit messages, and click to see an old version of the file.  It is the most accessible UI I've ever seen for working with git history.
 
-![time-machine](/posts/images/Fullscreen_1_10_16__9_24_PM.png)
+<img class="full-width" alt="time-machine" src="/posts/images/Fullscreen_1_10_16__9_24_PM.png">
 
 ### Subscribe
 
