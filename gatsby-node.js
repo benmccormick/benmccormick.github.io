@@ -5,6 +5,7 @@ const moment = require('moment');
 const MarkdownIt = require('markdown-it');
 const fs = require('fs');
 const frontmatter = require('front-matter');
+const copyFile = require('./utils/file_system').copyFile;
 
 const md = MarkdownIt({
   html: true,
@@ -77,10 +78,14 @@ let generateRSS = (feed) => {
   return fs.writeFileSync(__dirname + "/public/rss/index.xml", feed.render('rss-2.0'));
 };
 
+let copyCNAME = (cb) => {
+  copyFile(`${__dirname}/pages/CNAME`,`${__dirname}/public/CNAME`, err => err ? cb(false) : cb());
+};
+
 exports.postBuild = function(pages, callback) {
     let feed = buildFeed(pages)
     createRSSFolder();
     generateAtomFeed(feed);
     generateRSS(feed);
-  return callback();
+    copyCNAME(callback);
 };
