@@ -8,7 +8,6 @@ import Bio from '../components/Bio'
 import {Disqus} from '../components/Disqus'
 import forEach from 'lodash/forEach'
 import last from 'lodash/last'
-import trim from 'lodash/trim'
 import TwitterWidgetsLoader from 'twitter-widgets';
 import { prefixLink } from 'gatsby-helpers'
 
@@ -58,7 +57,7 @@ class MarkdownWrapper extends React.Component {
         const post = route.page.data
         let isPage = post.layout === 'page';
         let slug = last(post.path.split('/'));
-        let url = trim(`http://benmccormick.org${location.pathname}`, '/');
+        let url = `http://benmccormick.org${location.pathname}`;
         return (
           <div className="markdown" ref={el => this.markdownContainer = el}>
             <Helmet

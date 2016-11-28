@@ -9,7 +9,6 @@ export class Disqus extends React.Component {
         let {title, url} = this.props;
         return <ReactDisqusThread
             shortname="benmccormick"
-            identifier={camelCase(title)}
             title={title}
             url={url}
             // category_id="123456"
