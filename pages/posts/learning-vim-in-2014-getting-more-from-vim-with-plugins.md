@@ -51,7 +51,7 @@ Another interesting class of Vim plugins are plugins that extend Vim's existing 
 
 - [vim-text-obj-user][txtobj] is an interesting project to make it easy to create plugins that define custom text objects which then can be used with Vim commands like any other text object.  If that sounds scary to you, you can also take a look at the [list][toplugins] of plugins already built with the project, and use any that will be useful to you.
 
-![Vim side by side styles](/posts/images/vimvisuals.png)
+<img alt="Vim side by side styles" class="full-width" src="/posts/images/vimvisuals.png">
 
 #### Help Vim Look Good
 

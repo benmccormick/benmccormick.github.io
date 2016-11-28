@@ -43,13 +43,13 @@ It might be possible to find a complex regex that only hit the variables we want
 
 The dot command is a nice solution.  If we start on the first occurence of `widget`, we can use `ciw` to replace the current word with new text.  When we've added our new text and exit insert mode, we'll have a *command*, which we can then repeat with `.`. After that we can move to the next occurence we want to change and hit `.` to replace it without retyping the variable name.  If we accidentally use it in the wrong place, it's easy to undo with `u`.
 
-Of course it would still be a pain to navigate between each widget with hjkl.  Fortunately, Vim has more commands that allow us to avoid unecessary work.  If we start on one instance of `widget`, we can use `*` to search for all occurences of that word.  We can then use `n` to move from occurence to occurence. If we overshoot and go too far, we can use `N` to go backwards.  So if we start with `*` (shift+8 in the gif below) and then use ciw to replace the word, we can then use `n` and `.` to clean up the other widgets in only 5 keystrokes. 
+Of course it would still be a pain to navigate between each widget with hjkl.  Fortunately, Vim has more commands that allow us to avoid unecessary work.  If we start on one instance of `widget`, we can use `*` to search for all occurences of that word.  We can then use `n` to move from occurence to occurence. If we overshoot and go too far, we can use `N` to go backwards.  So if we start with `*` (shift+8 in the gif below) and then use ciw to replace the word, we can then use `n` and `.` to clean up the other widgets in only 5 keystrokes.
 
-![vim gif](/posts/images/vimdotcommand.gif)
+<img alt="vim gif" src="/posts/images/vimdotcommand.gif" class="full-width">
 
 #### The Vim Way
 
-If you're used to another editor, I'm guessing you're justifiably a bit skeptical at this point.  After all, this example is something people do all the time, and many editors have tools to make it easy (multiple selections in Sublime Text and refactoring tools in language specific IDEs like Eclipse for instance).  They may take even fewer keystrokes than Vim. And they don't require you to learn 6 separate commands to use well.  So what's so special here? 
+If you're used to another editor, I'm guessing you're justifiably a bit skeptical at this point.  After all, this example is something people do all the time, and many editors have tools to make it easy (multiple selections in Sublime Text and refactoring tools in language specific IDEs like Eclipse for instance).  They may take even fewer keystrokes than Vim. And they don't require you to learn 6 separate commands to use well.  So what's so special here?
 
 Let's have a quick refresher on the philosophy of Vim.  Like the Unix ecosystem it came from, Vim provides **small**, **composable** tools that you can combine to create powerful actions.  The power isn't in a specific use case.  Instead it comes from the range of possibilities that open up when we start mixing and matching the code.  As with verbs, movements, and text objects, repeating commands and their corresponding reverse commands are tools we can add to our toolbox.  Using the commands above and some of the other composable commands from my [language post][language], we can do some cool things.
 
@@ -96,4 +96,3 @@ This was the fifth in a series of posts on learning Vim in a modern way.  If you
 [repeatvim]:https://github.com/tpope/vim-repeat
 [giveaway]:http://benmccormick.org/2014/07/11/new-twitter-feed-and-practical-vim-giveaway/
 [tern]:http://ternjs.net/
-

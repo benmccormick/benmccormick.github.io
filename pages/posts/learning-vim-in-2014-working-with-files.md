@@ -15,7 +15,7 @@ One of the biggest obstacles to learning Vim is its lack of visual affordances. 
 
 The command to open a new file in Vim is `:e <filename>`.  `:e` opens up a new buffer with the contents of the file inside. If the file doesn't exist yet it opens up an empty buffer and will write to the file location you specify once you make changes and save. Buffers are Vim's term for a "block of text stored in memory". That text can be associated with an existing file or not, but there will be one buffer for each file you have open.
 
-After you open a file and make changes, you can save the contents of the buffer back to the file with the write command `:w`.  If the buffer is not yet associated with a file or you want to save to a different location, you can save to a specific file with `:w <filename>`. You may need to add a `!` and use `:w! <filename>` if you're overwriting an existing file. 
+After you open a file and make changes, you can save the contents of the buffer back to the file with the write command `:w`.  If the buffer is not yet associated with a file or you want to save to a different location, you can save to a specific file with `:w <filename>`. You may need to add a `!` and use `:w! <filename>` if you're overwriting an existing file.
 
 This is the survival level knowledge for dealing with Vim files.  Plenty of developers get by with just these commands, and its technically all you need.  But Vim offers a lot more for those who dig a bit deeper.
 
@@ -25,7 +25,7 @@ Moving beyond the basics, let's talk some more about buffers.  Vim handles open 
 
 While these commands are the fundamental Vim solutions for managing buffers, I've found that they don't map well to my own way of thinking about files.  I don't want to care about the order of buffers, I just want to go to the file I'm thinking about, or maybe to the file I was just in before the current one.  So while its important to understand Vim's underlying buffer model, I wouldn't necessarily recommend its builtin commands as your main file management strategy.  There are more powerful options available.
 
-![splits example](/posts/images/skitch.jpeg)
+<img alt="splits example" class="full-width" src="/posts/images/skitch.jpeg">
 
 ### Splits
 
@@ -42,7 +42,7 @@ nnoremap <C-L> <C-W><C-L> "Ctrl-l to move	right a split
 nnoremap <C-H> <C-W><C-H> "Ctrl-h to move left a split
 ```
 
-### The jumplist 
+### The jumplist
 
 Splits solve the problem of viewing multiple related files at a time, but we still haven't seen a satisfactory solution for moving quickly between open and hidden files.  The jumplist is one tool you can use for that.  
 
@@ -50,11 +50,11 @@ The jumplist is one of those Vim features that can appear weird or even useless 
 
 ### Plugins
 
-So let's be real, if you're coming to Vim from something like Sublime Text or Atom, there's a good chance all of this looks a bit arcane, scary, and inefficient.  "Why would I want to type the full path to open a file when Sublime has fuzzy finding?"  "How can I get a view of a project's structure without a sidebar to show the directory tree?"  Legitimate questions.  The good news is that Vim has solutions.  They're just not baked into the Vim core.  I'll touch more on Vim configuration and plugins in later posts, but for now here's a pointer to 3 helpful plugins that you can use to get Sublime-like file management. 
+So let's be real, if you're coming to Vim from something like Sublime Text or Atom, there's a good chance all of this looks a bit arcane, scary, and inefficient.  "Why would I want to type the full path to open a file when Sublime has fuzzy finding?"  "How can I get a view of a project's structure without a sidebar to show the directory tree?"  Legitimate questions.  The good news is that Vim has solutions.  They're just not baked into the Vim core.  I'll touch more on Vim configuration and plugins in later posts, but for now here's a pointer to 3 helpful plugins that you can use to get Sublime-like file management.
 
 - [CtrlP][ctrlp] is a fuzzy finding file search similar to Sublime's "Go to Anything" bar.  It's lightning fast and pretty configurable.  I use it as my main way of opening new files.  With it I only need to know part of the file name and don't need to memorize my project's directory structure.
 
-- [The NERDTree][nerdtree] is a "file navigation drawer" plugin that replicates the side file navigation that many editors have.  I actually rarely use it, as fuzzy search always seems faster to me.  But it can be useful coming into a project, when you're trying to learn the project structure and see what's available.  NERDTree is immensely configurable, and also replaces Vim's built in directory tools when installed. 
+- [The NERDTree][nerdtree] is a "file navigation drawer" plugin that replicates the side file navigation that many editors have.  I actually rarely use it, as fuzzy search always seems faster to me.  But it can be useful coming into a project, when you're trying to learn the project structure and see what's available.  NERDTree is immensely configurable, and also replaces Vim's built in directory tools when installed.
 
 - [Ack.vim][ackvim] is a code search plugin for Vim that allows you to search across your project for text expressions.  It acts as a light wrapper around Ack or Ag, [2 great code search tools][ackpost], and allows you to quickly jump to any occurrence of a search term in your project.
 
@@ -66,7 +66,7 @@ Start with the basics for long enough to understand them, and then start adding 
 
 ### More Resources
 
-- [Seamlessly Navigate Vim & Tmux Splits](http://robots.thoughtbot.com/seamlessly-navigate-vim-and-tmux-splits) - This is a must read for anyone who wants to use vim with [tmux][tmux].  It presents an easy system for treating Vim and Tmux splits as equals, and moving between them easily. 
+- [Seamlessly Navigate Vim & Tmux Splits](http://robots.thoughtbot.com/seamlessly-navigate-vim-and-tmux-splits) - This is a must read for anyone who wants to use vim with [tmux][tmux].  It presents an easy system for treating Vim and Tmux splits as equals, and moving between them easily.
 - 	[Using Tab Pages](http://vim.wikia.com/wiki/Using_tab_pages) - One file management feature I didn't cover, since it's poorly named and a bit confusing to use, is Vim's "tab" feature.  This post on the Vim wiki gives a good overview of how you can use "tab pages" to have multiple views of your current workspace
 - [Vimcasts: The edit command](http://vimcasts.org/episodes/the-edit-command/) - Vimcasts in general is a great resource for anyone learning Vim, but this screenshot does a good job of covering the file opening basics mentioned above, with some suggestions on improving the builtin workflow
 
@@ -85,4 +85,3 @@ This was the third in a series of posts on learning Vim in a modern way.  If you
 [ackpost]: http://benmccormick.org/2013/11/25/a-look-at-ack/
 [nerdtree]:https://github.com/scrooloose/nerdtree
 [ctrlp]:https://github.com/kien/ctrlp.vim
-
