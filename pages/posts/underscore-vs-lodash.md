@@ -32,7 +32,7 @@ Let's examine those one by one.
 Lo-Dash makes a number of additions to Underscore that don't add new capabilities, but increase usability for developers.  These include
 
 1. ~~Built in Support for AMD Module Loaders~~
-2. Short hand syntaxes for chaining 
+2. Short hand syntaxes for chaining
 3. Custom Builds to only use what you need
 4. Semantic versioning and 100% code coverage
 
@@ -72,19 +72,19 @@ Lo-Dash includes several functions not included in Underscore.  Some of these ar
 
 Lo-Dash has an impressive set of [benchmarks][lodashbenchmarks] that you can run on its site which highlight its speed advantage over Underscore on a variety of operations. This is great, but benchmarking against specific tests like this can lead to local optimizations that might not lead to real-world speed.  I also don't have much interest in many of the functions tested; I use them rarely and can handle a speed dip if necessary.  I was mostly interested in how Underscore and Lo-Dash compared on their core functional methods.  So I set up some jsPerf tests that you can run yourself for [\_.each][eachtest], [\_.contains][containstest], [\_.map][maptest], [\_.reduce][reducetest], and [\_.filter][filtertest]. Here's a simplified version of the results, comparing Underscore and Lo-Dash performance in terms of their improvement over the speed of the browsers' native functions.  Results in the chart are averaged across browsers.
 
-<iframe width="100%" height="420" src="http://cloud.highcharts.com/embed/utusen/3" style="border: 0px;"></iframe>
+ > __Edit: There used to be a chart here. Unfortunately the 3rd party service I used to embed the chart lost my data.  A good reminder to own your own content.  At this point the exact performance data from 2014 would no longer be representative of the current state of things anyway.  The tests above will provide a more accurate look at current performance.__
 
 These tests are not incredibly scientific, and the chart especially is oversimplified, but they're meant to represent real world usage in an easily digestible format.  Draw conclusions from them at your own risk.  That said, there were a few interesting results that I think are reasonably reliable.
 
 1. **Both Underscore and Lo-Dash blow away the native functional methods.**
 
-    With its latest versions Underscore has joined Lo-Dash in using loop based iteration to handle each, map, reduce and filter instead of proxying to the native code.  Counterintuitively this ends up being much faster.  Consistently across the board, Underscore and Lo-Dash beat native functions in terms of speed.  A little research indicates that this is because native functions optimize for sparse arrays and have more weird corner cases that they handle.  In any case, the performance difference is pretty startling across the board. 
-    
+    With its latest versions Underscore has joined Lo-Dash in using loop based iteration to handle each, map, reduce and filter instead of proxying to the native code.  Counterintuitively this ends up being much faster.  Consistently across the board, Underscore and Lo-Dash beat native functions in terms of speed.  A little research indicates that this is because native functions optimize for sparse arrays and have more weird corner cases that they handle.  In any case, the performance difference is pretty startling across the board.
+
     You can still manage to beat the libraries' performance by using simple for loops, which is what underscore and lo-dash use after they handle edge cases of their own.  The tradeoff at that point becomes about readability and reliability vs speed, and I'd suggest that using loops is an optimization step in most cases where you'd want to use a utility library, rather than a good starting point.
 
 2. **Lo-Dash is definitely not slower than Underscore**
 
-    It's hard to know how significant some of the results here are, as there are a mix of differences which change across browsers.  Again, it's not a very scientific test.  But Lo-Dash is never significantly slower than Underscore on pretty much any test (the worst seems to be a ~7% difference on Firefox for `_.each()`).  And for several tests it came across as significantly faster (8x speed difference for contains on Firefox!).  I expect many of these differences would prove to be insignificant or inaccurate on a more rigorous test, but it would be very surprising if the net result was that Underscore was faster for common operations. 
+    It's hard to know how significant some of the results here are, as there are a mix of differences which change across browsers.  Again, it's not a very scientific test.  But Lo-Dash is never significantly slower than Underscore on pretty much any test (the worst seems to be a ~7% difference on Firefox for `_.each()`).  And for several tests it came across as significantly faster (8x speed difference for contains on Firefox!).  I expect many of these differences would prove to be insignificant or inaccurate on a more rigorous test, but it would be very surprising if the net result was that Underscore was faster for common operations.
 
 
 
@@ -139,4 +139,3 @@ Thanks for taking the time to read!  Javascript development is one of the main t
 [underscore]: http://underscorejs.org/
 [backbone]: http://backbonejs.org/
 [lodash]: https://lodash.com/
-
