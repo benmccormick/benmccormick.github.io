@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2016-11-28T03:17:53Z</updated>
+    <updated>2016-12-01T03:25:30Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -876,7 +876,9 @@ js=js,es6
 <p><a href="https://atom.io/packages/todo-show">Todo-show</a> is a cool little package that searches your project for comments containing TODO, FIXME, CHANGED, REVIEW and other configurable comment strings, and lists them as a table.  It’s a simple idea that formalizes something that many developers do all the time.</p>
 <img class="full-width" alt="todo-show" src="/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom-1.png">
 <p><strong>Update</strong>:  Twitter has pointed out this even crazier riff on this concept that I’d seen a while ago but had been unable to find when I dove back into Atom.  <a href="http://imdone.io/">Imdone</a> is a trello-like experience in the editor for managing todos.</p>
+<div>
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/ben336">@ben336</a> <a href="https://twitter.com/AtomEditor">@AtomEditor</a> You might also like imdone-atom. It&#39;s a drag and drop TODO task board with issue tracking integration!</p>&mdash; imdone.io (@imdoneIO) <a href="https://twitter.com/imdoneIO/status/686577997395013633">January 11, 2016</a></blockquote>
+</div>
 <h3>Linter</h3>
 <p>Similar to autocomplete-plus, you may think you’ve seen <a href="https://atom.io/packages/linter">Linter</a> before.  It’s similar to Syntastic for Vim and SublimeLinter for Sublime Text.  But Atom’s flexibility allows it to be better than both of those.  Like Syntastic and SublimeLinter, Linter integrates with many different linting providers to show errors and warnings that tools pick up on through static analysis in files.  But rather than being limited to the line-by-line gutter warnings or showing collections of warnings through awkward use of UI elements meant for a different purpose, Linter shows you a live collection of errors at the bottom of the file and lets you easily switch back and forth between that and errors for all open project files.</p>
 <img class="full-width" alt="linter" src="/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom-2.png">
