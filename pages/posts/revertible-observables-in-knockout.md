@@ -111,7 +111,9 @@ Note that this isn't a silver bullet.  An explicit confirmation is no longer req
 
 I showed this to Ryan and he replied with a nice simplification of the concept.
 
+<div>
 <blockquote class="twitter-tweet"><p>@<a href="https://twitter.com/ben336">ben336</a> nice Ben. I have had to do something similar in the past. Here is a simplified version that I have used: <a href="http://t.co/IiqFe90kwi" title="http://jsfiddle.net/rniemeyer/SFCgr/">jsfiddle.net/rniemeyer/SFCg…</a></p>&mdash; Ryan Niemeyer (@RPNiemeyer) <a href="https://twitter.com/RPNiemeyer/status/331954950009663488">May 8, 2013</a></blockquote>
+</div>
 
 ```javascript
 //Ryan Niemeyer's simplified knockout-revertible.js

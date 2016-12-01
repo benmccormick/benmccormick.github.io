@@ -8,6 +8,7 @@ import Bio from '../components/Bio'
 import {Disqus} from '../components/Disqus'
 import forEach from 'lodash/forEach'
 import last from 'lodash/last'
+import defer from 'lodash/defer'
 import TwitterWidgetsLoader from 'twitter-widgets';
 import { prefixLink } from 'gatsby-helpers'
 
@@ -38,16 +39,22 @@ class MarkdownWrapper extends React.Component {
     }
 
     componentDidMount() {
-        let tweets = this.markdownContainer.querySelectorAll('.twitter-tweet');
-        let followButtons = this.markdownContainer.querySelectorAll('.twitter-follow-button');
         TwitterWidgetsLoader.load(twttr => {
+          let tweets = this.markdownContainer.querySelectorAll('blockquote.twitter-tweet');
+          let followButtons = this.markdownContainer.querySelectorAll('.twitter-follow-button');
+          defer(() => {
             forEach(tweets, tweet => {
                 let id = this.extractTwitterStatusID(tweet);
-                twttr.widgets.createTweet(id, tweet);
+                let parent = tweet.parentNode;
+                tweet.remove();
+                let container = document.createElement('div');
+                parent.appendChild(container)
+                twttr.widgets.createTweet(id, parent);
             });
             forEach(followButtons, button => {
                 twttr.widgets.createFollowButton('', button);
             });
+          });
         });
 
     }

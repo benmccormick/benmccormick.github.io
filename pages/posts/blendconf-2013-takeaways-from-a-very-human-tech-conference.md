@@ -27,12 +27,14 @@ Blendconf was the first major tech conference I've attended.  I wasn't totally s
 
 ## A Great Summary From Twitter
 
+<div>
 <blockquote class="twitter-tweet"><p>The best part of <a
 href="https://twitter.com/blendconf">@blendconf</a> wasn’t the device
 policy or the talks, it was the uniformly awesome love and energy from
 everyone there.</p>&mdash; Tim Cheadle (@timcheadle) <a
 href="https://twitter.com/timcheadle/statuses/376491690791817217">September
 7, 2013</a></blockquote>
+</div>
 
 
 [blendconf]:http://blendconf.com/
