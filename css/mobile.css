@@ -1,6 +1,9 @@
 @media all and (max-width: 600px) {
   .no-mobile {
-    display:none;
+    display: none;
+  }
+  #carbonads {
+    display: none;
   }
 }
 
