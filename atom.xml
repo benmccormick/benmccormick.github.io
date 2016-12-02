@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2016-12-01T16:10:13Z</updated>
+    <updated>2016-12-02T20:56:05Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -16,6 +16,38 @@
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[A whole new site]]></title>
+        <id>https://benmccormick.org/2016/12/02/whole-new-site/</id>
+        <link href="https://benmccormick.org/2016/12/02/whole-new-site/">
+        </link>
+        <updated>2016-12-02T16:00:00Z</updated>
+        <content type="html"><![CDATA[<p>After 2.5 years of stability, this week I moved <a href="http://benmccormick.org">benmccormick.org</a> to a new platform and overhauled the look and feel. Although most readers have seen the site remain relatively stable, this is actually the 5th major revision of the site since it was first created, so this seems like a good time for a quick trip down memory lane.</p>
+<p>I first started it as a Django app, wanting to challenge myself to build a blog.  That was so short-lived that the way-back machine never even registered it, and I don’t have any evidence that it ever existed (thankfully).  In December 2012, I moved the blog over to <a href="http://octopress.org/">Octopress</a> a static site generator based on Ruby.  I started out using a very nice stock template:</p>
+<img src="/posts/images/oldsite1.png" class="full-width">
+<p>and then shortly switched to a version that I mostly did myself based off of the default octopress theme.  This was one of my first attempts to design anything from scratch, and was not particularly pretty:</p>
+<img src="/posts/images/oldsite2.png" class="full-width">
+<p>I enjoyed Octopress, but spent a lot of time messing around with it (and struggling through the unfamiliar ruby ecosystem), and not a lot of time writing.  So in the spring of 2014 I decided I wanted to switch to a blogging platform where I could write, rather than messing with code.  So I moved my blog to <a href="https://ghost.org/">Ghost</a>, lightly modified a public theme, and began writing about Vim.  It was around this time (2 years and 40 articles in) that I began to attract more readers, and also began to focus more on higher quality technical articles:</p>
+<img src="/posts/images/oldsite3.png" class="full-width">
+<p>About a year after that I re-introduced some color to the blog after a prolonged absence. The black and white sidebar was traded for a colorful green, and a I began using a mix of blue and red for text emphasis. I also began to focus on making it more clear how to subscribe to the blog, and highlighted the more popular content:</p>
+<img src="/posts/images/oldsite4.png" class="full-width">
+<p>Ghost was a great blogging platform, but this fall I decided it was time to move off of it.  I was interested in trying some things that didn’t fit into the platform’s more structured approach, and wanted to move the blog to a place where it was no longer losing me money to run.  So I decided to take another look at the static site generator landscape. I looked through the top 12 or so options on <a href="https://www.staticgen.com/">StaticGen</a> and <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> quickly stood out.  It uses concepts I’m extremely comfortable with (built with React and Webpack!), produces fast server-rendered SPA style sites, and dictates almost nothing about how the site is built.</p>
+<p>The site is now built with Gatsby and hosted on Github pages.  I’ve ditched the noisy green sidebar in favor of a simpler text-focused experience and added a small ad at the top of the page to offset some of the costs associated with the blog.  I’m planning on iterating on the design (better organizing and exposing older content, making it simpler to subscribe to the blog, and making it easier for me to add rich content/code examples to posts without relying on 3rd party services), but for right now I’m excited to get back to focusing on writing.</p>
+<img src="/posts/images/current_site.png" class="full-width">
+<p>Like all software, as this blog has evolved, I’m sure not all of the progress has been forward.  If you see any issues with the new site, feedback and bugfixes are welcome.  Feel free to hit me up on <a href="https://twitter.com/ben336">twitter</a>, comment on this post, or open an issue on the site’s <a href="https://github.com/benmccormick/benmccormickorg/issues">github repo</a>.  Thank you to everyone who has read and supported this site over the past several years.</p>
+<h3>More Resources</h3>
+<ul>
+<li>If you’re interested in <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> this post on <a href="https://blog.scottnonnenberg.com/practical-gatsby-js/">Practical Gatsby.js</a> by Scott Nonnenberg is excellent.  Its not a how-to, but more of a series of examples of how he deviated from the base Gatsby blog (and why).  I found it really helpful when brainstorming ideas for this site.</li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  I’m going to be ramping up posts again this winter, so if you have enjoyed my posts, please consider subscribing by using the <a href="http://benmccormick.org/rss/">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/">post on choosing which component styles to use in React</a>.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Testing with Jest Snapshots: First Impressions]]></title>
         <id>https://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/</id>
@@ -887,125 +919,6 @@ js=js,es6
 <img class="full-width" alt="time-machine" src="/posts/images/Fullscreen_1_10_16__9_24_PM.png">
 <h3>Subscribe</h3>
 <p>Thanks for taking the time to read this post!  Software tools are one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post on <a href="http://benmccormick.org/2015/11/25/productive-javascript-development/">productive JavaScript development</a>.</p>
-]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Reusable Code Patterns]]></title>
-        <id>https://benmccormick.org/2016/01/08/reusable-code-patterns/</id>
-        <link href="https://benmccormick.org/2016/01/08/reusable-code-patterns/">
-        </link>
-        <updated>2016-01-08T05:22:29Z</updated>
-        <content type="html"><![CDATA[<p>One of the most repeated mantras in all of software is the term “Don’t Repeat Yourself”. The phrase was first popularized by the book <a href="http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1452230454&amp;sr=1-1&amp;keywords=pragmatic+programmer">The Pragmatic Programmer</a>, with it’s call for DRY software.  At it’s core, DRY is all about finding a way to keep logic related to a particular function in one place, so that changes for new functionality can be limited in scope and have predictable consistent effects.  Software developers are usually very good at knowing that repetition is bad, but I’ve seen that we can be less great at communicating about our options to avoid it, or discussing the tradeoffs between different approaches.  This post is going to look at a specific situation that programmers encounter all the time, and give a framework for talking about how to handle it, focusing on positive options rather than simply what we want to avoid.</p>
-<p>The high level situation I want to talk about is when a programmer encounters a problem for which they have an existing piece of code that mostly works as a solution, but doesn’t quite meet all the requirements.  Some examples would include:</p>
-<ul>
-<li>a screen that is required to show a user avatar, but at a different size than other avatars displayed in the interface (all of which use an existing avatar ui widget)</li>
-<li>a program that already has an API to get friends data from a users Facebook account, and needs to add a second API to get similar data from their Twitter account</li>
-<li>a program that needs a  function that takes an integer or a string and displays it on the screen, when it already has a function that displays data but only accepts strings</li>
-</ul>
-<p>Some of those are simple, some are more complex, and you might already be thinking about how you’d handle each case.  The point isn’t so much the exact example so much as having a way to communicate what the options are.  I’m going to lay out 6 different patterns for handling situations where you’re required to implement something similar but not exactly the same as something that already exists.  I will not be endorsing a particular strategy as correct, since they all have their place.  Instead I’ll be discussing the benefits and risks of each, and hopefully giving a good framework for thinking about and discussing these tradeoffs in the future.</p>
-<h3>Using the existing component as is</h3>
-<h4>Pros</h4>
-<ul>
-<li>Least Effort</li>
-<li>Encourages consistency and simplicity</li>
-</ul>
-<h4>Cons</h4>
-<ul>
-<li>Often not allowed</li>
-<li>May be compromising user experience for developer expediency</li>
-</ul>
-<p>The first option is the simplest.  If you have a component that is similar to what is required but doesn’t quite match the requirements, change the requirements.  This can make sense in situations like the avatar example above, when you have a UI element or control that you use everywhere in the system.  It may make sense to use that same element in a new place for the benefit of consistency and user knowledge, rather than inventing a new UI element for the page.  This obviously requires an environment where developer input is welcome in the design and requirements process.</p>
-<p>Developers should be cautious with this though.  If using an existing component removes unecessary complexity from the design and saves time, it’s a win-win.  But if the design was a good one, and users lose out on functionality through developer “efficiency”, it can hurt the product.  Even worse, decisions like that usually end up coming back round again, as the need that was ignored often will pop up in new situations.</p>
-<h3>Copy and Paste</h3>
-<h4>Pros</h4>
-<ul>
-<li>Simple</li>
-<li>Keeps existing code stable in the short term</li>
-</ul>
-<h4>Cons</h4>
-<ul>
-<li>Adds to maintenance burden</li>
-<li>Decreases readability/understandability of the code base for other developers</li>
-</ul>
-<p>This is the approach that says “To Hell with DRY”, and takes some existing code, creates a copy of it, and then partially modifies it to suit the current situation.  This would be analogous to taking the User avatar code listed above, creating a copy of it and simply modifying it to be bigger.  That might look like this in CSS:</p>
-<pre><code>.user-avatar {
-    height: 30px;
-    width: 30px;
-    padding:5px;
-    float: left;
-    border-radius: 5px;
-}
-
-.user-avatar-big {
-    height: 50px;
-    width: 50px;
-    padding:5px;
-    float: left;
-    border-radius: 10px;
-}
-</code></pre>
-<p>Everything now works exactly the way we want it.  The problem comes when somebody wants to change the floats on avatar elements, or add a border to all of them now.  Instead of being able to make one change, they have to be aware of both avatar versions, and modify both.</p>
-<p>Note that copy and paste isn’t always bad.  Often there are very good reasons for not modifying existing code.  It may be code that you don’t control (for instance forking an open source project that is not actively maintained to add a feature that you want), or code that is from another project (or from a legacy portion of the current project that is handled as a different code base).  DRY is not crazy advice though, and if you’re operating within a single codebase you control, this is usually not the best option.</p>
-<h3>Classical Inheritance</h3>
-<h4>Pros</h4>
-<ul>
-<li>Well understood by most programmers, especially those with an academic background</li>
-<li>fits very well when you have multiple things that are variations of a type, with more similarities than differences</li>
-</ul>
-<h4>Cons</h4>
-<ul>
-<li>Often used as a silver bullet for all situations</li>
-<li>Not suitable for situations where the objects are more different than similar, or when they are 2 different things at the core with shared behavior</li>
-</ul>
-<p>If you ask a recent Computer Science graduate what the best way to solve the problem of similar behavior across objects is, 99% of them will immediately say <a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)">inheritance</a>.  The “conventional wisdom” that’s taught in most introductory computer science courses is that Object Oriented Programming is the best way to structure programs, and that Object Oriented programming is primarily about inheritance.  Both statements are shaky, but the prevalence of this mindset means that many developers come out of school and look at every problem they see as a nail to hit with their inheritance hammer (this is certainly something I was guilty of when I first graduated).</p>
-<p>Inheritance isn’t bad.  It’s definitely a tool you want in your toolbox, and shallow hierarchies of objects that inherit from a base class are a great pattern.  90% of “Frameworks” out there (Backbone, React, django, Rails, etc) use some form of inheritance as a way of structuring how users interact with the framework.  But when it is your only tool, things get ugly quickly.</p>
-<p>Inheritance is a bad choice when 2 objects are mostly different.  Inheritance forces objects to share an API, and implies that objects can be used interchangeably.  If the objects aren’t really interchangeable, this can lead to jumping through hoops to maintain a shared API, with a small base class being stretched between 2 or more verbose child classes.  Interfaces especially tend to be bad places to use inheritance, as they tend to require small tweaks and differences when used in different places that aren’t friendly to being passed as configuration properties or over-ridden methods.</p>
-<h3>Configuration</h3>
-<h4>Pros</h4>
-<ul>
-<li>Keeps everything in a single place</li>
-<li>Declarative configuration can be easier to read and update than a bunch of logic</li>
-</ul>
-<h4>Cons</h4>
-<ul>
-<li>Can get out of hand fast as use cases increase</li>
-<li>Often unclear what defaults should be, bad defaults make common use cases verbose</li>
-</ul>
-<p>We can define separate behaviors for 2 similar things by using a single configurable object. This maximizes code re-use since everything is in one place, and provides an easy to read abstraction over the code for quick changes later.  However, like inheritance it works much better for similar objects with small differences rather than different objects with shared behaviors, and can lead to “configuration creep” when the differences slowly grow, creating a monster configuration and spaghetti code that tries to handle all of the possible configuration options it could be passed.</p>
-<p>A big design point with configuration based strategies is figuring out good defaults.  If an object is designed so that the default case requires minimal to no configuration, and only true edge cases require a lot of configuration, configuration based objects and APIs can be very pleasant to deal with.  But objects with bad or no defaults that require common cases to include extensive configuration eventually lead to bloated projects that are very difficult to debug.</p>
-<h3>Mixins</h3>
-<h4>Pros</h4>
-<ul>
-<li>Share individual behaviors or attributes well</li>
-</ul>
-<h4>Cons</h4>
-<ul>
-<li>Can break down when the behavior or attribute requires significant knowledge about the object</li>
-</ul>
-<p>In contrast to inheritance and configuration, <a href="https://en.wikipedia.org/wiki/Mixin">mixins</a> work well when objects are significantly different, but share similar behaviors. <code>Mixins</code> are the strategy of adding individual methods or properties to an object without implying any relationship between objects that use it.  Mixins are great when used to add a standalone behavior to different objects.  They avoid the problems of inheritance and don’t lock an object into a single API.</p>
-<p>That said, it can often be hard to construct good mixins, since many behaviors require knowledge of the object that is performing the behavior, such as making assumptions about the structure of the objects data.  This either requires the objects implementing the mixin to obey rules about how they’re structured, similar to inheritance, involves offloading significant complexity into the mixin to allow it to handle different formats (making it a potential source of bugs), or it risks naming conflicts if the mixin tries to implement the data storage itself.</p>
-<h3>Composition</h3>
-<h4>Pros</h4>
-<ul>
-<li>Incredibly flexible for handling subtly different behaviors</li>
-</ul>
-<h4>Cons</h4>
-<ul>
-<li>Can ramp up complexity, making it difficult to see the whole system</li>
-<li>May end up pushing code re-use problems downwards instead of solving them, leading to many small similar modules</li>
-</ul>
-<p>Often when faced with 2 similar objects or functions, the best solution is to create more objects or functions.  Composition is trendy these days.  On the server side, you have people talking up micro-services and programs composed of small single-purpose modules.  On the client, React is the hottest library around.  The idea is appealing.  Instead of having one big complicated “thing”, I can create a few smaller “things” that I can wrap my mind around, and then get them to work together.  When this works well its great.  React for example, makes testing UIs much easier, since you can unit test individual components in a reliable way.  The problem is that it often moves complexity out of the components and into the architecture.  The hard part becomes figuring out how components fit together, designing interfaces and deciding what should be going where.  Although any individual piece of code may be comprehensible and simple, the system at large is harder to visualize and understand.</p>
-<p>Like mixins, composition often works best when you have 2 or more fairly different “things” that share behavior.  The composition mindset is to treat code like lego blocks that you can snap together in different configurations as needed.  When done well, it allows for useful abstraction, letting developers create complex components out of meaningful sub-components without having to know all the details of the subcomponents.  When done poorly, it can lead to a fractured project with many undocumented dependencies between components.</p>
-<h2>All Together Now</h2>
-<p>The great thing about these strategies is that none of them is the <strong>right answer</strong>.  All of them have their place, and can even be combined.  At my work we’ve developed code for describing workflows.  The workflows are described using an object that takes a configuration and uses it to layout a series of widgets.  Each widget inherits from a framework, and many of them use mixins to share behavior.  Most of the widgets are composed of several smaller views, and as developers we have pushed back against designs several times in order to allow greater widget re-use.  Each time we need to create a new automator we’ve started by copy and pasting some of the configuration boilerplate (which hopefully we’ll reduce going forward by providing better default behavior as we understand the requirements better). This is one feature of a large software product, and it uses all 6 reuse patterns I’ve described to perform its purpose.</p>
-<p>In the end, what I hope you as a reader get out of this is not that one strategy is good or bad.  Instead I want to provide a way of thinking about the choices around re-use, so that we as developers can talk intelligently about the options and tradeoffs and make the right choice for a given situation.</p>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  Software development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post on <a href="http://benmccormick.org/2015/11/25/productive-javascript-development/">productive JavaScript development</a>.</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
