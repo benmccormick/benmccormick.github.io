@@ -1,0 +1,18 @@
+# This file defines whitespace conventions using Editor Config.
+# You need to install a plugin for your editor to use it
+# See more info here: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+
+# Apply these rules to every JavaScript, LESS and Python File
+[*.{js,css}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true

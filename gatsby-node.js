@@ -13,7 +13,7 @@ const md = MarkdownIt({
   typographer: true
 });
 
-
+/* eslint-disable */
 let buildFeed = (pages) => {
   let feed = new Feed({
     title: 'benmccormick.org',
@@ -27,12 +27,12 @@ let buildFeed = (pages) => {
     }
   });
   pages = sortBy(pages, function(page) {
-    var ref;
+    let ref;
     return (ref = page.data) != null ? ref.date : void 0;
   }).reverse();
 
   let ref = filter(pages, function(f) {
-    var ref, ref1;
+    let ref, ref1;
     if (f.data.layout === 'page') {
       return false;
     }
@@ -43,49 +43,49 @@ let buildFeed = (pages) => {
     page = ref[i];
     feed.addItem({
       title: page.data.title,
-      id: "https://benmccormick.org" + page.path,
-      link: "https://benmccormick.org" + page.path,
+      id: 'https://benmccormick.org' + page.path,
+      link: 'https://benmccormick.org' + page.path,
       date: moment(page.data.date).toDate(),
-      content: md.render(frontmatter(fs.readFileSync(__dirname + "/pages/" + page.requirePath, 'utf-8')).body),
+      content: md.render(frontmatter(fs.readFileSync(__dirname + '/pages/' + page.requirePath, 'utf-8')).body),
       author: [
         {
-          name: "Ben McCormick",
-          email: "ben@benmccormick.org",
-          link: "http://benmccormick.org"
+          name: 'Ben McCormick',
+          email: 'ben@benmccormick.org',
+          link: 'http://benmccormick.org'
         }
       ]
     });
   }
   feed.addContributor({
-      name: "Ben McCormick",
-      email: "ben@benmccormick.org",
-      link: "http://benmccormick.org"
+    name: 'Ben McCormick',
+    email: 'ben@benmccormick.org',
+    link: 'http://benmccormick.org'
   });
   return feed;
 };
-
+/* eslint-enable*/
 let createRSSFolder = () => {
-    try {
-        fs.mkdirSync(__dirname + "/public/rss/");
-    } catch (e) {
+  try {
+    fs.mkdirSync(__dirname + '/public/rss/');
+  } catch (e) {
         //this is fine, it may fail if the file already exists
-    }
+  }
 };
 let generateAtomFeed = (feed) => {
-  return fs.writeFileSync(__dirname + "/public/atom.xml", feed.render('atom-1.0'));
+  return fs.writeFileSync(__dirname + '/public/atom.xml', feed.render('atom-1.0'));
 };
 let generateRSS = (feed) => {
-  return fs.writeFileSync(__dirname + "/public/rss/index.xml", feed.render('rss-2.0'));
+  return fs.writeFileSync(__dirname + '/public/rss/index.xml', feed.render('rss-2.0'));
 };
 
 let copyCNAME = (cb) => {
-  copyFile(`${__dirname}/pages/CNAME`,`${__dirname}/public/CNAME`, err => err ? cb(false) : cb());
+  copyFile(`${__dirname}/pages/CNAME`, `${__dirname}/public/CNAME`, err => err ? cb(false) : cb());
 };
 
 exports.postBuild = function(pages, callback) {
-    let feed = buildFeed(pages)
-    createRSSFolder();
-    generateAtomFeed(feed);
-    generateRSS(feed);
-    copyCNAME(callback);
+  let feed = buildFeed(pages);
+  createRSSFolder();
+  generateAtomFeed(feed);
+  generateRSS(feed);
+  copyCNAME(callback);
 };

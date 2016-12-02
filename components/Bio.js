@@ -1,20 +1,19 @@
-import React from 'react'
-import { config } from 'config'
-import { rhythm } from 'utils/typography'
-import { prefixLink } from 'gatsby-helpers'
+import React from 'react';
+import { config } from 'config';
+import { rhythm } from 'utils/typography';
 
 class Bio extends React.Component {
-  render () {
+  render() {
     return (
       <p
-        style={{
+        style = {{
           marginBottom: rhythm(2.5),
         }}
       >
         Written by {config.authorName}
       </p>
-    )
+    );
   }
 }
 
-export default Bio
+export default Bio;
