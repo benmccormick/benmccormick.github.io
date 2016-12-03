@@ -13,6 +13,13 @@ const md = MarkdownIt({
   typographer: true
 });
 
+const buildContent = page => {
+  let body = md.render(
+    frontmatter(fs.readFileSync(__dirname + '/pages/' + page.requirePath, 'utf-8')).body
+  );
+  return body.replace(/src="\//g, 'src="http://benmccormick.org/');
+};
+
 /* eslint-disable */
 let buildFeed = (pages) => {
   let feed = new Feed({
@@ -46,7 +53,7 @@ let buildFeed = (pages) => {
       id: 'https://benmccormick.org' + page.path,
       link: 'https://benmccormick.org' + page.path,
       date: moment(page.data.date).toDate(),
-      content: md.render(frontmatter(fs.readFileSync(__dirname + '/pages/' + page.requirePath, 'utf-8')).body),
+      content: buildContent(page),
       author: [
         {
           name: 'Ben McCormick',
