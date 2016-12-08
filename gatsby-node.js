@@ -6,6 +6,34 @@ const MarkdownIt = require('markdown-it');
 const fs = require('fs');
 const frontmatter = require('front-matter');
 const copyFile = require('./utils/file_system').copyFile;
+const sm = require('sitemap');
+
+function pagesToSitemap(pages) {
+  const urls = pages.map((p) => {
+    if (p.path !== undefined) {
+      return {
+        url: p.path,
+        changefreq: 'daily',
+        priority: 0.7
+      }
+    }
+  })
+  // remove undefined (template pages)
+  return urls.filter(u => u !== undefined)
+}
+
+function generateSiteMap(pages) {
+  const sitemap = sm.createSitemap({
+    hostname: 'https://benmccormick.org',
+    cacheTime: '60000',
+    urls: pagesToSitemap(pages),
+  })
+  console.log('Generating sitemap.xml')
+  fs.writeFileSync(
+    `${__dirname}/public/sitemap.xml`,
+    sitemap.toString()
+  )
+}
 
 const md = MarkdownIt({
   html: true,
@@ -94,5 +122,6 @@ exports.postBuild = function(pages, callback) {
   createRSSFolder();
   generateAtomFeed(feed);
   generateRSS(feed);
+  generateSiteMap(pages);
   copyCNAME(callback);
 };

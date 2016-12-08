@@ -27,7 +27,8 @@
   "devDependencies": {
     "feed": "^0.3.0",
     "front-matter": "^2.1.0",
-    "gh-pages": "^0.11.0"
+    "gh-pages": "^0.11.0",
+    "sitemap": "^1.8.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
