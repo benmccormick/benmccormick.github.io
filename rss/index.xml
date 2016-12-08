@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Fri, 02 Dec 2016 20:56:05 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 08 Dec 2016 16:08:28 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
@@ -15,16 +15,16 @@
             <pubDate>Fri, 02 Dec 2016 16:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>After 2.5 years of stability, this week I moved <a href="http://benmccormick.org">benmccormick.org</a> to a new platform and overhauled the look and feel. Although most readers have seen the site remain relatively stable, this is actually the 5th major revision of the site since it was first created, so this seems like a good time for a quick trip down memory lane.</p>
 <p>I first started it as a Django app, wanting to challenge myself to build a blog.  That was so short-lived that the way-back machine never even registered it, and I don’t have any evidence that it ever existed (thankfully).  In December 2012, I moved the blog over to <a href="http://octopress.org/">Octopress</a> a static site generator based on Ruby.  I started out using a very nice stock template:</p>
-<img src="/posts/images/oldsite1.png" class="full-width">
+<img src="http://benmccormick.org/posts/images/oldsite1.png" class="full-width">
 <p>and then shortly switched to a version that I mostly did myself based off of the default octopress theme.  This was one of my first attempts to design anything from scratch, and was not particularly pretty:</p>
-<img src="/posts/images/oldsite2.png" class="full-width">
+<img src="http://benmccormick.org/posts/images/oldsite2.png" class="full-width">
 <p>I enjoyed Octopress, but spent a lot of time messing around with it (and struggling through the unfamiliar ruby ecosystem), and not a lot of time writing.  So in the spring of 2014 I decided I wanted to switch to a blogging platform where I could write, rather than messing with code.  So I moved my blog to <a href="https://ghost.org/">Ghost</a>, lightly modified a public theme, and began writing about Vim.  It was around this time (2 years and 40 articles in) that I began to attract more readers, and also began to focus more on higher quality technical articles:</p>
-<img src="/posts/images/oldsite3.png" class="full-width">
+<img src="http://benmccormick.org/posts/images/oldsite3.png" class="full-width">
 <p>About a year after that I re-introduced some color to the blog after a prolonged absence. The black and white sidebar was traded for a colorful green, and a I began using a mix of blue and red for text emphasis. I also began to focus on making it more clear how to subscribe to the blog, and highlighted the more popular content:</p>
-<img src="/posts/images/oldsite4.png" class="full-width">
+<img src="http://benmccormick.org/posts/images/oldsite4.png" class="full-width">
 <p>Ghost was a great blogging platform, but this fall I decided it was time to move off of it.  I was interested in trying some things that didn’t fit into the platform’s more structured approach, and wanted to move the blog to a place where it was no longer losing me money to run.  So I decided to take another look at the static site generator landscape. I looked through the top 12 or so options on <a href="https://www.staticgen.com/">StaticGen</a> and <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> quickly stood out.  It uses concepts I’m extremely comfortable with (built with React and Webpack!), produces fast server-rendered SPA style sites, and dictates almost nothing about how the site is built.</p>
 <p>The site is now built with Gatsby and hosted on Github pages.  I’ve ditched the noisy green sidebar in favor of a simpler text-focused experience and added a small ad at the top of the page to offset some of the costs associated with the blog.  I’m planning on iterating on the design (better organizing and exposing older content, making it simpler to subscribe to the blog, and making it easier for me to add rich content/code examples to posts without relying on 3rd party services), but for right now I’m excited to get back to focusing on writing.</p>
-<img src="/posts/images/current_site.png" class="full-width">
+<img src="http://benmccormick.org/posts/images/current_site.png" class="full-width">
 <p>Like all software, as this blog has evolved, I’m sure not all of the progress has been forward.  If you see any issues with the new site, feedback and bugfixes are welcome.  Feel free to hit me up on <a href="https://twitter.com/ben336">twitter</a>, comment on this post, or open an issue on the site’s <a href="https://github.com/benmccormick/benmccormickorg/issues">github repo</a>.  Thank you to everyone who has read and supported this site over the past several years.</p>
 <h3>More Resources</h3>
 <ul>
@@ -678,138 +678,138 @@ js=js,es6
             <pubDate>Mon, 07 Mar 2016 05:06:40 GMT</pubDate>
             <content:encoded><![CDATA[<p>For the past 2 years, ~90% of my coding time has been spent working on a large scale Backbone.js app.  In February 2014, the Backbone community was in a fairly good place.  The core library had reached 1.0 the previous year and had a strong team around it.  Marionette had emerged as a de-facto standard for web applications [^1].  There were Backbone specific plugins for many tasks, and generally gaps could be filled using the jQuery plugin ecosystem, or a framework agnostic library.  At the time, Backbone would have been a very defensible choice as a library for starting a new web development, as a simpler and more stable alternative to AngularJS, the current “hot” framework.</p>
 <p>Since then a few things have happened.  First, React has taken off, while Angular and Ember have continued to grow and learn from React and each other. Angular and React have benefited from significant marketing and financial support for a core development team that have helped them grow quickly.  Google Trends gives a pretty good idea of how that has turned out.</p>
-<p><img src="/posts/images/Google_Trends_-_Web_Search_interest__angular_js__react_js__backbone_js__ember_js_-_Worldwide__Jan_2010_-_Feb_2016.png" alt="Google trends graph"></p>
+<p><img src="http://benmccormick.org/posts/images/Google_Trends_-_Web_Search_interest__angular_js__react_js__backbone_js__ember_js_-_Worldwide__Jan_2010_-_Feb_2016.png" alt="Google trends graph"></p>
 <p><strong>Update:</strong> <em>I’ve changed the above graph from an original that used angular.js, backbone.js, ember.js, and react.js as the search terms.  Only Backbone prefixes itself with a .js that way, and it undersold the other libraries, especially Angular.  I believe that this chart more accurately reflects usage trends.</em></p>
 <p>Secondly, Backbone’s author, <a href="https://twitter.com/jashkenas">Jeremy Ashkenas</a> made a decision to call Backbone “finished” in terms of API and feature set after the 1.0 release.  This has the advantage of leaving Backbone as by far the most stable major JavaScript framework, but hinders efforts to pull in lessons from other frameworks [^2].</p>
 <p>Finally, whether as a result of the first 2 items or due to some other factor, the ecosystem around Backbone has crumbled.  While Backbone’s core has stabilized, it still has a team of maintainers who are actively managing the project.  That does not appear to be the case for many of the other libraries in the Backbone ecosystem.  To investigate my perception of this, I decided to look at the contribution graphs of popular Backbone libraries to see the trends over the last 2 years.  I built a list of libraries based on the projects that the bower registry returns for the backbone keyword, looking for projects with at least 400 github stars[^3]. That lead to a list of 24 projects below.</p>
 <p>To be clear, I’m not posting this as a criticism of anyone.  Open source is a volunteer effort, and maintaining a project is hard and often doesn’t make sense when the author has moved on to other challenges.  This is simply an honest look at where the Backbone ecosystem stands, with the goal of helping those of us who are building Backbone applications or considering using it to evaluate the ecosystem honestly.</p>
 <h3>1. Backbone</h3>
-<p><img src="/posts/images/Contributors_to_jashkenas_backbone.png" alt="backbone graph"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_jashkenas_backbone.png" alt="backbone graph"></p>
 <p><strong>Open issues:</strong> 54</p>
 <p><strong>Issues closed in 2016:</strong> 50+</p>
 <p><strong>Last Release</strong>: 3 days ago (March 3rd 2016)</p>
 <p>I’m starting with Backbone itself to give an idea what a stable mature project graph looks like.  Backbone isn’t getting the activity it used to, but there’s still a steady flow of bug fixes and documentation updates, and issues are being worked through.</p>
 <h3>2. Marionette</h3>
-<p><img src="/posts/images/Contributors_to_marionettejs_backbone_marionette.png" alt="mn graph"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_marionettejs_backbone_marionette.png" alt="mn graph"></p>
 <p><strong>Open Issues:</strong> 107</p>
 <p><strong>Issues closed in 2016:</strong> 30+</p>
 <p><strong>Last Release</strong>: November 22 2015</p>
 <p>Of all the graphs here, this one is the nearest and dearest to me.  I’ve contributed code to Marionette, and have written about it <a href="http://benmccormick.org/marionette-explained/">many times</a> on this blog.  Marionette still is seeing plenty of work, but as the contributors have cycled through, work on a long awaited version 3 with important improvements has sat on a branch for over a year.  This is a great library, but it hasn’t been immune to the wider issues in the ecosystem.</p>
 <h3>3. Backbone.Relational</h3>
-<p><img src="/posts/images/Contributors_to_PaulUithol_Backbone-relational.png" alt="bb-relational"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_PaulUithol_Backbone-relational.png" alt="bb-relational"></p>
 <p><strong>Open Issues:</strong> 122</p>
 <p><strong>Issues closed in 2016:</strong> 0</p>
 <p><strong>Last Release:</strong> August 19 2015</p>
 <p>Backbone.Relational is another “stable” library.  On its own, there’s nothing wrong with that, this is a focused library that doesn’t necessarily need a lot of new features.  But this is the start of a pattern.</p>
 <h3>4. backbone-forms</h3>
-<p><img src="/posts/images/Contributors_to_powmedia_backbone-forms.png" alt="bb-forms"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_powmedia_backbone-forms.png" alt="bb-forms"></p>
 <p><strong>Open Issues:</strong> 172</p>
 <p><strong>Issues closed in 2016:</strong> 14</p>
 <p><strong>Last Release:</strong> Jan 21, 2016</p>
 <h3>5. backgrid</h3>
-<p><img src="/posts/images/Contributors_to_wyuenho_backgrid.png" alt="backgrid"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_wyuenho_backgrid.png" alt="backgrid"></p>
 <p><strong>Open Issues:</strong> 111</p>
 <p><strong>Issues closed in 2016:</strong> 3</p>
 <p><strong>Last Release:</strong> Jan 21 2014</p>
 <p>This is the first project on this list that I wouldn’t consider to be actively maintained.  Commits over the past 2 years have been primarily about keeping tooling and documentation up to date.</p>
 <h3>6. backbone.localStorage</h3>
-<p><img src="/posts/images/Contributors_to_jeromegn_Backbone_localStorage.png" alt="localstorage"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_jeromegn_Backbone_localStorage.png" alt="localstorage"></p>
 <p><strong>Open Issues:</strong> 45</p>
 <p><strong>Issues closed in 2016:</strong> 1</p>
 <p><strong>Last Release:</strong> Jan 22 2015</p>
 <h3>7. backbone.stickit</h3>
-<p><img src="/posts/images/Contributors_to_NYTimes_backbone_stickit.png" alt="stickit"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_NYTimes_backbone_stickit.png" alt="stickit"></p>
 <p><strong>Open Issues:</strong> 26</p>
 <p><strong>Issues closed in 2016:</strong> 1</p>
 <p><strong>Last Release:</strong> May 11 2015</p>
 <h3>8. backbone.paginator</h3>
-<p><img src="/posts/images/Contributors_to_backbone-paginator_backbone_paginator.png" alt="paginator"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_backbone-paginator_backbone_paginator.png" alt="paginator"></p>
 <p><strong>Open Issues:</strong> 20</p>
 <p><strong>Issues closed in 2016:</strong> 7+</p>
 <p><strong>Last Release:</strong> Feb 3 2016</p>
 <h3>9. Backbone-validation</h3>
-<p><img src="/posts/images/Contributors_to_thedersen_backbone_validation.png" alt="validation"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_thedersen_backbone_validation.png" alt="validation"></p>
 <p><strong>Open Issues:</strong> 79</p>
 <p><strong>Issues closed in 2016:</strong> 1</p>
 <p><strong>Last Release:</strong> May 8 2015</p>
 <p>I have personal experience with the abandoned state of this library since my team has been working off a forked version of it for 6 months while waiting on maintainers to address a <a href="https://github.com/thedersen/backbone.validation/pull/302">pull request</a>.  Like many others here, it appears to be a project that the core team moved on from and nobody else had the motivation or time to pick it up.  While there’s nothing wrong with that, it makes it hard to rely on these projects.</p>
 <h3>10. Knockback</h3>
-<p><img src="/posts/images/Contributors_to_kmalakoff_knockback.png" alt="knockback graph"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_kmalakoff_knockback.png" alt="knockback graph"></p>
 <p><strong>Open Issues:</strong> 4</p>
 <p><strong>Issues closed in 2016:</strong> 1</p>
 <p><strong>Last Release:</strong> Sep 28 2015</p>
 <h3>11. Exoskeleton</h3>
-<p><img src="/posts/images/Contributors_to_paulmillr_exoskeleton.png" alt="exoskeleton graph"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_paulmillr_exoskeleton.png" alt="exoskeleton graph"></p>
 <p><strong>Open Issues:</strong> 21</p>
 <p><strong>Issues closed in 2016:</strong> 2</p>
 <p><strong>Last Release:</strong> August 4 2014</p>
 <h3>12. Backbone.dualstorage</h3>
-<p><img src="/posts/images/Banners_and_Alerts_and_Contributors_to_nilbus_Backbone_dualStorage.png" alt="backbone.dualstorage"></p>
+<p><img src="http://benmccormick.org/posts/images/Banners_and_Alerts_and_Contributors_to_nilbus_Backbone_dualStorage.png" alt="backbone.dualstorage"></p>
 <p><strong>Open Issues:</strong> 30</p>
 <p><strong>Issues closed in 2016:</strong> 0</p>
 <p><strong>Last Release:</strong> Feb 16 2015</p>
 <h3>13. Backbone-react-component</h3>
-<p><img src="/posts/images/Contributors_to_magalhas_backbone-react-component.png" alt="backbone react component"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_magalhas_backbone-react-component.png" alt="backbone react component"></p>
 <p><strong>Open Issues:</strong> 8</p>
 <p><strong>Issues closed in 2016:</strong> 1</p>
 <p><strong>Last Release:</strong> Nov 6 2015</p>
 <h3>14. Backbone-offline</h3>
-<p><img src="/posts/images/Contributors_to_alekseykulikov_backbone-offline.png" alt="backbone-offline"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_alekseykulikov_backbone-offline.png" alt="backbone-offline"></p>
 <p><strong>Open Issues:</strong> 30</p>
 <p><strong>Issues closed in 2016:</strong> 0</p>
 <p><strong>Last Release:</strong> Aug 21 2013</p>
 <p>This project is actually documented as being deprecated and discontinued.  There is talk in the README about building a successor library, but it appears to have never emerged.</p>
 <h3>15. React.Backbone</h3>
-<p><img src="/posts/images/Contributors_to_clayallsopp_react_backbone.png" alt="react.backbone"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_clayallsopp_react_backbone.png" alt="react.backbone"></p>
 <p><strong>Open Issues:</strong> 11</p>
 <p><strong>Issues closed in 2016:</strong> 0</p>
 <p><strong>Last Release:</strong> Jan 5 2015</p>
 <p>Interesting, and not encouraging, that the 2 newest libraries at this popularity level are both for helping Backbone users migrate to React, and neither appear to be very active.</p>
 <h3>16. Backbone.expoxy</h3>
-<p><img src="/posts/images/Contributors_to_gmac_backbone_epoxy.png" alt="backbone.epoxy"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_gmac_backbone_epoxy.png" alt="backbone.epoxy"></p>
 <p><strong>Open Issues:</strong> 19</p>
 <p><strong>Issues closed in 2016:</strong> 1</p>
 <p><strong>Last Release:</strong> Nov 20 2014</p>
 <h3>17. backbone.iobind</h3>
-<p><img src="/posts/images/Contributors_to_noveogroup_backbone_iobind.png" alt="backbone.iobind"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_noveogroup_backbone_iobind.png" alt="backbone.iobind"></p>
 <p><strong>Open Issues:</strong> 16</p>
 <p><strong>Issues closed in 2016:</strong> 1</p>
 <p><strong>Last Release:</strong> Dec 10 2014</p>
 <h3>18. backbone-associations</h3>
-<p><img src="/posts/images/Contributors_to_dhruvaray_backbone-associations.png" alt="backbone-associations graph"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_dhruvaray_backbone-associations.png" alt="backbone-associations graph"></p>
 <p><strong>Open Issues:</strong> 16</p>
 <p><strong>Issues closed in 2016:</strong> 0</p>
 <p><strong>Last Release:</strong> Jun 28 2014</p>
 <p>We’re really starting to get into the meat of the dead projects now.  While there are always going to be older projects that were once popular and got a lot of stars and are now abandoned, that shouldn’t be this many of the top 20 projects</p>
 <h3>19. backbone-tastypie</h3>
-<p><img src="/posts/images/Contributors_to_PaulUithol_backbone-tastypie.png" alt="tastypie graph"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_PaulUithol_backbone-tastypie.png" alt="tastypie graph"></p>
 <p><strong>Open Issues:</strong> 12</p>
 <p><strong>Issues closed in 2016:</strong> 0</p>
 <p><strong>Last Release:</strong> Oct 26 2013</p>
 <p>This is a single use case library that presumably was abandoned after solving a problem, but its worth including to illustrate that the 400 star bar isn’t that hard to hit. A similar search for React projects on bower yields 46 projects with 400+ stars, and React is only ~3 years old.</p>
 <h3>20. backbone.syphon</h3>
-<p><img src="/posts/images/Contributors_to_marionettejs_backbone_syphon.png" alt="syphon graph"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_marionettejs_backbone_syphon.png" alt="syphon graph"></p>
 <p><strong>Open Issues:</strong> 19</p>
 <p><strong>Issues closed in 2016:</strong> 1</p>
 <p><strong>Last Release:</strong> Oct 18 2015</p>
 <h3>21. backbone-nested</h3>
-<p><img src="/posts/images/Contributors_to_afeld_backbone-nested.png" alt="backbone-nested"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_afeld_backbone-nested.png" alt="backbone-nested"></p>
 <p><strong>Open Issues:</strong> 45</p>
 <p><strong>Issues closed in 2016:</strong> 1</p>
 <p><strong>Last Release:</strong> Jul 27 2015</p>
 <h3>22. backbone.radio</h3>
-<p><img src="/posts/images/Contributors_to_marionettejs_backbone_radio.png" alt="backbone.radio"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_marionettejs_backbone_radio.png" alt="backbone.radio"></p>
 <p><strong>Open Issues:</strong> 9</p>
 <p><strong>Issues closed in 2016:</strong> 0</p>
 <p><strong>Last Release:</strong> Sep 5 2015</p>
 <p>Backbone.Radio (along with Backbone.syphon) is part of the marionette project.  You can see that those projects at least have continued work during the past year, albeit at a significantly less active rate than during 2014</p>
 <h3>23. backbone-fetch-cache</h3>
-<p><img src="/posts/images/Contributors_to_madglory_backbone-fetch-cache.png" alt="backbone-fetch-cache graph"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_madglory_backbone-fetch-cache.png" alt="backbone-fetch-cache graph"></p>
 <p><strong>Open Issues:</strong> 26</p>
 <p><strong>Issues closed in 2016:</strong> 2</p>
 <p><strong>Last Release:</strong> Feb 16 2014</p>
 <h3>24. backbone-query-parameters</h3>
-<p><img src="/posts/images/Contributors_to_jhudson8_backbone-query-parameters.png" alt="backbone-query-parameters"></p>
+<p><img src="http://benmccormick.org/posts/images/Contributors_to_jhudson8_backbone-query-parameters.png" alt="backbone-query-parameters"></p>
 <p><strong>Open Issues:</strong> 10</p>
 <p><strong>Issues closed in 2016:</strong> 0</p>
 <p><strong>Last Release:</strong> Sep 23 2014</p>
@@ -875,30 +875,30 @@ js=js,es6
             <content:encoded><![CDATA[<p>I’ve been using <a href="https://atom.io/">Atom</a> as my primary text editor for the last 3 months.  I don’t completely love it.  There are elements (startup speed, maturity of some core editing components, not being able to run it in a terminal) that I miss from my experiences with Vim and/or Sublime Text.  I’m using Atom though because the core editing experience is now “good enough” and the way the editor is built allows for some very cool and unique experiences.  Atom (like <a href="https://code.visualstudio.com/">Visual Studio Code</a>) is built on <a href="http://electron.atom.io/">Electron</a>, Github’s JavaScript environment for building desktop apps.  Because it is built with web technologies and was designed from the beginning to be extensible, it is much easier for most developers to build rich visual extensions on top of Atom that provide unique UIs for editor functions than it is in Sublime Text, Vim, Emacs or an IDE.  The following are some of the “most interesting” Atom packages I’ve found.  Interesting in this case means that they really only could have been done as they are in Atom or a similarly flexible editor.</p>
 <h3>Pigments</h3>
 <p>At first use, <a href="https://github.com/abe33/atom-pigments">Pigments</a> seems like a pretty run of the mill color highlighter.  There are similar projects for Sublime Text and Vim that look at color names in a CSS or LESS file and highlight them with the color they represent.</p>
-<img class="full-width" alt="pigment-preview" src="/posts/images/color_less_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom.png">
+<img class="full-width" alt="pigment-preview" src="http://benmccormick.org/posts/images/color_less_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom.png">
 <p>But Pigments does much more than that.  In addition to highlighting text, Pigments searches your project and creates a directory of all the colors used in your projects.  You can look through your palette and quickly go to the definition of any individual color.  Because pigments tracks everything, it can highlight LESS/SCSS variables as well as plain color names, even if those variables were originally defined in a different file.  Pigments also hooks into Atom’s autocomplete, and displays a preview of the color options when autofilling colors.</p>
-<img class="full-width" alt="Pigments project" src="/posts/images/Palette_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom_and_Editor_-_benmccormick_org.png">
+<img class="full-width" alt="Pigments project" src="http://benmccormick.org/posts/images/Palette_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom_and_Editor_-_benmccormick_org.png">
 <p>It is a rich way of managing colors for a whole project, the best way of seeing at a glance every color used in your CSS project that I’ve ever seen.</p>
 <h3>Expose</h3>
 <p><a href="https://atom.io/packages/expose">Expose</a> is a file management tool modeled after Mac OSX’s expose feature.  With it, you can instantly display all open files as small thumbnails, and switch quickly between them using the keyboard, which can be super helpful when tabs get out of control.</p>
-<img class="full-width" alt="expose" src="/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom_and_Editor_-_benmccormick_org.png">
+<img class="full-width" alt="expose" src="http://benmccormick.org/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom_and_Editor_-_benmccormick_org.png">
 <h3>Autocomplete-plus</h3>
 <p><a href="https://github.com/atom/autocomplete-plus/">Autocomplete-plus</a> started as a community package but has now become part of the core editor.  It’s also probably the least unique idea I’m listing here.  It’s still worth including on this list though, for 2 reasons.  First, autocomplete plus has flexible visual context options, allowing autocomplete providers to show the type of the autocomplete option, a brief description, and potentially a more in depth description.  So users can distinguish between (for instance) completions offering a snippet, a function, a keyword, or an import.</p>
-<img class="full-width" alt="autocomplete-plus" src="/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom.png">
+<img class="full-width" alt="autocomplete-plus" src="http://benmccormick.org/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom.png">
 <p>Autocomplete-plus is also a great example of the flexible nature of Atom.  Because Atom itself is made up of packages, with a very small core package, it’s easy to replace key parts of the editor like the auto-complete package with a community version.  And if that version ends up being better in the long run, it’s possible to pull that into the editors core, as happened with autocomplete-plus.</p>
 <h3>Todo-show</h3>
 <p><a href="https://atom.io/packages/todo-show">Todo-show</a> is a cool little package that searches your project for comments containing TODO, FIXME, CHANGED, REVIEW and other configurable comment strings, and lists them as a table.  It’s a simple idea that formalizes something that many developers do all the time.</p>
-<img class="full-width" alt="todo-show" src="/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom-1.png">
+<img class="full-width" alt="todo-show" src="http://benmccormick.org/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom-1.png">
 <p><strong>Update</strong>:  Twitter has pointed out this even crazier riff on this concept that I’d seen a while ago but had been unable to find when I dove back into Atom.  <a href="http://imdone.io/">Imdone</a> is a trello-like experience in the editor for managing todos.</p>
 <div>
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/ben336">@ben336</a> <a href="https://twitter.com/AtomEditor">@AtomEditor</a> You might also like imdone-atom. It&#39;s a drag and drop TODO task board with issue tracking integration!</p>&mdash; imdone.io (@imdoneIO) <a href="https://twitter.com/imdoneIO/status/686577997395013633">January 11, 2016</a></blockquote>
 </div>
 <h3>Linter</h3>
 <p>Similar to autocomplete-plus, you may think you’ve seen <a href="https://atom.io/packages/linter">Linter</a> before.  It’s similar to Syntastic for Vim and SublimeLinter for Sublime Text.  But Atom’s flexibility allows it to be better than both of those.  Like Syntastic and SublimeLinter, Linter integrates with many different linting providers to show errors and warnings that tools pick up on through static analysis in files.  But rather than being limited to the line-by-line gutter warnings or showing collections of warnings through awkward use of UI elements meant for a different purpose, Linter shows you a live collection of errors at the bottom of the file and lets you easily switch back and forth between that and errors for all open project files.</p>
-<img class="full-width" alt="linter" src="/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom-2.png">
+<img class="full-width" alt="linter" src="http://benmccormick.org/posts/images/frequency_cap_es6_-__Users_Ben_Code_Windsor_wcui_dev_src_wcui_-_Atom-2.png">
 <h3>git-time-machine</h3>
 <p><a href="https://github.com/littlebee/git-time-machine">git-time-machine</a> is the newest package on this list.  It’s only a month old, but is quite possibly my favorite example of Atom’s potential.  After setting it up, you can use a keyboard shortcut to see a bubble plot of that files git history, and then hover to see the commit messages, and click to see an old version of the file.  It is the most accessible UI I’ve ever seen for working with git history.</p>
-<img class="full-width" alt="time-machine" src="/posts/images/Fullscreen_1_10_16__9_24_PM.png">
+<img class="full-width" alt="time-machine" src="http://benmccormick.org/posts/images/Fullscreen_1_10_16__9_24_PM.png">
 <h3>Subscribe</h3>
 <p>Thanks for taking the time to read this post!  Software tools are one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post on <a href="http://benmccormick.org/2015/11/25/productive-javascript-development/">productive JavaScript development</a>.</p>
 ]]></content:encoded>
