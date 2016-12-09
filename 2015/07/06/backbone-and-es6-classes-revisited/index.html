@@ -1,5 +1,894 @@
 <!DOCTYPE html>
- <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><script type="text/javascript" src="//use.typekit.net/msd6bqv.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><title data-react-helmet="true"></title><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font-size:112.5%;line-height:1.666em;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:georgia,serif;font-weight:normal;word-wrap:break-word;}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:2.499rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.27542rem;line-height:1.666rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.17608rem;line-height:1.666rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.666rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.92211rem;line-height:1.666rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.88547rem;line-height:1.666rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}ul{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:0.85rem;line-height:1.666rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:1rem;line-height:1.666rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}blockquote{margin-left:1.666rem;margin-right:1.666rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.666rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.666rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}li > ul{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}code{font-size:0.85rem;line-height:1.666rem;}kbd{font-size:0.85rem;line-height:1.666rem;}samp{font-size:0.85rem;line-height:1.666rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;padding-left:1.11067rem;padding-right:1.11067rem;padding-top:0.833rem;padding-bottom:calc(0.833rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><style>.header-link{color:hsla(0,0%,39%,.7)}.header-link:hover{color:#e2777a}#carbonads{height:100px;font-size:14px;width:300px;position:relative;background:#f0f0f0}.carbon-wrap{height:100px;display:-ms-flexbox;display:flex}.carbon-text{padding:5px 10px;max-height:80px;display:inline-block;overflow:hidden;line-height:1.3}.carbon-poweredby{color:hsla(0,0%,39%,.7);position:absolute;right:5px;bottom:0}@media all and (max-width:600px){#carbonads,.no-mobile{display:none}}@media all and (max-width:321px){html{font-size:100%!important}}.markdown pre{display:block;background:#fdf6e3;color:#657b83;overflow-y:hidden;padding:.2rem .5rem}.markdown pre code{background:none;border:none;border-radius:3px;display:inline-block;overflow:inherit;padding:0;white-space:inherit;word-wrap:normal;font-size:.7rem;line-height:1rem}code{border-radius:3px;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;border:1px solid #ccc;display:inline;font-family:Inconsolata,monospace,serif;max-width:100%;overflow:auto;padding:0 .1625rem}.hljs,code{background:#fdf6e3;color:#657b83}.hljs{display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-quote{color:#93a1a1}.hljs-addition,.hljs-keyword,.hljs-selector-tag{color:#859900}.hljs-doctag,.hljs-literal,.hljs-meta .hljs-meta-string,.hljs-number,.hljs-regexp,.hljs-string{color:#2aa198}.hljs-name,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-title{color:#268bd2}.hljs-attr,.hljs-attribute,.hljs-class .hljs-title,.hljs-template-variable,.hljs-type,.hljs-variable{color:#b58900}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-meta .hljs-keyword,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-subst,.hljs-symbol{color:#cb4b16}.hljs-built_in,.hljs-deletion{color:#dc322f}.hljs-formula{background:#eee8d5}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}html{font-size:120%}body,h1,h2,h3,h4,h5,h6,p{font-family:brandon-grotesque,Brandon Grotesque,Helvetica Neue,Helvetica,Arial,Lucida Sans,Geneva,Verdana,sans-serif;text-rendering:optimizeLegibility}a{color:#e2777a;text-decoration:none}blockquote{border-left:5px solid #57a3e8;font-style:italic;background:#eee;font-weight:400;font-size:.9rem;padding:10px 20px;margin:0 0 30px -25px}h2,h3{color:#57a3e8}.explanation{padding:10px;background:#eee;border-radius:10px;margin:20px auto;font-size:.85em}.article-body .reading-img img{width:150px;float:right;margin:0 10px 20px}.article-body img{max-height:200px;display:block;margin:40px auto 20px}.article-body img.full-width{max-height:none}.article-body img.half-width{max-height:none;width:50%}.mc-field-group{width:400px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-align:start;align-items:flex-start;padding:8px 0}.mc-field-group input{border-radius:3px;max-width:350px;width:80vw;border:1px solid #ccc}.mc-field-group label{font-size:.9em;font-weight:600}#mc-embedded-subscribe{color:#fff;background:#57a3e8;border-radius:4px;border:0;padding:5px 10px;margin:20px 0;cursor:pointer}#mc-embedded-subscribe:hover{background:#3e8acf}</style></head><body class="landing-page" style="background:#FCFCFC;padding:0 10px;"><div id="react-mount"><div style="max-width:39.984rem;margin-left:auto;margin-right:auto;padding:2.499rem 1.2495rem;" data-reactroot="" data-reactid="1" data-react-checksum="-2110327501"><div style="display:flex;padding-bottom:0.5rem;margin-bottom:0.5rem;" data-reactid="2"><div style="flex-grow:3;display:flex;flex-direction:column;justify-content:space-around;" data-reactid="3"><h3 style="margin:0;padding-bottom:0;" data-reactid="4"><a style="box-shadow:none;text-decoration:none;color:inherit;" href="/" data-reactid="5">benmccormick.org</a></h3><div style="color:rgba(100,100,100, 0.7);" data-reactid="6"><a class="header-link" href="/subscribe/" data-reactid="7">Subscribe</a><span style="padding:0 0.33rem;" data-reactid="8">•</span><a class="header-link" href="/readinglist/" data-reactid="9">Reading List</a><span style="padding:0 0.33rem;" data-reactid="10">•</span><a class="header-link" href="http://twitter.com/ben336" data-reactid="11">Twitter</a><span style="padding:0 0.33rem;" data-reactid="12">•</span><a class="header-link" href="/about/" data-reactid="13">About</a></div></div><div style="flex-shrink:2;" data-reactid="14"><span data-reactid="15"></span></div></div><span style="display:block;clear:both;" data-reactid="16"> </span></div></div><script src="/bundle.js?t=1481257824403"></script><script>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><script type="text/javascript" src="//use.typekit.net/msd6bqv.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><title data-react-helmet="true">Backbone and ES6 Classes Revisited | benmccormick.org</title><meta data-react-helmet="true" name="description" content="A second look at using ES6 classes with Backbone"/><meta data-react-helmet="true" name="keywords" content="ES6, Backbone, classes, JavaScript, decorators"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:site" content="@benmccormickorg"/><meta data-react-helmet="true" name="twitter:creator" content="@ben336"/><meta data-react-helmet="true" name="twitter:title" content="Backbone and ES6 Classes Revisited"/><meta data-react-helmet="true" name="twitter:description" content="A second look at using ES6 classes with Backbone"/><script data-react-helmet="true" type="application/ld+json">{
+                "@context": "http://schema.org"
+                "@type": "BlogPosting",
+                "headline": "Backbone and ES6 Classes Revisited",
+                "genre": "Software Development",
+                "keywords": "ES6, Backbone, classes, JavaScript, decorators",
+                "url": "http://benmccormick.org/2015/07/06/backbone-and-es6-classes-revisited/",
+                "datePublished": "2015-07-6",
+                "description": "A second look at using ES6 classes with Backbone",
+                "articleBody": "<p>A few weeks ago I wrote <a href=\"http://benmccormick.org/2015/04/07/es6-classes-and-backbone-js/\">an article</a> explaining why the final spec for classes in the ES6/ES2015 version of JavaScript was not usable in Backbone applications.  That post got a lot of great feedback, including this <a href=\"https://github.com/jashkenas/backbone/issues/3560\">discussion</a> with the Backbone core team. The gist of that discussion has been that there are several ways to make ES6 classes work with Backbone now, though they may be less clean than the current <em>Backbone.extend</em> syntax.  But there’s hope for a really great experience: decorators, a <a href=\"https://github.com/wycats/javascript-decorators\">proposed feature for the ES7/ES2016 spec</a>, provide a much cleaner interface when working with Backbone and native classes.</p>
+<p>Let’s start with a quick reminder on the problem that Backbone developers face when adapting ES6 classes.  Both <em>Backbone.extend</em> and ES6 classes serve as syntactic sugar around traditional JavaScript inheritance methods.  So the following code snippets are effectively equivalent:</p>
+<pre><code class=\"language-javascript\"><span class=\"hljs-keyword\">let</span> ExampleView = Backbone.View.extend({
+    <span class=\"hljs-attr\">foo</span>: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{
+        alert(<span class=\"hljs-string\">'foo'</span>)
+    }
+});
+</code></pre>
+<pre><code class=\"language-javascript\"><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">ExampleView</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">Backbone</span>.<span class=\"hljs-title\">View</span> </span>{
+    foo() {
+        alert(<span class=\"hljs-string\">'foo'</span>);
+    }
+}
+</code></pre>
+<p>and each corresponds roughly to this vanilla ES5 snippet</p>
+<pre><code class=\"language-javascript\"><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">ExampleView</span>(<span class=\"hljs-params\"></span>) </span>{
+    Backbone.View.call(<span class=\"hljs-keyword\">this</span>);
+}
+
+ExampleView.prototype = <span class=\"hljs-built_in\">Object</span>.create(Backbone.View);
+ExampleView.prototype.constructor = Backbone.View;
+ExampleView.prototype.foo = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{
+    alert(<span class=\"hljs-string\">'foo'</span>);
+};
+</code></pre>
+<p>All of that works fine.  The problem is that even though these abstractions are similar, they’re not quite the same.  Specifically ES6 class syntax supports an opinionated subset of what you can accomplish with plain prototype inheritance.  There’s good reason for this, since many developers don’t understand prototype inheritance and can shoot themselves in the foot.  But ES6 class restrictions don’t mesh well with Backbone’s conventions.  Specifically, Backbone relies on adding properties to a class’ prototype before a class’ constructor is invoked <sup id=\"fnref:1\"><a href=\"#fn:1\">1</a></sup>.  ES6 classes don’t provide any way to define properties on the prototype as part of the class definition.  They also do not allow you to add instance properties to a constructor prior to calling super() to run a parent class’ constructor.  As a result, properties that are processed within Backbone objects’ constructors like <code>events</code>, <code>className</code>, <code>urlRoot</code> and others can’t be set within an ES6 class definition without resorting to some less than beautiful syntax.  There are however at least 3 different ways of dealing with this problem under the ES6 spec.  I’ll take a look at each of them.</p>
+<h3>ES6 solutions</h3>
+<p>The 3 main solutions I’ve seen proposed for using the current ES6 class spec with Backbone classes are passing properties to the <code>super</code> function, creating everything as a method, and adding properties to the prototype outside of the class definition.  I’ll go through those one by one, using <a href=\"https://github.com/tastejs/todomvc/blob/gh-pages/examples/backbone_require/js/views/todos.js\">a view from one of the Backbone TodoMVC implementations</a> as an example.</p>
+<h4>Pass properties to the super constructor</h4>
+<p>The first solution is to define a constructor function for each Backbone object that has properties, and pass the properties directly to the constructor.</p>
+<pre><code class=\"language-javascript\"><span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> $ <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'jquery'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> Backbone <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'backbone'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> _ <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'underscore'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> todosTemplate <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'text!templates/todos.html'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> Common <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'common'</span>;
+
+<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">TodoView</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">Backbone</span>.<span class=\"hljs-title\">View</span> </span>{
+
+    <span class=\"hljs-keyword\">constructor</span>() {
+        <span class=\"hljs-keyword\">super</span>({
+            <span class=\"hljs-attr\">tagName</span>:  <span class=\"hljs-string\">'li'</span>,
+
+            <span class=\"hljs-attr\">template</span>: _.template(todosTemplate),
+
+            <span class=\"hljs-attr\">events</span>: {
+                <span class=\"hljs-string\">'click .toggle'</span>:    <span class=\"hljs-string\">'toggleCompleted'</span>,
+                <span class=\"hljs-string\">'dblclick label'</span>:   <span class=\"hljs-string\">'edit'</span>,
+                <span class=\"hljs-string\">'click .destroy'</span>:   <span class=\"hljs-string\">'clear'</span>,
+                <span class=\"hljs-string\">'keypress .edit'</span>:   <span class=\"hljs-string\">'updateOnEnter'</span>,
+                <span class=\"hljs-string\">'keydown .edit'</span>:    <span class=\"hljs-string\">'revertOnEscape'</span>,
+                <span class=\"hljs-string\">'blur .edit'</span>:       <span class=\"hljs-string\">'close'</span>
+            },
+        });
+    }
+
+    initialize() {
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'change'</span>, <span class=\"hljs-keyword\">this</span>.render);
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'destroy'</span>, <span class=\"hljs-keyword\">this</span>.remove);
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'visible'</span>, <span class=\"hljs-keyword\">this</span>.toggleVisible);
+    }
+
+    render() {
+        <span class=\"hljs-keyword\">this</span>.$el.html(<span class=\"hljs-keyword\">this</span>.template(<span class=\"hljs-keyword\">this</span>.model.toJSON()));
+        <span class=\"hljs-keyword\">this</span>.$el.toggleClass(<span class=\"hljs-string\">'completed'</span>, <span class=\"hljs-keyword\">this</span>.model.get(<span class=\"hljs-string\">'completed'</span>));
+
+        <span class=\"hljs-keyword\">this</span>.toggleVisible();
+        <span class=\"hljs-keyword\">this</span>.$input = <span class=\"hljs-keyword\">this</span>.$(<span class=\"hljs-string\">'.edit'</span>);
+        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>;
+    }
+
+    toggleVisible() {
+        <span class=\"hljs-keyword\">this</span>.$el.toggleClass(<span class=\"hljs-string\">'hidden'</span>,  <span class=\"hljs-keyword\">this</span>.isHidden());
+    }
+
+    isHidden() {
+        <span class=\"hljs-keyword\">let</span> isCompleted = <span class=\"hljs-keyword\">this</span>.model.get(<span class=\"hljs-string\">'completed'</span>);
+        <span class=\"hljs-keyword\">return</span> (<span class=\"hljs-comment\">// hidden cases only</span>
+            (!isCompleted &amp;&amp; Common.TodoFilter === <span class=\"hljs-string\">'completed'</span>) ||
+            (isCompleted &amp;&amp; Common.TodoFilter === <span class=\"hljs-string\">'active'</span>)
+        );
+    }
+
+    toggleCompleted() {
+        <span class=\"hljs-keyword\">this</span>.model.toggle();
+    }
+
+    edit() {
+        <span class=\"hljs-keyword\">this</span>.$el.addClass(<span class=\"hljs-string\">'editing'</span>);
+        <span class=\"hljs-keyword\">this</span>.$input.focus();
+    }
+
+    close() {
+        <span class=\"hljs-keyword\">let</span> value = <span class=\"hljs-keyword\">this</span>.$input.val();
+        <span class=\"hljs-keyword\">let</span> trimmedValue = value.trim();
+
+        <span class=\"hljs-keyword\">if</span> (trimmedValue) {
+            <span class=\"hljs-keyword\">this</span>.model.save({ <span class=\"hljs-attr\">title</span>: trimmedValue });
+
+            <span class=\"hljs-keyword\">if</span> (value !== trimmedValue) {
+                <span class=\"hljs-keyword\">this</span>.model.trigger(<span class=\"hljs-string\">'change'</span>);
+            }
+        } <span class=\"hljs-keyword\">else</span> {
+            <span class=\"hljs-keyword\">this</span>.clear();
+        }
+
+        <span class=\"hljs-keyword\">this</span>.$el.removeClass(<span class=\"hljs-string\">'editing'</span>);
+    }
+
+    updateOnEnter(e) {
+        <span class=\"hljs-keyword\">if</span> (e.keyCode === Common.ENTER_KEY) {
+            <span class=\"hljs-keyword\">this</span>.close();
+        }
+    }
+
+    revertOnEscape(e) {
+        <span class=\"hljs-keyword\">if</span> (e.which === Common.ESCAPE_KEY) {
+            <span class=\"hljs-keyword\">this</span>.$el.removeClass(<span class=\"hljs-string\">'editing'</span>);
+            <span class=\"hljs-comment\">// Also reset the hidden input back to the original value.</span>
+            <span class=\"hljs-keyword\">this</span>.$input.val(<span class=\"hljs-keyword\">this</span>.model.get(<span class=\"hljs-string\">'title'</span>));
+        }
+    }
+
+    clear() {
+        <span class=\"hljs-keyword\">this</span>.model.destroy();
+    }
+};
+
+<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> TodoView;
+</code></pre>
+<p>There are a few advantages to this approach.  It keeps everything within the class definition, and lets Backbone itself manage attaching properties to the prototype, assuring compatibility with existing code.  However it adds a constructor call to a class that otherwise wouldn’t need one, making it less obvious when a developer is actually modifying the constructor to do something important.  It also isolates properties from methods, whereas Backbone philosophically has always treated them interchangeably.  In fact that philosophy is the key to the next solution.</p>
+<h4>Treat everything like a method</h4>
+<p>Backbone evaluates all of its properties using Underscore’s <code>_.result</code> function <sup id=\"fnref:2\"><a href=\"#fn:2\">2</a></sup>. <code>_.result</code> checks to see if an object property is a function. If it is then <code>_.result</code> will evaluate it and return the result.  This allows Backbone to accept its properties as either an object or a function.  Very handy.  So one workaround to the constructor problem is to make everything a method, including properties.  We can actually go one better than this, and use the <code>get</code> keyword to make our methods serve as <em>getters</em> for a property.  This means they will be accessible as properties, but defined as methods, retaining compatibility with any existing references if you’re converting existing code.</p>
+<pre><code class=\"language-javascript\"><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">TodoView</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">Backbone</span>.<span class=\"hljs-title\">View</span> </span>{
+
+    get tagName() { <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">'li'</span>}
+
+    get template() { <span class=\"hljs-keyword\">return</span> _.template(todosTemplate)}
+
+    get events() {
+        <span class=\"hljs-keyword\">return</span> {
+            <span class=\"hljs-string\">'click .toggle'</span>:    <span class=\"hljs-string\">'toggleCompleted'</span>,
+            <span class=\"hljs-string\">'dblclick label'</span>:   <span class=\"hljs-string\">'edit'</span>,
+            <span class=\"hljs-string\">'click .destroy'</span>:   <span class=\"hljs-string\">'clear'</span>,
+            <span class=\"hljs-string\">'keypress .edit'</span>:   <span class=\"hljs-string\">'updateOnEnter'</span>,
+            <span class=\"hljs-string\">'keydown .edit'</span>:    <span class=\"hljs-string\">'revertOnEscape'</span>,
+            <span class=\"hljs-string\">'blur .edit'</span>:       <span class=\"hljs-string\">'close'</span>
+        }
+    }
+
+    initialize() {
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'change'</span>, <span class=\"hljs-keyword\">this</span>.render);
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'destroy'</span>, <span class=\"hljs-keyword\">this</span>.remove);
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'visible'</span>, <span class=\"hljs-keyword\">this</span>.toggleVisible);
+    }
+
+    render() {
+        <span class=\"hljs-keyword\">this</span>.$el.html(<span class=\"hljs-keyword\">this</span>.template(<span class=\"hljs-keyword\">this</span>.model.toJSON()));
+        <span class=\"hljs-keyword\">this</span>.$el.toggleClass(<span class=\"hljs-string\">'completed'</span>, <span class=\"hljs-keyword\">this</span>.model.get(<span class=\"hljs-string\">'completed'</span>));
+
+        <span class=\"hljs-keyword\">this</span>.toggleVisible();
+        <span class=\"hljs-keyword\">this</span>.$input = <span class=\"hljs-keyword\">this</span>.$(<span class=\"hljs-string\">'.edit'</span>);
+        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>;
+    }
+
+    toggleVisible() {
+        <span class=\"hljs-keyword\">this</span>.$el.toggleClass(<span class=\"hljs-string\">'hidden'</span>,  <span class=\"hljs-keyword\">this</span>.isHidden());
+    }
+
+    <span class=\"hljs-comment\">//... etc</span>
+};
+
+<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> TodoView;
+</code></pre>
+<p>This approach uses only standard class syntax, which is great.  Getters and methods are highly idiomatic class structures, and work fine with Backbone right now.  They also enforce the immutability of these properties, a design concern with the current Backbone property implementation <sup id=\"fnref:3\"><a href=\"#fn:3\">3</a></sup>.  But lets be real, <code>get tagName() { return 'li'}</code> is a significantly less clean interface than the <code>tagName: 'li'</code> syntax you get with <em>Backbone.extend</em>.</p>
+<h4>Defining properties directly on the prototype</h4>
+<p>The final example is the most straightforward.  Since there’s no special class syntax for adding properties to the prototype, we can just do so directly after we’ve defined the class.</p>
+<pre><code class=\"language-javascript\"><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">TodoView</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">Backbone</span>.<span class=\"hljs-title\">View</span> </span>{
+
+    initialize() {
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'change'</span>, <span class=\"hljs-keyword\">this</span>.render);
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'destroy'</span>, <span class=\"hljs-keyword\">this</span>.remove);
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'visible'</span>, <span class=\"hljs-keyword\">this</span>.toggleVisible);
+    }
+
+    render() {
+        <span class=\"hljs-keyword\">this</span>.$el.html(<span class=\"hljs-keyword\">this</span>.template(<span class=\"hljs-keyword\">this</span>.model.toJSON()));
+        <span class=\"hljs-keyword\">this</span>.$el.toggleClass(<span class=\"hljs-string\">'completed'</span>, <span class=\"hljs-keyword\">this</span>.model.get(<span class=\"hljs-string\">'completed'</span>));
+
+        <span class=\"hljs-keyword\">this</span>.toggleVisible();
+        <span class=\"hljs-keyword\">this</span>.$input = <span class=\"hljs-keyword\">this</span>.$(<span class=\"hljs-string\">'.edit'</span>);
+        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>;
+    }
+
+    toggleVisible() {
+        <span class=\"hljs-keyword\">this</span>.$el.toggleClass(<span class=\"hljs-string\">'hidden'</span>,  <span class=\"hljs-keyword\">this</span>.isHidden());
+    }
+
+    <span class=\"hljs-comment\">//... etc</span>
+};
+
+TodoView.prototype.tagName = <span class=\"hljs-string\">'li'</span>;
+TodoView.prototype.template = _.template(todosTemplate);
+TodoView.prototype.events = {
+    <span class=\"hljs-string\">'click .toggle'</span>:    <span class=\"hljs-string\">'toggleCompleted'</span>,
+    <span class=\"hljs-string\">'dblclick label'</span>:   <span class=\"hljs-string\">'edit'</span>,
+    <span class=\"hljs-string\">'click .destroy'</span>:   <span class=\"hljs-string\">'clear'</span>,
+    <span class=\"hljs-string\">'keypress .edit'</span>:   <span class=\"hljs-string\">'updateOnEnter'</span>,
+    <span class=\"hljs-string\">'keydown .edit'</span>:    <span class=\"hljs-string\">'revertOnEscape'</span>,
+    <span class=\"hljs-string\">'blur .edit'</span>:       <span class=\"hljs-string\">'close'</span>
+};
+
+<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> TodoView;
+</code></pre>
+<p>This approach is unambiguous, but its also removes the advantages of using abstracted syntax to begin with.  Adding directly to the prototype takes properties out of the context of the class definition, making it harder to view the class as a holistic unit.  Forcing properties to appear after the class definition also breaks with Backbone community conventions.  Almost all examples of Backbone code that I’ve seen put properties at the top of Backbone class declarations, above any methods, since they’re usually important to read when trying to understand the purpose and role of an object.  They’re then followed by methods, which often contain extensive logic that is less helpful in understanding a class’ overall purpose.</p>
+<p>Of these 3 solutions, I personally prefer using methods and getters.  However I don’t see any of them as an improvement on the existing <em>Backbone.extend</em> syntax.</p>
+<h3>ES7 and Decorators</h3>
+<p>JavaScript is not staying stagnant however.  The TC39 committee recently approved the final spec for ES6 and is aiming to release a new spec on a yearly basis going forward.  One proposed feature for a future spec is <a href=\"https://github.com/wycats/javascript-decorators\">JavaScript decorators</a>.  Decorators are a declarative way of adding extra behavior to a class or class method.  They’re simple functions that take a class or method as an argument and then return an augmented version.</p>
+<p>For instance here’s a simple example from the proposal of a decorator that adds an isTestable property to classes that it decorates.</p>
+<pre><code class=\"language-javascript\">@isTestable(<span class=\"hljs-literal\">true</span>)
+<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">MyClass</span> </span>{ }
+
+<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">isTestable</span>(<span class=\"hljs-params\">value</span>) </span>{
+   <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">decorator</span>(<span class=\"hljs-params\">target</span>) </span>{
+      target.isTestable = value;
+   }
+}
+</code></pre>
+<p>Based on that example, it’s not hard to see how this is relevant to the syntax struggle we experienced above.  Here’s a naive solution to our properties problem that utilizes a <code>props</code> decorator to add a Backbone-esque hash of properties to the prototype.</p>
+<pre><code class=\"language-javascript\"><span class=\"hljs-comment\">//decorators.js</span>
+<span class=\"hljs-keyword\">export</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">props</span>(<span class=\"hljs-params\">value</span>) </span>{
+    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">decorator</span>(<span class=\"hljs-params\">target</span>) </span>{
+        _.extend(target.prototype, value);
+    }
+}
+</code></pre>
+<pre><code class=\"language-javascript\"><span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> $ <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'jquery'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> Backbone <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'backbone'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> _ <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'underscore'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> todosTemplate <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'text!templates/todos.html'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> Common <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'common'</span>;
+<span class=\"hljs-keyword\">import</span> {props} <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'decorators'</span>
+
+@props({
+
+    <span class=\"hljs-attr\">tagName</span>:  <span class=\"hljs-string\">'li'</span>,
+
+    <span class=\"hljs-attr\">template</span>: _.template(todosTemplate),
+
+    <span class=\"hljs-attr\">events</span>: {
+        <span class=\"hljs-string\">'click .toggle'</span>:    <span class=\"hljs-string\">'toggleCompleted'</span>,
+        <span class=\"hljs-string\">'dblclick label'</span>:   <span class=\"hljs-string\">'edit'</span>,
+        <span class=\"hljs-string\">'click .destroy'</span>:   <span class=\"hljs-string\">'clear'</span>,
+        <span class=\"hljs-string\">'keypress .edit'</span>:   <span class=\"hljs-string\">'updateOnEnter'</span>,
+        <span class=\"hljs-string\">'keydown .edit'</span>:    <span class=\"hljs-string\">'revertOnEscape'</span>,
+        <span class=\"hljs-string\">'blur .edit'</span>:       <span class=\"hljs-string\">'close'</span>
+    },
+})
+<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">TodoView</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">Backbone</span>.<span class=\"hljs-title\">View</span> </span>{
+
+    initialize() {
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'change'</span>, <span class=\"hljs-keyword\">this</span>.render);
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'destroy'</span>, <span class=\"hljs-keyword\">this</span>.remove);
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'visible'</span>, <span class=\"hljs-keyword\">this</span>.toggleVisible);
+    }
+
+    render() {
+        <span class=\"hljs-keyword\">this</span>.$el.html(<span class=\"hljs-keyword\">this</span>.template(<span class=\"hljs-keyword\">this</span>.model.toJSON()));
+        <span class=\"hljs-keyword\">this</span>.$el.toggleClass(<span class=\"hljs-string\">'completed'</span>, <span class=\"hljs-keyword\">this</span>.model.get(<span class=\"hljs-string\">'completed'</span>));
+
+        <span class=\"hljs-keyword\">this</span>.toggleVisible();
+        <span class=\"hljs-keyword\">this</span>.$input = <span class=\"hljs-keyword\">this</span>.$(<span class=\"hljs-string\">'.edit'</span>);
+        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>;
+    }
+
+    toggleVisible() {
+        <span class=\"hljs-keyword\">this</span>.$el.toggleClass(<span class=\"hljs-string\">'hidden'</span>,  <span class=\"hljs-keyword\">this</span>.isHidden());
+    }
+
+    <span class=\"hljs-comment\">//... etc</span>
+};
+
+<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> TodoView;
+</code></pre>
+<p>That’s a big improvement over our ES6 solutions above.  Our properties are added declaratively at the top of the class and are still clearly associated with the class.  Everything lines up reasonably well with both Backbone and native idioms. This is also reminiscent of the <a href=\"https://angular.io/docs/js/latest/quickstart.html#section-angular-create-account\">approach that Angular 2 is taking</a> with its interface, using decorators heavily for component configuration.  It turns out though that we can actually do better.</p>
+<p>I got a tweet from Steven Langbroek last week asking me to look at his <a href=\"https://gist.github.com/StevenLangbroek/6bd28d8201839434b843\">idea for using decorators to provide a cool new syntax for event binding in Backbone</a>.  I thought it was awesome and it inspired me to think in a more fine grained way about using decorators with Backbone.  How can we make the syntax better, as opposed to just replicating the current experience.  Here’s what a more “fine grained” decorators approach might look like with our example.</p>
+<pre><code class=\"language-javascript\"><span class=\"hljs-comment\">//decorators.js</span>
+<span class=\"hljs-keyword\">export</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">tagName</span>(<span class=\"hljs-params\">value</span>) </span>{
+    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">decorator</span>(<span class=\"hljs-params\">target</span>) </span>{
+        target.prototype.tagName = value;
+    }
+}
+
+<span class=\"hljs-keyword\">export</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">template</span>(<span class=\"hljs-params\">value</span>) </span>{
+    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">decorator</span>(<span class=\"hljs-params\">target</span>) </span>{
+        target.prototype.template = _.template(value);
+    }
+}
+
+<span class=\"hljs-keyword\">export</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">on</span>(<span class=\"hljs-params\">eventName</span>)</span>{
+  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">target, name, descriptor</span>)</span>{
+    <span class=\"hljs-keyword\">if</span>(!target.events) {
+        target.events = {};
+    }
+    <span class=\"hljs-keyword\">if</span>(_.isFunction(target.events)) {
+        <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Error</span>(<span class=\"hljs-string\">'The on decorator is not compatible with an events method'</span>);
+        <span class=\"hljs-keyword\">return</span>;
+    }
+    <span class=\"hljs-keyword\">if</span>(!eventName) {
+        <span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Error</span>(<span class=\"hljs-string\">'The on decorator requires an eventName argument'</span>);
+    }
+    target.events[eventName] = name;
+    <span class=\"hljs-keyword\">return</span> descriptor;
+  }
+}
+</code></pre>
+<pre><code class=\"language-javascript\"><span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> $ <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'jquery'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> Backbone <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'backbone'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> _ <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'underscore'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> todosTemplate <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'text!templates/todos.html'</span>;
+<span class=\"hljs-keyword\">import</span> * <span class=\"hljs-keyword\">as</span> Common <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'common'</span>;
+<span class=\"hljs-keyword\">import</span> {tagName, template, on} <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'decorators'</span>;
+
+@tagName(<span class=\"hljs-string\">'li'</span>)
+@template(todosTemplate)
+<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">TodoView</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">Backbone</span>.<span class=\"hljs-title\">View</span> </span>{
+
+    initialize() {
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'change'</span>, <span class=\"hljs-keyword\">this</span>.render);
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'destroy'</span>, <span class=\"hljs-keyword\">this</span>.remove);
+        <span class=\"hljs-keyword\">this</span>.listenTo(<span class=\"hljs-keyword\">this</span>.model, <span class=\"hljs-string\">'visible'</span>, <span class=\"hljs-keyword\">this</span>.toggleVisible);
+    }
+
+    render() {
+        <span class=\"hljs-keyword\">this</span>.$el.html(<span class=\"hljs-keyword\">this</span>.template(<span class=\"hljs-keyword\">this</span>.model.toJSON()));
+        <span class=\"hljs-keyword\">this</span>.$el.toggleClass(<span class=\"hljs-string\">'completed'</span>, <span class=\"hljs-keyword\">this</span>.model.get(<span class=\"hljs-string\">'completed'</span>));
+
+        <span class=\"hljs-keyword\">this</span>.toggleVisible();
+        <span class=\"hljs-keyword\">this</span>.$input = <span class=\"hljs-keyword\">this</span>.$(<span class=\"hljs-string\">'.edit'</span>);
+        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>;
+    }
+
+    toggleVisible() {
+        <span class=\"hljs-keyword\">this</span>.$el.toggleClass(<span class=\"hljs-string\">'hidden'</span>,  <span class=\"hljs-keyword\">this</span>.isHidden());
+    }
+
+    isHidden() {
+        <span class=\"hljs-keyword\">let</span> isCompleted = <span class=\"hljs-keyword\">this</span>.model.get(<span class=\"hljs-string\">'completed'</span>);
+        <span class=\"hljs-keyword\">return</span> (<span class=\"hljs-comment\">// hidden cases only</span>
+            (!isCompleted &amp;&amp; Common.TodoFilter === <span class=\"hljs-string\">'completed'</span>) ||
+            (isCompleted &amp;&amp; Common.TodoFilter === <span class=\"hljs-string\">'active'</span>)
+        );
+    }
+
+    @on(<span class=\"hljs-string\">'click .toggle'</span>)
+    toggleCompleted() {
+        <span class=\"hljs-keyword\">this</span>.model.toggle();
+    }
+
+    @on(<span class=\"hljs-string\">'dblclick label'</span>)
+    edit() {
+        <span class=\"hljs-keyword\">this</span>.$el.addClass(<span class=\"hljs-string\">'editing'</span>);
+        <span class=\"hljs-keyword\">this</span>.$input.focus();
+    }
+
+    @on(<span class=\"hljs-string\">'blur .edit'</span>)
+    close() {
+        <span class=\"hljs-keyword\">let</span> value = <span class=\"hljs-keyword\">this</span>.$input.val();
+        <span class=\"hljs-keyword\">let</span> trimmedValue = value.trim();
+
+        <span class=\"hljs-keyword\">if</span> (trimmedValue) {
+            <span class=\"hljs-keyword\">this</span>.model.save({ <span class=\"hljs-attr\">title</span>: trimmedValue });
+
+            <span class=\"hljs-keyword\">if</span> (value !== trimmedValue) {
+                <span class=\"hljs-keyword\">this</span>.model.trigger(<span class=\"hljs-string\">'change'</span>);
+            }
+        } <span class=\"hljs-keyword\">else</span> {
+            <span class=\"hljs-keyword\">this</span>.clear();
+        }
+
+        <span class=\"hljs-keyword\">this</span>.$el.removeClass(<span class=\"hljs-string\">'editing'</span>);
+    }
+
+    @on(<span class=\"hljs-string\">'keypress .edit'</span>)
+    updateOnEnter(e) {
+        <span class=\"hljs-keyword\">if</span> (e.keyCode === Common.ENTER_KEY) {
+            <span class=\"hljs-keyword\">this</span>.close();
+        }
+    }
+
+    @on(<span class=\"hljs-string\">'keydown .edit'</span>)
+    revertOnEscape(e) {
+        <span class=\"hljs-keyword\">if</span> (e.which === Common.ESCAPE_KEY) {
+            <span class=\"hljs-keyword\">this</span>.$el.removeClass(<span class=\"hljs-string\">'editing'</span>);
+            <span class=\"hljs-comment\">// Also reset the hidden input back to the original value.</span>
+            <span class=\"hljs-keyword\">this</span>.$input.val(<span class=\"hljs-keyword\">this</span>.model.get(<span class=\"hljs-string\">'title'</span>));
+        }
+    }
+
+    @on(<span class=\"hljs-string\">'click .destroy'</span>)
+    clear() {
+        <span class=\"hljs-keyword\">this</span>.model.destroy();
+    }
+};
+
+<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> TodoView;
+</code></pre>
+<p>Now we’re getting somewhere.  Steven’s <code>on</code> decorator provides a really nice upgrade to Backbone’s event system.  Event handlers are now in the context of the methods they refer to, making it much easier to get context as you scroll through a large view.  Our tagName gets a nice declarative setter at the top of the view rather than being bundled into an object hash.  And our template processing gets standardized, with the call to <code>_.template</code> abstracted away into the decorator.  That last decorator would probably be project specific, but the other 2 could easily be incorporated into a general Backbone decorator library.</p>
+<p>The main downside I see to this is one shared by a few of the other approaches.  Specifically that declaring a property like tagName as a method or as a property requires different implementation styles.  Backbone philosophically treats these scenarios as equivalent, and its not unusual to start with a static property for keys like <code>className</code>, <code>url</code>, or <code>template</code> and then refactor to use a function as code is reused in different situations.  Artificially separating out those scenarios is not very Backbone-like and might discourage that type of refactoring.</p>
+<h3>Recommendations</h3>
+<p>If you want to use ES6 classes with Backbone in production today, you should probably make everything a method, and make liberal use of the getter functionality.  That seems to be the most Backbone-like, with everything contained in a single class definition, and easy refactoring when a property begins to require logic around it.  If you’re experimenting though, you should definitely consider playing with decorators and see how you can make Backbone’s interface better.</p>
+<p><em>If you have ideas about this, feel free to contribute on the <a href=\"https://github.com/jashkenas/backbone/issues/3560\">github issue</a></em></p>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href=\"http://feedpress.me/benmccormick\">feed</a>, <a href=\"http://twitter.com/benmccormickorg\">Twitter</a> or my <a href=\"http://eepurl.com/WFYon\">mailing list</a>. You also might want to check out <a href=\"http://benmccormick.org/2015/04/07/es6-classes-and-backbone-js/\">my first post on Backbone and ES6 classes</a>.</p>
+<div class=\"footnotes\">
+<ol>
+    <li class=\"footnote\" id=\"fn:1\">
+        <p>
+        I completely screwed up explaining this in my first piece.  I was under the mistaken impression that Backbone was adding properties like `className` and `events` to each instance rather than to the prototype.  Which makes no sense in retrospect, since those properties need to be present before the Backbone.View is run.
+        <a href=\"#fnref:1\" title=\"return to article\"> ↩</a></p>
+    </li>
+        <li class=\"footnote\" id=\"fn:2\">
+            <p>
+            Well, almost all. iDAttribute <a href=\"https://github.com/jashkenas/backbone/pull/3684\">is still catching up</a>.
+            <a href=\"#fnref:2\" title=\"return to article\"> ↩</a></p>
+        </li>
+        <li class=\"footnote\" id=\"fn:3\">
+            <p>
+            Oh you didn't realize that adding an item to the event hash for your view would add it to every instance of that View?  Whoops.
+            <a href=\"#fnref:3\" title=\"return to article\"> ↩</a></p>
+        </li>
+</ol>
+</div>
+",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Ben McCormick"
+                    "email": "mailto:ben@benmccormick.org",
+                    "image": "/profile_pic.jpg",
+                    "jobTitle": "Software Engineer",
+                    "alumniOf": "Duke",
+                    "birthPlace": "Pittsburgh, PA",
+                    "gender": "male",
+                    "url": "http://benmccormick.org",
+              	    "sameAs" : [
+                      "https://www.linkedin.com/in/benmccormick",
+                      "http://twitter.com/ben336",
+                    ]
+                 }
+              }</script><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font-size:112.5%;line-height:1.666em;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:georgia,serif;font-weight:normal;word-wrap:break-word;}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:2.499rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.27542rem;line-height:1.666rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.17608rem;line-height:1.666rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.666rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.92211rem;line-height:1.666rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.88547rem;line-height:1.666rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}ul{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:0.85rem;line-height:1.666rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:1rem;line-height:1.666rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}blockquote{margin-left:1.666rem;margin-right:1.666rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.666rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.666rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}li > ul{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}code{font-size:0.85rem;line-height:1.666rem;}kbd{font-size:0.85rem;line-height:1.666rem;}samp{font-size:0.85rem;line-height:1.666rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;padding-left:1.11067rem;padding-right:1.11067rem;padding-top:0.833rem;padding-bottom:calc(0.833rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><style>.header-link{color:hsla(0,0%,39%,.7)}.header-link:hover{color:#e2777a}#carbonads{height:100px;font-size:14px;width:300px;position:relative;background:#f0f0f0}.carbon-wrap{height:100px;display:-ms-flexbox;display:flex}.carbon-text{padding:5px 10px;max-height:80px;display:inline-block;overflow:hidden;line-height:1.3}.carbon-poweredby{color:hsla(0,0%,39%,.7);position:absolute;right:5px;bottom:0}@media all and (max-width:600px){#carbonads,.no-mobile{display:none}}@media all and (max-width:321px){html{font-size:100%!important}}.markdown pre{display:block;background:#fdf6e3;color:#657b83;overflow-y:hidden;padding:.2rem .5rem}.markdown pre code{background:none;border:none;border-radius:3px;display:inline-block;overflow:inherit;padding:0;white-space:inherit;word-wrap:normal;font-size:.7rem;line-height:1rem}code{border-radius:3px;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;border:1px solid #ccc;display:inline;font-family:Inconsolata,monospace,serif;max-width:100%;overflow:auto;padding:0 .1625rem}.hljs,code{background:#fdf6e3;color:#657b83}.hljs{display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-quote{color:#93a1a1}.hljs-addition,.hljs-keyword,.hljs-selector-tag{color:#859900}.hljs-doctag,.hljs-literal,.hljs-meta .hljs-meta-string,.hljs-number,.hljs-regexp,.hljs-string{color:#2aa198}.hljs-name,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-title{color:#268bd2}.hljs-attr,.hljs-attribute,.hljs-class .hljs-title,.hljs-template-variable,.hljs-type,.hljs-variable{color:#b58900}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-meta .hljs-keyword,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-subst,.hljs-symbol{color:#cb4b16}.hljs-built_in,.hljs-deletion{color:#dc322f}.hljs-formula{background:#eee8d5}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}html{font-size:120%}body,h1,h2,h3,h4,h5,h6,p{font-family:brandon-grotesque,Brandon Grotesque,Helvetica Neue,Helvetica,Arial,Lucida Sans,Geneva,Verdana,sans-serif;text-rendering:optimizeLegibility}a{color:#e2777a;text-decoration:none}blockquote{border-left:5px solid #57a3e8;font-style:italic;background:#eee;font-weight:400;font-size:.9rem;padding:10px 20px;margin:0 0 30px -25px}h2,h3{color:#57a3e8}.explanation{padding:10px;background:#eee;border-radius:10px;margin:20px auto;font-size:.85em}.article-body .reading-img img{width:150px;float:right;margin:0 10px 20px}.article-body img{max-height:200px;display:block;margin:40px auto 20px}.article-body img.full-width{max-height:none}.article-body img.half-width{max-height:none;width:50%}.mc-field-group{width:400px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-align:start;align-items:flex-start;padding:8px 0}.mc-field-group input{border-radius:3px;max-width:350px;width:80vw;border:1px solid #ccc}.mc-field-group label{font-size:.9em;font-weight:600}#mc-embedded-subscribe{color:#fff;background:#57a3e8;border-radius:4px;border:0;padding:5px 10px;margin:20px 0;cursor:pointer}#mc-embedded-subscribe:hover{background:#3e8acf}</style></head><body class="landing-page" style="background:#FCFCFC;padding:0 10px;"><div id="react-mount"><div style="max-width:39.984rem;margin-left:auto;margin-right:auto;padding:2.499rem 1.2495rem;" data-reactroot="" data-reactid="1" data-react-checksum="168687390"><div style="display:flex;padding-bottom:0.5rem;margin-bottom:0.5rem;" data-reactid="2"><div style="flex-grow:3;display:flex;flex-direction:column;justify-content:space-around;" data-reactid="3"><h3 style="margin:0;padding-bottom:0;" data-reactid="4"><a style="box-shadow:none;text-decoration:none;color:inherit;" href="/" data-reactid="5">benmccormick.org</a></h3><div style="color:rgba(100,100,100, 0.7);" data-reactid="6"><a class="header-link" href="/subscribe/" data-reactid="7">Subscribe</a><span style="padding:0 0.33rem;" data-reactid="8">•</span><a class="header-link" href="/readinglist/" data-reactid="9">Reading List</a><span style="padding:0 0.33rem;" data-reactid="10">•</span><a class="header-link" href="http://twitter.com/ben336" data-reactid="11">Twitter</a><span style="padding:0 0.33rem;" data-reactid="12">•</span><a class="header-link" href="/about/" data-reactid="13">About</a></div></div><div style="flex-shrink:2;" data-reactid="14"><span data-reactid="15"></span></div></div><div class="markdown" data-reactid="16"><!-- react-empty: 17 --><h5 style="display:block;color:rgba(100,100,100, 0.7);margin-bottom:0.4165rem;" data-reactid="18">July 6, 2015</h5><h1 style="margin-top:0;margin-bottom:1rem;" data-reactid="19">Backbone and ES6 Classes Revisited</h1><div class="article-body" data-reactid="20"><p>A few weeks ago I wrote <a href="http://benmccormick.org/2015/04/07/es6-classes-and-backbone-js/">an article</a> explaining why the final spec for classes in the ES6/ES2015 version of JavaScript was not usable in Backbone applications.  That post got a lot of great feedback, including this <a href="https://github.com/jashkenas/backbone/issues/3560">discussion</a> with the Backbone core team. The gist of that discussion has been that there are several ways to make ES6 classes work with Backbone now, though they may be less clean than the current <em>Backbone.extend</em> syntax.  But there’s hope for a really great experience: decorators, a <a href="https://github.com/wycats/javascript-decorators">proposed feature for the ES7/ES2016 spec</a>, provide a much cleaner interface when working with Backbone and native classes.</p>
+<p>Let’s start with a quick reminder on the problem that Backbone developers face when adapting ES6 classes.  Both <em>Backbone.extend</em> and ES6 classes serve as syntactic sugar around traditional JavaScript inheritance methods.  So the following code snippets are effectively equivalent:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> ExampleView = Backbone.View.extend({
+    <span class="hljs-attr">foo</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">'foo'</span>)
+    }
+});
+</code></pre>
+<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Backbone</span>.<span class="hljs-title">View</span> </span>{
+    foo() {
+        alert(<span class="hljs-string">'foo'</span>);
+    }
+}
+</code></pre>
+<p>and each corresponds roughly to this vanilla ES5 snippet</p>
+<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ExampleView</span>(<span class="hljs-params"></span>) </span>{
+    Backbone.View.call(<span class="hljs-keyword">this</span>);
+}
+
+ExampleView.prototype = <span class="hljs-built_in">Object</span>.create(Backbone.View);
+ExampleView.prototype.constructor = Backbone.View;
+ExampleView.prototype.foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    alert(<span class="hljs-string">'foo'</span>);
+};
+</code></pre>
+<p>All of that works fine.  The problem is that even though these abstractions are similar, they’re not quite the same.  Specifically ES6 class syntax supports an opinionated subset of what you can accomplish with plain prototype inheritance.  There’s good reason for this, since many developers don’t understand prototype inheritance and can shoot themselves in the foot.  But ES6 class restrictions don’t mesh well with Backbone’s conventions.  Specifically, Backbone relies on adding properties to a class’ prototype before a class’ constructor is invoked <sup id="fnref:1"><a href="#fn:1">1</a></sup>.  ES6 classes don’t provide any way to define properties on the prototype as part of the class definition.  They also do not allow you to add instance properties to a constructor prior to calling super() to run a parent class’ constructor.  As a result, properties that are processed within Backbone objects’ constructors like <code>events</code>, <code>className</code>, <code>urlRoot</code> and others can’t be set within an ES6 class definition without resorting to some less than beautiful syntax.  There are however at least 3 different ways of dealing with this problem under the ES6 spec.  I’ll take a look at each of them.</p>
+<h3>ES6 solutions</h3>
+<p>The 3 main solutions I’ve seen proposed for using the current ES6 class spec with Backbone classes are passing properties to the <code>super</code> function, creating everything as a method, and adding properties to the prototype outside of the class definition.  I’ll go through those one by one, using <a href="https://github.com/tastejs/todomvc/blob/gh-pages/examples/backbone_require/js/views/todos.js">a view from one of the Backbone TodoMVC implementations</a> as an example.</p>
+<h4>Pass properties to the super constructor</h4>
+<p>The first solution is to define a constructor function for each Backbone object that has properties, and pass the properties directly to the constructor.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">'jquery'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">'backbone'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">'underscore'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> todosTemplate <span class="hljs-keyword">from</span> <span class="hljs-string">'text!templates/todos.html'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Common <span class="hljs-keyword">from</span> <span class="hljs-string">'common'</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TodoView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Backbone</span>.<span class="hljs-title">View</span> </span>{
+
+    <span class="hljs-keyword">constructor</span>() {
+        <span class="hljs-keyword">super</span>({
+            <span class="hljs-attr">tagName</span>:  <span class="hljs-string">'li'</span>,
+
+            <span class="hljs-attr">template</span>: _.template(todosTemplate),
+
+            <span class="hljs-attr">events</span>: {
+                <span class="hljs-string">'click .toggle'</span>:    <span class="hljs-string">'toggleCompleted'</span>,
+                <span class="hljs-string">'dblclick label'</span>:   <span class="hljs-string">'edit'</span>,
+                <span class="hljs-string">'click .destroy'</span>:   <span class="hljs-string">'clear'</span>,
+                <span class="hljs-string">'keypress .edit'</span>:   <span class="hljs-string">'updateOnEnter'</span>,
+                <span class="hljs-string">'keydown .edit'</span>:    <span class="hljs-string">'revertOnEscape'</span>,
+                <span class="hljs-string">'blur .edit'</span>:       <span class="hljs-string">'close'</span>
+            },
+        });
+    }
+
+    initialize() {
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'change'</span>, <span class="hljs-keyword">this</span>.render);
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'destroy'</span>, <span class="hljs-keyword">this</span>.remove);
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'visible'</span>, <span class="hljs-keyword">this</span>.toggleVisible);
+    }
+
+    render() {
+        <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template(<span class="hljs-keyword">this</span>.model.toJSON()));
+        <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'completed'</span>, <span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'completed'</span>));
+
+        <span class="hljs-keyword">this</span>.toggleVisible();
+        <span class="hljs-keyword">this</span>.$input = <span class="hljs-keyword">this</span>.$(<span class="hljs-string">'.edit'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    }
+
+    toggleVisible() {
+        <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'hidden'</span>,  <span class="hljs-keyword">this</span>.isHidden());
+    }
+
+    isHidden() {
+        <span class="hljs-keyword">let</span> isCompleted = <span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'completed'</span>);
+        <span class="hljs-keyword">return</span> (<span class="hljs-comment">// hidden cases only</span>
+            (!isCompleted &amp;&amp; Common.TodoFilter === <span class="hljs-string">'completed'</span>) ||
+            (isCompleted &amp;&amp; Common.TodoFilter === <span class="hljs-string">'active'</span>)
+        );
+    }
+
+    toggleCompleted() {
+        <span class="hljs-keyword">this</span>.model.toggle();
+    }
+
+    edit() {
+        <span class="hljs-keyword">this</span>.$el.addClass(<span class="hljs-string">'editing'</span>);
+        <span class="hljs-keyword">this</span>.$input.focus();
+    }
+
+    close() {
+        <span class="hljs-keyword">let</span> value = <span class="hljs-keyword">this</span>.$input.val();
+        <span class="hljs-keyword">let</span> trimmedValue = value.trim();
+
+        <span class="hljs-keyword">if</span> (trimmedValue) {
+            <span class="hljs-keyword">this</span>.model.save({ <span class="hljs-attr">title</span>: trimmedValue });
+
+            <span class="hljs-keyword">if</span> (value !== trimmedValue) {
+                <span class="hljs-keyword">this</span>.model.trigger(<span class="hljs-string">'change'</span>);
+            }
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.clear();
+        }
+
+        <span class="hljs-keyword">this</span>.$el.removeClass(<span class="hljs-string">'editing'</span>);
+    }
+
+    updateOnEnter(e) {
+        <span class="hljs-keyword">if</span> (e.keyCode === Common.ENTER_KEY) {
+            <span class="hljs-keyword">this</span>.close();
+        }
+    }
+
+    revertOnEscape(e) {
+        <span class="hljs-keyword">if</span> (e.which === Common.ESCAPE_KEY) {
+            <span class="hljs-keyword">this</span>.$el.removeClass(<span class="hljs-string">'editing'</span>);
+            <span class="hljs-comment">// Also reset the hidden input back to the original value.</span>
+            <span class="hljs-keyword">this</span>.$input.val(<span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'title'</span>));
+        }
+    }
+
+    clear() {
+        <span class="hljs-keyword">this</span>.model.destroy();
+    }
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TodoView;
+</code></pre>
+<p>There are a few advantages to this approach.  It keeps everything within the class definition, and lets Backbone itself manage attaching properties to the prototype, assuring compatibility with existing code.  However it adds a constructor call to a class that otherwise wouldn’t need one, making it less obvious when a developer is actually modifying the constructor to do something important.  It also isolates properties from methods, whereas Backbone philosophically has always treated them interchangeably.  In fact that philosophy is the key to the next solution.</p>
+<h4>Treat everything like a method</h4>
+<p>Backbone evaluates all of its properties using Underscore’s <code>_.result</code> function <sup id="fnref:2"><a href="#fn:2">2</a></sup>. <code>_.result</code> checks to see if an object property is a function. If it is then <code>_.result</code> will evaluate it and return the result.  This allows Backbone to accept its properties as either an object or a function.  Very handy.  So one workaround to the constructor problem is to make everything a method, including properties.  We can actually go one better than this, and use the <code>get</code> keyword to make our methods serve as <em>getters</em> for a property.  This means they will be accessible as properties, but defined as methods, retaining compatibility with any existing references if you’re converting existing code.</p>
+<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TodoView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Backbone</span>.<span class="hljs-title">View</span> </span>{
+
+    get tagName() { <span class="hljs-keyword">return</span> <span class="hljs-string">'li'</span>}
+
+    get template() { <span class="hljs-keyword">return</span> _.template(todosTemplate)}
+
+    get events() {
+        <span class="hljs-keyword">return</span> {
+            <span class="hljs-string">'click .toggle'</span>:    <span class="hljs-string">'toggleCompleted'</span>,
+            <span class="hljs-string">'dblclick label'</span>:   <span class="hljs-string">'edit'</span>,
+            <span class="hljs-string">'click .destroy'</span>:   <span class="hljs-string">'clear'</span>,
+            <span class="hljs-string">'keypress .edit'</span>:   <span class="hljs-string">'updateOnEnter'</span>,
+            <span class="hljs-string">'keydown .edit'</span>:    <span class="hljs-string">'revertOnEscape'</span>,
+            <span class="hljs-string">'blur .edit'</span>:       <span class="hljs-string">'close'</span>
+        }
+    }
+
+    initialize() {
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'change'</span>, <span class="hljs-keyword">this</span>.render);
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'destroy'</span>, <span class="hljs-keyword">this</span>.remove);
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'visible'</span>, <span class="hljs-keyword">this</span>.toggleVisible);
+    }
+
+    render() {
+        <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template(<span class="hljs-keyword">this</span>.model.toJSON()));
+        <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'completed'</span>, <span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'completed'</span>));
+
+        <span class="hljs-keyword">this</span>.toggleVisible();
+        <span class="hljs-keyword">this</span>.$input = <span class="hljs-keyword">this</span>.$(<span class="hljs-string">'.edit'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    }
+
+    toggleVisible() {
+        <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'hidden'</span>,  <span class="hljs-keyword">this</span>.isHidden());
+    }
+
+    <span class="hljs-comment">//... etc</span>
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TodoView;
+</code></pre>
+<p>This approach uses only standard class syntax, which is great.  Getters and methods are highly idiomatic class structures, and work fine with Backbone right now.  They also enforce the immutability of these properties, a design concern with the current Backbone property implementation <sup id="fnref:3"><a href="#fn:3">3</a></sup>.  But lets be real, <code>get tagName() { return 'li'}</code> is a significantly less clean interface than the <code>tagName: 'li'</code> syntax you get with <em>Backbone.extend</em>.</p>
+<h4>Defining properties directly on the prototype</h4>
+<p>The final example is the most straightforward.  Since there’s no special class syntax for adding properties to the prototype, we can just do so directly after we’ve defined the class.</p>
+<pre><code class="language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TodoView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Backbone</span>.<span class="hljs-title">View</span> </span>{
+
+    initialize() {
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'change'</span>, <span class="hljs-keyword">this</span>.render);
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'destroy'</span>, <span class="hljs-keyword">this</span>.remove);
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'visible'</span>, <span class="hljs-keyword">this</span>.toggleVisible);
+    }
+
+    render() {
+        <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template(<span class="hljs-keyword">this</span>.model.toJSON()));
+        <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'completed'</span>, <span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'completed'</span>));
+
+        <span class="hljs-keyword">this</span>.toggleVisible();
+        <span class="hljs-keyword">this</span>.$input = <span class="hljs-keyword">this</span>.$(<span class="hljs-string">'.edit'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    }
+
+    toggleVisible() {
+        <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'hidden'</span>,  <span class="hljs-keyword">this</span>.isHidden());
+    }
+
+    <span class="hljs-comment">//... etc</span>
+};
+
+TodoView.prototype.tagName = <span class="hljs-string">'li'</span>;
+TodoView.prototype.template = _.template(todosTemplate);
+TodoView.prototype.events = {
+    <span class="hljs-string">'click .toggle'</span>:    <span class="hljs-string">'toggleCompleted'</span>,
+    <span class="hljs-string">'dblclick label'</span>:   <span class="hljs-string">'edit'</span>,
+    <span class="hljs-string">'click .destroy'</span>:   <span class="hljs-string">'clear'</span>,
+    <span class="hljs-string">'keypress .edit'</span>:   <span class="hljs-string">'updateOnEnter'</span>,
+    <span class="hljs-string">'keydown .edit'</span>:    <span class="hljs-string">'revertOnEscape'</span>,
+    <span class="hljs-string">'blur .edit'</span>:       <span class="hljs-string">'close'</span>
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TodoView;
+</code></pre>
+<p>This approach is unambiguous, but its also removes the advantages of using abstracted syntax to begin with.  Adding directly to the prototype takes properties out of the context of the class definition, making it harder to view the class as a holistic unit.  Forcing properties to appear after the class definition also breaks with Backbone community conventions.  Almost all examples of Backbone code that I’ve seen put properties at the top of Backbone class declarations, above any methods, since they’re usually important to read when trying to understand the purpose and role of an object.  They’re then followed by methods, which often contain extensive logic that is less helpful in understanding a class’ overall purpose.</p>
+<p>Of these 3 solutions, I personally prefer using methods and getters.  However I don’t see any of them as an improvement on the existing <em>Backbone.extend</em> syntax.</p>
+<h3>ES7 and Decorators</h3>
+<p>JavaScript is not staying stagnant however.  The TC39 committee recently approved the final spec for ES6 and is aiming to release a new spec on a yearly basis going forward.  One proposed feature for a future spec is <a href="https://github.com/wycats/javascript-decorators">JavaScript decorators</a>.  Decorators are a declarative way of adding extra behavior to a class or class method.  They’re simple functions that take a class or method as an argument and then return an augmented version.</p>
+<p>For instance here’s a simple example from the proposal of a decorator that adds an isTestable property to classes that it decorates.</p>
+<pre><code class="language-javascript">@isTestable(<span class="hljs-literal">true</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> </span>{ }
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isTestable</span>(<span class="hljs-params">value</span>) </span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decorator</span>(<span class="hljs-params">target</span>) </span>{
+      target.isTestable = value;
+   }
+}
+</code></pre>
+<p>Based on that example, it’s not hard to see how this is relevant to the syntax struggle we experienced above.  Here’s a naive solution to our properties problem that utilizes a <code>props</code> decorator to add a Backbone-esque hash of properties to the prototype.</p>
+<pre><code class="language-javascript"><span class="hljs-comment">//decorators.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">props</span>(<span class="hljs-params">value</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decorator</span>(<span class="hljs-params">target</span>) </span>{
+        _.extend(target.prototype, value);
+    }
+}
+</code></pre>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">'jquery'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">'backbone'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">'underscore'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> todosTemplate <span class="hljs-keyword">from</span> <span class="hljs-string">'text!templates/todos.html'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Common <span class="hljs-keyword">from</span> <span class="hljs-string">'common'</span>;
+<span class="hljs-keyword">import</span> {props} <span class="hljs-keyword">from</span> <span class="hljs-string">'decorators'</span>
+
+@props({
+
+    <span class="hljs-attr">tagName</span>:  <span class="hljs-string">'li'</span>,
+
+    <span class="hljs-attr">template</span>: _.template(todosTemplate),
+
+    <span class="hljs-attr">events</span>: {
+        <span class="hljs-string">'click .toggle'</span>:    <span class="hljs-string">'toggleCompleted'</span>,
+        <span class="hljs-string">'dblclick label'</span>:   <span class="hljs-string">'edit'</span>,
+        <span class="hljs-string">'click .destroy'</span>:   <span class="hljs-string">'clear'</span>,
+        <span class="hljs-string">'keypress .edit'</span>:   <span class="hljs-string">'updateOnEnter'</span>,
+        <span class="hljs-string">'keydown .edit'</span>:    <span class="hljs-string">'revertOnEscape'</span>,
+        <span class="hljs-string">'blur .edit'</span>:       <span class="hljs-string">'close'</span>
+    },
+})
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TodoView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Backbone</span>.<span class="hljs-title">View</span> </span>{
+
+    initialize() {
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'change'</span>, <span class="hljs-keyword">this</span>.render);
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'destroy'</span>, <span class="hljs-keyword">this</span>.remove);
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'visible'</span>, <span class="hljs-keyword">this</span>.toggleVisible);
+    }
+
+    render() {
+        <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template(<span class="hljs-keyword">this</span>.model.toJSON()));
+        <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'completed'</span>, <span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'completed'</span>));
+
+        <span class="hljs-keyword">this</span>.toggleVisible();
+        <span class="hljs-keyword">this</span>.$input = <span class="hljs-keyword">this</span>.$(<span class="hljs-string">'.edit'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    }
+
+    toggleVisible() {
+        <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'hidden'</span>,  <span class="hljs-keyword">this</span>.isHidden());
+    }
+
+    <span class="hljs-comment">//... etc</span>
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TodoView;
+</code></pre>
+<p>That’s a big improvement over our ES6 solutions above.  Our properties are added declaratively at the top of the class and are still clearly associated with the class.  Everything lines up reasonably well with both Backbone and native idioms. This is also reminiscent of the <a href="https://angular.io/docs/js/latest/quickstart.html#section-angular-create-account">approach that Angular 2 is taking</a> with its interface, using decorators heavily for component configuration.  It turns out though that we can actually do better.</p>
+<p>I got a tweet from Steven Langbroek last week asking me to look at his <a href="https://gist.github.com/StevenLangbroek/6bd28d8201839434b843">idea for using decorators to provide a cool new syntax for event binding in Backbone</a>.  I thought it was awesome and it inspired me to think in a more fine grained way about using decorators with Backbone.  How can we make the syntax better, as opposed to just replicating the current experience.  Here’s what a more “fine grained” decorators approach might look like with our example.</p>
+<pre><code class="language-javascript"><span class="hljs-comment">//decorators.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tagName</span>(<span class="hljs-params">value</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decorator</span>(<span class="hljs-params">target</span>) </span>{
+        target.prototype.tagName = value;
+    }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">template</span>(<span class="hljs-params">value</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decorator</span>(<span class="hljs-params">target</span>) </span>{
+        target.prototype.template = _.template(value);
+    }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">on</span>(<span class="hljs-params">eventName</span>)</span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target, name, descriptor</span>)</span>{
+    <span class="hljs-keyword">if</span>(!target.events) {
+        target.events = {};
+    }
+    <span class="hljs-keyword">if</span>(_.isFunction(target.events)) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'The on decorator is not compatible with an events method'</span>);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">if</span>(!eventName) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'The on decorator requires an eventName argument'</span>);
+    }
+    target.events[eventName] = name;
+    <span class="hljs-keyword">return</span> descriptor;
+  }
+}
+</code></pre>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">'jquery'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">'backbone'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">'underscore'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> todosTemplate <span class="hljs-keyword">from</span> <span class="hljs-string">'text!templates/todos.html'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Common <span class="hljs-keyword">from</span> <span class="hljs-string">'common'</span>;
+<span class="hljs-keyword">import</span> {tagName, template, on} <span class="hljs-keyword">from</span> <span class="hljs-string">'decorators'</span>;
+
+@tagName(<span class="hljs-string">'li'</span>)
+@template(todosTemplate)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TodoView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Backbone</span>.<span class="hljs-title">View</span> </span>{
+
+    initialize() {
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'change'</span>, <span class="hljs-keyword">this</span>.render);
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'destroy'</span>, <span class="hljs-keyword">this</span>.remove);
+        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'visible'</span>, <span class="hljs-keyword">this</span>.toggleVisible);
+    }
+
+    render() {
+        <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template(<span class="hljs-keyword">this</span>.model.toJSON()));
+        <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'completed'</span>, <span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'completed'</span>));
+
+        <span class="hljs-keyword">this</span>.toggleVisible();
+        <span class="hljs-keyword">this</span>.$input = <span class="hljs-keyword">this</span>.$(<span class="hljs-string">'.edit'</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    }
+
+    toggleVisible() {
+        <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'hidden'</span>,  <span class="hljs-keyword">this</span>.isHidden());
+    }
+
+    isHidden() {
+        <span class="hljs-keyword">let</span> isCompleted = <span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'completed'</span>);
+        <span class="hljs-keyword">return</span> (<span class="hljs-comment">// hidden cases only</span>
+            (!isCompleted &amp;&amp; Common.TodoFilter === <span class="hljs-string">'completed'</span>) ||
+            (isCompleted &amp;&amp; Common.TodoFilter === <span class="hljs-string">'active'</span>)
+        );
+    }
+
+    @on(<span class="hljs-string">'click .toggle'</span>)
+    toggleCompleted() {
+        <span class="hljs-keyword">this</span>.model.toggle();
+    }
+
+    @on(<span class="hljs-string">'dblclick label'</span>)
+    edit() {
+        <span class="hljs-keyword">this</span>.$el.addClass(<span class="hljs-string">'editing'</span>);
+        <span class="hljs-keyword">this</span>.$input.focus();
+    }
+
+    @on(<span class="hljs-string">'blur .edit'</span>)
+    close() {
+        <span class="hljs-keyword">let</span> value = <span class="hljs-keyword">this</span>.$input.val();
+        <span class="hljs-keyword">let</span> trimmedValue = value.trim();
+
+        <span class="hljs-keyword">if</span> (trimmedValue) {
+            <span class="hljs-keyword">this</span>.model.save({ <span class="hljs-attr">title</span>: trimmedValue });
+
+            <span class="hljs-keyword">if</span> (value !== trimmedValue) {
+                <span class="hljs-keyword">this</span>.model.trigger(<span class="hljs-string">'change'</span>);
+            }
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.clear();
+        }
+
+        <span class="hljs-keyword">this</span>.$el.removeClass(<span class="hljs-string">'editing'</span>);
+    }
+
+    @on(<span class="hljs-string">'keypress .edit'</span>)
+    updateOnEnter(e) {
+        <span class="hljs-keyword">if</span> (e.keyCode === Common.ENTER_KEY) {
+            <span class="hljs-keyword">this</span>.close();
+        }
+    }
+
+    @on(<span class="hljs-string">'keydown .edit'</span>)
+    revertOnEscape(e) {
+        <span class="hljs-keyword">if</span> (e.which === Common.ESCAPE_KEY) {
+            <span class="hljs-keyword">this</span>.$el.removeClass(<span class="hljs-string">'editing'</span>);
+            <span class="hljs-comment">// Also reset the hidden input back to the original value.</span>
+            <span class="hljs-keyword">this</span>.$input.val(<span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'title'</span>));
+        }
+    }
+
+    @on(<span class="hljs-string">'click .destroy'</span>)
+    clear() {
+        <span class="hljs-keyword">this</span>.model.destroy();
+    }
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TodoView;
+</code></pre>
+<p>Now we’re getting somewhere.  Steven’s <code>on</code> decorator provides a really nice upgrade to Backbone’s event system.  Event handlers are now in the context of the methods they refer to, making it much easier to get context as you scroll through a large view.  Our tagName gets a nice declarative setter at the top of the view rather than being bundled into an object hash.  And our template processing gets standardized, with the call to <code>_.template</code> abstracted away into the decorator.  That last decorator would probably be project specific, but the other 2 could easily be incorporated into a general Backbone decorator library.</p>
+<p>The main downside I see to this is one shared by a few of the other approaches.  Specifically that declaring a property like tagName as a method or as a property requires different implementation styles.  Backbone philosophically treats these scenarios as equivalent, and its not unusual to start with a static property for keys like <code>className</code>, <code>url</code>, or <code>template</code> and then refactor to use a function as code is reused in different situations.  Artificially separating out those scenarios is not very Backbone-like and might discourage that type of refactoring.</p>
+<h3>Recommendations</h3>
+<p>If you want to use ES6 classes with Backbone in production today, you should probably make everything a method, and make liberal use of the getter functionality.  That seems to be the most Backbone-like, with everything contained in a single class definition, and easy refactoring when a property begins to require logic around it.  If you’re experimenting though, you should definitely consider playing with decorators and see how you can make Backbone’s interface better.</p>
+<p><em>If you have ideas about this, feel free to contribute on the <a href="https://github.com/jashkenas/backbone/issues/3560">github issue</a></em></p>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out <a href="http://benmccormick.org/2015/04/07/es6-classes-and-backbone-js/">my first post on Backbone and ES6 classes</a>.</p>
+<div class="footnotes">
+<ol>
+    <li class="footnote" id="fn:1">
+        <p>
+        I completely screwed up explaining this in my first piece.  I was under the mistaken impression that Backbone was adding properties like `className` and `events` to each instance rather than to the prototype.  Which makes no sense in retrospect, since those properties need to be present before the Backbone.View is run.
+        <a href="#fnref:1" title="return to article"> ↩</a></p>
+    </li>
+        <li class="footnote" id="fn:2">
+            <p>
+            Well, almost all. iDAttribute <a href="https://github.com/jashkenas/backbone/pull/3684">is still catching up</a>.
+            <a href="#fnref:2" title="return to article"> ↩</a></p>
+        </li>
+        <li class="footnote" id="fn:3">
+            <p>
+            Oh you didn't realize that adding an item to the event hash for your view would add it to every instance of that View?  Whoops.
+            <a href="#fnref:3" title="return to article"> ↩</a></p>
+        </li>
+</ol>
+</div>
+</div><hr style="margin-bottom:3.332rem;" data-reactid="21"/><noscript data-reactid="22"></noscript><p style="margin-bottom:4.165rem;" data-reactid="23"><!-- react-text: 24 -->Written by <!-- /react-text --><!-- react-text: 25 -->Ben McCormick<!-- /react-text --></p><div title="Backbone and ES6 Classes Revisited" data-reactid="26"><div id="disqus_thread" data-reactid="27"></div><noscript data-reactid="28"><span data-reactid="29"><!-- react-text: 30 -->Please enable JavaScript to view the<!-- /react-text --><a href="http://disqus.com/?ref_noscript" data-reactid="31">comments powered by Disqus.</a></span></noscript><a href="http://disqus.com" class="dsq-brlink" data-reactid="32"><!-- react-text: 33 -->Blog comments powered by <!-- /react-text --><span class="logo-disqus" data-reactid="34">Disqus</span><!-- react-text: 35 -->.<!-- /react-text --></a></div></div><span style="display:block;clear:both;" data-reactid="36"> </span></div></div><script src="/bundle.js?t=1481258681430"></script><script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

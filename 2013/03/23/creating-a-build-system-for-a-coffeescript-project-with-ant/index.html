@@ -1,5 +1,530 @@
 <!DOCTYPE html>
- <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><script type="text/javascript" src="//use.typekit.net/msd6bqv.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><title data-react-helmet="true"></title><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font-size:112.5%;line-height:1.666em;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:georgia,serif;font-weight:normal;word-wrap:break-word;}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:2.499rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.27542rem;line-height:1.666rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.17608rem;line-height:1.666rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.666rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.92211rem;line-height:1.666rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.88547rem;line-height:1.666rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}ul{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:0.85rem;line-height:1.666rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:1rem;line-height:1.666rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}blockquote{margin-left:1.666rem;margin-right:1.666rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.666rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.666rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}li > ul{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}code{font-size:0.85rem;line-height:1.666rem;}kbd{font-size:0.85rem;line-height:1.666rem;}samp{font-size:0.85rem;line-height:1.666rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;padding-left:1.11067rem;padding-right:1.11067rem;padding-top:0.833rem;padding-bottom:calc(0.833rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><style>.header-link{color:hsla(0,0%,39%,.7)}.header-link:hover{color:#e2777a}#carbonads{height:100px;font-size:14px;width:300px;position:relative;background:#f0f0f0}.carbon-wrap{height:100px;display:-ms-flexbox;display:flex}.carbon-text{padding:5px 10px;max-height:80px;display:inline-block;overflow:hidden;line-height:1.3}.carbon-poweredby{color:hsla(0,0%,39%,.7);position:absolute;right:5px;bottom:0}@media all and (max-width:600px){#carbonads,.no-mobile{display:none}}@media all and (max-width:321px){html{font-size:100%!important}}.markdown pre{display:block;background:#fdf6e3;color:#657b83;overflow-y:hidden;padding:.2rem .5rem}.markdown pre code{background:none;border:none;border-radius:3px;display:inline-block;overflow:inherit;padding:0;white-space:inherit;word-wrap:normal;font-size:.7rem;line-height:1rem}code{border-radius:3px;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;border:1px solid #ccc;display:inline;font-family:Inconsolata,monospace,serif;max-width:100%;overflow:auto;padding:0 .1625rem}.hljs,code{background:#fdf6e3;color:#657b83}.hljs{display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-quote{color:#93a1a1}.hljs-addition,.hljs-keyword,.hljs-selector-tag{color:#859900}.hljs-doctag,.hljs-literal,.hljs-meta .hljs-meta-string,.hljs-number,.hljs-regexp,.hljs-string{color:#2aa198}.hljs-name,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-title{color:#268bd2}.hljs-attr,.hljs-attribute,.hljs-class .hljs-title,.hljs-template-variable,.hljs-type,.hljs-variable{color:#b58900}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-meta .hljs-keyword,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-subst,.hljs-symbol{color:#cb4b16}.hljs-built_in,.hljs-deletion{color:#dc322f}.hljs-formula{background:#eee8d5}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}html{font-size:120%}body,h1,h2,h3,h4,h5,h6,p{font-family:brandon-grotesque,Brandon Grotesque,Helvetica Neue,Helvetica,Arial,Lucida Sans,Geneva,Verdana,sans-serif;text-rendering:optimizeLegibility}a{color:#e2777a;text-decoration:none}blockquote{border-left:5px solid #57a3e8;font-style:italic;background:#eee;font-weight:400;font-size:.9rem;padding:10px 20px;margin:0 0 30px -25px}h2,h3{color:#57a3e8}.explanation{padding:10px;background:#eee;border-radius:10px;margin:20px auto;font-size:.85em}.article-body .reading-img img{width:150px;float:right;margin:0 10px 20px}.article-body img{max-height:200px;display:block;margin:40px auto 20px}.article-body img.full-width{max-height:none}.article-body img.half-width{max-height:none;width:50%}.mc-field-group{width:400px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-align:start;align-items:flex-start;padding:8px 0}.mc-field-group input{border-radius:3px;max-width:350px;width:80vw;border:1px solid #ccc}.mc-field-group label{font-size:.9em;font-weight:600}#mc-embedded-subscribe{color:#fff;background:#57a3e8;border-radius:4px;border:0;padding:5px 10px;margin:20px 0;cursor:pointer}#mc-embedded-subscribe:hover{background:#3e8acf}</style></head><body class="landing-page" style="background:#FCFCFC;padding:0 10px;"><div id="react-mount"><div style="max-width:39.984rem;margin-left:auto;margin-right:auto;padding:2.499rem 1.2495rem;" data-reactroot="" data-reactid="1" data-react-checksum="-2110327501"><div style="display:flex;padding-bottom:0.5rem;margin-bottom:0.5rem;" data-reactid="2"><div style="flex-grow:3;display:flex;flex-direction:column;justify-content:space-around;" data-reactid="3"><h3 style="margin:0;padding-bottom:0;" data-reactid="4"><a style="box-shadow:none;text-decoration:none;color:inherit;" href="/" data-reactid="5">benmccormick.org</a></h3><div style="color:rgba(100,100,100, 0.7);" data-reactid="6"><a class="header-link" href="/subscribe/" data-reactid="7">Subscribe</a><span style="padding:0 0.33rem;" data-reactid="8">•</span><a class="header-link" href="/readinglist/" data-reactid="9">Reading List</a><span style="padding:0 0.33rem;" data-reactid="10">•</span><a class="header-link" href="http://twitter.com/ben336" data-reactid="11">Twitter</a><span style="padding:0 0.33rem;" data-reactid="12">•</span><a class="header-link" href="/about/" data-reactid="13">About</a></div></div><div style="flex-shrink:2;" data-reactid="14"><span data-reactid="15"></span></div></div><span style="display:block;clear:both;" data-reactid="16"> </span></div></div><script src="/bundle.js?t=1481257824403"></script><script>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><script type="text/javascript" src="//use.typekit.net/msd6bqv.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><title data-react-helmet="true">Creating a Build System For a Coffeescript Project with Ant | benmccormick.org</title><meta data-react-helmet="true" name="description" content="Ben McCormick&#x27;s blog on JavaScript and Web Development"/><meta data-react-helmet="true" name="keywords" content=""/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:site" content="@benmccormickorg"/><meta data-react-helmet="true" name="twitter:creator" content="@ben336"/><meta data-react-helmet="true" name="twitter:title" content="Creating a Build System For a Coffeescript Project with Ant"/><meta data-react-helmet="true" name="twitter:description" content=""/><script data-react-helmet="true" type="application/ld+json">{
+                "@context": "http://schema.org"
+                "@type": "BlogPosting",
+                "headline": "Creating a Build System For a Coffeescript Project with Ant",
+                "genre": "Software Development",
+                "keywords": "",
+                "url": "http://benmccormick.org/2013/03/23/creating-a-build-system-for-a-coffeescript-project-with-ant/",
+                "datePublished": "2013-03-23",
+                
+                "articleBody": "<p>I’ve recently taken the time to develop an organized build system for a <a href=\"http://Coffeescript.org/\">Coffeescript</a> and <a href=\"http://sass-lang.com/\">SASS</a> <a href=\"https://bitbucket.org/ben336/scratchcalc\">project</a> that I’ve been working on in my free time.  I learned a lot during the process, and I wanted to share my experience here.  I used Ant for my build system, and worked in a variety of different libraries for minification, testing and documentation.</p>
+<h3>Getting Started</h3>
+<p>The first step is to install Ant.  It comes preinstalled on OSX, is <a href=\"http://www.rndblog.com/how-to-install-ant-on-linux/\">fairly straightforward</a> to install on Linux, and is <a href=\"http://www.nczonline.net/blog/2012/04/12/how-to-install-apache-ant-on-windows/\">a bit more involved</a> to install on Windows  If you’re using my exact setup, you’ll also need <a href=\"http://nodejs.org/\">NodeJS</a> (for Coffeescript, UglifyJS,and Docco) and <a href=\"http://www.ruby-lang.org/\">Ruby</a> (for SASS) installed.</p>
+<h3>My Project Structure</h3>
+<p>I went for a structure with 4 directories.</p>
+<ul>
+<li>src</li>
+<li>build</li>
+<li>test</li>
+<li>docs</li>
+</ul>
+<p>All of the source files are in the source directory, with Javascript and Coffeescript files in a scripts directory, and SASS styles in a styles folder.  This particular app has only a single HTML file, which sits in the root of the source directory.  The test folder contains a single HTML page, and a series of unit test files written in Coffeescript, in a structure that mirrors the src directory.  The build and docs directories are initially empty.</p>
+<h3>The Basics</h3>
+<p>We start with a simple Ant setup.  We’ll create an init task, a clean task, and debug and production tasks.  The following code goes into our build.xml file, which is placed at the root of the project directory.</p>
+<pre><code>&lt;project name=&quot;scratchcalc&quot; default=&quot;debug&quot;&gt;
+
+    &lt;loadproperties srcfile=&quot;build.properties&quot; /&gt;
+
+    &lt;target name=&quot;debug&quot; depends=&quot;clean, init&quot;&gt;
+        &lt;echo&gt;ScratchCalc Version ${version} (Debug Version)&lt;/echo&gt;
+    &lt;/target&gt;
+
+    &lt;target name=&quot;production&quot; depends=&quot;clean, init&quot;&gt;
+        &lt;echo&gt;ScratchCalc Version ${version}&lt;/echo&gt;
+    &lt;/target&gt;
+
+    &lt;target name= &quot;init&quot;&gt;
+        &lt;mkdir dir=&quot;${build.dir}&quot; /&gt;
+    &lt;/target&gt;
+
+    &lt;target name=&quot;clean&quot;&gt;
+        &lt;delete dir=&quot;${build.dir}&quot; /&gt;
+    &lt;/target&gt;
+
+&lt;/project&gt;
+</code></pre>
+<p>So for this project, we now have 4 tasks that we can call.  To call the init task, all we need to do is run</p>
+<pre><code>Ant init
+</code></pre>
+<p>from the command line.   Both our debug and production tasks mark clean and init as dependencies, so running them will remove and restore the build directory.  Beyond that, our build doesn’t do much right now.  Lets change that.</p>
+<h3>Copying</h3>
+<p>The simplest thing we can do with our Ant file is basic copying of files.  So lets start with a task that just copies over our files from the src directory to the build directory.</p>
+<pre><code class=\"language-xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">target</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"copy\"</span> <span class=\"hljs-attr\">description</span>=<span class=\"hljs-string\">\"Copies files from src to build dirs\"</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">echo</span>&gt;</span>Copying JS, CSS &amp; HTML Files<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">echo</span>&gt;</span>
+     <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">copy</span> <span class=\"hljs-attr\">todir</span>=<span class=\"hljs-string\">\"${build.dir}\"</span>&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">fileset</span> <span class=\"hljs-attr\">dir</span>=<span class=\"hljs-string\">\"${src.dir}\"</span> <span class=\"hljs-attr\">includes</span>=<span class=\"hljs-string\">\"**/*.HTML,**/*.css,**/*.js\"</span> /&gt;</span>
+     <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">copy</span>&gt;</span>
+<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">target</span>&gt;</span>
+</code></pre>
+<p>This simply copies any HTML, CSS, or Javascript files in the src directory over to an equivalent position in the build directory.  The segments in the <code>${}</code> format are variables defined in our build.properties file.  For my project, that looks something like this so far:</p>
+<pre><code>version = 0.0.1
+copyright = Copyright 2012-2013 Ben McCormick.
+src.dir = ./src
+build.dir = ./build
+test.dir = ./test
+lib.dir = ${src.dir}/ext
+</code></pre>
+<p>This would be a great place to start for a project thats currently running without a build system.  If you’re able to get your project to build like this, it will set you up to be able to start more interesting things going forward.</p>
+<p>And we of course want to do more interesting things.  This project uses Coffeescript and SASS, so we’ll need to do a bit more than just copy files.  So lets copy those scripts as well, but convert them to Javascript and CSS while we do.</p>
+<pre><code class=\"language-xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">target</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"copy\"</span> <span class=\"hljs-attr\">description</span>=<span class=\"hljs-string\">\"Compiles Coffeescript and SASS files,copies the rest\"</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">echo</span>&gt;</span>Copying Coffeescript Files<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">echo</span>&gt;</span>
+     <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">copy</span> <span class=\"hljs-attr\">todir</span>=<span class=\"hljs-string\">\"${build.dir}\"</span>&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">fileset</span> <span class=\"hljs-attr\">dir</span>=<span class=\"hljs-string\">\"${src.dir}\"</span> <span class=\"hljs-attr\">includes</span>=<span class=\"hljs-string\">\"**/*.HTML,**/*.css,**/*.js\"</span> /&gt;</span>
+     <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">copy</span>&gt;</span>
+     <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">exec</span> <span class=\"hljs-attr\">executable</span>=<span class=\"hljs-string\">\"coffee\"</span>&gt;</span>
+          <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"--compile\"</span>/&gt;</span>
+          <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"--map\"</span> /&gt;</span>
+          <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"--output\"</span> /&gt;</span>
+          <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"${build.script.dir}\"</span> /&gt;</span>
+          <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"${src.script.dir}\"</span> /&gt;</span>
+     <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">exec</span>&gt;</span>
+     <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">mkdir</span> <span class=\"hljs-attr\">dir</span>=<span class=\"hljs-string\">\"${build.styles.dir}\"</span> /&gt;</span>
+     <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">apply</span> <span class=\"hljs-attr\">executable</span>=<span class=\"hljs-string\">\"sass\"</span> <span class=\"hljs-attr\">dest</span>=<span class=\"hljs-string\">\"${build.dir}\"</span> <span class=\"hljs-attr\">verbose</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">force</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">failonerror</span>=<span class=\"hljs-string\">\"true\"</span>&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"--unix-newlines\"</span> /&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">srcfile</span> /&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">targetfile</span> /&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">filelist</span> <span class=\"hljs-attr\">dir</span> =<span class=\"hljs-string\">\"${src.dir}\"</span> <span class=\"hljs-attr\">files</span>=<span class=\"hljs-string\">\"styles/scratch.sass\"</span> /&gt;</span>
+        <span class=\"hljs-comment\">&lt;!--&lt;fileset dir=\"${src.dir}\" includes=\"**/*.sass\"  /&gt;--&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">mapper</span> <span class=\"hljs-attr\">type</span>=<span class=\"hljs-string\">\"glob\"</span> <span class=\"hljs-attr\">from</span>=<span class=\"hljs-string\">\"*.sass\"</span> <span class=\"hljs-attr\">to</span>=<span class=\"hljs-string\">\"*.css\"</span>/&gt;</span>
+    <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">apply</span>&gt;</span>
+<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">target</span>&gt;</span>
+</code></pre>
+<p>So along with copying the raw files, we also now copy the Coffeescript and SASS files.  For Coffeescript, we run the coffee executable against the entire src dir, and have it mirror the output to the build dir.  For Sass, we only want to run the compile on a single file, which pulls all of the other files into it through import statements.  So we use the filelist and mapper to specify the input and output files.</p>
+<h3>Concatenation</h3>
+<p>Mirroring your directory can be helpful for debugging, and is a good initial step if you’re converting to Ant from a locally run project.  But we’d really like to limit the amount of requests we make when deploying our site.  To do that, we’ll concatenate the js files together.  For my project I create 2 files, one for my external dependencies, and one for my own local files.  I may eventually reduce this to 1, but for now I like separating the 2 for debugging clarity.</p>
+<pre><code class=\"language-xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">target</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"concatenatejs\"</span> <span class=\"hljs-attr\">description</span>=<span class=\"hljs-string\">\"Concatenate All the JS together\"</span>&gt;</span>
+    <span class=\"hljs-comment\">&lt;!-- Instead of concatenating the JS files directly, use coffee to preserve the source map --&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">echo</span>&gt;</span>Concatenating the JS<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">echo</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">concat</span> <span class=\"hljs-attr\">destfile</span>=<span class=\"hljs-string\">\"${build.libs}\"</span>&gt;</span>
+         <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">filelist</span> <span class=\"hljs-attr\">dir</span> =<span class=\"hljs-string\">\"${build.script.dir}\"</span> <span class=\"hljs-attr\">files</span>=<span class=\"hljs-string\">\"lib/jquery.js,lib/knockout.js,lib/BigDecimal.js\"</span> /&gt;</span>
+
+          <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">fileset</span> <span class=\"hljs-attr\">dir</span>=<span class=\"hljs-string\">\"${build.script.dir}/lib\"</span> <span class=\"hljs-attr\">includes</span>=<span class=\"hljs-string\">\"**/*.js\"</span>/&gt;</span>
+    <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">concat</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">apply</span> <span class=\"hljs-attr\">executable</span>=<span class=\"hljs-string\">\"coffee\"</span>  <span class=\"hljs-attr\">verbose</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">force</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">failonerror</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">parallel</span>=<span class=\"hljs-string\">\"true\"</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"--compile\"</span> /&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"--map\"</span> /&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"--join\"</span> /&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"${build.script.output}\"</span> /&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">srcfile</span> /&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">filelist</span> <span class=\"hljs-attr\">dir</span> =<span class=\"hljs-string\">\"${src.script.dir}\"</span> <span class=\"hljs-attr\">files</span>=<span class=\"hljs-string\">\"editor/toolkit.coffee,editor/markupGen.coffee,parser/eqTreeBuilder.coffee,parser/NumberValue.coffee,parser/eqScanner.coffee,parser/eqTokenizer.coffee,parser/tablePlaceHolder.coffee,parser/EQParser.coffee,parser/calcFramework.coffee,editor/editor.coffee\"</span> /&gt;</span>
+    <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">apply</span>&gt;</span>
+<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">target</span>&gt;</span>
+</code></pre>
+<p>For the external libraries I use Ant’s built in <code>concat</code> task to concatenate the files together.  For the Coffeescript files, I use the coffee compiler rather than concatenating the files that I copied.  I was hoping to do this in order to preserve the source map, which allows for easier debugging.  Unfortunately the compiler has trouble generating source maps for joined files right now.  I’m hoping to fix that in the future, in the meantime I may be using a different approach, possibly using uglifyjs to concatenate the files and generate the maps.</p>
+<h2>Minify</h2>
+<p>Speaking of <a href=\"https://github.com/mishoo/UglifyJS2\">uglifyjs</a>, I use that for minifying my Javascript.</p>
+<pre><code class=\"language-xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">target</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"minify\"</span> <span class=\"hljs-attr\">description</span>=<span class=\"hljs-string\">\"Minify the JS for Production\"</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">echo</span>&gt;</span>Minifying the JS For Production with UglifyJS<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">echo</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">apply</span> <span class=\"hljs-attr\">executable</span>=<span class=\"hljs-string\">\"uglifyjs\"</span> <span class=\"hljs-attr\">verbose</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">force</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">failonerror</span>=<span class=\"hljs-string\">\"true\"</span>&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">srcfile</span> /&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"--output\"</span> /&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"${build.script.output}\"</span> /&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">filelist</span>  <span class=\"hljs-attr\">files</span> =<span class=\"hljs-string\">\"${build.script.output}\"</span>/&gt;</span>
+    <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">apply</span>&gt;</span>
+<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">target</span>&gt;</span>
+</code></pre>
+<p>I only require this for the production task, and leave the full source available for the debug task to preserve the readability of the generated JS.</p>
+<h3>Documentation</h3>
+<p>I use <a href=\"http://jashkenas.github.com/docco\">docco</a> for my Coffeescript documentation.  It converts comments into documentation and runs them through a <a href=\"http://daringfireball.net/projects/markdown/\">Markdown</a> parser to generate a clean HTML page with the code and comments intermingled.</p>
+<pre><code class=\"language-xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">target</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"documentation\"</span> <span class=\"hljs-attr\">description</span>=<span class=\"hljs-string\">\"Generate Docco Documentation for coffee files\"</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">echo</span>&gt;</span>Generating Documentation with Docco<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">echo</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">apply</span> <span class=\"hljs-attr\">executable</span>=<span class=\"hljs-string\">\"docco\"</span> <span class=\"hljs-attr\">verbose</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">force</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">failonerror</span>=<span class=\"hljs-string\">\"true\"</span>&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">srcfile</span> /&gt;</span>
+        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">fileset</span> <span class=\"hljs-attr\">dir</span> =<span class=\"hljs-string\">\"${src.script.dir}\"</span> &gt;</span>
+            <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">include</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"**/*.coffee\"</span>/&gt;</span>
+        <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">fileset</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">apply</span>&gt;</span>
+<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">target</span>&gt;</span>
+</code></pre>
+<h3>Testing</h3>
+<p>I use Jasmine for testing.  <a href=\"http://pivotal.github.com/jasmine\">Jasmine</a> is a “Behavior Driven Development” style unit testing framework for Javascript.  In an ideal world I would be setting up a build task to run on the server and display the results when I run the build.  Unfortunately I wasn’t able to find a way to do that without generating additional dependencies.  Its possible with NodeJS or RequireJS style modules and dependencies, and its also possible using phantomJS, but I didn’t want to require either of those for testing.   So instead I have my build task generate an HTML page with the test results.  I may add some scripting to open this page by default after running a production build in the future.</p>
+<pre><code class=\"language-xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">target</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"test\"</span> <span class=\"hljs-attr\">description</span>=<span class=\"hljs-string\">\"Generate the JS for testing with Jasmine\"</span>&gt;</span>
+  <span class=\"hljs-comment\">&lt;!-- Ideally this would run a server side jasmine test, but that requires better dependency management than we have right now--&gt;</span>
+  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">echo</span>&gt;</span>Generating the Test JS with jasmine<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">echo</span>&gt;</span>
+  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">apply</span> <span class=\"hljs-attr\">executable</span>=<span class=\"hljs-string\">\"coffee\"</span>  <span class=\"hljs-attr\">verbose</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">force</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">failonerror</span>=<span class=\"hljs-string\">\"true\"</span> <span class=\"hljs-attr\">parallel</span>=<span class=\"hljs-string\">\"true\"</span>&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"--compile\"</span> /&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"--join\"</span> /&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">arg</span> <span class=\"hljs-attr\">value</span>=<span class=\"hljs-string\">\"${test.output}\"</span> /&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">srcfile</span> /&gt;</span>
+    <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">fileset</span> <span class=\"hljs-attr\">dir</span> =<span class=\"hljs-string\">\"${test.dir}\"</span> &gt;</span>
+      <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">include</span> <span class=\"hljs-attr\">name</span>=<span class=\"hljs-string\">\"**/*.coffee\"</span>/&gt;</span>
+    <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">fileset</span>&gt;</span>
+  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">apply</span>&gt;</span>
+<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">target</span>&gt;</span>
+</code></pre>
+<h3>Summary</h3>
+<p>Adding a build system has been great for my project.  Its allowed me to be a lot more organized and to do some cool things that are a pain by hand (unit testing, Coffeescript).  I definitely recommend looking into doing this for any non-trivial Javascript/web project that you’re working on.</p>
+<pre><code>&lt;project name=&quot;scratchcalc&quot; default=&quot;debug&quot;&gt;
+
+  &lt;loadproperties srcfile=&quot;build.properties&quot; /&gt;
+
+  &lt;target name=&quot;debug&quot; depends=&quot;clean, init, copy,concatenatejs&quot;&gt;
+    &lt;echo&gt;ScratchCalc Version ${version} (Debug Version)&lt;/echo&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;production&quot; depends=&quot;clean, init, copy,concatenatejs,minify,documentation,test&quot;&gt;
+    &lt;echo&gt;ScratchCalc Version ${version}&lt;/echo&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;copy&quot; description=&quot;Compiles Coffeescript and SASS files,copies the rest&quot;&gt;
+    &lt;echo&gt;Copying Coffeescript Files&lt;/echo&gt;
+     &lt;copy todir=&quot;${build.dir}&quot;&gt;
+      &lt;fileset dir=&quot;${src.dir}&quot; includes=&quot;**/*.HTML,**/*.css,**/*.js&quot; /&gt;
+     &lt;/copy&gt;
+     &lt;exec executable=&quot;coffee&quot;&gt;
+        &lt;arg value=&quot;--compile&quot;/&gt;
+        &lt;arg value=&quot;--map&quot; /&gt;
+        &lt;arg value=&quot;--output&quot; /&gt;
+        &lt;arg value=&quot;${build.script.dir}&quot; /&gt;
+        &lt;arg value=&quot;${src.script.dir}&quot; /&gt;
+     &lt;/exec&gt;
+     &lt;mkdir dir=&quot;${build.styles.dir}&quot; /&gt;
+     &lt;apply executable=&quot;sass&quot; dest=&quot;${build.dir}&quot; verbose=&quot;true&quot; force=&quot;true&quot; failonerror=&quot;true&quot;&gt;
+          &lt;arg value=&quot;--unix-newlines&quot; /&gt;
+          &lt;srcfile /&gt;
+          &lt;targetfile /&gt;
+          &lt;filelist dir =&quot;${src.dir}&quot; files=&quot;styles/scratch.sass&quot; /&gt;
+          &lt;!--&lt;fileset dir=&quot;${src.dir}&quot; includes=&quot;**/*.sass&quot;  /&gt;--&gt;
+          &lt;mapper type=&quot;glob&quot; from=&quot;*.sass&quot; to=&quot;*.css&quot;/&gt;
+      &lt;/apply&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;concatenatejs&quot; description=&quot;Concatenate All the JS together&quot;&gt;
+    &lt;!-- Instead of concatenating the JS files directly, use coffee to preserve the source map --&gt;
+    &lt;echo&gt;Concatenating the JS&lt;/echo&gt;
+    &lt;concat destfile=&quot;${build.libs}&quot;&gt;
+       &lt;filelist dir =&quot;${build.script.dir}&quot; files=&quot;lib/jquery.js,lib/knockout.js,lib/BigDecimal.js&quot; /&gt;
+
+        &lt;fileset dir=&quot;${build.script.dir}/lib&quot; includes=&quot;**/*.js&quot;/&gt;
+    &lt;/concat&gt;
+    &lt;apply executable=&quot;coffee&quot;  verbose=&quot;true&quot; force=&quot;true&quot; failonerror=&quot;true&quot; parallel=&quot;true&quot;&gt;
+      &lt;arg value=&quot;--compile&quot; /&gt;
+      &lt;arg value=&quot;--map&quot; /&gt;
+      &lt;arg value=&quot;--join&quot; /&gt;
+      &lt;arg value=&quot;${build.script.output}&quot; /&gt;
+      &lt;srcfile /&gt;
+      &lt;filelist dir =&quot;${src.script.dir}&quot; files=&quot;...&quot; /&gt;
+    &lt;/apply&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;documentation&quot; description=&quot;Generate Docco Documentation for coffee files&quot;&gt;
+    &lt;echo&gt;Generating Documentation with Docco&lt;/echo&gt;
+    &lt;apply executable=&quot;docco&quot; verbose=&quot;true&quot; force=&quot;true&quot; failonerror=&quot;true&quot;&gt;
+          &lt;srcfile /&gt;
+          &lt;fileset dir =&quot;${src.script.dir}&quot; &gt;
+            &lt;include name=&quot;**/*.coffee&quot;/&gt;
+          &lt;/fileset&gt;
+      &lt;/apply&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;test&quot; description=&quot;Generate the JS for testing with Jasmine&quot;&gt;
+    &lt;!-- Ideally this would run a server side jasmine test, but that requires better dependency management than we have right now--&gt;
+    &lt;echo&gt;Generating the Test JS with jasmine&lt;/echo&gt;
+    &lt;apply executable=&quot;coffee&quot;  verbose=&quot;true&quot; force=&quot;true&quot; failonerror=&quot;true&quot; parallel=&quot;true&quot;&gt;
+      &lt;arg value=&quot;--compile&quot; /&gt;
+      &lt;arg value=&quot;--join&quot; /&gt;
+      &lt;arg value=&quot;${test.output}&quot; /&gt;
+      &lt;srcfile /&gt;
+      &lt;fileset dir =&quot;${test.dir}&quot; &gt;
+        &lt;include name=&quot;**/*.coffee&quot;/&gt;
+      &lt;/fileset&gt;
+    &lt;/apply&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;minify&quot; description=&quot;Minify the JS for Production&quot;&gt;
+    &lt;echo&gt;Minifying the JS For Production with UglifyJS&lt;/echo&gt;
+    &lt;apply executable=&quot;uglifyjs&quot; verbose=&quot;true&quot; force=&quot;true&quot; failonerror=&quot;true&quot;&gt;
+          &lt;srcfile /&gt;
+          &lt;arg value=&quot;--output&quot; /&gt;
+          &lt;arg value=&quot;${build.script.output}&quot; /&gt;
+          &lt;filelist  files =&quot;${build.script.output}&quot;/&gt;
+      &lt;/apply&gt;
+  &lt;/target&gt;
+
+  &lt;target name= &quot;init&quot;&gt;
+    &lt;mkdir dir=&quot;${build.dir}&quot; /&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;clean&quot;&gt;
+    &lt;delete dir=&quot;${build.dir}&quot; /&gt;
+  &lt;/target&gt;
+
+&lt;/project&gt;
+</code></pre>
+<p><em>Update June 2014: Since writing this post, Javascript based build tools have continued to mature and grow.  These days I’d recommend <a href=\"http://gruntjs.com/\">Grunt</a> or <a href=\"http://gulpjs.com/\">Gulp</a> for your front end build script needs, though Ant is still a fine choice if you’re integrating your builds with a Java project, or have lots of experience with it.</em></p>
+<hr>
+<h3>Further Reading</h3>
+<ul>
+<li><a href=\"http://www.amazon.com/gp/product/1449327680/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1449327680&linkCode=as2&tag=productjavasc-20\">Maintainable JavaScript</a><img src=\"http://ir-na.amazon-adsystem.com/e/ir?t=productjavasc-20&l=as2&o=1&a=1449327680\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" style=\"border:none !important; margin:0px !important;\" /> - This is a great little book for anyone writing Javascript applications in teams.  It has a great section on developing a Javascript build system with Ant</li>
+</ul>
+",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Ben McCormick"
+                    "email": "mailto:ben@benmccormick.org",
+                    "image": "/profile_pic.jpg",
+                    "jobTitle": "Software Engineer",
+                    "alumniOf": "Duke",
+                    "birthPlace": "Pittsburgh, PA",
+                    "gender": "male",
+                    "url": "http://benmccormick.org",
+              	    "sameAs" : [
+                      "https://www.linkedin.com/in/benmccormick",
+                      "http://twitter.com/ben336",
+                    ]
+                 }
+              }</script><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font-size:112.5%;line-height:1.666em;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:georgia,serif;font-weight:normal;word-wrap:break-word;}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:2.499rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.27542rem;line-height:1.666rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.17608rem;line-height:1.666rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.666rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.92211rem;line-height:1.666rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.88547rem;line-height:1.666rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}ul{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:0.85rem;line-height:1.666rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:1rem;line-height:1.666rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}blockquote{margin-left:1.666rem;margin-right:1.666rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.666rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.666rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}li > ul{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}code{font-size:0.85rem;line-height:1.666rem;}kbd{font-size:0.85rem;line-height:1.666rem;}samp{font-size:0.85rem;line-height:1.666rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;padding-left:1.11067rem;padding-right:1.11067rem;padding-top:0.833rem;padding-bottom:calc(0.833rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><style>.header-link{color:hsla(0,0%,39%,.7)}.header-link:hover{color:#e2777a}#carbonads{height:100px;font-size:14px;width:300px;position:relative;background:#f0f0f0}.carbon-wrap{height:100px;display:-ms-flexbox;display:flex}.carbon-text{padding:5px 10px;max-height:80px;display:inline-block;overflow:hidden;line-height:1.3}.carbon-poweredby{color:hsla(0,0%,39%,.7);position:absolute;right:5px;bottom:0}@media all and (max-width:600px){#carbonads,.no-mobile{display:none}}@media all and (max-width:321px){html{font-size:100%!important}}.markdown pre{display:block;background:#fdf6e3;color:#657b83;overflow-y:hidden;padding:.2rem .5rem}.markdown pre code{background:none;border:none;border-radius:3px;display:inline-block;overflow:inherit;padding:0;white-space:inherit;word-wrap:normal;font-size:.7rem;line-height:1rem}code{border-radius:3px;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;border:1px solid #ccc;display:inline;font-family:Inconsolata,monospace,serif;max-width:100%;overflow:auto;padding:0 .1625rem}.hljs,code{background:#fdf6e3;color:#657b83}.hljs{display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-quote{color:#93a1a1}.hljs-addition,.hljs-keyword,.hljs-selector-tag{color:#859900}.hljs-doctag,.hljs-literal,.hljs-meta .hljs-meta-string,.hljs-number,.hljs-regexp,.hljs-string{color:#2aa198}.hljs-name,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-title{color:#268bd2}.hljs-attr,.hljs-attribute,.hljs-class .hljs-title,.hljs-template-variable,.hljs-type,.hljs-variable{color:#b58900}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-meta .hljs-keyword,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-subst,.hljs-symbol{color:#cb4b16}.hljs-built_in,.hljs-deletion{color:#dc322f}.hljs-formula{background:#eee8d5}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}html{font-size:120%}body,h1,h2,h3,h4,h5,h6,p{font-family:brandon-grotesque,Brandon Grotesque,Helvetica Neue,Helvetica,Arial,Lucida Sans,Geneva,Verdana,sans-serif;text-rendering:optimizeLegibility}a{color:#e2777a;text-decoration:none}blockquote{border-left:5px solid #57a3e8;font-style:italic;background:#eee;font-weight:400;font-size:.9rem;padding:10px 20px;margin:0 0 30px -25px}h2,h3{color:#57a3e8}.explanation{padding:10px;background:#eee;border-radius:10px;margin:20px auto;font-size:.85em}.article-body .reading-img img{width:150px;float:right;margin:0 10px 20px}.article-body img{max-height:200px;display:block;margin:40px auto 20px}.article-body img.full-width{max-height:none}.article-body img.half-width{max-height:none;width:50%}.mc-field-group{width:400px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-align:start;align-items:flex-start;padding:8px 0}.mc-field-group input{border-radius:3px;max-width:350px;width:80vw;border:1px solid #ccc}.mc-field-group label{font-size:.9em;font-weight:600}#mc-embedded-subscribe{color:#fff;background:#57a3e8;border-radius:4px;border:0;padding:5px 10px;margin:20px 0;cursor:pointer}#mc-embedded-subscribe:hover{background:#3e8acf}</style></head><body class="landing-page" style="background:#FCFCFC;padding:0 10px;"><div id="react-mount"><div style="max-width:39.984rem;margin-left:auto;margin-right:auto;padding:2.499rem 1.2495rem;" data-reactroot="" data-reactid="1" data-react-checksum="345863143"><div style="display:flex;padding-bottom:0.5rem;margin-bottom:0.5rem;" data-reactid="2"><div style="flex-grow:3;display:flex;flex-direction:column;justify-content:space-around;" data-reactid="3"><h3 style="margin:0;padding-bottom:0;" data-reactid="4"><a style="box-shadow:none;text-decoration:none;color:inherit;" href="/" data-reactid="5">benmccormick.org</a></h3><div style="color:rgba(100,100,100, 0.7);" data-reactid="6"><a class="header-link" href="/subscribe/" data-reactid="7">Subscribe</a><span style="padding:0 0.33rem;" data-reactid="8">•</span><a class="header-link" href="/readinglist/" data-reactid="9">Reading List</a><span style="padding:0 0.33rem;" data-reactid="10">•</span><a class="header-link" href="http://twitter.com/ben336" data-reactid="11">Twitter</a><span style="padding:0 0.33rem;" data-reactid="12">•</span><a class="header-link" href="/about/" data-reactid="13">About</a></div></div><div style="flex-shrink:2;" data-reactid="14"><span data-reactid="15"></span></div></div><div class="markdown" data-reactid="16"><!-- react-empty: 17 --><h5 style="display:block;color:rgba(100,100,100, 0.7);margin-bottom:0.4165rem;" data-reactid="18">March 23, 2013</h5><h1 style="margin-top:0;margin-bottom:1rem;" data-reactid="19">Creating a Build System For a Coffeescript Project with Ant</h1><div class="article-body" data-reactid="20"><p>I’ve recently taken the time to develop an organized build system for a <a href="http://Coffeescript.org/">Coffeescript</a> and <a href="http://sass-lang.com/">SASS</a> <a href="https://bitbucket.org/ben336/scratchcalc">project</a> that I’ve been working on in my free time.  I learned a lot during the process, and I wanted to share my experience here.  I used Ant for my build system, and worked in a variety of different libraries for minification, testing and documentation.</p>
+<h3>Getting Started</h3>
+<p>The first step is to install Ant.  It comes preinstalled on OSX, is <a href="http://www.rndblog.com/how-to-install-ant-on-linux/">fairly straightforward</a> to install on Linux, and is <a href="http://www.nczonline.net/blog/2012/04/12/how-to-install-apache-ant-on-windows/">a bit more involved</a> to install on Windows  If you’re using my exact setup, you’ll also need <a href="http://nodejs.org/">NodeJS</a> (for Coffeescript, UglifyJS,and Docco) and <a href="http://www.ruby-lang.org/">Ruby</a> (for SASS) installed.</p>
+<h3>My Project Structure</h3>
+<p>I went for a structure with 4 directories.</p>
+<ul>
+<li>src</li>
+<li>build</li>
+<li>test</li>
+<li>docs</li>
+</ul>
+<p>All of the source files are in the source directory, with Javascript and Coffeescript files in a scripts directory, and SASS styles in a styles folder.  This particular app has only a single HTML file, which sits in the root of the source directory.  The test folder contains a single HTML page, and a series of unit test files written in Coffeescript, in a structure that mirrors the src directory.  The build and docs directories are initially empty.</p>
+<h3>The Basics</h3>
+<p>We start with a simple Ant setup.  We’ll create an init task, a clean task, and debug and production tasks.  The following code goes into our build.xml file, which is placed at the root of the project directory.</p>
+<pre><code>&lt;project name=&quot;scratchcalc&quot; default=&quot;debug&quot;&gt;
+
+    &lt;loadproperties srcfile=&quot;build.properties&quot; /&gt;
+
+    &lt;target name=&quot;debug&quot; depends=&quot;clean, init&quot;&gt;
+        &lt;echo&gt;ScratchCalc Version ${version} (Debug Version)&lt;/echo&gt;
+    &lt;/target&gt;
+
+    &lt;target name=&quot;production&quot; depends=&quot;clean, init&quot;&gt;
+        &lt;echo&gt;ScratchCalc Version ${version}&lt;/echo&gt;
+    &lt;/target&gt;
+
+    &lt;target name= &quot;init&quot;&gt;
+        &lt;mkdir dir=&quot;${build.dir}&quot; /&gt;
+    &lt;/target&gt;
+
+    &lt;target name=&quot;clean&quot;&gt;
+        &lt;delete dir=&quot;${build.dir}&quot; /&gt;
+    &lt;/target&gt;
+
+&lt;/project&gt;
+</code></pre>
+<p>So for this project, we now have 4 tasks that we can call.  To call the init task, all we need to do is run</p>
+<pre><code>Ant init
+</code></pre>
+<p>from the command line.   Both our debug and production tasks mark clean and init as dependencies, so running them will remove and restore the build directory.  Beyond that, our build doesn’t do much right now.  Lets change that.</p>
+<h3>Copying</h3>
+<p>The simplest thing we can do with our Ant file is basic copying of files.  So lets start with a task that just copies over our files from the src directory to the build directory.</p>
+<pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">target</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"copy"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"Copies files from src to build dirs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">echo</span>&gt;</span>Copying JS, CSS &amp; HTML Files<span class="hljs-tag">&lt;/<span class="hljs-name">echo</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">copy</span> <span class="hljs-attr">todir</span>=<span class="hljs-string">"${build.dir}"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fileset</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"${src.dir}"</span> <span class="hljs-attr">includes</span>=<span class="hljs-string">"**/*.HTML,**/*.css,**/*.js"</span> /&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-name">copy</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span>
+</code></pre>
+<p>This simply copies any HTML, CSS, or Javascript files in the src directory over to an equivalent position in the build directory.  The segments in the <code>${}</code> format are variables defined in our build.properties file.  For my project, that looks something like this so far:</p>
+<pre><code>version = 0.0.1
+copyright = Copyright 2012-2013 Ben McCormick.
+src.dir = ./src
+build.dir = ./build
+test.dir = ./test
+lib.dir = ${src.dir}/ext
+</code></pre>
+<p>This would be a great place to start for a project thats currently running without a build system.  If you’re able to get your project to build like this, it will set you up to be able to start more interesting things going forward.</p>
+<p>And we of course want to do more interesting things.  This project uses Coffeescript and SASS, so we’ll need to do a bit more than just copy files.  So lets copy those scripts as well, but convert them to Javascript and CSS while we do.</p>
+<pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">target</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"copy"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"Compiles Coffeescript and SASS files,copies the rest"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">echo</span>&gt;</span>Copying Coffeescript Files<span class="hljs-tag">&lt;/<span class="hljs-name">echo</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">copy</span> <span class="hljs-attr">todir</span>=<span class="hljs-string">"${build.dir}"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fileset</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"${src.dir}"</span> <span class="hljs-attr">includes</span>=<span class="hljs-string">"**/*.HTML,**/*.css,**/*.js"</span> /&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-name">copy</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">exec</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"coffee"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--compile"</span>/&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--map"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--output"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${build.script.dir}"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${src.script.dir}"</span> /&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-name">exec</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">mkdir</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"${build.styles.dir}"</span> /&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">apply</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"sass"</span> <span class="hljs-attr">dest</span>=<span class="hljs-string">"${build.dir}"</span> <span class="hljs-attr">verbose</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">force</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--unix-newlines"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">srcfile</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">targetfile</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">filelist</span> <span class="hljs-attr">dir</span> =<span class="hljs-string">"${src.dir}"</span> <span class="hljs-attr">files</span>=<span class="hljs-string">"styles/scratch.sass"</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!--&lt;fileset dir="${src.dir}" includes="**/*.sass"  /&gt;--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mapper</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"glob"</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"*.sass"</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"*.css"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">apply</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span>
+</code></pre>
+<p>So along with copying the raw files, we also now copy the Coffeescript and SASS files.  For Coffeescript, we run the coffee executable against the entire src dir, and have it mirror the output to the build dir.  For Sass, we only want to run the compile on a single file, which pulls all of the other files into it through import statements.  So we use the filelist and mapper to specify the input and output files.</p>
+<h3>Concatenation</h3>
+<p>Mirroring your directory can be helpful for debugging, and is a good initial step if you’re converting to Ant from a locally run project.  But we’d really like to limit the amount of requests we make when deploying our site.  To do that, we’ll concatenate the js files together.  For my project I create 2 files, one for my external dependencies, and one for my own local files.  I may eventually reduce this to 1, but for now I like separating the 2 for debugging clarity.</p>
+<pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">target</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"concatenatejs"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"Concatenate All the JS together"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Instead of concatenating the JS files directly, use coffee to preserve the source map --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">echo</span>&gt;</span>Concatenating the JS<span class="hljs-tag">&lt;/<span class="hljs-name">echo</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">concat</span> <span class="hljs-attr">destfile</span>=<span class="hljs-string">"${build.libs}"</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">filelist</span> <span class="hljs-attr">dir</span> =<span class="hljs-string">"${build.script.dir}"</span> <span class="hljs-attr">files</span>=<span class="hljs-string">"lib/jquery.js,lib/knockout.js,lib/BigDecimal.js"</span> /&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-name">fileset</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"${build.script.dir}/lib"</span> <span class="hljs-attr">includes</span>=<span class="hljs-string">"**/*.js"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">concat</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">apply</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"coffee"</span>  <span class="hljs-attr">verbose</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">force</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">parallel</span>=<span class="hljs-string">"true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--compile"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--map"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--join"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${build.script.output}"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">srcfile</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">filelist</span> <span class="hljs-attr">dir</span> =<span class="hljs-string">"${src.script.dir}"</span> <span class="hljs-attr">files</span>=<span class="hljs-string">"editor/toolkit.coffee,editor/markupGen.coffee,parser/eqTreeBuilder.coffee,parser/NumberValue.coffee,parser/eqScanner.coffee,parser/eqTokenizer.coffee,parser/tablePlaceHolder.coffee,parser/EQParser.coffee,parser/calcFramework.coffee,editor/editor.coffee"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">apply</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span>
+</code></pre>
+<p>For the external libraries I use Ant’s built in <code>concat</code> task to concatenate the files together.  For the Coffeescript files, I use the coffee compiler rather than concatenating the files that I copied.  I was hoping to do this in order to preserve the source map, which allows for easier debugging.  Unfortunately the compiler has trouble generating source maps for joined files right now.  I’m hoping to fix that in the future, in the meantime I may be using a different approach, possibly using uglifyjs to concatenate the files and generate the maps.</p>
+<h2>Minify</h2>
+<p>Speaking of <a href="https://github.com/mishoo/UglifyJS2">uglifyjs</a>, I use that for minifying my Javascript.</p>
+<pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">target</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"minify"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"Minify the JS for Production"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">echo</span>&gt;</span>Minifying the JS For Production with UglifyJS<span class="hljs-tag">&lt;/<span class="hljs-name">echo</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">apply</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"uglifyjs"</span> <span class="hljs-attr">verbose</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">force</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">srcfile</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--output"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${build.script.output}"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">filelist</span>  <span class="hljs-attr">files</span> =<span class="hljs-string">"${build.script.output}"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">apply</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span>
+</code></pre>
+<p>I only require this for the production task, and leave the full source available for the debug task to preserve the readability of the generated JS.</p>
+<h3>Documentation</h3>
+<p>I use <a href="http://jashkenas.github.com/docco">docco</a> for my Coffeescript documentation.  It converts comments into documentation and runs them through a <a href="http://daringfireball.net/projects/markdown/">Markdown</a> parser to generate a clean HTML page with the code and comments intermingled.</p>
+<pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">target</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"documentation"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"Generate Docco Documentation for coffee files"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">echo</span>&gt;</span>Generating Documentation with Docco<span class="hljs-tag">&lt;/<span class="hljs-name">echo</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">apply</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"docco"</span> <span class="hljs-attr">verbose</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">force</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">srcfile</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">fileset</span> <span class="hljs-attr">dir</span> =<span class="hljs-string">"${src.script.dir}"</span> &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"**/*.coffee"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">fileset</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">apply</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span>
+</code></pre>
+<h3>Testing</h3>
+<p>I use Jasmine for testing.  <a href="http://pivotal.github.com/jasmine">Jasmine</a> is a “Behavior Driven Development” style unit testing framework for Javascript.  In an ideal world I would be setting up a build task to run on the server and display the results when I run the build.  Unfortunately I wasn’t able to find a way to do that without generating additional dependencies.  Its possible with NodeJS or RequireJS style modules and dependencies, and its also possible using phantomJS, but I didn’t want to require either of those for testing.   So instead I have my build task generate an HTML page with the test results.  I may add some scripting to open this page by default after running a production build in the future.</p>
+<pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">target</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"test"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"Generate the JS for testing with Jasmine"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Ideally this would run a server side jasmine test, but that requires better dependency management than we have right now--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">echo</span>&gt;</span>Generating the Test JS with jasmine<span class="hljs-tag">&lt;/<span class="hljs-name">echo</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">apply</span> <span class="hljs-attr">executable</span>=<span class="hljs-string">"coffee"</span>  <span class="hljs-attr">verbose</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">force</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">failonerror</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">parallel</span>=<span class="hljs-string">"true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--compile"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"--join"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${test.output}"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">srcfile</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fileset</span> <span class="hljs-attr">dir</span> =<span class="hljs-string">"${test.dir}"</span> &gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"**/*.coffee"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fileset</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">apply</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span>
+</code></pre>
+<h3>Summary</h3>
+<p>Adding a build system has been great for my project.  Its allowed me to be a lot more organized and to do some cool things that are a pain by hand (unit testing, Coffeescript).  I definitely recommend looking into doing this for any non-trivial Javascript/web project that you’re working on.</p>
+<pre><code>&lt;project name=&quot;scratchcalc&quot; default=&quot;debug&quot;&gt;
+
+  &lt;loadproperties srcfile=&quot;build.properties&quot; /&gt;
+
+  &lt;target name=&quot;debug&quot; depends=&quot;clean, init, copy,concatenatejs&quot;&gt;
+    &lt;echo&gt;ScratchCalc Version ${version} (Debug Version)&lt;/echo&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;production&quot; depends=&quot;clean, init, copy,concatenatejs,minify,documentation,test&quot;&gt;
+    &lt;echo&gt;ScratchCalc Version ${version}&lt;/echo&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;copy&quot; description=&quot;Compiles Coffeescript and SASS files,copies the rest&quot;&gt;
+    &lt;echo&gt;Copying Coffeescript Files&lt;/echo&gt;
+     &lt;copy todir=&quot;${build.dir}&quot;&gt;
+      &lt;fileset dir=&quot;${src.dir}&quot; includes=&quot;**/*.HTML,**/*.css,**/*.js&quot; /&gt;
+     &lt;/copy&gt;
+     &lt;exec executable=&quot;coffee&quot;&gt;
+        &lt;arg value=&quot;--compile&quot;/&gt;
+        &lt;arg value=&quot;--map&quot; /&gt;
+        &lt;arg value=&quot;--output&quot; /&gt;
+        &lt;arg value=&quot;${build.script.dir}&quot; /&gt;
+        &lt;arg value=&quot;${src.script.dir}&quot; /&gt;
+     &lt;/exec&gt;
+     &lt;mkdir dir=&quot;${build.styles.dir}&quot; /&gt;
+     &lt;apply executable=&quot;sass&quot; dest=&quot;${build.dir}&quot; verbose=&quot;true&quot; force=&quot;true&quot; failonerror=&quot;true&quot;&gt;
+          &lt;arg value=&quot;--unix-newlines&quot; /&gt;
+          &lt;srcfile /&gt;
+          &lt;targetfile /&gt;
+          &lt;filelist dir =&quot;${src.dir}&quot; files=&quot;styles/scratch.sass&quot; /&gt;
+          &lt;!--&lt;fileset dir=&quot;${src.dir}&quot; includes=&quot;**/*.sass&quot;  /&gt;--&gt;
+          &lt;mapper type=&quot;glob&quot; from=&quot;*.sass&quot; to=&quot;*.css&quot;/&gt;
+      &lt;/apply&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;concatenatejs&quot; description=&quot;Concatenate All the JS together&quot;&gt;
+    &lt;!-- Instead of concatenating the JS files directly, use coffee to preserve the source map --&gt;
+    &lt;echo&gt;Concatenating the JS&lt;/echo&gt;
+    &lt;concat destfile=&quot;${build.libs}&quot;&gt;
+       &lt;filelist dir =&quot;${build.script.dir}&quot; files=&quot;lib/jquery.js,lib/knockout.js,lib/BigDecimal.js&quot; /&gt;
+
+        &lt;fileset dir=&quot;${build.script.dir}/lib&quot; includes=&quot;**/*.js&quot;/&gt;
+    &lt;/concat&gt;
+    &lt;apply executable=&quot;coffee&quot;  verbose=&quot;true&quot; force=&quot;true&quot; failonerror=&quot;true&quot; parallel=&quot;true&quot;&gt;
+      &lt;arg value=&quot;--compile&quot; /&gt;
+      &lt;arg value=&quot;--map&quot; /&gt;
+      &lt;arg value=&quot;--join&quot; /&gt;
+      &lt;arg value=&quot;${build.script.output}&quot; /&gt;
+      &lt;srcfile /&gt;
+      &lt;filelist dir =&quot;${src.script.dir}&quot; files=&quot;...&quot; /&gt;
+    &lt;/apply&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;documentation&quot; description=&quot;Generate Docco Documentation for coffee files&quot;&gt;
+    &lt;echo&gt;Generating Documentation with Docco&lt;/echo&gt;
+    &lt;apply executable=&quot;docco&quot; verbose=&quot;true&quot; force=&quot;true&quot; failonerror=&quot;true&quot;&gt;
+          &lt;srcfile /&gt;
+          &lt;fileset dir =&quot;${src.script.dir}&quot; &gt;
+            &lt;include name=&quot;**/*.coffee&quot;/&gt;
+          &lt;/fileset&gt;
+      &lt;/apply&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;test&quot; description=&quot;Generate the JS for testing with Jasmine&quot;&gt;
+    &lt;!-- Ideally this would run a server side jasmine test, but that requires better dependency management than we have right now--&gt;
+    &lt;echo&gt;Generating the Test JS with jasmine&lt;/echo&gt;
+    &lt;apply executable=&quot;coffee&quot;  verbose=&quot;true&quot; force=&quot;true&quot; failonerror=&quot;true&quot; parallel=&quot;true&quot;&gt;
+      &lt;arg value=&quot;--compile&quot; /&gt;
+      &lt;arg value=&quot;--join&quot; /&gt;
+      &lt;arg value=&quot;${test.output}&quot; /&gt;
+      &lt;srcfile /&gt;
+      &lt;fileset dir =&quot;${test.dir}&quot; &gt;
+        &lt;include name=&quot;**/*.coffee&quot;/&gt;
+      &lt;/fileset&gt;
+    &lt;/apply&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;minify&quot; description=&quot;Minify the JS for Production&quot;&gt;
+    &lt;echo&gt;Minifying the JS For Production with UglifyJS&lt;/echo&gt;
+    &lt;apply executable=&quot;uglifyjs&quot; verbose=&quot;true&quot; force=&quot;true&quot; failonerror=&quot;true&quot;&gt;
+          &lt;srcfile /&gt;
+          &lt;arg value=&quot;--output&quot; /&gt;
+          &lt;arg value=&quot;${build.script.output}&quot; /&gt;
+          &lt;filelist  files =&quot;${build.script.output}&quot;/&gt;
+      &lt;/apply&gt;
+  &lt;/target&gt;
+
+  &lt;target name= &quot;init&quot;&gt;
+    &lt;mkdir dir=&quot;${build.dir}&quot; /&gt;
+  &lt;/target&gt;
+
+  &lt;target name=&quot;clean&quot;&gt;
+    &lt;delete dir=&quot;${build.dir}&quot; /&gt;
+  &lt;/target&gt;
+
+&lt;/project&gt;
+</code></pre>
+<p><em>Update June 2014: Since writing this post, Javascript based build tools have continued to mature and grow.  These days I’d recommend <a href="http://gruntjs.com/">Grunt</a> or <a href="http://gulpjs.com/">Gulp</a> for your front end build script needs, though Ant is still a fine choice if you’re integrating your builds with a Java project, or have lots of experience with it.</em></p>
+<hr>
+<h3>Further Reading</h3>
+<ul>
+<li><a href="http://www.amazon.com/gp/product/1449327680/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1449327680&linkCode=as2&tag=productjavasc-20">Maintainable JavaScript</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=productjavasc-20&l=as2&o=1&a=1449327680" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> - This is a great little book for anyone writing Javascript applications in teams.  It has a great section on developing a Javascript build system with Ant</li>
+</ul>
+</div><hr style="margin-bottom:3.332rem;" data-reactid="21"/><noscript data-reactid="22"></noscript><p style="margin-bottom:4.165rem;" data-reactid="23"><!-- react-text: 24 -->Written by <!-- /react-text --><!-- react-text: 25 -->Ben McCormick<!-- /react-text --></p><div title="Creating a Build System For a Coffeescript Project with Ant" data-reactid="26"><div id="disqus_thread" data-reactid="27"></div><noscript data-reactid="28"><span data-reactid="29"><!-- react-text: 30 -->Please enable JavaScript to view the<!-- /react-text --><a href="http://disqus.com/?ref_noscript" data-reactid="31">comments powered by Disqus.</a></span></noscript><a href="http://disqus.com" class="dsq-brlink" data-reactid="32"><!-- react-text: 33 -->Blog comments powered by <!-- /react-text --><span class="logo-disqus" data-reactid="34">Disqus</span><!-- react-text: 35 -->.<!-- /react-text --></a></div></div><span style="display:block;clear:both;" data-reactid="36"> </span></div></div><script src="/bundle.js?t=1481258681430"></script><script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

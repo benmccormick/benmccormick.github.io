@@ -1,5 +1,548 @@
 <!DOCTYPE html>
- <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><script type="text/javascript" src="//use.typekit.net/msd6bqv.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><title data-react-helmet="true"></title><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font-size:112.5%;line-height:1.666em;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:georgia,serif;font-weight:normal;word-wrap:break-word;}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:2.499rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.27542rem;line-height:1.666rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.17608rem;line-height:1.666rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.666rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.92211rem;line-height:1.666rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.88547rem;line-height:1.666rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}ul{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:0.85rem;line-height:1.666rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:1rem;line-height:1.666rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}blockquote{margin-left:1.666rem;margin-right:1.666rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.666rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.666rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}li > ul{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}code{font-size:0.85rem;line-height:1.666rem;}kbd{font-size:0.85rem;line-height:1.666rem;}samp{font-size:0.85rem;line-height:1.666rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;padding-left:1.11067rem;padding-right:1.11067rem;padding-top:0.833rem;padding-bottom:calc(0.833rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><style>.header-link{color:hsla(0,0%,39%,.7)}.header-link:hover{color:#e2777a}#carbonads{height:100px;font-size:14px;width:300px;position:relative;background:#f0f0f0}.carbon-wrap{height:100px;display:-ms-flexbox;display:flex}.carbon-text{padding:5px 10px;max-height:80px;display:inline-block;overflow:hidden;line-height:1.3}.carbon-poweredby{color:hsla(0,0%,39%,.7);position:absolute;right:5px;bottom:0}@media all and (max-width:600px){#carbonads,.no-mobile{display:none}}@media all and (max-width:321px){html{font-size:100%!important}}.markdown pre{display:block;background:#fdf6e3;color:#657b83;overflow-y:hidden;padding:.2rem .5rem}.markdown pre code{background:none;border:none;border-radius:3px;display:inline-block;overflow:inherit;padding:0;white-space:inherit;word-wrap:normal;font-size:.7rem;line-height:1rem}code{border-radius:3px;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;border:1px solid #ccc;display:inline;font-family:Inconsolata,monospace,serif;max-width:100%;overflow:auto;padding:0 .1625rem}.hljs,code{background:#fdf6e3;color:#657b83}.hljs{display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-quote{color:#93a1a1}.hljs-addition,.hljs-keyword,.hljs-selector-tag{color:#859900}.hljs-doctag,.hljs-literal,.hljs-meta .hljs-meta-string,.hljs-number,.hljs-regexp,.hljs-string{color:#2aa198}.hljs-name,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-title{color:#268bd2}.hljs-attr,.hljs-attribute,.hljs-class .hljs-title,.hljs-template-variable,.hljs-type,.hljs-variable{color:#b58900}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-meta .hljs-keyword,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-subst,.hljs-symbol{color:#cb4b16}.hljs-built_in,.hljs-deletion{color:#dc322f}.hljs-formula{background:#eee8d5}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}html{font-size:120%}body,h1,h2,h3,h4,h5,h6,p{font-family:brandon-grotesque,Brandon Grotesque,Helvetica Neue,Helvetica,Arial,Lucida Sans,Geneva,Verdana,sans-serif;text-rendering:optimizeLegibility}a{color:#e2777a;text-decoration:none}blockquote{border-left:5px solid #57a3e8;font-style:italic;background:#eee;font-weight:400;font-size:.9rem;padding:10px 20px;margin:0 0 30px -25px}h2,h3{color:#57a3e8}.explanation{padding:10px;background:#eee;border-radius:10px;margin:20px auto;font-size:.85em}.article-body .reading-img img{width:150px;float:right;margin:0 10px 20px}.article-body img{max-height:200px;display:block;margin:40px auto 20px}.article-body img.full-width{max-height:none}.article-body img.half-width{max-height:none;width:50%}.mc-field-group{width:400px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-align:start;align-items:flex-start;padding:8px 0}.mc-field-group input{border-radius:3px;max-width:350px;width:80vw;border:1px solid #ccc}.mc-field-group label{font-size:.9em;font-weight:600}#mc-embedded-subscribe{color:#fff;background:#57a3e8;border-radius:4px;border:0;padding:5px 10px;margin:20px 0;cursor:pointer}#mc-embedded-subscribe:hover{background:#3e8acf}</style></head><body class="landing-page" style="background:#FCFCFC;padding:0 10px;"><div id="react-mount"><div style="max-width:39.984rem;margin-left:auto;margin-right:auto;padding:2.499rem 1.2495rem;" data-reactroot="" data-reactid="1" data-react-checksum="-2110327501"><div style="display:flex;padding-bottom:0.5rem;margin-bottom:0.5rem;" data-reactid="2"><div style="flex-grow:3;display:flex;flex-direction:column;justify-content:space-around;" data-reactid="3"><h3 style="margin:0;padding-bottom:0;" data-reactid="4"><a style="box-shadow:none;text-decoration:none;color:inherit;" href="/" data-reactid="5">benmccormick.org</a></h3><div style="color:rgba(100,100,100, 0.7);" data-reactid="6"><a class="header-link" href="/subscribe/" data-reactid="7">Subscribe</a><span style="padding:0 0.33rem;" data-reactid="8">•</span><a class="header-link" href="/readinglist/" data-reactid="9">Reading List</a><span style="padding:0 0.33rem;" data-reactid="10">•</span><a class="header-link" href="http://twitter.com/ben336" data-reactid="11">Twitter</a><span style="padding:0 0.33rem;" data-reactid="12">•</span><a class="header-link" href="/about/" data-reactid="13">About</a></div></div><div style="flex-shrink:2;" data-reactid="14"><span data-reactid="15"></span></div></div><span style="display:block;clear:both;" data-reactid="16"> </span></div></div><script src="/bundle.js?t=1481257824403"></script><script>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><script type="text/javascript" src="//use.typekit.net/msd6bqv.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><title data-react-helmet="true">How jQuery Works - An Introduction | benmccormick.org</title><meta data-react-helmet="true" name="description" content="Ben McCormick&#x27;s blog on JavaScript and Web Development"/><meta data-react-helmet="true" name="keywords" content=""/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:site" content="@benmccormickorg"/><meta data-react-helmet="true" name="twitter:creator" content="@ben336"/><meta data-react-helmet="true" name="twitter:title" content="How jQuery Works - An Introduction"/><meta data-react-helmet="true" name="twitter:description" content=""/><script data-react-helmet="true" type="application/ld+json">{
+                "@context": "http://schema.org"
+                "@type": "BlogPosting",
+                "headline": "How jQuery Works - An Introduction",
+                "genre": "Software Development",
+                "keywords": "",
+                "url": "http://benmccormick.org/2015/06/08/how-jquery-works-an-introduction/",
+                "datePublished": "2015-06-8",
+                
+                "articleBody": "<p><em>This is the first post in a series on “How jQuery Works”.  This is not a series about how to use jQuery, instead these posts will focus on how jQuery actually works.  If you’re interested in diving into the source of the most popular JavaScript library on the planet, keep reading.</em></p>
+<p>Every developer has had the experience of using “magic” code.  Not the “hacked into the NSA in 20 seconds” type of magic code you see in movies. This is the code created when you nervously typed an incomprehensible incantation that somebody else passed on to you, desperately hoping to receive the results you want, ignoring the sinking feeling in your stomach that you have no clue what to do if it fails.  Almost all code feels like this when you’re pushing out to learn new things.  But it doesn’t have to stay that way.</p>
+<p>The primary goal of this blog has always been to help myself understand the tools I’m using, and to share that understanding with as many people as possible.  My experience is that really understanding a library or framework requires diving into the source code and swimming around a bit. Which sounds great.  But often the real world gets in the way. Real world source code is full of “special code”.  Code that handles browser edge cases, performance optimizations that obscure meaning, indirection to allow shared solutions for common problems; all things that are completely necessary, and also likely to obscure the true structure of code.  So while reading the source is the best way to understand a library, it often helps to have some guideposts to lead you through.</p>
+<p>This post is the start of a new series diving into how jQuery (certainly a very magical library for many developers) works.  I’ll pull snippets from the source code, but also try to lay out the big picture approaches the library takes to provide functionality that combines to form by far the best-known and most used JavaScript library out there <sup id=\"fnref:1\"><a href=\"#fn:1\">1</a></sup>. For this introduction, the focus will be on the overall structure of the jQuery repository, how the code is laid out for development purposes, how it’s built into a single file for production use, and a quick look at the core jQuery object code.  Future posts will cover how different features of the libary work, including deep dives into selectors, ajax, animation, and events.</p>
+<h3>So where to start?</h3>
+<p>When you look at the <a href=\"https://github.com/jquery/jquery\">jQuery Github repo</a>, one of the first things you’ll probably notice is that the source isn’t developed as a single file the way it is distributed.  Instead it’s split up into many files separated by functionality.  That makes it easier to find specific functions when you know what you’re looking for, but harder to know where to start when trying to understand the big picture.  If you’re new to the library, it could be overwhelming.</p>
+<p>Fortunately it’s not that hard to get the lay of the land.  jQuery is broken into modules using the AMD format, and built using requireJS.  So each file lists its dependencies, and it’s easy enough to trace back what code is referenced where. So we can start by looking at <code>src/jquery.js</code>, which serves simply as a base file to require all of the other dependencies, then make the jQuery namespace available globally, both as <code>jQuery</code> and the famous <code>$</code>.</p>
+<p><img src=\"/posts/images/jquery_js.png\" alt=\"jquery_js.png\"></p>
+<p>From that file we can see the layout of the library.  The core file is loaded and attached to the window, and all of the other “feature files” are also listed as dependencies to make sure they load.  Each of those files lists <code>core.js</code> as a dependency, so it is loaded first and creates the main jQuery namespace, which other dependencies then edit as needed.  If you’re interested in the process of how the package is built, you can take a read through <a href=\"https://github.com/jquery/jquery/blob/master/build/tasks/build.js\">build/tasks/build.js</a>, where the dependencies are built using requirejs <sup id=\"fnref:2\"><a href=\"#fn:2\">2</a></sup>.</p>
+<h3>A look at core.js</h3>
+<p>We can see from jquery.js that <a href=\"https://github.com/jquery/jquery/blob/master/src/core.js\">core.js</a> is an important file.  It exports the main jQuery namespace, and if we look around we’ll see that it is required by about half of the files in the source directory as a dependency.  So what does it do?  core.js is responsible for defining the jQuery namespace, as well as the prototype for jQuery objects.  This is a great place to start before taking a more detailed look into the library’s features, so lets take a look.</p>
+<pre><code class=\"language-javascript\">define([
+	<span class=\"hljs-string\">\"./var/arr\"</span>,
+	<span class=\"hljs-string\">\"./var/document\"</span>,
+	<span class=\"hljs-string\">\"./var/slice\"</span>,
+	<span class=\"hljs-string\">\"./var/concat\"</span>,
+	<span class=\"hljs-string\">\"./var/push\"</span>,
+	<span class=\"hljs-string\">\"./var/indexOf\"</span>,
+	<span class=\"hljs-string\">\"./var/class2type\"</span>,
+	<span class=\"hljs-string\">\"./var/toString\"</span>,
+	<span class=\"hljs-string\">\"./var/hasOwn\"</span>,
+	<span class=\"hljs-string\">\"./var/support\"</span>
+], <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"> arr, document, slice, concat, push, indexOf, class2type, toString, hasOwn, support </span>) </span>{
+
+<span class=\"hljs-keyword\">var</span>
+	version = <span class=\"hljs-string\">\"@VERSION\"</span>,
+
+	<span class=\"hljs-comment\">// Define a local copy of jQuery</span>
+	jQuery = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"> selector, context </span>) </span>{
+		<span class=\"hljs-comment\">// The jQuery object is actually just the init constructor 'enhanced'</span>
+		<span class=\"hljs-comment\">// Need init if jQuery is called (just allow error to be thrown if not included)</span>
+		<span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">new</span> jQuery.fn.init( selector, context );
+	},
+</code></pre>
+<p>There’s a lot going on in the first 20 or so lines.  First we see a pattern that will repeat in future files.  jQuery uses a lot of small utility functions throughout its code.  Rather than attaching those to a single object, each one gets its own file in the <code>var</code> directory, and then is imported as a dependency as needed.  These modules are typically quite small and often trivial.  For instance the document module that is pulled in from <code>var/document</code> consists in its entirety of the following code:</p>
+<pre><code class=\"language-javascript\">define(<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{
+	<span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">window</span>.document;
+});
+</code></pre>
+<p>This is obviously a small shortcut, but it allows for consistent use of a pattern across the library. You’ll see small utility modules like this loaded in every significant file throughout the source code.</p>
+<p>After the imports, this file sets the version (the @VERSION annotation is replaced with the version number as part of the build process), and then creates the base jQuery function.  That base function proxies out to the <code>init</code> function if it is available, but more importantly serves as a namespace for the rest of the library.  All future functionality gets extended off of this object or its prototype.  After setting up a few constants, we dive right into that:</p>
+<pre><code>jQuery.fn = jQuery.prototype = {
+	<span class=\"hljs-comment\">// The current version of jQuery being used</span>
+	jquery: version,
+
+	constructor: jQuery,
+
+	<span class=\"hljs-comment\">// The default length of a jQuery object is 0</span>
+	length: <span class=\"hljs-number\">0</span>,
+
+	toArray: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">()</span> </span>{
+		<span class=\"hljs-keyword\">return</span> slice.call( <span class=\"hljs-keyword\">this</span> );
+	},
+
+	<span class=\"hljs-comment\">// Get the Nth element in the matched element set OR</span>
+	<span class=\"hljs-comment\">// Get the whole matched element set as a clean array</span>
+	<span class=\"hljs-keyword\">get</span>: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">( num )</span> </span>{
+		<span class=\"hljs-keyword\">return</span> num != <span class=\"hljs-literal\">null</span> ?
+
+			<span class=\"hljs-comment\">// Return just the one element from the set</span>
+			( num &lt; <span class=\"hljs-number\">0</span> ? <span class=\"hljs-keyword\">this</span>[ num + <span class=\"hljs-keyword\">this</span>.length ] : <span class=\"hljs-keyword\">this</span>[ num ] ) :
+
+			<span class=\"hljs-comment\">// Return all the elements in a clean array</span>
+			slice.call( <span class=\"hljs-keyword\">this</span> );
+	},
+
+	<span class=\"hljs-comment\">// Take an array of elements and push it onto the stack</span>
+	<span class=\"hljs-comment\">// (returning the new matched element set)</span>
+	pushStack: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">( elems )</span> </span>{
+
+		<span class=\"hljs-comment\">// Build a new jQuery matched element set</span>
+		<span class=\"hljs-keyword\">var</span> ret = jQuery.merge( <span class=\"hljs-keyword\">this</span>.constructor(), elems );
+
+		<span class=\"hljs-comment\">// Add the old object onto the stack (as a reference)</span>
+		ret.prevObject = <span class=\"hljs-keyword\">this</span>;
+
+		<span class=\"hljs-comment\">// Return the newly-formed element set</span>
+		<span class=\"hljs-keyword\">return</span> ret;
+	},
+
+	<span class=\"hljs-comment\">// Execute a callback for every element in the matched set.</span>
+	<span class=\"hljs-keyword\">each</span>: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">( callback )</span> </span>{
+		<span class=\"hljs-keyword\">return</span> jQuery.each( <span class=\"hljs-keyword\">this</span>, callback );
+	},
+
+	map: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">( callback )</span> </span>{
+		<span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.pushStack( jQuery.map(<span class=\"hljs-keyword\">this</span>, <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">( elem, i )</span> </span>{
+			<span class=\"hljs-keyword\">return</span> callback.call( elem, i, elem );
+		}));
+	},
+
+	slice: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">()</span> </span>{
+		<span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.pushStack( slice.apply( <span class=\"hljs-keyword\">this</span>, arguments ) );
+	},
+
+	first: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">()</span> </span>{
+		<span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.eq( <span class=\"hljs-number\">0</span> );
+	},
+
+	last: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">()</span> </span>{
+		<span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.eq( <span class=\"hljs-number\">-1</span> );
+	},
+
+	eq: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">( i )</span> </span>{
+		<span class=\"hljs-keyword\">var</span> len = <span class=\"hljs-keyword\">this</span>.length,
+			j = +i + ( i &lt; <span class=\"hljs-number\">0</span> ? len : <span class=\"hljs-number\">0</span> );
+		<span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.pushStack( j &gt;= <span class=\"hljs-number\">0</span> &amp;&amp; j &lt; len ? [ <span class=\"hljs-keyword\">this</span>[j] ] : [] );
+	},
+
+	end: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span><span class=\"hljs-params\">()</span> </span>{
+		<span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.prevObject || <span class=\"hljs-keyword\">this</span>.constructor(<span class=\"hljs-literal\">null</span>);
+	},
+
+	<span class=\"hljs-comment\">// For internal use only.</span>
+	<span class=\"hljs-comment\">// Behaves like an Array's method, not like a jQuery method.</span>
+	push: push,
+	sort: arr.sort,
+	splice: arr.splice
+};
+</code></pre>
+<p>Here the code sets up the jQuery prototype, which is also made available as <code>jQuery.fn</code>.  jQuery objects, what you get when you select a set of elements with jQuery, have access to all of the methods defined on this prototype.  <code>jQuery.fn</code> is also the extension point for jQuery plugins, so that custom functions are available to jQuery objects.  Most of the functions built here are pretty basic ones that mimic built in array functions for jQuery objects.</p>
+<h3>A note about jQuery objects</h3>
+<p>I’ve glossed over jQuery objects twice now, but we’ve seen enough already to get a deeper understanding of what they are.  jQuery objects are the objects created when the jQuery init function is used as a constructor to create a new object <sup id=\"fnref:3\"><a href=\"#fn:3\">3</a></sup>.  That sounds fancy, but in reality that’s what is happening every time you make a simple jQuery call like <code>$('#foo')</code> or <code>$('div')</code>.  The jQuery namespace function is being called and returns a new object with <code>jQuery.init</code> as the constructor.  Since <code>init</code> shares a prototype with the namespace function <sup id=\"fnref:4\"><a href=\"#fn:4\">4</a></sup>, these objects all have access to <code>jQuery.prototype</code>.  The second post in this series will talk more about how the init function parses the various inputs that you can pass to the namespace function, but for now it’s best to focus on understanding that the namespace function and jQuery.fn are not magic, but are just a wrapper and alias for portions of a fairly normal prototypical inheritance example in JavaScript.</p>
+<h3>Extend</h3>
+<p>After the base functions get added to the prototype, a special function is created and added to both the prototype and the namespace function directly.</p>
+<pre><code class=\"language-javascript\">
+jQuery.extend = jQuery.fn.extend = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{
+	<span class=\"hljs-keyword\">var</span> options, name, src, copy, copyIsArray, clone,
+		target = <span class=\"hljs-built_in\">arguments</span>[<span class=\"hljs-number\">0</span>] || {},
+		i = <span class=\"hljs-number\">1</span>,
+		length = <span class=\"hljs-built_in\">arguments</span>.length,
+		deep = <span class=\"hljs-literal\">false</span>;
+
+	<span class=\"hljs-comment\">// Handle a deep copy situation</span>
+	<span class=\"hljs-keyword\">if</span> ( <span class=\"hljs-keyword\">typeof</span> target === <span class=\"hljs-string\">\"boolean\"</span> ) {
+		deep = target;
+
+		<span class=\"hljs-comment\">// Skip the boolean and the target</span>
+		target = <span class=\"hljs-built_in\">arguments</span>[ i ] || {};
+		i++;
+	}
+
+	<span class=\"hljs-comment\">// Handle case when target is a string or something (possible in deep copy)</span>
+	<span class=\"hljs-keyword\">if</span> ( <span class=\"hljs-keyword\">typeof</span> target !== <span class=\"hljs-string\">\"object\"</span> &amp;&amp; !jQuery.isFunction(target) ) {
+		target = {};
+	}
+
+	<span class=\"hljs-comment\">// Extend jQuery itself if only one argument is passed</span>
+	<span class=\"hljs-keyword\">if</span> ( i === length ) {
+		target = <span class=\"hljs-keyword\">this</span>;
+		i--;
+	}
+
+	<span class=\"hljs-keyword\">for</span> ( ; i &lt; length; i++ ) {
+		<span class=\"hljs-comment\">// Only deal with non-null/undefined values</span>
+		<span class=\"hljs-keyword\">if</span> ( (options = <span class=\"hljs-built_in\">arguments</span>[ i ]) != <span class=\"hljs-literal\">null</span> ) {
+			<span class=\"hljs-comment\">// Extend the base object</span>
+			<span class=\"hljs-keyword\">for</span> ( name <span class=\"hljs-keyword\">in</span> options ) {
+				src = target[ name ];
+				copy = options[ name ];
+
+				<span class=\"hljs-comment\">// Prevent never-ending loop</span>
+				<span class=\"hljs-keyword\">if</span> ( target === copy ) {
+					<span class=\"hljs-keyword\">continue</span>;
+				}
+
+				<span class=\"hljs-comment\">// Recurse if we're merging plain objects or arrays</span>
+				<span class=\"hljs-keyword\">if</span> ( deep &amp;&amp; copy &amp;&amp; ( jQuery.isPlainObject(copy) ||
+					(copyIsArray = jQuery.isArray(copy)) ) ) {
+
+					<span class=\"hljs-keyword\">if</span> ( copyIsArray ) {
+						copyIsArray = <span class=\"hljs-literal\">false</span>;
+						clone = src &amp;&amp; jQuery.isArray(src) ? src : [];
+
+					} <span class=\"hljs-keyword\">else</span> {
+						clone = src &amp;&amp; jQuery.isPlainObject(src) ? src : {};
+					}
+
+					<span class=\"hljs-comment\">// Never move original objects, clone them</span>
+					target[ name ] = jQuery.extend( deep, clone, copy );
+
+				<span class=\"hljs-comment\">// Don't bring in undefined values</span>
+				} <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> ( copy !== <span class=\"hljs-literal\">undefined</span> ) {
+					target[ name ] = copy;
+				}
+			}
+		}
+	}
+
+	<span class=\"hljs-comment\">// Return the modified object</span>
+	<span class=\"hljs-keyword\">return</span> target;
+};
+</code></pre>
+<p><code>$.extend</code> is jQuery’s way of merging properties from one object into another.  It’s also a very handy shortcut for cloning an object (<code>var clone = $.extend({},obj)</code>).  We’ll see an example usage shortly, but since it’s a common function, it’s worth digging into how it works for a second.</p>
+<p>Looking at the code above, we can see that extend takes a variable number of arguments, the first of which can optionally be a boolean telling the function to “deep copy”.  If only a single object is passed, the function acts as if the jQuery prototype was passed as the first object, and targets that, otherwise it targets the first non-boolean argument.</p>
+<p><code>extend</code> then loops over each argument after the target and for each one goes over each of its keys.  For each object in order, properties are copied from the arguments to the target object.  If deep copy is set, properties that are objects are merged by calling <code>extend</code> recursively.  Otherwise, existing properties are overwritten.  This continues left to right till all arguments have been merged.</p>
+<p>The source code helpfully gives us an immediate example of how <code>extend</code> can be useful.  jQuery makes several properties and helpful functions available directly off of the <code>$</code> namespace.  Several of them are added here using extend.  You can see how the object notation flows much better than a long series of assignments with <code>=</code> would.</p>
+<pre><code class=\"language-javascript\">jQuery.extend({
+	<span class=\"hljs-comment\">// Unique for each copy of jQuery on the page</span>
+	expando: <span class=\"hljs-string\">\"jQuery\"</span> + ( version + <span class=\"hljs-built_in\">Math</span>.random() ).replace( <span class=\"hljs-regexp\">/\D/g</span>, <span class=\"hljs-string\">\"\"</span> ),
+
+	<span class=\"hljs-comment\">// Assume jQuery is ready without the ready module</span>
+	isReady: <span class=\"hljs-literal\">true</span>,
+
+	<span class=\"hljs-attr\">error</span>: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"> msg </span>) </span>{
+		<span class=\"hljs-keyword\">throw</span> <span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Error</span>( msg );
+	},
+
+	<span class=\"hljs-attr\">noop</span>: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{},
+
+	<span class=\"hljs-attr\">isFunction</span>: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"> obj </span>) </span>{
+		<span class=\"hljs-keyword\">return</span> jQuery.type(obj) === <span class=\"hljs-string\">\"function\"</span>;
+	},
+
+	<span class=\"hljs-attr\">isArray</span>: <span class=\"hljs-built_in\">Array</span>.isArray,
+
+	<span class=\"hljs-attr\">isWindow</span>: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"> obj </span>) </span>{
+		<span class=\"hljs-keyword\">return</span> obj != <span class=\"hljs-literal\">null</span> &amp;&amp; obj === obj.window;
+	},
+
+	<span class=\"hljs-comment\">//... many more functions and properties here</span>
+});
+</code></pre>
+<p>After working through 2 more helper functions, the namespace object gets returned, wrapping up <code>core.js</code>.  So 2 files and ~500 lines of source code in, we already have a pretty good idea of how jQuery is structured, both in terms of using AMD modules to separate out the source, and using a namespace function and its prototype as a central object to attach functionality.</p>
+<h3>More Resources</h3>
+<ul>
+<li>It’s no longer maintained with newer versions, but a few years ago Rob Flaherty created an annotated version of jQuery 1.6’s source.  You can see that <a href=\"http://robflaherty.github.io/jquery-annotated-source/\">here</a></li>
+<li>Along the same lines: John Resig, jQuery’s creator, recently went through his original jQuery library (a early ~1.0 version) and <a href=\"http://ejohn.org/blog/annotated-version-of-the-original-jquery-release/\">annotated it with both code commentary and historical notes</a>. It’s a great look inside the history of the library.</li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href=\"http://feedpress.me/benmccormick\">feed</a>, <a href=\"http://twitter.com/benmccormickorg\">Twitter</a> or my <a href=\"http://eepurl.com/WFYon\">mailing list</a>. You also might want to check out my <a href=\"http://benmccormick.org/2014/11/12/underscore-vs-lodash/\">post on the difference between Underscore and lodash</a>.</p>
+<div class=\"footnotes\">
+<ol>
+    <li class=\"footnote\" id=\"fn:1\">
+        <p>
+        You can see that on <a href=\"https://www.google.com/trends/explore#q=jQuery%2C%20backbone%2C%20Angular%2C%20Ember%2C%20React&date=1%2F2010%2065m&cmpt=q&tz=\">Google Trends</a>, <a href=\"http://bower.io/stats/\">Bower stats</a>, or <a href=\"https://github.com/jquery/jquery\">Github stars</a>
+        </p>
+        <a href=\"#fnref:1\" title=\"return to article\">↩</a></p>
+    </li>
+    <li class=\"footnote\" id=\"fn:2\">
+        <p>
+        jQuery's build process is actually super intersting, as they allow custom builds that optionally exclude portions of the library.  If you get a chance make sure to look through build.js and note the function to remove requireJS boilerplate after the modules have been built.
+        </p>
+        <a href=\"#fnref:2\" title=\"return to article\">↩</a></p>
+    </li>
+        <li class=\"footnote\" id=\"fn:3\">
+            <p>
+            If you're unclear on how constructors and prototypes work in JavaScript, feel free to catch up with <a href=\"http://benmccormick.org/2013/01/12/explaining-javascript-object-oriented-programming\">this post</a> I wrote on Object Oriented Programming in JavaScript a few years back.
+            </p>
+            <a href=\"#fnref:3\" title=\"return to article\"> ↩</a></p>
+        </li>
+            <li class=\"footnote\" id=\"fn:4\">
+                <p>
+                Ok so we didn't have quite enough information to fully understand this yet, but you can see where the init function gets its prototye <a href=\"https://github.com/jquery/jquery/blob/master/src/core/init.js#L115\">here</a>.
+                </p>
+                <a href=\"#fnref:4\" title=\"return to article\"> ↩</a></p>
+            </li>
+</ol>
+</div>
+",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Ben McCormick"
+                    "email": "mailto:ben@benmccormick.org",
+                    "image": "/profile_pic.jpg",
+                    "jobTitle": "Software Engineer",
+                    "alumniOf": "Duke",
+                    "birthPlace": "Pittsburgh, PA",
+                    "gender": "male",
+                    "url": "http://benmccormick.org",
+              	    "sameAs" : [
+                      "https://www.linkedin.com/in/benmccormick",
+                      "http://twitter.com/ben336",
+                    ]
+                 }
+              }</script><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font-size:112.5%;line-height:1.666em;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:georgia,serif;font-weight:normal;word-wrap:break-word;}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:2.499rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.27542rem;line-height:1.666rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.17608rem;line-height:1.666rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.666rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.92211rem;line-height:1.666rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.88547rem;line-height:1.666rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}ul{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:0.85rem;line-height:1.666rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:1rem;line-height:1.666rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}blockquote{margin-left:1.666rem;margin-right:1.666rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.666rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.666rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}li > ul{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}code{font-size:0.85rem;line-height:1.666rem;}kbd{font-size:0.85rem;line-height:1.666rem;}samp{font-size:0.85rem;line-height:1.666rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;padding-left:1.11067rem;padding-right:1.11067rem;padding-top:0.833rem;padding-bottom:calc(0.833rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><style>.header-link{color:hsla(0,0%,39%,.7)}.header-link:hover{color:#e2777a}#carbonads{height:100px;font-size:14px;width:300px;position:relative;background:#f0f0f0}.carbon-wrap{height:100px;display:-ms-flexbox;display:flex}.carbon-text{padding:5px 10px;max-height:80px;display:inline-block;overflow:hidden;line-height:1.3}.carbon-poweredby{color:hsla(0,0%,39%,.7);position:absolute;right:5px;bottom:0}@media all and (max-width:600px){#carbonads,.no-mobile{display:none}}@media all and (max-width:321px){html{font-size:100%!important}}.markdown pre{display:block;background:#fdf6e3;color:#657b83;overflow-y:hidden;padding:.2rem .5rem}.markdown pre code{background:none;border:none;border-radius:3px;display:inline-block;overflow:inherit;padding:0;white-space:inherit;word-wrap:normal;font-size:.7rem;line-height:1rem}code{border-radius:3px;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;border:1px solid #ccc;display:inline;font-family:Inconsolata,monospace,serif;max-width:100%;overflow:auto;padding:0 .1625rem}.hljs,code{background:#fdf6e3;color:#657b83}.hljs{display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-quote{color:#93a1a1}.hljs-addition,.hljs-keyword,.hljs-selector-tag{color:#859900}.hljs-doctag,.hljs-literal,.hljs-meta .hljs-meta-string,.hljs-number,.hljs-regexp,.hljs-string{color:#2aa198}.hljs-name,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-title{color:#268bd2}.hljs-attr,.hljs-attribute,.hljs-class .hljs-title,.hljs-template-variable,.hljs-type,.hljs-variable{color:#b58900}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-meta .hljs-keyword,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-subst,.hljs-symbol{color:#cb4b16}.hljs-built_in,.hljs-deletion{color:#dc322f}.hljs-formula{background:#eee8d5}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}html{font-size:120%}body,h1,h2,h3,h4,h5,h6,p{font-family:brandon-grotesque,Brandon Grotesque,Helvetica Neue,Helvetica,Arial,Lucida Sans,Geneva,Verdana,sans-serif;text-rendering:optimizeLegibility}a{color:#e2777a;text-decoration:none}blockquote{border-left:5px solid #57a3e8;font-style:italic;background:#eee;font-weight:400;font-size:.9rem;padding:10px 20px;margin:0 0 30px -25px}h2,h3{color:#57a3e8}.explanation{padding:10px;background:#eee;border-radius:10px;margin:20px auto;font-size:.85em}.article-body .reading-img img{width:150px;float:right;margin:0 10px 20px}.article-body img{max-height:200px;display:block;margin:40px auto 20px}.article-body img.full-width{max-height:none}.article-body img.half-width{max-height:none;width:50%}.mc-field-group{width:400px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-align:start;align-items:flex-start;padding:8px 0}.mc-field-group input{border-radius:3px;max-width:350px;width:80vw;border:1px solid #ccc}.mc-field-group label{font-size:.9em;font-weight:600}#mc-embedded-subscribe{color:#fff;background:#57a3e8;border-radius:4px;border:0;padding:5px 10px;margin:20px 0;cursor:pointer}#mc-embedded-subscribe:hover{background:#3e8acf}</style></head><body class="landing-page" style="background:#FCFCFC;padding:0 10px;"><div id="react-mount"><div style="max-width:39.984rem;margin-left:auto;margin-right:auto;padding:2.499rem 1.2495rem;" data-reactroot="" data-reactid="1" data-react-checksum="-2043172079"><div style="display:flex;padding-bottom:0.5rem;margin-bottom:0.5rem;" data-reactid="2"><div style="flex-grow:3;display:flex;flex-direction:column;justify-content:space-around;" data-reactid="3"><h3 style="margin:0;padding-bottom:0;" data-reactid="4"><a style="box-shadow:none;text-decoration:none;color:inherit;" href="/" data-reactid="5">benmccormick.org</a></h3><div style="color:rgba(100,100,100, 0.7);" data-reactid="6"><a class="header-link" href="/subscribe/" data-reactid="7">Subscribe</a><span style="padding:0 0.33rem;" data-reactid="8">•</span><a class="header-link" href="/readinglist/" data-reactid="9">Reading List</a><span style="padding:0 0.33rem;" data-reactid="10">•</span><a class="header-link" href="http://twitter.com/ben336" data-reactid="11">Twitter</a><span style="padding:0 0.33rem;" data-reactid="12">•</span><a class="header-link" href="/about/" data-reactid="13">About</a></div></div><div style="flex-shrink:2;" data-reactid="14"><span data-reactid="15"></span></div></div><div class="markdown" data-reactid="16"><!-- react-empty: 17 --><h5 style="display:block;color:rgba(100,100,100, 0.7);margin-bottom:0.4165rem;" data-reactid="18">June 8, 2015</h5><h1 style="margin-top:0;margin-bottom:1rem;" data-reactid="19">How jQuery Works - An Introduction</h1><div class="article-body" data-reactid="20"><p><em>This is the first post in a series on “How jQuery Works”.  This is not a series about how to use jQuery, instead these posts will focus on how jQuery actually works.  If you’re interested in diving into the source of the most popular JavaScript library on the planet, keep reading.</em></p>
+<p>Every developer has had the experience of using “magic” code.  Not the “hacked into the NSA in 20 seconds” type of magic code you see in movies. This is the code created when you nervously typed an incomprehensible incantation that somebody else passed on to you, desperately hoping to receive the results you want, ignoring the sinking feeling in your stomach that you have no clue what to do if it fails.  Almost all code feels like this when you’re pushing out to learn new things.  But it doesn’t have to stay that way.</p>
+<p>The primary goal of this blog has always been to help myself understand the tools I’m using, and to share that understanding with as many people as possible.  My experience is that really understanding a library or framework requires diving into the source code and swimming around a bit. Which sounds great.  But often the real world gets in the way. Real world source code is full of “special code”.  Code that handles browser edge cases, performance optimizations that obscure meaning, indirection to allow shared solutions for common problems; all things that are completely necessary, and also likely to obscure the true structure of code.  So while reading the source is the best way to understand a library, it often helps to have some guideposts to lead you through.</p>
+<p>This post is the start of a new series diving into how jQuery (certainly a very magical library for many developers) works.  I’ll pull snippets from the source code, but also try to lay out the big picture approaches the library takes to provide functionality that combines to form by far the best-known and most used JavaScript library out there <sup id="fnref:1"><a href="#fn:1">1</a></sup>. For this introduction, the focus will be on the overall structure of the jQuery repository, how the code is laid out for development purposes, how it’s built into a single file for production use, and a quick look at the core jQuery object code.  Future posts will cover how different features of the libary work, including deep dives into selectors, ajax, animation, and events.</p>
+<h3>So where to start?</h3>
+<p>When you look at the <a href="https://github.com/jquery/jquery">jQuery Github repo</a>, one of the first things you’ll probably notice is that the source isn’t developed as a single file the way it is distributed.  Instead it’s split up into many files separated by functionality.  That makes it easier to find specific functions when you know what you’re looking for, but harder to know where to start when trying to understand the big picture.  If you’re new to the library, it could be overwhelming.</p>
+<p>Fortunately it’s not that hard to get the lay of the land.  jQuery is broken into modules using the AMD format, and built using requireJS.  So each file lists its dependencies, and it’s easy enough to trace back what code is referenced where. So we can start by looking at <code>src/jquery.js</code>, which serves simply as a base file to require all of the other dependencies, then make the jQuery namespace available globally, both as <code>jQuery</code> and the famous <code>$</code>.</p>
+<p><img src="/posts/images/jquery_js.png" alt="jquery_js.png"></p>
+<p>From that file we can see the layout of the library.  The core file is loaded and attached to the window, and all of the other “feature files” are also listed as dependencies to make sure they load.  Each of those files lists <code>core.js</code> as a dependency, so it is loaded first and creates the main jQuery namespace, which other dependencies then edit as needed.  If you’re interested in the process of how the package is built, you can take a read through <a href="https://github.com/jquery/jquery/blob/master/build/tasks/build.js">build/tasks/build.js</a>, where the dependencies are built using requirejs <sup id="fnref:2"><a href="#fn:2">2</a></sup>.</p>
+<h3>A look at core.js</h3>
+<p>We can see from jquery.js that <a href="https://github.com/jquery/jquery/blob/master/src/core.js">core.js</a> is an important file.  It exports the main jQuery namespace, and if we look around we’ll see that it is required by about half of the files in the source directory as a dependency.  So what does it do?  core.js is responsible for defining the jQuery namespace, as well as the prototype for jQuery objects.  This is a great place to start before taking a more detailed look into the library’s features, so lets take a look.</p>
+<pre><code class="language-javascript">define([
+	<span class="hljs-string">"./var/arr"</span>,
+	<span class="hljs-string">"./var/document"</span>,
+	<span class="hljs-string">"./var/slice"</span>,
+	<span class="hljs-string">"./var/concat"</span>,
+	<span class="hljs-string">"./var/push"</span>,
+	<span class="hljs-string">"./var/indexOf"</span>,
+	<span class="hljs-string">"./var/class2type"</span>,
+	<span class="hljs-string">"./var/toString"</span>,
+	<span class="hljs-string">"./var/hasOwn"</span>,
+	<span class="hljs-string">"./var/support"</span>
+], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> arr, document, slice, concat, push, indexOf, class2type, toString, hasOwn, support </span>) </span>{
+
+<span class="hljs-keyword">var</span>
+	version = <span class="hljs-string">"@VERSION"</span>,
+
+	<span class="hljs-comment">// Define a local copy of jQuery</span>
+	jQuery = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> selector, context </span>) </span>{
+		<span class="hljs-comment">// The jQuery object is actually just the init constructor 'enhanced'</span>
+		<span class="hljs-comment">// Need init if jQuery is called (just allow error to be thrown if not included)</span>
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> jQuery.fn.init( selector, context );
+	},
+</code></pre>
+<p>There’s a lot going on in the first 20 or so lines.  First we see a pattern that will repeat in future files.  jQuery uses a lot of small utility functions throughout its code.  Rather than attaching those to a single object, each one gets its own file in the <code>var</code> directory, and then is imported as a dependency as needed.  These modules are typically quite small and often trivial.  For instance the document module that is pulled in from <code>var/document</code> consists in its entirety of the following code:</p>
+<pre><code class="language-javascript">define(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-built_in">window</span>.document;
+});
+</code></pre>
+<p>This is obviously a small shortcut, but it allows for consistent use of a pattern across the library. You’ll see small utility modules like this loaded in every significant file throughout the source code.</p>
+<p>After the imports, this file sets the version (the @VERSION annotation is replaced with the version number as part of the build process), and then creates the base jQuery function.  That base function proxies out to the <code>init</code> function if it is available, but more importantly serves as a namespace for the rest of the library.  All future functionality gets extended off of this object or its prototype.  After setting up a few constants, we dive right into that:</p>
+<pre><code>jQuery.fn = jQuery.prototype = {
+	<span class="hljs-comment">// The current version of jQuery being used</span>
+	jquery: version,
+
+	constructor: jQuery,
+
+	<span class="hljs-comment">// The default length of a jQuery object is 0</span>
+	length: <span class="hljs-number">0</span>,
+
+	toArray: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> slice.call( <span class="hljs-keyword">this</span> );
+	},
+
+	<span class="hljs-comment">// Get the Nth element in the matched element set OR</span>
+	<span class="hljs-comment">// Get the whole matched element set as a clean array</span>
+	<span class="hljs-keyword">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( num )</span> </span>{
+		<span class="hljs-keyword">return</span> num != <span class="hljs-literal">null</span> ?
+
+			<span class="hljs-comment">// Return just the one element from the set</span>
+			( num &lt; <span class="hljs-number">0</span> ? <span class="hljs-keyword">this</span>[ num + <span class="hljs-keyword">this</span>.length ] : <span class="hljs-keyword">this</span>[ num ] ) :
+
+			<span class="hljs-comment">// Return all the elements in a clean array</span>
+			slice.call( <span class="hljs-keyword">this</span> );
+	},
+
+	<span class="hljs-comment">// Take an array of elements and push it onto the stack</span>
+	<span class="hljs-comment">// (returning the new matched element set)</span>
+	pushStack: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( elems )</span> </span>{
+
+		<span class="hljs-comment">// Build a new jQuery matched element set</span>
+		<span class="hljs-keyword">var</span> ret = jQuery.merge( <span class="hljs-keyword">this</span>.constructor(), elems );
+
+		<span class="hljs-comment">// Add the old object onto the stack (as a reference)</span>
+		ret.prevObject = <span class="hljs-keyword">this</span>;
+
+		<span class="hljs-comment">// Return the newly-formed element set</span>
+		<span class="hljs-keyword">return</span> ret;
+	},
+
+	<span class="hljs-comment">// Execute a callback for every element in the matched set.</span>
+	<span class="hljs-keyword">each</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( callback )</span> </span>{
+		<span class="hljs-keyword">return</span> jQuery.each( <span class="hljs-keyword">this</span>, callback );
+	},
+
+	map: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( callback )</span> </span>{
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.pushStack( jQuery.map(<span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( elem, i )</span> </span>{
+			<span class="hljs-keyword">return</span> callback.call( elem, i, elem );
+		}));
+	},
+
+	slice: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.pushStack( slice.apply( <span class="hljs-keyword">this</span>, arguments ) );
+	},
+
+	first: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.eq( <span class="hljs-number">0</span> );
+	},
+
+	last: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.eq( <span class="hljs-number">-1</span> );
+	},
+
+	eq: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( i )</span> </span>{
+		<span class="hljs-keyword">var</span> len = <span class="hljs-keyword">this</span>.length,
+			j = +i + ( i &lt; <span class="hljs-number">0</span> ? len : <span class="hljs-number">0</span> );
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.pushStack( j &gt;= <span class="hljs-number">0</span> &amp;&amp; j &lt; len ? [ <span class="hljs-keyword">this</span>[j] ] : [] );
+	},
+
+	end: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.prevObject || <span class="hljs-keyword">this</span>.constructor(<span class="hljs-literal">null</span>);
+	},
+
+	<span class="hljs-comment">// For internal use only.</span>
+	<span class="hljs-comment">// Behaves like an Array's method, not like a jQuery method.</span>
+	push: push,
+	sort: arr.sort,
+	splice: arr.splice
+};
+</code></pre>
+<p>Here the code sets up the jQuery prototype, which is also made available as <code>jQuery.fn</code>.  jQuery objects, what you get when you select a set of elements with jQuery, have access to all of the methods defined on this prototype.  <code>jQuery.fn</code> is also the extension point for jQuery plugins, so that custom functions are available to jQuery objects.  Most of the functions built here are pretty basic ones that mimic built in array functions for jQuery objects.</p>
+<h3>A note about jQuery objects</h3>
+<p>I’ve glossed over jQuery objects twice now, but we’ve seen enough already to get a deeper understanding of what they are.  jQuery objects are the objects created when the jQuery init function is used as a constructor to create a new object <sup id="fnref:3"><a href="#fn:3">3</a></sup>.  That sounds fancy, but in reality that’s what is happening every time you make a simple jQuery call like <code>$('#foo')</code> or <code>$('div')</code>.  The jQuery namespace function is being called and returns a new object with <code>jQuery.init</code> as the constructor.  Since <code>init</code> shares a prototype with the namespace function <sup id="fnref:4"><a href="#fn:4">4</a></sup>, these objects all have access to <code>jQuery.prototype</code>.  The second post in this series will talk more about how the init function parses the various inputs that you can pass to the namespace function, but for now it’s best to focus on understanding that the namespace function and jQuery.fn are not magic, but are just a wrapper and alias for portions of a fairly normal prototypical inheritance example in JavaScript.</p>
+<h3>Extend</h3>
+<p>After the base functions get added to the prototype, a special function is created and added to both the prototype and the namespace function directly.</p>
+<pre><code class="language-javascript">
+jQuery.extend = jQuery.fn.extend = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+	<span class="hljs-keyword">var</span> options, name, src, copy, copyIsArray, clone,
+		target = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>] || {},
+		i = <span class="hljs-number">1</span>,
+		length = <span class="hljs-built_in">arguments</span>.length,
+		deep = <span class="hljs-literal">false</span>;
+
+	<span class="hljs-comment">// Handle a deep copy situation</span>
+	<span class="hljs-keyword">if</span> ( <span class="hljs-keyword">typeof</span> target === <span class="hljs-string">"boolean"</span> ) {
+		deep = target;
+
+		<span class="hljs-comment">// Skip the boolean and the target</span>
+		target = <span class="hljs-built_in">arguments</span>[ i ] || {};
+		i++;
+	}
+
+	<span class="hljs-comment">// Handle case when target is a string or something (possible in deep copy)</span>
+	<span class="hljs-keyword">if</span> ( <span class="hljs-keyword">typeof</span> target !== <span class="hljs-string">"object"</span> &amp;&amp; !jQuery.isFunction(target) ) {
+		target = {};
+	}
+
+	<span class="hljs-comment">// Extend jQuery itself if only one argument is passed</span>
+	<span class="hljs-keyword">if</span> ( i === length ) {
+		target = <span class="hljs-keyword">this</span>;
+		i--;
+	}
+
+	<span class="hljs-keyword">for</span> ( ; i &lt; length; i++ ) {
+		<span class="hljs-comment">// Only deal with non-null/undefined values</span>
+		<span class="hljs-keyword">if</span> ( (options = <span class="hljs-built_in">arguments</span>[ i ]) != <span class="hljs-literal">null</span> ) {
+			<span class="hljs-comment">// Extend the base object</span>
+			<span class="hljs-keyword">for</span> ( name <span class="hljs-keyword">in</span> options ) {
+				src = target[ name ];
+				copy = options[ name ];
+
+				<span class="hljs-comment">// Prevent never-ending loop</span>
+				<span class="hljs-keyword">if</span> ( target === copy ) {
+					<span class="hljs-keyword">continue</span>;
+				}
+
+				<span class="hljs-comment">// Recurse if we're merging plain objects or arrays</span>
+				<span class="hljs-keyword">if</span> ( deep &amp;&amp; copy &amp;&amp; ( jQuery.isPlainObject(copy) ||
+					(copyIsArray = jQuery.isArray(copy)) ) ) {
+
+					<span class="hljs-keyword">if</span> ( copyIsArray ) {
+						copyIsArray = <span class="hljs-literal">false</span>;
+						clone = src &amp;&amp; jQuery.isArray(src) ? src : [];
+
+					} <span class="hljs-keyword">else</span> {
+						clone = src &amp;&amp; jQuery.isPlainObject(src) ? src : {};
+					}
+
+					<span class="hljs-comment">// Never move original objects, clone them</span>
+					target[ name ] = jQuery.extend( deep, clone, copy );
+
+				<span class="hljs-comment">// Don't bring in undefined values</span>
+				} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( copy !== <span class="hljs-literal">undefined</span> ) {
+					target[ name ] = copy;
+				}
+			}
+		}
+	}
+
+	<span class="hljs-comment">// Return the modified object</span>
+	<span class="hljs-keyword">return</span> target;
+};
+</code></pre>
+<p><code>$.extend</code> is jQuery’s way of merging properties from one object into another.  It’s also a very handy shortcut for cloning an object (<code>var clone = $.extend({},obj)</code>).  We’ll see an example usage shortly, but since it’s a common function, it’s worth digging into how it works for a second.</p>
+<p>Looking at the code above, we can see that extend takes a variable number of arguments, the first of which can optionally be a boolean telling the function to “deep copy”.  If only a single object is passed, the function acts as if the jQuery prototype was passed as the first object, and targets that, otherwise it targets the first non-boolean argument.</p>
+<p><code>extend</code> then loops over each argument after the target and for each one goes over each of its keys.  For each object in order, properties are copied from the arguments to the target object.  If deep copy is set, properties that are objects are merged by calling <code>extend</code> recursively.  Otherwise, existing properties are overwritten.  This continues left to right till all arguments have been merged.</p>
+<p>The source code helpfully gives us an immediate example of how <code>extend</code> can be useful.  jQuery makes several properties and helpful functions available directly off of the <code>$</code> namespace.  Several of them are added here using extend.  You can see how the object notation flows much better than a long series of assignments with <code>=</code> would.</p>
+<pre><code class="language-javascript">jQuery.extend({
+	<span class="hljs-comment">// Unique for each copy of jQuery on the page</span>
+	expando: <span class="hljs-string">"jQuery"</span> + ( version + <span class="hljs-built_in">Math</span>.random() ).replace( <span class="hljs-regexp">/\D/g</span>, <span class="hljs-string">""</span> ),
+
+	<span class="hljs-comment">// Assume jQuery is ready without the ready module</span>
+	isReady: <span class="hljs-literal">true</span>,
+
+	<span class="hljs-attr">error</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> msg </span>) </span>{
+		<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>( msg );
+	},
+
+	<span class="hljs-attr">noop</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{},
+
+	<span class="hljs-attr">isFunction</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> obj </span>) </span>{
+		<span class="hljs-keyword">return</span> jQuery.type(obj) === <span class="hljs-string">"function"</span>;
+	},
+
+	<span class="hljs-attr">isArray</span>: <span class="hljs-built_in">Array</span>.isArray,
+
+	<span class="hljs-attr">isWindow</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> obj </span>) </span>{
+		<span class="hljs-keyword">return</span> obj != <span class="hljs-literal">null</span> &amp;&amp; obj === obj.window;
+	},
+
+	<span class="hljs-comment">//... many more functions and properties here</span>
+});
+</code></pre>
+<p>After working through 2 more helper functions, the namespace object gets returned, wrapping up <code>core.js</code>.  So 2 files and ~500 lines of source code in, we already have a pretty good idea of how jQuery is structured, both in terms of using AMD modules to separate out the source, and using a namespace function and its prototype as a central object to attach functionality.</p>
+<h3>More Resources</h3>
+<ul>
+<li>It’s no longer maintained with newer versions, but a few years ago Rob Flaherty created an annotated version of jQuery 1.6’s source.  You can see that <a href="http://robflaherty.github.io/jquery-annotated-source/">here</a></li>
+<li>Along the same lines: John Resig, jQuery’s creator, recently went through his original jQuery library (a early ~1.0 version) and <a href="http://ejohn.org/blog/annotated-version-of-the-original-jquery-release/">annotated it with both code commentary and historical notes</a>. It’s a great look inside the history of the library.</li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2014/11/12/underscore-vs-lodash/">post on the difference between Underscore and lodash</a>.</p>
+<div class="footnotes">
+<ol>
+    <li class="footnote" id="fn:1">
+        <p>
+        You can see that on <a href="https://www.google.com/trends/explore#q=jQuery%2C%20backbone%2C%20Angular%2C%20Ember%2C%20React&date=1%2F2010%2065m&cmpt=q&tz=">Google Trends</a>, <a href="http://bower.io/stats/">Bower stats</a>, or <a href="https://github.com/jquery/jquery">Github stars</a>
+        </p>
+        <a href="#fnref:1" title="return to article">↩</a></p>
+    </li>
+    <li class="footnote" id="fn:2">
+        <p>
+        jQuery's build process is actually super intersting, as they allow custom builds that optionally exclude portions of the library.  If you get a chance make sure to look through build.js and note the function to remove requireJS boilerplate after the modules have been built.
+        </p>
+        <a href="#fnref:2" title="return to article">↩</a></p>
+    </li>
+        <li class="footnote" id="fn:3">
+            <p>
+            If you're unclear on how constructors and prototypes work in JavaScript, feel free to catch up with <a href="http://benmccormick.org/2013/01/12/explaining-javascript-object-oriented-programming">this post</a> I wrote on Object Oriented Programming in JavaScript a few years back.
+            </p>
+            <a href="#fnref:3" title="return to article"> ↩</a></p>
+        </li>
+            <li class="footnote" id="fn:4">
+                <p>
+                Ok so we didn't have quite enough information to fully understand this yet, but you can see where the init function gets its prototye <a href="https://github.com/jquery/jquery/blob/master/src/core/init.js#L115">here</a>.
+                </p>
+                <a href="#fnref:4" title="return to article"> ↩</a></p>
+            </li>
+</ol>
+</div>
+</div><hr style="margin-bottom:3.332rem;" data-reactid="21"/><noscript data-reactid="22"></noscript><p style="margin-bottom:4.165rem;" data-reactid="23"><!-- react-text: 24 -->Written by <!-- /react-text --><!-- react-text: 25 -->Ben McCormick<!-- /react-text --></p><div title="How jQuery Works - An Introduction" data-reactid="26"><div id="disqus_thread" data-reactid="27"></div><noscript data-reactid="28"><span data-reactid="29"><!-- react-text: 30 -->Please enable JavaScript to view the<!-- /react-text --><a href="http://disqus.com/?ref_noscript" data-reactid="31">comments powered by Disqus.</a></span></noscript><a href="http://disqus.com" class="dsq-brlink" data-reactid="32"><!-- react-text: 33 -->Blog comments powered by <!-- /react-text --><span class="logo-disqus" data-reactid="34">Disqus</span><!-- react-text: 35 -->.<!-- /react-text --></a></div></div><span style="display:block;clear:both;" data-reactid="36"> </span></div></div><script src="/bundle.js?t=1481258681430"></script><script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
