@@ -69,6 +69,10 @@ class MarkdownWrapper extends React.Component {
         <Helmet
           title = {`${post.title} | ${config.blogTitle}`}
           meta = {[
+
+            {'name': 'description', 'content': post.description ||
+              'Ben McCormick\'s blog on JavaScript and Web Development'},
+            {'name': 'keywords', 'content': post.keywords || ''},
             { name: 'twitter:card', content: 'summary' },
             { name: 'twitter:site', content: '@ben336'},
             { name: 'twitter:title', content: post.title},
