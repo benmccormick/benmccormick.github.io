@@ -68,6 +68,14 @@ class MarkdownWrapper extends React.Component {
       <div className = "markdown" ref = {el => this.markdownContainer = el}>
         <Helmet
           title = {`${post.title} | ${config.blogTitle}`}
+          meta = {[
+            {
+              'twitter:card': 'summary',
+              'twitter:site': '@ben336',
+              'twitter:title': post.title,
+              'twitter:description': post.description || '',
+            }
+          ]}
           script = {[
             {
               'type': 'application/ld+json',
