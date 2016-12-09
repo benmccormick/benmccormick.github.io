@@ -68,6 +68,37 @@ class MarkdownWrapper extends React.Component {
       <div className = "markdown" ref = {el => this.markdownContainer = el}>
         <Helmet
           title = {`${post.title} | ${config.blogTitle}`}
+          script = {[
+            {
+              'type': 'application/ld+json',
+              'innerHTML': `{
+                "@context": "http://schema.org"
+                "@type": "BlogPosting",
+                "headline": "${post.title}",
+                "genre": "Software Development",
+                "keywords": "${post.keywords || ''}",
+                "url": "${url}",
+                "datePublished": "${moment(post.date).format('YYYY-MM-D')}",
+                ${post.description ? `"description": "${post.description}",` : ''}
+                "articleBody": "${post.body.replace(/\"/g, '\\"')}",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Ben McCormick"
+                    "email": "mailto:ben@benmccormick.org",
+                    "image": "/profile_pic.jpg",
+                    "jobTitle": "Software Engineer",
+                    "alumniOf": "Duke",
+                    "birthPlace": "Pittsburgh, PA",
+                    "gender": "male",
+                    "url": "http://benmccormick.org",
+              	    "sameAs" : [
+                      "https://www.linkedin.com/in/benmccormick",
+                      "http://twitter.com/ben336",
+                    ]
+                 }
+              }`
+            }
+          ]}
         />
         {isPage ? null : <h5
           style = {{
