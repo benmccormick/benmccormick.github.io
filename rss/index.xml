@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Thu, 08 Dec 2016 16:08:28 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 09 Dec 2016 04:07:19 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
@@ -481,7 +481,7 @@ SaveButton.defaultProps = {
             <link>https://benmccormick.org/2016/04/30/ack-tips/</link>
             <guid>https://benmccormick.org/2016/04/30/ack-tips/</guid>
             <pubDate>Sat, 30 Apr 2016 15:48:25 GMT</pubDate>
-            <content:encoded><![CDATA[<p><em>Last summer I briefly considered creating a separate blog focused on command line tools.  The idea is that the articles would be shorter and more practical than the longer pieces I write here.  I ended up scrapping the idea, but had written a few posts on one of my favorite commandd line tools Ack, so I wanted to preserve them here, as a single, longer piece, separated into 3 “tips”</em></p>
+            <content:encoded><![CDATA[<p><em>Last summer I briefly considered creating a separate blog focused on command line tools.  The idea is that the articles would be shorter and more practical than the longer pieces I write here.  I ended up scrapping the idea, but had written a few posts on one of my favorite command line tools Ack, so I wanted to preserve them here, as a single, longer piece, separated into 3 “tips”</em></p>
 <h3>#1: Prefer ack or ag to grep</h3>
 <p><a href="http://linux.die.net/man/1/grep">grep</a> is one of the most well known unix utilties.  If you’ve had any exposure to the command line at all, you’ve probably searched for something using grep.  grep’s standalone use is searching for content inside of files, but with Unix’s piping philosophy it is useful as a general search and filtering tool.  Originally created for Version 4 Unix 42 years ago, it has been a staple of *Nix operating systems ever since.   If you’ve been using it for even half that time, I’m sure a blog post isn’t enough to convince you to stop.  But for the rest of us, there’s an opportunity to do better.</p>
 <p><a href="http://beyondgrep.com/">ack</a> and <a href="https://github.com/ggreer/the_silver_searcher">ag</a> <sup id="fnref:1"><a href="#fn:1">1</a></sup> are similar projects with the same goal: providing a better experience than grep when searching directories of files, particularly for programmers.  The key selling points:</p>
