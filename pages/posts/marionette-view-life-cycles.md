@@ -3,6 +3,8 @@ title: "The Life of a Marionette View"
 date: "2015-01-05 04:01:45+00:00"
 layout: post
 path: "/2015/01/05/marionette-view-life-cycles"
+description: "A breakdown of the lifecycle of Marionette Views"
+keywords: "Marionette.js, JavaScript, Backbone, Views, life cycle"
 ---
 
 *This is the fourth post in a series on [Marionette.js][marionette], a framework for developing apps with [Backbone.js][backbone].  For more background on what Marionette is, check out the series page: [Marionette Explained][marionetteexplained]*
@@ -19,7 +21,7 @@ The Marionette View life cycle is made up of a list of events and conventions.  
 var ExampleView = Mn.ItemView.extend({
 
     onRender: function() {
-        // do stuff after the View is rendered 
+        // do stuff after the View is rendered
     },
 
     onBeforeRender: function() {
@@ -45,7 +47,7 @@ After rendering, the next set of events that might fire in a Marionette View's l
 
 #### onShow/onBeforeShow
 
-Another Region-specific set of events, `show` and `before:show` fire before and after a View is shown within a region.  These events are great for rendering child Views.  The Marionette docs recommend using `onBeforeShow` specifically for rendering children, since it allows for only a single DOM paint when rendering nested Views, and prevents attach events from firing multiple times, which might happen if the child Views are attached to the parent after the parent View has already been shown. 
+Another Region-specific set of events, `show` and `before:show` fire before and after a View is shown within a region.  These events are great for rendering child Views.  The Marionette docs recommend using `onBeforeShow` specifically for rendering children, since it allows for only a single DOM paint when rendering nested Views, and prevents attach events from firing multiple times, which might happen if the child Views are attached to the parent after the parent View has already been shown.
 
 #### onDomRefresh
 

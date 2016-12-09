@@ -3,6 +3,8 @@ title: "Building Complex Layouts With Marionette.js"
 date: "2014-12-22 04:43:47+00:00"
 layout: post
 path: "/2014/12/22/building-complex-layouts-with-marionette-js"
+description: "How to build complex UIs with Marionette.js"
+keywords: "Marionette, Backbone, UI, Architecture, JavaScript"
 ---
 
 *This is the third post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the first post in the series, [The Case For Marionette][caseformarionette]*
@@ -99,4 +101,3 @@ Thanks for taking the time to read this post!  This is the 3rd post in a series 
 [inspector]: https://github.com/marionettejs/marionette.inspector
 [inspectortalk]: https://www.youtube.com/watch?v=jbGm3mJXh_s
 [jobpost]: http://benmccormick.org/2014/12/18/come-build-with-me/
-

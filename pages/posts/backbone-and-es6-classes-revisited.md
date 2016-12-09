@@ -3,6 +3,8 @@ title: "Backbone and ES6 Classes Revisited"
 date: "2015-07-06 11:22:22+00:00"
 layout: post
 path: "/2015/07/06/backbone-and-es6-classes-revisited"
+description: 'A second look at using ES6 classes with Backbone'
+keywords: 'ES6, Backbone, classes, JavaScript, decorators'
 ---
 
 A few weeks ago I wrote [an article][bbes6] explaining why the final spec for classes in the ES6/ES2015 version of JavaScript was not usable in Backbone applications.  That post got a lot of great feedback, including this [discussion][githubissue] with the Backbone core team. The gist of that discussion has been that there are several ways to make ES6 classes work with Backbone now, though they may be less clean than the current *Backbone.extend* syntax.  But there's hope for a really great experience: decorators, a [proposed feature for the ES7/ES2016 spec][decoratorsspec], provide a much cleaner interface when working with Backbone and native classes.
@@ -155,7 +157,7 @@ There are a few advantages to this approach.  It keeps everything within the cla
 
 #### Treat everything like a method
 
-Backbone evaluates all of its properties using Underscore's `_.result` function <sup id="fnref:2">[2](#fn:2)</sup>. `_.result` checks to see if an object property is a function. If it is then `_.result` will evaluate it and return the result.  This allows Backbone to accept its properties as either an object or a function.  Very handy.  So one workaround to the constructor problem is to make everything a method, including properties.  We can actually go one better than this, and use the `get` keyword to make our methods serve as *getters* for a property.  This means they will be accessible as properties, but defined as methods, retaining compatibility with any existing references if you're converting existing code. 
+Backbone evaluates all of its properties using Underscore's `_.result` function <sup id="fnref:2">[2](#fn:2)</sup>. `_.result` checks to see if an object property is a function. If it is then `_.result` will evaluate it and return the result.  This allows Backbone to accept its properties as either an object or a function.  Very handy.  So one workaround to the constructor problem is to make everything a method, including properties.  We can actually go one better than this, and use the `get` keyword to make our methods serve as *getters* for a property.  This means they will be accessible as properties, but defined as methods, retaining compatibility with any existing references if you're converting existing code.
 
 ```javascript
 class TodoView extends Backbone.View {
@@ -245,7 +247,7 @@ TodoView.prototype.events = {
 export default TodoView;
 ```
 
-This approach is unambiguous, but its also removes the advantages of using abstracted syntax to begin with.  Adding directly to the prototype takes properties out of the context of the class definition, making it harder to view the class as a holistic unit.  Forcing properties to appear after the class definition also breaks with Backbone community conventions.  Almost all examples of Backbone code that I've seen put properties at the top of Backbone class declarations, above any methods, since they're usually important to read when trying to understand the purpose and role of an object.  They're then followed by methods, which often contain extensive logic that is less helpful in understanding a class' overall purpose. 
+This approach is unambiguous, but its also removes the advantages of using abstracted syntax to begin with.  Adding directly to the prototype takes properties out of the context of the class definition, making it harder to view the class as a holistic unit.  Forcing properties to appear after the class definition also breaks with Backbone community conventions.  Almost all examples of Backbone code that I've seen put properties at the top of Backbone class declarations, above any methods, since they're usually important to read when trying to understand the purpose and role of an object.  They're then followed by methods, which often contain extensive logic that is less helpful in understanding a class' overall purpose.
 
 Of these 3 solutions, I personally prefer using methods and getters.  However I don't see any of them as an improvement on the existing *Backbone.extend* syntax.
 

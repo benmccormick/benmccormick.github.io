@@ -3,6 +3,8 @@ title: "Learning Vim in 2014: The Basics"
 date: "2014-06-30 11:28:00+00:00"
 layout: post
 path: "/2014/06/30/learning-vim-in-2014-the-basics"
+description: "The basics of learning Vim"
+keywords: "vim, basics, beginner, tutorial"
 ---
 
 Do you want to be efficient writing code?  Using Vim can be a powerful help.  Using it has let me move more effectively through the process of writing and editing code.  But getting to where I am now was frustrating. Vim resources are scattered across the web, and contain a lot of different advice.  It's tough to figure out how to make Vim work for you.  In my next few posts, I'm going to talk about the process of learning a 23 year old programming power tool, and what you need to know in 2014 to be productive with Vim.  Today I'll start with the basics, stuff that goes back all the way to the 1970s, and we'll grow from there.
@@ -43,17 +45,17 @@ Vim's key commands are different than you'll find in other editors like Sublime 
 
 Vim statements are made up of actions and motions.  The actions are what you're trying to do, the motions are where you want to do them.
 
-For example let's take the `d` action. `d` deletes. You can delete a single character by typing `dl`.  You can delete 2 characters by typing `d2l`. You can delete a whole line by typing `dd`, or delete inside a word by typing `diw`. 
+For example let's take the `d` action. `d` deletes. You can delete a single character by typing `dl`.  You can delete 2 characters by typing `d2l`. You can delete a whole line by typing `dd`, or delete inside a word by typing `diw`.
 
 Once you learn the d action, you can use it with every motion you know. Similarly, when you learn a new motion, you can then use it with every action you know.
 
-So if somebody shows me the `y` action and tells me that it yanks (copies) text, I'll know I can yank a character with `yl` a line with `yy` and inside the current word with `yiw`.  Each new Vim command is a tool in your toolbox, and since the tools build off of each other they become exponentially more valuable. 
+So if somebody shows me the `y` action and tells me that it yanks (copies) text, I'll know I can yank a character with `yl` a line with `yy` and inside the current word with `yiw`.  Each new Vim command is a tool in your toolbox, and since the tools build off of each other they become exponentially more valuable.
 
 ### Step 3: Learn the Mindset
 
-Vim can make you hyper-efficient.  But to get there you need to know more than just the command combinations available.  You have to shift your mindset.  Vim commands aren't just easy to learn, they're designed to be repeatable.  Bram Moolenar, Vim's creator has listed out [7 habits of effective text editing][7habits].  The second habit, don't type it twice, is a pretty good summary of the "Vim Way" of doing things. 
+Vim can make you hyper-efficient.  But to get there you need to know more than just the command combinations available.  You have to shift your mindset.  Vim commands aren't just easy to learn, they're designed to be repeatable.  Bram Moolenar, Vim's creator has listed out [7 habits of effective text editing][7habits].  The second habit, don't type it twice, is a pretty good summary of the "Vim Way" of doing things.
 
-Vim provides a bunch of ways to avoid repetition.  I'll get into them in another post. For now though, let's take a look at `.`, the dot command.  The dot command repeats the last action you've taken. For instance, you can use `ciw` to change a word, hit `<esc>` to return to normal mode, then move to another word and type `.` to replace that word as well.  You are able to avoid retyping the replacement word as well as the `ciw` command. You can run the whole replace with one keystroke, regardless of what words you're replacing.  Like other Vim commands, the dot command is small on its own, but gains power as you add more tools to your toolbox. 
+Vim provides a bunch of ways to avoid repetition.  I'll get into them in another post. For now though, let's take a look at `.`, the dot command.  The dot command repeats the last action you've taken. For instance, you can use `ciw` to change a word, hit `<esc>` to return to normal mode, then move to another word and type `.` to replace that word as well.  You are able to avoid retyping the replacement word as well as the `ciw` command. You can run the whole replace with one keystroke, regardless of what words you're replacing.  Like other Vim commands, the dot command is small on its own, but gains power as you add more tools to your toolbox.
 
 ### More Resources
 
@@ -62,7 +64,7 @@ If you enjoyed this article you'll probably also enjoy
 
 - <a href="http://www.amazon.com/gp/product/1934356980/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1934356980&linkCode=as2&tag=benmccormicko-20&linkId=FE3JFKHYVRYCUOVS">Practical Vim</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=1934356980" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />: This amazing book by Drew Neil, the creator of [Vimcasts][vimcasts] was the single best resource I found as I learned Vim.  I highly recommend it for anyone who uses Vim.
 
-- [Everyone Who Tried to Convince Me to use Vim was Wrong][katzvim]: This blog post is another take on how to start learning Vim, by Yehuda Katz, the prolific developer who's a core member of the Rails, EmberJS, and jQuery teams. 
+- [Everyone Who Tried to Convince Me to use Vim was Wrong][katzvim]: This blog post is another take on how to start learning Vim, by Yehuda Katz, the prolific developer who's a core member of the Rails, EmberJS, and jQuery teams.
 
 - [Janus][janus]: Janus is another Yehuda Katz project.  It's a starting configuration for Vim meant to make it feel more comfortable for developers who want to come in and be productive immediately.  I personally found that it didn't work for me. The plugin list overwhelmed me and prevented me from learning the basics.  But it may be a better fit for some people and is a great place to look to see configuration ideas and plugins that you can try out on your own.
 
@@ -89,4 +91,3 @@ This was the first in a series of posts on learning Vim in a modern way.  If you
 
 
 ---
-

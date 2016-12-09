@@ -3,6 +3,8 @@ title: "What are mutable and immutable data structures?"
 date: "2016-06-04 21:52:52+00:00"
 layout: post
 path: "/2016/06/04/what-are-mutable-and-immutable-data-structures-2"
+description: "A quick look at the difference between mutable and immutable data structures"
+keywords: "immutable, mutable, JavaScript, Immutable.js"
 ---
 
 Sometimes concepts and ideas slowly grow in a programming community, sometimes they seem to appear in a flash.  For the first several years I wrote JavaScript, I don't recall ever seeing anything written online about immutable data.  Since React hit the scene in the last 2 years however, articles mentioning mutable and immutable data seem to have multiplied, as have libraries like Immutable.js and alternate front end languages like Elm that allow users to "use immutable data".  I'm not going to address those libraries, but thought it would be useful to throw out a quick primer on what immutable data actually is, how it differs from mutable data, and why anyone cares.  
@@ -58,8 +60,8 @@ console.log(a === b) //false
 
 What we see is that for mutable values, updating state applies across all *references* to that variable.  So changing a value in one place, changes it for all references to that object.  For the immutable data types, we have no way of changing the internal state of the data, so the reference always gets reassigned to a new object.  The biggest implication of this is that for immutable data, equality is more reliable since we know that a value's state won't be changed out from under us.
 
-Finally, its worth noting that it's still possible to treat JavaScript objects as immutable.  This can first be done through [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze), which shallowly renders a JavaScript object immutable.  But it can also be done with programmer discipline.  If we want to rely on object's being immutable, it's possible to enforce that all object updates are done through something like 
-`Object.assign(a, {foo: 'bar'})` rather than `a.foo = 'bar'`, and all array updates are done through functions that generate new arrays like `Array.prototype.map`, `Array.prototype.filter`, or `Array.prototype.concat`, rather than mutating methods like `Array.prototype.push`, `Array.prototye.pop`, or `Array.prototype.sort`.  This is less reliable without language level constraints, but has become popular in the React ecosystem for dealing with data for folks who don't want to introduce abstractions like Immutable.js. 
+Finally, its worth noting that it's still possible to treat JavaScript objects as immutable.  This can first be done through [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze), which shallowly renders a JavaScript object immutable.  But it can also be done with programmer discipline.  If we want to rely on object's being immutable, it's possible to enforce that all object updates are done through something like
+`Object.assign(a, {foo: 'bar'})` rather than `a.foo = 'bar'`, and all array updates are done through functions that generate new arrays like `Array.prototype.map`, `Array.prototype.filter`, or `Array.prototype.concat`, rather than mutating methods like `Array.prototype.push`, `Array.prototye.pop`, or `Array.prototype.sort`.  This is less reliable without language level constraints, but has become popular in the React ecosystem for dealing with data for folks who don't want to introduce abstractions like Immutable.js.
 
 ### Subscribe
 

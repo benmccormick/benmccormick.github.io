@@ -3,9 +3,11 @@ title: "Ack Tips"
 date: "2016-04-30 15:48:25+00:00"
 layout: post
 path: "/2016/04/30/ack-tips"
+description: "A set of tips for using Ack, a command line search tool"
+keywords: "ack, command line, grep, ag"
 ---
 
-*Last summer I briefly considered creating a separate blog focused on command line tools.  The idea is that the articles would be shorter and more practical than the longer pieces I write here.  I ended up scrapping the idea, but had written a few posts on one of my favorite commandd line tools Ack, so I wanted to preserve them here, as a single, longer piece, separated into 3 "tips"*
+*Last summer I briefly considered creating a separate blog focused on command line tools.  The idea is that the articles would be shorter and more practical than the longer pieces I write here.  I ended up scrapping the idea, but had written a few posts on one of my favorite command line tools Ack, so I wanted to preserve them here, as a single, longer piece, separated into 3 "tips"*
 
 ### #1: Prefer ack or ag to grep
 

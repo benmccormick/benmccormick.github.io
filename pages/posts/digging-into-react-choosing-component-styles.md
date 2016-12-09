@@ -3,6 +3,8 @@ title: "Digging Into React: Choosing Component Styles"
 date: "2016-05-02 02:32:36+00:00"
 layout: post
 path: "/2016/05/02/digging-into-react-choosing-component-styles"
+description: 'An examination of the various styles for defining React components'
+keywords: 'JavaScript, React, Component, createClass, class, functional component'
 ---
 
 Over the past month I’ve been building my first production features using React.  One of the first things I’ve noticed is the amount of choices that come into a new React project.  A lot of this is about the ecosystem around React (Webpack vs Browserify? Redux vs Relay? Do I need CSS modules or Immutable.js?) but many of the choices are just part of the library, figuring out the best, or at least a consistent, way to do things.

@@ -3,6 +3,8 @@ title: "Why Backbone.js and ES6 Classes Don't Mix"
 date: "2015-04-07 03:19:44+00:00"
 layout: post
 path: "/2015/04/07/es6-classes-and-backbone-js"
+description: 'A rundown of the challenges of using ES6 classes in Backbone'
+keywords: 'Backbone, ES6, JavaScript, classes'
 ---
 
 I've seen some confusion out there about how to use ES6 Classes with [Backbone][backbone].  In the original version of the ES6 class spec, this was actually a simple thing to do, though the syntax wasn't great.  With the finalized specification for classes and subclassing though, it's no longer practical to try and use the two together.  Here's a short explanation of the issues, as well as a discussion on whether any of this matters.
@@ -13,23 +15,23 @@ ES6 <sup id="fnref:1">[1](#fn:1)</sup> is the newest version of JavaScript. It p
 
 ```javascript
 var Mammal = function (name) {
-    this.name = name; 
-}; 
+    this.name = name;
+};
 
 Mammal.prototype.get_name = function () {
-    return this.name; 
-}; 
+    return this.name;
+};
 
 Mammal.prototype.says = function () {
-    return this.saying || ''; 
+    return this.saying || '';
 };
 
 var Cat = function (name) {
     this.name = name;
-    this.saying = 'meow'; 
+    this.saying = 'meow';
 }
 
-Cat.prototype = new Mammal(); 
+Cat.prototype = new Mammal();
 
 Cat.prototype.purr = function (n) {
     var i, s = '';
@@ -40,10 +42,10 @@ Cat.prototype.purr = function (n) {
         s += 'r';
     }
     return s;
-}; 
+};
 
 Cat.prototype.get_name = function () {
-    return this.says() + ' ' + this.name + ' ' + this.says(); 
+    return this.says() + ' ' + this.name + ' ' + this.says();
 };
 ```
 
@@ -82,7 +84,7 @@ class Cat extends Mammal {
     }
 
     get_name() {
-        return this.says() + ' ' + this.name + ' ' + this.says(); 
+        return this.says() + ' ' + this.name + ' ' + this.says();
     }
 }
 ```
@@ -204,7 +206,7 @@ Unfortunately this doesn't do what we expect. Backbone does significant initiali
 
 ### So what are our options?
 
-There are a few workarounds here, but they're ugly.  First, Backbone allows any of of its instance properties to also be defined as methods.  So we can rewrite our View like this: 
+There are a few workarounds here, but they're ugly.  First, Backbone allows any of of its instance properties to also be defined as methods.  So we can rewrite our View like this:
 
 ```javascript
 class DocumentRow extends Backbone.View {
@@ -258,8 +260,8 @@ But it also opens an opportunity for more subtle bugs.  Constructors aren't mean
 
 The idea of using ES6 classes for Backbone has some appeal.  The "class" keyword is nice syntax and there's an appeal to using more standardized code and fewer library extensions.  Right now, many developers are also just curious about ES6 and how it fits into their workflow.  But does it really matter that this doesn't work?  I think a case can be made either way, with 2 clear points in each sides favor.  The case for this being a problem:
 
-1. **ES6 Classes are becoming the standard** 
-    
+1. **ES6 Classes are becoming the standard**
+
     By pretty much any standard, Backbone is currently one of the 4 most popular JavaScript frameworks/libraries for building web applications, along with [Angular][angular], [Ember][ember], and [React][react].  What do the Angular, Ember, and React teams all have in common?  They're each working to make sure that current or future versions of their frameworks use ES6 classes to define objects.  As this style of code becomes ubiquitous, Backbone will start to look even more boilerplate heavy and non-standard.  Developers will also start learning about ES6 classes as part of standard JavaScript training, requiring them to map their knowledge about prototypes and class syntax to Backbone's concepts, rather than just using things they already understand as in other libraries.
 
 2. **More Native == Less Library code**

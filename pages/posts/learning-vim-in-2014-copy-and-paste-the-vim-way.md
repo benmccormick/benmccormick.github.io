@@ -3,6 +3,8 @@ title: "Learning Vim in 2014: Copy and Paste the Vim Way"
 date: "2014-07-27 23:00:00+00:00"
 layout: post
 path: "/2014/07/27/learning-vim-in-2014-copy-and-paste-the-vim-way"
+description: "How to use copy and paste in Vim"
+keywords: "vim, copy, paste, registers, yank, delete"
 ---
 
 If you've been following [my series on Vim][vim2014], it should be clear now that Vim has a pretty clear philosophy of how text editing should work. It's based on the Unix philosophy of small composable tools, and doesn't necessarily match up with the conventions that other editors use for common commands.  So it's probably not surprising that Vim has its own way of handling copy and paste operations, and in fact doesn't even use those terms.  Vim's copy and paste handling is minimalist, composable, and powerful, but most people take some time to adjust to it.  I'm going to walk through the basics here, along with a few advanced features that are worth knowing about.
@@ -21,15 +23,15 @@ What we're missing is a clear understanding of how Vim handles copy and paste op
 
 The 26 alphabetical registers serve as great "medium term" storage.  You can use them to yank something that you want to have around for a while, and then put it in a few different places, even if you're yanking and deleting other things in the meantime.  These will even persist across sessions as long as you have the `nocompatible` option set in your vimrc file.  However if you overwrite one, there's no easy way to get it back.  
 
-One cool feature of registers is the built in ability to append to the end of them.  If you want to add text to an existing register, for instance if you missed part of the text you wanted to yank, you can do so by capitalizing the register.  So if you had deleted a line and put it in the `a` register with `"add`, but meant to include a second line, you could then delete the next line and append it to the register with `"Add`. `"ap` would then put the 2 lines back into the document. 
+One cool feature of registers is the built in ability to append to the end of them.  If you want to add text to an existing register, for instance if you missed part of the text you wanted to yank, you can do so by capitalizing the register.  So if you had deleted a line and put it in the `a` register with `"add`, but meant to include a second line, you could then delete the next line and append it to the register with `"Add`. `"ap` would then put the 2 lines back into the document.
 
 #### Special Registers
 
 In addition to the alphabetical registers, there are several *special registers* that are worth knowing about.  I already mentioned the default register, which most Vim users know about, even if they don't understand exactly how registers work.  Other important registers are the clipboard register, the black hole register, and the numbered registers.
 
-If you have to learn one special register, learn the clipboard register.  One of the first things people notice about copy and paste in Vim is that it doesn't interact nicely with other applications' copy and paste by default.  If you yank a line of text in Vim, it's not added to the system clipboard.  If you copy some code from Stack Overflow and try to paste it in Vim with `p`, it won't work <sup id="fnref:1">[1](#fn:1)</sup>.  But, since we know about registers, it makes sense that the default register might not be mapped to the clipboard, which we don't want getting blasted away everytime we delete a character. 
+If you have to learn one special register, learn the clipboard register.  One of the first things people notice about copy and paste in Vim is that it doesn't interact nicely with other applications' copy and paste by default.  If you yank a line of text in Vim, it's not added to the system clipboard.  If you copy some code from Stack Overflow and try to paste it in Vim with `p`, it won't work <sup id="fnref:1">[1](#fn:1)</sup>.  But, since we know about registers, it makes sense that the default register might not be mapped to the clipboard, which we don't want getting blasted away everytime we delete a character.
 
-Vim isn't completely disconnected from the system clipboard though.  The clipboard register `+` is Vim's proxy to your system clipboard.  So `"+y<motion>` and `"+p` act like traditional copy and paste.  Your version of Vim does have to be compiled with clipboard support in order to use the `+` register. You can check to see if you have clipboard support with `:echo has('clipboard').`<sup id="fnref:2">[2](#fn:2)</sup> On OSX you can use MacVim to get clipboard support, since the default version of Vim shipped with OSX is not compiled with it.  On other operating systems you'll have to investigate the easiest way to install with clipboard support if your version doesn't have it.  It should be enabled for most modern mainstream distributions. 
+Vim isn't completely disconnected from the system clipboard though.  The clipboard register `+` is Vim's proxy to your system clipboard.  So `"+y<motion>` and `"+p` act like traditional copy and paste.  Your version of Vim does have to be compiled with clipboard support in order to use the `+` register. You can check to see if you have clipboard support with `:echo has('clipboard').`<sup id="fnref:2">[2](#fn:2)</sup> On OSX you can use MacVim to get clipboard support, since the default version of Vim shipped with OSX is not compiled with it.  On other operating systems you'll have to investigate the easiest way to install with clipboard support if your version doesn't have it.  It should be enabled for most modern mainstream distributions.
 
 Another register to quickly note is the black hole register `_`.  The black hole register, as you would expect, doesn't retain what's passed to it.  So `"_y` and `"_p` are no-ops, and `"_d` is "true delete", as opposed to the delete commands default "cut" like behavior.  Of course since most people don't use all 26 alphabetical registers, you can also achieve effective true delete by deleting to any unused register.
 
@@ -77,4 +79,3 @@ This was the seventh entry in a series of posts on learning Vim in a modern way.
 [vimcastreg]: http://vimcasts.org/categories/copy-and-paste/
 [vim2014]:http://benmccormick.org/tag/learning-vim-in-2014/
 [artofvim]: http://benmccormick.org/2014/07/16/learning-vim-in-2014-vim-as-art/
-

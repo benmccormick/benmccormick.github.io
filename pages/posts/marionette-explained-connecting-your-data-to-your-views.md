@@ -3,6 +3,8 @@ title: "Marionette Explained: Connecting Data to Your Views"
 date: "2014-12-10 12:30:00+00:00"
 layout: post
 path: "/2014/12/10/marionette-explained-connecting-your-data-to-your-views"
+description: 'How to bind data to your views in Marionette.js'
+keywords: 'JavaScript, Marionette.js, Backbone, MVC, Model, View'
 ---
 
 *This is the second post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the first post in the series, [The Case For Marionette][caseformarionette]*
@@ -40,7 +42,7 @@ Backbone.Marionette.Renderer.render = function(template, data){
 
 ### ItemView and CollectionView
 
-Marionette provides several View classes that you can use as bases, but the core Views for representing data are ItemView and CollectionView.  An ItemView takes a single data object, either a Model or Collection and passes it to the template to render.  A CollectionView iterates over a Collection and renders a child View for each Model. You can either use the same View for every Collection, or mix and match Views based on the Model's properties. 
+Marionette provides several View classes that you can use as bases, but the core Views for representing data are ItemView and CollectionView.  An ItemView takes a single data object, either a Model or Collection and passes it to the template to render.  A CollectionView iterates over a Collection and renders a child View for each Model. You can either use the same View for every Collection, or mix and match Views based on the Model's properties.
 
 So for instance, views for a simple todo list might look something like this <sup id="fnref:2">[2](#fn:2)</sup>:
 
@@ -80,7 +82,7 @@ When the TodoListView is given a collection and rendered, it will display an uno
 
 ### A brief note on 2 way data-binding
 
-Marionette data-binding is one-way by default.  Over the last few years the discussion around data-binding has gone from "cool there's structured data-binding" when Backbone first came out, to "how can you ship without 2-way data-bindings?" when Knockout, Angular and Ember popularized the 2-way approach, to "1 way bindings keep things simple and they're cool again" based on the popularity of React.  I'm not going to go deep into that debate during this post, but the important takeaway is that Marionette generally prefers explicit bindings to implicit.  So when model values change, it will be based on code that you've written, not implicit library code. 
+Marionette data-binding is one-way by default.  Over the last few years the discussion around data-binding has gone from "cool there's structured data-binding" when Backbone first came out, to "how can you ship without 2-way data-bindings?" when Knockout, Angular and Ember popularized the 2-way approach, to "1 way bindings keep things simple and they're cool again" based on the popularity of React.  I'm not going to go deep into that debate during this post, but the important takeaway is that Marionette generally prefers explicit bindings to implicit.  So when model values change, it will be based on code that you've written, not implicit library code.
 
 ### Wrap-Up
 
@@ -124,4 +126,3 @@ Thanks for taking the time to read this post! This was the second post in a [ser
 [marionettetodo]: https://github.com/tastejs/todomvc/tree/gh-pages/examples/backbone_marionette
 [marionetteexplained]:http://benmccormick.org/tag/marionette-explained/
 [stickit]: http://nytimes.github.io/backbone.stickit/
-

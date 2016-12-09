@@ -3,6 +3,8 @@ title: "Book Review: User-Centered Design"
 date: "2013-08-12 15:15:00+00:00"
 layout: post
 path: "/2013/08/12/book-review-user-centered-design"
+description: "A book review of User-Centered Design by Travis Lowdermilk"
+keywords: "Book Review, User-Centered Design, Design"
 ---
 
 User-Centered Design by Travis Lowdermilk is a solid overview of the principles and practices of designing a software project with a focus on your users.  The book does a good job of laying out the basic tools and processes of user-centered design, like usability studies, surveys, and project plans.  It also argues convincingly for the power  of its central points: user focus, preparation, and a structured process.
@@ -20,4 +22,3 @@ This review was part of the [O'Reilly Blogger Program][oreilly].  I am not compe
 
 [oreilly]: http://oreilly.com/bloggers/
 [paper]: https://itunes.apple.com/us/app/paper-by-fiftythree/id506003812?mt=8
-

@@ -3,6 +3,8 @@ title: "Lessons Backbone Developers Can Learn From React"
 date: "2015-09-09 11:19:43+00:00"
 layout: post
 path: "/2015/09/09/what-can-backbone-developers-learn-from-react"
+description: "A look at the lessons that Backbone developers can learn from React"
+keywords: "Backbone, React, JavaScript, frameworks"
 ---
 
 Since I started programming professionally, I've always kept an informal list of technologies I want to check out.  Things that I thought would be useful for my career, would expose me to new ideas, or just looked plain cool.  I spent a chunk of my Labor Day weekend working through that list a bit by learning more about [React][react], the JavaScript View library from Facebook. React is a fascinating piece of technology, and a strong ecosystem of tools and libraries is growing up around it.  For developers starting brand new front-end projects in 2015, it ranks as one of the 2 main libraries I'd suggest looking into as a base, along with [Ember][ember].  Most developers though are not starting brand new projects.  We're maintaining existing code, or starting a new project while trying to reuse components of an old one.  Fortunately, React is about ideas as much as it is technology.  For this piece, I'm going to go through the big ideas of React and look at 3 of them that developers working on other frameworks (and [Backbone][backbone] in particular) can learn from.  There's a lot more to React and its community than just these 3 ideas, so I'll also include some extra resources at the bottom for those interested in learning more about it.
@@ -30,7 +32,7 @@ Take the following code examples for instance.  This is the same View written in
 (function(App, Backbone, Modal, _) {
 
     App.ExampleView = Backbone.View.extend({
-        
+
         template: App.templates['exampleview'],
 
         events: function() {
@@ -57,7 +59,7 @@ Take the following code examples for instance.  This is the same View written in
 
         showModal: function(message, title) {
             if (typeof title === 'undefined') {
-                title = 'Alert'; 
+                title = 'Alert';
             }
             Modal.show(message, title, this.onModalClose.bind(this));
         },
@@ -81,7 +83,7 @@ import {template} from 'lodash';
 import * as ExampleViewTemplate from 'templates/exampleview';
 
 export const ExampleView = View.extend({
-        
+
     template: ExampleViewTemplate,
 
     events() {
@@ -127,7 +129,7 @@ import {template} from 'lodash';
 import * as ExampleViewTemplate from 'templates/exampleview';
 
 export class ExampleView extends View {
-        
+
     template = ExampleViewTemplate;
 
     constructor(...args) {
@@ -138,7 +140,7 @@ export class ExampleView extends View {
     render() {
         this.$el.html(template(this.template)(this.model.attributes));
     }
-    
+
     @on('click .example-button')
     showSuccess() {
         this.showModal('You did it');

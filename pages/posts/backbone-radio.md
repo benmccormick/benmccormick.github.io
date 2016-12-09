@@ -3,6 +3,8 @@ title: "Building Modular Web Apps With Backbone.Radio"
 date: "2015-01-26 12:00:00+00:00"
 layout: post
 path: "/2015/01/26/backbone-radio"
+description: 'An overview of using Backbone.Radio in Marionette apps'
+keywords: 'Backbone, JavaScript, Backbone Radio, Marionette, messaging'
 ---
 
 *This is the fifth post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the series page, [Marionette Explained][marionetteexplained]*

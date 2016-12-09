@@ -3,6 +3,8 @@ title: "Staying DRY with Marionette Behaviors"
 date: "2015-03-23 04:04:17+00:00"
 layout: post
 path: "/2015/03/23/staying-dry-with-marionette-behaviors"
+description: "How to keep your Views DRY using Behaviors in your Marionette app"
+keywords: "Marionette.js, behaviors, JavaScript"
 ---
 
 *This is the sixth post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the series page, [Marionette Explained][marionetteexplained]*
@@ -22,7 +24,7 @@ import * as Validation from 'backbone-validation';
 
 var FormView = Mn.LayoutView.extend({
 
-    template: '#form', 
+    template: '#form',
 
     ui: {
         submit: '.submit'
@@ -50,7 +52,7 @@ var FormView = Mn.LayoutView.extend({
     },
 
     submitForm: function() {
-        //handle form submission 
+        //handle form submission
     }
 
 });
@@ -97,7 +99,7 @@ import * as ValidationBehavior from 'behaviors/validation';
 
 var FormView = Mn.LayoutView.extend({
 
-    template: '#form', 
+    template: '#form',
 
     ui: {
         submit: '.submit'
@@ -114,7 +116,7 @@ var FormView = Mn.LayoutView.extend({
     },
 
     submitForm: function() {
-        //handle form submission 
+        //handle form submission
     }
 });
 ```
@@ -164,7 +166,7 @@ Marionette's documentation explains Behaviors very broadly, which makes sense fo
 
 This is the most obvious use for Behaviors, and what the documentation focuses on.  It's easy to set up common event based UI patterns like "warn on close" with behaviors.  But they also can be used for more complicated event based UI logic.  At Windsor Circle we use 2 behaviors to share common "drag and drop" code with a Droppable Behavior that can be implemented by a CollectionView and a Draggable Behavior for ItemViews.  That makes it simple to make any CollectionView based list sortable with drag and drop, and keeps the code in a nice central place where any improvements will be shared across the code base.
 
-#### Sharing common life-cycle functions 
+#### Sharing common life-cycle functions
 
 In addition to event handling, Behaviors also give you access to the various [life cycle][lifecycle] methods of Marionette Views.  That lets you split out common life cycle functionality and reduce code.  An easy example of this would be a Behavior that fades a View in each time by adding a css class with an animation associated with it.
 
@@ -194,9 +196,9 @@ which would work with a CSS snippet like this:
 
 
 
-#### Simplifying integration with libraries 
+#### Simplifying integration with libraries
 
-This final use case is a special case of the first 2, but I think its worth mentioning in its own 
+This final use case is a special case of the first 2, but I think its worth mentioning in its own
 category.  Many 3rd party Backbone or jQuery libraries require repetitive initialization code to use within a View.  This code is often the same across all Views, or only requires minor tweaks.  The perfect use case for a Behavior!  The Validation code above is one example of this, but it's useful for many plugins.  For instance, if you use the [Chosen][chosen] jQuery plugin to create rich dropdown boxes, you could create a Behavior to automatically initialize select elements with Chosen, and optionally pass a class to restrict it to only initialize selects with a specific class.
 
 ```
@@ -246,7 +248,7 @@ Thanks for taking the time to read this post!  JavaScript development is one of 
 
 [validation]: http://thedersen.com/projects/backbone-validation/
 [arraypr]: https://github.com/marionettejs/backbone.marionette/pull/2368
-[lifecycle]: http://benmccormick.org/2015/01/05/marionette-view-life-cycles/ 
+[lifecycle]: http://benmccormick.org/2015/01/05/marionette-view-life-cycles/
 [marionetteexplained]: http://benmccormick.org/marionette-explained/
 [marionette]: http://marionettejs.com/
 [chosen]: http://harvesthq.github.io/chosen/
