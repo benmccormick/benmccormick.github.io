@@ -74,7 +74,8 @@ class MarkdownWrapper extends React.Component {
               'Ben McCormick\'s blog on JavaScript and Web Development'},
             {'name': 'keywords', 'content': post.keywords || ''},
             { name: 'twitter:card', content: 'summary' },
-            { name: 'twitter:site', content: '@ben336'},
+            { name: 'twitter:site', content: '@benmccormickorg'},
+            { name: 'twitter:creator', content: '@ben336'},
             { name: 'twitter:title', content: post.title},
             { name: 'twitter:description', content: post.description || ''},
           ]}
