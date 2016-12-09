@@ -4,7 +4,7 @@ date: "2015-01-05 04:01:45+00:00"
 layout: post
 path: "/2015/01/05/marionette-view-life-cycles"
 description: "A breakdown of the lifecycle of Marionette Views"
-keywords: "Marionette.js, JavaScript, Backbone, Views, life cycle"
+keywords: "Marionette.js JavaScript Backbone Views life cycle"
 ---
 
 *This is the fourth post in a series on [Marionette.js][marionette], a framework for developing apps with [Backbone.js][backbone].  For more background on what Marionette is, check out the series page: [Marionette Explained][marionetteexplained]*

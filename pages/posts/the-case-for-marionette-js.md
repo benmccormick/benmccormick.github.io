@@ -4,7 +4,7 @@ date: "2014-12-02 01:53:52+00:00"
 layout: post
 path: "/2014/12/02/the-case-for-marionette-js"
 description: "Making the case for Marionette.js as a framework for front end development"
-keywords: "JavaScript, Marionette.js, Backbone"
+keywords: "JavaScript Marionette.js Backbone"
 ---
 
 Building large web applications using [Backbone.js][backbone] can be hard.  Backbone is a great tool, but it's designed to be minimalist and useful in a wide variety of situations.  As a result, you get less guidance and support from the tool as you scale up than you do from more opinionated frameworks like [Angular][angular] and [Ember][ember].  When a Backbone application grows, maintaining it requires adding structure, either through a custom set of conventions and components, or based on somebody elses framework.  There are a lot of different Backbone frameworks out there, but I want to make the case for using [Marionette.js][marionette].  

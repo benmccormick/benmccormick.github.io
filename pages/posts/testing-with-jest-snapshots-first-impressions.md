@@ -4,7 +4,7 @@ date: "2016-09-19 12:41:00+00:00"
 layout: post
 path: "/2016/09/19/testing-with-jest-snapshots-first-impressions/"
 description: "One developers first impression of testing UI components using Jest Snapshots"
-keywords: "Jest, JavaScript, testing, React, Snapshot Tests"
+keywords: "Jest JavaScript testing React Snapshot Tests"
 ---
 
 Over the past 6 months my team at work has been slowly transitioning a large Backbone application to React.  One of the main goals of the transition has been to build out unit tests as we transition components.  As part of that we switched from using Karma to using Jest for managing our tests.

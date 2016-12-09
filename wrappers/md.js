@@ -69,12 +69,10 @@ class MarkdownWrapper extends React.Component {
         <Helmet
           title = {`${post.title} | ${config.blogTitle}`}
           meta = {[
-            {
-              'twitter:card': 'summary',
-              'twitter:site': '@ben336',
-              'twitter:title': post.title,
-              'twitter:description': post.description || '',
-            }
+            { name: 'twitter:card', content: 'summary' },
+            { name: 'twitter:site', content: '@ben336'},
+            { name: 'twitter:title', content: post.title},
+            { name: 'twitter:description', content: post.description || ''},
           ]}
           script = {[
             {

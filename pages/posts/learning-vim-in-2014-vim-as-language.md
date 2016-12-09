@@ -4,7 +4,7 @@ date: "2014-07-02 11:27:00+00:00"
 layout: post
 path: "/2014/07/02/learning-vim-in-2014-vim-as-language"
 description: "An explanation of the grammar behind Vim"
-keywords: "vim, language, grammar, text object"
+keywords: "vim language grammar text object"
 
 ---
 

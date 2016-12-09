@@ -4,7 +4,7 @@ date: "2016-06-26 21:27:55+00:00"
 layout: post
 path: "/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2"
 description: "A quick look at the benefits of using lodash collection methods"
-keywords: "lodash, javascript, collections, arrays"
+keywords: "lodash javascript collections arrays"
 ---
 
 One of the more frustrating things about using JavaScript in the browser is the number of different collection types that you need to deal with.  When using native APIs and 3rd party libraries, it's easy to encounter 3 or more different types of collections, including [NodeLists][nodelist], [HTMLCollections][htmlcollection], [jQuery Objects][jqobjects], and plain arrays.

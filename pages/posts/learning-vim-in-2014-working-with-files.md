@@ -4,7 +4,7 @@ date: "2014-07-07 11:10:37+00:00"
 layout: post
 path: "/2014/07/07/learning-vim-in-2014-working-with-files"
 description: "How to easily navigate the file system in Vim"
-keywords: "vim, files, file system, splits, buffers"
+keywords: "vim files file system splits buffers"
 
 ---
 
