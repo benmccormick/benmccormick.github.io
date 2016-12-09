@@ -9,7 +9,6 @@ import {Disqus} from '../components/Disqus';
 import forEach from 'lodash/forEach';
 import last from 'lodash/last';
 import defer from 'lodash/defer';
-import TwitterWidgetsLoader from 'twitter-widgets';
 
 import '../css/codeformat.css';
 import '../css/typography.css';
@@ -38,6 +37,7 @@ class MarkdownWrapper extends React.Component {
   }
 
   componentDidMount() {
+    let TwitterWidgetsLoader = require('twitter-widgets');
     TwitterWidgetsLoader.load(twttr => {
       let tweets = this.markdownContainer.querySelectorAll('blockquote.twitter-tweet');
       let followButtons = this.markdownContainer.querySelectorAll('.twitter-follow-button');
