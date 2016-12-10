@@ -2,11 +2,21 @@
 title: "Speaking"
 layout: page
 path: '/speaking'
+description: 'A list of my past talks at meetups and conferences'
+keywords: 'speaking talks meetups conferences'
 ---
 
 I occasionally give talks about JavaScript.  If you're interested in having me speak to your group, feel free to contact me through [email](ben@benmccormick.org).
 
 I am open to talking about pretty much anything that I write about on this blog.  Here are some talks I've given in the past:
+
+### 2016
+
+**Saving Time With Jest** *Triangle ReactJS Meetup*
+
+- [Writeup](http://benmccormick.org/2016/12/10/saving-time-with-jest/)
+
+I gave a talk at the first Triangle ReactJS meetup about testing with Jest and how it can save you time.  
 
 ### 2015
 
