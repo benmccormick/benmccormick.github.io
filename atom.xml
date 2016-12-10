@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2016-12-10T05:21:34Z</updated>
+    <updated>2016-12-10T05:24:30Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -21,7 +21,7 @@
         <id>https://benmccormick.org/2016/12/10/saving-time-with-jest/</id>
         <link href="https://benmccormick.org/2016/12/10/saving-time-with-jest/">
         </link>
-        <updated>2016-12-10T00:15:00Z</updated>
+        <updated>2016-12-10T05:15:00Z</updated>
         <content type="html"><![CDATA[<p>This week I gave a talk at the brand new Triangle ReactJS meetup group on how <a href="https://facebook.github.io/jest/">Jest</a> can save developers time.  I was asked afterwards to share the content online for those who missed it.  My talk was mostly demos and wasn’t recorded, so there unfortunately isn’t much to share, but I thought I could write out the basic ideas behind the talk, and share them here.</p>
 <h3>What is Jest</h3>
 <p>Jest is a JavaScript testing framework built by Facebook to address their internal problems testing JavaScript code.  It was open-sourced in 2014, but unlike Facebook’s other recent high profile JavaScript OSS projects like React, Flux, Relay and GraphQL, it failed to develop much traction in the community and mostly stagnated for 2 years.  That changed in early 2016 when 2 Facebook developers, <a href="https://twitter.com/cpojer">Christoph Pojer</a> and <a href="https://twitter.com/abramov_dmitrii">Dmitrii Abramov</a> began working on improving the project. Over the past year they’ve brought massive improvements to the developer experience of using Jest.</p>
