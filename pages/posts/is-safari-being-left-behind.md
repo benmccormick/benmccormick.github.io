@@ -1,8 +1,10 @@
 ---
 title: "Is Safari being left behind?"
 date: "2015-06-10 04:03:41+00:00"
-layout: post
+layout: "post"
 path: "/2015/06/10/is-safari-being-left-behind"
+pageViews: "8620"
+last30pageViews: "67"
 ---
 
 On Twitter yesterday, [Alex Sexton][sexton] surfaced Apple's fact sheet on what's new with Safari 9:

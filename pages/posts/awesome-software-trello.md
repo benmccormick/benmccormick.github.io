@@ -1,8 +1,10 @@
 ---
 title: "Awesome Software: Trello"
 date: "2012-12-20 12:00:00+00:00"
-layout: post
+layout: "post"
 path: "/2012/12/20/awesome-software-trello"
+pageViews: "113"
+last30pageViews: "1"
 ---
 
 

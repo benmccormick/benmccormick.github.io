@@ -1,10 +1,12 @@
 ---
 title: "Learning Vim in 2014: Getting More from Vim with Plugins"
 date: "2014-07-21 10:50:00+00:00"
-layout: post
+layout: "post"
 path: "/2014/07/21/learning-vim-in-2014-getting-more-from-vim-with-plugins"
 description: "How plugins fit into a Vim workflow"
 keywords: "vim, plugins, vundle, nerdtree, ack, ctrlp"
+pageViews: "81789"
+last30pageViews: "997"
 ---
 
 It's impossible to design a tool that fits everyone's workflow perfectly.  No matter how many cases you hit, somebody will want to do something you don't support, will find your solution for their problem confusing, or they'll try to use your tool in a way you never imagined. Vim tries to deal with situations like that in 2 ways.  First by making it easy to [configure][configpost], and second by making it easy to extend.  Extending Vim happens through plugins. <span class="aside">

@@ -1,8 +1,10 @@
 ---
 title: "Simple Publish-Subscribe with jQuery"
 date: "2013-02-13 21:00:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/02/13/simple-publish-subscribe-with-jquery"
+pageViews: "7822"
+last30pageViews: "82"
 ---
 
 Here's a cool pattern that I've been able to use in two of my projects lately:

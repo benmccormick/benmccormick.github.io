@@ -1,8 +1,10 @@
 ---
 title: "How I Use Stack Overflow"
 date: "2013-06-11 21:19:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/06/11/how-i-use-stack-overflow"
+pageViews: "203"
+last30pageViews: "36"
 ---
 
 >The problem with self directed learning is that our ability to learn is often constrained by the very problem we are trying to solve, our limited knowledge of a field.

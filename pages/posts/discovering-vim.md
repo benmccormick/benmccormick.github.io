@@ -1,8 +1,10 @@
 ---
 title: "Discovering Vim"
 date: "2014-06-02 22:00:00+00:00"
-layout: post
+layout: "post"
 path: "/2014/06/02/discovering-vim"
+pageViews: "933"
+last30pageViews: "4"
 ---
 
 I've now been using Vim as my primary text editor for the last 9 months. 

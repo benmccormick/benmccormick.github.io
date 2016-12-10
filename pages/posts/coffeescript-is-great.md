@@ -1,8 +1,10 @@
 ---
 title: "Coffeescript Is Great"
 date: "2013-02-23 23:50:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/02/23/coffeescript-is-great"
+pageViews: "1021"
+last30pageViews: "3"
 ---
 
 This past week I decided to try and learn more about [Coffeescript][coffeescript] by converting a side project I've been working on to use Coffeescript and LESS.  I really enjoyed the experience of working with Coffeescript and hope to use it more in the future. I thought I'd share a quick post about my experience, and outline what I see as the advantages and disadvantages.

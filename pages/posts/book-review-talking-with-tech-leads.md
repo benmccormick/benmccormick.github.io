@@ -1,10 +1,12 @@
 ---
 title: "Book Review: Talking with Tech Leads"
 date: "2015-06-15 11:30:44+00:00"
-layout: post
+layout: "post"
 path: "/2015/06/15/book-review-talking-with-tech-leads"
 description: "A book review of Talking with Tech Leads"
 keywords: "Book Review, Tech Leads"
+pageViews: "1109"
+last30pageViews: "4"
 ---
 
 Can we be honest for a moment?  Figuring out a career path is hard for software developers.  Talking to some people, you'll get the impression that we face a pretty bleak binary choice.  Behind door number #1 lies a relatively rapid path to a "senior developer" role, followed by stagnation the rest of your career as you reimplement the same solutions in new technologies for minimally increasing pay over time, until youth-friendly tech culture decides that you're too old to be useful.  Door #2 serves basically as an escape hatch, as you trade the opportunity to work with code for a path into management, where you receive a few more pay raises in return for your soul.

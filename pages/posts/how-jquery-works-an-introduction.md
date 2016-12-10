@@ -1,8 +1,10 @@
 ---
 title: "How jQuery Works - An Introduction"
 date: "2015-06-08 11:51:25+00:00"
-layout: post
+layout: "post"
 path: "/2015/06/08/how-jquery-works-an-introduction"
+pageViews: "17290"
+last30pageViews: "501"
 ---
 
 *This is the first post in a series on "How jQuery Works".  This is not a series about how to use jQuery, instead these posts will focus on how jQuery actually works.  If you're interested in diving into the source of the most popular JavaScript library on the planet, keep reading.*

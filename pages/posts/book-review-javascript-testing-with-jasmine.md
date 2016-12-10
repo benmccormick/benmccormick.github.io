@@ -1,10 +1,12 @@
 ---
 title: "Book Review: Javascript Testing with Jasmine"
 date: "2013-04-23 20:30:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/04/23/book-review-javascript-testing-with-jasmine"
 description: "A book review of JavaScript Testing with Jasmine by Evan Hahn"
 keywords: "JavaScript Book Review JavaScript Testing with Jasmine"
+pageViews: "97"
+last30pageViews: "0"
 ---
 
 I received a copy of Javascript Testing with Jasmine by Evan Hahn this week, and it seemed like perfect timing.  The developers on my team at work have been discussing using Jasmine to automate the testing of Javascript code in our product, and I may be spending a significant amount of time with it soon.  I was hoping to pick up on some tips and tricks, and maybe learn some things about testing.  It ended up being a quick read with some useful tidbits that left me wanting more.

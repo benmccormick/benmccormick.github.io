@@ -1,8 +1,10 @@
 ---
 title: "Mozilla: The state of Web Components"
 date: "2015-06-14 21:35:58+00:00"
-layout: post
+layout: "post"
 path: "/2015/06/14/mozilla-the-state-of-web-components"
+pageViews: "279"
+last30pageViews: "4"
 ---
 
 Over on Mozilla's development blog, Wilson Page has a [great summary][statewc] of the current status of the Web Components spec:

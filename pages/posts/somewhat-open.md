@@ -1,8 +1,10 @@
 ---
 title: "Somewhat Open"
 date: "2013-08-15 16:15:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/08/15/somewhat-open"
+pageViews: "107"
+last30pageViews: "1"
 ---
 
 [From Microsoft's official "Microsoft on the Issues" Blog:][msftblog]

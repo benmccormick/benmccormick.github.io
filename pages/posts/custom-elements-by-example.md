@@ -1,8 +1,10 @@
 ---
 title: "Custom Elements By Example"
 date: "2014-08-28 12:33:00+00:00"
-layout: post
+layout: "post"
 path: "/2014/08/28/custom-elements-by-example"
+pageViews: "2659"
+last30pageViews: "50"
 ---
 
 The best attribute of HTML is its ability to be simultaneously machine-readable and human-readable.  I'd argue that it's one of the biggest reasons for the web platform's success. Anyone can  “view page source” and have some understanding of what they're seeing.  Javascript based “Single Page Applications” have undermined this a bit.  Now the original HTML of a page may just be an empty body tag, and even when you inspect the generated page, it will probably just be a sea of div tags.

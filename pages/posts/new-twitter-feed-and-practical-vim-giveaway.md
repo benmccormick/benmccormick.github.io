@@ -1,8 +1,10 @@
 ---
 title: "New Twitter Feed and Practical Vim Giveaway"
 date: "2014-07-11 11:12:00+00:00"
-layout: post
+layout: "post"
 path: "/2014/07/11/new-twitter-feed-and-practical-vim-giveaway"
+pageViews: "411"
+last30pageViews: "4"
 ---
 
 I've got a few orders of site business to deal with today.  First, there's a new way to subscribe to the site.

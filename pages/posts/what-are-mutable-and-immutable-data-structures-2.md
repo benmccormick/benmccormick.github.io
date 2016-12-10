@@ -1,10 +1,12 @@
 ---
 title: "What are mutable and immutable data structures?"
 date: "2016-06-04 21:52:52+00:00"
-layout: post
+layout: "post"
 path: "/2016/06/04/what-are-mutable-and-immutable-data-structures-2"
 description: "A quick look at the difference between mutable and immutable data structures"
 keywords: "immutable mutable JavaScript Immutable.js"
+pageViews: "679"
+last30pageViews: "118"
 ---
 
 Sometimes concepts and ideas slowly grow in a programming community, sometimes they seem to appear in a flash.  For the first several years I wrote JavaScript, I don't recall ever seeing anything written online about immutable data.  Since React hit the scene in the last 2 years however, articles mentioning mutable and immutable data seem to have multiplied, as have libraries like Immutable.js and alternate front end languages like Elm that allow users to "use immutable data".  I'm not going to address those libraries, but thought it would be useful to throw out a quick primer on what immutable data actually is, how it differs from mutable data, and why anyone cares.  

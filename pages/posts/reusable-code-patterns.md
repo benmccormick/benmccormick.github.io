@@ -1,8 +1,10 @@
 ---
 title: "Reusable Code Patterns"
 date: "2016-01-08 05:22:29+00:00"
-layout: post
+layout: "post"
 path: "/2016/01/08/reusable-code-patterns"
+pageViews: "6064"
+last30pageViews: "58"
 ---
 
 One of the most repeated mantras in all of software is the term "Don't Repeat Yourself". The phrase was first popularized by the book [The Pragmatic Programmer][pragprog], with it's call for DRY software.  At it's core, DRY is all about finding a way to keep logic related to a particular function in one place, so that changes for new functionality can be limited in scope and have predictable consistent effects.  Software developers are usually very good at knowing that repetition is bad, but I've seen that we can be less great at communicating about our options to avoid it, or discussing the tradeoffs between different approaches.  This post is going to look at a specific situation that programmers encounter all the time, and give a framework for talking about how to handle it, focusing on positive options rather than simply what we want to avoid. 

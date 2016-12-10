@@ -1,8 +1,10 @@
 ---
 title: "Customer Culture Revisited"
 date: "2013-06-08 18:45:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/06/08/customer-culture-revisited"
+pageViews: "94"
+last30pageViews: "0"
 ---
 
 [Marco Arment back in 2011][marco]:

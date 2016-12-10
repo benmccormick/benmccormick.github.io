@@ -1,8 +1,10 @@
 ---
 title: "Is Bower Useful?"
 date: "2015-01-22 04:52:06+00:00"
-layout: post
+layout: "post"
 path: "/2015/01/22/is-bower-useful"
+pageViews: "2966"
+last30pageViews: "59"
 ---
 
 

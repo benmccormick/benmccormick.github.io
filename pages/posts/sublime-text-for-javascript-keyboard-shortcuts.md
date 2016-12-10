@@ -1,8 +1,10 @@
 ---
 title: "Sublime Text For Javascript: Keyboard Shortcuts"
 date: "2012-12-30 21:00:00+00:00"
-layout: post
+layout: "post"
 path: "/2012/12/30/sublime-text-for-javascript-keyboard-shortcuts"
+pageViews: "13761"
+last30pageViews: "109"
 ---
 
 I'm starting a new series of posts on Sublime Text, and how to get the most out of the editor.

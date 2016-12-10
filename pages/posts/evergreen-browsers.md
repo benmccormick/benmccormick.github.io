@@ -1,8 +1,10 @@
 ---
 title: "Evergreen Browsers"
 date: "2013-06-11 18:45:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/06/11/evergreen-browsers"
+pageViews: "208"
+last30pageViews: "0"
 ---
 
 [Tom Dale on Evergreen Browsers:][evergreen]

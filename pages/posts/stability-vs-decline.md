@@ -1,8 +1,10 @@
 ---
 title: "Stability vs Decline"
 date: "2016-03-09 06:04:39+00:00"
-layout: post
+layout: "post"
 path: "/2016/03/09/stability-vs-decline"
+pageViews: "761"
+last30pageViews: "20"
 ---
 
 My post on [the sad state of the Backbone ecosystem][eco] from this weekend was surprisingly popular.  I got a lot of responses pointing out [some things I got wrong][charttweet], sharing my concerns, or pushing back on my main points.  Objections to the post came in 2 primary forms, which I want to quickly address.  The first concern is that the Backbone ecosystem doesn't matter. The second concern is that the trend I'm identifying as decline and decay is actually stability.

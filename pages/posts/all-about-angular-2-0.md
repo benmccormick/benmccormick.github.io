@@ -1,8 +1,10 @@
 ---
 title: "Thoughts on Angular 2.0"
 date: "2014-11-08 19:24:09+00:00"
-layout: post
+layout: "post"
 path: "/2014/11/08/all-about-angular-2-0"
+pageViews: "739"
+last30pageViews: "6"
 ---
 
 Rob Eisenberg has a pretty incredible rundown of the current Angular 2.0 proposal and the thought process behind it [on his blog][aaa2].  

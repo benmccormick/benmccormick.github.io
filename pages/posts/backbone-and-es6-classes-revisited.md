@@ -1,10 +1,12 @@
 ---
 title: "Backbone and ES6 Classes Revisited"
 date: "2015-07-06 11:22:22+00:00"
-layout: post
+layout: "post"
 path: "/2015/07/06/backbone-and-es6-classes-revisited"
-description: 'A second look at using ES6 classes with Backbone'
-keywords: 'ES6, Backbone, classes, JavaScript, decorators'
+description: "A second look at using ES6 classes with Backbone"
+keywords: "ES6, Backbone, classes, JavaScript, decorators"
+pageViews: "12935"
+last30pageViews: "447"
 ---
 
 A few weeks ago I wrote [an article][bbes6] explaining why the final spec for classes in the ES6/ES2015 version of JavaScript was not usable in Backbone applications.  That post got a lot of great feedback, including this [discussion][githubissue] with the Backbone core team. The gist of that discussion has been that there are several ways to make ES6 classes work with Backbone now, though they may be less clean than the current *Backbone.extend* syntax.  But there's hope for a really great experience: decorators, a [proposed feature for the ES7/ES2016 spec][decoratorsspec], provide a much cleaner interface when working with Backbone and native classes.

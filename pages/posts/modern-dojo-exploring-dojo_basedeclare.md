@@ -1,8 +1,10 @@
 ---
 title: "Modern Dojo: Exploring declare"
 date: "2013-11-14 23:15:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/11/14/modern-dojo-exploring-dojo_basedeclare"
+pageViews: "497"
+last30pageViews: "13"
 ---
 
 This is part 2 of my ongoing exploration of [Dojo][dojo]'s important modules and concepts.  Specifically this post will be examining dojo/_base/declare, Dojo's object oriented programming helper module.

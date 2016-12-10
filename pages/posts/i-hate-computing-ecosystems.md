@@ -1,8 +1,10 @@
 ---
 title: "I hate computing ecosystems"
 date: "2012-12-29 23:06:00+00:00"
-layout: post
+layout: "post"
 path: "/2012/12/29/i-hate-computing-ecosystems"
+pageViews: "52"
+last30pageViews: "1"
 ---
 
 [Is there a way to edit text documents on the iPhone and sync them with Skydrive?](http://superuser.com/questions/525673/is-there-a-way-to-edit-text-documents-on-the-iphone-and-sync-them-with-skydrive/525700#525700)

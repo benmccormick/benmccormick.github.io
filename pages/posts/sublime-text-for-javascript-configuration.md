@@ -1,8 +1,10 @@
 ---
 title: "Sublime Text For Javascript: Configuration"
 date: "2013-01-01 18:00:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/01/01/sublime-text-for-javascript-configuration"
+pageViews: "9141"
+last30pageViews: "21"
 ---
 
 I'm starting a new series of posts on Sublime Text, and how to get the most out of the editor.

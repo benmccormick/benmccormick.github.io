@@ -1,8 +1,10 @@
 ---
 title: "A New Look"
 date: "2013-04-06 17:00:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/04/06/a-new-look"
+pageViews: "107"
+last30pageViews: "0"
 ---
 
 I'm switching to a modified version of the excellent [Object][object] theme by [gluttony][glutton] for this blog.  I like the cleaner content-focused look that it brings, and especially feel like it helps my code samples stand out.  I hope you like it.

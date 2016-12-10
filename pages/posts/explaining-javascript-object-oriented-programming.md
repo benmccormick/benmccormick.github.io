@@ -1,8 +1,10 @@
 ---
 title: "Explaining Javascript: Object Oriented Programming"
 date: "2013-01-12 03:05:00+00:00"
-layout: post
+layout: "post"
 path: "/2013/01/12/explaining-javascript-object-oriented-programming"
+pageViews: "874"
+last30pageViews: "68"
 ---
 
 I'm continuing this series on Javascript concepts for people new to the language by looking at  object oriented programming.  One of the more confusing concepts for new Javascript programmers, especially those used to the classical inheritance structures of Java or C++ is Javascript's prototypical inheritance model.  Because it is possible to write syntax for Javascript object creation that can look very similar to classical inheritance in Java, its easy to be misled and have false expectations.  Its important to understand how Javascript's object model works, so that you can adjust your expectations and write code that takes advantage of the language's expressive power.

@@ -1,11 +1,12 @@
 ---
 title: "Learning Vim in 2014: Working with Files"
 date: "2014-07-07 11:10:37+00:00"
-layout: post
+layout: "post"
 path: "/2014/07/07/learning-vim-in-2014-working-with-files"
 description: "How to easily navigate the file system in Vim"
 keywords: "vim files file system splits buffers"
-
+pageViews: "13116"
+last30pageViews: "216"
 ---
 
 As a software developer, you shouldn't have to spend time thinking about how to get to the code you want to edit.  One of the messiest parts of my transition to using Vim full time was its way of dealing with files.  Coming to Vim after primarily using Eclipse and Sublime Text, it frustrated me that Vim doesn't bundle a persistent file system viewer, and the built-in ways of opening and switching files always felt extremely painful.  

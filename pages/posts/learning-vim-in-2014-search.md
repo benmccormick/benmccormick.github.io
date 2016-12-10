@@ -1,10 +1,12 @@
 ---
 title: "Learning Vim in 2014: Search"
 date: "2014-08-04 01:16:20+00:00"
-layout: post
+layout: "post"
 path: "/2014/08/04/learning-vim-in-2014-search"
 description: "How to search for anything in Vim"
 keywords: "vim, search"
+pageViews: "10218"
+last30pageViews: "36"
 ---
 
 Have you ever tried to summarize something that was just too big to explain?  I've covered a lot of ground in my posts on Vim this past month, but it's only scratched the surface of what Vim has to offer.  The goal was to create a foundation that people could start with, and then let them build on their own. There's not a conclusive way to say what somebody "needs to know" when learning Vim.  Most people don't (and shouldn't) use every feature of the editor, they use the ones that make sense for them.  So I've tried to cover the things that I know people have found useful, and the philosophy behind how Vim works, and then let you figure out what you'd like to use on your own.  This post wraps up the series, but I wanted to highlight one last feature of Vim, its fantastic search capabilities.

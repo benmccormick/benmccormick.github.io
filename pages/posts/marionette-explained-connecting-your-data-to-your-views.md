@@ -1,10 +1,12 @@
 ---
 title: "Marionette Explained: Connecting Data to Your Views"
 date: "2014-12-10 12:30:00+00:00"
-layout: post
+layout: "post"
 path: "/2014/12/10/marionette-explained-connecting-your-data-to-your-views"
-description: 'How to bind data to your views in Marionette.js'
-keywords: 'JavaScript Marionette.js Backbone MVC Model View'
+description: "How to bind data to your views in Marionette.js"
+keywords: "JavaScript Marionette.js Backbone MVC Model View"
+pageViews: "23461"
+last30pageViews: "527"
 ---
 
 *This is the second post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the first post in the series, [The Case For Marionette][caseformarionette]*

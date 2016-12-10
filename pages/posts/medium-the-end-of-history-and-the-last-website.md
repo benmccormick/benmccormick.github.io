@@ -1,8 +1,10 @@
 ---
 title: "Medium: The end of History and the last website"
 date: "2012-12-25 21:00:00+00:00"
-layout: post
+layout: "post"
 path: "/2012/12/25/medium-the-end-of-history-and-the-last-website"
+pageViews: "54"
+last30pageViews: "2"
 ---
 
 > the whole experience I’ve just described is part of the argument for a site like Medium. That argument goes: No writer should be in the business of making a personal website. They’re hard to find, readers rarely return to them, and besides—let me just contribute this last part myself—they aren’t even fun to make anymore.
