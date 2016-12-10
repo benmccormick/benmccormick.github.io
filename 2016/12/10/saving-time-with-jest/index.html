@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=yyxgnp97qG"/><link rel="icon" type="image/png" href="/favicon-32x32.png?v=yyxgnp97qG" sizes="32x32"/><link rel="icon" type="image/png" href="/favicon-16x16.png?v=yyxgnp97qG" sizes="16x16"/><link rel="manifest" href="/manifest.json?v=yyxgnp97qG"/><link rel="mask-icon" href="/safari-pinned-tab.svg?v=yyxgnp97qG" color="#57a3e8"/><link rel="shortcut icon" href="/favicon.ico?v=yyxgnp97qG"/><meta name="theme-color" content="#ffffff"/><script type="text/javascript" src="//use.typekit.net/msd6bqv.js"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><title data-react-helmet="true">Saving Time With Jest: Meetup Summary | benmccormick.org</title><meta data-react-helmet="true" name="description" content="A summary of my meetup talk on saving time with Jest"/><meta data-react-helmet="true" name="keywords" content="Jest JavaScript testing meetup talk Triangle React"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:site" content="@benmccormickorg"/><meta data-react-helmet="true" name="twitter:creator" content="@ben336"/><meta data-react-helmet="true" name="twitter:title" content="Saving Time With Jest: Meetup Summary"/><meta data-react-helmet="true" name="twitter:description" content="A summary of my meetup talk on saving time with Jest"/><meta data-react-helmet="true" name="twitter:image" content="http://benmccormick.org/logo.png"/><script data-react-helmet="true" type="application/ld+json">{
+                "@context": "http://schema.org"
+                "@type": "BlogPosting",
+                "headline": "Saving Time With Jest: Meetup Summary",
+                "genre": "Software Development",
+                "keywords": "Jest JavaScript testing meetup talk Triangle React",
+                "url": "http://benmccormick.org/2016/12/10/saving-time-with-jest/",
+                "image": "http://benmccormick.org/logo.png",
+                "datePublished": "2016-12-9",
+                "description": "A summary of my meetup talk on saving time with Jest",
+                "articleBody": "<p>This week I gave a talk at the brand new Triangle ReactJS meetup group on how <a href=\"https://facebook.github.io/jest/\">Jest</a> can save developers time.  I was asked afterwards to share the content online for those who missed it.  My talk was mostly demos and wasn’t recorded, so there unfortunately isn’t much to share, but I thought I could write out the basic ideas behind the talk, and share them here.</p>
+<h3>What is Jest</h3>
+<p>Jest is a JavaScript testing framework built by Facebook to address their internal problems testing JavaScript code.  It was open-sourced in 2014, but unlike Facebook’s other recent high profile JavaScript OSS projects like React, Flux, Relay and GraphQL, it failed to develop much traction in the community and mostly stagnated for 2 years.  That changed in early 2016 when 2 Facebook developers, <a href=\"https://twitter.com/cpojer\">Christoph Pojer</a> and <a href=\"https://twitter.com/abramov_dmitrii\">Dmitrii Abramov</a> began working on improving the project. Over the past year they’ve brought massive improvements to the developer experience of using Jest.</p>
+<p>At a more practical level Jest is a test runner with a built in assertion library and support for code coverage, babel transpilation, and module mocking.  It began as a wrapper around [Jasmine][jasmine], an older JavaScript testing library, but has since replaced parts of Jasmine with replacement functionality, while retaining backwards compatibility.</p>
+<h3>How Can Jest Save Me Time?</h3>
+<p>Jest saves developers  time in 4 main ways:</p>
+<ol>
+<li><strong>Setup</strong> - Jest is simple to configure</li>
+<li><strong>Writing Tests</strong> - Jest provides a method for writing simple UI tests, and makes it easy to port over existing tests</li>
+<li><strong>Running Tests</strong> - Jest runs tests in parallel, doesn’t require a browser, and only runs the tests that are affected by the current code changes</li>
+<li><strong>Fixing Tests</strong> - Jest gives great error messages, helps you find the failing code, and has other smaller UX features that make it easy to debug your failing tests quickly.</li>
+</ol>
+<div>
+<blockquote class=\"twitter-tweet\" data-lang=\"en\"><p lang=\"en\" dir=\"ltr\">Tonight <a href=\"https://twitter.com/ben336\">@ben336</a> speaks about using <a href=\"https://twitter.com/hashtag/jest?src=hash\">#jest</a> with <a href=\"https://twitter.com/hashtag/reactjs?src=hash\">#reactjs</a> for your testing needs <a href=\"https://twitter.com/nestraleigh\">@nestraleigh</a> <a href=\"https://t.co/CAV8wZUwFw\">pic.twitter.com/CAV8wZUwFw</a></p>&mdash; Tracy Lee | ladyleet (@ladyleet) <a href=\"https://twitter.com/ladyleet/status/806655476515618822\">December 8, 2016</a></blockquote>
+</div>
+<h3>Setup</h3>
+<p>Setting up Jest is extremely straightforward. Here’s a <code>Hello World</code> React Project</p>
+<pre><code class=\"language-json\">//package.json
+{
+  \"name\": \"simple_example\",
+  \"version\": \"1.0.0\",
+  \"description\": \"A minimal jest testing example\",
+  \"scripts\": {
+    \"test\": \"jest\"
+  },
+  \"dependencies\": {
+    \"react\": \"^15.4.1\"
+  },
+  \"devDependencies\": {
+    \"babel-jest\": \"^17.0.2\",
+    \"babel-preset-es2015\": \"^6.18.0\",
+    \"babel-preset-react\": \"^6.16.0\",
+    \"jest\": \"^17.0.3\",
+    \"react-test-renderer\": \"^15.4.1\"
+  }
+}
+</code></pre>
+<p>In package.json we have 4 dependencies that are part of a normal React project setup, <code>react</code>, the 2 babel presets for using <a href=\"http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/\">es2015</a> syntax, and <code>react-test-renderer</code>, which is a react addon for rendering react for testing, similar to how <code>react-dom</code> renders components for the browser.  We then add <code>jest</code> and <code>babel-jest</code>.  <code>jest</code> provides the test runner, assertions API, mocking capabilities, and cli.  <code>babel-jest</code> is a drop-in dependency that lets Jest integrate with Babel.  Neither require any additional configuration in the normal case. Lets say the rest of our project looks like this:</p>
+<pre><code class=\"language-txt\">├── __tests__
+│   └── simple-component<span class=\"hljs-selector-class\">.spec</span><span class=\"hljs-selector-class\">.js</span>
+├── package<span class=\"hljs-selector-class\">.json</span>
+└── simple-component<span class=\"hljs-selector-class\">.js</span>
+</code></pre>
+<pre><code class=\"language-javascript\">// simple-component.js
+import React from 'react';
+
+export const SimpleComponent = () =&gt; &lt;div&gt;
+    Hello World
+&lt;/div&gt;;
+</code></pre>
+<pre><code class=\"language-javascript\"><span class=\"hljs-comment\">// __tests__/simple-component.spec.js</span>
+<span class=\"hljs-keyword\">import</span> React <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'react'</span>;
+<span class=\"hljs-keyword\">import</span> renderer <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'react-test-renderer'</span>;
+<span class=\"hljs-keyword\">import</span> {SimpleComponent} <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'../simple-component'</span>;
+
+it(<span class=\"hljs-string\">'shows Hello World'</span>, () =&gt; {
+  <span class=\"hljs-keyword\">const</span> component = renderer.create( <span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">SimpleComponent</span>/&gt;</span></span>);
+  <span class=\"hljs-keyword\">let</span> componentJSON = component.toJSON();
+  expect(componentJSON.children[<span class=\"hljs-number\">0</span>]).toBe(<span class=\"hljs-string\">'Hello World'</span>);
+});
+</code></pre>
+<p>Given this project, we only have to run</p>
+<pre><code>yarn <span class=\"hljs-comment\"># or npm install</span>
+<span class=\"hljs-keyword\">jest
+</span></code></pre>
+<p>and jest will automatically find our test file and run the test.</p>
+<img src=\"/posts/images/jest-hello-world.gif\" class=\"full-width\" alt =\"gif of running jest\">
+<h3>Writing Tests</h3>
+<p>Jest provides Snapshot Tests, which are a quick way of writing tests to catch changes in the rendered output of a UI component (or any other serializable content).  <a href=\"http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/\">I’ve written about Snapshot testing before</a>, so I won’t go into depth here.  But snapshot tests are significantly faster to write than traditional assertion based tests, and for the write type of code can provide greater or equal benefit.  This is one area where technically Jest may not save you time.  Instead it may take your team to a place where you’re actually willing to write tests for your UI components for the first time.</p>
+<p>There are also a great set of codemods for Jest. <a href=\"https://github.com/skovhus/jest-codemods\">jest-codemods</a> can help you take your existing suite of tests from Mocha, Ava, or tape and translate it over to Jest automatically.  Of course if you were using Jasmine previously, your tests can be migrated without changes. So Jest saves you time by not requiring you to rewrite any tests.</p>
+<h3>Running Tests</h3>
+<p>Jest runs tests fast by default.  While I’ve seen from comments on my last Jest post and elsewhere that some people may have been able to optimize mocha or AVA to be fast enough that switching to Jest was a downgrade, for most people Jest is going to be faster than whatever they may have been using before.  This is true because of performance reasons (tests run in parallel, and mock out timers to avoid unnecessary waiting), but also because of UX decisions.  Jest is able to use git and node’s modules system to detect what files have changed since the last commit, and which tests are affected by that.  Because of that, it is able to optionally run only the tests that might have changed on each run (<code>jest -o</code>).  Since it is usually able to run tests fast as a result (since it only runs a few at a time), Jest also is able to have an awesome watch mode (<code>jest --watch</code>).  In watch mode, tests rerun as files change, and there are options to target specific tests, run all tests, or fix snapshots as you go.</p>
+<img src=\"/posts/images/jest-watch.gif\" class=\"full-width\" alt =\"gif of running jest --watch\">
+<h3>Fixing Tests</h3>
+<p>Jest provides 4 main conveniences for fixing tests</p>
+<ol>
+<li>Error messages have clear formatted diffs, making it easy to know the difference between what was received and expected</li>
+<li>Error messages have a clear traceback to the line that failed, either the assertion in the test file, or the exception in the source file</li>
+<li>Even though tests run in parallel, Jest makes sure that any console output from the test is placed in line with the test output, making it easy to debug with quick console messages</li>
+<li>When running Jest multiple times, Jest runs the tests that failed in the previous run prior to other tests, leading to a faster feedback loop even when not using watch mode</li>
+</ol>
+<img src=\"/posts/images/jest-error.png\" class=\"full-width\" alt =\"gif of running jest --watch\">
+<h3>More Resources</h3>
+<ul>
+<li>
+<p>Another speakup at Wednesday’s meetup has a Jest related blog post out this week.  Nate Hunzaker blogged about <a href=\"https://www.viget.com/articles/acceptance-testing-react-apps-with-jest-and-nightmare\">using Jest with Nightmare.js for acceptance tests</a></p>
+</li>
+<li>
+<p>If you live in the Triangle area (thats Raleigh/Durham, North Carolina to the rest of the world) make sure to check out the <a href=\"http://www.meetup.com/trianglereact/\">Triangle React meetup</a>.  The plan as I understand it is to do events once a month, alternating project nights and talks.  I believe <a href=\"https://twitter.com/ladyleet\">Tracy</a> is looking for more speakers too, so hit her up if you’re interested.  This time 4 of us spoke for 15-20 minutes, so it isn’t as much preparation as other events where you’re the only speaker.</p>
+</li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href=\"http://feedpress.me/benmccormick\">feed</a>, <a href=\"http://twitter.com/benmccormickorg\">Twitter</a> or my <a href=\"http://eepurl.com/WFYon\">mailing list</a>. If you’re excited about Jest, you also might want to check out my <a href=\"http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/\">post on Jest Snapshots</a>.</p>
+",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Ben McCormick"
+                    "email": "mailto:ben@benmccormick.org",
+                    "image": "/profile_pic.jpg",
+                    "jobTitle": "Software Engineer",
+                    "alumniOf": "Duke",
+                    "birthPlace": "Pittsburgh, PA",
+                    "gender": "male",
+                    "url": "http://benmccormick.org",
+              	    "sameAs" : [
+                      "https://www.linkedin.com/in/benmccormick",
+                      "http://twitter.com/ben336",
+                    ]
+                 }
+              }</script><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font-size:112.5%;line-height:1.666em;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:georgia,serif;font-weight:normal;word-wrap:break-word;}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.5rem;line-height:2.499rem;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.27542rem;line-height:1.666rem;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.17608rem;line-height:1.666rem;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.666rem;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.92211rem;line-height:1.666rem;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:hsla(0,0%,0%,0.8);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.88547rem;line-height:1.666rem;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}ul{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:0.85rem;line-height:1.666rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:1rem;line-height:1.666rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}blockquote{margin-left:1.666rem;margin-right:1.666rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.666rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.666rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}li > ul{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}code{font-size:0.85rem;line-height:1.666rem;}kbd{font-size:0.85rem;line-height:1.666rem;}samp{font-size:0.85rem;line-height:1.666rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:tnum;padding-left:1.11067rem;padding-right:1.11067rem;padding-top:0.833rem;padding-bottom:calc(0.833rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><style>.header-link{color:hsla(0,0%,39%,.7)}.header-link:hover{color:#e2777a}#carbonads{height:100px;font-size:14px;width:300px;position:relative;background:#f0f0f0}.carbon-wrap{height:100px;display:-ms-flexbox;display:flex}.carbon-text{padding:5px 10px;max-height:80px;display:inline-block;overflow:hidden;line-height:1.3}.carbon-poweredby{color:hsla(0,0%,39%,.7);position:absolute;right:5px;bottom:0}@media all and (max-width:600px){#carbonads,.no-mobile{display:none}}@media all and (max-width:321px){html{font-size:100%!important}}.markdown pre{display:block;background:#fdf6e3;color:#657b83;overflow-y:hidden;padding:.2rem .5rem}.markdown pre code{background:none;border:none;border-radius:3px;display:inline-block;overflow:inherit;padding:0;white-space:inherit;word-wrap:normal;font-size:.7rem;line-height:1rem}code{border-radius:3px;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;border:1px solid #ccc;display:inline;font-family:Inconsolata,monospace,serif;max-width:100%;overflow:auto;padding:0 .1625rem}.hljs,code{background:#fdf6e3;color:#657b83}.hljs{display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-quote{color:#93a1a1}.hljs-addition,.hljs-keyword,.hljs-selector-tag{color:#859900}.hljs-doctag,.hljs-literal,.hljs-meta .hljs-meta-string,.hljs-number,.hljs-regexp,.hljs-string{color:#2aa198}.hljs-name,.hljs-section,.hljs-selector-class,.hljs-selector-id,.hljs-title{color:#268bd2}.hljs-attr,.hljs-attribute,.hljs-class .hljs-title,.hljs-template-variable,.hljs-type,.hljs-variable{color:#b58900}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-meta .hljs-keyword,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-subst,.hljs-symbol{color:#cb4b16}.hljs-built_in,.hljs-deletion{color:#dc322f}.hljs-formula{background:#eee8d5}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}html{font-size:120%}body,h1,h2,h3,h4,h5,h6,p{font-family:brandon-grotesque,Brandon Grotesque,Helvetica Neue,Helvetica,Arial,Lucida Sans,Geneva,Verdana,sans-serif;text-rendering:optimizeLegibility}a{color:#e2777a;text-decoration:none}blockquote{border-left:5px solid #57a3e8;font-style:italic;background:#eee;font-weight:400;font-size:.9rem;padding:10px 20px;margin:0 0 30px -25px}h2,h3{color:#57a3e8}.explanation{padding:10px;background:#eee;border-radius:10px;margin:20px auto;font-size:.85em}.article-body .reading-img img{width:150px;float:right;margin:0 10px 20px}.article-body img{max-height:200px;display:block;margin:40px auto 20px}.article-body img.full-width{max-height:none}.article-body img.half-width{max-height:none;width:50%}.mc-field-group{width:400px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-align:start;align-items:flex-start;padding:8px 0}.mc-field-group input{border-radius:3px;max-width:350px;width:80vw;border:1px solid #ccc}.mc-field-group label{font-size:.9em;font-weight:600}#mc-embedded-subscribe{color:#fff;background:#57a3e8;border-radius:4px;border:0;padding:5px 10px;margin:20px 0;cursor:pointer}#mc-embedded-subscribe:hover{background:#3e8acf}</style></head><body class="landing-page" style="background:#FCFCFC;padding:0 10px;"><div id="react-mount"><div style="max-width:39.984rem;margin-left:auto;margin-right:auto;padding:2.499rem 1.2495rem;" data-reactroot="" data-reactid="1" data-react-checksum="-1264671701"><div style="display:flex;padding-bottom:0.5rem;margin-bottom:0.5rem;" data-reactid="2"><div style="flex-grow:3;display:flex;flex-direction:column;justify-content:space-around;" data-reactid="3"><h3 style="margin:0;padding-bottom:0;" data-reactid="4"><a style="box-shadow:none;text-decoration:none;color:inherit;" href="/" data-reactid="5">benmccormick.org</a></h3><div style="color:rgba(100,100,100, 0.7);" data-reactid="6"><a class="header-link" href="/subscribe/" data-reactid="7">Subscribe</a><span style="padding:0 0.33rem;" data-reactid="8">•</span><a class="header-link" href="/readinglist/" data-reactid="9">Reading List</a><span style="padding:0 0.33rem;" data-reactid="10">•</span><a class="header-link" href="http://twitter.com/ben336" data-reactid="11">Twitter</a><span style="padding:0 0.33rem;" data-reactid="12">•</span><a class="header-link" href="/about/" data-reactid="13">About</a></div></div><div style="flex-shrink:2;" data-reactid="14"><span data-reactid="15"></span></div></div><div class="markdown" data-reactid="16"><!-- react-empty: 17 --><h5 style="display:block;color:rgba(100,100,100, 0.7);margin-bottom:0.4165rem;" data-reactid="18">December 9, 2016</h5><h1 style="margin-top:0;margin-bottom:1rem;" data-reactid="19">Saving Time With Jest: Meetup Summary</h1><div class="article-body" data-reactid="20"><p>This week I gave a talk at the brand new Triangle ReactJS meetup group on how <a href="https://facebook.github.io/jest/">Jest</a> can save developers time.  I was asked afterwards to share the content online for those who missed it.  My talk was mostly demos and wasn’t recorded, so there unfortunately isn’t much to share, but I thought I could write out the basic ideas behind the talk, and share them here.</p>
+<h3>What is Jest</h3>
+<p>Jest is a JavaScript testing framework built by Facebook to address their internal problems testing JavaScript code.  It was open-sourced in 2014, but unlike Facebook’s other recent high profile JavaScript OSS projects like React, Flux, Relay and GraphQL, it failed to develop much traction in the community and mostly stagnated for 2 years.  That changed in early 2016 when 2 Facebook developers, <a href="https://twitter.com/cpojer">Christoph Pojer</a> and <a href="https://twitter.com/abramov_dmitrii">Dmitrii Abramov</a> began working on improving the project. Over the past year they’ve brought massive improvements to the developer experience of using Jest.</p>
+<p>At a more practical level Jest is a test runner with a built in assertion library and support for code coverage, babel transpilation, and module mocking.  It began as a wrapper around [Jasmine][jasmine], an older JavaScript testing library, but has since replaced parts of Jasmine with replacement functionality, while retaining backwards compatibility.</p>
+<h3>How Can Jest Save Me Time?</h3>
+<p>Jest saves developers  time in 4 main ways:</p>
+<ol>
+<li><strong>Setup</strong> - Jest is simple to configure</li>
+<li><strong>Writing Tests</strong> - Jest provides a method for writing simple UI tests, and makes it easy to port over existing tests</li>
+<li><strong>Running Tests</strong> - Jest runs tests in parallel, doesn’t require a browser, and only runs the tests that are affected by the current code changes</li>
+<li><strong>Fixing Tests</strong> - Jest gives great error messages, helps you find the failing code, and has other smaller UX features that make it easy to debug your failing tests quickly.</li>
+</ol>
+<div>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Tonight <a href="https://twitter.com/ben336">@ben336</a> speaks about using <a href="https://twitter.com/hashtag/jest?src=hash">#jest</a> with <a href="https://twitter.com/hashtag/reactjs?src=hash">#reactjs</a> for your testing needs <a href="https://twitter.com/nestraleigh">@nestraleigh</a> <a href="https://t.co/CAV8wZUwFw">pic.twitter.com/CAV8wZUwFw</a></p>&mdash; Tracy Lee | ladyleet (@ladyleet) <a href="https://twitter.com/ladyleet/status/806655476515618822">December 8, 2016</a></blockquote>
+</div>
+<h3>Setup</h3>
+<p>Setting up Jest is extremely straightforward. Here’s a <code>Hello World</code> React Project</p>
+<pre><code class="language-json">//package.json
+{
+  "name": "simple_example",
+  "version": "1.0.0",
+  "description": "A minimal jest testing example",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^17.0.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "jest": "^17.0.3",
+    "react-test-renderer": "^15.4.1"
+  }
+}
+</code></pre>
+<p>In package.json we have 4 dependencies that are part of a normal React project setup, <code>react</code>, the 2 babel presets for using <a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">es2015</a> syntax, and <code>react-test-renderer</code>, which is a react addon for rendering react for testing, similar to how <code>react-dom</code> renders components for the browser.  We then add <code>jest</code> and <code>babel-jest</code>.  <code>jest</code> provides the test runner, assertions API, mocking capabilities, and cli.  <code>babel-jest</code> is a drop-in dependency that lets Jest integrate with Babel.  Neither require any additional configuration in the normal case. Lets say the rest of our project looks like this:</p>
+<pre><code class="language-txt">├── __tests__
+│   └── simple-component<span class="hljs-selector-class">.spec</span><span class="hljs-selector-class">.js</span>
+├── package<span class="hljs-selector-class">.json</span>
+└── simple-component<span class="hljs-selector-class">.js</span>
+</code></pre>
+<pre><code class="language-javascript">// simple-component.js
+import React from 'react';
+
+export const SimpleComponent = () =&gt; &lt;div&gt;
+    Hello World
+&lt;/div&gt;;
+</code></pre>
+<pre><code class="language-javascript"><span class="hljs-comment">// __tests__/simple-component.spec.js</span>
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> renderer <span class="hljs-keyword">from</span> <span class="hljs-string">'react-test-renderer'</span>;
+<span class="hljs-keyword">import</span> {SimpleComponent} <span class="hljs-keyword">from</span> <span class="hljs-string">'../simple-component'</span>;
+
+it(<span class="hljs-string">'shows Hello World'</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> component = renderer.create( <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">SimpleComponent</span>/&gt;</span></span>);
+  <span class="hljs-keyword">let</span> componentJSON = component.toJSON();
+  expect(componentJSON.children[<span class="hljs-number">0</span>]).toBe(<span class="hljs-string">'Hello World'</span>);
+});
+</code></pre>
+<p>Given this project, we only have to run</p>
+<pre><code>yarn <span class="hljs-comment"># or npm install</span>
+<span class="hljs-keyword">jest
+</span></code></pre>
+<p>and jest will automatically find our test file and run the test.</p>
+<img src="/posts/images/jest-hello-world.gif" class="full-width" alt ="gif of running jest">
+<h3>Writing Tests</h3>
+<p>Jest provides Snapshot Tests, which are a quick way of writing tests to catch changes in the rendered output of a UI component (or any other serializable content).  <a href="http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/">I’ve written about Snapshot testing before</a>, so I won’t go into depth here.  But snapshot tests are significantly faster to write than traditional assertion based tests, and for the write type of code can provide greater or equal benefit.  This is one area where technically Jest may not save you time.  Instead it may take your team to a place where you’re actually willing to write tests for your UI components for the first time.</p>
+<p>There are also a great set of codemods for Jest. <a href="https://github.com/skovhus/jest-codemods">jest-codemods</a> can help you take your existing suite of tests from Mocha, Ava, or tape and translate it over to Jest automatically.  Of course if you were using Jasmine previously, your tests can be migrated without changes. So Jest saves you time by not requiring you to rewrite any tests.</p>
+<h3>Running Tests</h3>
+<p>Jest runs tests fast by default.  While I’ve seen from comments on my last Jest post and elsewhere that some people may have been able to optimize mocha or AVA to be fast enough that switching to Jest was a downgrade, for most people Jest is going to be faster than whatever they may have been using before.  This is true because of performance reasons (tests run in parallel, and mock out timers to avoid unnecessary waiting), but also because of UX decisions.  Jest is able to use git and node’s modules system to detect what files have changed since the last commit, and which tests are affected by that.  Because of that, it is able to optionally run only the tests that might have changed on each run (<code>jest -o</code>).  Since it is usually able to run tests fast as a result (since it only runs a few at a time), Jest also is able to have an awesome watch mode (<code>jest --watch</code>).  In watch mode, tests rerun as files change, and there are options to target specific tests, run all tests, or fix snapshots as you go.</p>
+<img src="/posts/images/jest-watch.gif" class="full-width" alt ="gif of running jest --watch">
+<h3>Fixing Tests</h3>
+<p>Jest provides 4 main conveniences for fixing tests</p>
+<ol>
+<li>Error messages have clear formatted diffs, making it easy to know the difference between what was received and expected</li>
+<li>Error messages have a clear traceback to the line that failed, either the assertion in the test file, or the exception in the source file</li>
+<li>Even though tests run in parallel, Jest makes sure that any console output from the test is placed in line with the test output, making it easy to debug with quick console messages</li>
+<li>When running Jest multiple times, Jest runs the tests that failed in the previous run prior to other tests, leading to a faster feedback loop even when not using watch mode</li>
+</ol>
+<img src="/posts/images/jest-error.png" class="full-width" alt ="gif of running jest --watch">
+<h3>More Resources</h3>
+<ul>
+<li>
+<p>Another speakup at Wednesday’s meetup has a Jest related blog post out this week.  Nate Hunzaker blogged about <a href="https://www.viget.com/articles/acceptance-testing-react-apps-with-jest-and-nightmare">using Jest with Nightmare.js for acceptance tests</a></p>
+</li>
+<li>
+<p>If you live in the Triangle area (thats Raleigh/Durham, North Carolina to the rest of the world) make sure to check out the <a href="http://www.meetup.com/trianglereact/">Triangle React meetup</a>.  The plan as I understand it is to do events once a month, alternating project nights and talks.  I believe <a href="https://twitter.com/ladyleet">Tracy</a> is looking for more speakers too, so hit her up if you’re interested.  This time 4 of us spoke for 15-20 minutes, so it isn’t as much preparation as other events where you’re the only speaker.</p>
+</li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. If you’re excited about Jest, you also might want to check out my <a href="http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/">post on Jest Snapshots</a>.</p>
+</div><hr style="margin-bottom:3.332rem;" data-reactid="21"/><noscript data-reactid="22"></noscript><p style="margin-bottom:4.165rem;" data-reactid="23"><!-- react-text: 24 -->Written by <!-- /react-text --><!-- react-text: 25 -->Ben McCormick<!-- /react-text --></p><div title="Saving Time With Jest: Meetup Summary" data-reactid="26"><div id="disqus_thread" data-reactid="27"></div><noscript data-reactid="28"><span data-reactid="29"><!-- react-text: 30 -->Please enable JavaScript to view the<!-- /react-text --><a href="http://disqus.com/?ref_noscript" data-reactid="31">comments powered by Disqus.</a></span></noscript><a href="http://disqus.com" class="dsq-brlink" data-reactid="32"><!-- react-text: 33 -->Blog comments powered by <!-- /react-text --><span class="logo-disqus" data-reactid="34">Disqus</span><!-- react-text: 35 -->.<!-- /react-text --></a></div></div><span style="display:block;clear:both;" data-reactid="36"> </span></div></div><script src="/bundle.js?t=1481347283102"></script><script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-37323973-1', 'auto');
+            ga('send', 'pageview');
+        </script></body></html>
