@@ -78,6 +78,7 @@ class MarkdownWrapper extends React.Component {
             { name: 'twitter:creator', content: '@ben336'},
             { name: 'twitter:title', content: post.title},
             { name: 'twitter:description', content: post.description || ''},
+            { name: 'twitter:image', content: post.image || 'http://benmccormick.org/logo.png'},
           ]}
           script = {[
             {
@@ -89,6 +90,7 @@ class MarkdownWrapper extends React.Component {
                 "genre": "Software Development",
                 "keywords": "${post.keywords || ''}",
                 "url": "${url}",
+                "image": "${post.image || 'http://benmccormick.org/logo.png'}",
                 "datePublished": "${moment(post.date).format('YYYY-MM-D')}",
                 ${post.description ? `"description": "${post.description}",` : ''}
                 "articleBody": "${post.body.replace(/\"/g, '\\"')}",

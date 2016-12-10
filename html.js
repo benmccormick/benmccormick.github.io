@@ -30,6 +30,27 @@ module.exports = React.createClass({
             name = "viewport"
             content = "width=device-width, initial-scale=1.0"
           />
+          <link
+            rel = "apple-touch-icon"
+            sizes = "180x180"
+            href = "/apple-touch-icon.png?v=yyxgnp97qG"
+          />
+          <link
+            rel = "icon"
+            type = "image/png"
+            href = "/favicon-32x32.png?v=yyxgnp97qG"
+            sizes = "32x32"
+          />
+          <link
+            rel = "icon"
+            type = "image/png"
+            href = "/favicon-16x16.png?v=yyxgnp97qG"
+            sizes = "16x16"
+          />
+          <link rel = "manifest" href = "/manifest.json?v=yyxgnp97qG"/>
+          <link rel = "mask-icon" href = "/safari-pinned-tab.svg?v=yyxgnp97qG" color = "#57a3e8"/>
+          <link rel = "shortcut icon" href = "/favicon.ico?v=yyxgnp97qG"/>
+          <meta name = "theme-color" content = "#ffffff"/>
           <script
             type = "text/javascript"
             src = "//use.typekit.net/msd6bqv.js"
