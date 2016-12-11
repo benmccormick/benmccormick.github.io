@@ -9,7 +9,7 @@ pageViews: "23462"
 last30pageViews: "528"
 ---
 
-*This is the second post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the first post in the series, [The Case For Marionette][caseformarionette]*
+*This is the second post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the first post in the series, [The Case For Marionette][caseformarionette].  Also note that this article was written about Marionette v2.  The current latest version of Marionette is v3, and while most of the high level concepts remain the same, the specific syntax has changed in some cases.*
 
 One of the most interesting design choices of [Backbone][backbone] was the decision to not provide a default render function for Views. Backbone Views by default are an empty function that adds nothing to the DOM when rendered.  Although a View can have a Model or Collection associated with it, there is no built in way to associate that with the generated View.  When you contrast that to other modern frameworks like Ember, Angular and KnockoutJS, and their emphasis on using 2 way bindings to associate a data object to a rendered View, Backbone can feel a bit incomplete.  The goal is to allow for a variety of rendering approaches, without making one of them a favored approach.  But it leaves a situation where choosing a rendering procedure is one of the first steps in any new Backbone project.  Marionette provides a structured approach for binding your data to your view layer, while still providing flexibility to introduce customization.
 

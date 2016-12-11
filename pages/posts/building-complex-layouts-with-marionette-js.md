@@ -9,7 +9,7 @@ pageViews: "23200"
 last30pageViews: "318"
 ---
 
-*This is the third post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the first post in the series, [The Case For Marionette][caseformarionette]*
+*This is the third post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the first post in the series, [The Case For Marionette][caseformarionette]  Also note that this article was written about Marionette v2.  The current latest version of Marionette is v3, and while most of the high level concepts remain the same, the specific syntax has changed in some cases.*
 
 When building complex web applications, many of the first decisions you have to make revolve around the structure and layout of your application. Most applications will have some static portions like navigations or footers, and some dynamic portions holding content or page specific controls.  A good layout manager will allow you to easily control these layouts, helping you keep structure consistent between pages and actions while swapping out content on changes in routes or data.  
 

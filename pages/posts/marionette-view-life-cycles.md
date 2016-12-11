@@ -9,7 +9,7 @@ pageViews: "18453"
 last30pageViews: "461"
 ---
 
-*This is the fourth post in a series on [Marionette.js][marionette], a framework for developing apps with [Backbone.js][backbone].  For more background on what Marionette is, check out the series page: [Marionette Explained][marionetteexplained]*
+*This is the fourth post in a series on [Marionette.js][marionette], a framework for developing apps with [Backbone.js][backbone].  For more background on what Marionette is, check out the series page: [Marionette Explained][marionetteexplained]  Also note that this article was written about Marionette v2.  The current latest version of Marionette is v3, and while most of the high level concepts remain the same, the specific syntax has changed in some cases.*
 
 When building Single Page Applications, it's important to manage UI components throughout their existence on the page, making sure they're properly created, attached, and destroyed.  Marionette.js helps Backbone developers manage that by providing life cycle methods that developers can use when defining their Views.  These life cycle functions fit nicely with the rest of Marionette's features, and can help simplify UI development with Backbone.
 

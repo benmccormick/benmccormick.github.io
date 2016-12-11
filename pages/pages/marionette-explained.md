@@ -5,7 +5,7 @@ path: '/marionette-explained'
 ---
 
 <div class="explanation">
-Marionette: Explained was a series of posts I wrote in winter 2014-2015 explaining the whats, whys and hows of Marionette, the Backbone Framework.  Marionette is a powerful set of patterns and components built on top of Backbone.js, a minimalist JavaScript MV* framework. It is widely used in the Backbone community, but since most of the resources I found about it were written prior to it's 2.0 version, and the framework had continued to evolve significantly since then, I felt there was a need for a detailed resource on using it.  This is my attempt at creating that resource.
+Marionette: Explained was a series of posts I wrote in winter 2014-2015 explaining the whats, whys and hows of Marionette, the Backbone Framework.  Marionette is a powerful set of patterns and components built on top of Backbone.js, a minimalist JavaScript MV* framework. It is widely used in the Backbone community, but since most of the resources I found about it were written prior to it's 2.0 version, and the framework had continued to evolve significantly since then, I felt there was a need for a detailed resource on using it.  This was my attempt at creating that resource.  Note that since I published this, Marionette has released a 3rd major version, Marionette 3.  Most of the concepts here still apply, but some specific syntax may be out of date.  
 </div>
 
 1. [The Case For Marionette.js](http://benmccormick.org/2014/12/02/the-case-for-marionette-js/) - A quick overview of what Marionette is and why it's useful.
