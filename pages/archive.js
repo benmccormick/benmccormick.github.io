@@ -1,27 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router';
 import sortBy from 'lodash/sortBy';
+import get from 'lodash/get';
 import { prefixLink } from 'gatsby-helpers';
 import { rhythm } from 'utils/typography';
 import Helmet from 'react-helmet';
-import access from 'safe-access';
 import { config } from 'config';
 import include from 'underscore.string/include';
 import moment from 'moment';
 
-class BlogIndex extends React.Component {
+class BlogArchive extends React.Component {
   render() {
     const pageLinks = [];
     // Sort pages.
     const sortedPages = sortBy(this.props.route.pages, (page) =>
-      access(page, 'data.date')
+      get(page, 'data.date')
     ).reverse();
     sortedPages.forEach((page) => {
       if (
-        access(page, 'file.ext') === 'md' &&
+        get(page, 'file.ext') === 'md' &&
         !include(page.path, '/404') &&
-        access(page, 'data.layout') === 'post') {
-        const title = access(page, 'data.title') || page.path;
+        get(page, 'data.layout') === 'post') {
+        const title = get(page, 'data.title') || page.path;
         pageLinks.push(
           <li
             key = {page.path}
@@ -73,8 +73,8 @@ class BlogIndex extends React.Component {
   }
 }
 
-BlogIndex.propTypes = {
+BlogArchive.propTypes = {
   route: React.PropTypes.object,
 };
 
-export default BlogIndex;
+export default BlogArchive;

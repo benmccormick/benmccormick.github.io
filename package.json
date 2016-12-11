@@ -49,6 +49,6 @@
     "build": "gatsby build",
     "local-serve": "gatsby build && gatsby serve-build",
     "gh-pages": "gh-pages -d public",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+    "deploy": "node analytics.js && gatsby build --prefix-links && gh-pages -d public"
   }
 }

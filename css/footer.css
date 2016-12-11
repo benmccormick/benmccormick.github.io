@@ -1,0 +1,9 @@
+.subscribe-button {
+  color: white;
+  background: #57A3E8;
+  border-radius: 4px;
+  border: 0px;
+  padding: 5px 10px;
+  margin: 20px 0;
+  cursor: pointer;
+}

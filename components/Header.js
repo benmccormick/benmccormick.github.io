@@ -55,9 +55,9 @@ export class Header extends React.Component {
             <span style = {{padding: '0 0.33rem'}}>•</span>
             <Link
               className = "header-link"
-              to = {prefixLink('/readinglist/')}
+              to = {prefixLink('/archive/')}
             >
-                    Reading List
+                    Archive
             </Link>
             <span style = {{padding: '0 0.33rem'}}>•</span>
             <a

@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import ReadNext from '../components/ReadNext';
 import { rhythm } from 'utils/typography';
 import { config } from 'config';
-import Bio from '../components/Bio';
+import Footer from '../components/Footer';
 import {Disqus} from '../components/Disqus';
 import forEach from 'lodash/forEach';
 import last from 'lodash/last';
@@ -138,7 +138,7 @@ class MarkdownWrapper extends React.Component {
           }}
         />
         <ReadNext post = {post} pages = {route.pages} />
-        <Bio />
+        {post.hideFooter ? null : <Footer />}
         {isPage ? null : <Disqus
           title = {post.title}
           shortName = {slug}
