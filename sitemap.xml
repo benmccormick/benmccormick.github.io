@@ -4,6 +4,7 @@
 <url> <loc>https://benmccormick.org/archive/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/manifest/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/a-note-to-recruiters/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/learning-vim-in-2014/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/marionette-explained/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -14,7 +15,6 @@
 <url> <loc>https://benmccormick.org/2013/06/09/90-done-halfway-there/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2013/11/25/a-look-at-ack/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2013/04/06/a-new-look/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2015/06/04/a-note-to-recruiters/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/11/04/a-quick-review-of-google-inbox/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2016/04/30/ack-tips/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/11/08/all-about-angular-2-0/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
