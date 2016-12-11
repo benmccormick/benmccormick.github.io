@@ -120,7 +120,7 @@ class BlogIndex extends React.Component {
             >
               <Link
                 style = {{boxShadow: 'none'}}
-                to = {prefixLink('/marionette-explained')}
+                to = {prefixLink('/marionette-explained/')}
               >Marionette: Explained</Link>
             </div>
           </li>
@@ -142,7 +142,7 @@ class BlogIndex extends React.Component {
             >
               <Link
                 style = {{boxShadow: 'none'}}
-                to = {prefixLink('/learning-vim-in-2014')}
+                to = {prefixLink('/learning-vim-in-2014/')}
               >Learning Vim in 2014</Link>
             </div>
           </li>
