@@ -5,8 +5,8 @@ layout: "post"
 path: "/2014/11/12/underscore-vs-lodash"
 description: "A comparison of two popular utility libraries: Underscore and Lo-Dash"
 keywords: "underscore lodash lo-dash JavaScript performance"
-pageViews: "109203"
-last30pageViews: "2642"
+pageViews: "109208"
+last30pageViews: "2647"
 ---
 
 Last week was the time for my team's quarterly "dependency update" where we go through all the third party libraries we're using and keep up on any updates or maintenance that need to happen.  That presented the opportunity for me to do a bit more research into an alternative for one of our libraries, [Underscore][underscore].  Underscore is a JavaScript utility library that provides helper functions for common idioms with a focus on functional programming.  It's a dependency for [Backbone][backbone], the MVC library that our web app is based on, and was originally created by Jeremy Ashkenas, who also wrote Backbone.  I love the functional style that Underscore subscribes to, and while the much improved browser support for ES5 functions like map, reduce and filter makes it less necessary than it used to be, Underscore still provides plenty of benefits.

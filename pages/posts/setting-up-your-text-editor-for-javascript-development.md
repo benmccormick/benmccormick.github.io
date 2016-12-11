@@ -3,8 +3,8 @@ title: "Setting Up Your Text Editor For JavaScript Development"
 date: "2014-10-13 01:05:51+00:00"
 layout: "post"
 path: "/2014/10/13/setting-up-your-text-editor-for-javascript-development"
-pageViews: "9271"
-last30pageViews: "188"
+pageViews: "9272"
+last30pageViews: "189"
 ---
 
 The coding workflow for JavaScript developers gets better all the time.  Over the last 10 years, the JavaScript ecosystem has built up a rich set of tools to make your life easier.  Most of the buzz around tooling comes from browser devtools and the various build systems available for JavaScript projects, but you can also take advantage of improved tools within your code editor.  While there are some great IDEs for JavaScript development out there like WebStorm and Visual Studio, most JavaScript developers seem to prefer lighter-weight text editors.  So this post is going to be a quick look at the tools I use for more seamless JavaScript development in a text editor.

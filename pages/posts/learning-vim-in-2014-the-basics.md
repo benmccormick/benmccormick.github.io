@@ -5,8 +5,8 @@ layout: "post"
 path: "/2014/06/30/learning-vim-in-2014-the-basics"
 description: "The basics of learning Vim"
 keywords: "vim, basics, beginner, tutorial"
-pageViews: "20046"
-last30pageViews: "267"
+pageViews: "20047"
+last30pageViews: "268"
 ---
 
 Do you want to be efficient writing code?  Using Vim can be a powerful help.  Using it has let me move more effectively through the process of writing and editing code.  But getting to where I am now was frustrating. Vim resources are scattered across the web, and contain a lot of different advice.  It's tough to figure out how to make Vim work for you.  In my next few posts, I'm going to talk about the process of learning a 23 year old programming power tool, and what you need to know in 2014 to be productive with Vim.  Today I'll start with the basics, stuff that goes back all the way to the 1970s, and we'll grow from there.

@@ -3,8 +3,8 @@ title: "ES6 Patterns: Converting Callbacks to Promises"
 date: "2015-12-30 03:30:47+00:00"
 layout: "post"
 path: "/2015/12/30/es6-patterns-converting-callbacks-to-promises"
-pageViews: "16028"
-last30pageViews: "1903"
+pageViews: "16029"
+last30pageViews: "1904"
 ---
 
 <div class="explanation">

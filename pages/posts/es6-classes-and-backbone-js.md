@@ -5,8 +5,8 @@ layout: "post"
 path: "/2015/04/07/es6-classes-and-backbone-js"
 description: "A rundown of the challenges of using ES6 classes in Backbone"
 keywords: "Backbone, ES6, JavaScript, classes"
-pageViews: "18630"
-last30pageViews: "457"
+pageViews: "18632"
+last30pageViews: "459"
 ---
 
 I've seen some confusion out there about how to use ES6 Classes with [Backbone][backbone].  In the original version of the ES6 class spec, this was actually a simple thing to do, though the syntax wasn't great.  With the finalized specification for classes and subclassing though, it's no longer practical to try and use the two together.  Here's a short explanation of the issues, as well as a discussion on whether any of this matters.
