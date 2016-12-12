@@ -6,6 +6,8 @@ path: "/2016/12/11/readable-code-audience"
 description: "A quick observation about what it means to write readable code"
 keywords: "readable code python"
 category: "software-productivity"
+pageViews: "0"
+last30pageViews: "0"
 ---
 
 A coworker asked me last week if there was a better way to write the following python code:
@@ -32,10 +34,10 @@ self.custom_attributes = {
 
 ```python
 def build_obj(acc, val):
-   [key, value] = val.split()[0:2]
+   [key, value] = val.split(':')
    acc[key] = value
    return acc
-self.custom_subscriber_attributes = reduce(build_obj, a.split(','), {})
+self.custom_attributes = reduce(build_obj, a.split(','), {})
 ```
 
 #### For people who like other folks to be able to read their code
@@ -47,7 +49,7 @@ self.custom_attributes = {}
 entries = a.split(',')
 # for each entry split the key value pairs and add them to the hash
 for entry in entries:
-   [key, value] = entry.split(':')[0:2]
+   [key, value] = entry.split(':')
    self.custom_attributes[key] = value
 ```
 
@@ -77,7 +79,7 @@ Of course once the functionality is separated out into a function, it matters a 
 So quick tip version:
 
 1. Think about the audience of the code you're writing
-2. Naming functions well limits the needs to make implementation details readable for everybody and makes your program flow easier to follow.
+2. Naming functions well limits the needs to make implementation details readable for everybody. It can also make your program flow easier to follow.
 
 ### Subscribe
 
