@@ -4,6 +4,7 @@ date: "2015-12-31 05:56:04+00:00"
 layout: "post"
 path: "/2015/12/31/2015-roundup-2"
 category: "meta"
+description: "A look back at benmccormick.org in 2015"
 pageViews: "374"
 last30pageViews: "6"
 ---

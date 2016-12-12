@@ -30,6 +30,7 @@ class BlogIndex extends React.Component {
             .filter(page => (
                 (get(page, 'file.ext') === 'md') &&
                 (!include(page.path, '/404')) &&
+                (!page.data.dontfeature) &&
                 (get(page, 'data.layout') === 'post')
             )
     ), 6);
@@ -46,10 +47,12 @@ class BlogIndex extends React.Component {
         <LinkList
           title = "Recent Articles"
           pages = {sortedPages}
+          showCategory = {false}
         />
         <LinkList
           title = "Popular Articles"
           pages = {popularPages}
+          showCategory = {false}
         />
         <h1> Past Series </h1>
         <ul
@@ -70,15 +73,18 @@ class BlogIndex extends React.Component {
               //borderBottom: '1px solid rgba(220,220,220, 0.3)',
             }}
           >
-            <div
-              style = {{
-                maxWidth: '25rem',
-              }}
-            >
+            <div >
               <Link
                 style = {{boxShadow: 'none'}}
                 to = {prefixLink('/marionette-explained/')}
               >Marionette: Explained</Link>
+              <p
+                style = {{
+                  fontStyle: 'italic',
+                  margin: 0,
+                  color: 'rgba(100,100,100, 0.7)'
+                }}
+              > An in depth exploration of how to build better Backbone apps with Marionette</p>
             </div>
           </li>
           <li
@@ -92,15 +98,18 @@ class BlogIndex extends React.Component {
               //borderBottom: '1px solid rgba(220,220,220, 0.3)',
             }}
           >
-            <div
-              style = {{
-                maxWidth: '25rem',
-              }}
-            >
+            <div >
               <Link
                 style = {{boxShadow: 'none'}}
                 to = {prefixLink('/learning-vim-in-2014/')}
               >Learning Vim in 2014</Link>
+              <p
+                style = {{
+                  fontStyle: 'italic',
+                  margin: 0,
+                  color: 'rgba(100,100,100, 0.7)'
+                }}
+              > A modern look at text editing with Vim</p>
             </div>
           </li>
         </ul>

@@ -1,5 +1,16 @@
+.category-icon-wrapper {
+  color: rgba(87, 163, 232, 0.5);
+}
+
+.category-icon {
+  display: inline-block;
+  width: 0.75em;
+  margin-right: 0.5em;
+
+}
 .category-icon * {
-  fill: rgba(100,100,100, 0.7);
+  fill: #57A3E8;
+  fill: rgba(87, 163, 232, 0.5);
 }
 
 .category-icon > i {

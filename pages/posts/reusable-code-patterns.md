@@ -4,6 +4,7 @@ date: "2016-01-08 05:22:29+00:00"
 layout: "post"
 path: "/2016/01/08/reusable-code-patterns"
 category: "software-productivity"
+description: "Practical tips on reusing existing code"
 pageViews: "6064"
 last30pageViews: "58"
 ---

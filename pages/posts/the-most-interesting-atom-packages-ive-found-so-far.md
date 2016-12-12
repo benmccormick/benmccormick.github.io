@@ -4,6 +4,7 @@ date: "2016-01-11 02:25:49+00:00"
 layout: "post"
 path: "/2016/01/11/the-most-interesting-atom-packages-ive-found-so-far"
 category: "tools"
+description: "A rundown of the coolest Atom packages I've seen"
 pageViews: "74474"
 last30pageViews: "4607"
 ---

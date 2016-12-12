@@ -4,6 +4,7 @@ date: "2015-11-25 14:43:46+00:00"
 layout: "post"
 path: "/2015/11/25/productive-javascript-development"
 category: "software-productivity"
+description: "An examination of what makes JavaScript development productive"
 pageViews: "2253"
 last30pageViews: "143"
 ---

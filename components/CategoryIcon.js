@@ -35,17 +35,12 @@ class CategoryIcon extends React.Component {
     let selectedCategory = find(categories, {key: category});
 
     let icon = selectedCategory ? icons[selectedCategory.icon] : question;
-    return <span
-      style = {{
-        display: 'inline-block',
-        width: '0.75em',
-        flexShrink: 0,
-        color: 'blue',
-        marginRight: '0.5em',
-      }}
-      className = {`category-icon category-icon-${category}`}
-    >
-      <InlineSVG src = {icon} />
+    let text = selectedCategory ? selectedCategory.title : 'Uncategorized';
+    return <span className = 'category-icon-wrapper'>
+      <span className = {`category-icon category-icon-${category}`} >
+        <InlineSVG src = {icon} />
+      </span>
+      {text}
     </span>;
   }
 }

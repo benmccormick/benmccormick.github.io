@@ -25,7 +25,11 @@ class BlogArchive extends React.Component {
             {'name': 'keywords', 'content': 'blog, articles'},
           ]}
         />
-        <LinkList pages = {sortedPages} title = 'Articles' />
+        <LinkList
+          pages = {sortedPages}
+          title = 'Articles'
+          showCategory = {true}
+        />
         <Footer />
       </div>
     );

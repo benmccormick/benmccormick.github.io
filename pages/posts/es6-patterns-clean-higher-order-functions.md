@@ -4,6 +4,7 @@ date: "2015-11-30 05:06:03+00:00"
 layout: "post"
 path: "/2015/11/30/es6-patterns-clean-higher-order-functions"
 category: "javascript"
+description: "A quick tip for clean functional syntax in ES6"
 pageViews: "3400"
 last30pageViews: "135"
 ---

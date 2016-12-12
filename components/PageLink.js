@@ -8,7 +8,7 @@ import moment from 'moment';
 
 class PageLink extends React.Component {
   render() {
-    let { page } = this.props;
+    let { page, showCategory } = this.props;
     const _title = get(page, 'data.title') || page.path;
     return (
       <li
@@ -27,8 +27,17 @@ class PageLink extends React.Component {
             alignItems: 'center',
           }}
         >
-          <CategoryIcon category = {page.data.category} />
-          <Link style = {{boxShadow: 'none'}} to = {prefixLink(page.path)}>{_title}</Link>
+          <div>
+            <Link style = {{boxShadow: 'none'}} to = {prefixLink(page.path)}>{_title}</Link>
+            <p
+              style = {{
+                fontStyle: 'italic',
+                margin: 0,
+                color: 'rgba(100,100,100, 0.7)'
+              }}
+            > {page.data.description}</p>
+            {showCategory ? <CategoryIcon category = {page.data.category} /> : null }
+          </div>
         </div>
         <span
           className = "no-mobile"
@@ -43,6 +52,7 @@ class PageLink extends React.Component {
 
 PageLink.propTypes = {
   page: React.PropTypes.object.isRequired,
+  showCategory: React.PropTypes.bool.isRequired,
 };
 
 export default PageLink;

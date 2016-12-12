@@ -4,6 +4,8 @@ date: "2015-05-28 14:10:00+00:00"
 layout: "post"
 path: "/2015/05/28/moving-past-requirejs"
 category: "frameworks"
+dontfeature: true
+description: "A look at the problems with using requireJS in todays JavaScript world"
 pageViews: "33633"
 last30pageViews: "1379"
 ---

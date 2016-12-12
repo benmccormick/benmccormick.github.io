@@ -4,6 +4,7 @@ date: "2016-03-09 06:04:39+00:00"
 layout: "post"
 path: "/2016/03/09/stability-vs-decline"
 category: "software-productivity"
+description: "What is the difference between stable and declining software?"
 pageViews: "761"
 last30pageViews: "20"
 ---
