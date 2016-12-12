@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2016-12-12T04:07:58Z</updated>
+    <updated>2016-12-12T14:02:10Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -37,10 +37,10 @@
 </code></pre>
 <h5>For people who like functions</h5>
 <pre><code class="language-python">def build_obj(acc, val):
-   [key, value] = val.split()[0:2]
+   [key, value] = val.split(':')
    acc[key] = value
    return acc
-self.custom_subscriber_attributes = reduce(build_obj, a.split(','), {})
+self.custom_attributes = reduce(build_obj, a.split(','), {})
 </code></pre>
 <h4>For people who like other folks to be able to read their code</h4>
 <pre><code class="language-python"># create a hash of custom attributes
@@ -49,7 +49,7 @@ self.custom_attributes = {}
 entries = a.split(',')
 # for each entry split the key value pairs and add them to the hash
 for entry in entries:
-   [key, value] = entry.split(':')[0:2]
+   [key, value] = entry.split(':')
    self.custom_attributes[key] = value
 </code></pre>
 <p>The joke of course is that it doesn’t really matter what the author of the code considers the best way to write it.  Like writing an essay or persuasive speech, it is much more important to consider the audience, and what style will work best for them.  Most code will eventually be read by other people, even if that is simply a future version of the original author who has been stripped of context by time [^1].</p>
@@ -72,7 +72,7 @@ def parse_entry_string (entry_string):
 <p>So quick tip version:</p>
 <ol>
 <li>Think about the audience of the code you’re writing</li>
-<li>Naming functions well limits the needs to make implementation details readable for everybody and makes your program flow easier to follow.</li>
+<li>Naming functions well limits the needs to make implementation details readable for everybody. It can also make your program flow easier to follow.</li>
 </ol>
 <h3>Subscribe</h3>
 <p>Thanks for taking the time to read this post!  Software development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out the my post from last year on <a href="http://benmccormick.org/2016/01/25/staying-productive/">staying productive</a>.</p>
