@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Sun, 11 Dec 2016 19:35:05 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 12 Dec 2016 03:29:23 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
@@ -16,7 +16,7 @@
             <content:encoded><![CDATA[<p>This week I gave a talk at the brand new Triangle ReactJS meetup group on how <a href="https://facebook.github.io/jest/">Jest</a> can save developers time.  I was asked afterwards to share the content online for those who missed it.  My talk was mostly demos and wasn’t recorded, so there unfortunately isn’t much to share, but I thought I could write out the basic ideas behind the talk, and share them here.</p>
 <h3>What is Jest</h3>
 <p>Jest is a JavaScript testing framework built by Facebook to address their internal problems testing JavaScript code.  It was open-sourced in 2014, but unlike Facebook’s other recent high profile JavaScript OSS projects like React, Flux, Relay and GraphQL, it failed to develop much traction in the community and mostly stagnated for 2 years.  That changed in early 2016 when 2 Facebook developers, <a href="https://twitter.com/cpojer">Christoph Pojer</a> and <a href="https://twitter.com/abramov_dmitrii">Dmitrii Abramov</a> began working on improving the project. Over the past year they’ve brought massive improvements to the developer experience of using Jest.</p>
-<p>At a more practical level Jest is a test runner with a built in assertion library and support for code coverage, babel transpilation, and module mocking.  It began as a wrapper around [Jasmine][jasmine], an older JavaScript testing library, but has since replaced parts of Jasmine with replacement functionality, while retaining backwards compatibility.</p>
+<p>At a more practical level Jest is a test runner with a built in assertion library and support for code coverage, babel transpilation, and module mocking.  It began as a wrapper around <a href="https://jasmine.github.io/">Jasmine</a>, an older JavaScript testing library, but has since replaced parts of Jasmine with replacement functionality, while retaining backwards compatibility.</p>
 <h3>How Can Jest Save Me Time?</h3>
 <p>Jest saves developers  time in 4 main ways:</p>
 <ol>
