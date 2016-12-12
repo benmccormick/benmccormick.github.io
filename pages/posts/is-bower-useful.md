@@ -5,7 +5,7 @@ layout: "post"
 path: "/2015/01/22/is-bower-useful"
 category: "tools"
 pageViews: "2966"
-last30pageViews: "59"
+last30pageViews: "57"
 ---
 
 

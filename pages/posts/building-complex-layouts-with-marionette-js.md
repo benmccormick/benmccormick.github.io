@@ -6,8 +6,8 @@ path: "/2014/12/22/building-complex-layouts-with-marionette-js"
 description: "How to build complex UIs with Marionette.js"
 keywords: "Marionette, Backbone, UI, Architecture, JavaScript"
 category: "frameworks"
-pageViews: "23200"
-last30pageViews: "318"
+pageViews: "23205"
+last30pageViews: "294"
 ---
 
 *This is the third post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the first post in the series, [The Case For Marionette][caseformarionette]  Also note that this article was written about Marionette v2.  The current latest version of Marionette is v3, and while most of the high level concepts remain the same, the specific syntax has changed in some cases.*

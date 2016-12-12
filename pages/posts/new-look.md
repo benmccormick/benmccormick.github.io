@@ -6,8 +6,8 @@ path: "/2016/12/02/whole-new-site/"
 description: "Introducing a new look for benmccormick.org"
 keywords: "Gatsby blog ghost benmccormick.org"
 category: "meta"
-pageViews: "95"
-last30pageViews: "95"
+pageViews: "97"
+last30pageViews: "97"
 ---
 
 After 2.5 years of stability, this week I moved benmccormick.org to a new platform and overhauled the look and feel. Although most readers have seen the site remain relatively stable, this is actually the 5th major revision of the site since it was first created, so this seems like a good time for a quick trip down memory lane.

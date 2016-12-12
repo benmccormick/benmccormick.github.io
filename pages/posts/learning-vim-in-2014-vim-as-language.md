@@ -6,8 +6,8 @@ path: "/2014/07/02/learning-vim-in-2014-vim-as-language"
 description: "An explanation of the grammar behind Vim"
 keywords: "vim language grammar text object"
 category: "tools"
-pageViews: "34259"
-last30pageViews: "519"
+pageViews: "34274"
+last30pageViews: "514"
 ---
 
 Wouldn't it be nice if your text editor just did what you said instead of making you slowly and manually add and delete characters?  Vim doesn't speak English, but it has a language of its own, built out of composable commands, that is much more efficient than the simple movement and editing commands you'll find in other editors.  In my [last post][vimbasics], I took an initial look at Vim as a language.  I'm going to dive deeper into that here.

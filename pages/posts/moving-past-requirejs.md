@@ -4,10 +4,10 @@ date: "2015-05-28 14:10:00+00:00"
 layout: "post"
 path: "/2015/05/28/moving-past-requirejs"
 category: "frameworks"
-dontfeature: true
+dontfeature: "true"
 description: "A look at the problems with using requireJS in todays JavaScript world"
-pageViews: "33633"
-last30pageViews: "1379"
+pageViews: "33651"
+last30pageViews: "1311"
 ---
 
 RequireJS has been a hugely influential and important tool in the JavaScript world.  It's still used in many solid, well-written projects today.  But as it has stagnated and competitors have grown up, it now suffers compared to the alternatives.  It's time for new projects to look past RequireJS when deciding how to structure their front-end projects.

@@ -4,8 +4,8 @@ date: "2013-02-13 21:00:00+00:00"
 layout: "post"
 path: "/2013/02/13/simple-publish-subscribe-with-jquery"
 category: "frameworks"
-pageViews: "7822"
-last30pageViews: "82"
+pageViews: "7823"
+last30pageViews: "77"
 ---
 
 Here's a cool pattern that I've been able to use in two of my projects lately:

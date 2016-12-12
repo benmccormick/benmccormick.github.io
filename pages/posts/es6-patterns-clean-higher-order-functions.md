@@ -5,8 +5,8 @@ layout: "post"
 path: "/2015/11/30/es6-patterns-clean-higher-order-functions"
 category: "javascript"
 description: "A quick tip for clean functional syntax in ES6"
-pageViews: "3400"
-last30pageViews: "135"
+pageViews: "3401"
+last30pageViews: "132"
 ---
 
 <div class="explanation">

@@ -6,7 +6,7 @@ path: "/2014/06/30/learning-vim-in-2014-the-basics"
 description: "The basics of learning Vim"
 keywords: "vim, basics, beginner, tutorial"
 category: "tools"
-pageViews: "20047"
+pageViews: "20053"
 last30pageViews: "268"
 ---
 

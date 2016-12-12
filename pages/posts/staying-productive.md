@@ -6,7 +6,7 @@ path: "/2016/01/25/staying-productive"
 category: "software-productivity"
 description: "Thinking through the environmental factors that lead to productivity"
 pageViews: "989"
-last30pageViews: "52"
+last30pageViews: "50"
 ---
 
 I've been thinking a lot lately about what makes me productive vs unproductive.  A lot of the time Software Developers tend to focus on their tools and environments when they think about productivity.  I'm certainly all into that, as you can see if you look [back][vim], [through][productivejs], [my blog][atom].  But in my mind the most important factors in building productivity are non-software related.

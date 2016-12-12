@@ -7,7 +7,7 @@ description: "A book review of Effective Javascript by David Herman"
 keywords: "JavaScript, David Herman, Book Review, Effective JavaScript"
 category: "reviews"
 pageViews: "1590"
-last30pageViews: "26"
+last30pageViews: "21"
 ---
 
 ![Effective JS](/posts/images/effectivejs.png)

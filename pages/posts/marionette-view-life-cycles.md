@@ -6,8 +6,8 @@ path: "/2015/01/05/marionette-view-life-cycles"
 description: "A breakdown of the lifecycle of Marionette Views"
 keywords: "Marionette.js JavaScript Backbone Views life cycle"
 category: "frameworks"
-pageViews: "18453"
-last30pageViews: "461"
+pageViews: "18457"
+last30pageViews: "430"
 ---
 
 *This is the fourth post in a series on [Marionette.js][marionette], a framework for developing apps with [Backbone.js][backbone].  For more background on what Marionette is, check out the series page: [Marionette Explained][marionetteexplained]  Also note that this article was written about Marionette v2.  The current latest version of Marionette is v3, and while most of the high level concepts remain the same, the specific syntax has changed in some cases.*

@@ -4,8 +4,8 @@ date: "2015-06-08 11:51:25+00:00"
 layout: "post"
 path: "/2015/06/08/how-jquery-works-an-introduction"
 category: "frameworks"
-pageViews: "17293"
-last30pageViews: "504"
+pageViews: "17297"
+last30pageViews: "483"
 ---
 
 *This is the first post in a series on "How jQuery Works".  This is not a series about how to use jQuery, instead these posts will focus on how jQuery actually works.  If you're interested in diving into the source of the most popular JavaScript library on the planet, keep reading.*

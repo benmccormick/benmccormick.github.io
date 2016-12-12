@@ -5,8 +5,8 @@ layout: "post"
 path: "/2016/01/11/the-most-interesting-atom-packages-ive-found-so-far"
 category: "tools"
 description: "A rundown of the coolest Atom packages I've seen"
-pageViews: "74474"
-last30pageViews: "4607"
+pageViews: "74539"
+last30pageViews: "4430"
 ---
 
 I've been using [Atom][atom] as my primary text editor for the last 3 months.  I don't completely love it.  There are elements (startup speed, maturity of some core editing components, not being able to run it in a terminal) that I miss from my experiences with Vim and/or Sublime Text.  I'm using Atom though because the core editing experience is now "good enough" and the way the editor is built allows for some very cool and unique experiences.  Atom (like [Visual Studio Code][vsc]) is built on [Electron][electron], Github's JavaScript environment for building desktop apps.  Because it is built with web technologies and was designed from the beginning to be extensible, it is much easier for most developers to build rich visual extensions on top of Atom that provide unique UIs for editor functions than it is in Sublime Text, Vim, Emacs or an IDE.  The following are some of the "most interesting" Atom packages I've found.  Interesting in this case means that they really only could have been done as they are in Atom or a similarly flexible editor.

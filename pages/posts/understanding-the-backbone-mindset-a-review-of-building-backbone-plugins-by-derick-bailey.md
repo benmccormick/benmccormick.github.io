@@ -5,7 +5,7 @@ layout: "post"
 path: "/2014/07/09/understanding-the-backbone-mindset-a-review-of-building-backbone-plugins-by-derick-bailey"
 category: "reviews"
 pageViews: "12538"
-last30pageViews: "41"
+last30pageViews: "40"
 ---
 
 As the saying goes, judging a book by its cover is a dangerous business.  A lot of books have titles that promise great things, and content that under-delivers and disappoints.  Every once in a while, though, you find a gem that does the opposite. [Building Backbone Plugins][bbp] sounds like a niche book for library developers.  But it actually is the best resource on [Backbone.JS][backbone] development I've found, a book that will benefit anyone who works with Backbone.

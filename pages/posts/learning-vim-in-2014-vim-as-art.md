@@ -6,8 +6,8 @@ path: "/2014/07/16/learning-vim-in-2014-vim-as-art"
 description: "How using Vim is more of an artform than a science"
 keywords: "vim dot command"
 category: "tools"
-pageViews: "15003"
-last30pageViews: "82"
+pageViews: "15005"
+last30pageViews: "84"
 ---
 
 How do you feel about being efficient?  If you're reading this blog, I bet you like it.  What if I told you your text editor could help you cut the amount of time you spend typing in half, with just a little reading and a bit of practice?  For you Vim users, it's very possible that you're spending way more time typing than needed.

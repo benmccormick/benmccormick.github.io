@@ -5,7 +5,7 @@ layout: "post"
 path: "/2012/12/30/sublime-text-for-javascript-keyboard-shortcuts"
 category: "tools"
 pageViews: "13761"
-last30pageViews: "109"
+last30pageViews: "106"
 ---
 
 I'm starting a new series of posts on Sublime Text, and how to get the most out of the editor.

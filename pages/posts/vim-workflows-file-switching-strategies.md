@@ -4,8 +4,8 @@ date: "2014-11-10 04:06:52+00:00"
 layout: "post"
 path: "/2014/11/10/vim-workflows-file-switching-strategies"
 category: "tools"
-pageViews: "5209"
-last30pageViews: "110"
+pageViews: "5213"
+last30pageViews: "111"
 ---
 
 Becoming productive in Vim is about more than just knowing all of the features available to you<sup id="fnref:1">[1](#fn:1)</sup>. It's all about knowing which ones to use in which situations.  In my series from this summer on [learning Vim][learningvim], I focused a lot on the different tools Vim provides for solving problems.  Today I'll show how I put some of those tools together to actually be more productive.

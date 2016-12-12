@@ -6,8 +6,8 @@ path: "/2014/07/14/learning-vim-in-2014-configuring-vim"
 description: "How to set up a modern vim config"
 keywords: "vim configuration vimrc"
 category: "tools"
-pageViews: "36184"
-last30pageViews: "741"
+pageViews: "36208"
+last30pageViews: "736"
 ---
 
 Plenty of Vim articles you'll find online start you off in the wrong place. Instead of teaching you how Vim works, they toss a bunch of scary looking code at you, tell you to shove it in a file, and claim that it will make Vim just like Textmate / Sublime / Emacs / Visual Studio. Except way cooler!  People quickly find out that if what they want is to use their old editor, they should just *use their old editor*, and learn to use it as efficiently as possible.

@@ -5,8 +5,8 @@ layout: "post"
 path: "/2015/12/31/2015-roundup-2"
 category: "meta"
 description: "A look back at benmccormick.org in 2015"
-pageViews: "374"
-last30pageViews: "6"
+pageViews: "375"
+last30pageViews: "7"
 ---
 
 Thanks to all of you who have followed my blog this year. More people visited the blog this year than in its previous 2 years of existence combined.  I'm excited to continue writing and starting conversations in 2016.

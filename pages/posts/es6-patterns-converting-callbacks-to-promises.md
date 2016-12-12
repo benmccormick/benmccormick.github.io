@@ -5,8 +5,8 @@ layout: "post"
 path: "/2015/12/30/es6-patterns-converting-callbacks-to-promises"
 category: "javascript"
 description: "How to convert a callback driven API to a Promise-based one"
-pageViews: "16029"
-last30pageViews: "1904"
+pageViews: "16063"
+last30pageViews: "1822"
 ---
 
 <div class="explanation">

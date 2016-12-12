@@ -4,8 +4,8 @@ date: "2014-01-06 23:30:00+00:00"
 layout: "post"
 path: "/2014/01/06/digging-into-knockout-builds"
 category: "frameworks"
-pageViews: "421"
-last30pageViews: "3"
+pageViews: "422"
+last30pageViews: "2"
 ---
 
 There's a lot you can learn by looking through other people's code.  This is especially true when you're looking at widely used open-source libraries, where you can see how people have solved real problems with code that has been battle-tested and debated.
