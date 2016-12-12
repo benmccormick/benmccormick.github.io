@@ -10,7 +10,7 @@ import Helmet from 'react-helmet';
 import { config } from 'config';
 import include from 'underscore.string/include';
 import Footer from 'components/Footer';
-import moment from 'moment';
+import LinkList from 'components/LinkList';
 
 class BlogIndex extends React.Component {
   render() {
@@ -33,39 +33,6 @@ class BlogIndex extends React.Component {
                 (get(page, 'data.layout') === 'post')
             )
     ), 6);
-    const buildPageLink = page => {
-      const title = get(page, 'data.title') || page.path;
-      return (
-        <li
-          key = {page.path}
-          style = {{
-            marginBottom: rhythm(1 / 2),
-            listStyle: 'none',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-              //borderBottom: '1px solid rgba(220,220,220, 0.3)',
-          }}
-        >
-          <div
-            style = {{
-              maxWidth: '25rem',
-            }}
-          >
-            <Link style = {{boxShadow: 'none'}} to = {prefixLink(page.path)}>{title}</Link>
-          </div>
-          <span
-            className = "no-mobile"
-            style = {{
-              color: 'rgba(100,100,100, 0.7)',
-            }}
-          >{moment(page.data.date).fromNow()}</span>
-        </li>
-        );
-    };
-
-    const pageLinks = sortedPages.map(buildPageLink);
-    const popularPageLinks = popularPages.map(buildPageLink);
     return (
       <div>
         <Helmet
@@ -76,24 +43,14 @@ class BlogIndex extends React.Component {
             {'name': 'keywords', 'content': 'blog javascript development code react vim'},
           ]}
         />
-        <h1> Recent Articles </h1>
-        <ul
-          style = {{
-            marginLeft: 0,
-            paddingLeft: 0,
-          }}
-        >
-          {pageLinks}
-        </ul>
-        <h1> Popular Articles </h1>
-        <ul
-          style = {{
-            marginLeft: 0,
-            paddingLeft: 0,
-          }}
-        >
-          {popularPageLinks}
-        </ul>
+        <LinkList
+          title = "Recent Articles"
+          pages = {sortedPages}
+        />
+        <LinkList
+          title = "Popular Articles"
+          pages = {popularPages}
+        />
         <h1> Past Series </h1>
         <ul
           style = {{

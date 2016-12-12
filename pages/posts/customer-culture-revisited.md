@@ -3,6 +3,7 @@ title: "Customer Culture Revisited"
 date: "2013-06-08 18:45:00+00:00"
 layout: "post"
 path: "/2013/06/08/customer-culture-revisited"
+category: "opinion"
 pageViews: "94"
 last30pageViews: "0"
 ---
@@ -23,4 +24,3 @@ Almost 2 years later, this is looking extremely prescient.  I like what Microsof
 
 [marco]: http://www.marco.org/2011/09/17/customer-culture-apple-and-microsoft
 [ars]: http://arstechnica.com/information-technology/2013/06/windows-8-1-gains-boot-to-desktop-to-attract-business-users/
-

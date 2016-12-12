@@ -3,6 +3,7 @@ title: "Sync Multiple Google Calendars in Windows 8"
 date: "2012-11-07 12:00:00+00:00"
 layout: "post"
 path: "/2012/11/07/sync-multiple-google-calendars-in-windows-8"
+category: "tools"
 pageViews: "31"
 last30pageViews: "0"
 ---
@@ -29,4 +30,3 @@ This is of course easier if you actually own an iOS device of some kind, since y
 ###Why its ridiculous
 
 For an advocate of the open web, Google sure does manage to make its services hard to use on competing platforms doesn't it? I understood when Google's stuff was crippled on Windows Phone, where it has no native apps, and the web-apps are the feature phone versions. It is a niche market and Google wasn't going to put extra time and energy into optimizing it in order to help a competitor. But Windows 8 is hardly going to be a niche market. Google is actively preventing something that clearly is technically trivial. Doing this in order to discourage users from using your service on a competing platform may be good business, but it is not "open web friendly." Its Google's choice to make obviously, and I wouldn't call it unethical exactly, but they've come a long way from the moral high ground they claimed to occupy in the web space just a few years ago.
-

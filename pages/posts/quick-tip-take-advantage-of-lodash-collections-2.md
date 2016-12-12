@@ -5,6 +5,7 @@ layout: "post"
 path: "/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2"
 description: "A quick look at the benefits of using lodash collection methods"
 keywords: "lodash javascript collections arrays"
+category: "frameworks"
 pageViews: "455"
 last30pageViews: "81"
 ---

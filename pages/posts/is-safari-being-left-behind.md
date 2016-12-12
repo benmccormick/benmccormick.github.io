@@ -3,6 +3,7 @@ title: "Is Safari being left behind?"
 date: "2015-06-10 04:03:41+00:00"
 layout: "post"
 path: "/2015/06/10/is-safari-being-left-behind"
+category: "platform"
 pageViews: "8620"
 last30pageViews: "67"
 ---

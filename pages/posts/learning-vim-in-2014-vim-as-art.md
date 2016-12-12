@@ -5,6 +5,7 @@ layout: "post"
 path: "/2014/07/16/learning-vim-in-2014-vim-as-art"
 description: "How using Vim is more of an artform than a science"
 keywords: "vim dot command"
+category: "tools"
 pageViews: "15003"
 last30pageViews: "82"
 ---

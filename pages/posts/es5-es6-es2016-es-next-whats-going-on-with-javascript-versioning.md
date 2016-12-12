@@ -5,6 +5,7 @@ layout: "post"
 path: "/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning"
 description: "A quick summary of the naming conventions for the JavaScript language specs"
 keywords: "JavaScript, ECMAScript, ES6, ES7, ES5"
+category: "javascript"
 pageViews: "94732"
 last30pageViews: "7409"
 ---

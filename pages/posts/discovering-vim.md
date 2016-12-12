@@ -3,11 +3,12 @@ title: "Discovering Vim"
 date: "2014-06-02 22:00:00+00:00"
 layout: "post"
 path: "/2014/06/02/discovering-vim"
+category: "tools"
 pageViews: "933"
 last30pageViews: "4"
 ---
 
-I've now been using Vim as my primary text editor for the last 9 months. 
+I've now been using Vim as my primary text editor for the last 9 months.
 When I started, I intended to learn it well enough to use in environments that didn't support Sublime Text. In the end though it ended up becoming my single purpose editor for all occasions. Writing code, blogging, diffs, and reading logs all go through vim.  So why do I use Vim?
 
 #### More Efficient Movement and Editing
@@ -40,45 +41,45 @@ For now I'm enjoying the Vim experience.  Despite a few warts, I really do think
 <ol>
     <li class="footnote" id="fn:1">
         <p>
-I was never taught to type correctly growing up. Apparently this is unusual in my generation.  Early last year I decided to ditch my hunt and peck 5 finger style for "the proper way."  It was a great learning experience.  I now muddle along at a mediocre 62 WPM according to online typing tests. 
+I was never taught to type correctly growing up. Apparently this is unusual in my generation.  Early last year I decided to ditch my hunt and peck 5 finger style for "the proper way."  It was a great learning experience.  I now muddle along at a mediocre 62 WPM according to online typing tests.
     	<a href="#fnref:1" title="return to article"> ↩</a></p>
     </li>
-    
+
     <li class="footnote" id="fn:2">
         <p>
 I highly recommend Drew Neil's Practical Vim for anyone who wants to get serious about using Vim.  It taught me about the power of repetition in Vim as well as how to formulate Vim's many disparate features into a coherent text editing philosophy.
     	<a href="#fnref:2" title="return to article"> ↩</a></p>
     </li>
-    
+
     <li class="footnote" id="fn:3">
         <p>
 Yes there's an official repository, but have you been on Vim.org's repository?  Its an ugly frustrating site that does nothing to highlightuseful plugins.  It also often contains information that is less up-to-date than the plugins github README, and some important packages like ctrlp are not represented there.        
-        
+
     	<a href="#fnref:3" title="return to article"> ↩</a></p>
     </li>
-    
+
     <li class="footnote" id="fn:4">
         <p>
         I'd have no problem investing time in IntelliJ or Visual Studio for instance if I felt like a heavy IDE like that was the way to go, and that they'd add productivity to justify their cost.  They have established companies backing them that are able to do things like respond to customer feedback, provide product roadmaps, etc.
-        
+
     	<a href="#fnref:4" title="return to article"> ↩</a></p>
     </li>
-   
+
    <li class="footnote" id="fn:5">
     <p>
   Hint: Use Vundle
-        
+
  <a href="#fnref:5" title="return to article"> ↩</a></p>
     </li>
-    
+
     <li class="footnote" id="fn:6">
         <p>
         Due to the terminal compatibility requirement
-        
+
     	<a href="#fnref:6" title="return to article"> ↩</a></p>
     </li>
-    
-    
+
+
 </ol>
 
 </div>
@@ -91,4 +92,3 @@ Yes there's an official repository, but have you been on Vim.org's repository?  
 [neovim]: http://neovim.org/
 [jps]: http://www.sublimetext.com/forum/viewtopic.php?f=2&t=14591
 [janus]:https://github.com/carlhuda/janus
-

@@ -3,6 +3,7 @@ title: "Digging Into Knockout Builds"
 date: "2014-01-06 23:30:00+00:00"
 layout: "post"
 path: "/2014/01/06/digging-into-knockout-builds"
+category: "frameworks"
 pageViews: "421"
 last30pageViews: "3"
 ---
@@ -216,4 +217,3 @@ Take a look again at amd-pre.js.  Its 15 lines of code to support AMD loaders, C
 [jasmine]: http://pivotal.github.io/jasmine/
 [knockout]: http://knockoutjs.com/
 [kosource]: https://github.com/knockout/knockout
-

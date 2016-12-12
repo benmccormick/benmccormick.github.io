@@ -3,6 +3,7 @@ title: "Explaining Javascript: Object Oriented Programming"
 date: "2013-01-12 03:05:00+00:00"
 layout: "post"
 path: "/2013/01/12/explaining-javascript-object-oriented-programming"
+category: "javascript"
 pageViews: "874"
 last30pageViews: "68"
 ---
@@ -128,9 +129,9 @@ Thanks to <a href="https://plus.google.com/u/0/110077141419510454119/posts">Eric
 <a href="#fnref:2" title="return to article"> ↩</a>
 
 </li>
-    
-    
-    
+
+
+
 </ol></div>
 
 
@@ -145,5 +146,3 @@ Thanks to <a href="https://plus.google.com/u/0/110077141419510454119/posts">Eric
 [zakasbook]: https://leanpub.com/oopinjavascript
 [ejsclosures]: http://www.benmccormick.org/blog/2013/01/08/javascript-explained-closures/
 [ejsoop]: http://www.benmccormick.org/blog/2013/01/12/javascript-explained-object-oriented-javascript/
-
-

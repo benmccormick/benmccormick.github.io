@@ -5,6 +5,7 @@ layout: "post"
 path: "/2014/12/02/the-case-for-marionette-js"
 description: "Making the case for Marionette.js as a framework for front end development"
 keywords: "JavaScript Marionette.js Backbone"
+category: "frameworks"
 pageViews: "28481"
 last30pageViews: "347"
 ---

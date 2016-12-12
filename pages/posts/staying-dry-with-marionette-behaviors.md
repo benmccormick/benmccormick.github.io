@@ -5,6 +5,7 @@ layout: "post"
 path: "/2015/03/23/staying-dry-with-marionette-behaviors"
 description: "How to keep your Views DRY using Behaviors in your Marionette app"
 keywords: "Marionette.js behaviors JavaScript"
+category: "frameworks"
 pageViews: "9106"
 last30pageViews: "129"
 ---

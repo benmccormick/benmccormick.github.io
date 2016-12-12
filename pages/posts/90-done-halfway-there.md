@@ -3,6 +3,7 @@ title: "90% Done, Halfway There"
 date: "2013-06-09 18:45:00+00:00"
 layout: "post"
 path: "/2013/06/09/90-done-halfway-there"
+category: "opinion"
 pageViews: "290"
 last30pageViews: "5"
 ---
@@ -74,6 +75,3 @@ Software Development estimation is hard. There are a variety of challenges, some
 
 [pragmatic]:http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X
 [twitter]: https://www.twitter.com/ben336
-
-
-

@@ -5,6 +5,7 @@ layout: "post"
 path: "/2016/03/07/the-sad-state-of-the-backbone-ecosystem"
 description: "A look at the current state of the JavaScript ecosystem and the challenges it faces"
 keywords: "Backbone github graphs repos"
+category: "frameworks"
 pageViews: "25113"
 last30pageViews: "679"
 ---

@@ -3,6 +3,7 @@ title: "Component Based Development"
 date: "2014-08-07 11:30:00+00:00"
 layout: "post"
 path: "/2014/08/07/component-based-development"
+category: "platform"
 pageViews: "8552"
 last30pageViews: "101"
 ---

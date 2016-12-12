@@ -5,6 +5,7 @@ layout: "post"
 path: "/2014/07/21/learning-vim-in-2014-getting-more-from-vim-with-plugins"
 description: "How plugins fit into a Vim workflow"
 keywords: "vim, plugins, vundle, nerdtree, ack, ctrlp"
+category: "tools"
 pageViews: "81794"
 last30pageViews: "1002"
 ---

@@ -5,6 +5,7 @@ layout: "post"
 path: "/2014/07/14/learning-vim-in-2014-configuring-vim"
 description: "How to set up a modern vim config"
 keywords: "vim configuration vimrc"
+category: "tools"
 pageViews: "36184"
 last30pageViews: "741"
 ---

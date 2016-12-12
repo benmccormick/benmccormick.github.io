@@ -5,6 +5,7 @@ layout: "post"
 path: "/2014/07/07/learning-vim-in-2014-working-with-files"
 description: "How to easily navigate the file system in Vim"
 keywords: "vim files file system splits buffers"
+category: "tools"
 pageViews: "13116"
 last30pageViews: "216"
 ---

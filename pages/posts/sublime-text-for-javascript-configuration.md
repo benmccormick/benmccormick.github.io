@@ -3,6 +3,7 @@ title: "Sublime Text For Javascript: Configuration"
 date: "2013-01-01 18:00:00+00:00"
 layout: "post"
 path: "/2013/01/01/sublime-text-for-javascript-configuration"
+category: "tools"
 pageViews: "9141"
 last30pageViews: "21"
 ---
@@ -27,7 +28,7 @@ to give you very fine grained control of how your editor will act for different 
 From the [Sublime Docs](http://www.sublimetext.com/docs/2/settings.html),  settings are prioritized like this:
 
 > Settings files are consulted in this order:
-> 
+>
 > Packages/Default/Preferences.sublime-settings
 > Packages/Default/Preferences (platform).sublime-settings
 > Packages/User/Preferences.sublime-settings
@@ -234,4 +235,3 @@ I hope this is helpful.  I'll be following up with one final post later this wee
 [macros]: http://docs.sublimetext.info/en/latest/extensibility/macros.html
 
 [creamer]: http://freshbrewedcode.com/jonathancreamer/2012/07/13/a-couple-of-useful-javascript-sublime-text-2-snippets/
-

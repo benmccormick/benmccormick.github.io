@@ -5,6 +5,7 @@ layout: "post"
 path: "/2015/01/05/marionette-view-life-cycles"
 description: "A breakdown of the lifecycle of Marionette Views"
 keywords: "Marionette.js JavaScript Backbone Views life cycle"
+category: "frameworks"
 pageViews: "18453"
 last30pageViews: "461"
 ---

@@ -3,6 +3,7 @@ title: "Revertible Observables in Knockout"
 date: "2013-05-07 20:05:00+00:00"
 layout: "post"
 path: "/2013/05/07/revertible-observables-in-knockout"
+category: "frameworks"
 pageViews: "2958"
 last30pageViews: "50"
 ---

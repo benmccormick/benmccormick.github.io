@@ -5,6 +5,7 @@ layout: "post"
 path: "/2015/06/15/book-review-talking-with-tech-leads"
 description: "A book review of Talking with Tech Leads"
 keywords: "Book Review, Tech Leads"
+category: "reviews"
 pageViews: "1110"
 last30pageViews: "5"
 ---

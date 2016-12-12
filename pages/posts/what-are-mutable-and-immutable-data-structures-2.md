@@ -5,6 +5,7 @@ layout: "post"
 path: "/2016/06/04/what-are-mutable-and-immutable-data-structures-2"
 description: "A quick look at the difference between mutable and immutable data structures"
 keywords: "immutable mutable JavaScript Immutable.js"
+category: "software-productivity"
 pageViews: "679"
 last30pageViews: "118"
 ---

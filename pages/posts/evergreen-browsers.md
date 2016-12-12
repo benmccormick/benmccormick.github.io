@@ -3,6 +3,7 @@ title: "Evergreen Browsers"
 date: "2013-06-11 18:45:00+00:00"
 layout: "post"
 path: "/2013/06/11/evergreen-browsers"
+category: "platform"
 pageViews: "208"
 last30pageViews: "0"
 ---
@@ -19,4 +20,3 @@ I'm excited for this to happen.  Browser diversity is a good thing and worth the
 
 
 [evergreen]:http://tomdale.net/2013/05/evergreen-browsers/
-

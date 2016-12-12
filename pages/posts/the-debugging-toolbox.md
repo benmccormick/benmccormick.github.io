@@ -3,11 +3,12 @@ title: "The Debugging Toolbox"
 date: "2014-08-19 11:35:00+00:00"
 layout: "post"
 path: "/2014/08/19/the-debugging-toolbox"
+category: "software-productivity"
 pageViews: "819"
 last30pageViews: "3"
 ---
 
-Do you know a *Problem Solver*?  They're the ones who can take a crazy, vague bug report from a client and come up with a fix in an hour.  The ones who everybody else asks for help when the project deadline is creeping up.  The ones who get shipped out to the client site when the field team is out of their depth.  In school they were the person you called at 1AM the night before your project was due, hoping for a miracle. 
+Do you know a *Problem Solver*?  They're the ones who can take a crazy, vague bug report from a client and come up with a fix in an hour.  The ones who everybody else asks for help when the project deadline is creeping up.  The ones who get shipped out to the client site when the field team is out of their depth.  In school they were the person you called at 1AM the night before your project was due, hoping for a miracle.
 
 I'm guessing you can think of somebody.  Problem solving is a valuable gift, something that stands out.  But the truth is, all software developers should be problem solvers.  It's a key part of our jobs.  We just happen to call it debugging.
 
@@ -15,7 +16,7 @@ Debugging is hard.  As developers, we're faced with vague problem descriptions, 
 
 I've built up my own debugging process over the years.  It's nothing more exciting than *Problem Solving 101*, but it's a productive way of working that lets me get stuff fixed quickly and keep issues from happening again. It helps me fix things even when I'm not qualified to do so, and keeps maintenance work from overwhelming my ability to get things done.  If that sounds useful to you, you should probably keep reading. Here's my process.
 
-### Step 1: Define The Problem 
+### Step 1: Define The Problem
 
 The need to define the problem seems like common sense, but it often gets skipped.  The first thing you need before fixing a problem is a clear definition of what the problem looks like.  That means a detailed look at 2 things:
 
@@ -42,7 +43,7 @@ The first step is to narrow the scope.  In a normal software environment, you're
 
 #### Prove That The Problem Is Unique To A Component
 
-If you want to eliminate a system component from consideration, one good way is by proving that the issue is not unique to it.  This works particularly well for platform issues.  For instance, you might prove that something is not a browser-specific problem by showing that the issue occurs in all browsers.  This can give you some firm ground to stand on.  If you do expose a platform-specific issue, that can be good news too, as they tend to be better documented. 
+If you want to eliminate a system component from consideration, one good way is by proving that the issue is not unique to it.  This works particularly well for platform issues.  For instance, you might prove that something is not a browser-specific problem by showing that the issue occurs in all browsers.  This can give you some firm ground to stand on.  If you do expose a platform-specific issue, that can be good news too, as they tend to be better documented.
 
 #### Follow The Flow
 
@@ -84,7 +85,7 @@ Once you've fixed the problem, or gotten to a point where you're not going to co
 
 ### The Takeaway
 
-Real world engineering means dealing with code you don't understand.  That might be your coworkers' code, a 3rd party library, a buggy video driver, or your own 3 year old code. To do that effectively you need a process.  That might be mine, or one of your own, it could be formal, or just built on habit.  But make sure you have one.  The ability to dive in quickly, understand what's going on and create a fix will set you apart.  It's not that hard, but it takes discipline, creativity, and most of all practice.  So go ahead and start fixing something.  Maybe you'll be the *Problem Solver* next time 
+Real world engineering means dealing with code you don't understand.  That might be your coworkers' code, a 3rd party library, a buggy video driver, or your own 3 year old code. To do that effectively you need a process.  That might be mine, or one of your own, it could be formal, or just built on habit.  But make sure you have one.  The ability to dive in quickly, understand what's going on and create a fix will set you apart.  It's not that hard, but it takes discipline, creativity, and most of all practice.  So go ahead and start fixing something.  Maybe you'll be the *Problem Solver* next time
 
 ---
 

@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "title": "JavaScript Frameworks and Libraries",
+      "key": "frameworks",
+      "icon": "beaker"
+    }, {
+      "title": "JavaScript Language",
+      "key": "javascript",
+      "icon": "code"
+    }, {
+      "title": "Productivity and Software Engineering",
+      "key": "software-productivity",
+      "icon": "project"
+    }, {
+      "title": "Meta",
+      "key": "meta",
+      "icon": "info"
+    }, {
+      "title": "Software Tools",
+      "key": "tools",
+      "icon": "tools"
+    }, {
+      "title": "Book and Product Reviews",
+      "key": "reviews",
+      "icon": "book"
+    }, {
+      "title": "Web Platform",
+      "key": "platform",
+      "icon": "globe"
+    }, {
+      "title": "Opinion",
+      "key": "opinion",
+      "icon": "megaphone"
+    }
+  ]
+}

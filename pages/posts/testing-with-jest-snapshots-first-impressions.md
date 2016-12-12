@@ -5,6 +5,7 @@ layout: "post"
 path: "/2016/09/19/testing-with-jest-snapshots-first-impressions/"
 description: "One developers first impression of testing UI components using Jest Snapshots"
 keywords: "Jest JavaScript testing React Snapshot Tests"
+category: "tools"
 pageViews: "5032"
 last30pageViews: "719"
 ---

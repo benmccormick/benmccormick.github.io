@@ -1,0 +1,7 @@
+.category-icon * {
+  fill: rgba(100,100,100, 0.7);
+}
+
+.category-icon > i {
+  height: 30px;
+}

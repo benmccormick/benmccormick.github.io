@@ -3,6 +3,7 @@ title: "Stability vs Decline"
 date: "2016-03-09 06:04:39+00:00"
 layout: "post"
 path: "/2016/03/09/stability-vs-decline"
+category: "software-productivity"
 pageViews: "761"
 last30pageViews: "20"
 ---
@@ -33,7 +34,7 @@ Unlike Backbone core, secondary libraries have important issues requested by sev
 
 Unlike Backbone core, secondary libraries sometimes have no clear active maintainer who can be counted on to put out a release in the case of an emergency change being needed.  This matters because Backbone and JavaScript libraries in general live on an unstable platform.  Browsers change all the time.  While they do their best to maintain backwards compatibility, browsers occasionally introduce bugs, and occasionally fix bugs that a library may have been relying on or working around. In addition to disaster scenarios like that, tools change and best practices change over time.  When documentation stagnates and doesn't keep up with changes, libraries become less useful and approachable over time.  Most Backbone tutorials on the web, and the documentation for many libraries, assume that scripts will be loaded in directly and that variables will be referenced through namespacing.  In a world where module loaders are becoming a default tool for larger JavaScript applications, thats a gap that makes libraries hard to learn, or teaches out of date practices to less experienced developers.
 
-A healthy stable project ought to be able to check off 3 boxes. 
+A healthy stable project ought to be able to check off 3 boxes.
 
 1. It meets the goals of its authors
 
@@ -57,4 +58,3 @@ Thanks for taking the time to read this post!  JavaScript development is one of 
 [eco]: http://benmccormick.org/2016/03/07/the-sad-state-of-the-backbone-ecosystem/
 [charttweet]:https://twitter.com/ben336/status/707063566940016645
 [hn]:https://news.ycombinator.com/item?id=11237283
-

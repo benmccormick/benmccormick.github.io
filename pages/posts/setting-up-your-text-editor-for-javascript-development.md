@@ -3,6 +3,7 @@ title: "Setting Up Your Text Editor For JavaScript Development"
 date: "2014-10-13 01:05:51+00:00"
 layout: "post"
 path: "/2014/10/13/setting-up-your-text-editor-for-javascript-development"
+category: "tools"
 pageViews: "9272"
 last30pageViews: "189"
 ---
@@ -56,7 +57,7 @@ define([$1],function($2) {
 endsnippet
 ```
 
-This allows me to type *dfn&lt;tab&gt;* at any time to expand out the template.  Initially my cursor will be in spot `$1`, and I can then enter text and tab to spot `$2`, with my final tab ending me at `$0`.  Snippet libraries can also provide other functionality like functions to show the current time, filename, or other contextual information.   Some can also mirror text so that you can enter a string once and have it appear throughout the template.  It can be a great time saver when you're chugging through the boilerplate code of your project. 
+This allows me to type *dfn&lt;tab&gt;* at any time to expand out the template.  Initially my cursor will be in spot `$1`, and I can then enter text and tab to spot `$2`, with my final tab ending me at `$0`.  Snippet libraries can also provide other functionality like functions to show the current time, filename, or other contextual information.   Some can also mirror text so that you can enter a string once and have it appear throughout the template.  It can be a great time saver when you're chugging through the boilerplate code of your project.
 
 ---
 
@@ -85,7 +86,7 @@ Thanks for taking the time to read!  I write a good deal about text editing, Jav
     </li>
     <li class="footnote" id="fn:1">
         <p>
-        Sublime Text and Atom provide pretty reasonable defaults. Vim users could consider checking out my piece on <a href="http://benmccormick.org/2014/07/14/learning-vim-in-2014-configuring-vim/">configuring Vim</a>.  I don't know enough to advise for Emacs, you're on your own their, but google is your friend. 
+        Sublime Text and Atom provide pretty reasonable defaults. Vim users could consider checking out my piece on <a href="http://benmccormick.org/2014/07/14/learning-vim-in-2014-configuring-vim/">configuring Vim</a>.  I don't know enough to advise for Emacs, you're on your own their, but google is your friend.
         <a href="#fnref:1" title="return to article"> ↩</a></p>
     </li>
     <li class="footnote" id="fn:2">

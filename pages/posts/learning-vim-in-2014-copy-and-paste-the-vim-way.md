@@ -5,6 +5,7 @@ layout: "post"
 path: "/2014/07/27/learning-vim-in-2014-copy-and-paste-the-vim-way"
 description: "How to use copy and paste in Vim"
 keywords: "vim, copy, paste, registers, yank, delete"
+category: "tools"
 pageViews: "1396"
 last30pageViews: "243"
 ---

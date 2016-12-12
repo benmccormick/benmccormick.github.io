@@ -3,6 +3,7 @@ title: "RSS Roundup"
 date: "2013-06-29 11:40:00+00:00"
 layout: "post"
 path: "/2013/06/29/rss-roundup"
+category: "reviews"
 pageViews: "22"
 last30pageViews: "1"
 ---
@@ -66,4 +67,3 @@ In the end I've settled on Feedbin.  I'm paying the $2/month rate, and have been
 [rssfailure]: http://www.leancrew.com/all-this/2013/06/my-rss-failure/
 [drangfw]:http://www.leancrew.com/all-this/2013/06/feedle-dee-dee/
 [verge]: http://www.theverge.com/2013/3/19/4119006/the-best-google-reader-alternatives
-

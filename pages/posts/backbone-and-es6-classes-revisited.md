@@ -5,6 +5,7 @@ layout: "post"
 path: "/2015/07/06/backbone-and-es6-classes-revisited"
 description: "A second look at using ES6 classes with Backbone"
 keywords: "ES6, Backbone, classes, JavaScript, decorators"
+category: "frameworks"
 pageViews: "12938"
 last30pageViews: "450"
 ---

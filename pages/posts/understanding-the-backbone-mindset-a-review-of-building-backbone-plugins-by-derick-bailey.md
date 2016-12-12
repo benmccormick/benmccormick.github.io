@@ -3,6 +3,7 @@ title: "Understanding the Backbone Mindset: A review of Building  Backbone Plugi
 date: "2014-07-09 11:38:40+00:00"
 layout: "post"
 path: "/2014/07/09/understanding-the-backbone-mindset-a-review-of-building-backbone-plugins-by-derick-bailey"
+category: "reviews"
 pageViews: "12538"
 last30pageViews: "41"
 ---

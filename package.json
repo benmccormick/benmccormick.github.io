@@ -20,6 +20,7 @@
     "react-responsive-grid": "^0.3.3",
     "react-typography": "^0.12.0",
     "safe-access": "^0.1.0",
+    "svg-inline-react": "^1.0.2",
     "twitter-widgets": "^1.0.0",
     "typography": "^0.13.0",
     "underscore.string": "^3.2.3"
@@ -29,7 +30,8 @@
     "front-matter": "^2.1.0",
     "gh-pages": "^0.11.0",
     "googleapis": "^15.0.0",
-    "sitemap": "^1.8.2"
+    "sitemap": "^1.8.2",
+    "svg-inline-loader": "^0.7.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [

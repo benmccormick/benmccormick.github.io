@@ -3,6 +3,7 @@ title: "It took a month to get sick of php"
 date: "2012-10-06 11:00:00+00:00"
 layout: "post"
 path: "/2012/10/06/it-took-a-month-to-get-sick-of-php"
+category: "meta"
 pageViews: "152"
 last30pageViews: "3"
 ---
@@ -47,4 +48,3 @@ I love Python's clean syntax, and especially the cleanliness of Django's templat
 [I wrote 20 short programs in Python yesterday. It was wonderful. Perl, I'm leaving you.]
 
 ![I wrote 20 short programs in Python yesterday.  It was wonderful.  Perl, I'm leaving you.](http://imgs.xkcd.com/comics/python.png)
-

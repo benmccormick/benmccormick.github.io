@@ -3,6 +3,7 @@ title: "Unexpected Javascript: That Doesn't Do What You Think"
 date: "2013-01-15 23:30:00+00:00"
 layout: "post"
 path: "/2013/01/15/unexpected-javascript-that-doesnt-do-what-you-think"
+category: "javascript"
 pageViews: "731"
 last30pageViews: "1"
 ---
@@ -125,4 +126,3 @@ function testf(){
 [semicolonfiddle]: http://jsfiddle.net/2XSCk/
 [SOeval]: http://stackoverflow.com/questions/9107240/1-evalthis-vs-evalthis-in-javascript
 [bindmdn]:https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Function/bind
-

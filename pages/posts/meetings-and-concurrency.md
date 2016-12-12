@@ -3,6 +3,7 @@ title: "Meetings And Concurrency"
 date: "2013-12-30 11:00:00+00:00"
 layout: "post"
 path: "/2013/12/30/meetings-and-concurrency"
+category: "opinion"
 pageViews: "112"
 last30pageViews: "0"
 ---
@@ -94,5 +95,3 @@ This async approach doesn't delegate different resources for different problems,
 By contrast, email, documentation, and other "information artifacts" can be consumed asynchronously, at different paces and different times by different people. They don't block off any particular time that might need to be devoted to other things.  So Powerpoint meetings can become an email that contains a Powerpoint or wiki page, followed if necessary by clarifying questions which people can work through at their own pace. Decision meetings can become a back and forth discussion on a mailing list, that the interested parties can participate in as they have time and motivation.  It removes blocking issues completely by removing the requirement of all participants being on the same time schedule.
 
 So the takeaways from this coffee flavored reflection on meetings:  Async operations are your friends.  Don't have meetings.  If you do, keep them short, small, and focused. Friends don't let friends read their powerpoint slides line by line.
-
-

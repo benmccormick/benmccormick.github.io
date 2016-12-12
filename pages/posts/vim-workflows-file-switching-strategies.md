@@ -3,6 +3,7 @@ title: "Vim Workflows: File Switching"
 date: "2014-11-10 04:06:52+00:00"
 layout: "post"
 path: "/2014/11/10/vim-workflows-file-switching-strategies"
+category: "tools"
 pageViews: "5209"
 last30pageViews: "110"
 ---
@@ -11,7 +12,7 @@ Becoming productive in Vim is about more than just knowing all of the features a
 
 A good tool should allow you to focus on your problem while using it, without making you spend a lot of time thinking about extraneous things. File switching is an area in text editing that can really slow you down if you let it.  The first file switching method that most Vim users is the simple `:e` command to open a file.  Technically it's the only command you need for file switching, since you can use it to open up any file you want and start editing it.  But doing so requires you to essentially internalize the complete structure of your file system and type out full paths every time.  On a large project with nested directories that becomes a significant mental load and use of time, even if you're taking advantage of Vim's tab completion features. And it's a mental load that's inessential to the task at hand.  You need to recall the precise layout of your file structure every time only because the tool isn't able to make things easier for you.
 
-Fortunately Vim is able to make easier things easier for you when you use the right tool for the job.  That means rather than using one file switching strategy to rule them all, we can combine several tools to reduce the mental load on us and focus on our code or writing. I'll specifically look at a few common scenarios and my approach for each.  This isn't the only workflow you can use to address these scenarios, but hopefully it will inspire you to improve your own Vim workflow.  So here are the different scenarios: 
+Fortunately Vim is able to make easier things easier for you when you use the right tool for the job.  That means rather than using one file switching strategy to rule them all, we can combine several tools to reduce the mental load on us and focus on our code or writing. I'll specifically look at a few common scenarios and my approach for each.  This isn't the only workflow you can use to address these scenarios, but hopefully it will inspire you to improve your own Vim workflow.  So here are the different scenarios:
 
 
 #### I want to move to a file with a name I know
@@ -98,4 +99,3 @@ Thanks for taking the time to read!  I write a good deal about text editing,  an
 [oil]: http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
 [vimfiles]: http://benmccormick.org/2014/07/07/learning-vim-in-2014-working-with-files/
 [netrw]: http://www.vim.org/scripts/script.php?script_id=1075
-

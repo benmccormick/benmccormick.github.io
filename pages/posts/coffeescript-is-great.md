@@ -3,6 +3,7 @@ title: "Coffeescript Is Great"
 date: "2013-02-23 23:50:00+00:00"
 layout: "post"
 path: "/2013/02/23/coffeescript-is-great"
+category: "javascript"
 pageViews: "1021"
 last30pageViews: "3"
 ---
@@ -13,7 +14,7 @@ This past week I decided to try and learn more about [Coffeescript][coffeescript
 
 [Coffeescript][coffeescript] is a programming language with a Ruby-like syntax that compiles transparently into readable, best-practice Javascript.  To break that down:
 
-#### It's a language with Ruby-like syntax 
+#### It's a language with Ruby-like syntax
 Coffeescript features a short concise syntax with significant whitespace, short operators for many common actions, and syntax that encourages a pseudo-english style of coding.  For instance `if empty page then fill page else read page` would be valid syntax for calling a function `empty()` on an object `page` and then calling the `fill` method on it if it was empty or the `read` method if it was not.
 
 #### It compiles to readable best-practice Javascript
@@ -73,5 +74,3 @@ I'm very glad I tried Coffeescript.  I think it definitely has its place as a co
 [sourcemaps]: http://ryanflorence.com/2012/coffeescript-source-maps/
 [caseagainst]: http://ryanflorence.com/2011/case-against-coffeescript/
 [compiler]: http://coffeescript.org/#try:alert%20%22Hello%20CoffeeScript!%22
-
-

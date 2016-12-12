@@ -3,6 +3,7 @@ title: "Moving Past RequireJS"
 date: "2015-05-28 14:10:00+00:00"
 layout: "post"
 path: "/2015/05/28/moving-past-requirejs"
+category: "frameworks"
 pageViews: "33633"
 last30pageViews: "1379"
 ---
@@ -23,7 +24,7 @@ RequireJS was the first JavaScript module loader to gain widespread popularity. 
 
 RequireJS requires developers to use AMD modules.  That choice made a ton of sense in 2011 when RequireJS first launched.  It makes less sense today.  In 2011, the only popular alternative to AMD modules was the CommonJS standard, and AMD held a technical advantage over CommonJS. It was essentially a decision between a technological superiority and a cleaner API. In 2015, AMD is one of 3 realistic module syntax alternatives, and no longer holds a significant technical advantage, but it still has a less clear syntax and has begun to experience problems with network effects.  
 
-#### Syntax Comparison 
+#### Syntax Comparison
 
 AMD modules look like this:
 
@@ -117,7 +118,7 @@ It should be noted here that this article is addressed primarily at developers s
 
 ### More Resources
 
-- Axel Rauschmayer has a [great piece][rauschmodules] up on his blog 2ality describing ECMAScript 6 modules and how they compare to CommonJS 
+- Axel Rauschmayer has a [great piece][rauschmodules] up on his blog 2ality describing ECMAScript 6 modules and how they compare to CommonJS
 
 - This [blog post][ampersand] is primarily an introduction post for Ampersand.js, a modular JS framework. But it also serves as a great look at the environment around nodejs and CommonJS modules, including a discussion of the advantages and disadvantages of using many small modules to structure applications.
 
@@ -139,7 +140,7 @@ Thanks for taking the time to read this post!  JavaScript development is one of 
 
 [rauschmodules]: http://www.2ality.com/2014/09/es6-modules-final.html
 [bower]: http://benmccormick.org/2015/01/22/is-bower-useful/
-[lazybrowserify]:http://esa-matti.suuronen.org/blog/2013/04/15/asynchronous-module-loading-with-browserify/ 
+[lazybrowserify]:http://esa-matti.suuronen.org/blog/2013/04/15/asynchronous-module-loading-with-browserify/
 [browserify]: http://browserify.org/
 [webpack]:http://webpack.github.io/
 [ampersand]: https://blog.andyet.com/2014/06/25/introducing-ampersand-js

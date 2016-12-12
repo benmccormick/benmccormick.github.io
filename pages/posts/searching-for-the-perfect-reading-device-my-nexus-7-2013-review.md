@@ -3,6 +3,7 @@ title: "Searching for the perfect reading device:  My Nexus 7 (2013) Review"
 date: "2013-08-16 12:00:00+00:00"
 layout: "post"
 path: "/2013/08/16/searching-for-the-perfect-reading-device-my-nexus-7-2013-review"
+category: "reviews"
 pageViews: "75"
 last30pageViews: "0"
 ---
@@ -102,7 +103,7 @@ Obviously there are plenty of twitter apps on Android, but I haven't been able t
 </a></p>
 
     </li>
-    
+
 </ol></div>
 
 [arsnexus]: http://arstechnica.com/gadgets/2013/07/the-2013-nexus-7-review-meet-the-new-standard-for-android-tablets/
@@ -111,4 +112,3 @@ Obviously there are plenty of twitter apps on Android, but I haven't been able t
 [marco]: http://www.marco.org/
 [marcoskeptic]: http://www.marco.org/2013/08/13/google-blindness
 [tabletapps]:http://www.webpronews.com/android-is-still-missing-top-ipad-apps-2013-08
-

@@ -5,6 +5,7 @@ layout: "post"
 path: "/2016/12/02/whole-new-site/"
 description: "Introducing a new look for benmccormick.org"
 keywords: "Gatsby blog ghost benmccormick.org"
+category: "meta"
 pageViews: "95"
 last30pageViews: "95"
 ---

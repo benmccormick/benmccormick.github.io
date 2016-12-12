@@ -5,6 +5,7 @@ layout: "post"
 path: "/2015/04/07/es6-classes-and-backbone-js"
 description: "A rundown of the challenges of using ES6 classes in Backbone"
 keywords: "Backbone, ES6, JavaScript, classes"
+category: "frameworks"
 pageViews: "18632"
 last30pageViews: "459"
 ---

@@ -5,6 +5,7 @@ layout: "post"
 path: "/2014/11/12/underscore-vs-lodash"
 description: "A comparison of two popular utility libraries: Underscore and Lo-Dash"
 keywords: "underscore lodash lo-dash JavaScript performance"
+category: "frameworks"
 pageViews: "109208"
 last30pageViews: "2647"
 ---

@@ -3,6 +3,7 @@ title: "Creating a Build System For a Coffeescript Project with Ant"
 date: "2013-03-23 16:23:00+00:00"
 layout: "post"
 path: "/2013/03/23/creating-a-build-system-for-a-coffeescript-project-with-ant"
+category: "tools"
 pageViews: "393"
 last30pageViews: "5"
 ---
@@ -290,7 +291,7 @@ Adding a build system has been great for my project.  Its allowed me to be a lot
       </target>
 
     </project>
-    
+
 *Update June 2014: Since writing this post, Javascript based build tools have continued to mature and grow.  These days I'd recommend [Grunt][grunt] or [Gulp][gulp] for your front end build script needs, though Ant is still a fine choice if you're integrating your builds with a Java project, or have lots of experience with it.*
 
 
@@ -316,4 +317,3 @@ Adding a build system has been great for my project.  Its allowed me to be a lot
 [markdown]: http://daringfireball.net/projects/markdown/
 [grunt]: http://gruntjs.com/
 [gulp]: http://gulpjs.com/
-

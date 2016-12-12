@@ -3,6 +3,7 @@ title: "Irreplaceable"
 date: "2013-05-04 17:00:00+00:00"
 layout: "post"
 path: "/2013/05/04/irreplaceable"
+category: "opinion"
 pageViews: "127"
 last30pageViews: "0"
 ---
@@ -26,4 +27,3 @@ Jon Gallant speaks the truth.  Aside from any personal beliefs on which is more 
 
 
 [workhome]: http://blog.jongallant.com/2013/05/work-life-balance-at-microsoft.html?goback=.gde_42347_member_237479036&m=1
-

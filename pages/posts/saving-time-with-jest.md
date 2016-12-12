@@ -5,6 +5,7 @@ layout: "post"
 path: "/2016/12/10/saving-time-with-jest"
 description: "A summary of my meetup talk on saving time with Jest"
 keywords: "Jest JavaScript testing meetup talk Triangle React"
+category: "tools"
 pageViews: "79"
 last30pageViews: "79"
 ---

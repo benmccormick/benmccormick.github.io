@@ -3,6 +3,7 @@ title: "Sublime Text For Javascript: Packages"
 date: "2013-01-03 21:00:00+00:00"
 layout: "post"
 path: "/2013/01/03/sublime-text-for-javascript-plugins"
+category: "tools"
 pageViews: "6059"
 last30pageViews: "14"
 ---
@@ -68,4 +69,3 @@ In the end different packages work for different people.  I highly recommend ins
 [Emmetplugin]: https://github.com/sergeche/emmet-sublime
 
 [clipboardhistory]: https://github.com/kemayo/sublime-text-2-clipboard-history
-

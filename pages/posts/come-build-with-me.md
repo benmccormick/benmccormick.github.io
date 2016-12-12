@@ -4,14 +4,15 @@ date: "2014-12-18 14:00:00+00:00"
 layout: "post"
 path: "/2014/12/18/come-build-with-me"
 pageViews: "693"
+category: "meta"
 last30pageViews: "4"
 ---
 
 One of the blessings of starting this blog has been the opportunity to answer questions, debate, and learn from the amazingly knowledgeable people who have read my posts.  I've talked with so many developers who have incredible enthusiasm for software development and the web platform.  If that's you, I have a cool opportunity I want to share.
 
-I try to stay on-topic on this blog and don't talk about myself very much, but last winter I joined [Windsor Circle](http://www.windsorcircle.com), a tech startup in Durham North Carolina. We're a software as a service company focused on helping marketers retain their customers.  Since joining, it's been a crazy ride.  Last April, we were selected as the winner of [Google's "Tech Hub Demo Day"](https://www.googleforentrepreneurs.com/startup-communities/the-tech-hub-network-demo-day/), a competition where Google brought in 10 leading startups from around the country and gave them the opportunity to pitch to an auditorium full of Silicon Valley venture capitalists. 
+I try to stay on-topic on this blog and don't talk about myself very much, but last winter I joined [Windsor Circle](http://www.windsorcircle.com), a tech startup in Durham North Carolina. We're a software as a service company focused on helping marketers retain their customers.  Since joining, it's been a crazy ride.  Last April, we were selected as the winner of [Google's "Tech Hub Demo Day"](https://www.googleforentrepreneurs.com/startup-communities/the-tech-hub-network-demo-day/), a competition where Google brought in 10 leading startups from around the country and gave them the opportunity to pitch to an auditorium full of Silicon Valley venture capitalists.
 
-This summer we followed that up by raising 6.5 million in Series B funding, and we're now growing rapidly.  Part of that growth is building out our front end development team, and we have a Front End Developer position that is open now. 
+This summer we followed that up by raising 6.5 million in Series B funding, and we're now growing rapidly.  Part of that growth is building out our front end development team, and we have a Front End Developer position that is open now.
 
 I want to work with great people, so here's my no BS pitch to any JavaScript developers out there.
 
@@ -41,4 +42,3 @@ In all seriousness, if this sounds interesting to you, feel free to get in touch
     </li>
 </ol>
 </div>
-

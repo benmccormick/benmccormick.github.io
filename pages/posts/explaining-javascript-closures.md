@@ -3,6 +3,7 @@ title: "Explaining Javascript: Closures"
 date: "2013-01-08 23:30:00+00:00"
 layout: "post"
 path: "/2013/01/08/explaining-javascript-closures"
+category: "javascript"
 pageViews: "131"
 last30pageViews: "40"
 ---
@@ -122,4 +123,3 @@ Closures are one of the most commonly used idioms in javascript.  They're used a
 [mdnclosures]: https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Closures
 [effectivejs]: http://www.amazon.com/Effective-JavaScript-Specific-Software-Development/dp/0321812182
 [effectivejsreview]: http://benmccormick.org/blog/2013/01/06/book-review-effective-javascript/
-

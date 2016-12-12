@@ -3,6 +3,7 @@ title: "A look at Ack"
 date: "2013-11-25 23:50:00+00:00"
 layout: "post"
 path: "/2013/11/25/a-look-at-ack"
+category: "tools"
 pageViews: "5306"
 last30pageViews: "52"
 ---
@@ -50,4 +51,3 @@ If you've been using grep or slow GUI tools to search your source code, you can 
 
 [ag]: https://github.com/ggreer/the_silver_searcher
 [ack]: http://beyondgrep.com/
-

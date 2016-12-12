@@ -3,6 +3,7 @@ title: "2015 Roundup"
 date: "2015-12-31 05:56:04+00:00"
 layout: "post"
 path: "/2015/12/31/2015-roundup-2"
+category: "meta"
 pageViews: "374"
 last30pageViews: "6"
 ---
@@ -48,14 +49,14 @@ Elm or ClojureScript, Rust or Go, Flow, Ember, Pandas and other python data anal
 
 ### Blogs I started following in 2015
 
-- [2ality](http://www.2ality.com/) is a great blog by Axel Rauschmayer focused on the JavaScript language 
+- [2ality](http://www.2ality.com/) is a great blog by Axel Rauschmayer focused on the JavaScript language
 - [rauchg.com](http://rauchg.com/essays) is not updated often, but all 3 posts so far have been fantastic
 - [raganwald.com](http://raganwald.com/) is a great resource for functional programming fans who write JavaScript
 
 
 ### Blogs I read every post from in 2015
 
-Rands In Repose, Stratechery, Marco.org, rauchg.com, Little Big Details, Bull City Rising 
+Rands In Repose, Stratechery, Marco.org, rauchg.com, Little Big Details, Bull City Rising
 
 ### Software I started using in 2015
 
@@ -63,13 +64,13 @@ Rands In Repose, Stratechery, Marco.org, rauchg.com, Little Big Details, Bull Ci
 
 - [Ghostery][ghostery] is a fantastic ad blocker that focuses on transparency, showing you the ad networks and trackers that are running on a page and allowing you to selectively block ad networks or sites, helpful for those of us who want to support sites we use and allow analytics but are overwhelmed by the slimy, slow state of the web.
 
-- [Overcast][overcast] is a great podcast app for iOS that has convinced me to start listening to podcasts.  (I've enjoyed [The Changelog][changelog], [Exponent][exponent], and [Serial][serial]). 
+- [Overcast][overcast] is a great podcast app for iOS that has convinced me to start listening to podcasts.  (I've enjoyed [The Changelog][changelog], [Exponent][exponent], and [Serial][serial]).
 
 ### Software I stopped using in 2015
 
 - [Mailbox](https://www.mailboxapp.com/): RIP
 - [OneNote](https://www.onenote.com/): I made an effort to switch from Evernote to OneNote this summer, but it failed because it's much harder to get stuff into OneNote for those of us who live in Apple-Land.  Not enough integrations
-  
+
 ### Software I used (nearly) every day in 2015
 
 OSX/iOS, Google Search, Chrome/Safari, Gmail, Twitter/Tweetbot, Feedbin/Reeder, Instapaper, iMessage, Slack, Trello, 1Password, Atom/Vim, iTerm, Fish Shell, tmux, Bitbucket, Fantastical
@@ -95,4 +96,3 @@ OSX/iOS, Google Search, Chrome/Safari, Gmail, Twitter/Tweetbot, Feedbin/Reeder, 
 [serial]: https://serialpodcast.org/
 [exponent]: http://exponent.fm/
 [changelog]: https://changelog.com/podcast/
-

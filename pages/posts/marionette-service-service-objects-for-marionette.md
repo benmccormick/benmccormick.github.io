@@ -5,6 +5,7 @@ layout: "post"
 path: "/2015/05/25/marionette-service-service-objects-for-marionette"
 description: "Introducing marionette-service, a services library for Marionette apps"
 keywords: "Marionette JavaScript marionette-service services Backbone Radio"
+category: "frameworks"
 pageViews: "1496"
 last30pageViews: "29"
 ---

@@ -5,6 +5,7 @@ layout: "post"
 path: "/2016/04/30/ack-tips"
 description: "A set of tips for using Ack, a command line search tool"
 keywords: "ack, command line, grep, ag"
+category: "tools"
 pageViews: "516"
 last30pageViews: "33"
 ---

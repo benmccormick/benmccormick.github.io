@@ -3,6 +3,7 @@ title: "How I Use Stack Overflow"
 date: "2013-06-11 21:19:00+00:00"
 layout: "post"
 path: "/2013/06/11/how-i-use-stack-overflow"
+category: "tools"
 pageViews: "203"
 last30pageViews: "36"
 ---
@@ -49,4 +50,3 @@ This is where Stack Overflow really begins to show benefits.  When I do the rese
 [ja]: http://www.codinghorror.com/blog/
 [js]: http://www.joelonsoftware.com/
 [alexa]: http://www.alexa.com/siteinfo/stackoverflow.com
-

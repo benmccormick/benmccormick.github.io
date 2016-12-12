@@ -5,6 +5,7 @@ layout: "post"
 path: "/2015/09/09/what-can-backbone-developers-learn-from-react"
 description: "A look at the lessons that Backbone developers can learn from React"
 keywords: "Backbone React JavaScript frameworks"
+category: "frameworks"
 pageViews: "24828"
 last30pageViews: "310"
 ---

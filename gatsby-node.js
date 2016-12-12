@@ -15,11 +15,11 @@ function pagesToSitemap(pages) {
         url: p.path,
         changefreq: 'daily',
         priority: 0.7
-      }
+      };
     }
-  })
+  });
   // remove undefined (template pages)
-  return urls.filter(u => u !== undefined)
+  return urls.filter(u => u !== undefined);
 }
 
 function generateSiteMap(pages) {
@@ -27,12 +27,12 @@ function generateSiteMap(pages) {
     hostname: 'https://benmccormick.org',
     cacheTime: '60000',
     urls: pagesToSitemap(pages),
-  })
-  console.log('Generating sitemap.xml')
+  });
+  console.log('Generating sitemap.xml');
   fs.writeFileSync(
     `${__dirname}/public/sitemap.xml`,
     sitemap.toString()
-  )
+  );
 }
 
 const md = MarkdownIt({
@@ -124,4 +124,14 @@ exports.postBuild = function(pages, callback) {
   generateRSS(feed);
   generateSiteMap(pages);
   copyCNAME(callback);
+};
+
+exports.modifyWebpackConfig = function(config, stage) {
+  config.removeLoader('svg');
+  config.loader('svg', function(cfg) {
+    cfg.test = /\.svgi$/;
+    cfg.loader = 'svg-inline';
+    return cfg;
+  });
+  return config;
 };

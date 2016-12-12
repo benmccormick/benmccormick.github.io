@@ -3,6 +3,7 @@ title: "Sublime Text For Javascript: Keyboard Shortcuts"
 date: "2012-12-30 21:00:00+00:00"
 layout: "post"
 path: "/2012/12/30/sublime-text-for-javascript-keyboard-shortcuts"
+category: "tools"
 pageViews: "13761"
 last30pageViews: "109"
 ---
@@ -213,6 +214,3 @@ If you have suggestions for other great uses of keyboard shortcuts in Sublime Te
 [configuration]: http://benmccormick.org/2013/01/01/sublime-text-for-javascript-configuration
 
 [plugins]: http://benmccormick.org/2013/01/03/sublime-text-for-javascript-plugins
-
-
-

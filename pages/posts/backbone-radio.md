@@ -5,6 +5,7 @@ layout: "post"
 path: "/2015/01/26/backbone-radio"
 description: "An overview of using Backbone.Radio in Marionette apps"
 keywords: "Backbone, JavaScript, Backbone Radio, Marionette, messaging"
+category: "frameworks"
 pageViews: "19334"
 last30pageViews: "252"
 ---

@@ -4,6 +4,7 @@ date: "2014-11-24 03:58:00+00:00"
 layout: "post"
 path: "/2014/11/24/alternative-javascript"
 pageViews: "4451"
+category: "javascript"
 last30pageViews: "27"
 ---
 

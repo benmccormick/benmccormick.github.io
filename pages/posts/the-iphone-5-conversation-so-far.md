@@ -3,6 +3,7 @@ title: "The iPhone 5 Conversation so Far"
 date: "2012-09-19 11:00:00+00:00"
 layout: "post"
 path: "/2012/09/19/the-iphone-5-conversation-so-far"
+category: "opinion"
 pageViews: "41"
 last30pageViews: "0"
 ---
@@ -18,4 +19,3 @@ The 3 reactions after every major Apple news: Apple is overrated, Apple is above
 *Update June 2014: Apologies for the broken links.  The world does not always respect the permalink.*
 
 *Update #2: Found a cached version for blog C*
-

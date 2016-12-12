@@ -3,6 +3,7 @@ title: "How jQuery Works - An Introduction"
 date: "2015-06-08 11:51:25+00:00"
 layout: "post"
 path: "/2015/06/08/how-jquery-works-an-introduction"
+category: "frameworks"
 pageViews: "17293"
 last30pageViews: "504"
 ---
@@ -11,7 +12,7 @@ last30pageViews: "504"
 
 Every developer has had the experience of using "magic" code.  Not the "hacked into the NSA in 20 seconds" type of magic code you see in movies. This is the code created when you nervously typed an incomprehensible incantation that somebody else passed on to you, desperately hoping to receive the results you want, ignoring the sinking feeling in your stomach that you have no clue what to do if it fails.  Almost all code feels like this when you're pushing out to learn new things.  But it doesn't have to stay that way.
 
-The primary goal of this blog has always been to help myself understand the tools I'm using, and to share that understanding with as many people as possible.  My experience is that really understanding a library or framework requires diving into the source code and swimming around a bit. Which sounds great.  But often the real world gets in the way. Real world source code is full of "special code".  Code that handles browser edge cases, performance optimizations that obscure meaning, indirection to allow shared solutions for common problems; all things that are completely necessary, and also likely to obscure the true structure of code.  So while reading the source is the best way to understand a library, it often helps to have some guideposts to lead you through. 
+The primary goal of this blog has always been to help myself understand the tools I'm using, and to share that understanding with as many people as possible.  My experience is that really understanding a library or framework requires diving into the source code and swimming around a bit. Which sounds great.  But often the real world gets in the way. Real world source code is full of "special code".  Code that handles browser edge cases, performance optimizations that obscure meaning, indirection to allow shared solutions for common problems; all things that are completely necessary, and also likely to obscure the true structure of code.  So while reading the source is the best way to understand a library, it often helps to have some guideposts to lead you through.
 
 This post is the start of a new series diving into how jQuery (certainly a very magical library for many developers) works.  I'll pull snippets from the source code, but also try to lay out the big picture approaches the library takes to provide functionality that combines to form by far the best-known and most used JavaScript library out there <sup id="fnref:1">[1](#fn:1)</sup>. For this introduction, the focus will be on the overall structure of the jQuery repository, how the code is laid out for development purposes, how it's built into a single file for production use, and a quick look at the core jQuery object code.  Future posts will cover how different features of the libary work, including deep dives into selectors, ajax, animation, and events.
 
@@ -311,7 +312,6 @@ Thanks for taking the time to read this post!  JavaScript development is one of 
 [jqgithub]: https://github.com/jquery/jquery
 [buildfile]: https://github.com/jquery/jquery/blob/master/build/tasks/build.js
 [core]: https://github.com/jquery/jquery/blob/master/src/core.js
-[underscorevslodash]: http://benmccormick.org/2014/11/12/underscore-vs-lodash/ 
+[underscorevslodash]: http://benmccormick.org/2014/11/12/underscore-vs-lodash/
 [annotated]: http://robflaherty.github.io/jquery-annotated-source/
 [resig]: http://ejohn.org/blog/annotated-version-of-the-original-jquery-release/
-

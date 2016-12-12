@@ -3,6 +3,7 @@ title: "A New Look"
 date: "2013-04-06 17:00:00+00:00"
 layout: "post"
 path: "/2013/04/06/a-new-look"
+category: "meta"
 pageViews: "107"
 last30pageViews: "0"
 ---
@@ -25,4 +26,3 @@ My site continues to be generated as static pages by [octopress][octopress], and
 [glutton]: https://github.com/gluttony
 [octopress]: http://octopress.org/
 [sublime]: http://www.sublimetext.com/
-

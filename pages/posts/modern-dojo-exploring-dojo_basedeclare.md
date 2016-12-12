@@ -3,6 +3,7 @@ title: "Modern Dojo: Exploring declare"
 date: "2013-11-14 23:15:00+00:00"
 layout: "post"
 path: "/2013/11/14/modern-dojo-exploring-dojo_basedeclare"
+category: "frameworks"
 pageViews: "497"
 last30pageViews: "13"
 ---
@@ -73,11 +74,11 @@ require(["dojo/_base/declare"], function(declare) {
   });
   var messenger = new Messenger();
   var messenger2 = new Messenger();
-  
+
   //change the messages array on messenger
   messenger.messages.push("extra value")
   //and the change has populated to all instances of Messages
-  messenger2.sendMessage(); 
+  messenger2.sendMessage();
   //logs ["hello", "world", "extra value"]
 });
 ```
@@ -236,4 +237,3 @@ declare should be especially useful for programmers who want to implement a clas
 [declare1]: http://dojotoolkit.org/documentation/tutorials/1.9/declare/
 [declare2]: http://dojotoolkit.org/reference-guide/1.9/dojo/_base/declare.html
 [ooj]: /blog/2013/01/12/javascript-explained-object-oriented-javascript/
-

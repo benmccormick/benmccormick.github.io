@@ -3,6 +3,7 @@ title: "Productive JavaScript Development"
 date: "2015-11-25 14:43:46+00:00"
 layout: "post"
 path: "/2015/11/25/productive-javascript-development"
+category: "software-productivity"
 pageViews: "2253"
 last30pageViews: "143"
 ---
@@ -72,4 +73,3 @@ When picking a toolset in JavaScript it's helpful to think about all 6 of the ab
 [timemachine]: https://github.com/gaearon/react-hot-loader
 [embercli]: http://www.ember-cli.com/
 [elm]: http://elm-lang.org/
-

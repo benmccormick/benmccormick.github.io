@@ -3,6 +3,7 @@ title: "How I Work:  Refactoring"
 date: "2013-02-03 21:00:00+00:00"
 layout: "post"
 path: "/2013/02/03/how-i-work-refactoring"
+category: "software-productivity"
 pageViews: "498"
 last30pageViews: "1"
 ---
@@ -43,4 +44,3 @@ These three questions are obviously not the only things that can be wrong in cod
 [curly]: http://www.codinghorror.com/blog/2007/03/curlys-law-do-one-thing.html
 [refactoringcom]: http://refactoring.com/
 [refactoringbook]: http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672/ref=sr_1_1?ie=UTF8&qid=1359930251&sr=8-1&keywords=martin+fowler+refactoring
-

@@ -3,6 +3,7 @@ title: "Simple Publish-Subscribe with jQuery"
 date: "2013-02-13 21:00:00+00:00"
 layout: "post"
 path: "/2013/02/13/simple-publish-subscribe-with-jquery"
+category: "frameworks"
 pageViews: "7822"
 last30pageViews: "82"
 ---
@@ -57,5 +58,3 @@ I've found this to be a useful, lightweight way of creating loosely coupled mess
 [pubsub]: http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
 [jms]: http://en.wikipedia.org/wiki/Java_Message_Service
 [jquery]: http://api.jquery.com/category/events/event-handler-attachment/
-
-

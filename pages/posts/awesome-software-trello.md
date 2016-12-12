@@ -3,6 +3,7 @@ title: "Awesome Software: Trello"
 date: "2012-12-20 12:00:00+00:00"
 layout: "post"
 path: "/2012/12/20/awesome-software-trello"
+category: "reviews"
 pageViews: "113"
 last30pageViews: "1"
 ---
@@ -13,4 +14,3 @@ I’ve been using Trello to manage the development process for my new project.  
 My personal setup has been to use a board to hold a new project, with lists for backlog (To Do), doing, and complete.  The cards hold feature level tasks, and I fill in the details for those tasks into the details section.  I’ve had no need for the card checklists yet, but those could be useful for more complicated features that don’t easily break down into subfeatures I suppose.  This has been great for staying organized.
 
 Trello is fast and intuitive, with surprising depth for a simple looking concept. It has apps for iOS, android and windows 8, as well as its web app.  I highly recommend it for anyone who has to organize any type of project involving 10 or fewer people.
-

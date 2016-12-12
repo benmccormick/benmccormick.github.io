@@ -5,6 +5,7 @@ layout: "post"
 path: "/2014/07/02/learning-vim-in-2014-vim-as-language"
 description: "An explanation of the grammar behind Vim"
 keywords: "vim language grammar text object"
+category: "tools"
 pageViews: "34259"
 last30pageViews: "519"
 ---

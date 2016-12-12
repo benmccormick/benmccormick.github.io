@@ -5,6 +5,7 @@ layout: "post"
 path: "/2016/05/02/digging-into-react-choosing-component-styles"
 description: "An examination of the various styles for defining React components"
 keywords: "JavaScript, React, Component, createClass, class, functional component"
+category: "frameworks"
 pageViews: "1589"
 last30pageViews: "81"
 ---

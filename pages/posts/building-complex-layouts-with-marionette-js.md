@@ -5,6 +5,7 @@ layout: "post"
 path: "/2014/12/22/building-complex-layouts-with-marionette-js"
 description: "How to build complex UIs with Marionette.js"
 keywords: "Marionette, Backbone, UI, Architecture, JavaScript"
+category: "frameworks"
 pageViews: "23200"
 last30pageViews: "318"
 ---

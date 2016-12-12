@@ -3,6 +3,7 @@ title: "Modern Dojo: Exploring query"
 date: "2013-11-13 23:15:00+00:00"
 layout: "post"
 path: "/2013/11/13/modern-dojo-exploring-dojoquery"
+category: "frameworks"
 pageViews: "126"
 last30pageViews: "1"
 ---
@@ -131,4 +132,3 @@ To sum it all up, it looks like the query library is a great choice for providin
 [query1]: https://dojotoolkit.org/documentation/tutorials/1.9/using_query/
 [query2]: http://dojotoolkit.org/reference-guide/1.9/dojo/query.html
 [nodelist]:http://dojotoolkit.org/reference-guide/1.9/dojo/NodeList.html
-

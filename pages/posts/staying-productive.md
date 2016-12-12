@@ -3,6 +3,7 @@ title: "Staying Productive"
 date: "2016-01-25 04:41:46+00:00"
 layout: "post"
 path: "/2016/01/25/staying-productive"
+category: "software-productivity"
 pageViews: "989"
 last30pageViews: "52"
 ---
@@ -43,4 +44,3 @@ Thanks for taking the time to read this post!  Software tools and productivity a
 [vim]: http://benmccormick.org/learning-vim-in-2014/
 [productivejs]: http://benmccormick.org/2015/11/25/productive-javascript-development/
 [atom]: http://benmccormick.org/2016/01/11/the-most-interesting-atom-packages-ive-found-so-far/
-
