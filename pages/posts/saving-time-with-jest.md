@@ -148,3 +148,4 @@ Thanks for taking the time to read this post!  JavaScript development is one of 
 [ecma]:http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/
 [snapshots]: http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/
 [tracy]: https://twitter.com/ladyleet
+[jasmine]: https://jasmine.github.io/
