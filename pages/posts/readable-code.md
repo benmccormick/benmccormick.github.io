@@ -5,7 +5,7 @@ layout: "post"
 path: "/2016/12/11/readable-code-audience"
 description: "A quick observation about what it means to write readable code"
 keywords: "readable code python"
-category: "productive-software"
+category: "software-productivity"
 ---
 
 A coworker asked me last week if there was a better way to write the following python code:
