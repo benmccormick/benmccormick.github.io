@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2016-12-12T14:02:10Z</updated>
+    <updated>2016-12-14T14:34:51Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -16,6 +16,70 @@
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[What are Higher Order Components?]]></title>
+        <id>https://benmccormick.org/2016/12/14/what-are-higher-order-components/</id>
+        <link href="https://benmccormick.org/2016/12/14/what-are-higher-order-components/">
+        </link>
+        <updated>2016-12-14T14:30:00Z</updated>
+        <content type="html"><![CDATA[<p>If you spend much time at all reading through articles and documentation around React, you’re likely to run into the term “Higher Order component”, often abbreviated HoC.  Since it is often used without context in React discussions, and is not a particularly intuitive term for many (most?) developers, I thought it was worth publishing a quick and simple explanation of what Higher Order Components are.</p>
+<p>Higher Order Components are functions that take a React Component, and return a React Component.  The “higher order” phrasing is borrowed from the term “higher order function”, a more widely used term in Mathematics and Computer Science that refers to a function that either takes one or more functions as an argument, returns a function, or does both.  Since React Components can be thought of as functions that take data and return ui elements, the naming and usage make sense.  Let’s look at an example of a higher order component.</p>
+<pre><code class="language-javascript">const ExtraPropsComponent = (WrappedComponent, componentType) =&gt; {
+  return class ExtraPropsChild extends React.Component {
+    render() {
+      let props = Object.assign({}, this.props, {
+        importantFunction: () =&gt; 'foo',
+        componentType,
+      });
+      return &lt;WrappedComponent {...props}/&gt;
+    }
+  }
+}
+</code></pre>
+<p>This is a pretty basic HoC that takes a component and returns a new version of that component that will always be passed 2 extra props <code>importantFunction</code> and <code>componentType</code>. One is statically generated in this case, but the other is dynamically passed in when the component is generated.  The ability to pass dynamic content in when defining the component is one of the key wins of HoCs in the real world.  For instance, this is how Redux’s <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options">connect</a> function works.</p>
+<p>Note that this is different from a normal React Component that renders a subcomponent passed as an argument like this:</p>
+<pre><code class="language-javascript">let componentType = '???';
+class ExtraPropsComponent extends React.Component
+  render() {
+      let { ChildComponent } = this.props;
+      let props = Object.assign({}, this.props, {
+        importantFunction: () =&gt; 'foo',
+        componentType,
+      });
+      delete props.ChildComponent;
+
+      return &lt;ChildComponent {...props} /&gt;;
+  }
+}
+</code></pre>
+<p>These 2 examples are roughly equivalent for this case, but accomplish things in different ways.  The HoC is a function that takes a component and data when it is created and generates another component.  The normal component example is a component that takes a component as a property and accesses a variable that is in its scope at creation time to generate the element tree that it renders.  The HoC is more flexible as you could theoretically create multiple versions of a component using the single HoC.</p>
+<pre><code class="language-javascript">
+const FancyButton = ExtraPropsComponent(Button, 'fancy');
+const CrazyButton = ExtraPropsComponent(Button, 'crazy');
+const BoringButton = ExtraPropsComponent(Button, 'boring');
+</code></pre>
+<p>For the equivalent functionality without using an HoC, you would have to define the whole component for each case.</p>
+<h3>Higher Order Components in the real world</h3>
+<p>I’ve already mentioned connect from <a href="https://github.com/reactjs/react-redux">react-redux</a> as an example of a higher order component.  Other popular libraries that use HoC as part of their APIs include:</p>
+<ul>
+<li><a href="http://formidable.com/open-source/radium/">Radium</a>: a library for inline styles in React that uses a higher order component to transform in-line styles added to a component into a more robust-css like system</li>
+<li><a href="https://github.com/ReactTraining/react-router">React Router</a>: a routing library for React that uses <code>withRouter</code> a HoC that injects access to the router into components that it wraps</li>
+<li><a href="https://facebook.github.io/relay/">Relay</a>: Facebook’s library for connecting to GraphQL APIs includes Relay.Container, a HoC that allows developers to declare the data requirements for a component</li>
+</ul>
+<h3>More Resources</h3>
+<ul>
+<li>This was intentionally a very high level look at Higher Order Components.  If you want to go deeper, <a href="https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.yhbug3ohe">this medium article</a> is a great deep dive into all the use cases they allow.</li>
+<li>If you’re interested in using HoCs in your own code base, <a href="https://github.com/acdlite/recompose">recompose</a> is a utility library for making the syntax around defining and using them painless</li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out the my post from earlier this year on <a href="http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/">choosing a React component syntax</a>.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Readable code: Know your audience ]]></title>
         <id>https://benmccormick.org/2016/12/11/readable-code-audience/</id>
@@ -853,176 +917,6 @@ js=js,es6
 <p>I didn’t write my original post to say that Backbone is dead.  I wanted to highlight a way in which the experience of using it has declined over time.  It is specifically a way that makes using Backbone harder for me.  I’m grateful to the many people who have built Backbone and the ecosystem around it, and think it is still a very useful tool.  This ecosystem issue does make me unlikely to recommend Backbone for folks who are building web applications “at scale”.  I think Ember or possibly React are better choices for that.  For small one off projects, and for content focused sites that need as little JavaScript as possible while still providing a rich experience, Backbone is a great choice.</p>
 <h3>Subscribe</h3>
 <p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. If you’re interested in Backbone you also might want to check out my <a href="http://benmccormick.org/marionette-explained/">series on Marionette.js</a>, or my post on <a href="http://benmccormick.org/2015/09/09/what-can-backbone-developers-learn-from-react/">what Backbone developers can learn from React</a>.</p>
-]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Sad State of the Backbone Ecosystem]]></title>
-        <id>https://benmccormick.org/2016/03/07/the-sad-state-of-the-backbone-ecosystem/</id>
-        <link href="https://benmccormick.org/2016/03/07/the-sad-state-of-the-backbone-ecosystem/">
-        </link>
-        <updated>2016-03-07T05:06:40Z</updated>
-        <content type="html"><![CDATA[<p>For the past 2 years, ~90% of my coding time has been spent working on a large scale Backbone.js app.  In February 2014, the Backbone community was in a fairly good place.  The core library had reached 1.0 the previous year and had a strong team around it.  Marionette had emerged as a de-facto standard for web applications [^1].  There were Backbone specific plugins for many tasks, and generally gaps could be filled using the jQuery plugin ecosystem, or a framework agnostic library.  At the time, Backbone would have been a very defensible choice as a library for starting a new web development, as a simpler and more stable alternative to AngularJS, the current “hot” framework.</p>
-<p>Since then a few things have happened.  First, React has taken off, while Angular and Ember have continued to grow and learn from React and each other. Angular and React have benefited from significant marketing and financial support for a core development team that have helped them grow quickly.  Google Trends gives a pretty good idea of how that has turned out.</p>
-<p><img src="http://benmccormick.org/posts/images/Google_Trends_-_Web_Search_interest__angular_js__react_js__backbone_js__ember_js_-_Worldwide__Jan_2010_-_Feb_2016.png" alt="Google trends graph"></p>
-<p><strong>Update:</strong> <em>I’ve changed the above graph from an original that used angular.js, backbone.js, ember.js, and react.js as the search terms.  Only Backbone prefixes itself with a .js that way, and it undersold the other libraries, especially Angular.  I believe that this chart more accurately reflects usage trends.</em></p>
-<p>Secondly, Backbone’s author, <a href="https://twitter.com/jashkenas">Jeremy Ashkenas</a> made a decision to call Backbone “finished” in terms of API and feature set after the 1.0 release.  This has the advantage of leaving Backbone as by far the most stable major JavaScript framework, but hinders efforts to pull in lessons from other frameworks [^2].</p>
-<p>Finally, whether as a result of the first 2 items or due to some other factor, the ecosystem around Backbone has crumbled.  While Backbone’s core has stabilized, it still has a team of maintainers who are actively managing the project.  That does not appear to be the case for many of the other libraries in the Backbone ecosystem.  To investigate my perception of this, I decided to look at the contribution graphs of popular Backbone libraries to see the trends over the last 2 years.  I built a list of libraries based on the projects that the bower registry returns for the backbone keyword, looking for projects with at least 400 github stars[^3]. That lead to a list of 24 projects below.</p>
-<p>To be clear, I’m not posting this as a criticism of anyone.  Open source is a volunteer effort, and maintaining a project is hard and often doesn’t make sense when the author has moved on to other challenges.  This is simply an honest look at where the Backbone ecosystem stands, with the goal of helping those of us who are building Backbone applications or considering using it to evaluate the ecosystem honestly.</p>
-<h3>1. Backbone</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_jashkenas_backbone.png" alt="backbone graph"></p>
-<p><strong>Open issues:</strong> 54</p>
-<p><strong>Issues closed in 2016:</strong> 50+</p>
-<p><strong>Last Release</strong>: 3 days ago (March 3rd 2016)</p>
-<p>I’m starting with Backbone itself to give an idea what a stable mature project graph looks like.  Backbone isn’t getting the activity it used to, but there’s still a steady flow of bug fixes and documentation updates, and issues are being worked through.</p>
-<h3>2. Marionette</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_marionettejs_backbone_marionette.png" alt="mn graph"></p>
-<p><strong>Open Issues:</strong> 107</p>
-<p><strong>Issues closed in 2016:</strong> 30+</p>
-<p><strong>Last Release</strong>: November 22 2015</p>
-<p>Of all the graphs here, this one is the nearest and dearest to me.  I’ve contributed code to Marionette, and have written about it <a href="http://benmccormick.org/marionette-explained/">many times</a> on this blog.  Marionette still is seeing plenty of work, but as the contributors have cycled through, work on a long awaited version 3 with important improvements has sat on a branch for over a year.  This is a great library, but it hasn’t been immune to the wider issues in the ecosystem.</p>
-<h3>3. Backbone.Relational</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_PaulUithol_Backbone-relational.png" alt="bb-relational"></p>
-<p><strong>Open Issues:</strong> 122</p>
-<p><strong>Issues closed in 2016:</strong> 0</p>
-<p><strong>Last Release:</strong> August 19 2015</p>
-<p>Backbone.Relational is another “stable” library.  On its own, there’s nothing wrong with that, this is a focused library that doesn’t necessarily need a lot of new features.  But this is the start of a pattern.</p>
-<h3>4. backbone-forms</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_powmedia_backbone-forms.png" alt="bb-forms"></p>
-<p><strong>Open Issues:</strong> 172</p>
-<p><strong>Issues closed in 2016:</strong> 14</p>
-<p><strong>Last Release:</strong> Jan 21, 2016</p>
-<h3>5. backgrid</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_wyuenho_backgrid.png" alt="backgrid"></p>
-<p><strong>Open Issues:</strong> 111</p>
-<p><strong>Issues closed in 2016:</strong> 3</p>
-<p><strong>Last Release:</strong> Jan 21 2014</p>
-<p>This is the first project on this list that I wouldn’t consider to be actively maintained.  Commits over the past 2 years have been primarily about keeping tooling and documentation up to date.</p>
-<h3>6. backbone.localStorage</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_jeromegn_Backbone_localStorage.png" alt="localstorage"></p>
-<p><strong>Open Issues:</strong> 45</p>
-<p><strong>Issues closed in 2016:</strong> 1</p>
-<p><strong>Last Release:</strong> Jan 22 2015</p>
-<h3>7. backbone.stickit</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_NYTimes_backbone_stickit.png" alt="stickit"></p>
-<p><strong>Open Issues:</strong> 26</p>
-<p><strong>Issues closed in 2016:</strong> 1</p>
-<p><strong>Last Release:</strong> May 11 2015</p>
-<h3>8. backbone.paginator</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_backbone-paginator_backbone_paginator.png" alt="paginator"></p>
-<p><strong>Open Issues:</strong> 20</p>
-<p><strong>Issues closed in 2016:</strong> 7+</p>
-<p><strong>Last Release:</strong> Feb 3 2016</p>
-<h3>9. Backbone-validation</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_thedersen_backbone_validation.png" alt="validation"></p>
-<p><strong>Open Issues:</strong> 79</p>
-<p><strong>Issues closed in 2016:</strong> 1</p>
-<p><strong>Last Release:</strong> May 8 2015</p>
-<p>I have personal experience with the abandoned state of this library since my team has been working off a forked version of it for 6 months while waiting on maintainers to address a <a href="https://github.com/thedersen/backbone.validation/pull/302">pull request</a>.  Like many others here, it appears to be a project that the core team moved on from and nobody else had the motivation or time to pick it up.  While there’s nothing wrong with that, it makes it hard to rely on these projects.</p>
-<h3>10. Knockback</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_kmalakoff_knockback.png" alt="knockback graph"></p>
-<p><strong>Open Issues:</strong> 4</p>
-<p><strong>Issues closed in 2016:</strong> 1</p>
-<p><strong>Last Release:</strong> Sep 28 2015</p>
-<h3>11. Exoskeleton</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_paulmillr_exoskeleton.png" alt="exoskeleton graph"></p>
-<p><strong>Open Issues:</strong> 21</p>
-<p><strong>Issues closed in 2016:</strong> 2</p>
-<p><strong>Last Release:</strong> August 4 2014</p>
-<h3>12. Backbone.dualstorage</h3>
-<p><img src="http://benmccormick.org/posts/images/Banners_and_Alerts_and_Contributors_to_nilbus_Backbone_dualStorage.png" alt="backbone.dualstorage"></p>
-<p><strong>Open Issues:</strong> 30</p>
-<p><strong>Issues closed in 2016:</strong> 0</p>
-<p><strong>Last Release:</strong> Feb 16 2015</p>
-<h3>13. Backbone-react-component</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_magalhas_backbone-react-component.png" alt="backbone react component"></p>
-<p><strong>Open Issues:</strong> 8</p>
-<p><strong>Issues closed in 2016:</strong> 1</p>
-<p><strong>Last Release:</strong> Nov 6 2015</p>
-<h3>14. Backbone-offline</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_alekseykulikov_backbone-offline.png" alt="backbone-offline"></p>
-<p><strong>Open Issues:</strong> 30</p>
-<p><strong>Issues closed in 2016:</strong> 0</p>
-<p><strong>Last Release:</strong> Aug 21 2013</p>
-<p>This project is actually documented as being deprecated and discontinued.  There is talk in the README about building a successor library, but it appears to have never emerged.</p>
-<h3>15. React.Backbone</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_clayallsopp_react_backbone.png" alt="react.backbone"></p>
-<p><strong>Open Issues:</strong> 11</p>
-<p><strong>Issues closed in 2016:</strong> 0</p>
-<p><strong>Last Release:</strong> Jan 5 2015</p>
-<p>Interesting, and not encouraging, that the 2 newest libraries at this popularity level are both for helping Backbone users migrate to React, and neither appear to be very active.</p>
-<h3>16. Backbone.expoxy</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_gmac_backbone_epoxy.png" alt="backbone.epoxy"></p>
-<p><strong>Open Issues:</strong> 19</p>
-<p><strong>Issues closed in 2016:</strong> 1</p>
-<p><strong>Last Release:</strong> Nov 20 2014</p>
-<h3>17. backbone.iobind</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_noveogroup_backbone_iobind.png" alt="backbone.iobind"></p>
-<p><strong>Open Issues:</strong> 16</p>
-<p><strong>Issues closed in 2016:</strong> 1</p>
-<p><strong>Last Release:</strong> Dec 10 2014</p>
-<h3>18. backbone-associations</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_dhruvaray_backbone-associations.png" alt="backbone-associations graph"></p>
-<p><strong>Open Issues:</strong> 16</p>
-<p><strong>Issues closed in 2016:</strong> 0</p>
-<p><strong>Last Release:</strong> Jun 28 2014</p>
-<p>We’re really starting to get into the meat of the dead projects now.  While there are always going to be older projects that were once popular and got a lot of stars and are now abandoned, that shouldn’t be this many of the top 20 projects</p>
-<h3>19. backbone-tastypie</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_PaulUithol_backbone-tastypie.png" alt="tastypie graph"></p>
-<p><strong>Open Issues:</strong> 12</p>
-<p><strong>Issues closed in 2016:</strong> 0</p>
-<p><strong>Last Release:</strong> Oct 26 2013</p>
-<p>This is a single use case library that presumably was abandoned after solving a problem, but its worth including to illustrate that the 400 star bar isn’t that hard to hit. A similar search for React projects on bower yields 46 projects with 400+ stars, and React is only ~3 years old.</p>
-<h3>20. backbone.syphon</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_marionettejs_backbone_syphon.png" alt="syphon graph"></p>
-<p><strong>Open Issues:</strong> 19</p>
-<p><strong>Issues closed in 2016:</strong> 1</p>
-<p><strong>Last Release:</strong> Oct 18 2015</p>
-<h3>21. backbone-nested</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_afeld_backbone-nested.png" alt="backbone-nested"></p>
-<p><strong>Open Issues:</strong> 45</p>
-<p><strong>Issues closed in 2016:</strong> 1</p>
-<p><strong>Last Release:</strong> Jul 27 2015</p>
-<h3>22. backbone.radio</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_marionettejs_backbone_radio.png" alt="backbone.radio"></p>
-<p><strong>Open Issues:</strong> 9</p>
-<p><strong>Issues closed in 2016:</strong> 0</p>
-<p><strong>Last Release:</strong> Sep 5 2015</p>
-<p>Backbone.Radio (along with Backbone.syphon) is part of the marionette project.  You can see that those projects at least have continued work during the past year, albeit at a significantly less active rate than during 2014</p>
-<h3>23. backbone-fetch-cache</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_madglory_backbone-fetch-cache.png" alt="backbone-fetch-cache graph"></p>
-<p><strong>Open Issues:</strong> 26</p>
-<p><strong>Issues closed in 2016:</strong> 2</p>
-<p><strong>Last Release:</strong> Feb 16 2014</p>
-<h3>24. backbone-query-parameters</h3>
-<p><img src="http://benmccormick.org/posts/images/Contributors_to_jhudson8_backbone-query-parameters.png" alt="backbone-query-parameters"></p>
-<p><strong>Open Issues:</strong> 10</p>
-<p><strong>Issues closed in 2016:</strong> 0</p>
-<p><strong>Last Release:</strong> Sep 23 2014</p>
-<p>So what does this look like in aggregate.  Of the “top 24” Backbone projects, only 2 were started after January 2014, and one of those is a tool to migrate Backbone projects to React, the other was a rebrand of an existing tool.  18 of the top 24 libraries have not had a release in the last 6 months, 9 have not had a release since December 2014 or earlier.  If we classify these libraries as “Actively Growing”, “Actively being developed”, “Stable and maintained”, “Flickering Signs of life”, “All but dead”[^4], and “Dead”, I would personally split that out like this:</p>
-<table>
-<thead>
-<tr><th>Title</th><th>Libraries</th><tr>
-</thead>
-<tbody>
-<tr><td>Actively Growing</td><td></td></tr>
-<tr><td>Actively Developed</td><td> Marionette</td></tr>
-<tr><td>Stable + minimally maintained</td><td> Backbone, Backbone.Relational, backbone-forms, backbone.paginator, Backbone.syphon, Backbone.radio</td></tr>
-<tr><td>Flickering Signs of life</td><td> back grid, knockback,</td></tr>
-<tr><td>All but Dead</td><td> backbone.localstorage, backbone.stickit, backbone-validation, exoskeleton, backbone.dualstorage, backbone.react-component, react.backbone, backbone-nested, backbone-fetch-cache, backbone-query-parameters</td></tr>
-<tr><td>Dead</td><td> backbone.offline, backbone.iobind,  backbone.epoxy, backbone-associations, backbone-tastypie</td></tr>
-</table>
-<p>It is not a pretty picture right now.  If you’re part of the Backbone community, I’d love to hear from you on this.  Should we be calling Backbone dead and looking to migrate ASAP?  Do you think I’m overselling this problem?  Are there libraries that I’m not considering right now that are thriving?  Or is focusing on Backbone-specific libraries a mistake because most developers are pasting together multiple libraries that aren’t necessarily tightly tied.</p>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. If you’re interested in Backbone you also might want to check out my <a href="http://benmccormick.org/marionette-explained/">series on Marionette.js</a>, or my post on <a href="http://benmccormick.org/2015/09/09/what-can-backbone-developers-learn-from-react/">what Backbone developers can learn from React</a>.</p>
-<p>[^1]: When I attended BackboneConf later that year, about 75% of attendees raised their hands when asked if they had used Marionette
-[^2]: Some ideas, like a better router or better templating systems, can be pulled in as 3rd party libraries just fine.  But conceptual changes like 1 way data flow or easily composable components from React and the ES6 class model can’t easily be pulled into Backbone without changes to the core library.  It’s debatable whether those ideas are useful for Backbone, but it is clear that they will not fit within the current state of the library.
-[^3]: I used Bower rather than npm because it returns search results sorted by stars rather than trying to directly match the query.
-[^4]: I don’t like calling somebody else’s project dead if its not labeled that way and has had recent issues activity</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>

@@ -106,6 +106,7 @@
 <url> <loc>https://benmccormick.org/2014/07/09/understanding-the-backbone-mindset-a-review-of-building-backbone-plugins-by-derick-bailey/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2013/01/15/unexpected-javascript-that-doesnt-do-what-you-think/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/11/10/vim-workflows-file-switching-strategies/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2016/12/14/what-are-higher-order-components/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2015/09/09/what-can-backbone-developers-learn-from-react/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
