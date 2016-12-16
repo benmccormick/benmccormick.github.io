@@ -2,34 +2,42 @@
   "categories": [
     {
       "title": "JavaScript Frameworks and Libraries",
+      "description": "These posts cover development using JavaScript frameworks and libraries, including React, jQuery, Knockout, and Backbone",
       "key": "frameworks",
       "icon": "beaker"
     }, {
       "title": "JavaScript Language",
+      "description": "These posts cover the JavaScript language, its evolution over time, and practical usage examples.",
       "key": "javascript",
       "icon": "code"
     }, {
       "title": "Productivity and Software Engineering",
+      "description": "These posts cover techniques and ideas around improving productivity and writing better software.",
       "key": "software-productivity",
       "icon": "project"
     }, {
       "title": "Meta",
       "key": "meta",
+      "description": "These posts are updates about the site, messages to the readers or news from me",
       "icon": "info"
     }, {
       "title": "Software Tools",
+      "description": "These posts cover tools and applications I use in software development",
       "key": "tools",
       "icon": "tools"
     }, {
       "title": "Book and Product Reviews",
+      "description": "These posts are reviews of books I've read and products I've used",
       "key": "reviews",
       "icon": "book"
     }, {
       "title": "Web Platform",
+      "description": "These posts cover the technologies and standards behind the web, especially how they relate to software development",
       "key": "platform",
       "icon": "globe"
     }, {
       "title": "Opinion",
+      "description": "These posts cover my thoughts on a variety of technology related subjects",
       "key": "opinion",
       "icon": "megaphone"
     }

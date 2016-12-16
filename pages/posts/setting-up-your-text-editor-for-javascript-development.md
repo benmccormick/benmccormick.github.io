@@ -3,6 +3,7 @@ title: "Setting Up Your Text Editor For JavaScript Development"
 date: "2014-10-13 01:05:51+00:00"
 layout: "post"
 path: "/2014/10/13/setting-up-your-text-editor-for-javascript-development"
+description: "A look at some tools and plugins that help create a productive JavaScript development workflow"
 category: "tools"
 pageViews: "9276"
 last30pageViews: "190"
@@ -34,13 +35,13 @@ JavaScript linters (also called syntax checkers) can provide some of the safety 
 
 While it's a great idea to make linters part of your build process, you get even more power from integrating them with your editor.  Almost all modern text editors include some sort of plugin for displaying syntax errors and warnings in the gutter to the left of the text.  You can check out the integration pages for [ESLint][eslintint] and [jsHint][jshintint] to get a feel for the plugins available for your editor.  
 
-![Linting Picture](/posts/images/lintingpic.png)
+<img src="/posts/images/lintingpic.png" class="full-width" alt ="linting picture">
 
 ### TernJS + Autocomplete
 
 Linters are great for telling you what not to do, but can't give you much guidance on what you actually are able to do.  Fortunately we have other tools for that.  [Tern.js][ternjs] is a fantastic library that provides "intellisense" style autocompleting for JavaScript code, along with other IDE-like features including documentation links and refactoring support. It's not perfect, since JavaScript's nondeterministic syntax sometimes makes it hard to tell what properties a variable will actually have at runtime, but it takes a good shot at it and is able to go pretty far, especially for libraries where it can expose the full API to you within the editor.  To get the most out of Tern, you'll need to set up a Tern project definition, where you can specify any files that you always want loaded, and any plugins you want to use. The preloaded files is useful if you're making global references to a namespace or library, and the plugins can give you support for module systems, so that you can handle references that are passed into a module from a different file in code using requireJS or Angular.
 
-![TernJS example](/posts/images/ternjs.gif)
+<img src="/posts/images/ternjs.gif" class="full-width" alt ="ternjs picture">
 
 ### Snippets
 

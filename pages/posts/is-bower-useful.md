@@ -4,6 +4,7 @@ date: "2015-01-22 04:52:06+00:00"
 layout: "post"
 path: "/2015/01/22/is-bower-useful"
 category: "tools"
+description: "A defense of Bower as a useful package manager"
 pageViews: "2966"
 last30pageViews: "57"
 ---

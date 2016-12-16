@@ -11,6 +11,8 @@ import project from 'pages/category_icons/project.svgi';
 import tools from 'pages/category_icons/tools.svgi';
 import question from 'pages/category_icons/question.svgi';
 import categoryList from '../pages/categories.json';
+import { Link } from 'react-router';
+import { prefixLink } from 'gatsby-helpers';
 import get from 'lodash/get';
 import find from 'lodash/find';
 import '../css/categoryicon.css';
@@ -30,23 +32,28 @@ let icons = {
 
 class CategoryIcon extends React.Component {
   render() {
-    let {category} = this.props;
+    let {category, includeText} = this.props;
     let categories = get(categoryList, 'categories', []);
     let selectedCategory = find(categories, {key: category});
 
     let icon = selectedCategory ? icons[selectedCategory.icon] : question;
     let text = selectedCategory ? selectedCategory.title : 'Uncategorized';
-    return <span className = 'category-icon-wrapper'>
+    return <Link to = {prefixLink(`/category/${category}/`)} className = 'category-icon-wrapper'>
       <span className = {`category-icon category-icon-${category}`} >
         <InlineSVG src = {icon} />
       </span>
-      {text}
-    </span>;
+      {includeText ? text : null}
+    </Link>;
   }
 }
 
 CategoryIcon.propTypes = {
   category: React.PropTypes.string.isRequired,
+  includeText: React.PropTypes.bool.isRequired,
+};
+
+CategoryIcon.defaultProps = {
+  includeText: true,
 };
 
 export default CategoryIcon;

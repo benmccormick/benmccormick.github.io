@@ -12,7 +12,7 @@ class LinkList extends React.Component {
     />);
     return (<div>
 
-      <h1>{title}</h1>
+      {title ? <h1>{title}</h1> : null }
       <ul
         style = {{
           marginLeft: 0,
@@ -27,7 +27,7 @@ class LinkList extends React.Component {
 
 LinkList.propTypes = {
   pages: React.PropTypes.array.isRequired,
-  title: React.PropTypes.string.isRequired,
+  title: React.PropTypes.string,
   showCategory: React.PropTypes.bool.isRequired,
 };
 

@@ -4,6 +4,7 @@ date: "2015-02-22 21:38:46+00:00"
 layout: "post"
 path: "/2015/02/22/rauchg-on-es6"
 category: "javascript"
+description: "A link-log of Guillermo Rauch's look at ES6"
 pageViews: "316"
 last30pageViews: "0"
 ---

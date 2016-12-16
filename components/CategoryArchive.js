@@ -1,21 +1,29 @@
 import React from 'react';
 import sortBy from 'lodash/sortBy';
 import get from 'lodash/get';
+import find from 'lodash/find';
 import Helmet from 'react-helmet';
 import { config } from 'config';
 import include from 'underscore.string/include';
 import Footer from 'components/Footer';
 import LinkList from 'components/LinkList';
+import categoryHash from '../pages/categories.json';
 
 class CategoryArchive extends React.Component {
   render() {
+    let {pages, categoryKey} = this.props;
+    let categoryData = find(categoryHash.categories, {key: categoryKey});
     // Sort pages.
-    const sortedPages = sortBy(this.props.route.pages, (page) =>
-      get(page, 'data.date')
-    ).filter(page => get(page, 'file.ext') === 'md' &&
+    const sortedPages = sortBy(pages, (page) => get(page, 'data.date'))
+      .filter(page => get(page, 'file.ext') === 'md' &&
+        page.data.category === categoryKey &&
         !include(page.path, '/404') &&
         get(page, 'data.layout') === 'post'
-    ).reverse();
+      ).reverse();
+
+    let {description, title} = categoryData;
+
+    let titleText = `${title} Articles`;
     return (
       <div>
         <Helmet
@@ -25,10 +33,12 @@ class CategoryArchive extends React.Component {
             {'name': 'keywords', 'content': 'blog, articles'},
           ]}
         />
+        <h1> {titleText} </h1>
+        <p> {description}</p>
         <LinkList
           pages = {sortedPages}
-          title = 'Articles'
-          showCategory = {true}
+          title = {null}
+          showCategory = {false}
         />
         <Footer />
       </div>
@@ -37,7 +47,8 @@ class CategoryArchive extends React.Component {
 }
 
 CategoryArchive.propTypes = {
-  route: React.PropTypes.object,
+  pages: React.PropTypes.object.isRequired,
+  categoryKey: React.PropTypes.string.isRequired,
 };
 
 export default CategoryArchive;
