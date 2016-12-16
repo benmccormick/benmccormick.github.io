@@ -114,7 +114,7 @@ The last category of plugins are scripts that allow Vim to do things that are to
 
 ### Subscribe
 
-This was the sixth (and longest) entry in a series of posts on learning Vim in a modern way.  If you made it all the way down here, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). Also check out the [next post](http://benmccormick.org/2014/07/28/learning-vim-in-2014-copy-and-paste-the-vim-way/) in the series, covering Vim's copy and paste functionality.
+This was the sixth (and longest) entry in a series of posts on learning Vim in a modern way.  If you made it all the way down here, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). Also check out the [next post](http://benmccormick.org/2014/07/27/learning-vim-in-2014-copy-and-paste-the-vim-way/) in the series, covering Vim's copy and paste functionality.
 
 
 [configpost]:http://benmccormick.org/2014/07/14/learning-vim-in-2014-configuring-vim/

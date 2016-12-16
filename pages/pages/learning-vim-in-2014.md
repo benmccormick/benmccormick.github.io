@@ -25,7 +25,7 @@ Below is a collected page of the posts in the series:
 
 6. [Getting more from Vim with plugins](http://benmccormick.org/2014/07/21/learning-vim-in-2014-getting-more-from-vim-with-plugins/) - A look at how plugins can add to your Vim experience, and when to use them.  I also look at the current (2014) Vim plugin ecosystem and make some suggestions for plugins to meet common use cases.
 
-7. [Copy And Paste The Vim Way](http://benmccormick.org/2014/07/28/learning-vim-in-2014-copy-and-paste-the-vim-way/) - Vim ignores modern copy and paste conventions in favor of it's own system, keybindings, and vocabulary.  This piece explains the method behind Vim's copy and paste madness.
+7. [Copy And Paste The Vim Way](http://benmccormick.org/2014/07/27/learning-vim-in-2014-copy-and-paste-the-vim-way/) - Vim ignores modern copy and paste conventions in favor of it's own system, keybindings, and vocabulary.  This piece explains the method behind Vim's copy and paste madness.
 
 8. [Search](http://benmccormick.org/2014/08/04/learning-vim-in-2014-search/) -  Good search techniques, either for text or files, is one of the most important things you need when working with large code bases or documents.  This takes a look at different search techniques in Vim and when to use them.
 
