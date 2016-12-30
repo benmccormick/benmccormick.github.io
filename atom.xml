@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2016-12-16T03:09:24Z</updated>
+    <updated>2016-12-30T02:16:01Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -16,6 +16,85 @@
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[2016 Roundup]]></title>
+        <id>https://benmccormick.org/2016/12/31/2016-roundup/</id>
+        <link href="https://benmccormick.org/2016/12/31/2016-roundup/">
+        </link>
+        <updated>2016-12-30T02:15:00Z</updated>
+        <content type="html"><![CDATA[<p>Thanks to all of you who have followed my blog this year! It was a busy year and I didn’t get as many posts out as years past, but you all have been as supportive as ever.  I’m excited about the things I’ve been able to do with the new site this month, and am looking forward to a great 2017.  But first, a look back.</p>
+<h3>Most Read Posts of 2016</h3>
+<p>I wrote 15 posts in 2016, down from my pace of 19 in 2015 and 25 in 2014.  Some of that was an unusually busy work year, and some of the time I normally put into the site went to the redesdign. I also sat on a few articles that didn’t turn out that great when actually written out.  But I made a good run at the end and hopefully will be writing more in 2017.  The most read posts from this site in 2016 were:</p>
+<ol>
+<li>
+<p><a href="http://benmccormick.org/2016/01/11/the-most-interesting-atom-packages-ive-found-so-far/">The Most Interesting Atom Packages I’ve found so far</a> - I started using <a href="https://atom.io/">Atom</a> as my primary text editor late in 2015.  This was my roundup of the coolest and most unique plugins I had found for Atom at that point.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/">Testing with Jest Snapshots</a> - This was my review of <a href="https://facebook.github.io/jest/">Jest</a>’s snapshot testing feature.  I found it extremely useful for testing UI components.  I also wrote about Jest again <a href="http://benmccormick.org/2016/12/10/saving-time-with-jest/">this month</a>, transcribing a talk I gave at a local meetup on <a href="http://benmccormick.org/2016/12/10/saving-time-with-jest/">How Jest can save you time</a>.</p>
+</li>
+<li>
+<p><a href="http://benmccormick.org/2016/01/08/reusable-code-patterns/">Reusable Code Patterns</a> - This article was a high level look at the ways you can approach sharing code for 2 different use cases.</p>
+</li>
+</ol>
+<h4>Honorable Mention</h4>
+<p><a href="http://benmccormick.org/2015/12/30/es6-patterns-converting-callbacks-to-promises/">ES6 Patterns: Converting Callbacks to Promises</a> - This article was technically written in 2015, but it was published during the last week of the year and thus wasn’t eligible to be included last year. However it has proven quite popular.  This was my attempt at a straightforward explanation of how to convert a callback based API to a Promise based one.</p>
+<h3>Code I wrote in 2016</h3>
+<p>Most of the code I wrote this year was for my work at Windsor Circle.  But I have spent some time getting this blog up and running, and anyone interested in what it takes to get a fully functioning blog running on <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> is welcome to take a look at the <a href="https://github.com/benmccormick/benmccormickorg">github repo</a>.</p>
+<h3>Languages, Libraries, and Technologies I started using in 2016</h3>
+<ul>
+<li>
+<p><a href="https://facebook.github.io/jest/">Jest</a> is a JavaScript testing library that I started using this year. It’s fantastic, and I’ve had the opportunity to <a href="http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/">write</a> and <a href="http://benmccormick.org/2016/12/10/saving-time-with-jest/">speak</a> about it a few times already.</p>
+</li>
+<li>
+<p><a href="https://github.com/gatsbyjs/gatsby">Gatsbyjs</a> now powers this blog. Gatsby is a ReactJS based static site generator, and it has been a pleasure to work with.</p>
+</li>
+<li>
+<p>My team started using <a href="https://www.docker.com/">Docker</a> this year.  It’s been a mixed bag for me personally, but I love the idea of what it provides</p>
+</li>
+</ul>
+<h3>Languages, Libraries, and Technologies I stopped using in 2016</h3>
+<ul>
+<li>Despite my affection for <a href="http://marionettejs.com/">Marionette</a>, I’m no longer actively using it other than in some legacy code for my work application</li>
+</ul>
+<h3>Languages and Libraries I used (more or less) every day in 2016</h3>
+<p>JavaScript (ES6), Python, React, PostgreSQL, Backbone, lodash</p>
+<h3>Languages and Libraries I want to try in 2017</h3>
+<p>RxJS, Flow, VueJS, <a href="https://github.com/FormidableLabs/victory">Victory</a>, Pandas and other python data analysis libraries, Rust</p>
+<h3>Blogs I started following in 2016</h3>
+<p>Nothing new this year,</p>
+<h3>Blogs I read every post from in 2016</h3>
+<p>Rands In Repose, Stratechery, Daring Fireball,  <a href="http://Marco.org">Marco.org</a>, <a href="http://rauchg.com">rauchg.com</a>, <a href="http://purposedworking.com">purposedworking.com</a></p>
+<h3>Podcasts I started listening to in 2016</h3>
+<ul>
+<li><a href="http://www.npr.org/podcasts/510310/npr-politics-podcast">NPR Politics</a> - Approachable and fun while still being informative, one of the best ways to follow this years election.</li>
+</ul>
+<p><a href="http://www.npr.org/podcasts/510313/how-i-built-this">How I Built This</a> - This has been a great new podcast on entrepreneurship</p>
+<h3>Software I started using in 2016</h3>
+<ul>
+<li>
+<p><a href="http://inbox.google.com">Google Inbox</a> + <a href="http://airmailapp.com/">Airmail</a> for email: I’m not sure I’m ever going to be happy with an email client, but I’m currently using the combo of Google Inbox on iOS and Airmail on MacOS.  Post <a href="https://www.mailboxapp.com/">Mailbox</a>, Inbox is my favorite iOS mail app.  On desktop though I like to have universal inbox and tight integration with the rest of the operating system, so I use Airmail, which is less bad than the rest of the MacOS mail clients I’ve tried</p>
+</li>
+<li>
+<p><a href="http://copiedapp.com/">Copied</a>: Copied is a clipboard manager for MacOS (and sort of iOS).  It’s been great to be able to keep multiple things in the clipboard at once, and be able to go back and get something if I blow it away.  I’m not a power user.  I haven’t really figured out a reason to use their lists features, or their iOS client, but it has been great for the limited things I use it for.</p>
+</li>
+<li>
+<p><a href="https://caskroom.github.io/">Homebrew Cask</a>: I’ve used homebrew for a while.  But being able to install GUI apps as easily as command line apps has been pretty amazing.  If you are on OSX and don’t use homebrew to install pretty much everything, you’re missing out.  Of course the real effect is that it makes me dread and hate the Mac App Store even more.</p>
+</li>
+<li>
+<p><a href="http://www.nytimes.com/services/mobile/">The New York Times App</a>: Ok this is a bit of a cheat since this is more about content than software, but if you’re out of touch on what is going on in the world, there’s never been a better time to support a good source of news and reporting, whichever outlet is your preference.</p>
+</li>
+</ul>
+<h3>Software I stopped using in 2016</h3>
+<p>Nothing I’m aware of, though I am currently checking out <a href="http://www.bear-writer.com/">Bear</a> and <a href="https://itunes.apple.com/us/app/annotate-capture-and-share/id918207447?mt=12">Annotate</a> as potential replacements for Evernote and Skitch.</p>
+<h3>Software I used (nearly) every day in 2016</h3>
+<p>MacOS/iOS, Google Search, Chrome/Safari, Google Inbox/Airmail, Twitter/Tweetbot, Feedbin/Reeder, Instapaper, iMessage, Slack, Trello, 1Password, Atom/Vim, iTerm, Fish Shell, tmux, Bitbucket, Fantastical, Spotify, Evernote, Skitch, Dash</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[What are Higher Order Components?]]></title>
         <id>https://benmccormick.org/2016/12/14/what-are-higher-order-components/</id>
@@ -873,50 +952,6 @@ js=js,es6
     </li>
 </ol>
 </div>
-]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Stability vs Decline]]></title>
-        <id>https://benmccormick.org/2016/03/09/stability-vs-decline/</id>
-        <link href="https://benmccormick.org/2016/03/09/stability-vs-decline/">
-        </link>
-        <updated>2016-03-09T06:04:39Z</updated>
-        <content type="html"><![CDATA[<p>My post on <a href="http://benmccormick.org/2016/03/07/the-sad-state-of-the-backbone-ecosystem/">the sad state of the Backbone ecosystem</a> from this weekend was surprisingly popular.  I got a lot of responses pointing out <a href="https://twitter.com/ben336/status/707063566940016645">some things I got wrong</a>, sharing my concerns, or pushing back on my main points.  Objections to the post came in 2 primary forms, which I want to quickly address.  The first concern is that the Backbone ecosystem doesn’t matter. The second concern is that the trend I’m identifying as decline and decay is actually stability.</p>
-<h3>Does Backbone’s ecosystem matter?</h3>
-<p>The first concern came in 2 main forms.  The first (and more polite) form was from commenters who shared their experience and said that they’d found Backbone’s core to be enough when combined with their own code.  The second group was a generalization of that, effectively saying that Backbone is a minimal framework, and <strong>real programmers</strong> can write their own code on top of that.  I’m sympathetic to the first framing, much less so to the second.</p>
-<p>One of the beauties of Backbone is that it can be used in a variety of ways.  Its small and simple enough that you can pull it in and use only part of it (maybe just the models or event system for instance), but it has been scaled to be used for large web applications like Trello, Rdio, Backbone, Bitbucket and others. Some of those use cases quite frankly, don’t need anything else most of the time.  If you’re writing a very simple single screen piece of interactive behavior with Backbone, you don’t need any special extra libraries for that.</p>
-<p>I personally work on a large scale web application (~200 Backbone Views) that has been developed for over 3 years and will continue to be developed (hopefully) for a long time. In that situation, having well documented, tested and supported third party libraries for common tasks like rich tables, form validation, UI component libraries, and integrations with other tools is tremendously useful.  As an experienced developer, I’m capable of writing all of these things myself, but doing so takes time, and the result is likely to be less stable, less well documented, and less well thought through than a popular open source solution.  To be clear, nobody is obligated to write these things for me.  I’m merely making a factual statement that the experience of writing a large web application in Backbone becomes more difficult as the community around the library shrinks.</p>
-<p>There’s a second reason why down playing the importance of an ecosystem is harmful though.  I’ve said that I am capable of writing the various components of an ecosystem myself.  But that’s only true of me because I have years of experience writing code, and specifically of working with different libraries that gave me ideas on how those problems should be tackled.  A community that says you should be able to do everything yourself without starting places and good examples is a community that is hostile to beginners.  Let’s not let the JavaScript community be that.</p>
-<h3>Is Backbone just stable?</h3>
-<p>The second disagreement (and the most common theme on <a href="https://news.ycombinator.com/item?id=11237283">Hacker News</a>) was that the current state of Backbone and its ecosystem is not sad at all.  Backbone is stable, and thats something to be celebrated.  In some cases this echoed what I actually said in the post.  I specifically called out the core Backbone library as a good example of stable software:</p>
-<blockquote>
-<p>I’m starting with Backbone itself to give an idea what a stable mature project graph looks like. Backbone isn’t getting the activity it used to, but there’s still a steady flow of bug fixes and documentation updates, and issues are being worked through.</p>
-</blockquote>
-<p>Backbone is stable, and in a vacuum that is something to be happy about.  Stability has not prevented it from having an active team of contributors who are continuing to refine it and make small improvements.  This is great, and on it’s own would make me incredibly pleased as a user.  The problem comes with the libraries around it.  Excepting Marionette, which appears to be getting ready to launch their long awaited version 3, activity in the ecosystem has stagnated in a different way than Backbone core.</p>
-<p>Unlike Backbone core, secondary libraries have important issues requested by several people being ignored.  I’ve chosen to avoid calling out specific projects because I don’t think anyone has a responsibility to fix other people’s open source problems and don’t want to add to open source guilt.  But it is not hard to find examples of this if you browse through popular Backbone packages on Github.</p>
-<p>Unlike Backbone core, secondary libraries sometimes have no clear active maintainer who can be counted on to put out a release in the case of an emergency change being needed.  This matters because Backbone and JavaScript libraries in general live on an unstable platform.  Browsers change all the time.  While they do their best to maintain backwards compatibility, browsers occasionally introduce bugs, and occasionally fix bugs that a library may have been relying on or working around. In addition to disaster scenarios like that, tools change and best practices change over time.  When documentation stagnates and doesn’t keep up with changes, libraries become less useful and approachable over time.  Most Backbone tutorials on the web, and the documentation for many libraries, assume that scripts will be loaded in directly and that variables will be referenced through namespacing.  In a world where module loaders are becoming a default tool for larger JavaScript applications, thats a gap that makes libraries hard to learn, or teaches out of date practices to less experienced developers.</p>
-<p>A healthy stable project ought to be able to check off 3 boxes.</p>
-<ol>
-<li>
-<p>It meets the goals of its authors</p>
-</li>
-<li>
-<p>Major bugs are fixed as they’re reported.</p>
-</li>
-<li>
-<p>It is maintained to the extent that as new issues come in, they are responded to and dealt with</p>
-</li>
-</ol>
-<p>That definition could mean that a library handles a single use cases, and there is rare activity because nobody ever encounters any problems.  But for larger projects, this likely means refinements to fix small issues, documentation changes, and an occasional big bugfix over time. Its these things that make the difference between stable software and abandonware.</p>
-<h3>What does it matter in the end?</h3>
-<p>I didn’t write my original post to say that Backbone is dead.  I wanted to highlight a way in which the experience of using it has declined over time.  It is specifically a way that makes using Backbone harder for me.  I’m grateful to the many people who have built Backbone and the ecosystem around it, and think it is still a very useful tool.  This ecosystem issue does make me unlikely to recommend Backbone for folks who are building web applications “at scale”.  I think Ember or possibly React are better choices for that.  For small one off projects, and for content focused sites that need as little JavaScript as possible while still providing a rich experience, Backbone is a great choice.</p>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. If you’re interested in Backbone you also might want to check out my <a href="http://benmccormick.org/marionette-explained/">series on Marionette.js</a>, or my post on <a href="http://benmccormick.org/2015/09/09/what-can-backbone-developers-learn-from-react/">what Backbone developers can learn from React</a>.</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
