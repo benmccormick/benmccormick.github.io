@@ -3,7 +3,7 @@ title: "Orthogonality and CSS in JS"
 date: "2017-01-03 00:00:00+00:00"
 layout: "post"
 path: "/2017/01/03/orthogonality-and-css-in-js/"
-description: "What does separation of concerns mean in the context of CSS and JS?"
+description: "Separation of concerns in the context of CSS and JavaScript"
 keywords: "CSS JavaScript Orthogonality Pragmatic Programmer"
 category: "software-productivity"
 ---
