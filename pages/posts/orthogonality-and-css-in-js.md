@@ -12,7 +12,9 @@ One of the realities of the constant change in the web development world is that
 
 Many new frameworks that encourage a component based architecture (including React, Vue, and Angular2 [^1]) provide affordances for including HTML and CSS directly in JavaScript, but those solutions are not yet used universally.  Many people are still very happy keeping CSS bundled separately.  I have no idea what the *best* solution is.  But I am interested in how people talk about the problem.  One major argument I have seen from people advocating both sides is that their preferred approach encourages good "separation of concerns".
 
+<div>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;m moving from storing my CSS, JS and HTML in different files, to physically putting them on different drives. Keep those concerns separate</p>&mdash; Ben Lesh (@BenLesh) <a href="https://twitter.com/BenLesh/status/812092408519413761">December 23, 2016</a></blockquote>
+</div>
 
 I'd like to take a deeper look at this and give some vocabulary that can hopefully help anyone working through discussions on how to manage CSS for components.  I'll focus specifically on CSS since frameworks tend to be more agnostic to how it is blended with JS than they are about HTML, and on components since that is the main context in which people are arguing for blending of css. For this piece, I'll consider a component to be a set of HTML, CSS, and JavaScript that combine to form a reusable piece of UI [^2].
 
