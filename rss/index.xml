@@ -4,10 +4,142 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Fri, 30 Dec 2016 02:16:01 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 04 Jan 2017 03:54:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
+        <item>
+            <title><![CDATA[Orthogonality and CSS in JS]]></title>
+            <link>https://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/</link>
+            <guid>https://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/</guid>
+            <pubDate>Tue, 03 Jan 2017 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>One of the realities of the constant change in the web development world is that “best practices” are often hotly contested.  One issue that the front end community doesn’t seem to have come to a consensus on yet is how tightly to bundle JavaScript, HTML and CSS in code.  Should they be bundled and managed completely separately?  Kept in different files and imported together into JavaScript component files?  Or can we remove HTML and CSS files entirely and generate everything in JavaScript? This is a discussion that still comes up all the time in my <a href="https://twitter.com/thomasfuchs/status/810885087214637057">twitter</a> <a href="https://twitter.com/TheLarkInn/status/812089065210335232">feed</a>.</p>
+<p>Many new frameworks that encourage a component based architecture (including React, Vue, and Angular2 [^1]) provide affordances for including HTML and CSS directly in JavaScript, but those solutions are not yet used universally.  Many people are still very happy keeping CSS bundled separately.  I have no idea what the <em>best</em> solution is.  But I am interested in how people talk about the problem.  One major argument I have seen from people advocating both sides is that their preferred approach encourages good “separation of concerns”.</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;m moving from storing my CSS, JS and HTML in different files, to physically putting them on different drives. Keep those concerns separate</p>&mdash; Ben Lesh (@BenLesh) <a href="https://twitter.com/BenLesh/status/812092408519413761">December 23, 2016</a></blockquote>
+<p>I’d like to take a deeper look at this and give some vocabulary that can hopefully help anyone working through discussions on how to manage CSS for components.  I’ll focus specifically on CSS since frameworks tend to be more agnostic to how it is blended with JS than they are about HTML, and on components since that is the main context in which people are arguing for blending of css. For this piece, I’ll consider a component to be a set of HTML, CSS, and JavaScript that combine to form a reusable piece of UI [^2].</p>
+<h3>Orthogonality, Cohesion, and Coupling</h3>
+<p><a href="http://amzn.to/2hNzQ0t">The Pragmatic Programmer</a>, one of the best books ever written on Software Engineering, uses the following three terms when talking about “Separation of Concerns”: orthogonality, cohesion, and coupling.</p>
+<p>Orthogonality is the idea that modules should be written in a way that a change in one module should not require changes in any other module.</p>
+<blockquote>
+<p>Two or more things are orthogonal if changes in one do not affect any of the others. In a well-designed system, the database code will be orthogonal to the user interface: you can change the interface without affecting the database, and swap databases without changing the interface.</p>
+<p><strong>— The Pragmatic Programmer</strong></p>
+</blockquote>
+<p>Cohesion is a measure of how well the internal contents of a module relate to each other. A cohesive module is one with a single well defined purpose, where all code in the module is related to that purpose.  A less cohesive module might have multiple purposes, with pieces of code that are completely unrelated to each other.  <a href="https://sites.google.com/site/unclebobconsultingllc/">Robert C. Martin</a> describes this as each module having “a single reason to change”.</p>
+<p>Coupling is a measure of how dependent different modules are on the internal workings of other modules. In a loosely coupled system, any module can be completely rewritten as long as it exposes the same public interface, without any other modules needing to change.  In a tightly coupled system, changing the internal details of one module may require changes in many other modules.</p>
+<p>In the real world most systems are not purely orthogonal, and their modules are likely not 100% cohesive and uncoupled.  But striving for these goals is a good approximation of what many people mean when they talk about <em>separation of concerns</em>.</p>
+<h3>Conways Law</h3>
+<p><a href="http://amzn.to/2hNzQ0t">The Pragmatic Programmer</a> does touch on another application of orthogonality to software engineering:</p>
+<blockquote>
+<p>Have you noticed how some project teams are efficient, with everyone knowing what to do and contributing fully, while the members of other teams are constantly bickering and don’t seem able to get out of each other’s way?</p>
+<p>Often this is an orthogonality issue. When teams are organized with lots of overlap, members are confused about responsibilities. Every change needs a meeting of the entire team, because any one of them might be affected.</p>
+<p>How do you organize teams into groups with well-defined responsibilities and minimal overlap? There’s no simple answer. It depends partly on the project and your analysis of the areas of potential change. It also depends on the people you have available. Our preference is to start by separating infrastructure from application. Each major infrastructure component (database, communications interface, middleware layer, and so on) gets its own subteam. Each obvious division of application functionality is similarly divided. Then we look at the people we have (or plan to have) and adjust the groupings accordingly.</p>
+<p>You can get an informal measure of the orthogonality of a project team’s structure. Simply see how many people need to be involved in discussing each change that is requested. The larger the number, the less orthogonal the group. Clearly, an orthogonal team is more efficient.</p>
+<p><strong>— The Pragmatic Programmer</strong></p>
+</blockquote>
+<p>The idea is that teams work more efficiently when each can work in its own areas without having to be bogged down by using another group (or individuals) code, and only interacting with those modules through a well communicated interface.  This is also known as <a href="https://en.wikipedia.org/wiki/Conway's_law">Conway’s Law</a>, which is often used disparagingly but still stands as a true observation about real life code.</p>
+<blockquote>
+<p>organizations which design systems … are constrained to produce designs which are copies of the communication structures of these organizations</p>
+<p><strong>— Conway’s Law</strong></p>
+</blockquote>
+<p>Although it usually isn’t phrased quite so explicitly, I believe Conway’s law is often related to what people mean when they discuss separation of concerns in front end development.</p>
+<h3>Boundaries and Interfaces between CSS and JavaScript</h3>
+<p>Let’s look at 2 examples of how CSS can be structured.  We’ll use a “page view counter” as our example. The element will show the number of users who have viewed the page, and respond to click events by showing a modal with the most popular pages on the site.
+First, for a more traditional example, I’ll show a <a href="http://marionettejs.com/">Marionette</a> View, with separate CSS. For a more integrated example, I’ll use a React component.</p>
+<h4>Marionette</h4>
+<pre><code class="language-javascript">//view-counter.js
+
+import Mn from 'backbone.marionette';
+import template from './view-counter.hbs'
+import { getPageViews, showModal } from '../util/page-views';
+
+var ViewCounter = Mn.View.extend({
+
+  template,
+
+  className: 'page-view-counter',
+
+  ui:  {
+    'showPageViewsModal': '.show-modal-js',
+  },
+
+  events: {
+    'click @ui.showPageViewsModal': 'showPageViewsModal',
+  }
+
+  templateContext() {
+      return {
+        pageViews: getPageViews(),
+      };
+  },
+
+  showPageViewsModal() {
+    showModal();
+  }
+
+});
+</code></pre>
+<pre><code class="language-hbs">{{!view-counter.hbs}}
+
+&lt;span class=&quot;page-view-counter__title&quot;&gt; Page Views: &lt;/span&gt;
+&lt;span class=&quot;page-view-counter__counter show-modal-js&quot;&gt; {{pageViews}} &lt;/span&gt;
+</code></pre>
+<pre><code class="language-css">//view-counter.css
+
+.page-view-counter {
+  display: flex;
+}
+
+.page-view-counter__title {
+  font-weight: 700;
+  padding: 3px;
+}
+
+.page-view-counter__counter {
+  padding: 3px;
+}
+</code></pre>
+<h4>React</h4>
+<pre><code class="language-javascript">//view-counter.jsx
+import React from 'react';
+import { showModal } from '../util/page-views';
+
+export const PageViewCounter = (props) =&gt; {
+    return &lt;div style = {{display: 'flex'}}&gt;
+      &lt;span style = {{
+        fontWeight: 700,
+        padding: '3px',
+      }}&gt;
+        Page Views:
+      &lt;/span&gt;
+      &lt;span style = {{padding: '3px'}}&gt;{this.props.pageViews}&lt;/span&gt;
+    &lt;/div&gt;
+}
+
+</code></pre>
+<p>The React and Marionette examples have set different module boundaries. In the Marionette example, we have defined 3 modules, split by code type.  Ignoring the leaky abstractions in the Marionette boundaries [^3], we can say we have 3 modules with clear singular purpose (styling, behavior,  structure) that use class names and  <code>templateContext</code> as interfaces.  The handlebars file exposes classes, which the CSS uses to style elements and the JavaScript code uses as attachment points for event handling.  The JavaScript view passes data to the template through templateContext.  In the React code we have defined a single module that exports a component as its only external interface. The module’s single purpose could be defined as “rendering a PageViewCounter”.</p>
+<h3>How do we define module boundaries?</h3>
+<p>If you’re excited to read which of the above examples is the <em>correct</em> module boundary definition, I’m sorry to disappoint you.  It turns out that module boundaries are more of an art than a science.  Let’s consider each of these examples by the criteria we laid out above.</p>
+<p>The Marionette modules are <strong>cohesive</strong>.  Each module is single purpose, with a clear reason why it might change.  The React module is also cohesive, as it describes a single atomic component. However, it has more reasons it might change.  We might change that module because of a change in the look and feel of the site, because of a change in the expected behavior of the click event, or because we’re changing the text inside the component.</p>
+<p>The Marionette modules are not quite <strong>decoupled</strong>.  While this CSS doesn’t nest selectors and we don’t have any explicit dependencies on the HTML structure, it is still written in a way that assumes <code>.page-view-counter__title</code> and <code>.page-view-counter__counter</code> will be direct children of <code>.page-view-counter</code>.  So changing the “internal details” of the Handlebars file by adding an extra element around those children would break the CSS. While the modules are not completely decoupled from each other, they don’t rely on any private details of other modules or global styles and can be used together as a reusable component.  The React module is similarly decoupled from the rest of the system, and as a single module faces no internal coupling issues.</p>
+<p>Both components should be <strong>orthogonal</strong> from the rest of the system, even though the Marionette modules may be less orthogonal internally.  The question of how they meet a Conway’s law style of orthogonality depends on a team.  If your team has designers, and developers separately working on style/structure and behavior, the Marionette version may allow for more efficient division of labor, with communication centering on class based communication.  If you instead have a group of polyglot front end developers who implement mocks from designers across all 3 areas, the React version will instead present a simpler implementation that maps better to your team, with the focus on interfaces across different components.</p>
+<p>In the end decisions like this are an exercise in understanding context and preferences.  What will make your team productive? You can accept the coupling of the first example in order to gain the benefits of small focused modules.  Or you can take the larger scope of the React component in exchange for keeping all information relevant to a component in one place.  Are you making single developers responsible for a set of components?  Or are they responsible for behavior generally, with design handled by someone else? Make the decisions that work for your project.</p>
+<h3>More Resources</h3>
+<ul>
+<li><a href="http://amzn.to/2hNzQ0t">The Pragmatic Programmer</a> is a great book. Much of the vocabulary in this post comes from its Chapter 8, but the whole book is worth a read and is highly recommended.</li>
+<li>CSS Tricks has a good look at the <a href="https://css-tricks.com/the-debate-around-do-we-even-need-css-anymore/">pros and cons of CSS in JS</a>.  I focused on theory here, but this is much more hands on about the practical concerns around this debate.</li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/">post on choosing which component styles to use in React</a>.</p>
+<p>[^1]: This is a bit of a generalization.  React provides an abstraction over HTML that replaces hand-written HTML, but doesn’t specify anything for CSS, CSS in JS solutions are simply popular in that community.  Vue and Angular both allow  CSS and HTML to share a file with JS, but CSS can still be handled separately.
+[^2]: There are some distinctions about CSS in JS vs importing CSS into JS using webpack that I’m not really dealing with here.  This is a post about how to think about these decisions moreso than the specific options for bundling CSS and JS
+[^3]: The root HTML element in any Marionette component is always defined implicitly in JavaScript, and Handlebars is an expressive templating language that can handle more than structure.</p>
+]]></content:encoded>
+            <author>
+                <name>Ben McCormick</name>
+                <email>ben@benmccormick.org</email>
+                <link>http://benmccormick.org</link>
+            </author>
+        </item>
         <item>
             <title><![CDATA[2016 Roundup]]></title>
             <link>https://benmccormick.org/2016/12/31/2016-roundup/</link>
@@ -782,158 +914,6 @@ SaveButton.defaultProps = {
 <p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post on <a href="http://benmccormick.org/2016/01/08/reusable-code-patterns/">reusable code patterns</a>.</p>
 <p>[^1]: Technically you can also use an ES5 class based style, but I’m going to ignore that.  It is not a common idiom for React programs as far as I can tell.</p>
 <p>[^2]: There is a proposal for adding static properties to ES6 classes, but it is still in early stages right now and is not guaranteed to end up as part of the ECMAScript spec.</p>
-]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
-        </item>
-        <item>
-            <title><![CDATA[Ack Tips]]></title>
-            <link>https://benmccormick.org/2016/04/30/ack-tips/</link>
-            <guid>https://benmccormick.org/2016/04/30/ack-tips/</guid>
-            <pubDate>Sat, 30 Apr 2016 15:48:25 GMT</pubDate>
-            <content:encoded><![CDATA[<p><em>Last summer I briefly considered creating a separate blog focused on command line tools.  The idea is that the articles would be shorter and more practical than the longer pieces I write here.  I ended up scrapping the idea, but had written a few posts on one of my favorite command line tools Ack, so I wanted to preserve them here, as a single, longer piece, separated into 3 “tips”</em></p>
-<h3>#1: Prefer ack or ag to grep</h3>
-<p><a href="http://linux.die.net/man/1/grep">grep</a> is one of the most well known unix utilties.  If you’ve had any exposure to the command line at all, you’ve probably searched for something using grep.  grep’s standalone use is searching for content inside of files, but with Unix’s piping philosophy it is useful as a general search and filtering tool.  Originally created for Version 4 Unix 42 years ago, it has been a staple of *Nix operating systems ever since.   If you’ve been using it for even half that time, I’m sure a blog post isn’t enough to convince you to stop.  But for the rest of us, there’s an opportunity to do better.</p>
-<p><a href="http://beyondgrep.com/">ack</a> and <a href="https://github.com/ggreer/the_silver_searcher">ag</a> <sup id="fnref:1"><a href="#fn:1">1</a></sup> are similar projects with the same goal: providing a better experience than grep when searching directories of files, particularly for programmers.  The key selling points:</p>
-<ol>
-<li>Improved speed when searching through directories</li>
-<li>Ignores version control and binary files by default when searching</li>
-<li>Easy filtering by file-type</li>
-<li>A cleaner API for searching directories, without adding complexity to the single file case</li>
-</ol>
-<p>This is easiest to see by comparing commands.</p>
-<h4>Searching for “javascript” in a file</h4>
-<pre><code>grep javascript foo.txt
-</code></pre>
-<pre><code>ack javascript foo.txt
-</code></pre>
-<h4>Searching every file in the current directory for “javascript”</h4>
-<pre><code>grep -r javascript .
-</code></pre>
-<pre><code>ack javascript
-</code></pre>
-<h4>Searching every file in the current directory for “javascript”, excluding a .git directory</h4>
-<pre><code>grep -r javascript . $(find . -type f | grep -v '\.git')
-</code></pre>
-<pre><code>ack javascript
-</code></pre>
-<h4>Searching every HTML file in the current directory for “javascript”, excluding a .git directory</h4>
-<pre><code>grep -r javascript . $(find . -name '*.html' -or -name '*.htm'| grep -v '\.git')
-</code></pre>
-<pre><code>ack --html javascript
-</code></pre>
-<p>Basically, as the complexity of what you’re trying to do increases in terms of multiple files, the overhead of using grep increases proportionately.  Because ack and ag are optimized for common use cases, they’re able to scale much better.</p>
-<h3>#2: Use Ack to get familiar with a new codebase</h3>
-<p><a href="http://beyondgrep.com/">ack</a> is an incredibly useful tool when approaching a new codebase, especially if you’re focused on a specific feature. It allows you to quickly get a view of the codebase, and then zero in on the functionality you’re interested in.  To see how this works, let’s use jQuery’s <a href="https://github.com/jquery/jquery">source repo</a> as an example, and see what happens if we want to get a look at how it implements ajax.</p>
-<pre><code class="language-bash">❯ git clone git@github.com:jquery/jquery.git
-❯ cd jquery
-</code></pre>
-<p>We can start by trying to get a general idea of the size of the codebase.  Running <code>ack -f</code> to show all files in the directory will immediately overrun our terminal, so we can get a file count using <code>wc</code> instead</p>
-<pre><code class="language-bash">❯ ack -f |wc -l
-    249
-</code></pre>
-<p>Ok thats a good amount of files.  But how many of them are actually source files?  We can filter down to just the javascript files.</p>
-<pre><code class="language-bash">❯ ack -f --js |wc -l
-    155
-</code></pre>
-<p>But thats probably still a bit high, since not all of the JavaScript files are source files.  A quick <code>ls</code> shows that we probably want to filter down to the src directory.</p>
-<pre><code class="language-bash">❯ ack -f --js src |wc -l
-    92
-</code></pre>
-<p>Ok so now we’re down to 92 source files.  Still a bit much, but its probably worth printing them with <code>ack -f --js src</code> at this point to get an idea of the directory structure.  When we do that, we can see there’s an ajax folder, which is probably what we’re interested in.  To make sure we’re not missing related files, we can continue on to searching for files with ajax in the file name directly.</p>
-<pre><code class="language-bash">❯ ack -g --js ajax src
-    src/ajax/jsonp.js
-    src/ajax/load.js
-    src/ajax/parseJSON.js
-    src/ajax/parseXML.js
-    src/ajax/script.js
-    src/ajax/var/location.js
-    src/ajax/var/nonce.js
-    src/ajax/var/rquery.js
-    src/ajax/xhr.js
-    src/ajax.js
-    src/event/ajax.js
-</code></pre>
-<p>That gets us down to 11 files to look at.  But we might be getting a bit greedy.  Not every file related to ajax may have ajax in the file path.  We can use the <code>-l</code> option of ack to display the list of files that contain ajax somewhere in their text.</p>
-<pre><code class="language-bash">❯ ack --js -l ajax src
-    src/ajax/jsonp.js
-    src/ajax/load.js
-    src/ajax/script.js
-    src/ajax/xhr.js
-    src/ajax.js
-    src/event/ajax.js
-    src/jquery.js
-    src/manipulation/_evalUrl.js
-    src/serialize.js
-</code></pre>
-<p>Ok that adds 3 additional files with ajax references.  But its not clear that they’re relevant to jQuery’s ajax implementation, it may just be a file reference or comment.  Lets use ack to get a quick look at how ajax is referenced in those files.  This part gets a bit more complicated.  We can use ack’s <code>-v</code> option to invert our matching and find non-matching inputs, then use unix piping to filter our previous command.</p>
-<pre><code class="language-bash">❯ ack --js -l ajax src |ack -v ajax
-    src/jquery.js
-    src/manipulation/_evalUrl.js
-    src/serialize.js
-</code></pre>
-<p>Now we can use ack’s <code>-x</code> argument to search the files piped in through standard input.</p>
-<pre><code>❯ ack --js -l ajax src |ack -v ajax|ack -x ajax
-
-    src/jquery.js
-    20:     &quot;./ajax&quot;,
-    21:     &quot;./ajax/xhr&quot;,
-    22:     &quot;./ajax/script&quot;,
-    23:     &quot;./ajax/jsonp&quot;,
-    24:     &quot;./ajax/load&quot;,
-    25:     &quot;./event/ajax&quot;,
-
-    src/manipulation/_evalUrl.js
-    2:      &quot;../ajax&quot;
-    6:      return jQuery.ajax({
-    9:              // Make this explicit, since user can override this through ajaxSetup (#11264)
-
-    src/serialize.js
-    61:             traditional = jQuery.ajaxSettings &amp;&amp; jQuery.ajaxSettings.traditional;
-</code></pre>
-<p>So we can see pretty quickly that these files are safe to ignore in terms of understanding how ajax works in jQuery.  They’re just module loads, an actual call to the ajax method for other purposes, and settings serialization. It is useful to note that <code>src/ajax</code> is loaded into the main jQuery file first. Its probably worth looking at it as the starting point for our investigation. We’re well on our way to diving into the ajax functionality, able to focus on 11 of the 249 files in the repo immediately, already knowing how those files are loaded into the main library.</p>
-<p>This was just a simple example.  Whenever you’re spelunking into new code territory, consider using ack to get your bearings.  Things go a lot faster when you know the lay of the land in advance.</p>
-<h3>#3: Take advantage of Ack’s configurability</h3>
-<p>One of the nice things about <a href="http://beyondgrep.com/">ack</a> is the fact that it takes an <code>.ackrc</code> configuration file <sup id="fnref:2"><a href="#fn:2">2</a></sup>. These files can be scoped at a directory level, a user level or at a root level, and mirror the options available on the executable itself.  This allows you to extend and customize acks behavior in 3 primary ways.</p>
-<h4>a. Add new filetypes, and bundle existing ones</h4>
-<p>One of ack’s most useful features is the ability to add a <code>--&lt;filetype&gt;</code> flag to your searches to restrict your searches to a specific filetype.   ack comes with 75 builtin types including almost all common languages.  But those aren’t always good enough.  To handle obscure languages, and not so obscure syntaxes like handlebars templates, ack lets you define new filetypes.  You’re also able to modify existing filetypes to add additional file extensions to include under that filetype.  So for instance my ackrc includes these lines:</p>
-<pre><code>--type-add
-hbs=hbs
---type-add
-js=js,es6
-</code></pre>
-<p>The first 2 lines allow me to specifically search handlebars files, which are where all of the html content for my work projects is stored.  The next 2 lines include es6 files in my JavaScript searches, useful since I append JavaScript files that I intend to process with <a href="https://babeljs.io/">Babel</a> with the <code>.es6</code> extenstion.  Customizing the js extension allows me to search all of my JavaScript together.  You can also define richer types in ackrc <a href="http://beyondgrep.com/documentation/ack-2.14-man.html#defining_your_own_types">based on file names using regular expressions or direct name matching</a>.</p>
-<h4>b. Set default options</h4>
-<p>Any option that the ack executable takes can have a default set or changed in an ackrc file.  This is mainly useful for the display option.  By default ack groups matches from different files and gives the file information above each group of matches.  It also shows all output in color.  Any of those things can be disabled or changed in your ackrc file.</p>
-<h4>c. Exclude unwanted directories or files</h4>
-<p>Oftentimes there are a predictable group of files that you may want to ignore in searches.  Perhaps you have a build directory that mirrors your source code, or documentation files mingled with your source.  You can put <code>--ignore-directory</code> or <code>--ignore-file</code>.  Ignore directory takes a directory name, while ignore-file takes matches in the same format as the custom filetypes mentioned above.</p>
-<p>If you’re starting to use ack, don’t miss the chance to make your searches even more efficient by removing any rough edges with an <code>.ackrc</code>.</p>
-<h4>Installation Instructions</h4>
-<ul>
-<li><a href="http://beyondgrep.com/install/">ack</a></li>
-<li><a href="https://github.com/ggreer/the_silver_searcher#installing">ag</a></li>
-</ul>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  Using tools efficiently is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my articles on <a href="http://benmccormick.org/learning-vim-in-2014/">Vim</a>.</p>
-<div class="footnotes">
-<ol>
-    <li class="footnote" id="fn:1">
-    <p>
-       ack came first; ag was created as a faster version of ack.  ack is written in perl, making it more portable, and has a few more configuration options.  ag is written in C and is generally faster.  Your choice may vary depending on your use case.
-    </p>
-    <a href="#fnref:1" title="return to article"> ↩</a>
-    </li>
-    <li class="footnote" id="fn:2">
-        <p>
-       This is also one of the main traits that separates ack from <a href="https://github.com/ggreer/the_silver_searcher">ag</a>.
-        </p>
-        <a href="#fnref:2" title="return to article"> ↩</a></p>
-    </li>
-</ol>
-</div>
 ]]></content:encoded>
             <author>
                 <name>Ben McCormick</name>
