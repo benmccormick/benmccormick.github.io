@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Wed, 04 Jan 2017 04:03:05 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 04 Jan 2017 04:05:42 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
@@ -15,7 +15,9 @@
             <pubDate>Tue, 03 Jan 2017 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>One of the realities of the constant change in the web development world is that “best practices” are often hotly contested.  One issue that the front end community doesn’t seem to have come to a consensus on yet is how tightly to bundle JavaScript, HTML and CSS in code.  Should they be bundled and managed completely separately?  Kept in different files and imported together into JavaScript component files?  Or can we remove HTML and CSS files entirely and generate everything in JavaScript? This is a discussion that still comes up all the time in my <a href="https://twitter.com/thomasfuchs/status/810885087214637057">twitter</a> <a href="https://twitter.com/TheLarkInn/status/812089065210335232">feed</a>.</p>
 <p>Many new frameworks that encourage a component based architecture (including React, Vue, and Angular2 [^1]) provide affordances for including HTML and CSS directly in JavaScript, but those solutions are not yet used universally.  Many people are still very happy keeping CSS bundled separately.  I have no idea what the <em>best</em> solution is.  But I am interested in how people talk about the problem.  One major argument I have seen from people advocating both sides is that their preferred approach encourages good “separation of concerns”.</p>
+<div>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;m moving from storing my CSS, JS and HTML in different files, to physically putting them on different drives. Keep those concerns separate</p>&mdash; Ben Lesh (@BenLesh) <a href="https://twitter.com/BenLesh/status/812092408519413761">December 23, 2016</a></blockquote>
+</div>
 <p>I’d like to take a deeper look at this and give some vocabulary that can hopefully help anyone working through discussions on how to manage CSS for components.  I’ll focus specifically on CSS since frameworks tend to be more agnostic to how it is blended with JS than they are about HTML, and on components since that is the main context in which people are arguing for blending of css. For this piece, I’ll consider a component to be a set of HTML, CSS, and JavaScript that combine to form a reusable piece of UI [^2].</p>
 <h3>Orthogonality, Cohesion, and Coupling</h3>
 <p><a href="http://amzn.to/2hNzQ0t">The Pragmatic Programmer</a>, one of the best books ever written on Software Engineering, uses the following three terms when talking about “Separation of Concerns”: orthogonality, cohesion, and coupling.</p>
