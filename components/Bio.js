@@ -1,9 +1,10 @@
 import React from 'react';
 import { config } from 'config';
-import { rhythm } from 'utils/typography';
+import { rhythm } from '../utils/typography';
 
 class Bio extends React.Component {
   render() {
+
     return (
       <p
         style = {{
@@ -17,3 +18,5 @@ class Bio extends React.Component {
 }
 
 export default Bio;
+
+
