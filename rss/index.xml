@@ -4,10 +4,168 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Wed, 04 Jan 2017 04:05:42 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Jan 2017 13:43:10 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
+        <item>
+            <title><![CDATA[MobX: First Impressions]]></title>
+            <link>https://benmccormick.org/2017/01/09/mobx-first-impressions/</link>
+            <guid>https://benmccormick.org/2017/01/09/mobx-first-impressions/</guid>
+            <pubDate>Mon, 09 Jan 2017 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>I spent some time around the holidays this year playing with <a href="https://mobx.js.org/">MobX</a>, a state management library for JavaScript.  MobX is an unopinionated library that provides a layer over normal JavaScript data structures that allow other code to efficiently observe data changes and update based on what has changed.  It’s an interesting tool for handling state in web applications, especially in existing projects that might need to update state handling iteratively.  Here are some first impressions.</p>
+<h3>What is MobX?</h3>
+<p>MobX has 3 core concepts developers need to understand:</p>
+<ol>
+<li><strong>Observable state</strong> - MobX provides functions to make data <em>observable</em>.  Observable data can be watched by other pieces of code which may efficiently update when the state changes.  Observable data is primarily created in MobX using the <code>observable</code> function.</li>
+<li><strong>Derivations</strong> - Functions that <em>watch</em> observable data are called derivations.  MobX has 2 primary types of derivations: <em>computed values</em> and <em>reactions</em>.  Computed values update a value based on other data, while reactions produce side effects: updates to a UI, a network call, or a logging statement for example. MobX provides a <code>computed</code> function for defining computed values; in most cases reactions will likely be mostly defined using a framework specific helper library like <a href="https://github.com/mobxjs/mobx-react">mobx-react</a> or <a href="https://github.com/500tech/ng2-mobx">ng2-mobx</a>.  MobX does provide some lower level libraries for reactions though, including <code>autorun</code> and <code>when</code>.</li>
+<li><strong>Actions</strong> - Code that updates observable state is known as an action.  MobX has a formalized version of actions which can be defined using the <code>action</code> function, but it is also possible to modify state directly using any normal JavaScript code and maintain observable behavior.</li>
+</ol>
+<p>In practice this looks something like this:</p>
+<pre><code class="language-javascript">import React from 'react';
+import ReactDOM from 'react-dom';
+import {observable} from 'mobx';
+import {observer} from 'mobx-react';
+
+let digits = observable([1, 2]);
+
+const DigitPrinter = observer(({digits}) =&gt; {
+  return (&lt;div&gt;
+    {digits.join(', ')}
+  &lt;/div&gt;);
+});
+
+ReactDOM.render( &lt;DigitPrinter digits = {digits} /&gt;, document.getElementById('root'));
+
+/* prints 1, 2 */
+
+
+digits.push(3);
+
+/* DOM re-renders to print 1, 2, 3 */
+
+digits[2] = 4;
+
+/* DOM re-renders to print 1, 2, 4 */
+
+</code></pre>
+<p>The component is able to passively <em>observe</em> changes in the data, and re-render when it changes.  But MobX is actually even smarter than this example shows.  Let’s look at another example, this time using a more complex data structure (a class).</p>
+<pre><code class="language-javascript">import React from 'react';
+import ReactDOM from 'react-dom';
+import {extendObservable} from 'mobx';
+import {observer} from 'mobx-react';
+import moment from 'moment';
+
+class Appointment {
+
+  constructor() {
+    extendObservable(this, {
+      dueDate: '01-01-2017',
+      title: 'Dinner with Joe'
+      location: 'Chik-Fil-A',
+      isToday: computed(function() {
+        return moment(dueDate, 'MM-DD-YYYY').diff(moment.now(), 'days') === 0;
+      }),
+    });
+  }
+
+  toString() {
+    return `${this.title} @ ${this.location}`;
+  }
+}
+
+
+const TodayBox = observer(class TodayBox extends React.Component {
+  render () {
+    let {appointments} = this.props;
+    return (&lt;div&gt;
+      {appointments.filter(a =&gt; a.isToday).map(a =&gt; &lt;span&gt;a.toString()&lt;/span&gt;)}     
+    &lt;/div&gt;);
+  }
+});
+
+let appointment = new Appointment();
+
+ReactDOM.render( &lt;TodayBox appointments = {[appointment]} /&gt;, document.getElementById('root'));
+
+/* prints an empty div */
+
+appointment.title = 'Dinner with Bob';
+
+/* Nothing relevant has changed. The component does not re-render */
+
+appointment.dueDate = '01-09-2017';  
+
+/*  assume that 01-09-2017 is &quot;today&quot; */
+</code></pre>
+<p>MobX has the “magical” ability to determine what changes actually affect the observer and not make unnecessary calls of reaction functions.</p>
+<h3>How Does MobX work?</h3>
+<p>I have a learned skepticism of magical solutions like this.  Generally I find that time-saving magic like this ends up costing time when it comes to maintenance, and explicit relationships between code saves time over less-boilerplate heavy code. Fortunately, while the libraries code itself is fairly complex, it isn’t too hard to understand the logic behind how MobX works.</p>
+<p>On the Observer side, MobX uses <a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">ES5</a> setters and getters to proxy updates to observable data structure and listen in when data is updated.  This allows the type of event listening that <a href="http://backbonejs.org/">Backbone</a> and other libraries provide, without requiring the user to go through special <code>set</code> or <code>get</code> methods to update an object’s properties.  Most of the time you should be able to just be able to write code as you normally would, and MobX will make it work.  There are some exceptions though that mean its important to actually understand how the library work.  Getters and Setters only work when looking up an existing property on an object, so when using primitive values or adding new values to an existing object, some special syntax (the return of <code>get</code> and <code>set</code> methods) may be required.  In Mobx primitive observables are referred to as <em>boxed</em> values, and objects that require new values over time can be handled by using observable Maps, which use the API of <a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">ES6</a> Maps.</p>
+<p>On the derivative side, reactions and computed values are always defined as functions.  MobX wraps these functions and is able to determine (through the method described above) what properties were accessed during each function run.  It then only listens for changes to these properties.  Thus it doesn’t matter if you theoretically could access thousands of observable properties in a function, if you wrap those references in an if statement to a single property, and that property returns false on first run, the derivative function will only listen for changes on that property before running again. When an observable is updated, all derivative code is run synchronously and atomically so there is no concern of getting into bad intermediate states.</p>
+<p>Most of the “magic” is covered by the 2 paragraphs above, and once you understand the ideas behind them (see the resources at the bottom of this post for more in-depth explanations), it is fairly easy to understand the reasoning behind the cases where the magic fails.</p>
+<h3>Decorators</h3>
+<p>Developers who actually use MobX are probably questioning my examples by now, because I’ve been using a different syntax than the primary MobX documentation for showing my examples.  So let’s talk about decorators.  The preferred way (according to the documentation) to write MobX code is to use decorators to define observers and observables.  Decorators are a <a href="http://tc39.github.io/proposal-decorators/">proposed new JavaScript feature</a> for declaratively adding extra behavior to classes, class properties and class methods.  Using them with MobX, my above example would look like this [^1]:</p>
+<pre><code class="language-javascript">
+class Appointment {
+
+  @observable dueDate = '01-01-2017'
+  @observable title = 'Dinner with Joe'
+  @observable location = 'Chik-Fil-A'
+
+  @computed get isToday() {
+    return moment(dueDate, 'MM-DD-YYYY').diff(moment.now(), 'days') === 0;
+  }
+
+  toString() {
+    return `${this.title} @ ${this.location}`;
+  }
+}
+
+
+@observer class TodayBox extends React.Component {
+  render () {
+    let {appointments} = this.props;
+    return (&lt;div&gt;
+      {appointments.filter(a =&gt; a.isToday).map(a =&gt; &lt;span&gt;a.toString()&lt;/span&gt;)}     
+    &lt;/div&gt;);
+  }
+}
+</code></pre>
+<p>That obviously looks a lot cleaner than my example.  So what’s the problem?  Again, decorators are a <em>proposed</em> JavaScript feature.  Currently they’re in Stage 2, which means roughly that they are very likely to eventually make it into the language, but may change in non-trivial ways before that happens.  Currently decorators are implemented in <a href="https://www.typescriptlang.org/docs/handbook/decorators.html">TypeScript</a>, as well as a <a href="https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy">3rd party babel plugin</a>, but as of January 2017 <a href="http://kangax.github.io/compat-table/esnext/#test-class_decorators">are not implemented in any browser engines</a>, and are not implemented in any first party babel plugins <a href="https://github.com/babel/babel/issues/2645">due to spec instability</a>.  Decorators are a key part of Angular2, and are used by other frameworks including <a href="http://aurelia.io/">Aurelia</a> and <a href="https://github.com/rwjblue/ember-computed-decorators">Ember</a>, so I don’t think they’re going away.  But I also don’t see them as ready for production use for teams that don’t have the capacity to dedicate the time to update existing code if/when the spec changes[^2].  If for one reason or other you’re comfortable with the risks however, decorators are a great way to clean up the MobX API, and I’m excited for the spec to get to the point where I can use them.</p>
+<h3>Comparison to Redux and setState</h3>
+<p>As a state management library that was built to be used with React, the obvious questions to ask about MobX are how it improves over React’s built in state handling, and how it compares to <a href="http://redux.js.org/">Redux</a>, the current most popular state management solution for React. MobX takes a different approach to each.</p>
+<p>It’s important to say at the start that MobX isn’t mutually exclusive with using setState.  It’s possible to use them together, with MobX managing application data and setState handling individual component/UI state.  But there is some advantages to using MobX for UI state as well.  The biggest reason is that MobX is smarter than setState about when re-rendering is required.  By default React Components re-render on any call to setState, regardless of whether the state change actually affects what is rendered or not. MobX’s creator <a href="https://medium.com/@mweststrate/3-reasons-why-i-stopped-using-react-setstate-ab73fc67a42e#.x0o6y4rxv">wrote more about this on Medium</a>.</p>
+<p>Comparing MobX and Redux could be a whole article on its own, so I’m not going to go too deep here, but suffice it to say that MobX is more flexible than Redux, but as a result loses some of the benefits of Redux’s structured approach.  Specifically, it is easy to convert a single object to become a MobX observable and use it in an existing React component.  It can be easily inlined in an existing file and used for one component even.  You also don’t have to deal with the ceremony of using <a href="http://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2/">immutable data</a>.  Redux is intended as a solution that will take over all your state, and doesn’t scale down nearly as well or mix with other solutions [^3].  However, Redux’s structure also has benefits.  It allows easy testings of each component of an app individually, the creation of powerful tooling that will work with any Redux app, and reliable guarantees of how state will be updated.  These things are mostly possible with MobX [^4], but require more developer discipline, and/or can’t be written as easily as universal tools. Overgeneralizing, I would prefer Redux in a new application, but would look to MobX for improving data management in an existing application.  MobX also has advantages in applications where you’re displaying a large amount of UI elements based on a relatively small amount of data, or have a lot of derived data (something like a spreadsheet), whereas Redux has benefits for applications that need to be extremely reliable and well tested.</p>
+<h3>Stray Thoughts</h3>
+<ul>
+<li>If you do want more discipline in MobX, make sure to use <code>useStrict</code> to require updates to use Actions</li>
+<li>MobX has a nice set of <a href="https://github.com/mobxjs/mobx-react-devtools">devtools</a> that are useful if you’re opting in to using actions, and using React with MobX.</li>
+<li>If this isn’t clear yet, I definitely recommend hacking around with Mobx’s low level APIs to learn more about how it works before integrating it straight into a framework</li>
+<li>Also note that MobX 3.0 is imminent, there is a release candidate that you can play with now.</li>
+</ul>
+<h3>More Resources</h3>
+<ul>
+<li>
+<p>The two most helpful resources I found for conceptually understanding MobX were in-depth articles by the library’s author <a href="">Michael Westrate</a>: <a href="https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254#.jd4hgh2zi">Becoming fully reactive: an in-depth explanation of MobX</a> on Medium and <a href="https://mobx.js.org/intro/concepts.html">Concepts &amp; Principles</a> from the MobX documentation</p>
+</li>
+<li>
+<p>This <a href="https://twitter.com/AdamRackis/status/775706291259908096">tweet thread</a> and the linked article, are a good breakdown of the tradeoffs between MobX and Redux</p>
+</li>
+</ul>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/">post on Orthogonality and CSS in JS</a>.</p>
+<p>[^1]: Technically this also uses class properties as well, another proposal that works well with decorators
+[^2]: It’s possible any spec changes will be trivially fixable with a code mod script, but right now there is more uncertainty than I am personally comfortable with.  I’m grateful to people who are willing to take more risks here than me, they push the language forward.
+[^3]: I’m talking here about what is encouraged and easy, not what is possible.  It is of course possible to mix in Redux with other solutions.
+[^4]: MobX has some nice <a href="https://github.com/mobxjs/mobx-react-devtools">devtools!</a></p>
+]]></content:encoded>
+            <author>
+                <name>Ben McCormick</name>
+                <email>ben@benmccormick.org</email>
+                <link>http://benmccormick.org</link>
+            </author>
+        </item>
         <item>
             <title><![CDATA[Orthogonality and CSS in JS]]></title>
             <link>https://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/</link>
@@ -767,155 +925,6 @@ console.log(a === b) //false
 <code>Object.assign(a, {foo: 'bar'})</code> rather than <code>a.foo = 'bar'</code>, and all array updates are done through functions that generate new arrays like <code>Array.prototype.map</code>, <code>Array.prototype.filter</code>, or <code>Array.prototype.concat</code>, rather than mutating methods like <code>Array.prototype.push</code>, <code>Array.prototye.pop</code>, or <code>Array.prototype.sort</code>.  This is less reliable without language level constraints, but has become popular in the React ecosystem for dealing with data for folks who don’t want to introduce abstractions like Immutable.js.</p>
 <h3>Subscribe</h3>
 <p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post on <a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">explaining the different version names of the JavaScript language</a>.</p>
-]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
-        </item>
-        <item>
-            <title><![CDATA[Digging Into React: Choosing Component Styles]]></title>
-            <link>https://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/</link>
-            <guid>https://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/</guid>
-            <pubDate>Mon, 02 May 2016 02:32:36 GMT</pubDate>
-            <content:encoded><![CDATA[<p>Over the past month I’ve been building my first production features using React.  One of the first things I’ve noticed is the amount of choices that come into a new React project.  A lot of this is about the ecosystem around React (Webpack vs Browserify? Redux vs Relay? Do I need CSS modules or Immutable.js?) but many of the choices are just part of the library, figuring out the best, or at least a consistent, way to do things.</p>
-<p>One such choice is the syntax for defining components that you choose to use.  In React, you can define components in at least 3 different styles: the React.createClass style, the ES6 class style, and the pure functional style [^1]. Each has some advantages and disadvantages.</p>
-<h3>React.createClass</h3>
-<p>React.createClass is the original style for defining React components, and is still the preferred style in the React documentation.</p>
-<p>Here’s what a theoretical SaveButton component looks like in this style.  It is a simple component that listens for clicks and then uses a separate dispatcher object to send a request to save the data on the page.  After saving the button will either show some specified saved text or “Saved”.</p>
-<pre><code class="language-javascript">import React from ‘react’;
-import {dispatcher} from ‘./lib/dispatcher’;
-
-export const SaveButton = React.createClass({
-
-    propTypes: {
-        //text to show after the component is saved
-        savedText: React.PropTypes.string.isRequired,
-        //primary text to show on the button
-        text: React.PropTypes.string.isRequired,
-    },
-
-    getDefaultProps() {
-        return {
-             savedText: ‘Saved’,
-        };
-    },
-
-    getInitialState() {
-        return { saved: false };
-    },
-
-    save() {
-        dispatcher.sendMessage(‘saveData’);
-        this.setState({saved: true});
-    },
-
-    render() {
-        let {text, savedText} = this.props;
-        return (&lt;span className=“button” onClick={this.save}&gt;
-           {this.state.saved ? savedText : text}
-        &lt;/span&gt;);
-    },
-});
-</code></pre>
-<p>One of the best things about this style is its cohesive nature.  Everything about the component is described as a single object passed to React.createClass.  Since it is just an object that React processes, it is also able to accommodate more usage styles than ES6 classes and functional components.  Specifically we can use <a href="https://facebook.github.io/react/docs/reusable-components.html#mixins">mixins</a> and add declarative properties like propTypes directly to the component definition.</p>
-<p>The downside of the createClass approach is the custom nature of it.  External tools can’t inspect a component declaration and know what functions and methods will be available on the final component without either some deep inspection of the React source code or pre-existing knowledge of React.createClass that somebody has to document and maintain.</p>
-<h3>ES6 Classes</h3>
-<p>Last March, with React v0.13, the React team introduced a second syntax for React components using ES6 classes.  The constraints of the ES6 class definition change the component API in a few ways.  With ES6 classes there is no way to add properties to the class property as part of the main definition, they need to be added afterwards [^2].  Some niceties that are possible with React.createClass don’t work with ES6 classes as well.  Mixins aren’t possible, and React will no longer “autobind” your functions to the component instance, so when passing class methods as callbacks in your components it is necessary to bind it to the current context, either by using arrow functions like
-<code>&lt;span onClick= {() =&gt; this.save()} &gt;</code> or by binding the function like <code>this.save = this.save.bind(this)</code>.</p>
-<pre><code class="language-javascript">import React from ‘react’;
-import {dispatcher} from ‘./lib/dispatcher’;
-
-export class SaveButton extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = { saved: false };
-    }
-
-    save() {
-        dispatcher.sendMessage(‘saveData’);
-        this.setState({saved: true});
-    },
-
-    render() {
-        let {text, savedText} = this.props;
-        return (&lt;span className=“button” onClick={() =&gt;this.save()}&gt;
-           {this.state.saved ? savedText : text}
-        &lt;/span&gt;);
-    },
-});
-
-SaveButton.propTypes = {
-    //text to show after the component is saved
-    savedText: React.PropTypes.string.isRequired,
-    //primary text to show on the button
-    text: React.PropTypes.string.isRequired,
-};
-
-SaveButton.defaultProps = {
-    savedText: ‘Saved’,
-};
-</code></pre>
-<p>While this approach makes some syntactic compromises and loses mixins, it has the advantage of standardization and tooling support.  A good JavaScript tool can easily tell that a SaveButton should have render and save methods, as well as detecting the methods it inherits from React.Component.  This is useful for things like auto-complete and linting, as well as (theoretically) run-time performance.</p>
-<h3>Pure Functional Components</h3>
-<p>Last fall with React 0.14, React added a 3rd component style.  Functional components dispose of many of the secondary features of React, and focus on the <code>render</code> function.  They are the least powerful of all the component syntaxes.  In addition to losing mixins, pure functional components don’t have the life-cycle functions of the class based syntaxes and also don’t have any internal state.  For these components, all state must be managed externally through something like Redux, or parent components that do have state.</p>
-<pre><code class="language-javascript">import React from ‘react’;
-import {dispatcher} from ‘./lib/dispatcher’;
-
-export const SaveButton = ({text, savedText, isSaved, setSaved}) =&gt; {
-    const save = () =&gt;{
-        dispatcher.sendMessage(‘saveData’);
-        setSaved();
-    },
-    return (&lt;span className=“button” onClick={save}&gt;
-       {isSaved ? savedText : text}
-    &lt;/span&gt;);
-};
-
-SaveButton.propTypes = {
-    //text to show after the component is saved
-    savedText: React.PropTypes.string.isRequired,
-    //primary text to show on the button
-    text: React.PropTypes.string.isRequired,
-    // has the data already been saved?
-    isSaved: React.PropTypes.bool.isRequired,
-    // a function to update the application state and mark the page as saved
-    setSaved: React.PropTypes.func.isRequired,
-};
-
-SaveButton.defaultProps = {
-    savedText: ‘Saved’,
-};
-</code></pre>
-<p>Despite being the least powerful of the 3 component styles, functional components do have some advantages.  First of all, they’re very simple.  It is easy to see what is going on with them, and easy for React to optimize for them.  Like ES6 classes, they’re easy to understand for 3rd party tools since they’re “just functions”, and easy to explain to new developers for the same reason.  They also work well with systems like Redux which already encourages pulling state out of components into global stores.</p>
-<h2>Choosing a component style</h2>
-<p>So given these 3 styles, how do you choose which style to use for a component?  Balance a desire for consistency with a respect for the <a href="https://en.wikipedia.org/wiki/Rule_of_least_power">Principle of Least Power</a>.</p>
-<p>For consistency purposes, don’t use more than 2 of these styles within a single project.  This mostly breaks down to “don’t use createClass and ES6 classes” together in the same project.  There are significant differences in capability and complexity between the first 2 styles and functional components. But the class based styles are similar enough that using both adds complexity but fails to do much in terms of signaling intent.  Switching between 2 different styles of communicating a concept should also indicate a meaningful difference in intent.</p>
-<p>Of course the most consistent approach would be to always use createClass, since it is the most powerful and any component that can be implemented in the other 2 styles can be implemented using createClass.  This is where the principle of least power comes in.  Here is Tim Berners-Lee’s initial description of that principle:</p>
-<blockquote>
-<p>Computer Science in the 1960s to 80s spent a lot of effort making languages which were as powerful as possible. Nowadays we have to appreciate the reasons for picking not the most powerful solution but the least powerful. The reason for this is that the less powerful the language, the more you can do with the data stored in that language. If you write it in a simple declarative from, anyone can write a program to analyze it in many ways. The Semantic Web is an attempt, largely, to map large quantities of existing data onto a common language so that the data can be analyzed in ways never dreamed of by its creators. If, for example, a web page with weather data has RDF describing that data, a user can retrieve it as a table, perhaps average it, plot it, deduce things from it in combination with other information. At the other end of the scale is the weather information portrayed by the cunning Java applet. While this might allow a very cool user interface, it cannot be analyzed at all. The search engine finding the page will have no idea of what the data is or what it is about. This the only way to find out what a Java applet means is to set it running in front of a person.</p>
-</blockquote>
-<p>The less powerful react components styles are the more readable styles, both for humans and computers. That readability also limits the classes of errors and unexpected behaviors we can enact. So we should strive for simple components where we can, while balancing that with our desire for consistency.</p>
-<p>For projects looking into this, there are a few simple questions that you can answer to decide which style to use.</p>
-<ol>
-<li>Do you need to integrate with non-React libraries that modify the DOM?</li>
-<li>Do you need to manage state within your components (IE are you not using an external state management library like Redux)?</li>
-<li>Do you need to use mixins for anything in your project?</li>
-</ol>
-<p>If you answered yes to any of these questions, then you need to include a class based component style in your options for your projects.  If you answered yes to #3, then you will need to use React.createClass.</p>
-<p>Once you’ve made those decisions at the project level, the decisions are easy for an individual component.  If you answered no to all of the questions above (unlikely for a large project, but possible), you should always use functional components.  If not, you can ask the same 3 questions for each new component.  If the answer to all of the questions are no for a component, use a functional component, otherwise use the class based style you’ve chosen for your project.</p>
-<h3>More Resources</h3>
-<ul>
-<li><a href="https://facebook.github.io/react/docs/reusable-components.html#es6-classes">The React documentation</a> is the best place to look at the benefits and tradeoffs of the different component styles</li>
-<li><a href="http://jamesknelson.com/should-i-use-react-createclass-es6-classes-or-stateless-functional-components/">James Nelson wrote a similar guide last year</a> focused on the decision tree of what style to use for a component.  He dismisses the createClass style completely and has a similar but slightly different set of questions to ask.</li>
-<li><a href="https://github.com/facebook/react/issues/5677">This github thread</a> makes the important distinction that functional components are not yet optimized in any special way, though they may be in the future.</li>
-</ul>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post on <a href="http://benmccormick.org/2016/01/08/reusable-code-patterns/">reusable code patterns</a>.</p>
-<p>[^1]: Technically you can also use an ES5 class based style, but I’m going to ignore that.  It is not a common idiom for React programs as far as I can tell.</p>
-<p>[^2]: There is a proposal for adding static properties to ES6 classes, but it is still in early stages right now and is not guaranteed to end up as part of the ECMAScript spec.</p>
 ]]></content:encoded>
             <author>
                 <name>Ben McCormick</name>
