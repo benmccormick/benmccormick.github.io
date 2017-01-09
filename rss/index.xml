@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Mon, 09 Jan 2017 20:46:54 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Jan 2017 20:52:20 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
@@ -142,7 +142,7 @@ class Appointment {
 <li>If you do want more discipline in MobX, make sure to use <code>useStrict</code> to require updates to use Actions</li>
 <li>MobX has a nice set of <a href="https://github.com/mobxjs/mobx-react-devtools">devtools</a> that are useful if you’re opting in to using actions, and using React with MobX.</li>
 <li>If this isn’t clear yet, I definitely recommend hacking around with Mobx’s low level APIs to learn more about how it works before integrating it straight into a framework</li>
-<li>~Also note that MobX 3.0 is imminent, there is a release candidate that you can play with now.~ <strong>Update:</strong> That didn’t take long.  <a href="https://medium.com/@mweststrate/mobx-3-released-unpeeling-the-onion-ca877382f443#.mk6mdypt2">MobX 3.0 is out</a>.</li>
+<li><s>Also note that MobX 3.0 is imminent, there is a release candidate that you can play with now.</s> <strong>Update:</strong> That didn’t take long.  <a href="https://medium.com/@mweststrate/mobx-3-released-unpeeling-the-onion-ca877382f443#.mk6mdypt2">MobX 3.0 is out</a>.</li>
 </ul>
 <h3>More Resources</h3>
 <ul>
