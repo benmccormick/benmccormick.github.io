@@ -101,7 +101,7 @@ appointment.dueDate = '01-09-2017';
 /*  assume that 01-09-2017 is "today" */
 ```
 
-MobX has the "magical" ability to determine what changes actually affect the observer and not make unnecessary calls of reaction functions.  
+MobX has the "magical" ability to determine what changes actually affect the observer and not make unnecessary calls of reaction functions.  In practice, that magic allows you to write less, more efficient code for updating your UI based on data.
 
 ### How Does MobX work?
 
