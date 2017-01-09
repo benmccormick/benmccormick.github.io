@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Mon, 09 Jan 2017 13:43:10 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Jan 2017 13:47:08 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
@@ -12,7 +12,7 @@
             <title><![CDATA[MobX: First Impressions]]></title>
             <link>https://benmccormick.org/2017/01/09/mobx-first-impressions/</link>
             <guid>https://benmccormick.org/2017/01/09/mobx-first-impressions/</guid>
-            <pubDate>Mon, 09 Jan 2017 00:00:00 GMT</pubDate>
+            <pubDate>Mon, 09 Jan 2017 13:30:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>I spent some time around the holidays this year playing with <a href="https://mobx.js.org/">MobX</a>, a state management library for JavaScript.  MobX is an unopinionated library that provides a layer over normal JavaScript data structures that allow other code to efficiently observe data changes and update based on what has changed.  It’s an interesting tool for handling state in web applications, especially in existing projects that might need to update state handling iteratively.  Here are some first impressions.</p>
 <h3>What is MobX?</h3>
 <p>MobX has 3 core concepts developers need to understand:</p>
