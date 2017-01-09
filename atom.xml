@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-01-09T13:47:08Z</updated>
+    <updated>2017-01-09T13:49:03Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -107,7 +107,7 @@ appointment.dueDate = '01-09-2017';
 
 /*  assume that 01-09-2017 is &quot;today&quot; */
 </code></pre>
-<p>MobX has the “magical” ability to determine what changes actually affect the observer and not make unnecessary calls of reaction functions.</p>
+<p>MobX has the “magical” ability to determine what changes actually affect the observer and not make unnecessary calls of reaction functions.  In practice, that magic allows you to write less, more efficient code for updating your UI based on data.</p>
 <h3>How Does MobX work?</h3>
 <p>I have a learned skepticism of magical solutions like this.  Generally I find that time-saving magic like this ends up costing time when it comes to maintenance, and explicit relationships between code saves time over less-boilerplate heavy code. Fortunately, while the libraries code itself is fairly complex, it isn’t too hard to understand the logic behind how MobX works.</p>
 <p>On the Observer side, MobX uses <a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">ES5</a> setters and getters to proxy updates to observable data structure and listen in when data is updated.  This allows the type of event listening that <a href="http://backbonejs.org/">Backbone</a> and other libraries provide, without requiring the user to go through special <code>set</code> or <code>get</code> methods to update an object’s properties.  Most of the time you should be able to just be able to write code as you normally would, and MobX will make it work.  There are some exceptions though that mean its important to actually understand how the library work.  Getters and Setters only work when looking up an existing property on an object, so when using primitive values or adding new values to an existing object, some special syntax (the return of <code>get</code> and <code>set</code> methods) may be required.  In Mobx primitive observables are referred to as <em>boxed</em> values, and objects that require new values over time can be handled by using observable Maps, which use the API of <a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">ES6</a> Maps.</p>
