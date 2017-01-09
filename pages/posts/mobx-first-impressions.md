@@ -1,6 +1,6 @@
 ---
 title: "MobX: First Impressions"
-date: "2017-01-09 00:00:00+00:00"
+date: "2017-01-09 13:30:00+00:00"
 layout: "post"
 path: "/2017/01/09/mobx-first-impressions/"
 description: "First impression of managing data with MobX"
