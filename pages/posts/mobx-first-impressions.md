@@ -162,7 +162,7 @@ Comparing MobX and Redux could be a whole article on its own, so I'm not going t
 - If you do want more discipline in MobX, make sure to use `useStrict` to require updates to use Actions
 - MobX has a nice set of [devtools](https://github.com/mobxjs/mobx-react-devtools) that are useful if you're opting in to using actions, and using React with MobX.
 - If this isn't clear yet, I definitely recommend hacking around with Mobx's low level APIs to learn more about how it works before integrating it straight into a framework
-- Also note that MobX 3.0 is imminent, there is a release candidate that you can play with now.
+- ~Also note that MobX 3.0 is imminent, there is a release candidate that you can play with now.~ **Update:** That didn't take long.  [MobX 3.0 is out](https://medium.com/@mweststrate/mobx-3-released-unpeeling-the-onion-ca877382f443#.mk6mdypt2).
 
 ### More Resources
 
