@@ -6,9 +6,19 @@ description: 'A list of my past talks at meetups and conferences'
 keywords: 'speaking talks meetups conferences'
 ---
 
-I occasionally give talks about JavaScript.  If you're interested in having me speak to your group, feel free to contact me through [email](ben@benmccormick.org).
+I occasionally give talks about JavaScript and software development.  If you're interested in having me speak to your group, feel free to contact me through [email](ben@benmccormick.org).
 
 I am open to talking about pretty much anything that I write about on this blog.  Here are some talks I've given in the past:
+
+### 2017
+
+**The Vim Survival Guide** *Open Source 101 Conference*
+
+- [Slides](http://www.slideshare.net/BenMcCormick/vim-survival-guide-71763917)
+
+This talk was at the [Open Source 101](http://opensource101.com/) conference (a one day offshoot of the yearly All Things Open conference).
+It was an introduction to Vim, both for those who needed to "survive" Vim on a server, and those
+who were interested in using it as their primary editor.
 
 ### 2016
 
