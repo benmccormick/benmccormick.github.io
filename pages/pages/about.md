@@ -2,6 +2,7 @@
 title: "About Me"
 layout: page
 path: '/about'
+hideFooter: true
 ---
 
 

@@ -132,20 +132,20 @@ class MarkdownWrapper extends React.Component {
           className = "article-body"
           dangerouslySetInnerHTML = {{ __html: post.body }}
         />
-        <hr
+        {post.hideFooter ? null : <hr
           style = {{
             marginBottom: rhythm(2),
           }}
-        />
+        />}
         <ReadNext post = {post} pages = {route.pages} />
         {post.hideFooter ? null : <Footer />}
-        {isPage ? null : <Disqus
+        {isPage || post.hideFooter ? null : <Disqus
           title = {post.title}
           shortName = {slug}
           url = {url}
         />}
       </div>
-        );
+    );
   }
 }
 

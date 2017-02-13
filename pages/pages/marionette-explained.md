@@ -2,6 +2,7 @@
 title: "Marionette: Explained"
 layout: page
 path: '/marionette-explained'
+hideFooter: true
 ---
 
 <div class="explanation">

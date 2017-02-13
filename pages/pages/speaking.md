@@ -4,6 +4,7 @@ layout: page
 path: '/speaking'
 description: 'A list of my past talks at meetups and conferences'
 keywords: 'speaking talks meetups conferences'
+hideFooter: true
 ---
 
 I occasionally give talks about JavaScript and software development.  If you're interested in having me speak to your group, feel free to contact me through [email](ben@benmccormick.org).
