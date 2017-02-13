@@ -117,13 +117,20 @@ let copyCNAME = (cb) => {
   copyFile(`${__dirname}/pages/CNAME`, `${__dirname}/public/CNAME`, err => err ? cb(false) : cb());
 };
 
+let copySW = (cb) => {
+  copyFile(`${__dirname}/pages/sw.js`, `${__dirname}/public/sw.js`, err => err ? cb(false) : cb());
+};
+
 exports.postBuild = function(pages, callback) {
   let feed = buildFeed(pages);
   createRSSFolder();
   generateAtomFeed(feed);
   generateRSS(feed);
   generateSiteMap(pages);
-  copyCNAME(callback);
+  copySW(
+    () => copyCNAME(callback)
+  );
+
 };
 
 exports.modifyWebpackConfig = function(config, stage) {
