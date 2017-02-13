@@ -118,7 +118,7 @@ let copyCNAME = (cb) => {
 };
 
 let copySW = (cb) => {
-  copyFile(`${__dirname}/pages/sw.js`, `${__dirname}/public/sw.js`, err => err ? cb(false) : cb());
+  copyFile(`${__dirname}/pages/sw.es6`, `${__dirname}/public/sw.js`, err => err ? cb(false) : cb());
 };
 
 exports.postBuild = function(pages, callback) {
