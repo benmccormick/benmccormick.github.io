@@ -1,13 +1,11 @@
 ---
-title: "Improving Site Performance With Lighthouse"
-date: "2017-02-13 05:15:00+00:00"
+title: "Evaluating Web Apps With Lighthouse"
+date: "2017-02-13 22:30:00+00:00"
 layout: "post"
 path: "/2017/02/13/improving-site-performance-with-lighthouse"
-description: "Profiling and improving site performance with Google's Lighthouse tool"
+description: "Profiling and improving my site with Google's Lighthouse tool"
 keywords: "Lighthouse Performance Progressive Web App"
 category: "tools"
-pageViews: "0"
-last30pageViews: "0"
 ---
 
 Last year Google coined the term "Progressive Web App" as a way of describing the type of sites and applications that they think are the future of the web.  Progressive Web Apps are sites that load quickly, are always responsive to user input, work as well as possible offline, and integrate with native platforms like native apps.  While this site is not an "app" per say, I do want it to be as fast and responsive as possible, and I also wanted to better understand what Google is pulling under the PWA umbrella.  Fortunately, Google has built a tool [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to help developers profile and improve their web applications, comparing them to a set of PWA benchmarks.  So I took this site through Lighthouse, and worked against their suggestions with the goal of learning more about PWAs and improving the experience of using benmccormick.org.  I'm passing along my experience here.
@@ -44,19 +42,47 @@ Finally, Service Workers only work on HTTPS connections, but most links to my si
 
 ### Native Support
 
+As I said previously, native platform support isn't a major priority for this blog, but I was curious about the process.  Getting native support turned out to be very straightforward.  I had already collected icons for the various platforms, and created a simple manifest when I originally created a favicon for my site.  But the manifest file didn't have everything and it wasn't being deployed properly to my site.  Fixing that and making it available at `/manifest.json`, fixed all of the problems related to native platform support.
+
+My manifest file now looks like this:
+
+```json
+{
+	"name": "benmccormick.org",
+  "short_name": "benmccormick",
+	"icons": [
+		{
+			"src": "\/android-chrome-192x192.png?v=yyxgnp97qG",
+			"sizes": "192x192",
+			"type": "image\/png"
+		},
+		{
+			"src": "\/android-chrome-384x384.png?v=yyxgnp97qG",
+			"sizes": "384x384",
+			"type": "image\/png"
+		}
+	],
+	"theme_color": "#ffffff",
+	"background_color": "#57a3e8",
+	"display": "browser"
+}
+```
+
+After correctly deploying that manifest file, my score moved all the way up to 100/100!
+
+<img alt="asset issues" src="/posts/images/lighthouse/third_report_native.png" class="full-width bordered-img">
+
+I clearly benefited from starting in a good spot.  [Gatsby](https://github.com/gatsbyjs/gatsby) is "fast by default" as a platform for building blogs, and I've done my best to avoid making it slow.  But it was fun seeing what I could do to make the site a better experience for users with bad connectivity, and to learn more about what Google is trying to do with PWAs.  
+
+
 ### More Resources
+
+- Google has a bunch of resources around creating Progressive Web Apps.  You can find them on [their PWA landing page](https://developers.google.com/web/progressive-web-apps/).
+
+- It was so easy to make my blog a PWA mostly because it is built on [Gatsby](https://github.com/gatsbyjs/gatsby). Worth looking at if you're a web developer who blogs.
 
 
 
 ### Subscribe
 
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). If you're excited about Jest, you also might want to check out my [post on Jest Snapshots][snapshots].
-
-
-[jest]: https://facebook.github.io/jest/
-[christoph]: https://twitter.com/cpojer
-[abramov]: https://twitter.com/abramov_dmitrii
-[ecma]:http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/
-[snapshots]: http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/
-[tracy]: https://twitter.com/ladyleet
-[jasmine]: https://jasmine.github.io/
+Thanks for taking the time to read this post!  Web development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). If you liked this post you also might want to check out my article from 2015 on [Productive JavaScript Development](https://benmccormick.org/2015/11/25/productive-javascript-development/).
