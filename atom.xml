@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-02-14T01:43:01Z</updated>
+    <updated>2017-02-14T01:45:29Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -16,41 +16,6 @@
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
     </contributor>
-    <entry>
-        <title type="html"><![CDATA[Improving Site Performance With Lighthouse]]></title>
-        <id>https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse/</id>
-        <link href="https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse/">
-        </link>
-        <updated>2017-02-13T05:15:00Z</updated>
-        <content type="html"><![CDATA[<p>Last year Google coined the term “Progressive Web App” as a way of describing the type of sites and applications that they think are the future of the web.  Progressive Web Apps are sites that load quickly, are always responsive to user input, work as well as possible offline, and integrate with native platforms like native apps.  While this site is not an “app” per say, I do want it to be as fast and responsive as possible, and I also wanted to better understand what Google is pulling under the PWA umbrella.  Fortunately, Google has built a tool <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> to help developers profile and improve their web applications, comparing them to a set of PWA benchmarks.  So I took this site through Lighthouse, and worked against their suggestions with the goal of learning more about PWAs and improving the experience of using <a href="http://benmccormick.org">benmccormick.org</a>.  I’m passing along my experience here.</p>
-<h3>Getting Started</h3>
-<p>I began by downloading the Lighthouse extension in the <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk">Chrome Web Store</a>.  Lighthouse can be installed either as a chrome extension or a node command line tool.  Both produce the same HTML report, but I chose the chrome extension for the convenience of keeping everything in the browser.  When I ran the initial report, I got the following result:</p>
-<img alt="first score: 48/100" src="http://benmccormick.org/posts/images/lighthouse/first_report_summary.png" class="full-width bordered-img">
-<p>48 out of 100 didn’t seem like a bad starting place.  Scrolling down it looked like I was mainly dinged on a few main areas:</p>
-<ol>
-<li>I had no offline support</li>
-<li>I did’t have any special setup for being included on a users homescreen. (I did have platform appropriate icons, but no app configuration)</li>
-<li>I had some possible inefficiencies in the assets I loaded.</li>
-</ol>
-<img alt="offline issues" src="http://benmccormick.org/posts/images/lighthouse/first_report_offline.png" class="full-width bordered-img">
-<img alt="native issues" src="http://benmccormick.org/posts/images/lighthouse/first_report_native.png" class="full-width bordered-img">
-<img alt="asset issues" src="http://benmccormick.org/posts/images/lighthouse/first_report_assets.png" class="full-width bordered-img">
-<p>Native app support isn’t a huge priority for me, and the assets issue seemed small, so I decided to investigate the offline support issue first.</p>
-<h3>Offline</h3>
-<p>I based my service worker implementation off of <a href="https://github.com/chriscoyier/Simple-Offline-Site">Simple Offline Site</a> a demo Service Worker repo created by Chris Coyier for an article on <a href="https://css-tricks.com/serviceworker-for-offline/">CSS Tricks</a>.  This was perfect since it’s default behavior was what I wanted: cache everything, and check for updates from the server everytime we return from cache so we’re never out of date for long.  You can see what I did specifically in my <a href="https://github.com/benmccormick/benmccormickorg/blob/master/pages/sw.es6">github repo for this site</a>. After adding the service worker, my score moved up to 63/100.</p>
-<p>Finally, Service Workers only work on HTTPS connections, but most links to my site are not https currently. So to take full advantage (and to address another metric I was flagged on), I used a <a href="https://support.cloudflare.com/hc/en-us/articles/200170536-How-do-I-redirect-all-visitors-to-HTTPS-SSL-">CloudFlare page rule</a> to redirect all visting traffic to use https.  That bumped me up to 69/100.</p>
-<img alt="asset issues" src="http://benmccormick.org/posts/images/lighthouse/second_report_offline.png" class="full-width bordered-img">
-<h3>Native Support</h3>
-<h3>More Resources</h3>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. If you’re excited about Jest, you also might want to check out my <a href="http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/">post on Jest Snapshots</a>.</p>
-]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
     <entry>
         <title type="html"><![CDATA[MobX: First Impressions]]></title>
         <id>https://benmccormick.org/2017/01/09/mobx-first-impressions/</id>
@@ -921,6 +886,63 @@ let numDivs = _.reduce($('div'), (count, el) =&gt; count + 1, 0));
 <p>For methods that iterate over a collection lodash treats all array-like objects (essentially anything with a length property) the same and iterates over their numerical properties from 0 to length-1.  This provides a nice consistency when working with DOM APIs and removes the mental overhead from managing their inconsistencies.</p>
 <h3>Subscribe</h3>
 <p>Thanks for taking the time to read this post!   JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post <a href="http://benmccormick.org/2014/11/12/underscore-vs-lodash/">comparing lodash and underscore</a>.  I’m also going to be starting a new series of posts soon diving into lodash more in depth.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What are mutable and immutable data structures?]]></title>
+        <id>https://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2/</id>
+        <link href="https://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2/">
+        </link>
+        <updated>2016-06-04T21:52:52Z</updated>
+        <content type="html"><![CDATA[<p>Sometimes concepts and ideas slowly grow in a programming community, sometimes they seem to appear in a flash.  For the first several years I wrote JavaScript, I don’t recall ever seeing anything written online about immutable data.  Since React hit the scene in the last 2 years however, articles mentioning mutable and immutable data seem to have multiplied, as have libraries like Immutable.js and alternate front end languages like Elm that allow users to “use immutable data”.  I’m not going to address those libraries, but thought it would be useful to throw out a quick primer on what immutable data actually is, how it differs from mutable data, and why anyone cares.</p>
+<p>A mutable object is an object whose state can be modified after it is created.  An immutable object is an object whose state cannot be modified after it is created.  Examples of native JavaScript values that are immutable are numbers and strings.  Examples of native JavaScript values that are mutable include objects, arrays, functions, classes, sets, and maps.</p>
+<h3>Implications of mutable object</h3>
+<p>So why does this matter?  Consider the following code examples:</p>
+<pre><code class="language-javascript">let a = {
+    foo: 'bar'
+};
+
+let b = a;
+
+a.foo = 'test';
+
+console.log(b.foo); // test
+console.log(a === b) // true
+</code></pre>
+<pre><code class="language-javascript">let a = 'test';
+let b = a;
+a = a.substring(2);
+
+console.log(a) //st
+console.log(b) //test
+console.log(a === b) //false
+</code></pre>
+<pre><code class="language-javascript">let a = ['foo', 'bar'];
+let b = a;
+
+a.push('baz')
+
+console.log(b); // ['foo', 'bar', 'baz']
+console.log(a === b) // true
+</code></pre>
+<pre><code class="language-javascript">let a = 1;
+let b = a;
+a++;
+
+console.log(a) //2
+console.log(b) //1
+console.log(a === b) //false
+</code></pre>
+<p>What we see is that for mutable values, updating state applies across all <em>references</em> to that variable.  So changing a value in one place, changes it for all references to that object.  For the immutable data types, we have no way of changing the internal state of the data, so the reference always gets reassigned to a new object.  The biggest implication of this is that for immutable data, equality is more reliable since we know that a value’s state won’t be changed out from under us.</p>
+<p>Finally, its worth noting that it’s still possible to treat JavaScript objects as immutable.  This can first be done through <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">Object.freeze</a>, which shallowly renders a JavaScript object immutable.  But it can also be done with programmer discipline.  If we want to rely on object’s being immutable, it’s possible to enforce that all object updates are done through something like
+<code>Object.assign(a, {foo: 'bar'})</code> rather than <code>a.foo = 'bar'</code>, and all array updates are done through functions that generate new arrays like <code>Array.prototype.map</code>, <code>Array.prototype.filter</code>, or <code>Array.prototype.concat</code>, rather than mutating methods like <code>Array.prototype.push</code>, <code>Array.prototye.pop</code>, or <code>Array.prototype.sort</code>.  This is less reliable without language level constraints, but has become popular in the React ecosystem for dealing with data for folks who don’t want to introduce abstractions like Immutable.js.</p>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post on <a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">explaining the different version names of the JavaScript language</a>.</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
