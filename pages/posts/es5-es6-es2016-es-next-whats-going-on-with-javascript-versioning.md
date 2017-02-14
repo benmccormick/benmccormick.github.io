@@ -16,7 +16,7 @@ This has mostly been trivia for JavaScript developers, because ECMAScript didn't
 
 Around 2012 things started to change.  There was more of a push to stop supporting old Internet Explorer versions, and writing code in ECMAScript 5 (ES5) style became much more feasible.  At the same time work was underway on a new ECMAScript standard, at which point it became much more common to start referring to JavaScript implementations in terms of their support for different ECMAScript standards.  The new standard was originally named ES.Harmony, before eventually being referred to as ECMAScript 6th Edition (ES6). In 2015 TC39, the committee responsible for drafting the ECMAScript specifications, made the decision to move to a yearly model for defining new standards, where new features would be added as they were approved, rather than drafting complete planned out specs that would only be finalized when all features were ready.  As a result ECMAScript 6th edition was renamed ECMAScript 2015 (ES2015) before it was published in June.
 
-Currently there are several proposals for new features or syntax to be added to JavaScript.  These include [decorators][decorators], [async-await][async], and [static class properties][classprops].  These are often refered to as ES7, ES2016, or ES.Next features, but should realistically be called proposals or possibilities, since the ECMAScript 2016 specification hasn't been written yet, and might include all or none of those features.  TC39 divides proposals into 4 stages.  You can see the current state of various proposals on [Babel's website][babelstages].
+Currently there are several proposals for new features or syntax to be added to JavaScript.  These include [decorators][decorators], [async-await][async], and [static class properties][classprops].  These are often refered to as ES7, ES2016, or ES.Next features, but should realistically be called proposals or possibilities, since the ECMAScript 2016 specification hasn't been written yet, and might include all or none of those features.  TC39 divides proposals into 4 stages.  You can see the current state of various proposals on [the TC39 Github repo][tc39proposals].
 
 So where does that leave us in terms of terminology?  The following list might be helpful:
 
@@ -62,7 +62,7 @@ Thanks for taking the time to read this post!  JavaScript development is one of 
 [decorators]:https://github.com/wycats/javascript-decorators
 [async]:https://github.com/lukehoban/ecmascript-asyncawait
 [classprops]:https://gist.github.com/jeffmo/054df782c05639da2adb
-[babelstages]: https://babeljs.io/docs/usage/experimental/
+[tc39proposals]: https://github.com/tc39/proposals
 [es6compat]: http://kangax.github.io/compat-table/es6/
 [safari]: http://benmccormick.org/2015/06/10/is-safari-being-left-behind/
 [proposalstc39]: https://github.com/tc39/ecma262
