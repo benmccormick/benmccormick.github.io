@@ -1,6 +1,6 @@
 ---
 title: "Evaluating Web Apps With Lighthouse"
-date: "2017-02-13 22:30:00+00:00"
+date: "2017-02-14 3:30:00+00:00"
 layout: "post"
 path: "/2017/02/13/improving-site-performance-with-lighthouse"
 description: "Profiling and improving my site with Google's Lighthouse tool"
