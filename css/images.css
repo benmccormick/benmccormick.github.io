@@ -19,3 +19,7 @@
   max-height : none;
   width: 50%;
 }
+
+.bordered-img {
+  border: 3px solid #57A3E8;
+}

@@ -1,5 +1,6 @@
 {
-	"name": "benmcc",
+	"name": "benmccormick.org",
+  "short_name": "benmccormick.org",
 	"icons": [
 		{
 			"src": "\/android-chrome-192x192.png?v=yyxgnp97qG",

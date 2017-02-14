@@ -47,7 +47,7 @@ module.exports = React.createClass({
             href = "/favicon-16x16.png?v=yyxgnp97qG"
             sizes = "16x16"
           />
-          <link rel = "manifest" href = "/manifest.json?v=yyxgnp97qG"/>
+          <link rel = "manifest" href = "/manifest.json"/>
           <link rel = "mask-icon" href = "/safari-pinned-tab.svg?v=yyxgnp97qG" color = "#57a3e8"/>
           <link rel = "shortcut icon" href = "/favicon.ico?v=yyxgnp97qG"/>
           <meta name = "theme-color" content = "#ffffff"/>

@@ -117,6 +117,11 @@ let copyCNAME = (cb) => {
   copyFile(`${__dirname}/pages/CNAME`, `${__dirname}/public/CNAME`, err => err ? cb(false) : cb());
 };
 
+let copyManifest = (cb) => {
+  copyFile(`${__dirname}/pages/manifest.json`,
+    `${__dirname}/public/manifest.json`, err => err ? cb(false) : cb());
+};
+
 let copySW = (cb) => {
   copyFile(`${__dirname}/pages/sw.es6`, `${__dirname}/public/sw.js`, err => err ? cb(false) : cb());
 };
@@ -128,7 +133,9 @@ exports.postBuild = function(pages, callback) {
   generateRSS(feed);
   generateSiteMap(pages);
   copySW(
-    () => copyCNAME(callback)
+    () => copyCNAME(
+      () => copyManifest(callback)
+    )
   );
 
 };
