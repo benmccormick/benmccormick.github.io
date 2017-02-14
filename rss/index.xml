@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Tue, 14 Feb 2017 03:28:08 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 14 Feb 2017 03:43:23 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
@@ -12,7 +12,7 @@
             <title><![CDATA[Evaluating Web Apps With Lighthouse]]></title>
             <link>https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse/</link>
             <guid>https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse/</guid>
-            <pubDate>Mon, 13 Feb 2017 22:30:00 GMT</pubDate>
+            <pubDate>Tue, 14 Feb 2017 03:30:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>Last year Google coined the term “Progressive Web App” as a way of describing the type of sites and applications that they think are the future of the web.  Progressive Web Apps are sites that load quickly, are always responsive to user input, work as well as possible offline, and integrate with native platforms like native apps.  While this site is not an “app” per say, I do want it to be as fast and responsive as possible, and I also wanted to better understand what Google is pulling under the PWA umbrella.  Fortunately, Google has built a tool <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> to help developers profile and improve their web applications, comparing them to a set of PWA benchmarks.  So I took this site through Lighthouse, and worked against their suggestions with the goal of learning more about PWAs and improving the experience of using <a href="http://benmccormick.org">benmccormick.org</a>.  I’m passing along my experience here.</p>
 <h3>Getting Started</h3>
 <p>I began by downloading the Lighthouse extension in the <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk">Chrome Web Store</a>.  Lighthouse can be installed either as a chrome extension or a node command line tool.  Both produce the same HTML report, but I chose the chrome extension for the convenience of keeping everything in the browser.  When I ran the initial report, I got the following result:</p>
