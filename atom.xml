@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-02-14T03:43:23Z</updated>
+    <updated>2017-02-18T23:40:00Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -16,6 +16,50 @@
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Giving Context to Best Practices]]></title>
+        <id>https://benmccormick.org/2017/02/18/context-to-best-practices/</id>
+        <link href="https://benmccormick.org/2017/02/18/context-to-best-practices/">
+        </link>
+        <updated>2017-02-18T23:30:00Z</updated>
+        <content type="html"><![CDATA[<p>I’ve noticed a frustrating trend in online discussions about web development where developers take their personal experience with a tool or practice and promote it as a universal truth.  Some of this is the nature of being human: we all see the world through our own lens.  But the best technical observations exist within a specific context.</p>
+<p>Compare</p>
+<blockquote>
+<p>Everybody should be writing code using static types, the extra syntax is worth it because of all the bugs it prevents.</p>
+</blockquote>
+<p>to</p>
+<blockquote>
+<p>If you’re working in a large code base with many developers, static typing is extremely useful, because the overhead from writing extra code and compiler errors is more than made up for by reducing bugs and clearly expressing intent when developers edit code they didn’t write.</p>
+</blockquote>
+<p>The first quote presents a tradeoff and declares a universal preference for one direction in the tradeoff.  The second quote adds more details about the context in which the practice has been beneficial, and explains what about those circumstances (developers editing code they didn’t write) affects the tradeoff decision.</p>
+<p>These type of distinctions are often lost in online discussions about development best practices. I have no interest in naming and shaming, but specifically I’ve seen this in discussions around JavaScript performance, testing, frameworks vs other frameworks vs VanillaJS, responsive design, progressive enhancement, and build pipelines.  I’m going to try to lay out some of the context that I’ve found helpful to take into account when giving or interpreting best practice advice.</p>
+<h4>Beginner vs Veteran</h4>
+<p>I’ll start with a distinction that folks seem better about making. Sometimes recommendations that make sense for beginners don’t work as well for more experienced developers and vice versa.  For instance it might make sense to advise a more experienced developer to use and heavily configure a build system like <a href="https://webpack.github.io/">Webpack</a> for a new project. But beginners already have a lot to learn with each new project and might benefit from a simpler system; either a simple project without a build step, or a “batteries included” system like <a href="https://github.com/facebookincubator/create-react-app">Create React App</a> or <a href="https://ember-cli.com/">Ember CLI</a>.  Making these distinctions is important for helping developers who may feel overwhelmed by all the concepts they need to learn when getting started with web development.</p>
+<h4>Big Team vs Small team vs Individual</h4>
+<p>Another dynamic that matters when expressing best practices is the size of a team working on a project.  If a project is being developed by a large team, or several teams, or is meant to be used as a library by many people, techniques like automated documentation, static type checking, and clear style guidelines may be essential.  But for a personal project or a professional project run by a 1 person team, those same techniques may provide a lot of overhead for minimal benefit. Most teams will fall between those extremes and will have to weigh the tradeoffs in each case.</p>
+<h4>Personal Project vs Internal tool vs B2B Products vs Consumer Products</h4>
+<p>The audience of a project is also important.  Some projects we build for ourselves.  Some may be internal for a company, or for a group that we’re a part of.  Other projects are sold professionally to businesses or offered freely to consumers on the web.  There are different goals and expectations for each of these groups, that may impact which practices and techniques are important.  For instance, nobody cares if a personal web application you’ve made to organize your todos crashes in Internet Explorer or doesn’t have alt-text for images.  But browser compatibility and accessibility might be extremely important for a consumer web app aimed at a broad population.  Similarly, it might be ok for your internal web tool to have un-minified JavaScript and large un-optimized CSS and JavaScript bundles, since it will always be served locally over a fast connection.  But it could severely hurt the user experience to do the same things for a high traffic public site.</p>
+<h4>Web page vs Web app</h4>
+<p>Distinguishing between web pages[^1] and web apps[^2] would short circuit a large number of internet arguments before they started.  Specifically arguments about progressive enhancement, whether we use too much JavaScript and whether a site is “acceptable” if it doesn’t work without JavaScript.  Many accessibility and performance proponents push very strongly for less JavaScript and sites that work without JavaScript.  And that is a good thing… for the sites that <strong>can</strong> function without JavaScript.  Web apps like Trello, Google Docs, or Postman just don’t make sense without JavaScript.  But saying that we should use less JavaScript isn’t bad advice, it’s just bad advice when given or taken without context.</p>
+<h4>Existing project vs Greenfield project</h4>
+<p>Some choices are only easy to make at the start of a project.  It is possible to change the language or framework a project is written in midstream, but it is often extremely risky and painful.  So asking a developer working on a 5 year old JavaScript project with thousands of lines of code why they didn’t write it in <a href="http://elm-lang.org/">Elm</a> or <a href="https://clojurescript.org/">ClojureScript</a> is not helpful.  But suggesting that somebody write a new project in Elm may be just fine.</p>
+<h4>Short term project vs Long term project</h4>
+<p>Some software projects are meant to be written, completed, and never seen again.  For instance a promotional site for an event.  Some projects, like financial software, are meant to last for decades.  This is yet another distinction than can impact best practice discussions.  When working on a short term project, speed of delivery and initial quality tend to matter a lot.  For long term projects it may be better to prioritize maintainability, security and ease of deployment.</p>
+<h3>Interpreting best practices</h3>
+<p>When we interpret best practice suggestions, it’s helpful to follow the advice of performance advocates: “Measure!”.  It is generally well understood that performance advice isn’t generic, and understanding what works for your system requires measuring the bottlenecks in your system and the effects of different changes.</p>
+<p>We can’t always easily measure things like the effects of using static typing in a project.  But it is usually pretty easy to make a list of the most important priorities for a project (performance? security? release speed? reliability? design?) and the current pain points (too many bugs released into production? slow loading pages? too many manual steps to release the code?).  If you don’t know the answer to these questions, think about the things that your team spends the most time on, and (if you’re working in a professional setting) talk with your team about what business value your project is providing.  Then you can match new technologies and practices to the goals and pain points for your team.</p>
+<p>Finally, don’t stress when you see “best practices” that your team doesn’t follow.  No project implements everything.  I’ll be talking more in my next few posts about how to improve a project over time.  In the end though, best practices are only useful when they help you meet your projects goals.  If you know what those are, and you’re listening to others without feeling compelled to do everything, you’ll get better and better at meeting your goals over time.</p>
+<h3>Subscribe</h3>
+<p>Thanks for taking the time to read this post!  Web development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/">post on Orthogonality and CSS in JS</a>.</p>
+<p>[^1]: Web page: sites that are mostly content focused with some possible interactivity layered on top
+[^2]: Web app: sites that are primarily an interactive experience for the user and behave more like traditional desktop or mobile applications</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Evaluating Web Apps With Lighthouse]]></title>
         <id>https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse/</id>
@@ -904,56 +948,6 @@ FAIL  __tests__/Link.react-test.js
 <p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/">post on choosing which component styles to use in React</a>.</p>
 <p>[^1]: PhantomJS was a tremendous source of pain in our Karma setup.
 [^2]: This used to be the default setting, with Jest 15 it can be configured to work that way.</p>
-]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Quick Tip: Take advantage of lodash collections]]></title>
-        <id>https://benmccormick.org/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2/</id>
-        <link href="https://benmccormick.org/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2/">
-        </link>
-        <updated>2016-06-26T21:27:55Z</updated>
-        <content type="html"><![CDATA[<p>One of the more frustrating things about using JavaScript in the browser is the number of different collection types that you need to deal with.  When using native APIs and 3rd party libraries, it’s easy to encounter 3 or more different types of collections, including <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList">NodeLists</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection">HTMLCollections</a>, <a href="https://learn.jquery.com/using-jquery-core/jquery-object/">jQuery Objects</a>, and plain arrays.</p>
-<pre><code class="language-javascript">let a = document.querySelectorAll('div')
-a instanceOf NodeList //true
-
-let b = document.getElementsByTagName('div')
-b instanceOf HTMLCollection //true
-
-let c = $('div')
-c instanceOf jQuery // true
-
-let d = ['button1', 'button2', 'button3'].map(id =&gt; document.getElementById(id));
-d instance of Array //true
-</code></pre>
-<p>This ends up mattering in practice because not every function that is available on Array is available on NodeList, HTMLCollections, and jQuery objects.</p>
-<pre><code class="language-javascript">let ids = document.querySelectorAll('div').map(el =&gt; el.id)
-// Uncaught TypeError: document.querySelectorAll(...).map is not a function
-
-ids = document.getElementsByTagName('div').map(el =&gt; el.id)
-// Uncaught TypeError: document.getElementsByTagName(...).map is not a function
-
-let numDivs = $('div').reduce((count, el) =&gt; count + 1, 0);
-// Uncaught TypeError: $(...).reduce is not a function
-</code></pre>
-<p>Since we can’t use native array methods on these alternate collections, we end up having to be very careful about knowing where we’ve retrieved data from, and how to convert those collections or how to work around their limitations.</p>
-<p>It’s useful to know about these distinctions, but in practice dealing with them is a pain.  One of the nice properties of <a href="https://lodash.com/docs">lodash</a> is that it abstracts over these incompatibilities.</p>
-<pre><code class="language-javascript">let ids = _.map(document.querySelectorAll('div'), el =&gt; el.id);
-// ['container', 'left-box', 'right-box']
-
-ids = _.map(document.getElementssByTagName('div'), el =&gt; el.id);
-// ['container', 'left-box', 'right-box']
-
-let numDivs = _.reduce($('div'), (count, el) =&gt; count + 1, 0));
-// 3
-</code></pre>
-<p>For methods that iterate over a collection lodash treats all array-like objects (essentially anything with a length property) the same and iterates over their numerical properties from 0 to length-1.  This provides a nice consistency when working with DOM APIs and removes the mental overhead from managing their inconsistencies.</p>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!   JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my post <a href="http://benmccormick.org/2014/11/12/underscore-vs-lodash/">comparing lodash and underscore</a>.  I’m also going to be starting a new series of posts soon diving into lodash more in depth.</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
