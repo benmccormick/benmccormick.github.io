@@ -20,9 +20,7 @@ to
 
 The first quote presents a tradeoff and declares a universal preference for one direction in the tradeoff.  The second quote adds more details about the context in which the practice has been beneficial, and explains what about those circumstances (developers editing code they didn't write) affects the tradeoff decision.  
 
-These type of distinctions are often lost in online discussions about development best practices. I have no interest in naming and shaming, but specifically I've seen this in discussions around JavaScript performance, testing, frameworks vs other frameworks vs VanillaJS, responsive design, progressive enhancement, and build pipelines.  For this post, I'm going to try to lay out a list  of some of the context that I've found helpful to take into account when giving or interpreting best practice advice.
-
-### Context to keep in mind when discussing and interpreting best practices
+These type of distinctions are often lost in online discussions about development best practices. I have no interest in naming and shaming, but specifically I've seen this in discussions around JavaScript performance, testing, frameworks vs other frameworks vs VanillaJS, responsive design, progressive enhancement, and build pipelines.  I'm going to try to lay out some of the context that I've found helpful to take into account when giving or interpreting best practice advice.
 
 #### Beginner vs Veteran
 
@@ -47,6 +45,16 @@ Some choices are only easy to make at the start of a project.  It is possible to
 #### Short term project vs Long term project
 
 Some software projects are meant to be written, completed, and never seen again.  For instance a promotional site for an event.  Some projects, like financial software, are meant to last for decades.  This is yet another distinction than can impact best practice discussions.  When working on a short term project, speed of delivery and initial quality tend to matter a lot.  For long term projects it may be better to prioritize maintainability, security and ease of deployment.
+
+
+### Interpreting best practices
+
+When we interpret best practice suggestions, it's helpful to follow the advice of performance advocates: "Measure!".  It is generally well understood that performance advice isn't generic, and understanding what works for your system requires measuring the bottlenecks in your system and the effects of different changes.  
+
+We can't always easily measure things like the effects of using static typing in a project.  But it is usually pretty easy to make a list of the most important priorities for a project (performance? security? release speed? reliability? design?) and the current pain points (too many bugs released into production? slow loading pages? too many manual steps to release the code?).  If you don't know the answer to these questions, think about the things that your team spends the most time on, and (if you're working in a professional setting) talk with your team about what business value your project is providing.  Then you can match new technologies and practices to the goals and pain points for your team.  
+
+Finally, don't stress when you see "best practices" that your team doesn't follow.  No project implements everything.  I'll be talking more in my next few posts about how to improve a project over time.  In the end though, best practices are only useful when they help you meet your projects goals.  If you know what those are, and you're listening to others without feeling compelled to do everything, you'll get better and better at meeting your goals over time.
+
 
 ### Subscribe
 
