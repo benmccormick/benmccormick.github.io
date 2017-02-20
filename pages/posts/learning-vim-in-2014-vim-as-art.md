@@ -6,8 +6,8 @@ path: "/2014/07/16/learning-vim-in-2014-vim-as-art"
 description: "How using Vim is more of an artform than a science"
 keywords: "vim dot command"
 category: "tools"
-pageViews: "15005"
-last30pageViews: "84"
+readNext: ['learning-vim', 'vim-files', 'vim-language']
+key: 'vim-art'
 ---
 
 How do you feel about being efficient?  If you're reading this blog, I bet you like it.  What if I told you your text editor could help you cut the amount of time you spend typing in half, with just a little reading and a bit of practice?  For you Vim users, it's very possible that you're spending way more time typing than needed.
@@ -86,12 +86,6 @@ None of these commands are all that useful on their own, but they're each valuab
 - Some of you are probably confused that I wrote a whole post on repeating commands in Vim with only one side-reference to Macros.  Macros are Vim's DRY power tool, and different enough from the rest of these commands that I didn't want to lump it all together.  But for those interested, Drew Neil has a [great screencast][vimcastsmacro] on how to build a good Vim macro.
 - On a similar note, Drew's book [Practical Vim][practicalvim] is the best guide I've found on making good use of repetition in Vim.  I learned plenty of the stuff in this article from that book.  For those who don't want to pay, I'm currently giving [new subscribers a chance to win 2 copies of the book][giveaway].  You can also see more about repetition from Drew online at [Vimcasts][vimcastsrep].
 - Tim Pope has published a plugin that allows you to extend the dot command to work on arbitrary user commands.  It also works out of the box with many of his other plugins.  You can see it on [Github][repeatvim].
-
----
-
-### Subscribe
-
-This was the fifth in a series of posts on learning Vim in a modern way.  If you enjoyed the post consider subscribing by using the [feed](http://feedpress.me/benmccormick),  with [Twitter](http://twitter.com/benmccormickorg) or by joining my [mailing list](http://eepurl.com/WFYon).  Also check out the [next post](http://benmccormick.org/2014/07/21/learning-vim-in-2014-getting-more-from-vim-with-plugins/) in the series, covering the use of plugins in Vim.
 
 [dry]:http://en.wikipedia.org/wiki/Don't_repeat_yourself
 [language]:http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/

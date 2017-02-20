@@ -4,8 +4,7 @@ date: "2013-01-03 21:00:00+00:00"
 layout: "post"
 path: "/2013/01/03/sublime-text-for-javascript-plugins"
 category: "tools"
-pageViews: "6059"
-last30pageViews: "14"
+description: 'Helpful packages for JS developers'
 ---
 
 This is the final post in my series on Sublime Text, and how to get the most out of the editor.

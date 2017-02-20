@@ -8,8 +8,7 @@ import { prefixLink } from 'gatsby-helpers';
 import { rhythm } from 'utils/typography';
 import Helmet from 'react-helmet';
 import { config } from 'config';
-import include from 'underscore.string/include';
-import Footer from 'components/Footer';
+import include from 'lodash/includes';
 import LinkList from 'components/LinkList';
 
 class BlogIndex extends React.Component {
@@ -126,7 +125,6 @@ class BlogIndex extends React.Component {
           </Link>
 
         </div>
-        <Footer />
       </div>
     );
   }

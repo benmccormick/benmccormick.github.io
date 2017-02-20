@@ -1,10 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 import Helmet from 'react-helmet';
-import ReadNext from '../components/ReadNext';
+import PostFooter from '../components/PostFooter';
 import { rhythm } from 'utils/typography';
 import { config } from 'config';
-import Footer from '../components/Footer';
 import {Disqus} from '../components/Disqus';
 import forEach from 'lodash/forEach';
 import last from 'lodash/last';
@@ -62,6 +61,7 @@ class MarkdownWrapper extends React.Component {
     const { route, location } = this.props;
     const post = route.page.data;
     let isPage = post.layout === 'page';
+    let isPost = post.layout === 'post';
     let slug = last(post.path.split('/'));
     let url = `http://benmccormick.org${location.pathname}`;
     return (
@@ -132,13 +132,12 @@ class MarkdownWrapper extends React.Component {
           className = "article-body"
           dangerouslySetInnerHTML = {{ __html: post.body }}
         />
+        {isPost ? <PostFooter post = {post} pages = {route.pages} /> : null }
         {post.hideFooter ? null : <hr
           style = {{
             marginBottom: rhythm(2),
           }}
         />}
-        <ReadNext post = {post} pages = {route.pages} />
-        {post.hideFooter ? null : <Footer />}
         {isPage || post.hideFooter ? null : <Disqus
           title = {post.title}
           shortName = {slug}

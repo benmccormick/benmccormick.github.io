@@ -6,8 +6,6 @@ path: "/2015/05/28/moving-past-requirejs"
 category: "frameworks"
 dontfeature: "true"
 description: "A look at the problems with using requireJS in todays JavaScript world"
-pageViews: "33651"
-last30pageViews: "1311"
 ---
 
 RequireJS has been a hugely influential and important tool in the JavaScript world.  It's still used in many solid, well-written projects today.  But as it has stagnated and competitors have grown up, it now suffers compared to the alternatives.  It's time for new projects to look past RequireJS when deciding how to structure their front-end projects.
@@ -125,10 +123,6 @@ It should be noted here that this article is addressed primarily at developers s
 - This [blog post][ampersand] is primarily an introduction post for Ampersand.js, a modular JS framework. But it also serves as a great look at the environment around nodejs and CommonJS modules, including a discussion of the advantages and disadvantages of using many small modules to structure applications.
 
 - Several users on [reddit][redditlink], have pointed out that [systemjs][systemjs] is another competing module loader worth discussing.  I didn't include it because it's less mature and wouldn't be something I'd currently recommend for production apps, but it looks to be getting there quickly and is certainly another option to consider.
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my recent post on [why Bower is useful][bower].
 
 <div class="footnotes">
 <ol>

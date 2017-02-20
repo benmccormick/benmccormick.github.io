@@ -6,8 +6,9 @@ path: "/2014/07/02/learning-vim-in-2014-vim-as-language"
 description: "An explanation of the grammar behind Vim"
 keywords: "vim language grammar text object"
 category: "tools"
-pageViews: "34274"
-last30pageViews: "514"
+key: 'vim-language'
+readNext: ['learning-vim', 'vim-files', 'vim-art']
+
 ---
 
 Wouldn't it be nice if your text editor just did what you said instead of making you slowly and manually add and delete characters?  Vim doesn't speak English, but it has a language of its own, built out of composable commands, that is much more efficient than the simple movement and editing commands you'll find in other editors.  In my [last post][vimbasics], I took an initial look at Vim as a language.  I'm going to dive deeper into that here.
@@ -103,11 +104,6 @@ The key here is that learning Vim isn't something you do in a weekend. It's an i
 - [Your problem with Vim is that you don't grok vi](http://stackoverflow.com/a/1220118/1424361) - A concise explanation of what makes vi/vim special, and one of the most popular answers ever on Stack Overflow.
 - [Why Atom can't replace Vim](https://medium.com/@mkozlows/why-atom-cant-replace-vim-433852f4b4d1) - A great piece on the big picture importance of composable commands.
 - [Vim Text Objects: The Definitive Guide](http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/) - This is a nice rundown of the different text objects available, including some that you can add using plugins.
-
----
-### Subscribe
-
-This was the second in a series of posts on learning Vim in a modern way.  If you enjoyed the post consider subscribing to the [feed](http://feedpress.me/benmccormick) or joining my [mailing list](http://eepurl.com/WFYon). If you're new to Vim, also consider checking out the [first piece][vimbasics] in this series, on the basics of getting started with Vim, and the [next post](http://benmccormick.org/2014/07/07/learning-vim-in-2014-working-with-files/) in the series, on working with files in Vim.
 
 ---
 

@@ -5,8 +5,7 @@ layout: "post"
 path: "/2016/01/08/reusable-code-patterns"
 category: "software-productivity"
 description: "Practical tips on reusing existing code"
-pageViews: "6064"
-last30pageViews: "54"
+readNext: ['readable-code', 'll-context', 'productive-js-dev']
 ---
 
 One of the most repeated mantras in all of software is the term "Don't Repeat Yourself". The phrase was first popularized by the book [The Pragmatic Programmer][pragprog], with it's call for DRY software.  At it's core, DRY is all about finding a way to keep logic related to a particular function in one place, so that changes for new functionality can be limited in scope and have predictable consistent effects.  Software developers are usually very good at knowing that repetition is bad, but I've seen that we can be less great at communicating about our options to avoid it, or discussing the tradeoffs between different approaches.  This post is going to look at a specific situation that programmers encounter all the time, and give a framework for talking about how to handle it, focusing on positive options rather than simply what we want to avoid.
@@ -129,10 +128,5 @@ Like mixins, composition often works best when you have 2 or more fairly differe
 The great thing about these strategies is that none of them is the **right answer**.  All of them have their place, and can even be combined.  At my work we've developed code for describing workflows.  The workflows are described using an object that takes a configuration and uses it to layout a series of widgets.  Each widget inherits from a framework, and many of them use mixins to share behavior.  Most of the widgets are composed of several smaller views, and as developers we have pushed back against designs several times in order to allow greater widget re-use.  Each time we need to create a new automator we've started by copy and pasting some of the configuration boilerplate (which hopefully we'll reduce going forward by providing better default behavior as we understand the requirements better). This is one feature of a large software product, and it uses all 6 reuse patterns I've described to perform its purpose.
 
 In the end, what I hope you as a reader get out of this is not that one strategy is good or bad.  Instead I want to provide a way of thinking about the choices around re-use, so that we as developers can talk intelligently about the options and tradeoffs and make the right choice for a given situation.
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  Software development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my post on [productive JavaScript development](http://benmccormick.org/2015/11/25/productive-javascript-development/).
 
 [pragprog]: http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/ref=sr_1_1?s=books&ie=UTF8&qid=1452230454&sr=1-1&keywords=pragmatic+programmer

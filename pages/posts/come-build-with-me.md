@@ -4,9 +4,7 @@ date: "2014-12-18 14:00:00+00:00"
 layout: "post"
 path: "/2014/12/18/come-build-with-me"
 description: "A call for Software Developers to come join me at Windsor Circle"
-pageViews: "693"
 category: "meta"
-last30pageViews: "4"
 ---
 
 One of the blessings of starting this blog has been the opportunity to answer questions, debate, and learn from the amazingly knowledgeable people who have read my posts.  I've talked with so many developers who have incredible enthusiasm for software development and the web platform.  If that's you, I have a cool opportunity I want to share.

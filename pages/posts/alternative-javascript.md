@@ -3,10 +3,8 @@ title: "Alternative JavaScript"
 date: "2014-11-24 03:58:00+00:00"
 layout: "post"
 path: "/2014/11/24/alternative-javascript"
-pageViews: "4451"
 description: "A non-comprehensive run-through of the various compile to JS languages out there"
 category: "javascript"
-last30pageViews: "25"
 ---
 
 It's become a bit of a cliche that JavaScript is the "machine code of the web". But now that mobile browsers have conclusively killed Flash, Silverlight and other "plugin languages", JavaScript has become the only language that can reasonably claim to be "write once, run anywhere".  That's still a bit inflated though.  More accurately, you can use a subset of modern JavaScript that is compatible with the set of browsers and JavaScript environments that you want to support and run it in those places.  In practice this ends up being a version of JavaScript that matches the EcmaScript 5 spec <sup id="fnref:0">[1](#fn:0)</sup> for users who want to support modern browsers, or a very limited subset of the language that is somewhat similar to the ES3 spec for developers supporting old versions of Internet Explorer.  Because of the strange dynamic that the user rather than the developer of JavaScript code controls the language runtime that code uses, the JavaScript language has been forced to evolve slowly, with very few developers using the latest language features at any given time.  This, combined with a dislike of JavaScript from some developers has led to a proliferation of "compile to JavaScript" languages.
@@ -213,12 +211,6 @@ So how do you decide what JavaScript syntax to use?  My recommendation is to sta
 - Steve Sanderson's vide on [Architecting large Single Page Applications with Knockout.js][largeko] covers a lot of stuff and it's worth watching the whole thing.  But if you skip to the 49:30 mark, he has a nice 10 minute discussion of TypeScript, his teams experience building a large application in it, and the pros and cons they found.
 - I'm admittedly a bit skeptical about the value of Sweet.JS, but if you want to hear the case for it from somebody who really believes in it, take a look at this essay: [Stop Writing JavaScript Compilers! Make Macros Instead][stopcompilers].  It does a great job of laying out the case for composable macros as an alternative to "monolithic" compilers.
 - Finally, Axel Rauschmayer has a [great roundup][jstypes] of the various languages looking to add type systems to JavaScript, diving pretty deep into each and clearly explaining the differences between TypeScript, Flow and AtScript.
-
-
-### Subscribe
-
-Thanks for taking the time to read this post! JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my recent post on JavaScript utility libraries comparing [Underscore and Lo-Dash][underlodash].
-
 
 
 

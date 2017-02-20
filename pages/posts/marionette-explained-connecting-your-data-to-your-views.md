@@ -6,8 +6,7 @@ path: "/2014/12/10/marionette-explained-connecting-your-data-to-your-views"
 description: "How to bind data to your views in Marionette.js"
 keywords: "JavaScript Marionette.js Backbone MVC Model View"
 category: "frameworks"
-pageViews: "23467"
-last30pageViews: "511"
+readNext: ['mn-series', 'backbone-devs-react', 'bb-radio']
 ---
 
 *This is the second post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the first post in the series, [The Case For Marionette][caseformarionette].  Also note that this article was written about Marionette v2.  The current latest version of Marionette is v3, and while most of the high level concepts remain the same, the specific syntax has changed in some cases.*
@@ -97,13 +96,6 @@ This was a short but important start to diving deeper into Marionette. I'll talk
 ### More Resources
 
 - If you absolutely must have 2 way data bindings in Backbone, [Backbone.stickit][stickit] is a good project to check out.  At Windsor Circle we use it for binding model data to forms (2 way data-binding's best use case).  Rather than the template based approach most libaries use for 2 way data-binding, stickit allows you to configure bindings declaratively in your view code.  
-
-
-### Subscribe
-
-Thanks for taking the time to read this post! This was the second post in a [series][marionetteexplained] on developing web applications with Marionette.js, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out the [first post][caseformarionette] in the series, The Case For Marionette.js.
-
-
 
 <div class="footnotes">
 <ol>

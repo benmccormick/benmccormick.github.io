@@ -5,8 +5,7 @@ layout: "post"
 path: "/2015/06/14/mozilla-the-state-of-web-components"
 description: "A look at Mozilla's writeup on the current status of the web components spec"
 category: "platform"
-pageViews: "279"
-last30pageViews: "4"
+readNext: ['component-based-dev', 'custom-elements-example']
 ---
 
 Over on Mozilla's development blog, Wilson Page has a [great summary][statewc] of the current status of the Web Components spec:
@@ -22,11 +21,6 @@ I've been using Custom Elements (the least controversial part of the Web Compone
 > Web Components have been in planning for over three years, but we’re optimistic the end is near. All major vendors are on board, enthusiastic, and investing significant time to help resolve the remaining issues.
 
 It's exciting to see public cooperation on this issue, something that was not very visible over the past few years as Chrome fired ahead with an implementation while others pursued other priorities.  If you care about this spec at all, make sure to read [the full article][statewc].  It's an interesting look at where the spec may be going as well as a nice peak behind the scenes of how web APIs become established.
-
-### Subscribe
-
-Thanks for taking the time to read this post!  Web development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my recent post on whether [Safari is being left behind][safari].
-
 
 
 

@@ -2,6 +2,8 @@
 title: "Learning Vim in 2014"
 layout: page
 path: '/learning-vim-in-2014'
+key: 'learning-vim'
+description: 'A series of beginner level articles on Vim'
 hideFooter: true
 ---
 

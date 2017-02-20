@@ -6,8 +6,10 @@ path: "/2016/03/07/the-sad-state-of-the-backbone-ecosystem"
 description: "A look at the current state of Backbone libraries"
 keywords: "Backbone github graphs repos"
 category: "frameworks"
-pageViews: "25118"
-last30pageViews: "649"
+dontfeature: 'true'
+key: 'backbone-eco'
+readNext: ['mn-series', 'backbone-devs-react', 'bb-es6-1']
+
 ---
 
 For the past 2 years, ~90% of my coding time has been spent working on a large scale Backbone.js app.  In February 2014, the Backbone community was in a fairly good place.  The core library had reached 1.0 the previous year and had a strong team around it.  Marionette had emerged as a de-facto standard for web applications [^1].  There were Backbone specific plugins for many tasks, and generally gaps could be filled using the jQuery plugin ecosystem, or a framework agnostic library.  At the time, Backbone would have been a very defensible choice as a library for starting a new web development, as a simpler and more stable alternative to AngularJS, the current "hot" framework.
@@ -307,10 +309,6 @@ So what does this look like in aggregate.  Of the "top 24" Backbone projects, on
 </table>
 
 It is not a pretty picture right now.  If you're part of the Backbone community, I'd love to hear from you on this.  Should we be calling Backbone dead and looking to migrate ASAP?  Do you think I'm overselling this problem?  Are there libraries that I'm not considering right now that are thriving?  Or is focusing on Backbone-specific libraries a mistake because most developers are pasting together multiple libraries that aren't necessarily tightly tied.
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). If you're interested in Backbone you also might want to check out my [series on Marionette.js](http://benmccormick.org/marionette-explained/), or my post on [what Backbone developers can learn from React](http://benmccormick.org/2015/09/09/what-can-backbone-developers-learn-from-react/).
 
 
 [^1]: When I attended BackboneConf later that year, about 75% of attendees raised their hands when asked if they had used Marionette

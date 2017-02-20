@@ -6,8 +6,8 @@ path: "/2016/12/10/saving-time-with-jest"
 description: "A summary of my meetup talk on saving time with Jest"
 keywords: "Jest JavaScript testing meetup talk Triangle React"
 category: "tools"
-pageViews: "101"
-last30pageViews: "101"
+key: 'saving-time-jest'
+readNext: ['jest-first', 'backbone-devs-react', 'mobx-first']
 ---
 
 This week I gave a talk at the brand new Triangle ReactJS meetup group on how [Jest][jest] can save developers time.  I was asked afterwards to share the content online for those who missed it.  My talk was mostly demos and wasn't recorded, so there unfortunately isn't much to share, but I thought I could write out the basic ideas behind the talk, and share them here.
@@ -135,12 +135,6 @@ Jest provides 4 main conveniences for fixing tests
 - Another speakup at Wednesday's meetup has a Jest related blog post out this week.  Nate Hunzaker blogged about [using Jest with Nightmare.js for acceptance tests](https://www.viget.com/articles/acceptance-testing-react-apps-with-jest-and-nightmare)
 
 - If you live in the Triangle area (thats Raleigh/Durham, North Carolina to the rest of the world) make sure to check out the [Triangle React meetup](http://www.meetup.com/trianglereact/).  The plan as I understand it is to do events once a month, alternating project nights and talks.  I believe [Tracy][tracy] is looking for more speakers too, so hit her up if you're interested.  This time 4 of us spoke for 15-20 minutes, so it isn't as much preparation as other events where you're the only speaker.
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). If you're excited about Jest, you also might want to check out my [post on Jest Snapshots][snapshots].
-
 
 [jest]: https://facebook.github.io/jest/
 [christoph]: https://twitter.com/cpojer

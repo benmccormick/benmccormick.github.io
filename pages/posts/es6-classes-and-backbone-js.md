@@ -6,8 +6,8 @@ path: "/2015/04/07/es6-classes-and-backbone-js"
 description: "A rundown of the challenges of using ES6 classes in Backbone"
 keywords: "Backbone, ES6, JavaScript, classes"
 category: "frameworks"
-pageViews: "18638"
-last30pageViews: "441"
+key: 'bb-es6-1'
+readNext: ['bb-es6-2', 'backbone-eco', 'backbone-devs-react']
 ---
 
 I've seen some confusion out there about how to use ES6 Classes with [Backbone][backbone].  In the original version of the ES6 class spec, this was actually a simple thing to do, though the syntax wasn't great.  With the finalized specification for classes and subclassing though, it's no longer practical to try and use the two together.  Here's a short explanation of the issues, as well as a discussion on whether any of this matters.
@@ -295,14 +295,6 @@ It will be interesting to see how the lack of standardization here effects Backb
 - React Developers have noted the same issues with property initializers that Backbone users encounter.  As part of version 0.13 of React, they're supporting a special property initialization syntax for classes, which may eventually be standardized.  There's more info on that in [this ESDiscuss thread][esdiscuss].  This standard is still being worked out but an experimental support version is available in Babel 5.0.0.  Unfortunately that version defines class properties as being instantiated after the superclass constructor is run, so this doesn't solve Backbone's issues here.
 
 - If you were confused by the discussion of prototypes and the code examples of non-ES6 JavaScript classes, I wrote a quick explanation of [Object Oriented Programming in Javascript][oop] back in 2012.
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my series on Marionette.js, [Marionette Explained][mnexplained].
-
-
-
-
 
 <div class="footnotes">
 <ol>

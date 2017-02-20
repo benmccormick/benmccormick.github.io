@@ -3,9 +3,8 @@ title: "Modern Dojo: Exploring query"
 date: "2013-11-13 23:15:00+00:00"
 layout: "post"
 path: "/2013/11/13/modern-dojo-exploring-dojoquery"
+description: 'A dive into the query module'
 category: "frameworks"
-pageViews: "126"
-last30pageViews: "1"
 ---
 
 It appears I'm going to be spending a significant amount of time working with [the Dojo toolkit][dojo] for my next project at work, so I've spent some time over the last few days trying to familiarize myself with the library.  Its quickly become apparent that there are a few challenges with learning Dojo at the pace I wanted.  First, Dojo is built as a lightweight core with many small modules of functionality available as components.  It's effectively completely modularized in a way that no other framework really is (though jQuery appears to be moving in that direction as well).  As such, learning it is a bit decentralized.  Second, Dojo, which has existed since 2005, made a big transition back in 2011 to move to an AMD format for managing its modular components.  This resulted in a significant change in basic syntax.  Since this change happened after jQuery's rise (which led to a significant drop in Dojo usage), it seems many examples on the web still use the old syntax, and I haven't seen any print resources published since the change.  As a result, the resources for learning modern Dojo seem somewhat piecemeal beyond the toolkit's website.

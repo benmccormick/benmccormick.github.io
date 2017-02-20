@@ -3,9 +3,8 @@ title: "Evergreen Browsers"
 date: "2013-06-11 18:45:00+00:00"
 layout: "post"
 path: "/2013/06/11/evergreen-browsers"
+description: 'A look at the future of browsers'
 category: "platform"
-pageViews: "208"
-last30pageViews: "0"
 ---
 
 [Tom Dale on Evergreen Browsers:][evergreen]

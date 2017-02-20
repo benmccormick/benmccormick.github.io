@@ -6,8 +6,7 @@ path: "/2014/06/30/learning-vim-in-2014-the-basics"
 description: "The basics of learning Vim"
 keywords: "vim, basics, beginner, tutorial"
 category: "tools"
-pageViews: "20053"
-last30pageViews: "268"
+readNext: ['learning-vim', 'vim-files', 'vim-language']
 ---
 
 Do you want to be efficient writing code?  Using Vim can be a powerful help.  Using it has let me move more effectively through the process of writing and editing code.  But getting to where I am now was frustrating. Vim resources are scattered across the web, and contain a lot of different advice.  It's tough to figure out how to make Vim work for you.  In my next few posts, I'm going to talk about the process of learning a 23 year old programming power tool, and what you need to know in 2014 to be productive with Vim.  Today I'll start with the basics, stuff that goes back all the way to the 1970s, and we'll grow from there.
@@ -70,12 +69,6 @@ If you enjoyed this article you'll probably also enjoy
 - [Everyone Who Tried to Convince Me to use Vim was Wrong][katzvim]: This blog post is another take on how to start learning Vim, by Yehuda Katz, the prolific developer who's a core member of the Rails, EmberJS, and jQuery teams.
 
 - [Janus][janus]: Janus is another Yehuda Katz project.  It's a starting configuration for Vim meant to make it feel more comfortable for developers who want to come in and be productive immediately.  I personally found that it didn't work for me. The plugin list overwhelmed me and prevented me from learning the basics.  But it may be a better fit for some people and is a great place to look to see configuration ideas and plugins that you can try out on your own.
-
----
-
-### Subscribe
-
-This was the first in a series of posts on learning Vim in a modern way.  If you enjoyed the post consider subscribing to the [feed](http://feedpress.me/benmccormick) or joining my [mailing list](http://eepurl.com/WFYon). Also make sure to check out part 2 of this series: [Vim as Language](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/).
 
 
 

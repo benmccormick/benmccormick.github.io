@@ -3,9 +3,8 @@ title: "Career Fairs: How To Not Get Hired (And How To Give Yourself A Chance)"
 date: "2013-01-25 19:30:00+00:00"
 layout: "post"
 path: "/2013/01/25/career-fairs-how-to-not-get-hired-and-how-to-give-yourself-a-chance"
+description: 'What to do when you want a job'
 category: "opinion"
-pageViews: "66"
-last30pageViews: "2"
 ---
 
 It was 9:15 and I had just arrived at the gym where the career fair was set to start at 10:00.  Company representatives were setting up their wares in the background and enjoying the provided bagels and coffee, chatting with each other before the rush set to begin at 10.  Arriving at my company's booth, I tossed my bag down and leaned over to fill out a name tag.  As I stood up, I was greeted by a sheet of paper being shoved in my face.  "Here is my resume!" Bob said as he transferred the paper from my face to my hands.  I was then greeted with a 2 minute monologue explaining why Bob would be the perfect candidate to work for my company.  Eventually I was able to get a word in edgewise, introduce myself, and ask him to come back in 45 minutes when the fair started.  As I walked over to get my much needed bagel, I reflected to myself that Bob would really have to be super impressive to get an interview when he came back to our booth.

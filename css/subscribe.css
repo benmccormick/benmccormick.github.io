@@ -1,0 +1,61 @@
+.subscribe-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+
+.subscribe-block {
+  width:400px;
+  padding-right: 30px;
+  overflow: hidden;
+}
+
+.subscribe-block #mc_embed_signup form {
+  margin-bottom: 20px;
+}
+
+.up-next-block {
+  width: 300px;
+}
+
+.subscribe-button {
+  color: white;
+  background: #57A3E8;
+  border-radius: 4px;
+  border: 0px;
+  padding: 5px 10px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.rss {
+  padding-bottom: 10px;
+}
+
+.rss a {
+  display: flex;
+}
+
+.rss a span {
+}
+
+.rss-icon {
+  display: block;
+  width: 17px;
+  margin-right: 0.5em;
+  height: 50px;
+}
+
+.rss-icon * {
+  fill: #E2777A;
+}
+
+.twitter-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.twitter-item iframe {
+  margin: 0 0 0 10px;
+}

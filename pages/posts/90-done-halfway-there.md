@@ -3,6 +3,7 @@ title: "90% Done, Halfway There"
 date: "2013-06-09 18:45:00+00:00"
 layout: "post"
 path: "/2013/06/09/90-done-halfway-there"
+description: 'A post on the difficulties of estimating development projects'
 category: "opinion"
 pageViews: "290"
 last30pageViews: "5"

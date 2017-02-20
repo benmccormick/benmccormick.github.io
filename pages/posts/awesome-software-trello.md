@@ -4,8 +4,7 @@ date: "2012-12-20 12:00:00+00:00"
 layout: "post"
 path: "/2012/12/20/awesome-software-trello"
 category: "reviews"
-pageViews: "113"
-last30pageViews: "1"
+description: 'A quick review of the project management app Trello'
 ---
 
 

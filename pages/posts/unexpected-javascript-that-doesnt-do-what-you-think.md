@@ -4,8 +4,7 @@ date: "2013-01-15 23:30:00+00:00"
 layout: "post"
 path: "/2013/01/15/unexpected-javascript-that-doesnt-do-what-you-think"
 category: "javascript"
-pageViews: "731"
-last30pageViews: "1"
+description: 'A quiz for JavaScript developers'
 ---
 
 When I started writing Javascript, I encountered a lot of stuff that was just plain weird.  Stuff didn't act the way I expected, syntax seemed misleading, and some behavior just seemed completely wrong.  I have a better understanding now and have come to appreciate Javascript for the quirky but stable language that it is once you know the rules.  But just for fun, here are some examples of assumptions that its easy to make when looking at Javascript for the first time.  All of the following statements are wrong (at least in some cases).  See if you know why.  And feel free to contribute more in the comments!

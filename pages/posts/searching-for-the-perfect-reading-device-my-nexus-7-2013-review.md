@@ -3,9 +3,8 @@ title: "Searching for the perfect reading device:  My Nexus 7 (2013) Review"
 date: "2013-08-16 12:00:00+00:00"
 layout: "post"
 path: "/2013/08/16/searching-for-the-perfect-reading-device-my-nexus-7-2013-review"
+description: 'Reviewing a small Android Tablet'
 category: "reviews"
-pageViews: "75"
-last30pageViews: "0"
 ---
 
 Since Amazon announced its Kindle platform back in 2007, I have read books on a variety of different devices.  I've owned and used two different Kindle devices and experimented with the rest.  I've read on my smartphones, iPad, laptop, and traditional paper books. There are great things about each, but there are also aspects of all of them that drive me crazy.

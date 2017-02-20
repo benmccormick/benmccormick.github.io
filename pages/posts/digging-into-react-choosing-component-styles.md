@@ -6,8 +6,8 @@ path: "/2016/05/02/digging-into-react-choosing-component-styles"
 description: "An examination of the various styles for defining React components"
 keywords: "JavaScript, React, Component, createClass, class, functional component"
 category: "frameworks"
-pageViews: "1591"
-last30pageViews: "78"
+key: 'react-component-styles'
+readNext: ['jest-first', 'backbone-devs-react', 'callbacks-to-promises']
 ---
 
 Over the past month I’ve been building my first production features using React.  One of the first things I’ve noticed is the amount of choices that come into a new React project.  A lot of this is about the ecosystem around React (Webpack vs Browserify? Redux vs Relay? Do I need CSS modules or Immutable.js?) but many of the choices are just part of the library, figuring out the best, or at least a consistent, way to do things.
@@ -169,14 +169,6 @@ Once you’ve made those decisions at the project level, the decisions are easy 
 - [The React documentation](https://facebook.github.io/react/docs/reusable-components.html#es6-classes) is the best place to look at the benefits and tradeoffs of the different component styles
 - [James Nelson wrote a similar guide last year](http://jamesknelson.com/should-i-use-react-createclass-es6-classes-or-stateless-functional-components/) focused on the decision tree of what style to use for a component.  He dismisses the createClass style completely and has a similar but slightly different set of questions to ask.
 - [This github thread](https://github.com/facebook/react/issues/5677) makes the important distinction that functional components are not yet optimized in any special way, though they may be in the future.
-
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my post on [reusable code patterns](http://benmccormick.org/2016/01/08/reusable-code-patterns/).
-
-
 
 [^1]: Technically you can also use an ES5 class based style, but I’m going to ignore that.  It is not a common idiom for React programs as far as I can tell.
 

@@ -6,8 +6,6 @@ path: "/2015/06/15/book-review-talking-with-tech-leads"
 description: "A book review of Talking with Tech Leads"
 keywords: "Book Review, Tech Leads"
 category: "reviews"
-pageViews: "1111"
-last30pageViews: "6"
 ---
 
 Can we be honest for a moment?  Figuring out a career path is hard for software developers.  Talking to some people, you'll get the impression that we face a pretty bleak binary choice.  Behind door number #1 lies a relatively rapid path to a "senior developer" role, followed by stagnation the rest of your career as you reimplement the same solutions in new technologies for minimally increasing pay over time, until youth-friendly tech culture decides that you're too old to be useful.  Door #2 serves basically as an escape hatch, as you trade the opportunity to work with code for a path into management, where you receive a few more pay raises in return for your soul.
@@ -30,11 +28,6 @@ I have no idea how this book would read to a seasoned tech lead.  I expect that 
 For a developer like myself who is still figuring out what it looks like to have a career in this industry though, this book is a tapestry of ideas and possibilities.  I'd recommend it to anyone who's been underwhelmed by the extreme career paths that serve as the "path of least resistance" in some organizations, and want to become leaders without sacrificing their roots.
 
 *You can purchase Talking with Tech Leads as an e-book through [Leanpub][twtl] or as a paperback on [Amazon][amzn]*
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  Software development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my post from last year on [problem solving][debug].
 
 
 [twtl]: https://leanpub.com/talking-with-tech-leads?a=3a4Srv2pP9p87WQ_eoDoGp

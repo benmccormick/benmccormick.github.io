@@ -2,6 +2,8 @@
 title: "Marionette: Explained"
 layout: page
 path: '/marionette-explained'
+key: 'mn-series'
+description: 'A series of posts explaining Marionette.js'
 hideFooter: true
 ---
 

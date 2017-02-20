@@ -5,8 +5,8 @@ layout: "post"
 path: "/2014/10/13/setting-up-your-text-editor-for-javascript-development"
 description: "A look at some tools and plugins that help create a productive JavaScript development workflow"
 category: "tools"
-pageViews: "9276"
-last30pageViews: "190"
+readNext: ['learning-vim', 'interesting-atom', 'vim-files']
+
 ---
 
 The coding workflow for JavaScript developers gets better all the time.  Over the last 10 years, the JavaScript ecosystem has built up a rich set of tools to make your life easier.  Most of the buzz around tooling comes from browser devtools and the various build systems available for JavaScript projects, but you can also take advantage of improved tools within your code editor.  While there are some great IDEs for JavaScript development out there like WebStorm and Visual Studio, most JavaScript developers seem to prefer lighter-weight text editors.  So this post is going to be a quick look at the tools I use for more seamless JavaScript development in a text editor.
@@ -70,14 +70,6 @@ This allows me to type *dfn&lt;tab&gt;* at any time to expand out the template. 
 
 - For snippet libraries, you can take a look at [UltiSnips][ultisnips] for Vim and [Yasnippet][yasnippet] for Emacs.  If you want an application agnostic snippet solution, [Dash][dash] is a documentation management program for OSX that also has a rich snippet component you can use in any program the same way you'd use an editor specific solution.
 
----
-
-
-### Subscribe
-
-Thanks for taking the time to read!  I write a good deal about text editing, Javascript, and development tools, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out  [my series on learning Vim][vim2014] from this summer.  And of course, if you have your own tips for more efficient JavaScript development, please put them in the comments.
-
----
 
 <div class="footnotes">
 <ol>

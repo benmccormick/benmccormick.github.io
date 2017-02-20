@@ -6,8 +6,7 @@ path: "/2014/07/14/learning-vim-in-2014-configuring-vim"
 description: "How to set up a modern vim config"
 keywords: "vim configuration vimrc"
 category: "tools"
-pageViews: "36208"
-last30pageViews: "736"
+readNext: ['learning-vim', 'vim-files', 'vim-language']
 ---
 
 Plenty of Vim articles you'll find online start you off in the wrong place. Instead of teaching you how Vim works, they toss a bunch of scary looking code at you, tell you to shove it in a file, and claim that it will make Vim just like Textmate / Sublime / Emacs / Visual Studio. Except way cooler!  People quickly find out that if what they want is to use their old editor, they should just *use their old editor*, and learn to use it as efficiently as possible.
@@ -85,9 +84,6 @@ It's pretty easy to find good configurations online if you look.  [My vimrc file
 
 
 ---
-
-### Subscribe
-This was the fourth in a series of posts on learning Vim in a modern way.  If you enjoyed the post consider subscribing to the [feed](http://feedpress.me/benmccormick) or following with my [mailing list](http://eepurl.com/WFYon), or the [twitter account for this site](http://twitter.com/benmccormickorg).  Also check out the [next post](http://benmccormick.org/2014/07/16/learning-vim-in-2014-vim-as-art/) in the series, covering Vim's repeating commands.
 
 
 [janusconfig]: https://github.com/carlhuda/janus/tree/master/janus/vim

@@ -6,8 +6,7 @@ path: "/2014/07/07/learning-vim-in-2014-working-with-files"
 description: "How to easily navigate the file system in Vim"
 keywords: "vim files file system splits buffers"
 category: "tools"
-pageViews: "13122"
-last30pageViews: "214"
+readNext: ['learning-vim', 'vim-files', 'vim-language']
 ---
 
 As a software developer, you shouldn't have to spend time thinking about how to get to the code you want to edit.  One of the messiest parts of my transition to using Vim full time was its way of dealing with files.  Coming to Vim after primarily using Eclipse and Sublime Text, it frustrated me that Vim doesn't bundle a persistent file system viewer, and the built-in ways of opening and switching files always felt extremely painful.  
@@ -74,11 +73,6 @@ Start with the basics for long enough to understand them, and then start adding 
 - [Seamlessly Navigate Vim & Tmux Splits](http://robots.thoughtbot.com/seamlessly-navigate-vim-and-tmux-splits) - This is a must read for anyone who wants to use vim with [tmux][tmux].  It presents an easy system for treating Vim and Tmux splits as equals, and moving between them easily.
 - 	[Using Tab Pages](http://vim.wikia.com/wiki/Using_tab_pages) - One file management feature I didn't cover, since it's poorly named and a bit confusing to use, is Vim's "tab" feature.  This post on the Vim wiki gives a good overview of how you can use "tab pages" to have multiple views of your current workspace
 - [Vimcasts: The edit command](http://vimcasts.org/episodes/the-edit-command/) - Vimcasts in general is a great resource for anyone learning Vim, but this screenshot does a good job of covering the file opening basics mentioned above, with some suggestions on improving the builtin workflow
-
-### Subscribe
-
-This was the third in a series of posts on learning Vim in a modern way.  If you enjoyed the post consider subscribing to the [feed](http://feedpress.me/benmccormick) or joining my [mailing list](http://eepurl.com/WFYon). I'll be continuing with [a post on Vim configuration next week](http://benmccormick.org/2014/07/14/learning-vim-in-2014-configuring-vim/) after a brief JavaScript interlude later this week. You should also checkout the first 2 posts in this series, on [the basics of using Vim][post1], and [the language of Vim and Vi][post2].  
-
 
 
 [tmux]:http://tmux.sourceforge.net/

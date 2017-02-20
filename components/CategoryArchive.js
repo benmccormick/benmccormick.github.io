@@ -4,8 +4,7 @@ import get from 'lodash/get';
 import find from 'lodash/find';
 import Helmet from 'react-helmet';
 import { config } from 'config';
-import include from 'underscore.string/include';
-import Footer from 'components/Footer';
+import include from 'lodash/includes';
 import LinkList from 'components/LinkList';
 import categoryHash from '../pages/categories.json';
 
@@ -40,7 +39,6 @@ class CategoryArchive extends React.Component {
           title = {null}
           showCategory = {false}
         />
-        <Footer />
       </div>
     );
   }

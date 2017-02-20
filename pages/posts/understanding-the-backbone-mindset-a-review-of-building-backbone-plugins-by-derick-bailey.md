@@ -4,8 +4,8 @@ date: "2014-07-09 11:38:40+00:00"
 layout: "post"
 path: "/2014/07/09/understanding-the-backbone-mindset-a-review-of-building-backbone-plugins-by-derick-bailey"
 category: "reviews"
-pageViews: "12538"
-last30pageViews: "40"
+description: 'A book review of a great deep dive into Backbone best practices'
+readNext: ['mn-series', 'backbone-devs-react', 'bb-radio']
 ---
 
 As the saying goes, judging a book by its cover is a dangerous business.  A lot of books have titles that promise great things, and content that under-delivers and disappoints.  Every once in a while, though, you find a gem that does the opposite. [Building Backbone Plugins][bbp] sounds like a niche book for library developers.  But it actually is the best resource on [Backbone.JS][backbone] development I've found, a book that will benefit anyone who works with Backbone.
@@ -25,11 +25,6 @@ I would not recommend BBP as a "first book" on Backbone.  It assumes plenty of k
 - [Building Backbone Plugins][bbp] - You can purchase the book on leanpub. (Note: Affiliate Link)
 - [Developing Backbone Applications](http://addyosmani.github.io/backbone-fundamentals/) - This book by Addy Osmani is a great resource for Backbone Beginners who want a more basic introduction to Backbone concepts.  It's available as a free HTMl site on github, but you also can <a href="http://www.amazon.com/gp/product/1449328253/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1449328253&linkCode=as2&tag=productjavasc-20&linkId=5RQTSOTPFIGKMLJK">purchase it as a paperback or ebook.</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=productjavasc-20&l=as2&o=1&a=1449328253" width="1" height="1" alt="" style="border:none !important; margin:0px !important;" />
 - [Marionette.js][marionette] - This framework serves as the inspiration for Derick's book and is a great way to structure larger Backbone apps.
-
----
-### Subscribe
-
-I regularly write reviews of the technical books I read, as well as posting on a wide variety of other topics. If you enjoyed the post consider subscribing to the [feed](http://feedpress.me/benmccormick) or joining my [mailing list](http://eepurl.com/WFYon).  
 
 
 

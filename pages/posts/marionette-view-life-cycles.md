@@ -6,8 +6,7 @@ path: "/2015/01/05/marionette-view-life-cycles"
 description: "A breakdown of the lifecycle of Marionette Views"
 keywords: "Marionette.js JavaScript Backbone Views life cycle"
 category: "frameworks"
-pageViews: "18457"
-last30pageViews: "430"
+readNext: ['mn-series', 'backbone-devs-react', 'bb-radio']
 ---
 
 *This is the fourth post in a series on [Marionette.js][marionette], a framework for developing apps with [Backbone.js][backbone].  For more background on what Marionette is, check out the series page: [Marionette Explained][marionetteexplained]  Also note that this article was written about Marionette v2.  The current latest version of Marionette is v3, and while most of the high level concepts remain the same, the specific syntax has changed in some cases.*
@@ -72,12 +71,6 @@ The nice thing about Marionette's View life cycles is the consistency it shares 
 ### Take What You Need
 
 Like everything else in Marionette and Backbone, life cycles are a pattern that you can choose to use or ignore.  If you want to define your own way of managing a Views life cycle, it's perfectly possible to do so.  But the advantages provided by Marionette's implementation are quite nice.  It presents a simple mental model of what occurs to a View over time, fits in with the other patterns provided by Marionette, and doesn't require any extra boilerplate when you choose not to use them.  I personally use some of these methods a lot, and have never used a few of them at all.  But it's helpful to know what is available so that you can keep that simple model of how a View changes over time and choose the appropriate hook for any given View code.  Code is scalable when you can take a few simple concepts and use them repeatedly to build up to something big.  That's what Marionette can do for you.
-
----
-
-### Subscribe
-
-Thanks for taking the time to read this post!  This is the 4th post in a [series on Marionette][marionetteexplained], so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). If you're interested in Marionette development, you also may be interested in [my recent post][jobpost]. Windsor Circle makes heavy use of Marionette and we're looking to hire Backbone developers.  If that sounds interesting, consider applying.
 
 
 <div class="footnotes">

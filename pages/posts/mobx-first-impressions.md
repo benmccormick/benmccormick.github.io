@@ -6,6 +6,8 @@ path: "/2017/01/09/mobx-first-impressions/"
 description: "First impression of managing data with MobX"
 keywords: "mobx JavaScript data React"
 category: "frameworks"
+key: 'mobx-first'
+readNext: ['jest-first', 'backbone-devs-react', 'react-component-styles']
 ---
 
 I spent some time around the holidays this year playing with [MobX][mobx], a state management library for JavaScript.  MobX is an unopinionated library that provides a layer over normal JavaScript data structures that allow other code to efficiently observe data changes and update based on what has changed.  It's an interesting tool for handling state in web applications, especially in existing projects that might need to update state handling iteratively.  Here are some first impressions.
@@ -107,7 +109,7 @@ MobX has the "magical" ability to determine what changes actually affect the obs
 
 I have a learned skepticism of magical solutions like this.  Generally I find that time-saving magic like this ends up costing time when it comes to maintenance, and explicit relationships between code saves time over less-boilerplate heavy code. Fortunately, while the libraries code itself is fairly complex, it isn't too hard to understand the logic behind how MobX works.  
 
-On the Observer side, MobX uses [ES5][es] setters and getters to proxy updates to observable data structure and listen in when data is updated.  This allows the type of event listening that [Backbone](http://backbonejs.org/) and other libraries provide, without requiring the user to go through special `set` or `get` methods to update an object's properties.  Most of the time you should be able to just be able to write code as you normally would, and MobX will make it work.  There are some exceptions though that mean its important to actually understand how the library work.  Getters and Setters only work when looking up an existing property on an object, so when using primitive values or adding new values to an existing object, some special syntax (the return of `get` and `set` methods) may be required.  In Mobx primitive observables are referred to as *boxed* values, and objects that require new values over time can be handled by using observable Maps, which use the API of [ES6][es] Maps. 
+On the Observer side, MobX uses [ES5][es] setters and getters to proxy updates to observable data structure and listen in when data is updated.  This allows the type of event listening that [Backbone](http://backbonejs.org/) and other libraries provide, without requiring the user to go through special `set` or `get` methods to update an object's properties.  Most of the time you should be able to just be able to write code as you normally would, and MobX will make it work.  There are some exceptions though that mean its important to actually understand how the library work.  Getters and Setters only work when looking up an existing property on an object, so when using primitive values or adding new values to an existing object, some special syntax (the return of `get` and `set` methods) may be required.  In Mobx primitive observables are referred to as *boxed* values, and objects that require new values over time can be handled by using observable Maps, which use the API of [ES6][es] Maps.
 
 On the derivative side, reactions and computed values are always defined as functions.  MobX wraps these functions and is able to determine (through the method described above) what properties were accessed during each function run.  It then only listens for changes to these properties.  Thus it doesn't matter if you theoretically could access thousands of observable properties in a function, if you wrap those references in an if statement to a single property, and that property returns false on first run, the derivative function will only listen for changes on that property before running again. When an observable is updated, all derivative code is run synchronously and atomically so there is no concern of getting into bad intermediate states.
 
@@ -169,13 +171,6 @@ Comparing MobX and Redux could be a whole article on its own, so I'm not going t
 - The two most helpful resources I found for conceptually understanding MobX were in-depth articles by the library's author [Michael Westrate](): [Becoming fully reactive: an in-depth explanation of MobX](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254#.jd4hgh2zi) on Medium and [Concepts & Principles](https://mobx.js.org/intro/concepts.html) from the MobX documentation
 
 - This [tweet thread](https://twitter.com/AdamRackis/status/775706291259908096) and the linked article, are a good breakdown of the tradeoffs between MobX and Redux
-
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my [post on Orthogonality and CSS in JS](http://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/).
-
 
 
 [^1]: Technically this also uses class properties as well, another proposal that works well with decorators

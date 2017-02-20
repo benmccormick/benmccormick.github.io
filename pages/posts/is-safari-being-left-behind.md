@@ -5,8 +5,6 @@ layout: "post"
 path: "/2015/06/10/is-safari-being-left-behind"
 description: "Should we be concerned about Safari holding back the web?"
 category: "platform"
-pageViews: "8621"
-last30pageViews: "66"
 ---
 
 On Twitter yesterday, [Alex Sexton][sexton] surfaced Apple's fact sheet on what's new with Safari 9:
@@ -37,10 +35,6 @@ While it's great to see ES6 support, the truth is that by the time Safari is rel
 So does this mean that Safari is the next IE6?  Not so much.  We've come a long way since the IE6 era, and browsers are more standards compliant than ever.  Tools like [Babel][babel] make it easier for developers to participate in the future of the web without being restricted by slow moving browsers or legacy support concerns.   But there's always going to be some browser that serves as the "bottleneck" for what web developers are able to reasonably use in production.  Currently that is older versions of Internet Explorer and old Android browsers.  But as more and more users upgrade to Android phones using Chrome, and Microsoft makes strong pushes to move users to the [evergreen][evergreen] Edge browser, it's quite likely that Safari could take their place.  It is now the only major browser being updated yearly, and with Microsoft's recent re-emphasis on JavaScript and HTML development, Apple is the only major browser vendor who seems to view the web as a second class platform.
 
 Safari is not going away.  Its monopoly status on iOS more or less guarantees that, and on the desktop I've talked to plenty of people who like its simple UI, and others who feel that it's faster or consumes less memory than Chrome and Firefox.  But it will be a sad sight if it gets left behind.  Here's hoping that the final release contains more surprises, and that going forward Apple chooses to embrace the web browser as a platform worthy of the respect and effort its competitors have lavished on it.
-
-### Subscribe
-
-Thanks for taking the time to read this post!  Web development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). If you were interested in the talk about ES6 and future browser standards in this post, you might also be interested in some of my other [recent][bbes6] [posts][es6] about ES6
 
 <div class="footnotes">
 <ol>

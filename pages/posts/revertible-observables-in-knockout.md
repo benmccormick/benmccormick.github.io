@@ -3,9 +3,9 @@ title: "Revertible Observables in Knockout"
 date: "2013-05-07 20:05:00+00:00"
 layout: "post"
 path: "/2013/05/07/revertible-observables-in-knockout"
+description: 'Building an observable with simple undo functionality'
 category: "frameworks"
-pageViews: "2958"
-last30pageViews: "48"
+key: 'revertible-observables'
 ---
 
 Last week I was looking for a way to use KnockoutJS on a configuration menu that required the user to be able to cancel or accept their input after filling out the menu.

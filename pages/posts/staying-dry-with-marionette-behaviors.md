@@ -6,8 +6,7 @@ path: "/2015/03/23/staying-dry-with-marionette-behaviors"
 description: "How to keep your Views DRY using Behaviors in your Marionette app"
 keywords: "Marionette.js behaviors JavaScript"
 category: "frameworks"
-pageViews: "9108"
-last30pageViews: "121"
+readNext: ['mn-series', 'backbone-devs-react', 'bb-radio']
 ---
 
 *This is the sixth post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the series page, [Marionette Explained][marionetteexplained]*
@@ -227,10 +226,6 @@ Behaviors are a great resource for avoiding repetition in your Backbone code.  I
 
 - Atomic Object has a [nice writeup][atomic] on Marionette Behaviors, and a [followup on testing them][testingatomic].
 - Behaviors seem to make the most sense to people when given examples of how you might use them.  One great open-source example is this [key-binding Behavior][keybind] that makes it easy for you to add keyboard shortcuts to a View
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out the rest of my [Marionette series][marionetteexplained].
 
 <div class="footnotes">
 <ol>

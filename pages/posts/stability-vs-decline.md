@@ -4,9 +4,9 @@ date: "2016-03-09 06:04:39+00:00"
 layout: "post"
 path: "/2016/03/09/stability-vs-decline"
 category: "software-productivity"
+key: 'stability-decline'
 description: "What is the difference between stable and declining software?"
-pageViews: "762"
-last30pageViews: "21"
+readNext: ['backbone-eco', 'backbone-devs-react', 'bb-radio']
 ---
 
 My post on [the sad state of the Backbone ecosystem][eco] from this weekend was surprisingly popular.  I got a lot of responses pointing out [some things I got wrong][charttweet], sharing my concerns, or pushing back on my main points.  Objections to the post came in 2 primary forms, which I want to quickly address.  The first concern is that the Backbone ecosystem doesn't matter. The second concern is that the trend I'm identifying as decline and decay is actually stability.
@@ -50,10 +50,6 @@ That definition could mean that a library handles a single use cases, and there 
 ### What does it matter in the end?
 
 I didn't write my original post to say that Backbone is dead.  I wanted to highlight a way in which the experience of using it has declined over time.  It is specifically a way that makes using Backbone harder for me.  I'm grateful to the many people who have built Backbone and the ecosystem around it, and think it is still a very useful tool.  This ecosystem issue does make me unlikely to recommend Backbone for folks who are building web applications "at scale".  I think Ember or possibly React are better choices for that.  For small one off projects, and for content focused sites that need as little JavaScript as possible while still providing a rich experience, Backbone is a great choice.  
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). If you're interested in Backbone you also might want to check out my [series on Marionette.js](http://benmccormick.org/marionette-explained/), or my post on [what Backbone developers can learn from React](http://benmccormick.org/2015/09/09/what-can-backbone-developers-learn-from-react/).
 
 
 [eco]: http://benmccormick.org/2016/03/07/the-sad-state-of-the-backbone-ecosystem/

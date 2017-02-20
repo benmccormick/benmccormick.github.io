@@ -4,15 +4,12 @@ date: "2013-06-11 21:19:00+00:00"
 layout: "post"
 path: "/2013/06/11/how-i-use-stack-overflow"
 category: "tools"
-pageViews: "203"
-last30pageViews: "36"
+description: 'Getting the most out of Stack Overflow'
 ---
 
 >The problem with self directed learning is that our ability to learn is often constrained by the very problem we are trying to solve, our limited knowledge of a field.
 
 One of the first things I learned as I began to work in the software industry was that self driven learning is necessary for staying relevant.  Especially when working on evolving platforms like the web and mobile, things change fast.  The web frameworks of 2005 have little direct relevance to web development in 2013, and mobile development in its current form was a category that didn't even exist in 2005.  If you want to be at the top of your field, or even anywhere close, learning and growing independently of whatever your current task happens to be is incredibly important.  But it can be hard to put into practice.
-
-<!-- more -->
 
 The problem with self directed learning is that our ability to learn is often constrained by the very problem we are trying to solve, our limited knowledge of a field. Some of these problems resolve themselves quite easily.  A beginning Javascript programmer may not know that he needs to include a script in order to use the jQuery syntax he's seen online, but he'll discover it very quickly when his script fails to run.  But it's quite possible to go on programming for years without realizing that it's bad practice to couple your view and model too tightly, or even without gaining a deep understanding of how a web application model actually works. We create our models of how programming works, and it's easy to stay inside those closed doors.  It can be easy to try and fit new languages into existing understandings, which is why you find people writing Java that looks like C and Javascript that looks like Java.  We don't grow because we don't ask the right questions.
 

@@ -6,8 +6,7 @@ path: "/2014/07/27/learning-vim-in-2014-copy-and-paste-the-vim-way"
 description: "How to use copy and paste in Vim"
 keywords: "vim, copy, paste, registers, yank, delete"
 category: "tools"
-pageViews: "1398"
-last30pageViews: "234"
+readNext: ['learning-vim', 'vim-files', 'vim-language']
 ---
 
 If you've been following [my series on Vim][vim2014], it should be clear now that Vim has a pretty clear philosophy of how text editing should work. It's based on the Unix philosophy of small composable tools, and doesn't necessarily match up with the conventions that other editors use for common commands.  So it's probably not surprising that Vim has its own way of handling copy and paste operations, and in fact doesn't even use those terms.  Vim's copy and paste handling is minimalist, composable, and powerful, but most people take some time to adjust to it.  I'm going to walk through the basics here, along with a few advanced features that are worth knowing about.
@@ -51,12 +50,6 @@ One last important thing to know about registers is that along with being used f
 - For a more in depth look at Vim's special registers, including a bunch I didn't cover here, you can check out this great [roundup][vimregisters]
 
 - [Vimcasts][vimcastreg] has a whole series of posts on copy and paste in Vim.
-
----
-
-### Subscribe
-
-This was the seventh entry in a series of posts on learning Vim in a modern way.  If you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). Also check out the [next post](http://benmccormick.org/2014/08/04/learning-vim-in-2014-search/) in the series.
 
 ---
 

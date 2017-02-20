@@ -6,8 +6,7 @@ path: "/2015/05/25/marionette-service-service-objects-for-marionette"
 description: "Introducing marionette-service, a services library for Marionette apps"
 keywords: "Marionette JavaScript marionette-service services Backbone Radio"
 category: "frameworks"
-pageViews: "1496"
-last30pageViews: "29"
+readNext: ['mn-series', 'backbone-devs-react', 'bb-radio']
 ---
 
 [Backbone.js][backbone] is a great way to structure web applications.  Its built in Models, Collections, Views and Routers are a very reasonable "minimum common ground" that pretty much any web project will be able to put to good use.  But more sophisticated applications have needs that extend beyond these basic concepts.  In addition to having some data that needs to be displayed, rich web apps often have resources and functionality that need to be shared across many different Views and Models.  There's no definitive way to implement this consistently, but a common pattern is to create "services" of some type that Views and Models can communicate with.   
@@ -95,10 +94,6 @@ Marionette-service is available to install both on [npm][npm], and [bower][bower
 - If you're new to Backbone.Radio you can learn more about it from [my post][radioexplained], or from the [official docs][radiodocs].
 - If you're confused why somebody would want to separate out the implementation of a service through Radio rather than passing a service object directly, [this is a nice piece by HB Stone][stone] on the power of loose coupling and the Mediator Pattern
 
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my other posts on [building Backbone apps with Marionette][marionetteexplained].
 
 [jsnlog]: http://js.jsnlog.com/
 [marionetteservice]: https://github.com/benmccormick/marionette-service

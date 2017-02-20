@@ -5,8 +5,7 @@ layout: "post"
 path: "/2016/01/25/staying-productive"
 category: "software-productivity"
 description: "Thinking through the environmental factors that lead to productivity"
-pageViews: "989"
-last30pageViews: "50"
+key: 'staying-productive'
 ---
 
 I've been thinking a lot lately about what makes me productive vs unproductive.  A lot of the time Software Developers tend to focus on their tools and environments when they think about productivity.  I'm certainly all into that, as you can see if you look [back][vim], [through][productivejs], [my blog][atom].  But in my mind the most important factors in building productivity are non-software related.
@@ -35,11 +34,6 @@ I'm a [magpie](http://blog.codinghorror.com/the-magpie-developer/).  I love shin
 ### Team matters more than the project
 
 Finally, individual productivity doesn't happen in a vacuum.  Who we work with can undermine or boost our results.  I don't believe that it's a small difference either.  I'd rather have a great team with no individually brilliant members than a bad team with one or two great programmers any day.  One of [Windsor Circle's values](http://www.windsorcircle.com/about-us/our-values) is that teams survive longer than individuals.  The same can be said of their results.  Teams can magnify what is possible for a product.  Any individual has limits on what he or she can create.  Teams allow for those limits to be lifted by building on each others skills. At the same time, teams can limit each other by fighting, mis-communicating, distracting, or pursuing different goals.  So all of the other productivities ideas here can be applied just as well to a team as they do to an individual.  The best work comes from teams consistently working together towards a common goal over a long period of time in a constant and productive environment.
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  Software tools and productivity are one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my post on [productive JavaScript development](http://benmccormick.org/2015/11/25/productive-javascript-development/).
 
 
 [vim]: http://benmccormick.org/learning-vim-in-2014/

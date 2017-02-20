@@ -22,8 +22,7 @@
     "safe-access": "^0.1.0",
     "svg-inline-react": "^1.0.2",
     "twitter-widgets": "^1.0.0",
-    "typography": "^0.13.0",
-    "underscore.string": "^3.2.3"
+    "typography": "^0.13.0"
   },
   "devDependencies": {
     "feed": "^0.3.0",

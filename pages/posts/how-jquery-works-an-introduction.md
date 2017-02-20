@@ -5,11 +5,8 @@ layout: "post"
 path: "/2015/06/08/how-jquery-works-an-introduction"
 description: "A dive into the structure of the jQuery library"
 category: "frameworks"
-pageViews: "17297"
-last30pageViews: "483"
+readNext: ['underscore-lodash', 'mn-series', 'jquery-pub-sub']
 ---
-
-*This is the first post in a series on "How jQuery Works".  This is not a series about how to use jQuery, instead these posts will focus on how jQuery actually works.  If you're interested in diving into the source of the most popular JavaScript library on the planet, keep reading.*
 
 Every developer has had the experience of using "magic" code.  Not the "hacked into the NSA in 20 seconds" type of magic code you see in movies. This is the code created when you nervously typed an incomprehensible incantation that somebody else passed on to you, desperately hoping to receive the results you want, ignoring the sinking feeling in your stomach that you have no clue what to do if it fails.  Almost all code feels like this when you're pushing out to learn new things.  But it doesn't have to stay that way.
 
@@ -272,13 +269,6 @@ After working through 2 more helper functions, the namespace object gets returne
 
 - It's no longer maintained with newer versions, but a few years ago Rob Flaherty created an annotated version of jQuery 1.6's source.  You can see that [here][annotated]
 - Along the same lines: John Resig, jQuery's creator, recently went through his original jQuery library (a early ~1.0 version) and [annotated it with both code commentary and historical notes][resig]. It's a great look inside the history of the library.
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my [post on the difference between Underscore and lodash][underscorevslodash].
-
-
 
 
 <div class="footnotes">

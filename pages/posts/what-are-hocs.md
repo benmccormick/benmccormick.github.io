@@ -6,8 +6,8 @@ path: "/2016/12/14/what-are-higher-order-components"
 description: "An explanation of React's higher order components"
 keywords: "react components higher order"
 category: "frameworks"
-pageViews: "0"
-last30pageViews: "0"
+key: 'what-are-hocs'
+readNext: ['react-component-styles', 'callbacks-to-promises', 'mobx-first']
 ---
 
 If you spend much time at all reading through articles and documentation around React, you're likely to run into the term "Higher Order component", often abbreviated HoC.  Since it is often used without context in React discussions, and is not a particularly intuitive term for many (most?) developers, I thought it was worth publishing a quick and simple explanation of what Higher Order Components are.
@@ -73,8 +73,3 @@ I've already mentioned connect from [react-redux](https://github.com/reactjs/rea
 
 - This was intentionally a very high level look at Higher Order Components.  If you want to go deeper, [this medium article](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.yhbug3ohe) is a great deep dive into all the use cases they allow.
 - If you're interested in using HoCs in your own code base, [recompose](https://github.com/acdlite/recompose) is a utility library for making the syntax around defining and using them painless
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out the my post from earlier this year on [choosing a React component syntax](http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/).

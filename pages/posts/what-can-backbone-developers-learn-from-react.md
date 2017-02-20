@@ -6,8 +6,8 @@ path: "/2015/09/09/what-can-backbone-developers-learn-from-react"
 description: "A look at the lessons that Backbone developers can learn from React"
 keywords: "Backbone React JavaScript frameworks"
 category: "frameworks"
-pageViews: "24837"
-last30pageViews: "299"
+key: 'backbone-devs-react'
+readNext: ['mobx-first', 'mn-series', 'backbone-eco']
 ---
 
 Since I started programming professionally, I've always kept an informal list of technologies I want to check out.  Things that I thought would be useful for my career, would expose me to new ideas, or just looked plain cool.  I spent a chunk of my Labor Day weekend working through that list a bit by learning more about [React][react], the JavaScript View library from Facebook. React is a fascinating piece of technology, and a strong ecosystem of tools and libraries is growing up around it.  For developers starting brand new front-end projects in 2015, it ranks as one of the 2 main libraries I'd suggest looking into as a base, along with [Ember][ember].  Most developers though are not starting brand new projects.  We're maintaining existing code, or starting a new project while trying to reuse components of an old one.  Fortunately, React is about ideas as much as it is technology.  For this piece, I'm going to go through the big ideas of React and look at 3 of them that developers working on other frameworks (and [Backbone][backbone] in particular) can learn from.  There's a lot more to React and its community than just these 3 ideas, so I'll also include some extra resources at the bottom for those interested in learning more about it.
@@ -200,13 +200,6 @@ If you're interested in learning more about React, many others have put together
 - [Flux](https://facebook.github.io/flux/) is one of the 2 main data management frameworks that Facebook and the React team recommend for use with React.  The second newer one, [Relay](https://facebook.github.io/relay/) is a bit more crazy advanced and requires a very specific type of backend API to implement.  If you're interested in Flux, also make sure to check out [Redux](https://github.com/rackt/redux), an opinionated flux implementation focused pure functional programming concepts.
 - [React Router](https://github.com/rackt/react-router) is a router for React applications based on Ember's router.  It provides a nice declarative model for defining routes based on JSX, the JS language extension that Facebook created along with React
 - [Babel](https://babeljs.io/) isn't a react specific technology, but its important to understand it if you want to digest most of the React examples out there, or build a React app yourself, since it is now recommended as the tool for writing React code in an idiomatic style.
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). If you're interested in Backbone you also might want to check out my [series on Marionette.js](http://benmccormick.org/marionette-explained/).
-
-
 
 <div class="footnotes">
 <ol>

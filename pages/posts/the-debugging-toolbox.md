@@ -4,8 +4,7 @@ date: "2014-08-19 11:35:00+00:00"
 layout: "post"
 path: "/2014/08/19/the-debugging-toolbox"
 category: "software-productivity"
-pageViews: "819"
-last30pageViews: "3"
+description: 'The process I use for solving problems'
 ---
 
 Do you know a *Problem Solver*?  They're the ones who can take a crazy, vague bug report from a client and come up with a fix in an hour.  The ones who everybody else asks for help when the project deadline is creeping up.  The ones who get shipped out to the client site when the field team is out of their depth.  In school they were the person you called at 1AM the night before your project was due, hoping for a miracle.
@@ -87,12 +86,6 @@ Once you've fixed the problem, or gotten to a point where you're not going to co
 
 Real world engineering means dealing with code you don't understand.  That might be your coworkers' code, a 3rd party library, a buggy video driver, or your own 3 year old code. To do that effectively you need a process.  That might be mine, or one of your own, it could be formal, or just built on habit.  But make sure you have one.  The ability to dive in quickly, understand what's going on and create a fix will set you apart.  It's not that hard, but it takes discipline, creativity, and most of all practice.  So go ahead and start fixing something.  Maybe you'll be the *Problem Solver* next time
 
----
-
-
-### Subscribe
-
-I write consistently here about the practice of software development and the tools and techniques of the trade.  If you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You might also enjoy [this post](http://benmccormick.org/2013/02/03/how-i-work-refactoring/) on refactoring existing code.
 
 <div class="footnotes">
 <ol>

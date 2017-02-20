@@ -4,8 +4,9 @@ date: "2014-08-07 11:30:00+00:00"
 layout: "post"
 path: "/2014/08/07/component-based-development"
 category: "platform"
-pageViews: "8554"
-last30pageViews: "97"
+key: 'component-based-dev'
+description: 'Exploring the Web Components spec, and the future of web architecture'
+readNext: ['custom-elements-example']
 ---
 
 If you look back at the history of JavaScript and the client-side web as a development platform, you can see that there were several critical turning points for the language. Javascript has evolved from a [10-day toy language][jsorigin] to possibly the [most used language in the world][githubstats], but that didn't happen overnight.
@@ -105,12 +106,6 @@ For anyone invested in the Web Platform, it's time to be informed. Regardless of
 
 - This [Github discussion][kocomponents] is an interesting look into the thought process of why a traditional MVC library would be interested in providing component features, and the value they bring.
 
-
----
-
-### Subscribe
-
-This was the first entry in a series of posts on component based development.  If you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon).
 
 [githubstats]:http://adambard.com/blog/top-github-languages-for-2013-so-far/
 [jsorigin]: http://www.computer.org/csdl/mags/co/2012/02/mco2012020007.html

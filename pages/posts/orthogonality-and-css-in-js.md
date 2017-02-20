@@ -6,6 +6,8 @@ path: "/2017/01/03/orthogonality-and-css-in-js/"
 description: "Separation of concerns in the context of CSS and JavaScript"
 keywords: "CSS JavaScript Orthogonality Pragmatic Programmer"
 category: "software-productivity"
+key: 'orthogonality-css-js'
+readNext: ['jest-first', 'll-context', 'callbacks-to-promises']
 ---
 
 One of the realities of the constant change in the web development world is that "best practices" are often hotly contested.  One issue that the front end community doesn't seem to have come to a consensus on yet is how tightly to bundle JavaScript, HTML and CSS in code.  Should they be bundled and managed completely separately?  Kept in different files and imported together into JavaScript component files?  Or can we remove HTML and CSS files entirely and generate everything in JavaScript? This is a discussion that still comes up all the time in my [twitter](https://twitter.com/thomasfuchs/status/810885087214637057) [feed](https://twitter.com/TheLarkInn/status/812089065210335232).
@@ -162,12 +164,6 @@ In the end decisions like this are an exercise in understanding context and pref
 
 - [The Pragmatic Programmer][pragprog] is a great book. Much of the vocabulary in this post comes from its Chapter 8, but the whole book is worth a read and is highly recommended.
 - CSS Tricks has a good look at the [pros and cons of CSS in JS](https://css-tricks.com/the-debate-around-do-we-even-need-css-anymore/).  I focused on theory here, but this is much more hands on about the practical concerns around this debate.  
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my [post on choosing which component styles to use in React](http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/).
-
 
 
 

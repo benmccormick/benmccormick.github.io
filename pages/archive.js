@@ -3,8 +3,7 @@ import sortBy from 'lodash/sortBy';
 import get from 'lodash/get';
 import Helmet from 'react-helmet';
 import { config } from 'config';
-import include from 'underscore.string/include';
-import Footer from 'components/Footer';
+import include from 'lodash/includes';
 import LinkList from 'components/LinkList';
 
 class CategoryArchive extends React.Component {
@@ -30,7 +29,6 @@ class CategoryArchive extends React.Component {
           title = 'Articles'
           showCategory = {true}
         />
-        <Footer />
       </div>
     );
   }

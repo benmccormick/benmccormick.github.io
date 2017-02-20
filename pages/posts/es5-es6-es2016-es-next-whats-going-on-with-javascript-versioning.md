@@ -6,8 +6,9 @@ path: "/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-version
 description: "A summary of the naming conventions for the JavaScript language"
 keywords: "JavaScript, ECMAScript, ES6, ES7, ES5"
 category: "javascript"
-pageViews: "94856"
-last30pageViews: "7123"
+readNext: ['callbacks-to-promises', 'clean-higher-order-functions', 'rauchg-on-es6']
+key: 'ecma-explanation'
+
 ---
 
 JavaScript has a strange naming history. For its initial release in 1995 as part of Netscape Navigator, Netscape labeled their new language LiveScript, before renaming it to JavaScript a year later, hoping to capitalize on Java's popularity at the time ([JavaScript has no actual relationship to Java][javacomic]). In 1996 Netscape submitted JavaScript to [ECMA International][ecma] for standardization.  This eventually resulted in a new language standard, labeled ECMAScript.  All major JavaScript implementations since have actually been implementations of the ECMAScript standard, but the term JavaScript has stuck for historical and marketing reasons <sup id="fnref:1">[1](#fn:1)</sup>.  In the real world ECMAScript is usually used to refer to the standard while JavaScript is used when talking about the language in practice.
@@ -36,10 +37,6 @@ Going forward in this blog, I'll be referring to the recent ECMAScript version a
 - If you aren't familiar with ES6 yet, Babel has a [great rundown of its features][babeles6]
 - If you want to go deeper with ES6 I've heard great things  about 2 books on the subject: [Exploring ES6][exploringes6] by Axel Rauschmayer and [Understanding ECMAScript 6][understandinges6] by Nicholas Zakas<sup id="fnref:2">[2](#fn:2)</sup>.  Axel's blog [2ality][2ality] is also a great ES6 resource.
 
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my recent post on whether [Safari is being left behind][safari].
 
 <div class="footnotes">
 <ol>

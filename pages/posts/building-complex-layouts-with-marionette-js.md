@@ -6,8 +6,7 @@ path: "/2014/12/22/building-complex-layouts-with-marionette-js"
 description: "How to build complex UIs with Marionette.js"
 keywords: "Marionette, Backbone, UI, Architecture, JavaScript"
 category: "frameworks"
-pageViews: "23205"
-last30pageViews: "294"
+readNext: ['mn-series', 'backbone-devs-react', 'bb-es6-1']
 ---
 
 *This is the third post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the first post in the series, [The Case For Marionette][caseformarionette]  Also note that this article was written about Marionette v2.  The current latest version of Marionette is v3, and while most of the high level concepts remain the same, the specific syntax has changed in some cases.*
@@ -76,15 +75,6 @@ The great thing about Marionette's View system is that you can take the 3 Views 
 
 - For more on nesting Marionette Views, you can check out [this talk][nestingvideo] by Marionette core team member Sam Saccone.  It's a quick 10 minute video covering much of the same stuff I went through here.
 - I'll talk more about this in a future post, but if you have a Marionette app and want to visualize your View hierarchy, [Marionette Inspector][inspector] is a great new tool for debugging Marionette apps, and it's primary developer, Jason Lastner gave a [great talk][inspectortalk] describing how to use it at BackboneConf this week.
-
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  This is the 3rd post in a series on Marionette, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). If you're interested in Marionette development, you also may be interested in my [last post][jobpost]. Windsor Circle makes heavy use of Marionette and we're looking to hire Backbone developers.  If that sounds interesting, consider applying.
-
-
-
 
 <div class="footnotes">
 <ol>

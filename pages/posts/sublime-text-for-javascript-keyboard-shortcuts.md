@@ -4,8 +4,7 @@ date: "2012-12-30 21:00:00+00:00"
 layout: "post"
 path: "/2012/12/30/sublime-text-for-javascript-keyboard-shortcuts"
 category: "tools"
-pageViews: "13761"
-last30pageViews: "106"
+description: 'Helpful keyboard shortcuts for JS developers'
 ---
 
 I'm starting a new series of posts on Sublime Text, and how to get the most out of the editor.

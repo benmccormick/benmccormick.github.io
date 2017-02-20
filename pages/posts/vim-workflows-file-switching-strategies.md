@@ -5,8 +5,8 @@ layout: "post"
 path: "/2014/11/10/vim-workflows-file-switching-strategies"
 description: A look at the different approaches you can take to managing files in Vim
 category: "tools"
-pageViews: "5213"
-last30pageViews: "111"
+key: 'vim-files'
+readNext: ['learning-vim', 'vim-art', 'vim-language']
 ---
 
 Becoming productive in Vim is about more than just knowing all of the features available to you<sup id="fnref:1">[1](#fn:1)</sup>. It's all about knowing which ones to use in which situations.  In my series from this summer on [learning Vim][learningvim], I focused a lot on the different tools Vim provides for solving problems.  Today I'll show how I put some of those tools together to actually be more productive.
@@ -65,16 +65,6 @@ The workflow I described is not the "one true way" to navigate files in Vim.  So
 - [Oil and Vinegar][oil] is a nice Vimcasts article on how to make NerdTree work well with multiple splits
 
 - I wrote a more [introductory post][vimfiles] this summer on the tools you can use to manage files in Vim.  It talks in a bit more detail about some of the Vim features I mentioned above.
-
----
-
-
-### Subscribe
-
-Thanks for taking the time to read!  I write a good deal about text editing,  and development tools, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out [my series on learning Vim][learningvim] from this summer.  And of course, if you have your own tips for more efficient Vim workflows, please put them in the comments.
-
----
-
 
 <div class="footnotes">
 <ol>

@@ -6,8 +6,8 @@ path: "/2015/07/06/backbone-and-es6-classes-revisited"
 description: "A second look at using ES6 classes with Backbone"
 keywords: "ES6, Backbone, classes, JavaScript, decorators"
 category: "frameworks"
-pageViews: "12942"
-last30pageViews: "428"
+key: 'bb-es6-2'
+readNext: ['bb-es6-1', 'backbone-devs-react', 'mn-series']
 ---
 
 A few weeks ago I wrote [an article][bbes6] explaining why the final spec for classes in the ES6/ES2015 version of JavaScript was not usable in Backbone applications.  That post got a lot of great feedback, including this [discussion][githubissue] with the Backbone core team. The gist of that discussion has been that there are several ways to make ES6 classes work with Backbone now, though they may be less clean than the current *Backbone.extend* syntax.  But there's hope for a really great experience: decorators, a [proposed feature for the ES7/ES2016 spec][decoratorsspec], provide a much cleaner interface when working with Backbone and native classes.
@@ -470,10 +470,6 @@ The main downside I see to this is one shared by a few of the other approaches. 
 If you want to use ES6 classes with Backbone in production today, you should probably make everything a method, and make liberal use of the getter functionality.  That seems to be the most Backbone-like, with everything contained in a single class definition, and easy refactoring when a property begins to require logic around it.  If you're experimenting though, you should definitely consider playing with decorators and see how you can make Backbone's interface better.  
 
 *If you have ideas about this, feel free to contribute on the [github issue][githubissue]*
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out [my first post on Backbone and ES6 classes][bbes6].
 
 <div class="footnotes">
 <ol>

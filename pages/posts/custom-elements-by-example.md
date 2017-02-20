@@ -4,8 +4,9 @@ date: "2014-08-28 12:33:00+00:00"
 layout: "post"
 path: "/2014/08/28/custom-elements-by-example"
 category: "platform"
-pageViews: "2661"
-last30pageViews: "51"
+description: 'Explaining Custom Elements and the Web Components spec'
+key: 'custom-elements-example'
+readNext: ['component-based-dev']
 ---
 
 The best attribute of HTML is its ability to be simultaneously machine-readable and human-readable.  I'd argue that it's one of the biggest reasons for the web platform's success. Anyone can  “view page source” and have some understanding of what they're seeing.  Javascript based “Single Page Applications” have undermined this a bit.  Now the original HTML of a page may just be an empty body tag, and even when you inspect the generated page, it will probably just be a sea of div tags.
@@ -105,9 +106,6 @@ If you're interested in trying out custom elements, there's never been a better 
 - Telerik posted another [great piece][telerikready] on this topic a few weeks ago, which focuses more on the case for Custom Elements being production ready now
 - If you're interested in using more than just Custom Elements, [The Polymer Project][polymer] by Google is an ambitious library built around the Web Component spec.  They attempt to polyfill the whole spec, then wrap convenience functions around the low level elements.  It's an interesting, ambitious project, though not yet ready for production.
 
-### Subscribe
-
-This was the second post in a series on the Component Based Web.  If you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You might also enjoy [my first post](http://benmccormick.org/2014/08/07/component-based-development/) on the web's component based future.
 
 <div class="footnotes">
 <ol>

@@ -6,8 +6,7 @@ path: "/2014/08/04/learning-vim-in-2014-search"
 description: "How to search for anything in Vim"
 category: "tools"
 keywords: "vim, search"
-pageViews: "10219"
-last30pageViews: "37"
+readNext: ['learning-vim', 'vim-files', 'vim-language']
 ---
 
 Have you ever tried to summarize something that was just too big to explain?  I've covered a lot of ground in my posts on Vim this past month, but it's only scratched the surface of what Vim has to offer.  The goal was to create a foundation that people could start with, and then let them build on their own. There's not a conclusive way to say what somebody "needs to know" when learning Vim.  Most people don't (and shouldn't) use every feature of the editor, they use the ones that make sense for them.  So I've tried to cover the things that I know people have found useful, and the philosophy behind how Vim works, and then let you figure out what you'd like to use on your own.  This post wraps up the series, but I wanted to highlight one last feature of Vim, its fantastic search capabilities.
@@ -60,15 +59,6 @@ Most people start out using Vim knowing that they can move around with *hjkl* an
 
 - [Vim's wiki](http://vim.wikia.com/wiki/Search_and_replace) also has a nice writeup of the `:substitute` command, with lots of examples and details.
 
-
-
----
-
-
-
-### Subscribe
-
-This was the seventh entry in a series of posts on learning Vim in a modern way.  If you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). Also check out the [other posts][vim2014] in the series.
 
 
 

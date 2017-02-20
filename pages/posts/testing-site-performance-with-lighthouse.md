@@ -6,6 +6,7 @@ path: "/2017/02/13/improving-site-performance-with-lighthouse"
 description: "Profiling and improving my site with Google's Lighthouse tool"
 keywords: "Lighthouse Performance Progressive Web App"
 category: "tools"
+readNext: ['ll-context', 'jest-first', 'new-look-2016']
 ---
 
 Last year Google coined the term "Progressive Web App" as a way of describing the type of sites and applications that they think are the future of the web.  Progressive Web Apps are sites that load quickly, are always responsive to user input, work as well as possible offline, and integrate with native platforms like native apps.  While this site is not an "app" per say, I do want it to be as fast and responsive as possible, and I also wanted to better understand what Google is pulling under the PWA umbrella.  Fortunately, Google has built a tool [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to help developers profile and improve their web applications, comparing them to a set of PWA benchmarks.  So I took this site through Lighthouse, and worked against their suggestions with the goal of learning more about PWAs and improving the experience of using benmccormick.org.  I'm passing along my experience here.
@@ -80,9 +81,3 @@ I clearly benefited from starting in a good spot.  [Gatsby](https://github.com/g
 - Google has a bunch of resources around creating Progressive Web Apps.  You can find them on [their PWA landing page](https://developers.google.com/web/progressive-web-apps/).
 
 - It was so easy to make my blog a PWA mostly because it is built on [Gatsby](https://github.com/gatsbyjs/gatsby). Worth looking at if you're a web developer who blogs.
-
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  Web development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). If you liked this post you also might want to check out my article from 2015 on [Productive JavaScript Development](https://benmccormick.org/2015/11/25/productive-javascript-development/).

@@ -5,8 +5,7 @@ layout: "post"
 path: "/2015/02/22/rauchg-on-es6"
 category: "javascript"
 description: "A link-log of Guillermo Rauch's look at ES6"
-pageViews: "316"
-last30pageViews: "0"
+key: 'rauchg-on-es6'
 ---
 
 >ECMAScript 6, henceforth ES6 and formerly ES.next, is the latest version of the specification. As of August 2014 no new features are being discussed, but details and edge cases are still being sorted out. It’s expected to be completed and published mid-2015.

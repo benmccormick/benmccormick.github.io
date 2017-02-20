@@ -4,8 +4,7 @@ date: "2014-11-08 19:24:09+00:00"
 layout: "post"
 path: "/2014/11/08/all-about-angular-2-0"
 category: "frameworks"
-pageViews: "739"
-last30pageViews: "6"
+description: 'An early look at the next version of Angular'
 ---
 
 Rob Eisenberg has a pretty incredible rundown of the current Angular 2.0 proposal and the thought process behind it [on his blog][aaa2].  
@@ -24,7 +23,7 @@ A few more assorted thoughts:
 
 - I really appreciated the listing of the challenges Angular is facing at the beginning. From my outsider perspective (I'm a web developer but have not spent a lot of time with Angular recently), it seems like they've nailed the first step of asking the right questions.  Any framework that isn't optimized for mobile browsers or doesn't integrate with ES6 classes and modules is likely to look silly in a few years.  And while web components are still not a sure thing, they're rapidly [becoming a standard for reusable code on the web][wc].
 
-- Creating a custom JS preprocessor to support the framework you're building is starting to look like a trend.  And that is not a good thing.  I was not a fan of React bundling JSX, and Angular 2.0's use of AtScript seems to be equally unfortunate.  In both cases the language is not required to use the language, but instead is treated as a "First Class" language used as an escape hatch to smooth over rough patches in their API.  At least JSX is a spec, even if it's a very React centric one.  AtScript appears to be a Google only thing at the moment, inspired by but incompatible with Typescript.
+- Creating a custom JS preprocessor to support the framework you're building is starting to look like a trend.  And that is not a good thing.  I was not a fan of React bundling JSX, and Angular 2.0's use of AtScript seems to be equally unfortunate.  In both cases the language is not required to use the framework, but instead is treated as a "First Class" language used as an escape hatch to smooth over rough patches in their API.  At least JSX is a spec, even if it's a very React centric one.  AtScript appears to be a Google only thing at the moment, inspired by but incompatible with Typescript.
 
 - The next time I hear a developer claim that marketing is worthless, I'm going to bring up the last few weeks in the JavaScript framework world.  Angular announced their 2.0 plans for the world in a presentation that many people saw only as a [set of slides filled with tombstones][angular2slides].  By focusing (at least on the slides) on the things being lost and the drastic changes to syntax, the online conversation focused on the compatibility problems with the release, rather than the problems it would solve.  Now we finally have a detailed explanation of why these breaking changes are happening, but it's in the form of an opinionated blog post that emphasizes the current uncertainty around the project.  Angular seems to have found an awkward middle ground between involving the community from the beginning and releasing a polished product, where they've introduced a "not quite ready" concept to the world.
 
@@ -35,10 +34,6 @@ A few more assorted thoughts:
     Ember and Angular are facing roughly the same challenges in terms of deprecating old syntax and adapting to changes in the web platform.  Regardless of what you think of their different approaches, by clearly articulating their plans in a united way before they begin actually writing the code to accomplish them, Ember is winning the marketing battle here by a mile.  
 
 - Related to all of the above, it's hard to recommend starting a new Angular project to anyone right now.  While the 1.x branch will continue to receive support going forward if for no other reason than the number of people currently using it, the issues that 2.0 is trying to solve are real and will make it harder for 1.0 to keep up with the rest of the web as it goes forward.  This is not a Python 2/3 situation where Python 2 still remains a viable language to start a project with 6 years later.  Because the web platform will continue shifting under the code, a language that doesn't support modern idioms will quickly begin to fall behind alternatives.  It's very possible that Angular 2.0 will regain Angular 1.x's current spot as the most popular MVC framework on the web, but until it's released or the core team can show a clear migration path from 1.x to 2.0, Angular development is going to look like a dead end road.
-
-### Subscribe
-
-Thanks for taking the time to read!  Javascript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon).
 
 
 

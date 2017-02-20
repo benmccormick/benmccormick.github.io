@@ -6,8 +6,8 @@ path: "/2014/11/12/underscore-vs-lodash"
 description: "A comparison between Underscore and lodash"
 keywords: "underscore lodash lo-dash JavaScript performance"
 category: "frameworks"
-pageViews: "109247"
-last30pageViews: "2526"
+key: 'underscore-lodash'
+readNext: ['mn-series', 'backbone-devs-react', 'mobx-first']
 ---
 
 Last week was the time for my team's quarterly "dependency update" where we go through all the third party libraries we're using and keep up on any updates or maintenance that need to happen.  That presented the opportunity for me to do a bit more research into an alternative for one of our libraries, [Underscore][underscore].  Underscore is a JavaScript utility library that provides helper functions for common idioms with a focus on functional programming.  It's a dependency for [Backbone][backbone], the MVC library that our web app is based on, and was originally created by Jeremy Ashkenas, who also wrote Backbone.  I love the functional style that Underscore subscribes to, and while the much improved browser support for ES5 functions like map, reduce and filter makes it less necessary than it used to be, Underscore still provides plenty of benefits.
@@ -104,14 +104,6 @@ So to wrap it all up, if you need a utility library which one should you actuall
 - [Say Hello to Lo-Dash][hellolo], a blog post written by Lo-Dash's core team after they released 1.0 is a great summary of the advantages of Lo-Dash.  It's a year and a half old now, but mostly holds up pretty well, with the only real difference being that Underscore has pulled in several of the features they mention here since then.
 
 - I mentioned this in the post, but Lo-Dash provides a much more thorough benchmarking page than what I provided [on their site][lodashbenchmarks].  They also provide a helpful [roadmap][lodashroadmap] to let users know about plans for Lo-Dash 3.0.
-
-
----
-
-
-### Subscribe
-
-Thanks for taking the time to read!  Javascript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out  [my recent review of Building Backbone Plugins][bbp].  I'd also love any tips or hints you have for deciding between Lo-Dash and Underscore.
 
 
 <div class="footnotes">

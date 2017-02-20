@@ -6,8 +6,9 @@ path: "/2016/09/19/testing-with-jest-snapshots-first-impressions/"
 description: "First impression of testing UI components using Jest snapshots"
 keywords: "Jest JavaScript testing React Snapshot Tests"
 category: "tools"
-pageViews: "5047"
-last30pageViews: "710"
+key: 'jest-first'
+readNext: ['saving-time-jest', 'backbone-devs-react', 'mobx-first']
+
 ---
 
 Over the past 6 months my team at work has been slowly transitioning a large Backbone application to React.  One of the main goals of the transition has been to build out unit tests as we transition components.  As part of that we switched from using Karma to using Jest for managing our tests.
@@ -205,13 +206,6 @@ I'm impressed by Jest snapshots.  When combined with React, they're providing my
 - My team uses a mix of [enzyme](https://github.com/airbnb/enzyme) and snapshot tests for unit testing React Components.  [This repo](https://github.com/trayio/enzyme-to-json?utm_content=buffer6b78b&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer) combines them, allowing you to use enzyme to generate the snapshot output to diff against rather than the renderer provided by Jest. I personally haven't felt the need to integrate these two tools, but if your team uses enzyme and wants consistency/fewer (used) dependencies, this could be a cool option.
 
 - Finally here's [another article](https://blog.grommet.io/post/2016/09/01/how-we-landed-on-jest-snapshot-testing-for-javascript) on how Snapshot testing convinced one team to migrate to Jest from Tape
-
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my [post on choosing which component styles to use in React](http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/).
-
 
 
 

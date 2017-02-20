@@ -5,8 +5,9 @@ layout: "post"
 path: "/2015/11/30/es6-patterns-clean-higher-order-functions"
 category: "javascript"
 description: "A quick tip for clean functional syntax in ES6"
-pageViews: "3401"
-last30pageViews: "132"
+key: 'clean-higher-order-functions'
+readNext: ['ecma-explanation', 'callbacks-to-promises', 'what-are-hocs']
+
 ---
 
 <div class="explanation">
@@ -92,14 +93,6 @@ I like to call the `() => () =>` pattern a "double function", and have found it 
 
 - If you're interested in higher order functions and JavaScript, I know of no better reference than [JavaScript Allongé][allonge].  It's a fantastic deep dive into the JavaScript language with a functional flavor, building understanding from the bottom up and providing many ideas for code recipes along the way.  And it's recently been rewritten to reflect the changes to the language that ES6 brought.
 - Here's a nice [deep dive on arrow functions at 2ality][2ality] by Axel Rauschmayer.  If you haven't seen his blog, it's a fantastic reference on ES6 and JavaScript in general
-
-
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my recent post on [ES6, ES2015 and the weird naming of JavaScript versions][esversions].
-
 
 
 [esversions]: http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/

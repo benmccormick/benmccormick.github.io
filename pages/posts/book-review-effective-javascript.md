@@ -5,9 +5,8 @@ layout: "post"
 path: "/2013/01/06/book-review-effective-javascript"
 description: "A book review of Effective Javascript by David Herman"
 keywords: "JavaScript, David Herman, Book Review, Effective JavaScript"
+key: 'effective-js'
 category: "reviews"
-pageViews: "1590"
-last30pageViews: "21"
 ---
 
 ![Effective JS](/posts/images/effectivejs.png)

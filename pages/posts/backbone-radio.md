@@ -6,8 +6,8 @@ path: "/2015/01/26/backbone-radio"
 description: "An overview of using Backbone.Radio in Marionette apps"
 keywords: "Backbone, JavaScript, Backbone Radio, Marionette, messaging"
 category: "frameworks"
-pageViews: "19338"
-last30pageViews: "246"
+key: 'bb-radio'
+readNext: ['mn-series', 'backbone-devs-react', 'bb-es6-1']
 ---
 
 *This is the fifth post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the series page, [Marionette Explained][marionetteexplained]*
@@ -178,10 +178,6 @@ It's also worth pointing out that Radio has no direct dependency on Marionette, 
 ### More Resources
 
 - Although it's focused on Node and backend use cases, [this video][mighty] is a great rundown of semantic messaging patterns.
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out the rest of my [series on Marionette][marionetteexplained].
 
 [marionette]: http://marionettejs.com/
 [marionetteexplained]: http://benmccormick.org/marionette-explained/

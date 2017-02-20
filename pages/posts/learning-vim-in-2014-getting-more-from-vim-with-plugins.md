@@ -6,8 +6,7 @@ path: "/2014/07/21/learning-vim-in-2014-getting-more-from-vim-with-plugins"
 description: "How plugins fit into a Vim workflow"
 keywords: "vim, plugins, vundle, nerdtree, ack, ctrlp"
 category: "tools"
-pageViews: "81816"
-last30pageViews: "970"
+readNext: ['learning-vim', 'vim-files', 'vim-language']
 ---
 
 It's impossible to design a tool that fits everyone's workflow perfectly.  No matter how many cases you hit, somebody will want to do something you don't support, will find your solution for their problem confusing, or they'll try to use your tool in a way you never imagined. Vim tries to deal with situations like that in 2 ways.  First by making it easy to [configure][configpost], and second by making it easy to extend.  Extending Vim happens through plugins. <span class="aside">
@@ -109,13 +108,6 @@ The last category of plugins are scripts that allow Vim to do things that are to
 - [Vimcasts has a bunch of plugin related episodes][vimcastplugins], many of which touch on some of the plugins mentioned in this article
 
 - Plugins are great, but only have real value if you understand how Vim can make you productive.  If you haven't seen them yet, consider checking out the [other posts][vim2014] in this series to learn how Vim works before loading up on plugins.
-
----
-
-### Subscribe
-
-This was the sixth (and longest) entry in a series of posts on learning Vim in a modern way.  If you made it all the way down here, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). Also check out the [next post](http://benmccormick.org/2014/07/27/learning-vim-in-2014-copy-and-paste-the-vim-way/) in the series, covering Vim's copy and paste functionality.
-
 
 [configpost]:http://benmccormick.org/2014/07/14/learning-vim-in-2014-configuring-vim/
 [vim2014]: http://benmccormick.org/tag/learning-vim-in-2014/

@@ -4,8 +4,7 @@ date: "2013-08-15 16:15:00+00:00"
 layout: "post"
 path: "/2013/08/15/somewhat-open"
 category: "opinion"
-pageViews: "107"
-last30pageViews: "1"
+description: 'What is an open API?'
 ---
 
 [From Microsoft's official "Microsoft on the Issues" Blog:][msftblog]

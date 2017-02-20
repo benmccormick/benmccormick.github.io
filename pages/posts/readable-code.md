@@ -6,8 +6,7 @@ path: "/2016/12/11/readable-code-audience"
 description: "A quick observation about what it means to write readable code"
 keywords: "readable code python"
 category: "software-productivity"
-pageViews: "0"
-last30pageViews: "0"
+key: 'readable-code'
 ---
 
 A coworker asked me last week if there was a better way to write the following python code:
@@ -80,10 +79,6 @@ So quick tip version:
 
 1. Think about the audience of the code you're writing
 2. Naming functions well limits the needs to make implementation details readable for everybody. It can also make your program flow easier to follow.
-
-### Subscribe
-
-Thanks for taking the time to read this post!  Software development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out the my post from last year on [staying productive](http://benmccormick.org/2016/01/25/staying-productive/).
 
 
 [^1]: In my experience, it usually only takes about a week for me to look back at my old code and wonder what maniac wrote it and what he could have possibly been thinking

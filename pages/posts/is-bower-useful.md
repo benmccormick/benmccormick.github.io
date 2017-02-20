@@ -5,8 +5,6 @@ layout: "post"
 path: "/2015/01/22/is-bower-useful"
 category: "tools"
 description: "A defense of Bower as a useful package manager"
-pageViews: "2966"
-last30pageViews: "57"
 ---
 
 
@@ -58,12 +56,6 @@ Bower addresses the pain points that come from manually managing your scripts or
 - Want to hear the case for using npm in your front end development? You can find it [on their blog][npmblog].
 
 - If you're interested in Bower, it's also worth checking out [Yeoman][yeoman], a project for quickly scaffolding out web projects using Bower and Grunt.
-
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my [ongoing series on Marionette.js][marionette].
 
 <div class="footnotes">
 <ol>

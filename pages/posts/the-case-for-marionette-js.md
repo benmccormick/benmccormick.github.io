@@ -6,8 +6,7 @@ path: "/2014/12/02/the-case-for-marionette-js"
 description: "Making the case for Marionette.js as a framework for front end development"
 keywords: "JavaScript Marionette.js Backbone"
 category: "frameworks"
-pageViews: "28483"
-last30pageViews: "331"
+readNext: ['mn-series', 'backbone-devs-react', 'bb-radio']
 ---
 
 Building large web applications using [Backbone.js][backbone] can be hard.  Backbone is a great tool, but it's designed to be minimalist and useful in a wide variety of situations.  As a result, you get less guidance and support from the tool as you scale up than you do from more opinionated frameworks like [Angular][angular] and [Ember][ember].  When a Backbone application grows, maintaining it requires adding structure, either through a custom set of conventions and components, or based on somebody elses framework.  There are a lot of different Backbone frameworks out there, but I want to make the case for using [Marionette.js][marionette].  
@@ -60,11 +59,6 @@ That's not the complete feature set, but it is the essential sales pitch.  I'll 
 
 - For a practical introduction to Marionette, you could do much worse than [this talk][nodevemberlink] from the recent Nodevember conference.  Jeremy Fairbank, a member of the Marionette core team, explained how you can use Marionette to improve the architecture of your Backbone apps.
 - The resource that best helped me understand Marionette isn't technically about Marionette at all.  Derek Bailey's book [Building Backbone Plugins][bbp] lays out the philosophy and thinking behind Marionette without directly referencing it, explaining the challenges that he faced in building a useful abstraction over Backbone.  You can read my [full review][bbpreview] if you're interested, but I highly recommend it for any Backbone developer as a way of better understanding how to structure your Backbone applications.
-
-
-### Subscribe
-
-Thanks for taking the time to read this post! This post was the first in a series on Marionette.js, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my [recent post][underscorelodash] on choosing between Underscore and Lo-Dash.
 
 
 [marionette]:http://marionettejs.com/

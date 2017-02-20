@@ -6,8 +6,6 @@ path: "/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2"
 description: "A quick look at the benefits of using lodash collection methods"
 keywords: "lodash javascript collections arrays"
 category: "frameworks"
-pageViews: "456"
-last30pageViews: "80"
 ---
 
 One of the more frustrating things about using JavaScript in the browser is the number of different collection types that you need to deal with.  When using native APIs and 3rd party libraries, it's easy to encounter 3 or more different types of collections, including [NodeLists][nodelist], [HTMLCollections][htmlcollection], [jQuery Objects][jqobjects], and plain arrays.
@@ -55,11 +53,6 @@ let numDivs = _.reduce($('div'), (count, el) => count + 1, 0));
 ```
 
 For methods that iterate over a collection lodash treats all array-like objects (essentially anything with a length property) the same and iterates over their numerical properties from 0 to length-1.  This provides a nice consistency when working with DOM APIs and removes the mental overhead from managing their inconsistencies.  
-
-### Subscribe
-
-Thanks for taking the time to read this post!   JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my post [comparing lodash and underscore][lodashvs].  I'm also going to be starting a new series of posts soon diving into lodash more in depth.
-
 
 [nodelist]: https://developer.mozilla.org/en-US/docs/Web/API/NodeList
 [htmlcollection]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection

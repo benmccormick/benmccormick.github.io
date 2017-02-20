@@ -5,9 +5,8 @@ layout: "post"
 path: "/2016/12/02/whole-new-site/"
 description: "Introducing a new look for benmccormick.org"
 keywords: "Gatsby blog ghost benmccormick.org"
+key: 'new-look-2016'
 category: "meta"
-pageViews: "97"
-last30pageViews: "97"
 ---
 
 After 2.5 years of stability, this week I moved benmccormick.org to a new platform and overhauled the look and feel. Although most readers have seen the site remain relatively stable, this is actually the 5th major revision of the site since it was first created, so this seems like a good time for a quick trip down memory lane.
@@ -39,8 +38,3 @@ Like all software, as this blog has evolved, I'm sure not all of the progress ha
 ### More Resources
 
 - If you're interested in [Gatsby](https://github.com/gatsbyjs/gatsby) this post on [Practical Gatsby.js](https://blog.scottnonnenberg.com/practical-gatsby-js/) by Scott Nonnenberg is excellent.  Its not a how-to, but more of a series of examples of how he deviated from the base Gatsby blog (and why).  I found it really helpful when brainstorming ideas for this site.
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  I'm going to be ramping up posts again this winter, so if you have enjoyed my posts, please consider subscribing by using the [feed](http://benmccormick.org/rss/), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my [post on choosing which component styles to use in React](http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/).

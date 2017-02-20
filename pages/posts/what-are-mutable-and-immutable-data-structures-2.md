@@ -6,8 +6,8 @@ path: "/2016/06/04/what-are-mutable-and-immutable-data-structures-2"
 description: "A quick look at the difference between mutable and immutable data"
 keywords: "immutable mutable JavaScript Immutable.js"
 category: "software-productivity"
-pageViews: "680"
-last30pageViews: "119"
+readNext: ['lodash-underscore', 'backbone-devs-react', 'orthogonality-css-js']
+
 ---
 
 Sometimes concepts and ideas slowly grow in a programming community, sometimes they seem to appear in a flash.  For the first several years I wrote JavaScript, I don't recall ever seeing anything written online about immutable data.  Since React hit the scene in the last 2 years however, articles mentioning mutable and immutable data seem to have multiplied, as have libraries like Immutable.js and alternate front end languages like Elm that allow users to "use immutable data".  I'm not going to address those libraries, but thought it would be useful to throw out a quick primer on what immutable data actually is, how it differs from mutable data, and why anyone cares.  
@@ -65,7 +65,3 @@ What we see is that for mutable values, updating state applies across all *refer
 
 Finally, its worth noting that it's still possible to treat JavaScript objects as immutable.  This can first be done through [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze), which shallowly renders a JavaScript object immutable.  But it can also be done with programmer discipline.  If we want to rely on object's being immutable, it's possible to enforce that all object updates are done through something like
 `Object.assign(a, {foo: 'bar'})` rather than `a.foo = 'bar'`, and all array updates are done through functions that generate new arrays like `Array.prototype.map`, `Array.prototype.filter`, or `Array.prototype.concat`, rather than mutating methods like `Array.prototype.push`, `Array.prototye.pop`, or `Array.prototype.sort`.  This is less reliable without language level constraints, but has become popular in the React ecosystem for dealing with data for folks who don't want to introduce abstractions like Immutable.js.
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my post on [explaining the different version names of the JavaScript language](http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/).

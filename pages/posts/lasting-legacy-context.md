@@ -6,6 +6,8 @@ path: "/2017/02/18/context-to-best-practices/"
 description: "What we talk about when we talk about best practices"
 keywords: "best practices JavaScript"
 category: "software-productivity"
+readNext: ['staying-productive', 'orthogonality-css-js', 'readable-code']
+key: 'll-context'
 ---
 
 I've noticed a frustrating trend in online discussions about web development where developers take their personal experience with a tool or practice and promote it as a universal truth.  Some of this is the nature of being human: we all see the world through our own lens.  But the best technical observations exist within a specific context.
@@ -47,11 +49,6 @@ Some choices are only easy to make at the start of a project.  It is possible to
 #### Short term project vs Long term project
 
 Some software projects are meant to be written, completed, and never seen again.  For instance a promotional site for an event.  Some projects, like financial software, are meant to last for decades.  This is yet another distinction than can impact best practice discussions.  When working on a short term project, speed of delivery and initial quality tend to matter a lot.  For long term projects it may be better to prioritize maintainability, security and ease of deployment.
-
-### Subscribe
-
-Thanks for taking the time to read this post!  Web development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out my [post on Orthogonality and CSS in JS](http://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/).
-
 
 
 [^1]: Web page: sites that are mostly content focused with some possible interactivity layered on top

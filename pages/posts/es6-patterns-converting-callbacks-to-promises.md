@@ -5,8 +5,8 @@ layout: "post"
 path: "/2015/12/30/es6-patterns-converting-callbacks-to-promises"
 category: "javascript"
 description: "How to convert a callback driven API to a Promise-based one"
-pageViews: "16063"
-last30pageViews: "1822"
+key: 'callbacks-to-promises'
+readNext: ['ecma-explanation', 'clean-higher-order-functions', 'backbone-devs-react']
 ---
 
 <div class="explanation">
@@ -118,14 +118,6 @@ It's useful to know that the various syntaxes for asynchronous code in JavaScrip
 
 - The free online version of Exploring ES6 by Axel Rauschmayer has a [great chapter][exploringjs] on ES6 Promises explaining the API and how they fit in with the A+ standard.
 - There was also a [great post by David Catuhe on one of the MSDN blogs][asynccity] earlier this year highlighting how asynchronous code has evolved in JavaScript over the years, including a look at the new `async/await` patterns proposed for ES2016.
-
-
-
-### Subscribe
-
-Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the [feed](http://feedpress.me/benmccormick), [Twitter](http://twitter.com/benmccormickorg) or my [mailing list](http://eepurl.com/WFYon). You also might want to check out the first post in this series on [cleaner higher order functions][doublefuncs].
-
-
 
 <div class="footnotes">
 <ol>
