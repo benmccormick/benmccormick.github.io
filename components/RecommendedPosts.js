@@ -17,7 +17,7 @@ class RecommendedPosts extends React.Component {
 
     let nextArticleFilter;
     if (readNext) {
-      const keyList = isArray(readNext) ? readNext : [readNext];
+      const keyList = isArray(readNext) ? readNext : readNext.split(',');
       nextArticleFilter = ({data}) => data && includes(keyList, data.key);
     } else {
       nextArticleFilter =
