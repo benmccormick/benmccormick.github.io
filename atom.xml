@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-02-19T19:38:19Z</updated>
+    <updated>2017-02-20T04:48:29Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -46,8 +46,6 @@
 <p>Some choices are only easy to make at the start of a project.  It is possible to change the language or framework a project is written in midstream, but it is often extremely risky and painful.  So asking a developer working on a 5 year old JavaScript project with thousands of lines of code why they didn’t write it in <a href="http://elm-lang.org/">Elm</a> or <a href="https://clojurescript.org/">ClojureScript</a> is not helpful.  But suggesting that somebody write a new project in Elm may be just fine.</p>
 <h4>Short term project vs Long term project</h4>
 <p>Some software projects are meant to be written, completed, and never seen again.  For instance a promotional site for an event.  Some projects, like financial software, are meant to last for decades.  This is yet another distinction than can impact best practice discussions.  When working on a short term project, speed of delivery and initial quality tend to matter a lot.  For long term projects it may be better to prioritize maintainability, security and ease of deployment.</p>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  Web development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/">post on Orthogonality and CSS in JS</a>.</p>
 <p>[^1]: Web page: sites that are mostly content focused with some possible interactivity layered on top
 [^2]: Web app: sites that are primarily an interactive experience for the user and behave more like traditional desktop or mobile applications</p>
 ]]></content>
@@ -116,8 +114,6 @@
 <p>It was so easy to make my blog a PWA mostly because it is built on <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a>. Worth looking at if you’re a web developer who blogs.</p>
 </li>
 </ul>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  Web development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. If you liked this post you also might want to check out my article from 2015 on <a href="https://benmccormick.org/2015/11/25/productive-javascript-development/">Productive JavaScript Development</a>.</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
@@ -271,8 +267,6 @@ class Appointment {
 <p>This <a href="https://twitter.com/AdamRackis/status/775706291259908096">tweet thread</a> and the linked article, are a good breakdown of the tradeoffs between MobX and Redux</p>
 </li>
 </ul>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/">post on Orthogonality and CSS in JS</a>.</p>
 <p>[^1]: Technically this also uses class properties as well, another proposal that works well with decorators
 [^2]: It’s possible any spec changes will be trivially fixable with a code mod script, but right now there is more uncertainty than I am personally comfortable with.  I’m grateful to people who are willing to take more risks here than me, they push the language forward.
 [^3]: I’m talking here about what is encouraged and easy, not what is possible.  It is of course possible to mix in Redux with other solutions.
@@ -407,8 +401,6 @@ export const PageViewCounter = (props) =&gt; {
 <li><a href="http://amzn.to/2hNzQ0t">The Pragmatic Programmer</a> is a great book. Much of the vocabulary in this post comes from its Chapter 8, but the whole book is worth a read and is highly recommended.</li>
 <li>CSS Tricks has a good look at the <a href="https://css-tricks.com/the-debate-around-do-we-even-need-css-anymore/">pros and cons of CSS in JS</a>.  I focused on theory here, but this is much more hands on about the practical concerns around this debate.</li>
 </ul>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/">post on choosing which component styles to use in React</a>.</p>
 <p>[^1]: This is a bit of a generalization.  React provides an abstraction over HTML that replaces hand-written HTML, but doesn’t specify anything for CSS, CSS in JS solutions are simply popular in that community.  Vue and Angular both allow  CSS and HTML to share a file with JS, but CSS can still be handled separately.
 [^2]: There are some distinctions about CSS in JS vs importing CSS into JS using webpack that I’m not really dealing with here.  This is a post about how to think about these decisions moreso than the specific options for bundling CSS and JS
 [^3]: The root HTML element in any Marionette component is always defined implicitly in JavaScript, and Handlebars is an expressive templating language that can handle more than structure.</p>
@@ -553,8 +545,6 @@ const BoringButton = ExtraPropsComponent(Button, 'boring');
 <li>This was intentionally a very high level look at Higher Order Components.  If you want to go deeper, <a href="https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.yhbug3ohe">this medium article</a> is a great deep dive into all the use cases they allow.</li>
 <li>If you’re interested in using HoCs in your own code base, <a href="https://github.com/acdlite/recompose">recompose</a> is a utility library for making the syntax around defining and using them painless</li>
 </ul>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out the my post from earlier this year on <a href="http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/">choosing a React component syntax</a>.</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
@@ -620,8 +610,6 @@ def parse_entry_string (entry_string):
 <li>Think about the audience of the code you’re writing</li>
 <li>Naming functions well limits the needs to make implementation details readable for everybody. It can also make your program flow easier to follow.</li>
 </ol>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  Software development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out the my post from last year on <a href="http://benmccormick.org/2016/01/25/staying-productive/">staying productive</a>.</p>
 <p>[^1]: In my experience, it usually only takes about a week for me to look back at my old code and wonder what maniac wrote it and what he could have possibly been thinking</p>
 ]]></content>
         <author>
@@ -727,8 +715,6 @@ jest
 <p>If you live in the Triangle area (thats Raleigh/Durham, North Carolina to the rest of the world) make sure to check out the <a href="http://www.meetup.com/trianglereact/">Triangle React meetup</a>.  The plan as I understand it is to do events once a month, alternating project nights and talks.  I believe <a href="https://twitter.com/ladyleet">Tracy</a> is looking for more speakers too, so hit her up if you’re interested.  This time 4 of us spoke for 15-20 minutes, so it isn’t as much preparation as other events where you’re the only speaker.</p>
 </li>
 </ul>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. If you’re excited about Jest, you also might want to check out my <a href="http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/">post on Jest Snapshots</a>.</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
@@ -759,8 +745,6 @@ jest
 <ul>
 <li>If you’re interested in <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> this post on <a href="https://blog.scottnonnenberg.com/practical-gatsby-js/">Practical Gatsby.js</a> by Scott Nonnenberg is excellent.  Its not a how-to, but more of a series of examples of how he deviated from the base Gatsby blog (and why).  I found it really helpful when brainstorming ideas for this site.</li>
 </ul>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  I’m going to be ramping up posts again this winter, so if you have enjoyed my posts, please consider subscribing by using the <a href="http://benmccormick.org/rss/">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/">post on choosing which component styles to use in React</a>.</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
@@ -941,8 +925,6 @@ FAIL  __tests__/Link.react-test.js
 <p>Finally here’s <a href="https://blog.grommet.io/post/2016/09/01/how-we-landed-on-jest-snapshot-testing-for-javascript">another article</a> on how Snapshot testing convinced one team to migrate to Jest from Tape</p>
 </li>
 </ul>
-<h3>Subscribe</h3>
-<p>Thanks for taking the time to read this post!  JavaScript development is one of the main topics of this blog, so if you enjoyed the post, please consider subscribing by using the <a href="http://feedpress.me/benmccormick">feed</a>, <a href="http://twitter.com/benmccormickorg">Twitter</a> or my <a href="http://eepurl.com/WFYon">mailing list</a>. You also might want to check out my <a href="http://benmccormick.org/2016/05/02/digging-into-react-choosing-component-styles/">post on choosing which component styles to use in React</a>.</p>
 <p>[^1]: PhantomJS was a tremendous source of pain in our Karma setup.
 [^2]: This used to be the default setting, with Jest 15 it can be configured to work that way.</p>
 ]]></content>
