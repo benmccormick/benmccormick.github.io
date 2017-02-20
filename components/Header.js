@@ -36,6 +36,7 @@ export class Header extends React.Component {
                 textDecoration: 'none',
                 color: 'inherit',
               }}
+              name = "title"
               to = {prefixLink('/')}
             >
               {blogTitle}

@@ -58,6 +58,7 @@ class RecommendedPosts extends React.Component {
                   query: {
                     readNext: true,
                   },
+                  hash: '#title',
                 }}
               >
                 {nextPost.data.title}
