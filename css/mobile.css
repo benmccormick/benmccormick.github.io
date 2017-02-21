@@ -10,6 +10,20 @@
     padding-right: 0;
   }
 }
+@media all and (max-width: 400px) {
+  .subscribe-block {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .subscribe-block .mc-field-group {
+    width: 100%;
+  }
+  .up-next-block {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
 
 @media all and (max-width: 321px) {
   html {
