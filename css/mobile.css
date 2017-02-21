@@ -16,7 +16,15 @@
 
   .subscribe-block .mc-field-group {
     width: 100% !important;
+
   }
+
+  .subscribe-block .mc-field-group input {
+    width: 100% !important;
+    font-size: 0.8em;
+
+  }
+
   .up-next-block {
     width: 100% !important;
     padding: 0 10px;
