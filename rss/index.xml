@@ -4,10 +4,88 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Tue, 21 Feb 2017 02:38:17 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 26 Feb 2017 22:57:07 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
+        <item>
+            <title><![CDATA[Running Jest Tests Before Each Git Commit]]></title>
+            <link>https://benmccormick.org/2017/02/26/running-jest-tests-before-each-git-commit/</link>
+            <guid>https://benmccormick.org/2017/02/26/running-jest-tests-before-each-git-commit/</guid>
+            <pubDate>Sun, 26 Feb 2017 23:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>My main work project makes heavy use of <a href="https://facebook.github.io/jest/">Jest</a> to test our JavaScript code.  For a while now I’ve wanted to set up a way to run tests every time I run a commit.  I knew that git provides <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">hooks</a> that allow scripting actions to occur before or after any commit or push, and in fact we were already using a <code>pre-commit</code> hook script to lint our code with <a href="http://eslint.org/">ESLint</a>.  But it was non-obvious how to make that work well with Jest testing.  I eventually figured out a setup that worked, and the found a better way to do both the Jest and ESLint testing.  Since it took me a while to work through, I thought I’d share it here and save the rest of you some time.</p>
+<h3>What didn’t work</h3>
+<p>A naive approach to this problem would be to set up a pre-commit hook that simply ran <code>jest</code> to run all tests. The problem is that running our full test suite currently takes between 10 and 20 seconds to run all tests and that time is increasing as we grow our test suite.  Adding that overhead to every commit would cost my team a lot of time, and would be especially inefficient since the repo contains plenty non-JavaScript code that doesn’t require tests to be run when updated.</p>
+<p>For our ESLint hook, we queried git to get a list of staged files, and then ran eslint against each one of them individually, displaying a pass/fail message.  That looked something like this:</p>
+<pre><code class="language-bash">STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep &quot;js$&quot;)
+if [[ &quot;$STAGED_FILES&quot; = &quot;&quot; ]]; then
+    exit 0
+fi
+
+PASS=true
+
+for FILE in $STAGED_FILES
+do
+    eslint --quiet &quot;$FILE&quot;
+
+    if [[ &quot;$?&quot; == 0 ]]; then
+        echo &quot;\t\033[32mESLint Passed: $FILE\033[0m&quot;
+    else
+        echo &quot;\t\033[41mESLint Failed: $FILE\033[0m&quot;
+        PASS=false
+    fi
+done
+</code></pre>
+<p>This works great for ESLint, but doesn’t work out of the box for Jest, because I don’t want Jest to run the files that changed, I want them to run any tests that changed AND any tests that might have been broken because of that.</p>
+<p>Jest has a wonderful command line flag <code>jest --onlyChanged</code>/<code>jest -o</code> that runs only the tests related to files that have been changed according to git.  It is extremely helpful since it is smart enough to read the dependency structure for the project and run all tests that might be changed from updating a source file. It also has a <code>--lastCommit</code> option that does the same thing for files that were in the previous commit.  Unfortunately, these options aren’t helpful at the point of committing, since <code>onlyChanged</code> does not look at files that have been staged for commit, and we haven’t actually made a commit yet for <code>lastCommit</code> to read.</p>
+<h3>What Did Work</h3>
+<p>Fortunately Jest has a lower level command that uses the same logic as <code>onlyChanged</code> and <code>lastCommit</code>.  <code>--findRelatedTests</code> is a flag that tells Jest to run any tests related to the files passed to it instead of trying to run those files as tests as it would normally do.</p>
+<img alt="an example of findRelatedTests running against the redux repo" src="http://benmccormick.org/posts/images/jest-related-tests.png" class="full-width ">
+<p>This is a perfect fit for a pre-commit hook.  I was able to integrate it into my existing script like this:</p>
+<pre><code class="language-bash">jest --bail --findRelatedTests $STAGED_FILES
+if [[ &quot;$?&quot; == 0 ]]; then
+    echo &quot;\t\033[32mJest Tests Passed\033[0m&quot;
+else
+    echo &quot;\t\033[41mJest Tests Failed\033[0m&quot;
+    PASS=false
+fi
+</code></pre>
+<p><code>$STAGED_FILES</code> is re-used from the eslint portion of the script, and is just a space delimited list of files that are being committed.  The <code>--bail</code> option simply stops running tests as soon as one has failed.  Including that is optional, you won’t see all the tests that have failed, but the failure will happen faster and you’ll be able to decide how to proceed, including possibly running the full test script on your own.</p>
+<p>Those lines (along with some sanity checks for the existence of Jest and error handling when PASS is set to false) are enough to get a workable commit hook going, but they’re not ideal.  pre-commit hooks aren’t persisted by git, so each user has to install the hook script individually, and any updates aren’t shared automatically.  Plus I’m inefficiently passing all staged files to eslint and Jest regardless of whether they’re JavaScript that those tools are actually meant to work on.  My ESLint code was also written before ESLint developed robust <code>--fix</code> capabilities, and doesn’t try to fix the errors it is capable of fixing.  Finally, while this is just poor coding and not an inherent limitation of my other method, I’m using globally installed versions of Jest and ESLint instead of scoping them to my project.</p>
+<h3>Making it better</h3>
+<p>Fortunately I’d discovered a better solution the other day while working on something else.  There is an npm package for making this process easier, <a href="https://github.com/okonet/lint-staged">lint-staged</a>.  Lint staged abstracts away the boilerplate of getting the staged files, and makes it easy to run local node executables against specific sets of files.  I was able to replace my whole pre-commit script and address all of the problems mentioned above with only a few lines in my package.json:</p>
+<pre><code class="language-json">{
+  &quot;scripts&quot;: {
+    &quot;lint-staged&quot;: &quot;lint-staged&quot;,
+  },
+  &quot;lint-staged&quot;: {
+    &quot;*.js&quot;: [
+      &quot;eslint --fix&quot;,
+      &quot;git add&quot;,
+      &quot;jest --bail --findRelatedTests&quot;
+    ]
+  },
+  &quot;devDependencies&quot;: {
+    &quot;eslint&quot;: &quot;3.16.1&quot;,
+    &quot;jest&quot;: &quot;19.0.1&quot;,
+    &quot;lint-staged&quot;: &quot;3.3.1&quot;,
+  },
+}
+</code></pre>
+<p><code>lint-staged</code> now handles making sure that I’m only running checks against JavaScript files, lets eslint autofix and stage any files that it can fix, and uses the local versions of jest and eslint.  It also adds a nice pretty interface for the results:</p>
+<img alt="pretty lint-staged output" src="http://benmccormick.org/posts/images/lint-staged-errors.png" class="full-width ">
+<p><code>lint-staged</code> docs recommend using an npm based hooks manager like <a href="https://github.com/observing/pre-commit">pre-commit</a> for running the scripts, but due to some quirks in my setup (node_modules is symlinked, and I sometimes want to run these commands inside a docker container), I found it easier to maintain a custom pre-commit script and just replace the previous logic with <code>npm run lint-staged</code>.  Either way, all of the actual logic is now checked into the repository and shared between all users.  The only manual step is adding the call to a pre-commit hook or (if you’re using a helper lib) running npm install.</p>
+<h3>More Resources</h3>
+<ul>
+<li>This maybe merits a future post on its own, but if you’re interested in automating away your code style maintenance look at combining <a href="https://github.com/prettier/prettier">prettier</a> (and possibly  <a href="https://github.com/not-an-aardvark/eslint-plugin-prettier">eslint-plugin-prettier</a>) with the pre-commit hooks from above.  Prettier will guarantee that your code follows a consistent style, and because it handles maximum line lengths, is much more robust than ESLint on its own.  Using its ESLint plugin within my editor and on pre-commit hooks has pretty much eliminated me manually fixing code style problems.</li>
+</ul>
+]]></content:encoded>
+            <author>
+                <name>Ben McCormick</name>
+                <email>ben@benmccormick.org</email>
+                <link>http://benmccormick.org</link>
+            </author>
+        </item>
         <item>
             <title><![CDATA[Giving Context to Best Practices]]></title>
             <link>https://benmccormick.org/2017/02/18/context-to-best-practices/</link>
@@ -728,187 +806,6 @@ jest
 <ul>
 <li>If you’re interested in <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> this post on <a href="https://blog.scottnonnenberg.com/practical-gatsby-js/">Practical Gatsby.js</a> by Scott Nonnenberg is excellent.  Its not a how-to, but more of a series of examples of how he deviated from the base Gatsby blog (and why).  I found it really helpful when brainstorming ideas for this site.</li>
 </ul>
-]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
-        </item>
-        <item>
-            <title><![CDATA[Testing with Jest Snapshots: First Impressions]]></title>
-            <link>https://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/</link>
-            <guid>https://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/</guid>
-            <pubDate>Mon, 19 Sep 2016 12:41:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>Over the past 6 months my team at work has been slowly transitioning a large Backbone application to React.  One of the main goals of the transition has been to build out unit tests as we transition components.  As part of that we switched from using Karma to using Jest for managing our tests.</p>
-<p>Our new setup with Jest has several advantages over our previous setup. All Jest tests run through node using a fake DOM implementation.  We don’t need to start up a browser so tests are faster and less flaky [^1].  Jest makes it possible to mock all modules by default [^2], which works well for us since our code base currently contains a large amount of code that is difficult to test for one reason or another.  Jest provides great integration with Babel, which is helpful since all of our Backbone and React code uses ES6 that we transpile for the browser.  Finally Jest provides a wonderful watch mode that runs only the tests that are relevant to the changes you’ve made and makes it easy to see the result.</p>
-<p>About a month ago, Jest debuted a new feature: Snapshot testing.  It works a bit differently than a normal unit test.  Instead of executing some code and comparing the output against a value provided by a developer, the first time a test is run, the output passed into the test is saved to a “snapshot file”.  Then when the test is run in the future, the output is compared to the snapshot file.  If the output matches the file, the test passes, if the output is different then the file, the test fails and Jest prints a diff.  We’ve been using Jest snapshots for a few weeks now and I wanted to share my initial impressions.</p>
-<h3>What is it like to use a snapshot test ?</h3>
-<p>The process for snapshot testing is a bit different than normal tests.  Most snapshot tests look fairly simple.  Something like this example from the <a href="https://github.com/facebook/jest/tree/master/examples/snapshot">Jest repository</a>:</p>
-<pre><code class="language-javascript">// Link.react.js
-// Copyright 2004-present Facebook. All Rights Reserved.
-
-import React from 'react';
-
-const STATUS = {
-  NORMAL: 'normal',
-  HOVERED: 'hovered',
-};
-
-export default class Link extends React.Component {
-
-  constructor() {
-    super();
-
-    this._onMouseEnter = this._onMouseEnter.bind(this);
-    this._onMouseLeave = this._onMouseLeave.bind(this);
-
-    this.state = {
-      class: STATUS.NORMAL,
-    };
-  }
-
-  _onMouseEnter() {
-    this.setState({class: STATUS.HOVERED});
-  }
-
-  _onMouseLeave() {
-    this.setState({class: STATUS.NORMAL});
-  }
-
-  render() {
-    return (
-      &lt;a
-        className={this.state.class}
-        href={this.props.page || '#'}
-        onMouseEnter={this._onMouseEnter}
-        onMouseLeave={this._onMouseLeave}&gt;
-        {this.props.children}
-      &lt;/a&gt;
-    );
-  }
-
-}
-
-// Link.react-test.js  (partial)
-// Copyright 2004-present Facebook. All Rights Reserved.
-/* eslint-disable no-unused-vars */
-
-'use strict'
-
-import React from 'react';
-import Link from '../Link.react';
-import renderer from 'react-test-renderer';
-
-it('renders correctly', () =&gt; {
-  const tree = renderer.create(
-    &lt;Link page=&quot;http://www.facebook.com&quot;&gt;Facebook&lt;/Link&gt;
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-</code></pre>
-<p>The first time the test is run, a snapshot file is produced.  In this case, running the previous test produces a snapshot file that looks like this:</p>
-<pre><code class="language-javascript">// Link.react-test.js.snap  (partial)
-exports[`test renders correctly 1`] = `
-&lt;a
-  className=&quot;normal&quot;
-  href=&quot;http://www.facebook.com&quot;
-  onMouseEnter={[Function bound _onMouseEnter]}
-  onMouseLeave={[Function bound _onMouseLeave]}&gt;
-  Facebook
-&lt;/a&gt;
-`;
-</code></pre>
-<p>This gives us a baseline for what we expect the UI to look like.  The snapshot is generated in a folder in your <code>__tests__</code> directory, so that it can be checked into source control.</p>
-<p>The next time a test is run, if nothing has changed, the test passes.  However, if we change something (let’s say we add a class), the test fails and shows us a diff.</p>
-<pre><code class="language-javascript">// updated link render method
-
-render() {
-  return (
-    &lt;a
-      className={`link-item ${this.state.class}`}
-      href={this.props.page || '#'}
-      onMouseEnter={this._onMouseEnter}
-      onMouseLeave={this._onMouseLeave}&gt;
-      {this.props.children}
-    &lt;/a&gt;
-  );
-}
-</code></pre>
-<pre><code class="language-diff">
-# jest output
-
-FAIL  __tests__/Link.react-test.js
- ✕ renders correctly (16ms)
-
-● renders correctly
-
-    Received value does not match the stored snapshot 1.
-
-    - Snapshot
-    + Received
-
-      &lt;a
--       className=&quot;normal&quot;
-+       className=&quot;link-item normal&quot;
-        href=&quot;http://www.facebook.com&quot;
-        onMouseEnter={[Function bound _onMouseEnter]}
-        onMouseLeave={[Function bound _onMouseLeave]}&gt;
-        Facebook
-      &lt;/a&gt;
-
-      at Object.&lt;anonymous&gt; (__tests__/Link.react-test.js:14:16)
-</code></pre>
-<p>We can then choose to accept this change by running <code>jest -u</code> to update the snapshot, or update our code to fix the regression.  If we update the snapshot file, the test will start passing again.</p>
-<h3>Snapshot tests are a complement for conventional tests not a replacement</h3>
-<p>The first thing that became clear to me while using snapshot testing is that they’re not for everything.  They are optimized for a different case than normal assertion-based tests.</p>
-<p>Classic assertion based tests are perfect for testing clearly defined behavior that is expected to remain relatively stable.</p>
-<p>Snapshot tests are great for testing less clearly defined behavior that may change often.</p>
-<p>Snapshot testing is perfect for things that in the past would have raised concern for “overly brittle” tests that slow development teams down.  The classic example of this (and the main focus of discussion around Jest snapshots so far) is UI testing.</p>
-<p>UI components often change in small and trivial ways.  Copy is changed, whitespace is added, a border color is modified. Generally this means that developers have to choose between detailed tests that catch any regression but require constant updates, or less detailed tests that focus on core behaviors but miss smaller regressions.</p>
-<p>Snapshot tests provide a new way of approaching these problems in unit tests.  Because they are easy to write and effortless to update, and provide a clear view of what changed after each update, whether it is major or minor.</p>
-<p>This isn’t without any disadvantage. Snapshot tests preserve a starting point, but don’t give any indication of developer intent to future developers.  Like any other test, if the initial snapshot passes with bugs, or doesn’t capture the full range of cases, the test won’t adequately cover those behaviors.  But unlike traditional tests, snapshot tests don’t provide specific guidance for what the original developer expected beyond the “actual behavior”.  If there are multiple sub-behaviors that interact to produce output, its not clear which of those are essential, and which are incidental.  That’s not something you want for your critical application logic, especially complicated logic with many subtle cases.  But for UI components and other application elements that are likely to change a lot over time, this is a good set of tradeoffs.</p>
-<h3>Snapshot tests are more useful with a healthy code review process</h3>
-<p>I’ve pointed out several times now that snapshot tests are easy to update.  One of the downsides of the current design is that they can be almost too easy to update.  When a snapshot test fails, you have the option of modifying the output so that the test passes again, or updating the snapshot to reflect the new output.  Unfortunately, Jest currently provides no granularity for this updating.  Running <code>jest -u</code> to update the snapshots will update all snapshots.  So if  a single change causes many snapshots to break, it can be easy to accidentally update all of them, and possibly difficult to work through the whole diff to find changes.</p>
-<p>A robust code review process minimizes these problems.  Because snapshots are checked into source, the diffs in the snapshots are checked into source control.  Viewing diffs in a dedicated code review tool like Github, Bitbucket or Gitlab, it’s easier to see exactly what changed over many files than it might be when updating snapshots from the command line, and if you update a snapshot multiple times in a single branch, you can see the net effect on the snapshot through source control diffs better than you can through Jest.</p>
-<h3>Snapshot tests work well with auto-mocking</h3>
-<p>Auto-mocking has been one of Jest’s more controversial features.  Prior to version 15, Jest mocked every module used in tests by default.  To run the actual module code, it was necessary to manually unmock each module used or change Jest configurations.  Though it is now disabled by default, auto-mocking actually works very well with snapshot tests.  One problem with tests that rely on generating DOM in React is the fact that most components of any complexity are actually made up of smaller components, that often use external functions with complex logic to determine what to show.  If we fully render everything, changing any of those pieces can break tests for many components, moving us away from the concept of a “unit test”.  If we mock child components and helper functions and then test them individually though, we can focus our tests to only change based on the logic of the individual component being tested.  This is incredibly easy with Jest, and especially helpful in large code bases that don’t have complete test coverage.  Auto-mocking is considered an “advanced feature” of Jest, but it’s not hard to use.  Most mocked modules produce something non-harmful by default, and when its necessary to override, its not difficult to produce something meaningful without getting too involved.  Just add a file with the same name as the file to be mocked into a <code>__mocks__</code> folder in that directory, and give the mocked module the same interface as the mocked component.  You can either write it from scratch or use <a href="http://facebook.github.io/jest/docs/api.html#jest-genmockfrommodule-modulename">jest.genMockFromModule</a> as a starting place.</p>
-<h3>Summary</h3>
-<p>I’m impressed by Jest snapshots.  When combined with React, they’re providing my first non-frustrating experience unit testing UI components.  I’m excited to use them more going forward, and will be interested to see how they evolve from here.</p>
-<hr>
-<h3>Extra: A few miscellaneous Jest Thoughts</h3>
-<ul>
-<li>The UI output from Jest 15 tests is the best I’ve ever seen from a testing framework.  Aside from the nice diffs on snapshots, they do a good job explaining how output differed from expectations in assertion based tests, and communicating context for test failures, warnings and logging messages.  They also give great guidance when making configuration changes:</li>
-</ul>
-<div style="display:flex; justify-content:center">
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/cpojer">@cpojer</a> This is lovely, thank you! <a href="https://t.co/CX1v11CAVc">pic.twitter.com/CX1v11CAVc</a></p>&mdash; Ben McCormick (@ben336) <a href="https://twitter.com/ben336/status/772906536154894336">September 5, 2016</a></blockquote>
-</div>
-<ul>
-<li>
-<p>I’ve also been super impressed with Jest’s watch mode in Jest 15.  <code>--watch</code> makes it easy to focus on a few files or run tests on all files, and stays up to date as you change code.  If you haven’t worked with Jest in a while, the developer experience alone makes it worth trying out.</p>
-</li>
-<li>
-<p>One potential future annoyance with snapshot tests:  The snapshot format can’t be iterated on without breaking all current tests.  Make sure not to mix functional changes with Jest updates!</p>
-</li>
-</ul>
-<div style="display:flex; justify-content:center">
-<blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">We&#39;ll update the snapshot format sometimes in minor/major releases. When updating Jest, please update snapshots<br><br>See <a href="https://t.co/gPE63dMz8P">https://t.co/gPE63dMz8P</a></p>&mdash; Christoph Pojer (@cpojer) <a href="https://twitter.com/cpojer/status/776623521069805568">September 16, 2016</a></blockquote>
-</div>
-<h3>More Resources</h3>
-<ul>
-<li>
-<p>Randy Coulman has a <a href="http://randycoulman.com/blog/2016/09/06/snapshot-testing-use-with-care/">nice article</a> on some of the reasons to be careful about embracing snapshot testing.  He makes good points about the requirement of human involvement in verifying a change in time-crunched situations and also the potential value of snapshot tests for legacy code.</p>
-</li>
-<li>
-<p>My team uses a mix of <a href="https://github.com/airbnb/enzyme">enzyme</a> and snapshot tests for unit testing React Components.  <a href="https://github.com/trayio/enzyme-to-json?utm_content=buffer6b78b&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer">This repo</a> combines them, allowing you to use enzyme to generate the snapshot output to diff against rather than the renderer provided by Jest. I personally haven’t felt the need to integrate these two tools, but if your team uses enzyme and wants consistency/fewer (used) dependencies, this could be a cool option.</p>
-</li>
-<li>
-<p>Finally here’s <a href="https://blog.grommet.io/post/2016/09/01/how-we-landed-on-jest-snapshot-testing-for-javascript">another article</a> on how Snapshot testing convinced one team to migrate to Jest from Tape</p>
-</li>
-</ul>
-<p>[^1]: PhantomJS was a tremendous source of pain in our Karma setup.
-[^2]: This used to be the default setting, with Jest 15 it can be configured to work that way.</p>
 ]]></content:encoded>
             <author>
                 <name>Ben McCormick</name>
