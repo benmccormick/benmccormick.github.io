@@ -1,10 +1,10 @@
 ---
-title: "Giving Context to Best Practices"
+title: "Lasting Legacy: Improving a JavaScript Application over Time"
 date: "2017-02-18 23:30:00+00:00"
 layout: "post"
-path: "/2017/02/18/context-to-best-practices/"
-description: "What we talk about when we talk about best practices"
-keywords: "best practices JavaScript"
+path: "/2017/02/27/improving-over-time/"
+description: "How to keep a large application fresh as it ages"
+keywords: "best practices JavaScript legacy"
 category: "software-productivity"
 ---
 
