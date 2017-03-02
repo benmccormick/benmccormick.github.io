@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
 import find from 'lodash/find';
 import get from 'lodash/get';
-import { rhythm, fontSizeToMS } from 'utils/typography';
+import { rhythm, scale } from 'utils/typography';
 import categoryHash from '../pages/categories.json';
 import InlineSVG from 'svg-inline-react';
 import rss from '../pages/rss.svgi';
@@ -36,8 +36,8 @@ class Subscribe extends React.Component {
           <h6
             style = {{
               margin: 0,
-              fontSize: fontSizeToMS(-0.5).fontSize,
-              lineHeight: fontSizeToMS(-0.5).lineHeight,
+              fontSize: scale(-0.5).fontSize,
+              lineHeight: scale(-0.5).lineHeight,
               letterSpacing: -0.25,
             }}
           >
@@ -107,8 +107,8 @@ class Subscribe extends React.Component {
           <h6
             style = {{
               margin: 0,
-              fontSize: fontSizeToMS(-0.5).fontSize,
-              lineHeight: fontSizeToMS(-0.5).lineHeight,
+              fontSize: scale(-0.5).fontSize,
+              lineHeight: scale(-0.5).lineHeight,
               letterSpacing: -0.25,
             }}
           >
@@ -126,8 +126,8 @@ class Subscribe extends React.Component {
           <h6
             style = {{
               margin: 0,
-              fontSize: fontSizeToMS(-0.5).fontSize,
-              lineHeight: fontSizeToMS(-0.5).lineHeight,
+              fontSize: scale(-0.5).fontSize,
+              lineHeight: scale(-0.5).lineHeight,
               letterSpacing: -0.25,
             }}
           >

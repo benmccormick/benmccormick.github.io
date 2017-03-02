@@ -7,7 +7,7 @@ import includes from 'lodash/includes';
 import map from 'lodash/map';
 import isArray from 'lodash/isArray';
 import orderBy from 'lodash/orderBy';
-import { rhythm, fontSizeToMS } from 'utils/typography';
+import { rhythm, scale } from 'utils/typography';
 
 class RecommendedPosts extends React.Component {
 
@@ -36,8 +36,8 @@ class RecommendedPosts extends React.Component {
         <h6
           style = {{
             margin: 0,
-            fontSize: fontSizeToMS(-0.5).fontSize,
-            lineHeight: fontSizeToMS(-0.5).lineHeight,
+            fontSize: scale(-0.5).fontSize,
+            lineHeight: scale(-0.5).lineHeight,
             letterSpacing: -0.25,
           }}
         >
