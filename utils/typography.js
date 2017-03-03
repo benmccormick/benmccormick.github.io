@@ -28,7 +28,7 @@ const typography = new Typography({
     'Verdana',
     'sans-serif'
   ],
-  scale: 1.5,
+  scaleRatio: 1.5,
   plugins: [new CodePlugin()],
   overrideStyles: () => ({
     'h1,h2,h3,h4,h5,h6': {
