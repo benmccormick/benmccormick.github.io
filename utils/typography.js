@@ -29,6 +29,7 @@ const typography = new Typography({
     'sans-serif'
   ],
   scaleRatio: 1.5,
+  blockMarginBottom: 0.75,
   plugins: [new CodePlugin()],
   overrideStyles: () => ({
     'h1,h2,h3,h4,h5,h6': {
