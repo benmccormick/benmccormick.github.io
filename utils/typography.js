@@ -36,7 +36,10 @@ const typography = new Typography({
       lineHeight: 1.1
     },
     'tt,code': {
-      fontSize: '75%'
+      fontSize: '65%'
+    },
+    pre: {
+      lineHeight: 1.1,
     },
     [MOBILE_MEDIA_QUERY]: {
       // Make font-size 17px on mobile.
