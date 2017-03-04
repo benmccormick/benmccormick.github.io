@@ -5334,9 +5334,9 @@ react-transform-hmr@^1.0.3:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react-typography@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/react-typography/-/react-typography-0.12.0.tgz#f32d5f006ec4f6553dea53f1a4a9e1fd83566048"
+react-typography@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/react-typography/-/react-typography-0.15.0.tgz#0c7680bcbb12a681950c2187df66c43aa4b02034"
 
 react@^15.4.1, react@^15.4.2:
   version "15.4.2"
@@ -6288,13 +6288,24 @@ typedarray@~0.0.5:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typography-normalize@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.12.0.tgz#36995e85d20d7d5ef31924aa6f3e9adda3ba519f"
+typography-breakpoint-constants@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/typography-breakpoint-constants/-/typography-breakpoint-constants-0.14.0.tgz#dbfef844095b78cfc1d0088a2fa83e91f442aa13"
 
-typography@^0.13.0:
-  version "0.13.3"
-  resolved "https://registry.yarnpkg.com/typography/-/typography-0.13.3.tgz#38b9ea0bf4682c02421726d677ed21e5156bfd9e"
+typography-normalize@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.14.0.tgz#1d77c1fe2aaf4a51b3673c4c85c85a65a2d4b573"
+
+typography-plugin-code@^0.15.9:
+  version "0.15.9"
+  resolved "https://registry.yarnpkg.com/typography-plugin-code/-/typography-plugin-code-0.15.9.tgz#9e6d7205724ee4ecfc0de15bb4e2d9050864a37a"
+  dependencies:
+    gray-percentage "^2.0.0"
+    lodash "^4.13.1"
+
+typography@^0.15.8:
+  version "0.15.8"
+  resolved "https://registry.yarnpkg.com/typography/-/typography-0.15.8.tgz#5b8ba60243a7b4f11f86098070f6924c569c04cf"
   dependencies:
     compass-vertical-rhythm "^1.3.0"
     decamelize "^1.2.0"
@@ -6302,7 +6313,7 @@ typography@^0.13.0:
     lodash "^4.13.1"
     modularscale "^1.0.2"
     object-assign "^4.1.0"
-    typography-normalize "^0.12.0"
+    typography-normalize "^0.14.0"
 
 ua-parser-js@^0.7.9:
   version "0.7.12"

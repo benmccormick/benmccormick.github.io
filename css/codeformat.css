@@ -3,43 +3,6 @@
   display: block;
   background: #fdf6e3;
   color: #657b83;
-  overflow-y: hidden;
-  padding: 0.2rem 0.5rem;
-}
-
-.markdown pre code {
-  background: none;
-  border: none;
-  border-radius: 3px;
-  display: inline-block;
-  overflow: inherit;
-  padding: 0rem;
-  white-space: inherit;
-  word-wrap: normal;
-  font-size: 0.7rem;
-  line-height: 1rem;
-}
-
-code {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  white-space: pre;
-  white-space: pre-wrap;
-  white-space: pre-line;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -hp-pre-wrap;
-  word-wrap: break-word;
-  background: #fdf6e3;
-  color: #657b83;
-  border: 1px solid #cccccc;
-  display: inline;
-  font-family: Inconsolata, monospace, serif;
-  max-width: 100%;
-  overflow: auto;
-  padding: 0 0.1625rem;
 }
 
 /*
