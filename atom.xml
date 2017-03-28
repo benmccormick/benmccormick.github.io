@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-03-05T22:15:30Z</updated>
+    <updated>2017-03-28T14:40:22Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -16,6 +16,39 @@
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[The Mystery of Docker and the Disk-Eating Cow]]></title>
+        <id>https://benmccormick.org/2017/03/28/the-mystery-of-docker-and-the-disk-eating-cow/</id>
+        <link href="https://benmccormick.org/2017/03/28/the-mystery-of-docker-and-the-disk-eating-cow/">
+        </link>
+        <updated>2017-03-28T14:40:00Z</updated>
+        <content type="html"><![CDATA[<p>Yesterday morning I was innocently minding my own business, downloading some files, when I noticed that nearly all the disk space on my 256GB work laptop had been consumed.  This seemed rather unlikely to me, given that I’d only had the laptop for about a year and I didn’t store anything other than code and work documents on it.  Text files just don’t take up that much space most of the time.  So I decided to make a purchase I’d considered for a while, bought <a href="https://daisydiskapp.com/">Daisy Disk</a>, and began investigating.</p>
+<p>The first thing I noticed was a huge amount of the disk space (about half) was taken up by the <code>~/Library/Containers</code> folder. That folder contained my email history and also data on my <a href="https://www.docker.com/">Docker</a> containers. Docker functions as a lightweight VM, and essentially holds copies of virtualized operating systems and file systems inside each docker container and image, so it made sense to me that it could be taking up a lot of space, though &gt;120GB still seemed wrong for my paltry 4 containers.  So my first step was to delete all of the containers and images on my laptop.  That cleared about 20GB of space but still left my drive looking like this:</p>
+<p><img alt="daisy disk showing 100+GB of docker" src="http://benmccormick.org/posts/images/docker-cow/daisy.png"
+class="full-width"></p>
+<p>At this point, I was annoyed.  103.5 GB was taken up by some folder called Docker.qcow2 and Daisy Disk wouldn’t show me what was inside.  So I drilled in on the file system and immediately found out that Docker.qcow2 was not a directory like I’d assumed due to size, but a single 100+GB file.  At that point I decided to poll my teammates to see if I was the only one dealing with this:</p>
+<p><img alt="daisy disk showing 100+GB of docker" src="http://benmccormick.org/posts/images/docker-cow/slack.png"
+class="full-width"></p>
+<p>So between the 5 of us, we each had “cow files” taking up between 23 and 103GB of disk space. Some Googling revealed a <a href="https://github.com/docker/for-mac/issues/371">github thread</a> that showed this is a so far unsolved issue with Docker For Mac.  Summary: qcow2 files are a format for saving disk images.  Docker For Mac’s implementation works well for writing and updating images, but doesn’t automatically free up disk space when a container or image is deleted. So as you use and delete containers over time this file gradually grows.  I have a habit of deleting and recreating containers when I’m trying to debug something, which explains why I had a much larger file than others.  There isn’t currently a true fix for this issue, but you can delete the file.  You’ll lose all your containers and images, but when you recreate them the file will be small again.  There also is supposed to be some automatic limiting of the file.  The current cap is 64GB, but there is work on making it configurable.  Unfortunately the current cap is not respected if you had previously used docker-machine to control docker on your machine, which is how my file exceeded the cap.  I’m also unclear on what happens when the file hits the cap.  I get the impression that things stop working and you need to delete everything anyway (you just avoid running out of disk space on the host machine).</p>
+<p>Fortunately it was no problem for me to delete everything, and so I was able to clear things out, at which point my disk looked a lot happier:</p>
+<p><img alt="daisy disk showing 100+GB of docker" src="http://benmccormick.org/posts/images/docker-cow/daisy2.png"
+class="full-width"></p>
+<h3>Lessons Learned</h3>
+<p>I had 3 takeaways from this interesting adventure.</p>
+<ol>
+<li>If you’re using Docker For Mac, keep an eye on your disk space.  If you’re able to occasionally delete and recreate your containers without data loss, consider occasionally doing that and deleting the cow file.  If you can’t do that, be careful how many containers you add and delete, and make sure you manage your disk space well.</li>
+<li><a href="https://daisydiskapp.com/">Daisy Disk</a> is awesome and highly recommended.  It’s an example of a rare breed: the beautiful system utility. The visualizations it shows are both pretty and useful; it made diagnosing this issue a breeze.</li>
+<li>One more thing I learned from my coworkers slack yesterday: <code>ls</code> takes an <code>-h</code> argument that shows file sizes in KBs/MBs/GBs instead of all in bytes.  This is super helpful when examining large files.  Compare the 2 lists of files from my Downloads folder in the image below. The normal form is very nice for comparing 2 files side by side and seeing which one is bigger, but the second form is much more helpful when you want to get an idea of exactly how big something is, or communicate it to others.  Most of us don’t think about file sizes in terms of bytes anymore.</li>
+</ol>
+<p><img alt="daisy disk showing 100+GB of docker" src="http://benmccormick.org/posts/images/docker-cow/downloads.png"
+class="full-width"></p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Running Jest Tests Before Each Git Commit]]></title>
         <id>https://benmccormick.org/2017/02/26/running-jest-tests-before-each-git-commit/</id>
@@ -793,36 +826,6 @@ jest
 <li>
 <p>If you live in the Triangle area (thats Raleigh/Durham, North Carolina to the rest of the world) make sure to check out the <a href="http://www.meetup.com/trianglereact/">Triangle React meetup</a>.  The plan as I understand it is to do events once a month, alternating project nights and talks.  I believe <a href="https://twitter.com/ladyleet">Tracy</a> is looking for more speakers too, so hit her up if you’re interested.  This time 4 of us spoke for 15-20 minutes, so it isn’t as much preparation as other events where you’re the only speaker.</p>
 </li>
-</ul>
-]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A whole new site]]></title>
-        <id>https://benmccormick.org/2016/12/02/whole-new-site/</id>
-        <link href="https://benmccormick.org/2016/12/02/whole-new-site/">
-        </link>
-        <updated>2016-12-02T16:00:00Z</updated>
-        <content type="html"><![CDATA[<p>After 2.5 years of stability, this week I moved <a href="http://benmccormick.org">benmccormick.org</a> to a new platform and overhauled the look and feel. Although most readers have seen the site remain relatively stable, this is actually the 5th major revision of the site since it was first created, so this seems like a good time for a quick trip down memory lane.</p>
-<p>I first started it as a Django app, wanting to challenge myself to build a blog.  That was so short-lived that the way-back machine never even registered it, and I don’t have any evidence that it ever existed (thankfully).  In December 2012, I moved the blog over to <a href="http://octopress.org/">Octopress</a> a static site generator based on Ruby.  I started out using a very nice stock template:</p>
-<img src="http://benmccormick.org/posts/images/oldsite1.png" class="full-width">
-<p>and then shortly switched to a version that I mostly did myself based off of the default octopress theme.  This was one of my first attempts to design anything from scratch, and was not particularly pretty:</p>
-<img src="http://benmccormick.org/posts/images/oldsite2.png" class="full-width">
-<p>I enjoyed Octopress, but spent a lot of time messing around with it (and struggling through the unfamiliar ruby ecosystem), and not a lot of time writing.  So in the spring of 2014 I decided I wanted to switch to a blogging platform where I could write, rather than messing with code.  So I moved my blog to <a href="https://ghost.org/">Ghost</a>, lightly modified a public theme, and began writing about Vim.  It was around this time (2 years and 40 articles in) that I began to attract more readers, and also began to focus more on higher quality technical articles:</p>
-<img src="http://benmccormick.org/posts/images/oldsite3.png" class="full-width">
-<p>About a year after that I re-introduced some color to the blog after a prolonged absence. The black and white sidebar was traded for a colorful green, and a I began using a mix of blue and red for text emphasis. I also began to focus on making it more clear how to subscribe to the blog, and highlighted the more popular content:</p>
-<img src="http://benmccormick.org/posts/images/oldsite4.png" class="full-width">
-<p>Ghost was a great blogging platform, but this fall I decided it was time to move off of it.  I was interested in trying some things that didn’t fit into the platform’s more structured approach, and wanted to move the blog to a place where it was no longer losing me money to run.  So I decided to take another look at the static site generator landscape. I looked through the top 12 or so options on <a href="https://www.staticgen.com/">StaticGen</a> and <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> quickly stood out.  It uses concepts I’m extremely comfortable with (built with React and Webpack!), produces fast server-rendered SPA style sites, and dictates almost nothing about how the site is built.</p>
-<p>The site is now built with Gatsby and hosted on Github pages.  I’ve ditched the noisy green sidebar in favor of a simpler text-focused experience and added a small ad at the top of the page to offset some of the costs associated with the blog.  I’m planning on iterating on the design (better organizing and exposing older content, making it simpler to subscribe to the blog, and making it easier for me to add rich content/code examples to posts without relying on 3rd party services), but for right now I’m excited to get back to focusing on writing.</p>
-<img src="http://benmccormick.org/posts/images/current_site.png" class="full-width">
-<p>Like all software, as this blog has evolved, I’m sure not all of the progress has been forward.  If you see any issues with the new site, feedback and bugfixes are welcome.  Feel free to hit me up on <a href="https://twitter.com/ben336">twitter</a>, comment on this post, or open an issue on the site’s <a href="https://github.com/benmccormick/benmccormickorg/issues">github repo</a>.  Thank you to everyone who has read and supported this site over the past several years.</p>
-<h3>More Resources</h3>
-<ul>
-<li>If you’re interested in <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> this post on <a href="https://blog.scottnonnenberg.com/practical-gatsby-js/">Practical Gatsby.js</a> by Scott Nonnenberg is excellent.  Its not a how-to, but more of a series of examples of how he deviated from the base Gatsby blog (and why).  I found it really helpful when brainstorming ideas for this site.</li>
 </ul>
 ]]></content>
         <author>
