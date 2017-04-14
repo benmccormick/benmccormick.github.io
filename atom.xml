@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-04-14T21:28:16Z</updated>
+    <updated>2017-04-14T21:37:34Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -17,7 +17,7 @@
         <email>ben@benmccormick.org</email>
     </contributor>
     <entry>
-        <title type="html"><![CDATA[Grading Applications on config portability]]></title>
+        <title type="html"><![CDATA[Grading Applications on Config Portability]]></title>
         <id>https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/</id>
         <link href="https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/">
         </link>

@@ -4,12 +4,12 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Fri, 14 Apr 2017 21:28:16 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 Apr 2017 21:37:34 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
         <item>
-            <title><![CDATA[Grading Applications on config portability]]></title>
+            <title><![CDATA[Grading Applications on Config Portability]]></title>
             <link>https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/</link>
             <guid>https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/</guid>
             <pubDate>Fri, 14 Apr 2017 21:30:00 GMT</pubDate>
