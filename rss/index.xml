@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Fri, 14 Apr 2017 21:27:05 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 Apr 2017 21:28:16 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
@@ -12,7 +12,7 @@
             <title><![CDATA[Grading Applications on config portability]]></title>
             <link>https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/</link>
             <guid>https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/</guid>
-            <pubDate>Fri, 14 Apr 2017 09:30:00 GMT</pubDate>
+            <pubDate>Fri, 14 Apr 2017 21:30:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>This week I got a new laptop, and for the first time in a while I have separate work and personal computers.  One thing that this has made clear to me is that it is still non-trivial to keep settings and configurations easily up to date between 2 different PCs.</p>
 <p>In my experience there are several levels of “portability” for applications, which are easy to think of as letter grades.</p>
 <h4>A - <em>Seamless</em></h4>
