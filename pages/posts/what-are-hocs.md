@@ -6,8 +6,10 @@ path: "/2016/12/14/what-are-higher-order-components"
 description: "An explanation of React's higher order components"
 keywords: "react components higher order"
 category: "frameworks"
-key: 'what-are-hocs'
-readNext: ['react-component-styles', 'callbacks-to-promises', 'mobx-first']
+key: "what-are-hocs"
+readNext: "react-component-styles,callbacks-to-promises,mobx-first"
+pageViews: "832"
+last30pageViews: "248"
 ---
 
 If you spend much time at all reading through articles and documentation around React, you're likely to run into the term "Higher Order component", often abbreviated HoC.  Since it is often used without context in React discussions, and is not a particularly intuitive term for many (most?) developers, I thought it was worth publishing a quick and simple explanation of what Higher Order Components are.

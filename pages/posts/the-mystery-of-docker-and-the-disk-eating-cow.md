@@ -7,6 +7,8 @@ description: "Tracking down how Docker ate half my hard drive"
 keywords: "Docker Daisy Disk MacOS"
 category: "tools"
 key: "docker-cow"
+pageViews: "344"
+last30pageViews: "344"
 ---
 
 Yesterday morning I was innocently minding my own business, downloading some files, when I noticed that nearly all the disk space on my 256GB work laptop had been consumed.  This seemed rather unlikely to me, given that I'd only had the laptop for about a year and I didn't store anything other than code and work documents on it.  Text files just don't take up that much space most of the time.  So I decided to make a purchase I'd considered for a while, bought [Daisy Disk](https://daisydiskapp.com/), and began investigating.

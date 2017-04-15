@@ -6,8 +6,10 @@ path: "/2016/05/02/digging-into-react-choosing-component-styles"
 description: "An examination of the various styles for defining React components"
 keywords: "JavaScript, React, Component, createClass, class, functional component"
 category: "frameworks"
-key: 'react-component-styles'
-readNext: ['jest-first', 'backbone-devs-react', 'callbacks-to-promises']
+key: "react-component-styles"
+readNext: "jest-first,backbone-devs-react,callbacks-to-promises"
+pageViews: "1766"
+last30pageViews: "21"
 ---
 
 Over the past month I’ve been building my first production features using React.  One of the first things I’ve noticed is the amount of choices that come into a new React project.  A lot of this is about the ecosystem around React (Webpack vs Browserify? Redux vs Relay? Do I need CSS modules or Immutable.js?) but many of the choices are just part of the library, figuring out the best, or at least a consistent, way to do things.

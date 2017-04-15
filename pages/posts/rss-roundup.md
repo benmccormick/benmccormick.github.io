@@ -5,6 +5,8 @@ layout: "post"
 path: "/2013/06/29/rss-roundup"
 category: "reviews"
 description: "A look at the options for RSS readers post-Google Reader"
+pageViews: "24"
+last30pageViews: "0"
 ---
 
 We're at T-3 days till the Google Reader shutdown, and it seems like the "wait and see" crowd has made their initial decisions.  As a large crop of companies and products have weighed in, a large and diverse selection of "Google Reader replacements" have formed.  The groups behind them range from small indie developers (Feedbin, Go Reader) to fallen internet giants looking to reclaim glory (Digg, AOL). The readers themselves seem to fall into a few main categories:

@@ -6,8 +6,10 @@ path: "/2015/09/09/what-can-backbone-developers-learn-from-react"
 description: "A look at the lessons that Backbone developers can learn from React"
 keywords: "Backbone React JavaScript frameworks"
 category: "frameworks"
-key: 'backbone-devs-react'
-readNext: ['mobx-first', 'mn-series', 'backbone-eco']
+key: "backbone-devs-react"
+readNext: "mobx-first,mn-series,backbone-eco"
+pageViews: "25690"
+last30pageViews: "225"
 ---
 
 Since I started programming professionally, I've always kept an informal list of technologies I want to check out.  Things that I thought would be useful for my career, would expose me to new ideas, or just looked plain cool.  I spent a chunk of my Labor Day weekend working through that list a bit by learning more about [React][react], the JavaScript View library from Facebook. React is a fascinating piece of technology, and a strong ecosystem of tools and libraries is growing up around it.  For developers starting brand new front-end projects in 2015, it ranks as one of the 2 main libraries I'd suggest looking into as a base, along with [Ember][ember].  Most developers though are not starting brand new projects.  We're maintaining existing code, or starting a new project while trying to reuse components of an old one.  Fortunately, React is about ideas as much as it is technology.  For this piece, I'm going to go through the big ideas of React and look at 3 of them that developers working on other frameworks (and [Backbone][backbone] in particular) can learn from.  There's a lot more to React and its community than just these 3 ideas, so I'll also include some extra resources at the bottom for those interested in learning more about it.

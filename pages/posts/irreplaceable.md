@@ -5,6 +5,8 @@ layout: "post"
 path: "/2013/05/04/irreplaceable"
 category: "opinion"
 description: "Your job doesn't need you.  Your family does"
+pageViews: "129"
+last30pageViews: "0"
 ---
 
 >If you are the average worker in the average job then you can be replaced. The reason I tell people this is because I want to help them realize that there are important things in life and then there are VERY important things in life. Make sure you are good in the areas of life that you aren’t replaceable (family) and then focus on the other areas (work). This is my view, but I think anyone with a family probably feels the same way. Telling someone they are replaceable is a great cure for arrogance.

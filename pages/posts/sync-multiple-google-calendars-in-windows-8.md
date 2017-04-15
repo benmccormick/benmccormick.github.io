@@ -4,7 +4,9 @@ date: "2012-11-07 12:00:00+00:00"
 layout: "post"
 path: "/2012/11/07/sync-multiple-google-calendars-in-windows-8"
 category: "tools"
-description: 'A helpful tip for using Google Calendar in Windows 8'
+description: "A helpful tip for using Google Calendar in Windows 8"
+pageViews: "34"
+last30pageViews: "1"
 ---
 
 Syncing with multiple Google calendars, or any Google calendars that you don't directly control seems like an unsupported feature in Windows 8 calendar app. Since I like to be able to see my wife's calendar as well as my own, and also occasionally create separate calendars for different things, this was a very frustrating limitation. After a bit of research, I found that it was possible. In the end, the workaround is a testament to how much Google has changed over the years.

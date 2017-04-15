@@ -5,8 +5,10 @@ layout: "post"
 path: "/2015/12/30/es6-patterns-converting-callbacks-to-promises"
 category: "javascript"
 description: "How to convert a callback driven API to a Promise-based one"
-key: 'callbacks-to-promises'
-readNext: ['ecma-explanation', 'clean-higher-order-functions', 'backbone-devs-react']
+key: "callbacks-to-promises"
+readNext: "ecma-explanation,clean-higher-order-functions,backbone-devs-react"
+pageViews: "24241"
+last30pageViews: "2360"
 ---
 
 <div class="explanation">

@@ -4,9 +4,11 @@ date: "2014-08-07 11:30:00+00:00"
 layout: "post"
 path: "/2014/08/07/component-based-development"
 category: "platform"
-key: 'component-based-dev'
-description: 'Exploring the Web Components spec, and the future of web architecture'
-readNext: ['custom-elements-example']
+key: "component-based-dev"
+description: "Exploring the Web Components spec, and the future of web architecture"
+readNext: "custom-elements-example"
+pageViews: "8824"
+last30pageViews: "50"
 ---
 
 If you look back at the history of JavaScript and the client-side web as a development platform, you can see that there were several critical turning points for the language. Javascript has evolved from a [10-day toy language][jsorigin] to possibly the [most used language in the world][githubstats], but that didn't happen overnight.

@@ -6,8 +6,10 @@ path: "/2017/02/18/context-to-best-practices/"
 description: "What we talk about when we talk about best practices"
 keywords: "best practices JavaScript"
 category: "software-productivity"
-readNext: ['staying-productive', 'orthogonality-css-js', 'readable-code']
-key: 'll-context'
+readNext: "staying-productive,orthogonality-css-js,readable-code"
+key: "ll-context"
+pageViews: "269"
+last30pageViews: "52"
 ---
 
 I've noticed a frustrating trend in online discussions about web development where developers take their personal experience with a tool or practice and promote it as a universal truth.  Some of this is the nature of being human: we all see the world through our own lens.  But the best technical observations exist within a specific context.

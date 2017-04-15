@@ -5,7 +5,9 @@ layout: "post"
 path: "/2015/06/14/mozilla-the-state-of-web-components"
 description: "A look at Mozilla's writeup on the current status of the web components spec"
 category: "platform"
-readNext: ['component-based-dev', 'custom-elements-example']
+readNext: "component-based-dev,custom-elements-example"
+pageViews: "290"
+last30pageViews: "4"
 ---
 
 Over on Mozilla's development blog, Wilson Page has a [great summary][statewc] of the current status of the Web Components spec:

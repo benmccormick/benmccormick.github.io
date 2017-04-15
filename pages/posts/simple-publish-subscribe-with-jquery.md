@@ -3,9 +3,11 @@ title: "Simple Publish-Subscribe with jQuery"
 date: "2013-02-13 21:00:00+00:00"
 layout: "post"
 path: "/2013/02/13/simple-publish-subscribe-with-jquery"
-description: 'Building a basic pub-sub wrapper around jQuery'
+description: "Building a basic pub-sub wrapper around jQuery"
 category: "frameworks"
-key: 'jquery-pub-sub'
+key: "jquery-pub-sub"
+pageViews: "8137"
+last30pageViews: "113"
 ---
 
 Here's a cool pattern that I've been able to use in two of my projects lately:

@@ -4,7 +4,9 @@ date: "2014-08-19 11:35:00+00:00"
 layout: "post"
 path: "/2014/08/19/the-debugging-toolbox"
 category: "software-productivity"
-description: 'The process I use for solving problems'
+description: "The process I use for solving problems"
+pageViews: "824"
+last30pageViews: "1"
 ---
 
 Do you know a *Problem Solver*?  They're the ones who can take a crazy, vague bug report from a client and come up with a fix in an hour.  The ones who everybody else asks for help when the project deadline is creeping up.  The ones who get shipped out to the client site when the field team is out of their depth.  In school they were the person you called at 1AM the night before your project was due, hoping for a miracle.

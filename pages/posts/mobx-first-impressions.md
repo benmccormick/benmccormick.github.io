@@ -6,8 +6,10 @@ path: "/2017/01/09/mobx-first-impressions/"
 description: "First impression of managing data with MobX"
 keywords: "mobx JavaScript data React"
 category: "frameworks"
-key: 'mobx-first'
-readNext: ['jest-first', 'backbone-devs-react', 'react-component-styles']
+key: "mobx-first"
+readNext: "jest-first,backbone-devs-react,react-component-styles"
+pageViews: "940"
+last30pageViews: "189"
 ---
 
 I spent some time around the holidays this year playing with [MobX][mobx], a state management library for JavaScript.  MobX is an unopinionated library that provides a layer over normal JavaScript data structures that allow other code to efficiently observe data changes and update based on what has changed.  It's an interesting tool for handling state in web applications, especially in existing projects that might need to update state handling iteratively.  Here are some first impressions.

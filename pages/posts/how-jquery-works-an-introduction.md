@@ -5,7 +5,9 @@ layout: "post"
 path: "/2015/06/08/how-jquery-works-an-introduction"
 description: "A dive into the structure of the jQuery library"
 category: "frameworks"
-readNext: ['underscore-lodash', 'mn-series', 'jquery-pub-sub']
+readNext: "underscore-lodash,mn-series,jquery-pub-sub"
+pageViews: "18933"
+last30pageViews: "435"
 ---
 
 Every developer has had the experience of using "magic" code.  Not the "hacked into the NSA in 20 seconds" type of magic code you see in movies. This is the code created when you nervously typed an incomprehensible incantation that somebody else passed on to you, desperately hoping to receive the results you want, ignoring the sinking feeling in your stomach that you have no clue what to do if it fails.  Almost all code feels like this when you're pushing out to learn new things.  But it doesn't have to stay that way.

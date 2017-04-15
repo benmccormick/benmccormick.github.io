@@ -4,7 +4,9 @@ date: "2013-06-11 21:19:00+00:00"
 layout: "post"
 path: "/2013/06/11/how-i-use-stack-overflow"
 category: "tools"
-description: 'Getting the most out of Stack Overflow'
+description: "Getting the most out of Stack Overflow"
+pageViews: "235"
+last30pageViews: "0"
 ---
 
 >The problem with self directed learning is that our ability to learn is often constrained by the very problem we are trying to solve, our limited knowledge of a field.

@@ -6,7 +6,9 @@ path: "/2017/02/13/improving-site-performance-with-lighthouse"
 description: "Profiling and improving my site with Google's Lighthouse tool"
 keywords: "Lighthouse Performance Progressive Web App"
 category: "tools"
-readNext: ['ll-context', 'jest-first', 'new-look-2016']
+readNext: "ll-context,jest-first,new-look-2016"
+pageViews: "301"
+last30pageViews: "66"
 ---
 
 Last year Google coined the term "Progressive Web App" as a way of describing the type of sites and applications that they think are the future of the web.  Progressive Web Apps are sites that load quickly, are always responsive to user input, work as well as possible offline, and integrate with native platforms like native apps.  While this site is not an "app" per say, I do want it to be as fast and responsive as possible, and I also wanted to better understand what Google is pulling under the PWA umbrella.  Fortunately, Google has built a tool [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to help developers profile and improve their web applications, comparing them to a set of PWA benchmarks.  So I took this site through Lighthouse, and worked against their suggestions with the goal of learning more about PWAs and improving the experience of using benmccormick.org.  I'm passing along my experience here.

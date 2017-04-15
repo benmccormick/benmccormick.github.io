@@ -6,10 +6,11 @@ path: "/2016/03/07/the-sad-state-of-the-backbone-ecosystem"
 description: "A look at the current state of Backbone libraries"
 keywords: "Backbone github graphs repos"
 category: "frameworks"
-dontfeature: 'true'
-key: 'backbone-eco'
-readNext: ['mn-series', 'backbone-devs-react', 'bb-es6-1']
-
+dontfeature: "true"
+key: "backbone-eco"
+readNext: "mn-series,backbone-devs-react,bb-es6-1"
+pageViews: "26823"
+last30pageViews: "379"
 ---
 
 For the past 2 years, ~90% of my coding time has been spent working on a large scale Backbone.js app.  In February 2014, the Backbone community was in a fairly good place.  The core library had reached 1.0 the previous year and had a strong team around it.  Marionette had emerged as a de-facto standard for web applications [^1].  There were Backbone specific plugins for many tasks, and generally gaps could be filled using the jQuery plugin ecosystem, or a framework agnostic library.  At the time, Backbone would have been a very defensible choice as a library for starting a new web development, as a simpler and more stable alternative to AngularJS, the current "hot" framework.

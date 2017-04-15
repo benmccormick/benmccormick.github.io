@@ -6,8 +6,10 @@ path: "/2015/01/26/backbone-radio"
 description: "An overview of using Backbone.Radio in Marionette apps"
 keywords: "Backbone, JavaScript, Backbone Radio, Marionette, messaging"
 category: "frameworks"
-key: 'bb-radio'
-readNext: ['mn-series', 'backbone-devs-react', 'bb-es6-1']
+key: "bb-radio"
+readNext: "mn-series,backbone-devs-react,bb-es6-1"
+pageViews: "20022"
+last30pageViews: "155"
 ---
 
 *This is the fifth post in a series on [Marionette.js][marionette].  For more background on what Marionette is, check out the series page, [Marionette Explained][marionetteexplained]*

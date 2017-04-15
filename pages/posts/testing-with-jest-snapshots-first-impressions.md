@@ -6,9 +6,10 @@ path: "/2016/09/19/testing-with-jest-snapshots-first-impressions/"
 description: "First impression of testing UI components using Jest snapshots"
 keywords: "Jest JavaScript testing React Snapshot Tests"
 category: "tools"
-key: 'jest-first'
-readNext: ['saving-time-jest', 'backbone-devs-react', 'mobx-first']
-
+key: "jest-first"
+readNext: "saving-time-jest,backbone-devs-react,mobx-first"
+pageViews: "8589"
+last30pageViews: "1140"
 ---
 
 Over the past 6 months my team at work has been slowly transitioning a large Backbone application to React.  One of the main goals of the transition has been to build out unit tests as we transition components.  As part of that we switched from using Karma to using Jest for managing our tests.

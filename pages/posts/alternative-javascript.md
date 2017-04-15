@@ -5,6 +5,8 @@ layout: "post"
 path: "/2014/11/24/alternative-javascript"
 description: "A non-comprehensive run-through of the various compile to JS languages out there"
 category: "javascript"
+pageViews: "4502"
+last30pageViews: "23"
 ---
 
 It's become a bit of a cliche that JavaScript is the "machine code of the web". But now that mobile browsers have conclusively killed Flash, Silverlight and other "plugin languages", JavaScript has become the only language that can reasonably claim to be "write once, run anywhere".  That's still a bit inflated though.  More accurately, you can use a subset of modern JavaScript that is compatible with the set of browsers and JavaScript environments that you want to support and run it in those places.  In practice this ends up being a version of JavaScript that matches the EcmaScript 5 spec <sup id="fnref:0">[1](#fn:0)</sup> for users who want to support modern browsers, or a very limited subset of the language that is somewhat similar to the ES3 spec for developers supporting old versions of Internet Explorer.  Because of the strange dynamic that the user rather than the developer of JavaScript code controls the language runtime that code uses, the JavaScript language has been forced to evolve slowly, with very few developers using the latest language features at any given time.  This, combined with a dislike of JavaScript from some developers has led to a proliferation of "compile to JavaScript" languages.

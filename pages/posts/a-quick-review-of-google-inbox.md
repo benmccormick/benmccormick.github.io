@@ -5,6 +5,8 @@ layout: "post"
 description: "A product review of Google's new email UI"
 path: "/2014/11/04/a-quick-review-of-google-inbox"
 category: "reviews"
+pageViews: "357"
+last30pageViews: "0"
 ---
 
 Google announced their new email product, [Google Inbox][inbox] last week, and I was able to get a Day 1 invitation from a friend at Google.  I've been using it for my personal email account since then.  A few people have asked me about it, so I thought I'd write up my impressions so far.

@@ -5,7 +5,9 @@ layout: "post"
 path: "/2014/06/02/discovering-vim"
 category: "tools"
 description: "The benefits I've found learning Vim"
-readNext: ['learning-vim', 'interesting-atom', 'vim-files']
+readNext: "learning-vim,interesting-atom,vim-files"
+pageViews: "956"
+last30pageViews: "10"
 ---
 
 I've now been using Vim as my primary text editor for the last 9 months.

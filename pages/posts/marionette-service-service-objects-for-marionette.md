@@ -6,7 +6,9 @@ path: "/2015/05/25/marionette-service-service-objects-for-marionette"
 description: "Introducing marionette-service, a services library for Marionette apps"
 keywords: "Marionette JavaScript marionette-service services Backbone Radio"
 category: "frameworks"
-readNext: ['mn-series', 'backbone-devs-react', 'bb-radio']
+readNext: "mn-series,backbone-devs-react,bb-radio"
+pageViews: "1605"
+last30pageViews: "36"
 ---
 
 [Backbone.js][backbone] is a great way to structure web applications.  Its built in Models, Collections, Views and Routers are a very reasonable "minimum common ground" that pretty much any web project will be able to put to good use.  But more sophisticated applications have needs that extend beyond these basic concepts.  In addition to having some data that needs to be displayed, rich web apps often have resources and functionality that need to be shared across many different Views and Models.  There's no definitive way to implement this consistently, but a common pattern is to create "services" of some type that Views and Models can communicate with.   

@@ -3,8 +3,10 @@ title: "Meetings And Concurrency"
 date: "2013-12-30 11:00:00+00:00"
 layout: "post"
 path: "/2013/12/30/meetings-and-concurrency"
-description: 'The trouble with in-person meetings'
+description: "The trouble with in-person meetings"
 category: "opinion"
+pageViews: "114"
+last30pageViews: "0"
 ---
 
 Working with a large number of people on any significant project eventually involves meetings.  You can delay it for a while, and you can try to replace them with all sorts of things, including email, IM, wikis, and guessing people's intentions.  Doing so is, of course, completely worthwhile.  Eventually though, meetings are inevitable.

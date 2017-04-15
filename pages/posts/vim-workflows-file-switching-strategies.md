@@ -3,10 +3,12 @@ title: "Vim Workflows: File Switching"
 date: "2014-11-10 04:06:52+00:00"
 layout: "post"
 path: "/2014/11/10/vim-workflows-file-switching-strategies"
-description: A look at the different approaches you can take to managing files in Vim
+description: "A look at the different approaches you can take to managing files in Vim"
 category: "tools"
-key: 'vim-files'
-readNext: ['learning-vim', 'vim-art', 'vim-language']
+key: "vim-files"
+readNext: "learning-vim,vim-art,vim-language"
+pageViews: "5510"
+last30pageViews: "105"
 ---
 
 Becoming productive in Vim is about more than just knowing all of the features available to you<sup id="fnref:1">[1](#fn:1)</sup>. It's all about knowing which ones to use in which situations.  In my series from this summer on [learning Vim][learningvim], I focused a lot on the different tools Vim provides for solving problems.  Today I'll show how I put some of those tools together to actually be more productive.

@@ -23,3 +23,14 @@
 .bordered-img {
   border: 3px solid #57A3E8;
 }
+
+
+.img-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-group img {
+  padding:0;
+  height: initial;
+}

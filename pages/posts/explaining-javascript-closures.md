@@ -4,8 +4,10 @@ date: "2013-01-08 23:30:00+00:00"
 layout: "post"
 path: "/2013/01/08/explaining-javascript-closures"
 category: "javascript"
-description: 'Diving into one of JavaScripts more confusing concepts'
-key: 'closures'
+description: "Diving into one of JavaScripts more confusing concepts"
+key: "closures"
+pageViews: "164"
+last30pageViews: "0"
 ---
 
 Javascript can be a confusing language when you start to use it.  Designed in a hurry with a functional programming heart and an object oriented skin, Javascript looks a lot like Java or C at first glance.  That expectation causes frustration though when you realize that writing Java style code means that you have no private variables, no block scope, no threads, and no abstract/classes or interfaces.  When I started writing Javascript I had only ever written in pure object oriented languages.  My javascript code was inefficient, fragile, and no fun to write.  I wanted to share some of the things I've learned since here, to help other people making that adjustment.

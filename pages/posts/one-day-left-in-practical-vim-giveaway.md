@@ -3,8 +3,10 @@ title: "One Day Left In Practical Vim Giveaway"
 date: "2014-07-24 23:55:45+00:00"
 layout: "post"
 path: "/2014/07/24/one-day-left-in-practical-vim-giveaway"
-description: "If you're reading this now... its too late sorry ¯\\_(ツ)_/¯"
+description: "If you're reading this now... its too late sorry ¯ (ツ)_/¯"
 category: "meta"
+pageViews: "9"
+last30pageViews: "0"
 ---
 
 My practical Vim giveaway ends tomorrow,  Friday July 25th at midnight.  If you haven't subscribed or tweeted to win yet, now is the best time, so go for it!

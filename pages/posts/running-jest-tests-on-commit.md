@@ -6,8 +6,10 @@ path: "/2017/02/26/running-jest-tests-before-each-git-commit/"
 description: "A simple setup to run your Jest tests before every commit"
 keywords: "Jest testing git pre-commit JavaScript"
 category: "tools"
-readNext: ['jest-first', 'saving-time-jest', 'mobx-first']
-key: 'jest-git'
+readNext: "jest-first,saving-time-jest,mobx-first"
+key: "jest-git"
+pageViews: "2721"
+last30pageViews: "516"
 ---
 
 My main work project makes heavy use of [Jest](https://facebook.github.io/jest/) to test our JavaScript code.  For a while now I've wanted to set up a way to run tests every time I run a commit.  I knew that git provides [hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) that allow scripting actions to occur before or after any commit or push, and in fact we were already using a `pre-commit` hook script to lint our code with [ESLint](http://eslint.org/).  But it was non-obvious how to make that work well with Jest testing.  I eventually figured out a setup that worked, and the found a better way to do both the Jest and ESLint testing.  Since it took me a while to work through, I thought I'd share it here and save the rest of you some time.

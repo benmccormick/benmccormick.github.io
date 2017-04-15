@@ -6,8 +6,10 @@ path: "/2017/01/03/orthogonality-and-css-in-js/"
 description: "Separation of concerns in the context of CSS and JavaScript"
 keywords: "CSS JavaScript Orthogonality Pragmatic Programmer"
 category: "software-productivity"
-key: 'orthogonality-css-js'
-readNext: ['jest-first', 'll-context', 'callbacks-to-promises']
+key: "orthogonality-css-js"
+readNext: "jest-first,ll-context,callbacks-to-promises"
+pageViews: "6775"
+last30pageViews: "119"
 ---
 
 One of the realities of the constant change in the web development world is that "best practices" are often hotly contested.  One issue that the front end community doesn't seem to have come to a consensus on yet is how tightly to bundle JavaScript, HTML and CSS in code.  Should they be bundled and managed completely separately?  Kept in different files and imported together into JavaScript component files?  Or can we remove HTML and CSS files entirely and generate everything in JavaScript? This is a discussion that still comes up all the time in my [twitter](https://twitter.com/thomasfuchs/status/810885087214637057) [feed](https://twitter.com/TheLarkInn/status/812089065210335232).

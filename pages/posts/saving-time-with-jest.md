@@ -6,8 +6,10 @@ path: "/2016/12/10/saving-time-with-jest"
 description: "A summary of my meetup talk on saving time with Jest"
 keywords: "Jest JavaScript testing meetup talk Triangle React"
 category: "tools"
-key: 'saving-time-jest'
-readNext: ['jest-first', 'backbone-devs-react', 'mobx-first']
+key: "saving-time-jest"
+readNext: "jest-first,backbone-devs-react,mobx-first"
+pageViews: "499"
+last30pageViews: "59"
 ---
 
 This week I gave a talk at the brand new Triangle ReactJS meetup group on how [Jest][jest] can save developers time.  I was asked afterwards to share the content online for those who missed it.  My talk was mostly demos and wasn't recorded, so there unfortunately isn't much to share, but I thought I could write out the basic ideas behind the talk, and share them here.

@@ -4,7 +4,9 @@ date: "2014-11-08 19:24:09+00:00"
 layout: "post"
 path: "/2014/11/08/all-about-angular-2-0"
 category: "frameworks"
-description: 'An early look at the next version of Angular'
+description: "An early look at the next version of Angular"
+pageViews: "765"
+last30pageViews: "2"
 ---
 
 Rob Eisenberg has a pretty incredible rundown of the current Angular 2.0 proposal and the thought process behind it [on his blog][aaa2].  

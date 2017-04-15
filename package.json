@@ -30,6 +30,8 @@
     "typography-plugin-code": "^0.15.9"
   },
   "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^6.10.3",
     "feed": "^0.3.0",
     "front-matter": "^2.1.0",
     "gh-pages": "^0.12.0",

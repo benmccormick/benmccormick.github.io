@@ -5,6 +5,8 @@ layout: "post"
 path: "/2016/12/31/2016-roundup"
 category: "meta"
 description: "A look back at benmccormick.org in 2016"
+pageViews: "212"
+last30pageViews: "14"
 ---
 
 Thanks to all of you who have followed my blog this year! It was a busy year and I didn't get as many posts out as years past, but you all have been as supportive as ever.  I'm excited about the things I've been able to do with the new site this month, and am looking forward to a great 2017.  But first, a look back.

@@ -4,9 +4,11 @@ date: "2016-03-09 06:04:39+00:00"
 layout: "post"
 path: "/2016/03/09/stability-vs-decline"
 category: "software-productivity"
-key: 'stability-decline'
+key: "stability-decline"
 description: "What is the difference between stable and declining software?"
-readNext: ['backbone-eco', 'backbone-devs-react', 'bb-radio']
+readNext: "backbone-eco,backbone-devs-react,bb-radio"
+pageViews: "782"
+last30pageViews: "4"
 ---
 
 My post on [the sad state of the Backbone ecosystem][eco] from this weekend was surprisingly popular.  I got a lot of responses pointing out [some things I got wrong][charttweet], sharing my concerns, or pushing back on my main points.  Objections to the post came in 2 primary forms, which I want to quickly address.  The first concern is that the Backbone ecosystem doesn't matter. The second concern is that the trend I'm identifying as decline and decay is actually stability.

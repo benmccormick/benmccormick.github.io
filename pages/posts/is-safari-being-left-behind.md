@@ -5,6 +5,8 @@ layout: "post"
 path: "/2015/06/10/is-safari-being-left-behind"
 description: "Should we be concerned about Safari holding back the web?"
 category: "platform"
+pageViews: "8762"
+last30pageViews: "12"
 ---
 
 On Twitter yesterday, [Alex Sexton][sexton] surfaced Apple's fact sheet on what's new with Safari 9:

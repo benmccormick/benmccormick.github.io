@@ -4,7 +4,9 @@ date: "2012-09-19 11:00:00+00:00"
 layout: "post"
 path: "/2012/09/19/the-iphone-5-conversation-so-far"
 category: "opinion"
-description: 'The same conversation just keeps happening'
+description: "The same conversation just keeps happening"
+pageViews: "46"
+last30pageViews: "1"
 ---
 
 [Blog A](http://www.bbc.com/news/technology-19557497): The iPhone 5 is boring.

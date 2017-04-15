@@ -4,7 +4,9 @@ date: "2013-02-03 21:00:00+00:00"
 layout: "post"
 path: "/2013/02/03/how-i-work-refactoring"
 category: "software-productivity"
-description: 'Describing the process that goes behind refactoring code'
+description: "Describing the process that goes behind refactoring code"
+pageViews: "505"
+last30pageViews: "1"
 ---
 
 I recently took the time to re-examine a section of code that I've worked on as part of a team for the last year.  Looking at it with fresh eyes I saw plenty of room for improvement.  The issues weren't the result of one bad checkin or poor decision.  Instead they were the result of "death by a thousand cuts", a series of small decisions made by different people that were individually justifiable but eventually resulted in brittle, hard to maintain code.

@@ -5,9 +5,10 @@ layout: "post"
 path: "/2015/11/30/es6-patterns-clean-higher-order-functions"
 category: "javascript"
 description: "A quick tip for clean functional syntax in ES6"
-key: 'clean-higher-order-functions'
-readNext: ['ecma-explanation', 'callbacks-to-promises', 'what-are-hocs']
-
+key: "clean-higher-order-functions"
+readNext: "ecma-explanation,callbacks-to-promises,what-are-hocs"
+pageViews: "4080"
+last30pageViews: "221"
 ---
 
 <div class="explanation">

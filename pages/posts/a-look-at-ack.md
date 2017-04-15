@@ -4,8 +4,10 @@ date: "2013-11-25 23:50:00+00:00"
 layout: "post"
 path: "/2013/11/25/a-look-at-ack"
 category: "tools"
-key: 'look-at-ack'
+key: "look-at-ack"
 description: "An introduction to using Ack for file searching"
+pageViews: "5465"
+last30pageViews: "38"
 ---
 
 Do you spend a lot of time searching your projects for a specific piece of code?  Frustrated by grep's weird syntax or slow IDE search tools?  [Ack][ack] is a tool like grep designed for programmers.  I use it for searching my source code to track down sections of code or look for occurences of a variable or reference.  It's a simple open-source tool that does one job well, and does it with blazing speed.

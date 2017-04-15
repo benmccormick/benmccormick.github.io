@@ -4,7 +4,9 @@ date: "2013-09-10 20:00:00+00:00"
 layout: "post"
 path: "/2013/09/10/blendconf-2013-takeaways-from-a-very-human-tech-conference"
 category: "software-productivity"
-description: 'My takeaways from BlendConf'
+description: "My takeaways from BlendConf"
+pageViews: "18"
+last30pageViews: "0"
 ---
 
 After 3 great days at [Blendconf][blendconf], my brain is pretty overloaded with cool ideas. One of the cool things about the conference was seeing certain themes emerge across different sessions.  Here are three of my takeaways from a great weekend.

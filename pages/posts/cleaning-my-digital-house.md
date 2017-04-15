@@ -3,8 +3,10 @@ title: "Cleaning My Digital House"
 date: "2012-12-29 01:00:00+00:00"
 layout: "post"
 path: "/2012/12/29/cleaning-my-digital-house"
-description: 'Organizing what software I use'
+description: "Organizing what software I use"
 category: "meta"
+pageViews: "184"
+last30pageViews: "0"
 ---
 
 I'm cleaning my digital house this new year.  I've been a confessed addict to trying new services and hardware for some time now.  While I don't think there's anything wrong with trying new things and figuring out what you like best, I was beginning to suspect that my experimentation was causing me to be less efficient than I expected.  After reading Chris Webb's [excellent post][goodbyeservice] on rethinking his digital services and rereading Alex Payne's [Rules for Computing Happiness][computinghappiness], I decided to take inventory of my computing services.  The results were... illuminating.

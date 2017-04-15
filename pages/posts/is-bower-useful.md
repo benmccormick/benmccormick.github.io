@@ -5,6 +5,8 @@ layout: "post"
 path: "/2015/01/22/is-bower-useful"
 category: "tools"
 description: "A defense of Bower as a useful package manager"
+pageViews: "3134"
+last30pageViews: "24"
 ---
 
 

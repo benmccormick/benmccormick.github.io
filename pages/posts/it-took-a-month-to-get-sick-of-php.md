@@ -4,7 +4,9 @@ date: "2012-10-06 11:00:00+00:00"
 layout: "post"
 path: "/2012/10/06/it-took-a-month-to-get-sick-of-php"
 category: "meta"
-description: 'Porting my blog from Wordpress to Python'
+description: "Porting my blog from Wordpress to Python"
+pageViews: "160"
+last30pageViews: "1"
 ---
 
 I'm not going to claim that its impossible to write nice, well structured code with php. I'm not even going to claim that its impossible to write nice, well structured php code with Wordpress. What I did find during my month of running my blog on Wordpress, is that it is much easier to write bad code with Wordpress than it is to write good code. Which is why I ported my blog to a custom self-written blog based on Django.
