@@ -4,12 +4,12 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Fri, 12 May 2017 02:38:39 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 12 May 2017 02:40:46 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
         <item>
-            <title><![CDATA[Building Normal Curves with JavaScript using Highcharts]]></title>
+            <title><![CDATA[Building Normal Distribution Curves with JavaScript using Highcharts]]></title>
             <link>https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/</link>
             <guid>https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/</guid>
             <pubDate>Fri, 12 May 2017 02:30:00 GMT</pubDate>
