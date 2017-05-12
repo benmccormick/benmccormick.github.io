@@ -1,5 +1,5 @@
 ---
-title: "Building Normal Curves with JavaScript using Highcharts"
+title: "Building Normal Distribution Curves with JavaScript using Highcharts"
 date: "2017-05-12 02:30:00+00:00"
 layout: "post"
 path: "/2017/05/11/building-normal-curves-highcharts/"
