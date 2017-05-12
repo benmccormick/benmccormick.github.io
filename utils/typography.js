@@ -36,9 +36,12 @@ const typography = new Typography({
       lineHeight: 1.1
     },
     'tt,code': {
-      fontSize: '65%'
+      fontSize: '75%'
     },
     pre: {
+      lineHeight: 1.1,
+    },
+    'pre code': {
       lineHeight: 1.1,
     },
     [MOBILE_MEDIA_QUERY]: {
