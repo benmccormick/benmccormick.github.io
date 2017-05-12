@@ -4,10 +4,141 @@
         <title>benmccormick.org</title>
         <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Fri, 14 Apr 2017 21:37:34 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 12 May 2017 02:28:06 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
+        <item>
+            <title><![CDATA[Building Normal Curves with JavaScript using Highcharts]]></title>
+            <link>https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/</link>
+            <guid>https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/</guid>
+            <pubDate>Fri, 12 May 2017 02:30:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>This week I got to have a little fun remembering some High School math, and using one of my favorite libraries: <a href="https://www.highcharts.com/">Highcharts</a>.  Highcharts is a commercial JavaScript data-viz library, and it makes most standard charts and graphs a breeze to implement.  I was using it to plot a normal distribution in order to display a 95% confidence interval.  It’s a pretty straightforward problem, but its a nice example of a practical use of Highcharts, and comes with a little stats math that many of us may have learned and forgotten.</p>
+<h3>The Problem</h3>
+<p>The goal was to display a <a href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a> to represent a 95% confidence interval, given the upper and lower bounds of the confidence interval.  A normal distribution is the classic bell curve, where the area under any section of the graph represents the probability that the true value of the measure being tracked is within that range.  These curves are usually represented something like this:</p>
+<p><img src="http://benmccormick.org/posts/images/normal-curve/confidence-interval.png" alt="Normal Distribution image"></p>
+<p>The x axis of the curve represents the range of values, while the y axis is a function of x that shows the relative probability for different areas.  Data sets that are normally distributed conform to the above bell curve and the <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">68-95-99.7 rule</a>. There’s a 68% chance that the true value is within 1 standard deviation of the middle of the curve (the mean), a 95% chance that the true value is within 2 standard deviations, and a 99.7% chance that the true value is within 3 standard deviations.</p>
+<h3>Step 1: Generating a Dataset</h3>
+<p>Highcharts operates by plotting a set of data points, not by handling equations directly.  So our first step is computing a set of data points to plot.  We can find the equation for calculating a normal distribution’s probability density on <a href="https://en.wikipedia.org/wiki/Normal_distribution">Wikipedia</a>.</p>
+<p><img src="http://benmccormick.org/posts/images/normal-curve/equation.png" alt="Normal Distribution equation"></p>
+<p>Yep, we get to play with an equation that has both π and e in it.  I hope this feels sufficiently like a high school math class now.  But we can actually choose to drop the left side of the equation.  It is the <a href="https://en.wikipedia.org/wiki/Normalizing_constant">normalization constant</a> for the equation: it ensures that the total area under the curve equals 1, but doesn’t change the shape of the curve.  Since we’re simply displaying the shape of the graph and care primarily about showing the range along the x axis, we can ignore it and instead use this function:</p>
+<pre><code class="language-javascript">const normalY = (x, mean, stdDev) =&gt; Math.exp((-0.5) * Math.pow((x - mean) / stdDev, 2));
+</code></pre>
+<p>That’s a good start, but right now we only have an upper and lower bound value for a 95% confidence interval.  So before we can apply the equation, we need to find a mean, a standard deviation, and a set of x values to run the formula against.  The mean and standard deviation are fairly straightforward, and we can use lodash to generate a set of points.  For the sake of this example, we’ll plan on generating 100 points ranging from +/- 5 standard deviations from the mean, which should allow us to see all meaningful parts of the distribution, and still have a bit of padding.</p>
+<pre><code class="language-javascript">const getMean = (lowerBound, upperBound) =&gt; (upperBound + lowerBound) / 2;
+
+// distance between mean and each bound of a 95% confidence interval 
+// is 2 stdDeviation, so distance between the bounds is 4
+const getStdDeviation = (lowerBound, upperBound) =&gt; (upperBound - lowerBound) / 4;
+
+
+const generatePoints = (lowerBound, upperBound) =&gt; {
+  let stdDev = getStdDeviation(lowerBound, upperBound); 
+  let min = lowerBound - 2 * stdDev;
+  let max = upperBound + 2 * stdDev;
+  let unit = max - min / 100;
+  return _.range(min, max, unit);
+}
+</code></pre>
+<p>Now that we have the x axis locations for the points, we can generate a whole data series.</p>
+<pre><code class="language-javascript">let mean = getMean(lowerBound, upperBound);
+let stdDev = getStdDeviation(lowerBound, upperBound);
+let points = generatePoints(lowerBound, upperBound);
+
+
+let seriesData = points.map(x =&gt; ({ x, y: normalY(x, mean, stdDev)}));
+</code></pre>
+<h3>Step 2: Creating the Chart</h3>
+<p>Now we have what we need to generate a chart!  Given the data, It’s easy to make a simple normal distribution curve with highcharts.  All we need to do is create a <code>&lt;div id=&quot;container&quot;&gt;</code> element and then run this JavaScript:</p>
+<pre><code class="language-javascript">Highcharts.chart('container', {
+    chart: {
+        type: 'area'
+    },
+    series: [{
+        data: seriesData,
+    }],
+});
+</code></pre>
+<p>Which produces the following graph:</p>
+<iframe width="100%" height="400" src="http://benmccormick.org//jsfiddle.net/ben336/8bgm1m18/embedded/result,js/"
+allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<p>Thats a good start, but contains a lot of “stuff” that Highcharts provides by default that we don’t necessarily want for our normal distribution illustration.  Let’s cut the title, legend, y-axis, and tooltips/mouse action.  To do that we need a bit more configuration:</p>
+<pre><code class="language-javascript">Highcharts.chart('container', {
+    chart: {
+        type: 'area',
+        height: 300,
+    },
+    title: {
+        text: ''
+    },
+    yAxis: {
+      labels: {
+        enabled: false,   
+      },
+      gridLineWidth: 0,
+      title: ''
+    },
+    tooltip: {
+       enabled: false,
+    },
+    legend: {
+      enabled: false,
+    },
+    series: [{
+        data: seriesData,
+    }],
+    plotOptions: {
+      area: {
+        enableMouseTracking: false,
+      }
+    }
+});
+</code></pre>
+<iframe width="100%" height="400" src="http://benmccormick.org//jsfiddle.net/ben336/w7165m2u/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<p>This is pretty great, but we still want to show our confidence interval like the wikipedia image at the top.  Ideally we’d only be filling in the areas within the 95% curve.  Thats pretty easy to do with Highcharts.  We can use <em>zones</em>, Highcharts way of applying different styles to different sections of the chart.  We want our zones to apply to the x axis, and we’ll define 3 zones: 0 to the lower bound, lower bound to the upper bound, and everything else.  In Highcharts that looks like this:</p>
+<pre><code class="language-javascript">{
+  plotOptions: {
+    area: {
+      zones: [{
+        //fillColor gets the inside of the graph, color would change the lines
+        fillColor: 'white',
+        // everything below this value has this style applied to it
+        value: lowerBound,
+      },{
+        value: upperBound,
+      },{
+        fillColor: 'white',
+      }]
+    },
+  },
+}
+</code></pre>
+<p>We also want to show a 95% label on the graph like the image at the start.  There are multiple ways to do that in Highcharts, but for this simple case we’ll just abuse the title attribute and move it down into the middle of the chart:</p>
+<pre><code class="language-javascript">{
+    title: {
+        text: '95%',
+        y: 200,
+    },
+}
+</code></pre>
+<iframe width="100%" height="400" src="http://benmccormick.org//jsfiddle.net/ben336/81kb997x/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<p>And with that we’ve taken our original inputs and produced a dynamic illustration of a confidence interval that matches the image we started with.</p>
+<h3>More Resources</h3>
+<ul>
+<li>
+<p>Highcharts has great <a href="http://api.highcharts.com/highcharts/">documentation</a> and you can see more <a href="https://www.highcharts.com/demo">demos</a> on their site, both for Highcharts and their stock and map chart variants.  Note that Highcharts is not free for commercial use.  I’ve found that it is well worth the money though for any team that is going to be doing many data visualizations, especially if its using relatively standard forms of data visualizations on variable data.</p>
+</li>
+<li>
+<p>If you need more freeform visualizations, <a href="https://d3js.org/">d3</a> is a great place to look.  Here’s an example of D3 being used to draw a similar chart: <a href="http://bl.ocks.org/phil-pedruco/88cb8a51cdce45f13c7e">http://bl.ocks.org/phil-pedruco/88cb8a51cdce45f13c7e</a>  It’s more involved than the Highcharts example, but allows for more flexibility as a result.  And unlike Highcharts, its free to use for anything.</p>
+</li>
+</ul>
+]]></content:encoded>
+            <author>
+                <name>Ben McCormick</name>
+                <email>ben@benmccormick.org</email>
+                <link>http://benmccormick.org</link>
+            </author>
+        </item>
         <item>
             <title><![CDATA[Grading Applications on Config Portability]]></title>
             <link>https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/</link>
@@ -700,71 +831,6 @@ const BoringButton = ExtraPropsComponent(Button, 'boring');
 <li>This was intentionally a very high level look at Higher Order Components.  If you want to go deeper, <a href="https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.yhbug3ohe">this medium article</a> is a great deep dive into all the use cases they allow.</li>
 <li>If you’re interested in using HoCs in your own code base, <a href="https://github.com/acdlite/recompose">recompose</a> is a utility library for making the syntax around defining and using them painless</li>
 </ul>
-]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
-        </item>
-        <item>
-            <title><![CDATA[Readable code: Know your audience ]]></title>
-            <link>https://benmccormick.org/2016/12/11/readable-code-audience/</link>
-            <guid>https://benmccormick.org/2016/12/11/readable-code-audience/</guid>
-            <pubDate>Mon, 12 Dec 2016 04:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>A coworker asked me last week if there was a better way to write the following python code:</p>
-<pre><code class="language-python">self.custom_attributes = {
-  x.split(':')[0]: x.split(':')[1]
-  for x in a.split(',')
-}
-</code></pre>
-<p>I semi-jokingly replied that there were 3 better ways:</p>
-<h5>For people who like comprehensions</h5>
-<pre><code class="language-python">self.custom_attributes = {
-  key: value
-  for [key, value] in [entry.split(':') for entry in a.split(',')]
-}
-</code></pre>
-<h5>For people who like functions</h5>
-<pre><code class="language-python">def build_obj(acc, val):
-   [key, value] = val.split(':')
-   acc[key] = value
-   return acc
-self.custom_attributes = reduce(build_obj, a.split(','), {})
-</code></pre>
-<h4>For people who like other folks to be able to read their code</h4>
-<pre><code class="language-python"># create a hash of custom attributes
-self.custom_attributes = {}
-# get the entries from splitting the input string
-entries = a.split(',')
-# for each entry split the key value pairs and add them to the hash
-for entry in entries:
-   [key, value] = entry.split(':')
-   self.custom_attributes[key] = value
-</code></pre>
-<p>The joke of course is that it doesn’t really matter what the author of the code considers the best way to write it.  Like writing an essay or persuasive speech, it is much more important to consider the audience, and what style will work best for them.  Most code will eventually be read by other people, even if that is simply a future version of the original author who has been stripped of context by time [^1].</p>
-<p>If my coworker is confident that his code will be read in the future by confident Python programmers who understand object comprehensions, then he could go with the first example, with its heavy use of python idioms.  If he thought it was more likely that somebody like me who is used to JavaScript idioms, he might consider the less idiomatic python from the second example that matched his teammates.  If he didn’t know who would read the code in the future, he might go with the more explicit and difficult to misinterpret version 3, and possibly tuck it away within a named function so that the main code flow could remain uninterrupted.</p>
-<pre><code class="language-python">self.custom_attributes = parse_entry_string(a)
-
-# ... elsewhere ...
-
-def parse_entry_string (entry_string):
-    attributes = {}
-    # get the entries from splitting the input string
-    entries = a.split(',')
-    # for each entry split the key value pairs and add them to the hash
-    for entry in entries:
-       [key, value] = entry.split(':')[0:2]
-       attributes[key] = value
-    return attributes
-</code></pre>
-<p>Of course once the functionality is separated out into a function, it matters a lot less how it is implemented since the only time somebody will need to read it is when they are interested in that specific functionality and can invest the time to understand the code.  The well named function replaces the need for understanding everything when people browse through the code.  This is extremely important in larger code bases, since data often flows through many lines of code.  The more of it that can be usefully (and accurately) abstracted away for a reader, the easier the code base is to debug.</p>
-<p>So quick tip version:</p>
-<ol>
-<li>Think about the audience of the code you’re writing</li>
-<li>Naming functions well limits the needs to make implementation details readable for everybody. It can also make your program flow easier to follow.</li>
-</ol>
-<p>[^1]: In my experience, it usually only takes about a week for me to look back at my old code and wonder what maniac wrote it and what he could have possibly been thinking</p>
 ]]></content:encoded>
             <author>
                 <name>Ben McCormick</name>
