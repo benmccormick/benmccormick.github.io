@@ -1,9 +1,9 @@
 ---
-title: "Building Normal Distribution Curves with JavaScript using Highcharts"
+title: "Building Normal Distribution Charts using Highcharts"
 date: "2017-05-12 02:30:00+00:00"
 layout: "post"
 path: "/2017/05/11/building-normal-curves-highcharts/"
-description: "Creating a statistical visualization with Highcharts"
+description: "Creating a statistical visualization in JavaScript"
 keywords: "normal curve bell highcharts javascript"
 category: "frameworks"
 readNext: "jest-first,react-component-styles,mobx-first"
