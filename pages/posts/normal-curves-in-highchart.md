@@ -1,13 +1,15 @@
 ---
 title: "Building Normal Curves with JavaScript using Highcharts"
-date: "2017-05-10 23:00:00+00:00"
+date: "2017-05-12 02:30:00+00:00"
 layout: "post"
-path: "/2017/05/10/building-normal-curves-highcharts/"
+path: "/2017/05/11/building-normal-curves-highcharts/"
 description: "Creating a statistical visualization with Highcharts"
 keywords: "normal curve bell highcharts javascript"
 category: "frameworks"
 readNext: "jest-first,react-component-styles,mobx-first"
 key: "highcharts-normal"
+pageViews: "0"
+last30pageViews: "0"
 ---
 
 This week I got to have a little fun remembering some High School math, and using one of my favorite libraries: [Highcharts](https://www.highcharts.com/).  Highcharts is a commercial JavaScript data-viz library, and it makes most standard charts and graphs a breeze to implement.  I was using it to plot a normal distribution in order to display a 95% confidence interval.  It's a pretty straightforward problem, but its a nice example of a practical use of Highcharts, and comes with a little stats math that many of us may have learned and forgotten.
@@ -52,22 +54,117 @@ const generatePoints = (lowerBound, upperBound) => {
 }
 ```
 
-Now that we have the x axis locations for the points, we can generate a whole data series.  To keep it clean, we'll create a translation function that has preloaded the values of `mean` and `stdDev`, and then just use `Array.prototype.map` to generate the seriesData.
+Now that we have the x axis locations for the points, we can generate a whole data series.  
 
 ```javascript
 let mean = getMean(lowerBound, upperBound);
 let stdDev = getStdDeviation(lowerBound, upperBound);
 let points = generatePoints(lowerBound, upperBound);
 
-let translationFunc = x => normalY(x, mean, stdDev);
 
-let seriesData = points.map(x => ({ x, y: translationFunc(x)}));
+let seriesData = points.map(x => ({ x, y: normalY(x, mean, stdDev)}));
 ```
 
 
+### Step 2: Creating the Chart
+
+Now we have what we need to generate a chart!  Given the data, It's easy to make a simple normal distribution curve with highcharts.  All we need to do is create a `<div id="container">` element and then run this JavaScript:
+
+```javascript
+Highcharts.chart('container', {
+    chart: {
+        type: 'area'
+    },
+    series: [{
+        data: seriesData,
+    }],
+});
+```
+
+Which produces the following graph: 
 
 
+<iframe width="100%" height="400" src="//jsfiddle.net/ben336/8bgm1m18/embedded/result,js/"
+allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+Thats a good start, but contains a lot of "stuff" that Highcharts provides by default that we don't necessarily want for our normal distribution illustration.  Let's cut the title, legend, y-axis, and tooltips/mouse action.  To do that we need a bit more configuration:
+
+```javascript
+Highcharts.chart('container', {
+    chart: {
+        type: 'area',
+        height: 300,
+    },
+    title: {
+        text: ''
+    },
+    yAxis: {
+      labels: {
+        enabled: false,   
+      },
+      gridLineWidth: 0,
+      title: ''
+    },
+    tooltip: {
+       enabled: false,
+    },
+    legend: {
+      enabled: false,
+    },
+    series: [{
+        data: seriesData,
+    }],
+    plotOptions: {
+      area: {
+        enableMouseTracking: false,
+      }
+    }
+});
+```
+
+
+<iframe width="100%" height="400" src="//jsfiddle.net/ben336/w7165m2u/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+This is pretty great, but we still want to show our confidence interval like the wikipedia image at the top.  Ideally we'd only be filling in the areas within the 95% curve.  Thats pretty easy to do with Highcharts.  We can use *zones*, Highcharts way of applying different styles to different sections of the chart.  We want our zones to apply to the x axis, and we'll define 3 zones: 0 to the lower bound, lower bound to the upper bound, and everything else.  In Highcharts that looks like this:
+
+```javascript
+{
+  plotOptions: {
+    area: {
+      zones: [{
+        //fillColor gets the inside of the graph, color would change the lines
+        fillColor: 'white',
+        // everything below this value has this style applied to it
+        value: lowerBound,
+      },{
+        value: upperBound,
+      },{
+        fillColor: 'white',
+      }]
+    },
+  },
+}
+```
+
+We also want to show a 95% label on the graph like the image at the start.  There are multiple ways to do that in Highcharts, but for this simple case we'll just abuse the title attribute and move it down into the middle of the chart:
+
+```javascript
+{
+    title: {
+        text: '95%',
+        y: 200,
+    },
+}
+```
+
+
+<iframe width="100%" height="400" src="//jsfiddle.net/ben336/81kb997x/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+And with that we've taken our original inputs and produced a dynamic illustration of a confidence interval that matches the image we started with.  
 
 
 ### More Resources
 
+- Highcharts has great [documentation](http://api.highcharts.com/highcharts/) and you can see more [demos](https://www.highcharts.com/demo) on their site, both for Highcharts and their stock and map chart variants.  Note that Highcharts is not free for commercial use.  I've found that it is well worth the money though for any team that is going to be doing many data visualizations, especially if its using relatively standard forms of data visualizations on variable data.  
+
+- If you need more freeform visualizations, [d3](https://d3js.org/) is a great place to look.  Here's an example of D3 being used to draw a similar chart: http://bl.ocks.org/phil-pedruco/88cb8a51cdce45f13c7e  It's more involved than the Highcharts example, but allows for more flexibility as a result.  And unlike Highcharts, its free to use for anything.  
