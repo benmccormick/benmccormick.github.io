@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-05-12T02:42:06Z</updated>
+    <updated>2017-05-28T04:09:09Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -16,6 +16,29 @@
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Mariana Syntax Theme For Atom]]></title>
+        <id>https://benmccormick.org/2017/05/28/mariana-syntax-atom/</id>
+        <link href="https://benmccormick.org/2017/05/28/mariana-syntax-atom/">
+        </link>
+        <updated>2017-05-28T04:05:00Z</updated>
+        <content type="html"><![CDATA[<p>I’ve been using <a href="https://atom.io">Atom</a> as my primary text editor for a year and a half now, but I still occasionally play with other editors and keep up with their updates.  There are a crazy number of good cross platform editors these days, and they all have a bunch of good ideas that get shared and remixed across each other. This week Sublime Text came out with a new release <a href="https://www.sublimetext.com/3dev">Dev Build 3132</a> that included 3 new color schemes.  One of them was Mariana, which I believe is a variation on the also great <a href="http://labs.voronianski.com/oceanic-next-color-scheme/">Oceanic Next</a>, with possibly some influences from my previous favorite dark theme <a href="https://github.com/chriskempson/tomorrow-theme">Tommorrow Night Eighties</a> [^1].  It stood out to me right away.</p>
+<div>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The Mariana syntax theme that shipped in the new Sublime Text is really nice <a href="https://t.co/xbmjBTNoWY">pic.twitter.com/xbmjBTNoWY</a></p>&mdash; Ben McCormick (@ben336) <a href="https://twitter.com/ben336/status/868160533345841152">May 26, 2017</a></blockquote>
+</div>
+<p>Since I’m no longer using Sublime, I decided to port the theme to Atom.  I built on the work of the great <a href="https://github.com/atom-material/atom-material-syntax">atom-material-syntax</a> package to build out a new theme.  It turns out to be surprisingly easy to build a color scheme in Atom.  Fork an existing theme, change some colors and the details in package.json, delete a bunch of git tags [^2], and then run <code>apm deploy minor</code>, and you’re in business.</p>
+<p>You can now download <a href="https://atom.io/themes/mariana-syntax">mariana-syntax</a> in Atom.  This was a quick port.  I’ll be working to optimize it for the languages I use (JS, Python, CSS/Less, HTML and Markdown) over the next few weeks.  I would love to see pull requests for other languages or for anything that I’ve missed so far.</p>
+<p><img alt="screenshot of mariana-syntax" src="http://benmccormick.org/posts/images/mariana/screenshot.png"
+class="full-width"></p>
+<p>[^1]: To be clear, I’m not sure how great of an influence this was.  The scheme definitely bears a strong resemblance to both of those color schemes, and the release notes credit both authors as inspiration for the 3 new syntax-themes without naming specific schemes.</p>
+<p>[^2]: This Stack Overflow article was helpful <a href="https://stackoverflow.com/a/15755041/1424361">https://stackoverflow.com/a/15755041/1424361</a></p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Building Normal Distribution Charts using Highcharts]]></title>
         <id>https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/</id>
@@ -787,68 +810,6 @@ export const PageViewCounter = (props) =&gt; {
 <p>Nothing I’m aware of, though I am currently checking out <a href="http://www.bear-writer.com/">Bear</a> and <a href="https://itunes.apple.com/us/app/annotate-capture-and-share/id918207447?mt=12">Annotate</a> as potential replacements for Evernote and Skitch.</p>
 <h3>Software I used (nearly) every day in 2016</h3>
 <p>MacOS/iOS, Google Search, Chrome/Safari, Google Inbox/Airmail, Twitter/Tweetbot, Feedbin/Reeder, Instapaper, iMessage, Slack, Trello, 1Password, Atom/Vim, iTerm, Fish Shell, tmux, Bitbucket, Fantastical, Spotify, Evernote, Skitch, Dash</p>
-]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What are Higher Order Components?]]></title>
-        <id>https://benmccormick.org/2016/12/14/what-are-higher-order-components/</id>
-        <link href="https://benmccormick.org/2016/12/14/what-are-higher-order-components/">
-        </link>
-        <updated>2016-12-14T14:30:00Z</updated>
-        <content type="html"><![CDATA[<p>If you spend much time at all reading through articles and documentation around React, you’re likely to run into the term “Higher Order component”, often abbreviated HoC.  Since it is often used without context in React discussions, and is not a particularly intuitive term for many (most?) developers, I thought it was worth publishing a quick and simple explanation of what Higher Order Components are.</p>
-<p>Higher Order Components are functions that take a React Component, and return a React Component.  The “higher order” phrasing is borrowed from the term “higher order function”, a more widely used term in Mathematics and Computer Science that refers to a function that either takes one or more functions as an argument, returns a function, or does both.  Since React Components can be thought of as functions that take data and return ui elements, the naming and usage make sense.  Let’s look at an example of a higher order component.</p>
-<pre><code class="language-javascript">const ExtraPropsComponent = (WrappedComponent, componentType) =&gt; {
-  return class ExtraPropsChild extends React.Component {
-    render() {
-      let props = Object.assign({}, this.props, {
-        importantFunction: () =&gt; 'foo',
-        componentType,
-      });
-      return &lt;WrappedComponent {...props}/&gt;
-    }
-  }
-}
-</code></pre>
-<p>This is a pretty basic HoC that takes a component and returns a new version of that component that will always be passed 2 extra props <code>importantFunction</code> and <code>componentType</code>. One is statically generated in this case, but the other is dynamically passed in when the component is generated.  The ability to pass dynamic content in when defining the component is one of the key wins of HoCs in the real world.  For instance, this is how Redux’s <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options">connect</a> function works.</p>
-<p>Note that this is different from a normal React Component that renders a subcomponent passed as an argument like this:</p>
-<pre><code class="language-javascript">let componentType = '???';
-class ExtraPropsComponent extends React.Component
-  render() {
-      let { ChildComponent } = this.props;
-      let props = Object.assign({}, this.props, {
-        importantFunction: () =&gt; 'foo',
-        componentType,
-      });
-      delete props.ChildComponent;
-
-      return &lt;ChildComponent {...props} /&gt;;
-  }
-}
-</code></pre>
-<p>These 2 examples are roughly equivalent for this case, but accomplish things in different ways.  The HoC is a function that takes a component and data when it is created and generates another component.  The normal component example is a component that takes a component as a property and accesses a variable that is in its scope at creation time to generate the element tree that it renders.  The HoC is more flexible as you could theoretically create multiple versions of a component using the single HoC.</p>
-<pre><code class="language-javascript">
-const FancyButton = ExtraPropsComponent(Button, 'fancy');
-const CrazyButton = ExtraPropsComponent(Button, 'crazy');
-const BoringButton = ExtraPropsComponent(Button, 'boring');
-</code></pre>
-<p>For the equivalent functionality without using an HoC, you would have to define the whole component for each case.</p>
-<h3>Higher Order Components in the real world</h3>
-<p>I’ve already mentioned connect from <a href="https://github.com/reactjs/react-redux">react-redux</a> as an example of a higher order component.  Other popular libraries that use HoC as part of their APIs include:</p>
-<ul>
-<li><a href="http://formidable.com/open-source/radium/">Radium</a>: a library for inline styles in React that uses a higher order component to transform in-line styles added to a component into a more robust-css like system</li>
-<li><a href="https://github.com/ReactTraining/react-router">React Router</a>: a routing library for React that uses <code>withRouter</code> a HoC that injects access to the router into components that it wraps</li>
-<li><a href="https://facebook.github.io/relay/">Relay</a>: Facebook’s library for connecting to GraphQL APIs includes Relay.Container, a HoC that allows developers to declare the data requirements for a component</li>
-</ul>
-<h3>More Resources</h3>
-<ul>
-<li>This was intentionally a very high level look at Higher Order Components.  If you want to go deeper, <a href="https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.yhbug3ohe">this medium article</a> is a great deep dive into all the use cases they allow.</li>
-<li>If you’re interested in using HoCs in your own code base, <a href="https://github.com/acdlite/recompose">recompose</a> is a utility library for making the syntax around defining and using them painless</li>
-</ul>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
