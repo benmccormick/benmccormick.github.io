@@ -21,7 +21,7 @@ I've been using [Atom](https://atom.io) as my primary text editor for a year and
 
 Since I'm no longer using Sublime, I decided to port the theme to Atom.  I built on the work of the great [atom-material-syntax](https://github.com/atom-material/atom-material-syntax) package to build out a new theme.  It turns out to be surprisingly easy to build a color scheme in Atom.  Fork an existing theme, change some colors and the details in package.json, delete a bunch of git tags [^2], and then run `apm deploy minor`, and you're in business.  
 
-You can now download [mariana-syntax](https://atom.io/themes/mariana-syntax) in Atom.  This was a quick port.  I'll be working to optimize it for the languages I use (JS, Python, CSS/Less, HTML and Markdown) over the next few weeks.  I would love to see pull requests for other languages or for anything that I've missed so far.  I look forward to this just getting better and better.
+You can now download [mariana-syntax](https://atom.io/themes/mariana-syntax) in Atom.  This was a quick port.  I'll be working to optimize it for the languages I use (JS, Python, CSS/Less, HTML and Markdown) over the next few weeks.  I would love to see pull requests for other languages or for anything that I've missed so far.  I look forward to this just getting better and better. **Update:** Version 0.2.0 has shipped with optimized syntax for JavaScript, Python, CSS, JSON and Markdown.
 
 
 <img alt="screenshot of mariana-syntax" src="/posts/images/mariana/screenshot.png"
