@@ -12,6 +12,7 @@ import defer from 'lodash/defer';
 import '../css/codeformat.css';
 import '../css/typography.css';
 import '../css/images.css';
+import '../css/twitter.css';
 import '../css/mailchimp.css';
 
 class MarkdownWrapper extends React.Component {
