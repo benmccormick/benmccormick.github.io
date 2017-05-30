@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-05-28T22:21:28Z</updated>
+    <updated>2017-05-30T03:20:56Z</updated>
     <author>
         <name>Ben McCormick</name>
         <email>ben@benmccormick.org</email>
@@ -17,16 +17,81 @@
         <email>ben@benmccormick.org</email>
     </contributor>
     <entry>
+        <title type="html"><![CDATA[Atom Productivity Tips]]></title>
+        <id>https://benmccormick.org/2017/05/29/atom-tips/</id>
+        <link href="https://benmccormick.org/2017/05/29/atom-tips/">
+        </link>
+        <updated>2017-05-30T03:20:00Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://atom.io">Atom</a> is a modern hackable text editor.  I’ve been using it as my primary editor for a year and a half, and have picked up some tips along the way that I thought were worth sharing.  These tips assume that you have at least a passing familiarity with Atom: they’re the things that I’ve picked up over time that have made me more productive.</p>
+<h4>1. There is more to the Fuzzy Finder than meets the eye</h4>
+<p>Fuzzy finders have been a key feature on modern editors since TextMate first popularized the ⌘T command[^1] for searching through project files.  ⌘T (or ⌘P) still works great in Atom, but what you may not know is that Atom provides 2 other versions of the command. ⌘B searches only among currently open files.  ⇧⌘B searches only among files that are “dirty” according to git[^2].  Both of those options are built in.  You can also find other uses for the fuzzy-finder if you start exploring plugins, including <a href="https://atom.io/packages/atom-fuzzy-grep">atom-fuzzy-grep</a>, a plugin that lets you use the fuzzy-finder interface to search file contents using grep, <a href="https://benmccormick.org/2016/04/30/ack-tips/">ack</a>, ag, or ripgrep.</p>
+<h4>2. Atom is a great Vim replacement</h4>
+<p>If you’ve been following this blog for a while, you know I’ve written a lot about <a href="https://benmccormick.org/learning-vim-in-2014/">Vim</a>.  I still love the <a href="https://benmccormick.org/2014/07/16/learning-vim-in-2014-vim-as-art/">philosophy of Vim</a>, and think that the text editing <a href="https://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/">language</a> it implements is the best way to edit code quickly.  But Atom’s <a href="https://atom.io/packages/vim-mode-plus">vim-mode-plus</a> is the best vi implementation I’ve seen outside of Vim, and unlike other editors, you don’t need to get frustrated with a halfway approach to Vi-keybindings, since you can make pretty much everything work in a vim-like way.  That’s because:</p>
+<h4>3. Atom’s keybindings are powerful and flexible</h4>
+<p>Any command exposed by the core editor or a plugin in Atom can be bound to a keyboard shortcut.  None of the default commands are hard-coded, and the editor provides powerful contexts for controlling what keys have lead to what action when.  That means if I want to use <code>ctrl-j/k/l/h</code> to control my navigation between split panes, but also use <code>ctrl-j/k</code> to move up and down in the autocomplete widget, I can just add these lines to my <code>keymap.cson</code> file</p>
+<pre><code class="language-coffeescript">'atom-text-editor, body':
+  'ctrl-k': 'window:focus-pane-above'
+  'ctrl-j': 'window:focus-pane-below'
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-l': 'window:focus-pane-on-right'
+
+'body atom-text-editor.autocomplete-active':
+  'ctrl-k': 'autocomplete-plus:move-up'
+  'ctrl-j': 'autocomplete-plus:move-down'
+</code></pre>
+<p>Different commands are triggered in different context.  You can also take advantage of this with vim-mode to have “normal mode only” keyboard shortcuts like this:</p>
+<pre><code class="language-coffeescript">'atom-text-editor.vim-mode-plus.normal-mode':
+  '] b': 'pane:show-next-item'
+  '[ b': 'pane:show-previous-item'
+</code></pre>
+<p>That implements a behavior I’d missed from Vim’s <a href="https://github.com/tpope/vim-unimpaired">unimpaired plugin</a> of moving between open files with <code>[b</code> and <code>]b</code>.</p>
+<h4>4. Make sure to sync your settings</h4>
+<p>One area where Atom is less ideal than Vim is setting portability.  It doesn’t have a single file where all configuration is stored, or a nice settings folder that can be synced.  Instead settings are intermingled with other data in a <code>~/.atom</code> folder, a fact that is obscured by the editor’s UI, which attempts to put a nice UI in front of all of these setting files and steer you away from editing them directly or caring about where they’re stored.  Which works great until you need to move your config to a new machine or sync between 2 machines.</p>
+<p>Fortunately, there’s a great plugin <a href="https://github.com/atom-community/sync-settings">sync-settings</a> that makes this simple.  It does require setting up a gist to serve as your repo, but after that the process is painless and allows you to continue on unaware of the implementation details behind settings.</p>
+<h4>5. Check Timecop and clean up plugins that you’re not using</h4>
+<p>Atom is built on web technologies.  This is both the best and worst thing about Atom.  It leads to its greatest strengths: hackability, a focus on UX early on since they didn’t have to build a whole UI engine from scratch, and quick iteration.  But it also has very real tradeoffs, the biggest of which are battery life and startup performance[^3].  There’s not much to be done about the battery life drain; Atom is based on Chromium, and Chromium is a battery hog.  It is simply a tradeoff to understand when choosing an editor.  But startup performance is often greatly influenced by the packages that you choose to use.  Fortunately Atom includes a simple tool for tracking this called Timecop.</p>
+<p>You can find Timecop in the command palette (⇧⌘P by default).  When you run it, Timecop displays a report of all of your packages and themes and how they contribute to startup time.  It will look something like this:</p>
+<p><img alt="screenshot of timecop" src="http://benmccormick.org/posts/images/atom/timecop.png"
+class="full-width"></p>
+<p>I wouldn’t recommend obsessing too much over timecop.  For most packages the benefit you receive is going to significantly outweigh any startup burden.  But if your editor starts to feel sluggish, this is a great first step to figuring out if there’s anything you can drop to make an impact.</p>
+<h4>6. The UI is just HTML and CSS, and that means you can edit it</h4>
+<p>Everything you see in an Atom UI is an HTML element, with classes that you can use to select and style them. This fact is mostly relevant when creating themes, but you can also use it to make one-off UI adjustments.  For instance, when I edit Markdown files, the <a href="https://github.com/sindresorhus/atom-editorconfig">editorconfig</a> plugin I have installed warns me about a possible conflict with another atom package. The warning shows up as a small colored mouse icon in the status bar.</p>
+<p><img alt="screenshot of editorconfig mouse icon in the status bar" src="http://benmccormick.org/posts/images/atom/editor-mouse.png"
+class="full-width"></p>
+<p>I find this warning distracting.  I know what its there for and have decided I don’t care about it, but I can’t dismiss it normally.  So instead I can take advantage of Atom’s flexibility to just get rid of it. All I need to do is open up devtools (⇧⌘I) and find the class.</p>
+<p><img alt="screenshot of editorconfig mouse icon in the status bar with devtools open" src="http://benmccormick.org/posts/images/atom/editor-mouse-devtools.png"
+class="full-width"></p>
+<p>Then we can edit our styles.less file.  Atom will open it for you if you click the <em>your stylesheet</em> link at the top of the Settings&gt;Themes page.  My edit to remove the mouse icon looks like this:</p>
+<pre><code class="language-less">.aec-icon-mouse {
+  display: none;
+}
+</code></pre>
+<h3>More Resources</h3>
+<ul>
+<li>The <a href="https://atom.io/docs">atom documentation</a> is really great, and worth diving into if you want to go deeper into Atom</li>
+<li>If you’re interested in learning more about keyboard driven text editing, check out <a href="https://benmccormick.org/learning-vim-in-2014/">my series on Vim</a>.</li>
+</ul>
+<p>[^1]: I’m using MacOS default keyboard shortcuts for this post.  Windows and Linux shortcuts are usually similar with <code>ctrl</code> often swapped for <code>⌘</code>.
+[^2]: Dirty files are files that have been edited and not yet added to the index or committed.
+[^3]: I’ve definitely seen post-startup perf issues at points as well, but I suspect that those are implementation problems that will continue to improve as the editor matures and the underlying Chromium platform continues to push on performance.  This may be naive.</p>
+]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Mariana Syntax Theme For Atom]]></title>
         <id>https://benmccormick.org/2017/05/28/mariana-syntax-atom/</id>
         <link href="https://benmccormick.org/2017/05/28/mariana-syntax-atom/">
         </link>
         <updated>2017-05-28T04:05:00Z</updated>
-        <content type="html"><![CDATA[<p>I’ve been using <a href="https://atom.io">Atom</a> as my primary text editor for a year and a half now, but I still occasionally play with other editors and keep up with their updates.  There are a crazy number of good cross platform editors these days, and they all have a bunch of good ideas that get shared and remixed across each other. This week Sublime Text came out with a new release <a href="https://www.sublimetext.com/3dev">Dev Build 3132</a> that included 3 new color schemes.  One of them was Mariana, which I believe is a variation on the also great <a href="http://labs.voronianski.com/oceanic-next-color-scheme/">Oceanic Next</a>, with possibly some influences from my previous favorite dark theme <a href="https://github.com/chriskempson/tomorrow-theme">Tommorrow Night Eighties</a> [^1].  It stood out to me right away.</p>
+        <content type="html"><![CDATA[<p>Sometimes the best thing to do is steal somebody else’s good idea. I’ve been using <a href="https://atom.io">Atom</a> as my primary text editor for a year and a half now, but I still occasionally play with other editors and keep up with their updates.  There are a crazy number of good cross platform editors these days, and they all have a bunch of good ideas that get shared and remixed across each other. This week Sublime Text came out with a new release <a href="https://www.sublimetext.com/3dev">Dev Build 3132</a> that included 3 new color schemes.  One of them was Mariana, which I believe is a variation on the also great <a href="http://labs.voronianski.com/oceanic-next-color-scheme/">Oceanic Next</a>, with possibly some influences from my previous favorite dark theme <a href="https://github.com/chriskempson/tomorrow-theme">Tommorrow Night Eighties</a> [^1].  It stood out to me right away.</p>
 <div>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The Mariana syntax theme that shipped in the new Sublime Text is really nice <a href="https://t.co/xbmjBTNoWY">pic.twitter.com/xbmjBTNoWY</a></p>&mdash; Ben McCormick (@ben336) <a href="https://twitter.com/ben336/status/868160533345841152">May 26, 2017</a></blockquote>
 </div>
-<p>Since I’m no longer using Sublime, I decided to port the theme to Atom.  I built on the work of the great <a href="https://github.com/atom-material/atom-material-syntax">atom-material-syntax</a> package to build out a new theme.  It turns out to be surprisingly easy to build a color scheme in Atom.  Fork an existing theme, change some colors and the details in package.json, delete a bunch of git tags [^2], and then run <code>apm deploy minor</code>, and you’re in business.</p>
+<p>Since I’m no longer using Sublime Text, I decided to port the theme to Atom.  I built on the work of the great <a href="https://github.com/atom-material/atom-material-syntax">atom-material-syntax</a> package to build out a new theme.  It turns out to be surprisingly easy to build a color scheme in Atom.  Fork an existing theme, change some colors and the details in package.json, delete a bunch of git tags [^2], and then run <code>apm deploy minor</code>, and you’re in business.</p>
 <p>You can now download <a href="https://atom.io/themes/mariana-syntax">mariana-syntax</a> in Atom.  This was a quick port.  I’ll be working to optimize it for the languages I use (JS, Python, CSS/Less, HTML and Markdown) over the next few weeks.  I would love to see pull requests for other languages or for anything that I’ve missed so far.  I look forward to this just getting better and better. <strong>Update:</strong> Version 0.2.0 has shipped with optimized syntax for JavaScript, Python, CSS, JSON and Markdown.</p>
 <p><img alt="screenshot of mariana-syntax" src="http://benmccormick.org/posts/images/mariana/screenshot.png"
 class="full-width"></p>
@@ -731,85 +796,6 @@ export const PageViewCounter = (props) =&gt; {
 <p>[^1]: This is a bit of a generalization.  React provides an abstraction over HTML that replaces hand-written HTML, but doesn’t specify anything for CSS, CSS in JS solutions are simply popular in that community.  Vue and Angular both allow  CSS and HTML to share a file with JS, but CSS can still be handled separately.
 [^2]: There are some distinctions about CSS in JS vs importing CSS into JS using webpack that I’m not really dealing with here.  This is a post about how to think about these decisions moreso than the specific options for bundling CSS and JS
 [^3]: The root HTML element in any Marionette component is always defined implicitly in JavaScript, and Handlebars is an expressive templating language that can handle more than structure.</p>
-]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2016 Roundup]]></title>
-        <id>https://benmccormick.org/2016/12/31/2016-roundup/</id>
-        <link href="https://benmccormick.org/2016/12/31/2016-roundup/">
-        </link>
-        <updated>2016-12-30T02:15:00Z</updated>
-        <content type="html"><![CDATA[<p>Thanks to all of you who have followed my blog this year! It was a busy year and I didn’t get as many posts out as years past, but you all have been as supportive as ever.  I’m excited about the things I’ve been able to do with the new site this month, and am looking forward to a great 2017.  But first, a look back.</p>
-<h3>Most Read Posts of 2016</h3>
-<p>I wrote 15 posts in 2016, down from my pace of 19 in 2015 and 25 in 2014.  Some of that was an unusually busy work year, and some of the time I normally put into the site went to the redesdign. I also sat on a few articles that didn’t turn out that great when actually written out.  But I made a good run at the end and hopefully will be writing more in 2017.  The most read posts from this site in 2016 were:</p>
-<ol>
-<li>
-<p><a href="http://benmccormick.org/2016/01/11/the-most-interesting-atom-packages-ive-found-so-far/">The Most Interesting Atom Packages I’ve found so far</a> - I started using <a href="https://atom.io/">Atom</a> as my primary text editor late in 2015.  This was my roundup of the coolest and most unique plugins I had found for Atom at that point.</p>
-</li>
-<li>
-<p><a href="http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/">Testing with Jest Snapshots</a> - This was my review of <a href="https://facebook.github.io/jest/">Jest</a>’s snapshot testing feature.  I found it extremely useful for testing UI components.  I also wrote about Jest again <a href="http://benmccormick.org/2016/12/10/saving-time-with-jest/">this month</a>, transcribing a talk I gave at a local meetup on <a href="http://benmccormick.org/2016/12/10/saving-time-with-jest/">How Jest can save you time</a>.</p>
-</li>
-<li>
-<p><a href="http://benmccormick.org/2016/01/08/reusable-code-patterns/">Reusable Code Patterns</a> - This article was a high level look at the ways you can approach sharing code for 2 different use cases.</p>
-</li>
-</ol>
-<h4>Honorable Mention</h4>
-<p><a href="http://benmccormick.org/2015/12/30/es6-patterns-converting-callbacks-to-promises/">ES6 Patterns: Converting Callbacks to Promises</a> - This article was technically written in 2015, but it was published during the last week of the year and thus wasn’t eligible to be included last year. However it has proven quite popular.  This was my attempt at a straightforward explanation of how to convert a callback based API to a Promise based one.</p>
-<h3>Code I wrote in 2016</h3>
-<p>Most of the code I wrote this year was for my work at Windsor Circle.  But I have spent some time getting this blog up and running, and anyone interested in what it takes to get a fully functioning blog running on <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> is welcome to take a look at the <a href="https://github.com/benmccormick/benmccormickorg">github repo</a>.</p>
-<h3>Languages, Libraries, and Technologies I started using in 2016</h3>
-<ul>
-<li>
-<p><a href="https://facebook.github.io/jest/">Jest</a> is a JavaScript testing library that I started using this year. It’s fantastic, and I’ve had the opportunity to <a href="http://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/">write</a> and <a href="http://benmccormick.org/2016/12/10/saving-time-with-jest/">speak</a> about it a few times already.</p>
-</li>
-<li>
-<p><a href="https://github.com/gatsbyjs/gatsby">Gatsbyjs</a> now powers this blog. Gatsby is a ReactJS based static site generator, and it has been a pleasure to work with.</p>
-</li>
-<li>
-<p>My team started using <a href="https://www.docker.com/">Docker</a> this year.  It’s been a mixed bag for me personally, but I love the idea of what it provides</p>
-</li>
-</ul>
-<h3>Languages, Libraries, and Technologies I stopped using in 2016</h3>
-<ul>
-<li>Despite my affection for <a href="http://marionettejs.com/">Marionette</a>, I’m no longer actively using it other than in some legacy code for my work application</li>
-</ul>
-<h3>Languages and Libraries I used (more or less) every day in 2016</h3>
-<p>JavaScript (ES6), Python, React, PostgreSQL, Backbone, lodash</p>
-<h3>Languages and Libraries I want to try in 2017</h3>
-<p>RxJS, Flow, VueJS, <a href="https://github.com/FormidableLabs/victory">Victory</a>, Pandas and other python data analysis libraries, Rust</p>
-<h3>Blogs I started following in 2016</h3>
-<p>Nothing new this year,</p>
-<h3>Blogs I read every post from in 2016</h3>
-<p>Rands In Repose, Stratechery, Daring Fireball,  <a href="http://Marco.org">Marco.org</a>, <a href="http://rauchg.com">rauchg.com</a>, <a href="http://purposedworking.com">purposedworking.com</a></p>
-<h3>Podcasts I started listening to in 2016</h3>
-<ul>
-<li><a href="http://www.npr.org/podcasts/510310/npr-politics-podcast">NPR Politics</a> - Approachable and fun while still being informative, one of the best ways to follow this years election.</li>
-</ul>
-<p><a href="http://www.npr.org/podcasts/510313/how-i-built-this">How I Built This</a> - This has been a great new podcast on entrepreneurship</p>
-<h3>Software I started using in 2016</h3>
-<ul>
-<li>
-<p><a href="http://inbox.google.com">Google Inbox</a> + <a href="http://airmailapp.com/">Airmail</a> for email: I’m not sure I’m ever going to be happy with an email client, but I’m currently using the combo of Google Inbox on iOS and Airmail on MacOS.  Post <a href="https://www.mailboxapp.com/">Mailbox</a>, Inbox is my favorite iOS mail app.  On desktop though I like to have universal inbox and tight integration with the rest of the operating system, so I use Airmail, which is less bad than the rest of the MacOS mail clients I’ve tried</p>
-</li>
-<li>
-<p><a href="http://copiedapp.com/">Copied</a>: Copied is a clipboard manager for MacOS (and sort of iOS).  It’s been great to be able to keep multiple things in the clipboard at once, and be able to go back and get something if I blow it away.  I’m not a power user.  I haven’t really figured out a reason to use their lists features, or their iOS client, but it has been great for the limited things I use it for.</p>
-</li>
-<li>
-<p><a href="https://caskroom.github.io/">Homebrew Cask</a>: I’ve used homebrew for a while.  But being able to install GUI apps as easily as command line apps has been pretty amazing.  If you are on OSX and don’t use homebrew to install pretty much everything, you’re missing out.  Of course the real effect is that it makes me dread and hate the Mac App Store even more.</p>
-</li>
-<li>
-<p><a href="http://www.nytimes.com/services/mobile/">The New York Times App</a>: Ok this is a bit of a cheat since this is more about content than software, but if you’re out of touch on what is going on in the world, there’s never been a better time to support a good source of news and reporting, whichever outlet is your preference.</p>
-</li>
-</ul>
-<h3>Software I stopped using in 2016</h3>
-<p>Nothing I’m aware of, though I am currently checking out <a href="http://www.bear-writer.com/">Bear</a> and <a href="https://itunes.apple.com/us/app/annotate-capture-and-share/id918207447?mt=12">Annotate</a> as potential replacements for Evernote and Skitch.</p>
-<h3>Software I used (nearly) every day in 2016</h3>
-<p>MacOS/iOS, Google Search, Chrome/Safari, Google Inbox/Airmail, Twitter/Tweetbot, Feedbin/Reeder, Instapaper, iMessage, Slack, Trello, 1Password, Atom/Vim, iTerm, Fish Shell, tmux, Bitbucket, Fantastical, Spotify, Evernote, Skitch, Dash</p>
 ]]></content>
         <author>
             <name>Ben McCormick</name>
