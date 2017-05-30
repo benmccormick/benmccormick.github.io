@@ -6,7 +6,7 @@ path: "/2016/01/11/the-most-interesting-atom-packages-ive-found-so-far"
 category: "tools"
 description: "A rundown of the coolest Atom packages I've seen"
 key: "interesting-atom"
-readNext: "atom-tips, learning-vim, vim-files"
+readNext: "atom-tips, learning-vim, mariana"
 pageViews: "87921"
 last30pageViews: "3357"
 ---
