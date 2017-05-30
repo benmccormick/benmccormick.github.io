@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Ben McCormick <ben.mccormick@alumni.duke.edu>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
+    "url": "https://github.com/benmccormick/benmccormickorg/issues"
   },
   "dependencies": {
     "front-matter": "^2.1.0",
@@ -39,9 +39,16 @@
     "sitemap": "^1.8.2",
     "svg-inline-loader": "^0.7.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://benmccormick.org",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "javascript",
+    "Ben",
+    "McCormick",
+    "vim",
+    "atom",
+    "Marionette",
+    "React"
   ],
   "license": "MIT",
   "main": "n/a",
