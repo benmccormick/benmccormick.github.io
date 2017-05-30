@@ -2,7 +2,7 @@ const Feed = require('feed');
 const filter = require('lodash/filter');
 const sortBy = require('lodash/sortBy');
 const moment = require('moment');
-const MarkdownIt = require('markdown-it');
+const markdownIt = require('markdown-it');
 const fs = require('fs');
 const frontmatter = require('front-matter');
 const copyFile = require('./utils/file_system').copyFile;
@@ -35,11 +35,14 @@ function generateSiteMap(pages) {
   );
 }
 
-const md = MarkdownIt({
+const md = markdownIt({
   html: true,
   linkify: true,
-  typographer: true
-});
+  typographer: true,
+  // highlight,
+})
+  .use(require('markdown-it-footnote'))
+  .use(require('markdown-it-attrs'));
 
 const buildContent = page => {
   let body = md.render(
