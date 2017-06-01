@@ -3,9 +3,9 @@ import CodePlugin from 'typography-plugin-code';
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants';
 
 const typography = new Typography({
-  baseFontSize: '21px',
+  baseFontSize: '20px',
   //baseLineHeight: 1.666,
-  baseLineHeight: 1.4,
+  baseLineHeight: 1.55,
   headerFontFamily: [
     'brandon-grotesque',
     'Brandon Grotesque',
