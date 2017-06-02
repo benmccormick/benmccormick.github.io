@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { prefixLink } from 'gatsby-helpers';
+import Link from 'gatsby-link';
 import filter from 'lodash/filter';
 import take from 'lodash/take';
 import includes from 'lodash/includes';
@@ -54,7 +53,7 @@ class RecommendedPosts extends React.Component {
             >
               <Link
                 to = {{
-                  pathname: prefixLink(nextPost.path),
+                  pathname: (nextPost.path),
                   query: {
                     readNext: true,
                   },

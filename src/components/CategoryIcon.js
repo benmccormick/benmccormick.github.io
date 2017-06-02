@@ -11,8 +11,7 @@ import project from 'pages/category_icons/project.svgi';
 import tools from 'pages/category_icons/tools.svgi';
 import question from 'pages/category_icons/question.svgi';
 import categoryList from '../pages/categories.json';
-import { Link } from 'react-router';
-import { prefixLink } from 'gatsby-helpers';
+import Link from 'gatsby-link';
 import get from 'lodash/get';
 import find from 'lodash/find';
 import '../css/categoryicon.css';
@@ -38,7 +37,7 @@ class CategoryIcon extends React.Component {
 
     let icon = selectedCategory ? icons[selectedCategory.icon] : question;
     let text = selectedCategory ? selectedCategory.title : 'Uncategorized';
-    return <Link to = {prefixLink(`/category/${category}/`)} className = 'category-icon-wrapper'>
+    return <Link to = {`/category/${category}/`} className = 'category-icon-wrapper'>
       <span className = {`category-icon category-icon-${category}`} >
         <InlineSVG src = {icon} />
       </span>

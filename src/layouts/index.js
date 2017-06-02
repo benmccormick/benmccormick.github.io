@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-responsive-grid';
 import { rhythm } from 'utils/typography';
-import { config } from 'config';
+// import { config } from 'config';
 import { Header } from '../components/Header';
 import '../css/mobile.css';
 
@@ -15,8 +15,8 @@ class Template extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <Header blogTitle = {config.blogTitle}/>
-        {children}
+        <Header blogTitle = {'TODO'}/>
+        {children()}
       </Container>
     );
   }

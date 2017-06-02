@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { prefixLink } from 'gatsby-helpers';
+import Link from 'gatsby-link';
 import find from 'lodash/find';
 import get from 'lodash/get';
 import { rhythm, scale } from 'utils/typography';
@@ -114,7 +113,7 @@ class Subscribe extends React.Component {
           >
                 RSS
               </h6>
-          <Link to = {prefixLink('/rss/')}>
+          <Link to = {('/rss/')}>
             <InlineSVG src = {rss} className = 'rss-icon'/>
             {' '}
             <span>RSS</span>

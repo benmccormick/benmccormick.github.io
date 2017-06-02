@@ -1,17 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { prefixLink } from 'gatsby-helpers';
 import { TypographyStyle } from 'react-typography';
 import {GA} from 'components/GA';
 import typography from './utils/typography';
 
-const BUILD_TIME = new Date().getTime();
-
-module.exports = React.createClass({
-  displayName: 'HTML',
-  propTypes: {
-    body: React.PropTypes.string,
-  },
+class HTML extends React.Component {
   render() {
     const { body } = this.props;
     const head = Helmet.rewind();
@@ -64,6 +57,7 @@ module.exports = React.createClass({
           {head.script.toComponent()}
           <TypographyStyle typography = {typography} />
           {css}
+          {this.props.headComponents}
         </head>
         <body
           className = "landing-page"
@@ -73,7 +67,6 @@ module.exports = React.createClass({
           }}
         >
           <div id = "react-mount" dangerouslySetInnerHTML = {{ __html: body }} />
-          <script src = {prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
           <GA />
           <script
             type = "text/javascript"
@@ -92,8 +85,15 @@ module.exports = React.createClass({
               }
             `}}
           />
+          {this.props.postBodyComponents}
         </body>
       </html>
     );
-  },
-});
+  }
+};
+
+HTML.propTypes = {
+  body: React.PropTypes.string,
+  headComponents: React.PropTypes.any,
+  postBodyComponents: React.PropTypes.any,
+};

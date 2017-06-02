@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { prefixLink } from 'gatsby-helpers';
+import Link from 'GatsbyLink';
 import { Ad } from './Ad';
 import '../css/header.css';
 
@@ -37,7 +36,7 @@ export class Header extends React.Component {
                 color: 'inherit',
               }}
               name = "title"
-              to = {prefixLink('/')}
+              to = {'/'}
             >
               {blogTitle}
             </Link>
@@ -49,14 +48,14 @@ export class Header extends React.Component {
           >
             <Link
               className = "header-link"
-              to = {prefixLink('/subscribe/')}
+              to = {('/subscribe/')}
             >
                     Subscribe
             </Link>
             <span style = {{padding: '0 0.33rem'}}>•</span>
             <Link
               className = "header-link"
-              to = {prefixLink('/archive/')}
+              to = {('/archive/')}
             >
                     Archive
             </Link>
@@ -70,7 +69,7 @@ export class Header extends React.Component {
             <span style = {{padding: '0 0.33rem'}}>•</span>
             <Link
               className = "header-link"
-              to = {prefixLink('/about/')}
+              to = {('/about/')}
             >
                     About
             </Link>

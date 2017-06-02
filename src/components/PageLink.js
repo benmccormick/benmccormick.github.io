@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
+import Link from 'gatsby-link';
 import get from 'lodash/get';
-import { prefixLink } from 'gatsby-helpers';
 import { rhythm } from 'utils/typography';
 import CategoryIcon from './CategoryIcon';
 import moment from 'moment';
@@ -28,7 +27,7 @@ class PageLink extends React.Component {
           }}
         >
           <div>
-            <Link style = {{boxShadow: 'none'}} to = {prefixLink(page.path)}>{_title}</Link>
+            <Link style = {{boxShadow: 'none'}} to = {(page.path)}>{_title}</Link>
             <p
               style = {{
                 fontStyle: 'italic',
@@ -46,7 +45,7 @@ class PageLink extends React.Component {
           }}
         >{moment(page.data.date).fromNow()}</span>
       </li>
-      );
+    );
   }
 }
 

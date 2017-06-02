@@ -5,7 +5,7 @@ const moment = require('moment');
 const markdownIt = require('markdown-it');
 const fs = require('fs');
 const frontmatter = require('front-matter');
-const copyFile = require('./utils/file_system').copyFile;
+const copyFile = require('./src/utils/file_system').copyFile;
 const sm = require('sitemap');
 
 function pagesToSitemap(pages) {
@@ -144,11 +144,11 @@ exports.postBuild = function(pages, callback) {
 };
 
 exports.modifyWebpackConfig = function(config, stage) {
-  config.removeLoader('svg');
-  config.loader('svg', function(cfg) {
-    cfg.test = /\.svgi$/;
-    cfg.loader = 'svg-inline';
-    return cfg;
-  });
-  return config;
+  // config.removeLoader('svg');
+  // config.loader('svg', function(cfg) {
+  //   cfg.test = /\.svgi$/;
+  //   cfg.loader = 'svg-inline';
+  //   return cfg;
+  // });
+  // return config;
 };
