@@ -49,6 +49,11 @@ module.exports = React.createClass({
           />
           <link rel = "manifest" href = "/manifest.json"/>
           <link rel = "mask-icon" href = "/safari-pinned-tab.svg?v=yyxgnp97qG" color = "#57a3e8"/>
+          <link
+            rel = "alternate" title = "JSON Feed"
+            type = "application/json" href = "/feed.json"
+          />
+
           <link rel = "shortcut icon" href = "/favicon.ico?v=yyxgnp97qG"/>
           <meta name = "theme-color" content = "#ffffff"/>
           <script

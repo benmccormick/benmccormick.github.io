@@ -59,6 +59,10 @@ let buildFeed = (pages) => {
     link: 'http://benmccormick.org',
     id: 'http://benmccormick.org',
     copyright: 'All rights reserved 2016, Ben McCormick',
+    feedLinks: {
+        atom: 'http://benmccormick.org/atom.xml',
+        json: 'http://benmccormick.org/feed.json',
+    },
     author: {
       name: 'Ben McCormick',
       email: 'ben@benmccormick.org'
@@ -110,10 +114,13 @@ let createRSSFolder = () => {
   }
 };
 let generateAtomFeed = (feed) => {
-  return fs.writeFileSync(__dirname + '/public/atom.xml', feed.render('atom-1.0'));
+  return fs.writeFileSync(__dirname + '/public/atom.xml', feed.atom1());
 };
 let generateRSS = (feed) => {
-  return fs.writeFileSync(__dirname + '/public/rss/index.xml', feed.render('rss-2.0'));
+  return fs.writeFileSync(__dirname + '/public/rss/index.xml', feed.rss2());
+};
+let generateJSONFeed = (feed) => {
+  return fs.writeFileSync(__dirname + '/public/feed.json', feed.json1());
 };
 
 let copyCNAME = (cb) => {
@@ -134,6 +141,7 @@ exports.postBuild = function(pages, callback) {
   createRSSFolder();
   generateAtomFeed(feed);
   generateRSS(feed);
+  generateJSONFeed(feed);
   generateSiteMap(pages);
   copySW(
     () => copyCNAME(
