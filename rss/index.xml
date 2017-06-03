@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>benmccormick.org</title>
-        <description>A blog by Ben McCormick</description>
         <link>http://benmccormick.org</link>
-        <lastBuildDate>Fri, 02 Jun 2017 01:43:54 GMT</lastBuildDate>
+        <description>A blog by Ben McCormick</description>
+        <lastBuildDate>Sat, 03 Jun 2017 21:06:53 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
-        <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <generator>Feed for Node.js</generator>
+        <copyright>All rights reserved 2016, Ben McCormick</copyright>
+        <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Atom Productivity Tips]]></title>
             <link>https://benmccormick.org/2017/05/29/atom-tips/</link>
@@ -74,11 +75,7 @@ class="full-width"></p>
 </ol>
 </section>
 ]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
             <title><![CDATA[Mariana Syntax Theme For Atom]]></title>
@@ -103,11 +100,7 @@ class="full-width"></p>
 </ol>
 </section>
 ]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
             <title><![CDATA[Building Normal Distribution Charts using Highcharts]]></title>
@@ -234,11 +227,7 @@ allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 </li>
 </ul>
 ]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
             <title><![CDATA[Grading Applications on Config Portability]]></title>
@@ -299,11 +288,7 @@ allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 </ol>
 </section>
 ]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
             <title><![CDATA[The Mystery of Docker and the Disk-Eating Cow]]></title>
@@ -331,11 +316,7 @@ class="full-width"></p>
 <p><img alt="daisy disk showing 100+GB of docker" src="http://benmccormick.org/posts/images/docker-cow/downloads.png"
 class="full-width"></p>
 ]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
             <title><![CDATA[Running Jest Tests Before Each Git Commit]]></title>
@@ -409,11 +390,7 @@ fi
 <li>This maybe merits a future post on its own, but if you’re interested in automating away your code style maintenance look at combining <a href="https://github.com/prettier/prettier">prettier</a> (and possibly  <a href="https://github.com/not-an-aardvark/eslint-plugin-prettier">eslint-plugin-prettier</a>) with the pre-commit hooks from above.  Prettier will guarantee that your code follows a consistent style, and because it handles maximum line lengths, is much more robust than ESLint on its own.  Using its ESLint plugin within my editor and on pre-commit hooks has pretty much eliminated me manually fixing code style problems.</li>
 </ul>
 ]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
             <title><![CDATA[Giving Context to Best Practices]]></title>
@@ -454,11 +431,7 @@ fi
 </ol>
 </section>
 ]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
             <title><![CDATA[Evaluating Web Apps With Lighthouse]]></title>
@@ -519,11 +492,7 @@ fi
 </li>
 </ul>
 ]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
             <title><![CDATA[MobX: First Impressions]]></title>
@@ -684,11 +653,7 @@ class Appointment {
 </ol>
 </section>
 ]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
             <title><![CDATA[Orthogonality and CSS in JS]]></title>
@@ -824,11 +789,7 @@ export const PageViewCounter = (props) =&gt; {
 </ol>
 </section>
 ]]></content:encoded>
-            <author>
-                <name>Ben McCormick</name>
-                <email>ben@benmccormick.org</email>
-                <link>http://benmccormick.org</link>
-            </author>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
 </rss>
