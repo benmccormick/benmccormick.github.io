@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-responsive-grid';
-import { rhythm } from 'utils/typography';
+import { rhythm } from '../utils/typography';
 // import { config } from 'config';
 import { Header } from '../components/Header';
 import '../css/mobile.css';

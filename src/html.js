@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { TypographyStyle } from 'react-typography';
-import {GA} from 'components/GA';
+import {GA} from './components/GA';
 import typography from './utils/typography';
 
 class HTML extends React.Component {

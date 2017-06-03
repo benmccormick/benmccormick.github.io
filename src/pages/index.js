@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
+import Link from 'gatsby-link';
 import sortBy from 'lodash/sortBy';
 import take from 'lodash/take';
 import parseInt from 'lodash/parseInt';
 import get from 'lodash/get';
-import { prefixLink } from 'gatsby-helpers';
-import { rhythm } from 'utils/typography';
+import { rhythm } from '../utils/typography';
 import Helmet from 'react-helmet';
 import { config } from 'config';
 import include from 'lodash/includes';
-import LinkList from 'components/LinkList';
+import LinkList from '../components/LinkList';
 
 class BlogIndex extends React.Component {
   render() {
@@ -75,7 +74,7 @@ class BlogIndex extends React.Component {
             <div >
               <Link
                 style = {{boxShadow: 'none'}}
-                to = {prefixLink('/marionette-explained/')}
+                to = {('/marionette-explained/')}
               >Marionette: Explained</Link>
               <p
                 style = {{
@@ -100,7 +99,7 @@ class BlogIndex extends React.Component {
             <div >
               <Link
                 style = {{boxShadow: 'none'}}
-                to = {prefixLink('/learning-vim-in-2014/')}
+                to = {('/learning-vim-in-2014/')}
               >Learning Vim in 2014</Link>
               <p
                 style = {{
@@ -119,7 +118,7 @@ class BlogIndex extends React.Component {
         >
           <Link
             style = {{boxShadow: 'none'}}
-            to = {prefixLink('/archive/')}
+            to = {('/archive/')}
           >
           See More Articles »
           </Link>

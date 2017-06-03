@@ -129,7 +129,7 @@ let copySW = (cb) => {
   copyFile(`${__dirname}/pages/sw.es6`, `${__dirname}/public/sw.js`, err => err ? cb(false) : cb());
 };
 
-exports.postBuild = function(pages, callback) {
+exports.onPostBuild = function(pages, callback) {
   let feed = buildFeed(pages);
   createRSSFolder();
   generateAtomFeed(feed);
@@ -144,11 +144,11 @@ exports.postBuild = function(pages, callback) {
 };
 
 exports.modifyWebpackConfig = function(config, stage) {
-  // config.removeLoader('svg');
-  // config.loader('svg', function(cfg) {
-  //   cfg.test = /\.svgi$/;
-  //   cfg.loader = 'svg-inline';
-  //   return cfg;
-  // });
-  // return config;
+  config.config.removeLoader('svg');
+  config.config.loader('svg', function(cfg) {
+    cfg.test = /\.svgi$/;
+    cfg.loader = 'svg-inline';
+    return cfg;
+  });
+  return config;
 };

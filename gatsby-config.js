@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'benmccormick.org',
     author: 'Ben McCormick',
+    foo: 'bar',
+    blogTitle: 'benmccormick.org',
   }
 };

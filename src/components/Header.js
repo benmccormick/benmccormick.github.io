@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'GatsbyLink';
+import Link from 'gatsby-link';
 import { Ad } from './Ad';
 import '../css/header.css';
 

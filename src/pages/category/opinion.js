@@ -1,5 +1,6 @@
 import React from 'react';
-import CategoryArchive from 'components/CategoryArchive';
+import CategoryArchive from '../../components/CategoryArchive';
+
 
 const OpinionCategoryPage = ({route}) => <CategoryArchive
   pages = {route.pages}

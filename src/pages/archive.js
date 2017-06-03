@@ -4,7 +4,7 @@ import get from 'lodash/get';
 import Helmet from 'react-helmet';
 import { config } from 'config';
 import include from 'lodash/includes';
-import LinkList from 'components/LinkList';
+import LinkList from '../components/LinkList';
 
 class CategoryArchive extends React.Component {
   render() {

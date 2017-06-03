@@ -6,7 +6,7 @@ import includes from 'lodash/includes';
 import map from 'lodash/map';
 import isArray from 'lodash/isArray';
 import orderBy from 'lodash/orderBy';
-import { rhythm, scale } from 'utils/typography';
+import { rhythm, scale } from '../utils/typography';
 
 class RecommendedPosts extends React.Component {
 
