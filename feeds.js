@@ -36,6 +36,8 @@ let buildFeed = pages => {
     link: 'http://benmccormick.org',
     id: 'http://benmccormick.org',
     copyright: 'All rights reserved 2016, Ben McCormick',
+    favicon: 'https://benmccormick.org/favicon.ico',
+    image: 'https://benmccormick.org/logo.png',
     feedLinks: {
       atom: 'http://benmccormick.org/atom.xml',
       json: 'http://benmccormick.org/feed.json',
