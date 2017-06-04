@@ -49,9 +49,7 @@ let buildFeed = pages => {
   });
   pages = sortBy(pages, page => get(page, 'data.date'));
   pages = pages.reverse();
-  pages = filter(pages, f => (
-    !get(f, 'data.layout') === 'page' || !get(f, 'data.title')
-  ));
+  pages = filter(pages, p => ( !(get(p, 'data.layout', 'page') === 'page')));
   pages = pages.slice(0, 10);
 
   forEach(pages, page => feed.addItem({
