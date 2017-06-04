@@ -40,7 +40,7 @@ let copySW = (cb) => {
   copyFile('/pages/sw.es6', '/public/sw.js', err => err ? cb(false) : cb());
 };
 
-exports.postBuild = function(pages, callback) {
+exports.postBuild = (pages, callback) => {
   buildFeeds(pages);
   generateSiteMap(pages);
   copySW(
@@ -50,7 +50,7 @@ exports.postBuild = function(pages, callback) {
   );
 };
 
-exports.modifyWebpackConfig = function(config, stage) {
+exports.modifyWebpackConfig = (config, stage) => {
   config.removeLoader('svg');
   config.loader('svg', function(cfg) {
     cfg.test = /\.svgi$/;

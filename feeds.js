@@ -80,7 +80,7 @@ let generateAtomFeed = (feed) => mkFile('/public/atom.xml', feed.atom1());
 let generateRSS = (feed) => mkFile('/public/rss/index.xml', feed.rss2());
 let generateJSONFeed = (feed) => mkFile('/public/feed.json', feed.json1());
 
-exports.buildFeeds = function(pages) {
+exports.buildFeeds = (pages) => {
   let feed = buildFeed(pages);
   createRSSFolder();
   generateAtomFeed(feed);
