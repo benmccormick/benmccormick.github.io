@@ -4,11 +4,290 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sat, 03 Jun 2017 21:06:53 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 04 Jun 2017 03:58:26 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
+        <image>
+            <title>benmccormick.org</title>
+            <url>https://benmccormick.org/logo.png</url>
+            <link>http://benmccormick.org</link>
+        </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Adding RSS, Atom, and JSON Feed to Gatsby]]></title>
+            <link>https://benmccormick.org/2017/06/03/rss-atom-json-gatsby/</link>
+            <guid>https://benmccormick.org/2017/06/03/rss-atom-json-gatsby/</guid>
+            <pubDate>Sun, 04 Jun 2017 01:55:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>For the last few months, this blog has been written in <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a>, a static site generator for JavaScript.  One of the first problems I had to solve when migrating the blog was how to maintain my RSS feed, since Gatsby doesn’t have any built in concept of an RSS feed.  This issue came up again this week as I decided to implement the new <a href="https://jsonfeed.org/">JSON Feed</a> spec and give folks an additional option for subscribing to this blog.  Fortunately this turns out to be a pretty easy problem to solve because of the excellent npm module <a href="https://github.com/jpmonette/feed">feed</a>.</p>
+<p><em>feed</em> is an npm module that takes a bunch of information about a blog and its posts, and normalizes them into various syndication feed format.  Here’s what setting up a feed option looks like for this blog:</p>
+<pre><code class="language-javascript">const fs = require('fs');
+const Feed = require('feed');
+const filter = require('lodash/filter');
+const sortBy = require('lodash/sortBy');
+const forEach = require('lodash/forEach');
+const get = require('lodash/get');
+const moment = require('moment');
+const markdownIt = require('markdown-it');
+const frontmatter = require('front-matter');
+
+
+//markdownIt is a markdown parser that takes my raw md files and
+//translates them into HTML that we can use in the feed
+const md = markdownIt({
+  html: true,
+  linkify: true,
+  typographer: true,
+});
+
+
+// getPageContent is a function to help us grab the html content from a post path
+const getPageContent = page =&gt; {
+  let file = fs.readFileSync(__dirname + '/pages/' + page.requirePath, 'utf-8');
+  let body = md.render(frontmatter(file).body);
+  // handle local links
+  return body.replace(/src=&quot;\//g, 'src=&quot;http://benmccormick.org/');
+};
+
+// build feed is our main function to build a `Feed` object which we
+// can then serialize into various formats
+const buildFeed = pages =&gt; {
+  let feed = new Feed({
+    title: 'benmccormick.org',
+    description: 'A blog by Ben McCormick',
+    link: 'http://benmccormick.org',
+    id: 'http://benmccormick.org',
+    copyright: 'All rights reserved 2016, Ben McCormick',
+    feedLinks: {
+      atom: 'http://benmccormick.org/atom.xml',
+      json: 'http://benmccormick.org/feed.json',
+    },
+    author: {
+      name: 'Ben McCormick',
+      email: 'ben@benmccormick.org'
+    }
+  });
+  // ignore pages (non posts) 
+  pages = filter(pages, p =&gt; ( !(get(p, 'data.layout', 'page') === 'page')));
+  // we only want the last 10 articles to show up in the feed
+  pages = sortBy(pages, page =&gt; get(page, 'data.date'));
+  pages = pages.reverse();
+  pages = pages.slice(0, 10);
+
+  forEach(pages, page =&gt; feed.addItem({
+    title: page.data.title,
+    id: 'https://benmccormick.org' + page.path,
+    link: 'https://benmccormick.org' + page.path,
+    date: moment(page.data.date).toDate(),
+    content: getPageContent(page),
+    author: [
+      {
+        name: 'Ben McCormick',
+        email: 'ben@benmccormick.org',
+        link: 'https://benmccormick.org'
+      }
+    ]
+  }));
+  feed.addContributor({
+    name: 'Ben McCormick',
+    email: 'ben@benmccormick.org',
+    link: 'https://benmccormick.org'
+  });
+  return feed;
+};
+</code></pre>
+<p>Now we have a <code>buildFeed</code> method that takes a list of pages and generates a feed object.  Then we can use the feed object we’ve created to actually build write some files.  We’ll trigger that in the <code>postBuild</code> callback of <code>gatsby-node</code>.  Here was my first version to support RSS and Atom:</p>
+<pre><code class="language-javascript">
+//mkDir and mkFile are just light wrappers around node's file system APIs
+let createRSSFolder = () =&gt; mkDir('/public/rss/');
+let generateAtomFeed = (feed) =&gt; mkFile('/public/atom.xml', feed.atom1());
+let generateRSS = (feed) =&gt; mkFile('/public/rss/index.xml', feed.rss2());
+
+exports.postBuild = pages =&gt; {
+  let feed = buildFeed(pages);
+  createRSSFolder();
+  generateAtomFeed(feed);
+  generateRSS(feed);
+};
+</code></pre>
+<p>Prior to this week, <code>feed</code> didn’t support JSON Feed, so I had stopped here.  But because JSON Feed is super simple to implement (its just JSON!), I decided to try to add it to <code>feed</code> this week.  It turned out it was as simple as adding a single function that looks like this:</p>
+<pre><code class="language-javascript">json1() {
+   const { options, items } = this
+   let feed = {
+     version: 'https://jsonfeed.org/version/1',
+     title: options.title,
+   };
+
+   if (options.link) {
+     feed.home_page_url = options.link;
+   }
+
+   if (options.feedLinks &amp;&amp; options.feedLinks.json) {
+     feed.feed_url = options.feedLinks.json;
+   }
+
+   if (options.description) {
+     feed.description = options.description;
+   }
+
+
+   if (options.image) {
+     feed.icon = options.image;
+   }
+
+   if (options.author) {
+     feed.author = {};
+     if (options.author.name) {
+         feed.author.name = options.author.name;
+     }
+     if (options.author.link) {
+         feed.author.url = options.author.link;
+     }
+   }
+   feed.items = items.map(item =&gt; {
+     let feedItem = {
+       id: item.id,
+       // json_feed distinguishes between html and text content
+       // but since we only take a single type, we'll assume HTML
+       html_content: item.content,
+     }
+     if (item.link) {
+       feedItem.url = item.link;
+     }
+     if(item.title) {
+       feedItem.title = item.title;
+     }
+     if (item.description) {
+       feedItem.summary = item.description;
+     }
+
+     if (item.image) {
+       feedItem.image = item.image
+     }
+
+     if (item.date) {
+       feedItem.date_modified = this.ISODateString(item.date);
+     }
+     if (item.published) {
+       feedItem.date_published = this.ISODateString(item.published);
+     }
+
+     if (item.author) {
+       let author = item.author;
+       if (author instanceof Array) {
+         // json feed only supports 1 author per post
+         author = author[0];
+       }
+       feedItem.author = {};
+       if (author.name) {
+           feedItem.author.name = author.name;
+       }
+       if (author.link) {
+           feedItem.author.url = author.link;
+       }
+     }
+     return feedItem;
+   });
+
+   return JSON.stringify(feed, null, 4);
+ }
+</code></pre>
+<p>My <a href="https://github.com/jpmonette/feed/pull/56/files">pull request</a> was accepted, so feed v1.1.0 now supports JSON feed and my final code to add <a href="http://benmccormick.org/rss/">rss</a>, <a href="http://benmccormick.org/atom.xml">atom</a>, and <a href="http://benmccormick.org/feed.json">json</a> feed to this site looks like this:</p>
+<pre><code class="language-javascript">const fs = require('fs');
+const Feed = require('feed');
+const filter = require('lodash/filter');
+const sortBy = require('lodash/sortBy');
+const forEach = require('lodash/forEach');
+const get = require('lodash/get');
+const moment = require('moment');
+const markdownIt = require('markdown-it');
+const frontmatter = require('front-matter');
+const {mkDir, mkFile} = require('./utils/file_system');
+
+
+const md = markdownIt({
+ html: true,
+ linkify: true,
+ typographer: true,
+});
+
+const extractMarkdownContent = file =&gt; {
+ let body = md.render(frontmatter(file).body);
+ // handle local links
+ return body.replace(/src=&quot;\//g, 'src=&quot;http://benmccormick.org/');
+
+};
+
+const getPageContent = page =&gt; {
+ let file = fs.readFileSync(__dirname + '/pages/' + page.requirePath, 'utf-8');
+ return extractMarkdownContent(file);
+};
+
+const buildFeed = pages =&gt; {
+ let feed = new Feed({
+   title: 'benmccormick.org',
+   description: 'A blog by Ben McCormick',
+   link: 'http://benmccormick.org',
+   id: 'http://benmccormick.org',
+   copyright: 'All rights reserved 2016, Ben McCormick',
+   feedLinks: {
+     atom: 'http://benmccormick.org/atom.xml',
+     json: 'http://benmccormick.org/feed.json',
+   },
+   author: {
+     name: 'Ben McCormick',
+     email: 'ben@benmccormick.org'
+   }
+ });
+ // ignore pages (non posts)
+ pages = filter(pages, p =&gt; ( !(get(p, 'data.layout', 'page') === 'page')));
+ // we only want the last 10 articles to show up in the feed
+ pages = sortBy(pages, page =&gt; get(page, 'data.date'));
+ pages = pages.reverse();
+ pages = pages.slice(0, 10);
+
+ forEach(pages, page =&gt; feed.addItem({
+   title: page.data.title,
+   id: 'https://benmccormick.org' + page.path,
+   link: 'https://benmccormick.org' + page.path,
+   date: moment(page.data.date).toDate(),
+   content: getPageContent(page),
+   author: [
+     {
+       name: 'Ben McCormick',
+       email: 'ben@benmccormick.org',
+       link: 'https://benmccormick.org'
+     }
+   ]
+ }));
+ feed.addContributor({
+   name: 'Ben McCormick',
+   email: 'ben@benmccormick.org',
+   link: 'https://benmccormick.org'
+ });
+ return feed;
+};
+
+let createRSSFolder = () =&gt; mkDir('/public/rss/');
+let generateAtomFeed = (feed) =&gt; mkFile('/public/atom.xml', feed.atom1());
+let generateRSS = (feed) =&gt; mkFile('/public/rss/index.xml', feed.rss2());
+let generateJSONFeed = (feed) =&gt; mkFile('/public/feed.json', feed.json1());
+
+exports.postBuild = pages =&gt; {
+  let feed = buildFeed(pages);
+  createRSSFolder();
+  generateAtomFeed(feed);
+  generateRSS(feed);
+  generateJSONFeed(feed);
+};
+</code></pre>
+<h3>More Resources</h3>
+<ul>
+<li>You can see the whole spec for <a href="https://jsonfeed.org/">JSON Feed</a> on their <a href="https://jsonfeed.org/">site</a>.  It really is remarkably simple.  They also have a list of implementations and example sites.</li>
+</ul>
+]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Atom Productivity Tips]]></title>
             <link>https://benmccormick.org/2017/05/29/atom-tips/</link>
@@ -649,142 +928,6 @@ class Appointment {
 <li id="fn3" class="footnote-item"><p>I’m talking here about what is encouraged and easy, not what is possible.  It is of course possible to mix in Redux with other solutions. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn4" class="footnote-item"><p>MobX has some nice <a href="https://github.com/mobxjs/mobx-react-devtools">devtools!</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Orthogonality and CSS in JS]]></title>
-            <link>https://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/</link>
-            <guid>https://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/</guid>
-            <pubDate>Tue, 03 Jan 2017 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>One of the realities of the constant change in the web development world is that “best practices” are often hotly contested.  One issue that the front end community doesn’t seem to have come to a consensus on yet is how tightly to bundle JavaScript, HTML and CSS in code.  Should they be bundled and managed completely separately?  Kept in different files and imported together into JavaScript component files?  Or can we remove HTML and CSS files entirely and generate everything in JavaScript? This is a discussion that still comes up all the time in my <a href="https://twitter.com/thomasfuchs/status/810885087214637057">twitter</a> <a href="https://twitter.com/TheLarkInn/status/812089065210335232">feed</a>.</p>
-<p>Many new frameworks that encourage a component based architecture (including React, Vue, and Angular2 <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>) provide affordances for including HTML and CSS directly in JavaScript, but those solutions are not yet used universally.  Many people are still very happy keeping CSS bundled separately.  I have no idea what the <em>best</em> solution is.  But I am interested in how people talk about the problem.  One major argument I have seen from people advocating both sides is that their preferred approach encourages good “separation of concerns”.</p>
-<div>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;m moving from storing my CSS, JS and HTML in different files, to physically putting them on different drives. Keep those concerns separate</p>&mdash; Ben Lesh (@BenLesh) <a href="https://twitter.com/BenLesh/status/812092408519413761">December 23, 2016</a></blockquote>
-</div>
-<p>I’d like to take a deeper look at this and give some vocabulary that can hopefully help anyone working through discussions on how to manage CSS for components.  I’ll focus specifically on CSS since frameworks tend to be more agnostic to how it is blended with JS than they are about HTML, and on components since that is the main context in which people are arguing for blending of css. For this piece, I’ll consider a component to be a set of HTML, CSS, and JavaScript that combine to form a reusable piece of UI <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
-<h3>Orthogonality, Cohesion, and Coupling</h3>
-<p><a href="http://amzn.to/2hNzQ0t">The Pragmatic Programmer</a>, one of the best books ever written on Software Engineering, uses the following three terms when talking about “Separation of Concerns”: orthogonality, cohesion, and coupling.</p>
-<p>Orthogonality is the idea that modules should be written in a way that a change in one module should not require changes in any other module.</p>
-<blockquote>
-<p>Two or more things are orthogonal if changes in one do not affect any of the others. In a well-designed system, the database code will be orthogonal to the user interface: you can change the interface without affecting the database, and swap databases without changing the interface.</p>
-<p><strong>— The Pragmatic Programmer</strong></p>
-</blockquote>
-<p>Cohesion is a measure of how well the internal contents of a module relate to each other. A cohesive module is one with a single well defined purpose, where all code in the module is related to that purpose.  A less cohesive module might have multiple purposes, with pieces of code that are completely unrelated to each other.  <a href="https://sites.google.com/site/unclebobconsultingllc/">Robert C. Martin</a> describes this as each module having “a single reason to change”.</p>
-<p>Coupling is a measure of how dependent different modules are on the internal workings of other modules. In a loosely coupled system, any module can be completely rewritten as long as it exposes the same public interface, without any other modules needing to change.  In a tightly coupled system, changing the internal details of one module may require changes in many other modules.</p>
-<p>In the real world most systems are not purely orthogonal, and their modules are likely not 100% cohesive and uncoupled.  But striving for these goals is a good approximation of what many people mean when they talk about <em>separation of concerns</em>.</p>
-<h3>Conways Law</h3>
-<p><a href="http://amzn.to/2hNzQ0t">The Pragmatic Programmer</a> does touch on another application of orthogonality to software engineering:</p>
-<blockquote>
-<p>Have you noticed how some project teams are efficient, with everyone knowing what to do and contributing fully, while the members of other teams are constantly bickering and don’t seem able to get out of each other’s way?</p>
-<p>Often this is an orthogonality issue. When teams are organized with lots of overlap, members are confused about responsibilities. Every change needs a meeting of the entire team, because any one of them might be affected.</p>
-<p>How do you organize teams into groups with well-defined responsibilities and minimal overlap? There’s no simple answer. It depends partly on the project and your analysis of the areas of potential change. It also depends on the people you have available. Our preference is to start by separating infrastructure from application. Each major infrastructure component (database, communications interface, middleware layer, and so on) gets its own subteam. Each obvious division of application functionality is similarly divided. Then we look at the people we have (or plan to have) and adjust the groupings accordingly.</p>
-<p>You can get an informal measure of the orthogonality of a project team’s structure. Simply see how many people need to be involved in discussing each change that is requested. The larger the number, the less orthogonal the group. Clearly, an orthogonal team is more efficient.</p>
-<p><strong>— The Pragmatic Programmer</strong></p>
-</blockquote>
-<p>The idea is that teams work more efficiently when each can work in its own areas without having to be bogged down by using another group (or individuals) code, and only interacting with those modules through a well communicated interface.  This is also known as <a href="https://en.wikipedia.org/wiki/Conway's_law">Conway’s Law</a>, which is often used disparagingly but still stands as a true observation about real life code.</p>
-<blockquote>
-<p>organizations which design systems … are constrained to produce designs which are copies of the communication structures of these organizations</p>
-<p><strong>— Conway’s Law</strong></p>
-</blockquote>
-<p>Although it usually isn’t phrased quite so explicitly, I believe Conway’s law is often related to what people mean when they discuss separation of concerns in front end development.</p>
-<h3>Boundaries and Interfaces between CSS and JavaScript</h3>
-<p>Let’s look at 2 examples of how CSS can be structured.  We’ll use a “page view counter” as our example. The element will show the number of users who have viewed the page, and respond to click events by showing a modal with the most popular pages on the site.
-First, for a more traditional example, I’ll show a <a href="http://marionettejs.com/">Marionette</a> View, with separate CSS. For a more integrated example, I’ll use a React component.</p>
-<h4>Marionette</h4>
-<pre><code class="language-javascript">//view-counter.js
-
-import Mn from 'backbone.marionette';
-import template from './view-counter.hbs'
-import { getPageViews, showModal } from '../util/page-views';
-
-var ViewCounter = Mn.View.extend({
-
-  template,
-
-  className: 'page-view-counter',
-
-  ui:  {
-    'showPageViewsModal': '.show-modal-js',
-  },
-
-  events: {
-    'click @ui.showPageViewsModal': 'showPageViewsModal',
-  }
-
-  templateContext() {
-      return {
-        pageViews: getPageViews(),
-      };
-  },
-
-  showPageViewsModal() {
-    showModal();
-  }
-
-});
-</code></pre>
-<pre><code class="language-hbs">{{!view-counter.hbs}}
-
-&lt;span class=&quot;page-view-counter__title&quot;&gt; Page Views: &lt;/span&gt;
-&lt;span class=&quot;page-view-counter__counter show-modal-js&quot;&gt; {{pageViews}} &lt;/span&gt;
-</code></pre>
-<pre><code class="language-css">//view-counter.css
-
-.page-view-counter {
-  display: flex;
-}
-
-.page-view-counter__title {
-  font-weight: 700;
-  padding: 3px;
-}
-
-.page-view-counter__counter {
-  padding: 3px;
-}
-</code></pre>
-<h4>React</h4>
-<pre><code class="language-javascript">//view-counter.jsx
-import React from 'react';
-import { showModal } from '../util/page-views';
-
-export const PageViewCounter = (props) =&gt; {
-    return &lt;div style = {{display: 'flex'}}&gt;
-      &lt;span style = {{
-        fontWeight: 700,
-        padding: '3px',
-      }}&gt;
-        Page Views:
-      &lt;/span&gt;
-      &lt;span style = {{padding: '3px'}}&gt;{this.props.pageViews}&lt;/span&gt;
-    &lt;/div&gt;
-}
-
-</code></pre>
-<p>The React and Marionette examples have set different module boundaries. In the Marionette example, we have defined 3 modules, split by code type.  Ignoring the leaky abstractions in the Marionette boundaries <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>, we can say we have 3 modules with clear singular purpose (styling, behavior,  structure) that use class names and  <code>templateContext</code> as interfaces.  The handlebars file exposes classes, which the CSS uses to style elements and the JavaScript code uses as attachment points for event handling.  The JavaScript view passes data to the template through templateContext.  In the React code we have defined a single module that exports a component as its only external interface. The module’s single purpose could be defined as “rendering a PageViewCounter”.</p>
-<h3>How do we define module boundaries?</h3>
-<p>If you’re excited to read which of the above examples is the <em>correct</em> module boundary definition, I’m sorry to disappoint you.  It turns out that module boundaries are more of an art than a science.  Let’s consider each of these examples by the criteria we laid out above.</p>
-<p>The Marionette modules are <strong>cohesive</strong>.  Each module is single purpose, with a clear reason why it might change.  The React module is also cohesive, as it describes a single atomic component. However, it has more reasons it might change.  We might change that module because of a change in the look and feel of the site, because of a change in the expected behavior of the click event, or because we’re changing the text inside the component.</p>
-<p>The Marionette modules are not quite <strong>decoupled</strong>.  While this CSS doesn’t nest selectors and we don’t have any explicit dependencies on the HTML structure, it is still written in a way that assumes <code>.page-view-counter__title</code> and <code>.page-view-counter__counter</code> will be direct children of <code>.page-view-counter</code>.  So changing the “internal details” of the Handlebars file by adding an extra element around those children would break the CSS. While the modules are not completely decoupled from each other, they don’t rely on any private details of other modules or global styles and can be used together as a reusable component.  The React module is similarly decoupled from the rest of the system, and as a single module faces no internal coupling issues.</p>
-<p>Both components should be <strong>orthogonal</strong> from the rest of the system, even though the Marionette modules may be less orthogonal internally.  The question of how they meet a Conway’s law style of orthogonality depends on a team.  If your team has designers, and developers separately working on style/structure and behavior, the Marionette version may allow for more efficient division of labor, with communication centering on class based communication.  If you instead have a group of polyglot front end developers who implement mocks from designers across all 3 areas, the React version will instead present a simpler implementation that maps better to your team, with the focus on interfaces across different components.</p>
-<p>In the end decisions like this are an exercise in understanding context and preferences.  What will make your team productive? You can accept the coupling of the first example in order to gain the benefits of small focused modules.  Or you can take the larger scope of the React component in exchange for keeping all information relevant to a component in one place.  Are you making single developers responsible for a set of components?  Or are they responsible for behavior generally, with design handled by someone else? Make the decisions that work for your project.</p>
-<h3>More Resources</h3>
-<ul>
-<li><a href="http://amzn.to/2hNzQ0t">The Pragmatic Programmer</a> is a great book. Much of the vocabulary in this post comes from its Chapter 8, but the whole book is worth a read and is highly recommended.</li>
-<li>CSS Tricks has a good look at the <a href="https://css-tricks.com/the-debate-around-do-we-even-need-css-anymore/">pros and cons of CSS in JS</a>.  I focused on theory here, but this is much more hands on about the practical concerns around this debate.</li>
-</ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>This is a bit of a generalization.  React provides an abstraction over HTML that replaces hand-written HTML, but doesn’t specify anything for CSS, CSS in JS solutions are simply popular in that community.  Vue and Angular both allow  CSS and HTML to share a file with JS, but CSS can still be handled separately. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>There are some distinctions about CSS in JS vs importing CSS into JS using webpack that I’m not really dealing with here.  This is a post about how to think about these decisions moreso than the specific options for bundling CSS and JS <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>The root HTML element in any Marionette component is always defined implicitly in JavaScript, and Handlebars is an expressive templating language that can handle more than structure. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

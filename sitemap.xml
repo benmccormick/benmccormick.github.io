@@ -58,6 +58,7 @@
 <url> <loc>https://benmccormick.org/2013/06/11/evergreen-browsers/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2013/01/08/explaining-javascript-closures/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2013/01/12/explaining-javascript-object-oriented-programming/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2017/06/03/rss-atom-json-gatsby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2013/06/11/how-i-use-stack-overflow/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2013/02/03/how-i-work-refactoring/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2015/06/08/how-jquery-works-an-introduction/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
