@@ -63,10 +63,8 @@ const buildFeed = pages => {
       email: 'ben@benmccormick.org'
     }
   });
-  // ignore pages (non posts) and posts without titles (shouldn't be any)
-  pages = filter(pages, f => (
-    !get(f, 'data.layout') === 'page' || !get(f, 'data.title')
-  ));
+  // ignore pages (non posts) 
+  pages = filter(pages, p => ( !(get(p, 'data.layout', 'page') === 'page')));
   // we only want the last 10 articles to show up in the feed
   pages = sortBy(pages, page => get(page, 'data.date'));
   pages = pages.reverse();
@@ -247,10 +245,8 @@ const buildFeed = pages => {
       email: 'ben@benmccormick.org'
     }
   });
-  // ignore pages (non posts) and posts without titles (shouldn't be any)
-  pages = filter(pages, f => (
-    !get(f, 'data.layout') === 'page' || !get(f, 'data.title')
-  ));
+  // ignore pages (non posts)
+  pages = filter(pages, p => ( !(get(p, 'data.layout', 'page') === 'page')));
   // we only want the last 10 articles to show up in the feed
   pages = sortBy(pages, page => get(page, 'data.date'));
   pages = pages.reverse();
