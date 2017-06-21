@@ -18,7 +18,7 @@
   color: #A7ADBA;
 }
 
-/* Solarized Green */
+/* Green */
 .hljs-selector-tag,
 .hljs-string,
 .hljs-attr,
@@ -26,7 +26,7 @@
   color: #99C794;
 }
 
-/* Solarized Cyan */
+/* Cyan */
 .hljs-meta .hljs-meta-string,
 .hljs-doctag,
 .hljs-regexp {
@@ -38,7 +38,7 @@
 color: #5fb3b3;
 }
 
-/* Solarized Blue */
+/* Blue */
 .hljs-title,
 .hljs-section,
 .hljs-name,
@@ -47,7 +47,7 @@ color: #5fb3b3;
   color: #6699cc;
 }
 
-/* Solarized Yellow */
+/* Yellow */
 .hljs-attribute,
 .hljs-variable,
 .hljs-template-variable,
@@ -56,7 +56,7 @@ color: #5fb3b3;
   color: #FAC863;
 }
 
-/* Solarized Orange */
+/* Orange */
 .hljs-symbol,
 .hljs-bullet,
 .hljs-subst,
@@ -68,7 +68,7 @@ color: #5fb3b3;
   color: #f9AE58;
 }
 
-/* Solarized Red */
+/* Red */
 .hljs-number,
 .hljs-literal,
 .hljs-deletion {
