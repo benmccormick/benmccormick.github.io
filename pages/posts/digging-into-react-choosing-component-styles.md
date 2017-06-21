@@ -86,16 +86,14 @@ export class SaveButton extends React.Component {
 
     render() {
         let {text, savedText} = this.props;
-        return (<span className=“button” onClick={() =>this.save()}>
+        return (<span className="button" >
            {this.state.saved ? savedText : text}
         </span>);
     },
 });
 
 SaveButton.propTypes = {
-    //text to show after the component is saved
     savedText: React.PropTypes.string.isRequired,
-    //primary text to show on the button
     text: React.PropTypes.string.isRequired,
 };
 
