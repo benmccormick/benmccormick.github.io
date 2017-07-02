@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const Feed = require('feed');
 const filter = require('lodash/filter');
 const sortBy = require('lodash/sortBy');
@@ -6,7 +7,11 @@ const markdownIt = require('markdown-it');
 const fs = require('fs');
 const frontmatter = require('front-matter');
 const copyFile = require('./src/utils/file_system').copyFile;
+=======
+const {copyFile, mkFile} = require('./utils/file_system');
+>>>>>>> master
 const sm = require('sitemap');
+const {buildFeeds} = require('./feeds');
 
 function pagesToSitemap(pages) {
   const urls = pages.map((p) => {
@@ -29,123 +34,50 @@ function generateSiteMap(pages) {
     urls: pagesToSitemap(pages),
   });
   console.log('Generating sitemap.xml');
-  fs.writeFileSync(
-    `${__dirname}/public/sitemap.xml`,
-    sitemap.toString()
-  );
+  mkFile('/public/sitemap.xml', sitemap.toString());
 }
 
-const md = markdownIt({
-  html: true,
-  linkify: true,
-  typographer: true,
-  // highlight,
-})
-  .use(require('markdown-it-footnote'))
-  .use(require('markdown-it-attrs'));
-
-const buildContent = page => {
-  let body = md.render(
-    frontmatter(fs.readFileSync(__dirname + '/pages/' + page.requirePath, 'utf-8')).body
-  );
-  return body.replace(/src="\//g, 'src="http://benmccormick.org/');
-};
-
-/* eslint-disable */
-let buildFeed = (pages) => {
-  let feed = new Feed({
-    title: 'benmccormick.org',
-    description: 'A blog by Ben McCormick',
-    link: 'http://benmccormick.org',
-    id: 'http://benmccormick.org',
-    copyright: 'All rights reserved 2016, Ben McCormick',
-    author: {
-      name: 'Ben McCormick',
-      email: 'ben@benmccormick.org'
-    }
-  });
-  pages = sortBy(pages, function(page) {
-    let ref;
-    return (ref = page.data) != null ? ref.date : void 0;
-  }).reverse();
-
-  let ref = filter(pages, function(f) {
-    let ref, ref1;
-    if (f.data.layout === 'page') {
-      return false;
-    }
-    return (((ref = f.data) != null ? ref.title : void 0) != null) && !((ref1 = f.data) != null ? ref1.draft : void 0);
-  }).slice(0, 10);
-
-  for (i = 0, len = ref.length; i < len; i++) {
-    page = ref[i];
-    feed.addItem({
-      title: page.data.title,
-      id: 'https://benmccormick.org' + page.path,
-      link: 'https://benmccormick.org' + page.path,
-      date: moment(page.data.date).toDate(),
-      content: buildContent(page),
-      author: [
-        {
-          name: 'Ben McCormick',
-          email: 'ben@benmccormick.org',
-          link: 'http://benmccormick.org'
-        }
-      ]
-    });
-  }
-  feed.addContributor({
-    name: 'Ben McCormick',
-    email: 'ben@benmccormick.org',
-    link: 'http://benmccormick.org'
-  });
-  return feed;
-};
-/* eslint-enable*/
-let createRSSFolder = () => {
-  try {
-    fs.mkdirSync(__dirname + '/public/rss/');
-  } catch (e) {
-        //this is fine, it may fail if the file already exists
-  }
-};
-let generateAtomFeed = (feed) => {
-  return fs.writeFileSync(__dirname + '/public/atom.xml', feed.render('atom-1.0'));
-};
-let generateRSS = (feed) => {
-  return fs.writeFileSync(__dirname + '/public/rss/index.xml', feed.render('rss-2.0'));
-};
 
 let copyCNAME = (cb) => {
-  copyFile(`${__dirname}/pages/CNAME`, `${__dirname}/public/CNAME`, err => err ? cb(false) : cb());
+  copyFile('/pages/CNAME', '/public/CNAME', err => err ? cb(false) : cb());
 };
 
 let copyManifest = (cb) => {
-  copyFile(`${__dirname}/pages/manifest.json`,
-    `${__dirname}/public/manifest.json`, err => err ? cb(false) : cb());
+  copyFile('/pages/manifest.json',
+    '/public/manifest.json', err => err ? cb(false) : cb());
 };
 
 let copySW = (cb) => {
-  copyFile(`${__dirname}/pages/sw.es6`, `${__dirname}/public/sw.js`, err => err ? cb(false) : cb());
+  copyFile('/pages/sw.es6', '/public/sw.js', err => err ? cb(false) : cb());
 };
 
+<<<<<<< HEAD
 exports.onPostBuild = function(pages, callback) {
   let feed = buildFeed(pages);
   createRSSFolder();
   generateAtomFeed(feed);
   generateRSS(feed);
+=======
+exports.postBuild = (pages, callback) => {
+  buildFeeds(pages);
+>>>>>>> master
   generateSiteMap(pages);
   copySW(
     () => copyCNAME(
       () => copyManifest(callback)
     )
   );
-
 };
 
+<<<<<<< HEAD
 exports.modifyWebpackConfig = function(config, stage) {
   config.config.removeLoader('svg');
   config.config.loader('svg', function(cfg) {
+=======
+exports.modifyWebpackConfig = (config, stage) => {
+  config.removeLoader('svg');
+  config.loader('svg', function(cfg) {
+>>>>>>> master
     cfg.test = /\.svgi$/;
     cfg.loader = 'svg-inline';
     return cfg;
