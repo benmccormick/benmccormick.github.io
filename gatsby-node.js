@@ -1,17 +1,7 @@
-<<<<<<< HEAD
-const Feed = require('feed');
-const filter = require('lodash/filter');
-const sortBy = require('lodash/sortBy');
-const moment = require('moment');
-const markdownIt = require('markdown-it');
-const fs = require('fs');
-const frontmatter = require('front-matter');
-const copyFile = require('./src/utils/file_system').copyFile;
-=======
-const {copyFile, mkFile} = require('./utils/file_system');
->>>>>>> master
+const {copyFile, mkFile} = require('./src/utils/file_system');
 const sm = require('sitemap');
 const {buildFeeds} = require('./feeds');
+const path = require('path');
 
 function pagesToSitemap(pages) {
   const urls = pages.map((p) => {
@@ -51,16 +41,8 @@ let copySW = (cb) => {
   copyFile('/pages/sw.es6', '/public/sw.js', err => err ? cb(false) : cb());
 };
 
-<<<<<<< HEAD
 exports.onPostBuild = function(pages, callback) {
-  let feed = buildFeed(pages);
-  createRSSFolder();
-  generateAtomFeed(feed);
-  generateRSS(feed);
-=======
-exports.postBuild = (pages, callback) => {
   buildFeeds(pages);
->>>>>>> master
   generateSiteMap(pages);
   copySW(
     () => copyCNAME(
@@ -69,18 +51,77 @@ exports.postBuild = (pages, callback) => {
   );
 };
 
-<<<<<<< HEAD
 exports.modifyWebpackConfig = function(config, stage) {
   config.config.removeLoader('svg');
   config.config.loader('svg', function(cfg) {
-=======
-exports.modifyWebpackConfig = (config, stage) => {
-  config.removeLoader('svg');
-  config.loader('svg', function(cfg) {
->>>>>>> master
     cfg.test = /\.svgi$/;
     cfg.loader = 'svg-inline';
     return cfg;
   });
   return config;
+};
+
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+  const { createNodeField } = boundActionCreators;
+  let slug;
+  if (node.internal.type === 'MarkdownRemark') {
+    const fileNode = getNode(node.parent);
+    const parsedFilePath = path.parse(fileNode.relativePath);
+    if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
+      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
+    } else if (parsedFilePath.dir === '') {
+      slug = `/${parsedFilePath.name}/`;
+    } else {
+      slug = `/${parsedFilePath.dir}/`;
+    }
+
+    // Add slug as a field on the node.
+    createNodeField({ node, name: 'slug', value: slug });
+  }
+};
+
+
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
+
+  return new Promise((resolve, reject) => {
+    const pages = [];
+    const blogPost = path.resolve('src/templates/blog-post.js');
+    // Query for all markdown "nodes" and for the slug we previously created.
+    resolve(
+      graphql(
+        `
+        {
+          allMarkdownRemark {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+              }
+            }
+          }
+        }
+      `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors);
+          reject(result.errors);
+        }
+
+        // Create blog posts pages.
+        result.data.allMarkdownRemark.edges.forEach(edge => {
+          createPage({
+            path: edge.node.fields.slug, // required
+            component: blogPost,
+            context: {
+              slug: edge.node.fields.slug,
+            },
+          });
+        });
+
+        return;
+      })
+    );
+  });
 };

@@ -4,6 +4,8 @@ import { TypographyStyle } from 'react-typography';
 import {GA} from './components/GA';
 import typography from './utils/typography';
 
+console.log('hi!');
+
 class HTML extends React.Component {
   render() {
     const { body } = this.props;
@@ -71,7 +73,7 @@ class HTML extends React.Component {
             padding: '0 10px',
           }}
         >
-          <div id = "react-mount" dangerouslySetInnerHTML = {{ __html: body }} />
+          <div id = "___gatsby" dangerouslySetInnerHTML = {{ __html: this.props.body }}/>
           <GA />
           <script
             type = "text/javascript"
@@ -102,3 +104,5 @@ HTML.propTypes = {
   headComponents: React.PropTypes.any,
   postBodyComponents: React.PropTypes.any,
 };
+
+export default HTML;

@@ -6,15 +6,16 @@ import parseInt from 'lodash/parseInt';
 import get from 'lodash/get';
 import { rhythm } from '../utils/typography';
 import Helmet from 'react-helmet';
-import { config } from 'config';
+// import { config } from 'config';
 import include from 'lodash/includes';
 import LinkList from '../components/LinkList';
 
 class BlogIndex extends React.Component {
   render() {
     // Sort pages.
+    const posts = this.props.data.allMarkdownRemark.edges;
     const sortedPages = take(
-        sortBy(this.props.route.pages, page => get(page, 'data.date'))
+        sortBy(posts, page => get(page, 'data.date'))
             .reverse()
             .filter(page => (
                 (get(page, 'file.ext') === 'md') &&
@@ -23,7 +24,7 @@ class BlogIndex extends React.Component {
             )
     ), 10);
     const popularPages = take(
-        sortBy(this.props.route.pages, page => parseInt(get(page, 'data.last30pageViews')))
+        sortBy(posts, page => parseInt(get(page, 'data.last30pageViews')))
             .reverse()
             .filter(page => (
                 (get(page, 'file.ext') === 'md') &&
@@ -35,7 +36,8 @@ class BlogIndex extends React.Component {
     return (
       <div>
         <Helmet
-          title = {config.blogTitle}
+          // title = {config.blogTitle}
+          title = {'benmccormick.org'}
           meta = {[
             {'name': 'description',
               'content': "Ben McCormick's blog on JavaScript and Web Development"},
@@ -134,3 +136,21 @@ BlogIndex.propTypes = {
 };
 
 export default BlogIndex;
+
+export const pageQuery = graphql`
+query IndexQuery {
+  allMarkdownRemark(
+    limit: 2000,
+    sort: { fields: [frontmatter___date], order: DESC },
+  ) {
+    edges {
+      node {
+        fields {
+          slug
+        }
+      }
+    }
+  }
+}
+
+`;

@@ -9,7 +9,7 @@ const markdownIt = require('markdown-it');
 const frontmatter = require('front-matter');
 const footnotes = require('markdown-it-footnote');
 const attrs = require('markdown-it-attrs');
-const {mkDir, mkFile} = require('./utils/file_system');
+const {mkDir, mkFile} = require('./src/utils/file_system');
 
 const md = markdownIt({
   html: true,

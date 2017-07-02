@@ -3,7 +3,6 @@ import sortBy from 'lodash/sortBy';
 import get from 'lodash/get';
 import find from 'lodash/find';
 import Helmet from 'react-helmet';
-import { config } from 'config';
 import include from 'lodash/includes';
 import LinkList from '../components/LinkList';
 import categoryHash from '../pages/categories.json';
@@ -26,7 +25,8 @@ class CategoryArchive extends React.Component {
     return (
       <div>
         <Helmet
-          title = {config.blogTitle}
+          // title = {config.blogTitle}
+          title = {'benmccormick.org'}
           meta = {[
             {'name': 'description', 'content': "Ben McCormick's blog"},
             {'name': 'keywords', 'content': 'blog, articles'},
