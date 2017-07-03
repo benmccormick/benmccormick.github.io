@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
+// import { browserHistory } from 'react-router';
 
 export class Ad extends React.Component {
 
@@ -27,7 +27,7 @@ export class Ad extends React.Component {
   }
 
   componentDidMount() {
-    browserHistory.listen( location => {
+    this.props.history.listen( location => {
       let url = location.pathname;
       if (url !== this.state.url) {
         this.insertScript();

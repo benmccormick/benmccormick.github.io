@@ -4,10 +4,11 @@ import { rhythm } from '../utils/typography';
 // import { config } from 'config';
 import { Header } from '../components/Header';
 import '../css/mobile.css';
+import '../css/typography.css';
 
 class Template extends React.Component {
   render() {
-    const {children } = this.props;
+    const {children, history } = this.props;
     return (
       <Container
         style = {{
@@ -15,7 +16,7 @@ class Template extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <Header blogTitle = {'TODO'}/>
+        <Header blogTitle = {'benmccormick.org'} history = {history}/>
         {children()}
       </Container>
     );

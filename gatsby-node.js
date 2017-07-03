@@ -1,4 +1,5 @@
 const {copyFile, mkFile} = require('./src/utils/file_system');
+const get = require('lodash/get');
 const sm = require('sitemap');
 const {buildFeeds} = require('./feeds');
 const path = require('path');
@@ -67,14 +68,15 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   if (node.internal.type === 'MarkdownRemark') {
     const fileNode = getNode(node.parent);
     const parsedFilePath = path.parse(fileNode.relativePath);
-    if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
+    if (get(node, 'frontmatter.path')) {
+      slug = node.frontmatter.path;
+    } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
     } else if (parsedFilePath.dir === '') {
       slug = `/${parsedFilePath.name}/`;
     } else {
       slug = `/${parsedFilePath.dir}/`;
     }
-
     // Add slug as a field on the node.
     createNodeField({ node, name: 'slug', value: slug });
   }
@@ -111,6 +113,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         // Create blog posts pages.
         result.data.allMarkdownRemark.edges.forEach(edge => {
+
           createPage({
             path: edge.node.fields.slug, // required
             component: blogPost,

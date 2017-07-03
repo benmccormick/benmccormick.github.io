@@ -5,7 +5,7 @@ import '../css/header.css';
 
 export class Header extends React.Component {
   render() {
-    let {blogTitle} = this.props;
+    let {blogTitle, history} = this.props;
     return (
       <div
         style = {{
@@ -80,7 +80,7 @@ export class Header extends React.Component {
             flexShrink: 2,
           }}
         >
-          <Ad/>
+          <Ad history = {history}/>
         </div>
       </div>
     );

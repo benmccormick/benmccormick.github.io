@@ -15,24 +15,21 @@ class BlogIndex extends React.Component {
     // Sort pages.
     const posts = this.props.data.allMarkdownRemark.edges;
     const sortedPages = take(
-        sortBy(posts, page => get(page, 'data.date'))
+        sortBy(posts, page => get(page, 'node.frontmatter.date'))
             .reverse()
             .filter(page => (
-                (get(page, 'file.ext') === 'md') &&
-                (!include(page.path, '/404')) &&
-                (get(page, 'data.layout') === 'post')
+                (get(page, 'node.frontmatter.layout') === 'post')
             )
-    ), 10);
+    ).map(p => ({data: p.node.frontmatter, path: p.node.fields.slug})), 10);
     const popularPages = take(
-        sortBy(posts, page => parseInt(get(page, 'data.last30pageViews')))
+        sortBy(posts, page => parseInt(get(page, 'node.frontmatter.last30pageViews')))
             .reverse()
             .filter(page => (
-                (get(page, 'file.ext') === 'md') &&
-                (!include(page.path, '/404')) &&
-                (!page.data.dontfeature) &&
-                (get(page, 'data.layout') === 'post')
+                (!include(page.node.frontmatter.path, '/404')) &&
+                (!page.node.frontmatter.dontfeature) &&
+                (get(page, 'node.frontmatter.layout') === 'post')
             )
-    ), 6);
+    ).map(p => ({data: p.node.frontmatter, path: p.node.fields.slug})), 6);
     return (
       <div>
         <Helmet
@@ -145,6 +142,14 @@ query IndexQuery {
   ) {
     edges {
       node {
+        frontmatter {
+          title,
+          date,
+          layout,
+          dontfeature,
+          last30pageViews,
+          description
+        }
         fields {
           slug
         }
