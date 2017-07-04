@@ -5,90 +5,92 @@
   color: #D8DEE9;
 }
 
-.hljs {
+/*.gatsby-highlight >  {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
   background: #343D46;
   color: #D8DEE9;
-}
+}*/
 
-.hljs-comment,
-.hljs-quote {
+.token.comment,
+.token.quote {
   color: #A7ADBA;
 }
 
 /* Green */
-.hljs-selector-tag,
-.hljs-string,
-.hljs-attr,
-.hljs-addition {
+.token.selector-tag,
+.token.string,
+.token.attr,
+.token.addition {
   color: #99C794;
 }
 
 /* Cyan */
-.hljs-meta .hljs-meta-string,
-.hljs-doctag,
-.hljs-regexp {
+.token.meta .token.meta-string,
+.token.doctag,
+.token.regexp {
   color: #89DDF3;
 }
 
 /* Teal */
-.hljs-built_in {
+.token.function,
+.token.built_in {
 color: #5fb3b3;
 }
 
 /* Blue */
-.hljs-title,
-.hljs-section,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class {
+.token.title,
+.token.section,
+.token.name,
+.token.selector-id,
+.token.selector-class {
   color: #6699cc;
 }
 
 /* Yellow */
-.hljs-attribute,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-class .hljs-title,
-.hljs-type {
+.token.attribute,
+.token.variable,
+.token.template-variable,
+.token.class .token.title,
+.token.type {
   color: #FAC863;
 }
 
 /* Orange */
-.hljs-symbol,
-.hljs-bullet,
-.hljs-subst,
-.hljs-meta,
-.hljs-meta .hljs-keyword,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-link {
+.token.symbol,
+.token.bullet,
+.token.subst,
+.token.meta,
+.token.meta .token.keyword,
+.token.selector-attr,
+.token.selector-pseudo,
+.token.link {
   color: #f9AE58;
 }
 
 /* Red */
-.hljs-number,
-.hljs-literal,
-.hljs-deletion {
+.token.number,
+.token.literal,
+.token.boolean,
+.token.deletion {
   color: #f07178;
 }
 
 /* Purple */
-.hljs-keyword
+.token.keyword
 {
   color: #c594c5
 }
 
-.hljs-formula {
+.token.formula {
   background: #A7ADBA;
 }
 
-.hljs-emphasis {
+.token.emphasis {
   font-style: italic;
 }
 
-.hljs-strong {
+.token.strong {
   font-weight: bold;
 }

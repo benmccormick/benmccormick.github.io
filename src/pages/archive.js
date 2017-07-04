@@ -2,18 +2,18 @@ import React from 'react';
 import sortBy from 'lodash/sortBy';
 import get from 'lodash/get';
 import Helmet from 'react-helmet';
-import include from 'lodash/includes';
 import LinkList from '../components/LinkList';
 
 class CategoryArchive extends React.Component {
   render() {
     // Sort pages.
-    const sortedPages = sortBy(this.props.route.pages, (page) =>
-      get(page, 'data.date')
-    ).filter(page => get(page, 'file.ext') === 'md' &&
-        !include(page.path, '/404') &&
-        get(page, 'data.layout') === 'post'
-    ).reverse();
+    const posts = this.props.data.allMarkdownRemark.edges;
+    const sortedPages = sortBy(posts, page => get(page, 'node.frontmatter.date'))
+            .reverse()
+            .filter(page => (
+                (get(page, 'node.frontmatter.layout') === 'post')
+            )
+    ).map(p => ({data: p.node.frontmatter, path: p.node.fields.slug}));
     return (
       <div>
         <Helmet
@@ -39,3 +39,30 @@ CategoryArchive.propTypes = {
 };
 
 export default CategoryArchive;
+
+export const pageQuery = graphql`
+query ArchiveQuery {
+  allMarkdownRemark(
+    limit: 2000,
+    sort: { fields: [frontmatter___date], order: DESC },
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title,
+          date,
+          layout,
+          dontfeature,
+          last30pageViews,
+          description,
+          category
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+}
+
+`;

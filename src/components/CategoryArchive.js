@@ -13,11 +13,7 @@ class CategoryArchive extends React.Component {
     let categoryData = find(categoryHash.categories, {key: categoryKey});
     // Sort pages.
     const sortedPages = sortBy(pages, (page) => get(page, 'data.date'))
-      .filter(page => get(page, 'file.ext') === 'md' &&
-        page.data.category === categoryKey &&
-        !include(page.path, '/404') &&
-        get(page, 'data.layout') === 'post'
-      ).reverse();
+      .filter(page => page.data.category === categoryKey && get(page, 'data.layout') === 'post').reverse();
 
     let {description, title} = categoryData;
 

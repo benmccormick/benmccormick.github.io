@@ -29,19 +29,105 @@ function generateSiteMap(pages) {
 }
 
 
-let copyCNAME = (cb) => {
+const copyCNAME = (cb) => {
   copyFile('/pages/CNAME', '/public/CNAME', err => err ? cb(false) : cb());
 };
 
-let copyManifest = (cb) => {
+const copyManifest = (cb) => {
   copyFile('/pages/manifest.json',
     '/public/manifest.json', err => err ? cb(false) : cb());
 };
 
-let copySW = (cb) => {
+const copySW = (cb) => {
   copyFile('/pages/sw.es6', '/public/sw.js', err => err ? cb(false) : cb());
 };
 
+const createCategoryArchives = (graphql, createPage) => new Promise((resolve, reject) => {
+  const pages = [];
+  const categoryPage = path.resolve('src/templates/category-page.js');
+    // Query for all markdown "nodes" and for the slug we previously created.
+  resolve(
+      graphql(
+        `
+        {
+          site {
+            siteMetadata {
+              categories {
+                title
+                description
+                key
+                icon
+                subscribeText
+              }
+            }
+          }
+        }
+      `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors);
+          reject(result.errors);
+        }
+
+        // Create category archives
+        const categories = result.data.site.siteMetadata.categories;
+        categories.forEach(category => {
+
+          createPage({
+            path: `category/${category.key}`, // required
+            component: categoryPage,
+            context: {
+              category: category.key
+            },
+          });
+        });
+
+        return;
+      })
+    );
+});
+
+const createBlogPosts = (graphql, createPage) => new Promise((resolve, reject) => {
+  const pages = [];
+  const blogPost = path.resolve('src/templates/blog-post.js');
+    // Query for all markdown "nodes" and for the slug we previously created.
+  resolve(
+      graphql(
+        `
+        {
+          allMarkdownRemark {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+              }
+            }
+          }
+        }
+      `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors);
+          reject(result.errors);
+        }
+
+        // Create blog posts pages.
+        result.data.allMarkdownRemark.edges.forEach(edge => {
+
+          createPage({
+            path: edge.node.fields.slug, // required
+            component: blogPost,
+            context: {
+              slug: edge.node.fields.slug,
+            },
+          });
+        });
+
+        return;
+      })
+    );
+});
 exports.onPostBuild = function(pages, callback) {
   buildFeeds(pages);
   generateSiteMap(pages);
@@ -86,45 +172,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 
-  return new Promise((resolve, reject) => {
-    const pages = [];
-    const blogPost = path.resolve('src/templates/blog-post.js');
-    // Query for all markdown "nodes" and for the slug we previously created.
-    resolve(
-      graphql(
-        `
-        {
-          allMarkdownRemark {
-            edges {
-              node {
-                fields {
-                  slug
-                }
-              }
-            }
-          }
-        }
-      `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
-        }
-
-        // Create blog posts pages.
-        result.data.allMarkdownRemark.edges.forEach(edge => {
-
-          createPage({
-            path: edge.node.fields.slug, // required
-            component: blogPost,
-            context: {
-              slug: edge.node.fields.slug,
-            },
-          });
-        });
-
-        return;
-      })
-    );
-  });
+  let blogPostPromise = createBlogPosts(graphql, createPage);
+  let categoryArchivePromise = createCategoryArchives(graphql, createPage);
+  return blogPostPromise;
+  // return Promise.all(blogPostPromise, categoryArchivePromise);
 };

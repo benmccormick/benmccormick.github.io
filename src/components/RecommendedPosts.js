@@ -17,19 +17,19 @@ class RecommendedPosts extends React.Component {
     let nextArticleFilter;
     if (readNext) {
       const keyList = isArray(readNext) ? readNext : readNext.split(',');
-      nextArticleFilter = ({data}) => data && includes(keyList, data.key);
+      nextArticleFilter = page => page && includes(keyList, page.key);
     } else {
       nextArticleFilter =
-        ({data}) => (
-          data &&
-          data.category === category &&
-          data.path !== path &&
-          data.dontfeature !== 'true'
+        page => (
+          page &&
+          page.category === category &&
+          page.path !== path &&
+          page.dontfeature !== 'true'
         );
     }
 
 
-    let nextPosts = take(filter(orderBy(pages, 'data.date', 'desc'), nextArticleFilter), 3);
+    let nextPosts = take(filter(orderBy(pages, 'date', 'desc'), nextArticleFilter), 3);
     return (
       <div className = "up-next-block">
         <h6
@@ -60,10 +60,10 @@ class RecommendedPosts extends React.Component {
                   hash: '#title',
                 }}
               >
-                {nextPost.data.title}
+                {nextPost.title}
               </Link>
             </h3>
-            <p>{nextPost.data.description}</p>
+            <p>{nextPost.description}</p>
           </div>
       ))}
       </div>);
