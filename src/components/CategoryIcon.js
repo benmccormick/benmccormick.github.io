@@ -25,34 +25,35 @@ let icons = {
   info,
   megaphone,
   project,
-  tools,
+  tools
 };
-
 
 class CategoryIcon extends React.Component {
   render() {
-    let {category, includeText} = this.props;
+    let { category, includeText } = this.props;
     let categories = get(categoryList, 'categories', []);
-    let selectedCategory = find(categories, {key: category});
+    let selectedCategory = find(categories, { key: category });
 
     let icon = selectedCategory ? icons[selectedCategory.icon] : question;
     let text = selectedCategory ? selectedCategory.title : 'Uncategorized';
-    return <Link to = {`/category/${category}/`} className = 'category-icon-wrapper'>
-      <span className = {`category-icon category-icon-${category}`} >
-        <InlineSVG src = {icon} />
-      </span>
-      {includeText ? text : null}
-    </Link>;
+    return (
+      <Link to={`/category/${category}/`} className="category-icon-wrapper">
+        <span className={`category-icon category-icon-${category}`}>
+          <InlineSVG src={icon} />
+        </span>
+        {includeText ? text : null}
+      </Link>
+    );
   }
 }
 
 CategoryIcon.propTypes = {
   category: React.PropTypes.string.isRequired,
-  includeText: React.PropTypes.bool.isRequired,
+  includeText: React.PropTypes.bool.isRequired
 };
 
 CategoryIcon.defaultProps = {
-  includeText: true,
+  includeText: true
 };
 
 export default CategoryIcon;

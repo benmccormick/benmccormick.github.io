@@ -3,7 +3,7 @@ import moment from 'moment';
 import Helmet from 'react-helmet';
 import PostFooter from '../components/PostFooter';
 import { rhythm } from '../utils/typography';
-import {Disqus} from '../components/Disqus';
+import { Disqus } from '../components/Disqus';
 import forEach from 'lodash/forEach';
 import last from 'lodash/last';
 import defer from 'lodash/defer';
@@ -15,16 +15,15 @@ import '../css/twitter.css';
 import '../css/mailchimp.css';
 
 class BlogPostTemplate extends React.Component {
-
   extractTwitterStatusID(tweetEl) {
-        //this is a bit tricky, we have to grab the link to the tweet and extract the id from it
+    //this is a bit tricky, we have to grab the link to the tweet and extract the id from it
     let links = tweetEl.querySelectorAll('a');
-        //it should be the last one
+    //it should be the last one
     let statusLink = last(links);
     if (!statusLink || !statusLink.href) {
       return undefined;
     }
-        // regex magic
+    // regex magic
     let re = /status\/(\d+)$/;
     let result = statusLink.href.match(re);
 
@@ -32,14 +31,17 @@ class BlogPostTemplate extends React.Component {
       return undefined;
     }
     return result[1];
-
   }
 
   componentDidMount() {
     let TwitterWidgetsLoader = require('twitter-widgets');
     TwitterWidgetsLoader.load(twttr => {
-      let tweets = this.markdownContainer.querySelectorAll('blockquote.twitter-tweet');
-      let followButtons = this.markdownContainer.querySelectorAll('.twitter-follow-button');
+      let tweets = this.markdownContainer.querySelectorAll(
+        'blockquote.twitter-tweet'
+      );
+      let followButtons = this.markdownContainer.querySelectorAll(
+        '.twitter-follow-button'
+      );
       defer(() => {
         forEach(tweets, tweet => {
           let id = this.extractTwitterStatusID(tweet);
@@ -54,12 +56,13 @@ class BlogPostTemplate extends React.Component {
         });
       });
     });
-
   }
 
   render() {
     const post = this.props.data.markdownRemark.frontmatter;
-    const pages = this.props.data.allMarkdownRemark.edges.map(p => p.node.frontmatter);
+    const pages = this.props.data.allMarkdownRemark.edges.map(
+      p => p.node.frontmatter
+    );
     const body = this.props.data.markdownRemark.html;
     // const { route, location } = this.props;
     let isPage = post.layout === 'page';
@@ -67,25 +70,31 @@ class BlogPostTemplate extends React.Component {
     let slug = last(post.path.split('/'));
     let url = `http://benmccormick.org${location.pathname}`;
     return (
-      <div className = "markdown" ref = {el => this.markdownContainer = el}>
+      <div className="markdown" ref={el => (this.markdownContainer = el)}>
         <Helmet
-          title = {`${post.title} | benmccormick.org`}
-          meta = {[
-
-            {'name': 'description', 'content': post.description ||
-                'Ben McCormick\'s blog on JavaScript and Web Development'},
-              {'name': 'keywords', 'content': post.keywords || ''},
-              { name: 'twitter:card', content: 'summary' },
-              { name: 'twitter:site', content: '@benmccormickorg'},
-              { name: 'twitter:creator', content: '@ben336'},
-              { name: 'twitter:title', content: post.title},
-              { name: 'twitter:description', content: post.description || ''},
-              { name: 'twitter:image', content: post.image || 'http://benmccormick.org/logo.png'},
-          ]}
-          script = {[
+          title={`${post.title} | benmccormick.org`}
+          meta={[
             {
-              'type': 'application/ld+json',
-              'innerHTML': `{
+              name: 'description',
+              content:
+                post.description ||
+                "Ben McCormick's blog on JavaScript and Web Development"
+            },
+            { name: 'keywords', content: post.keywords || '' },
+            { name: 'twitter:card', content: 'summary' },
+            { name: 'twitter:site', content: '@benmccormickorg' },
+            { name: 'twitter:creator', content: '@ben336' },
+            { name: 'twitter:title', content: post.title },
+            { name: 'twitter:description', content: post.description || '' },
+            {
+              name: 'twitter:image',
+              content: post.image || 'http://benmccormick.org/logo.png'
+            }
+          ]}
+          script={[
+            {
+              type: 'application/ld+json',
+              innerHTML: `{
                   "@context": "http://schema.org"
                   "@type": "BlogPosting",
                   "headline": "${post.title}",
@@ -94,7 +103,9 @@ class BlogPostTemplate extends React.Component {
                   "url": "${url}",
                   "image": "${'http://benmccormick.org/logo.png'}",
                   "datePublished": "${moment(post.date).format('YYYY-MM-D')}",
-                  ${post.description ? `"description": "${post.description}",` : ''}
+                  ${post.description
+                    ? `"description": "${post.description}",`
+                    : ''}
                   "articleBody": "${body.replace(/\"/g, '\\"')}",
                     "author": {
                       "@type": "Person",
@@ -115,36 +126,40 @@ class BlogPostTemplate extends React.Component {
             }
           ]}
         />
-        {isPage ? null : <h5
-          style = {{
-            display: 'block',
-            color: 'rgba(100,100,100, 0.7)',
-            marginBottom: rhythm(1 / 4),
+        {isPage
+          ? null
+          : <h5
+              style={{
+                display: 'block',
+                color: 'rgba(100,100,100, 0.7)',
+                marginBottom: rhythm(1 / 4)
+              }}
+            >
+              {moment(post.date).format('MMMM D, YYYY')}
+            </h5>}
+        <h1
+          style={{
+            marginTop: 0,
+            marginBottom: '1rem'
           }}
         >
-          {moment(post.date).format('MMMM D, YYYY')}
-        </h5>}
-        <h1
-          style = {{
-            marginTop: 0,
-            marginBottom: '1rem',
-          }}
-        >{post.title}</h1>
+          {post.title}
+        </h1>
         <div
-          className = "article-body"
-          dangerouslySetInnerHTML = {{ __html: body }}
+          className="article-body"
+          dangerouslySetInnerHTML={{ __html: body }}
         />
-        {isPost ? <PostFooter post = {post} pages = {pages} /> : null }
-        {post.hideFooter ? null : <hr
-          style = {{
-            marginBottom: rhythm(2),
-          }}
-        />}
-        {isPage || post.hideFooter ? null : <Disqus
-          title = {post.title}
-          shortName = {slug}
-          url = {url}
-        />}
+        {isPost ? <PostFooter post={post} pages={pages} /> : null}
+        {post.hideFooter
+          ? null
+          : <hr
+              style={{
+                marginBottom: rhythm(2)
+              }}
+            />}
+        {isPage || post.hideFooter
+          ? null
+          : <Disqus title={post.title} shortName={slug} url={url} />}
       </div>
     );
   }
@@ -153,39 +168,36 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-query BlogPostBySlug($slug: String!) {
-  markdownRemark(fields: { slug: { eq: $slug }}) {
-    html
-    frontmatter {
-      title
-      keywords
-      category
-      readNext
-      path
-      layout
-      hideFooter
-
+  query BlogPostBySlug($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        title
+        keywords
+        category
+        readNext
+        path
+        layout
+        hideFooter
+      }
     }
-  }
-  allMarkdownRemark(
-    limit: 2000,
-  ) {
-    edges {
-      node {
-        frontmatter {
-          title
-          date
-          path
-          description
-          category
-          dontfeature
-          key
-        }
-        fields {
-          slug
+    allMarkdownRemark(limit: 2000) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            path
+            description
+            category
+            dontfeature
+            key
+          }
+          fields {
+            slug
+          }
         }
       }
     }
   }
-}
 `;

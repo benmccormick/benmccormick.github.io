@@ -39,16 +39,16 @@ const typography = new Typography({
       fontSize: '75%'
     },
     pre: {
-      lineHeight: 1.1,
+      lineHeight: 1.1
     },
     'pre code': {
-      lineHeight: 1.1,
+      lineHeight: 1.1
     },
     [MOBILE_MEDIA_QUERY]: {
       // Make font-size 17px on mobile.
-      html: { fontSize: 18 / 16 * 100 + '%' },
-    },
-  }),
+      html: { fontSize: 18 / 16 * 100 + '%' }
+    }
+  })
 });
 
 // Hot reload typography in development.

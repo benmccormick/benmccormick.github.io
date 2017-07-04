@@ -9,7 +9,6 @@ import orderBy from 'lodash/orderBy';
 import { rhythm, scale } from '../utils/typography';
 
 class RecommendedPosts extends React.Component {
-
   render() {
     const { pages, post } = this.props;
     const { readNext, category, path } = post;
@@ -19,61 +18,63 @@ class RecommendedPosts extends React.Component {
       const keyList = isArray(readNext) ? readNext : readNext.split(',');
       nextArticleFilter = page => page && includes(keyList, page.key);
     } else {
-      nextArticleFilter =
-        page => (
-          page &&
-          page.category === category &&
-          page.path !== path &&
-          page.dontfeature !== 'true'
-        );
+      nextArticleFilter = page =>
+        page &&
+        page.category === category &&
+        page.path !== path &&
+        page.dontfeature !== 'true';
     }
 
-
-    let nextPosts = take(filter(orderBy(pages, 'date', 'desc'), nextArticleFilter), 3);
+    let nextPosts = take(
+      filter(orderBy(pages, 'date', 'desc'), nextArticleFilter),
+      3
+    );
     return (
-      <div className = "up-next-block">
+      <div className="up-next-block">
         <h6
-          style = {{
+          style={{
             margin: 0,
             fontSize: scale(-0.5).fontSize,
             lineHeight: scale(-0.5).lineHeight,
-            letterSpacing: -0.25,
+            letterSpacing: -0.25
           }}
         >
-            You Might Also Like:
-          </h6>
-        {map(nextPosts, (nextPost, idx) => (
+          You Might Also Like:
+        </h6>
+        {map(nextPosts, (nextPost, idx) =>
           <div>
-            {idx ? <hr/> : null}
+            {idx ? <hr /> : null}
             <h3
-              style = {{
+              style={{
                 marginTop: 0,
-                marginBottom: rhythm(1 / 4),
+                marginBottom: rhythm(1 / 4)
               }}
             >
               <Link
-                to = {{
-                  pathname: (nextPost.path),
+                to={{
+                  pathname: nextPost.path,
                   query: {
-                    readNext: true,
+                    readNext: true
                   },
-                  hash: '#title',
+                  hash: '#title'
                 }}
               >
                 {nextPost.title}
               </Link>
             </h3>
-            <p>{nextPost.description}</p>
+            <p>
+              {nextPost.description}
+            </p>
           </div>
-      ))}
-      </div>);
+        )}
+      </div>
+    );
   }
-
 }
 
 RecommendedPosts.propTypes = {
   post: React.PropTypes.object.isRequired,
-  pages: React.PropTypes.array,
+  pages: React.PropTypes.array
 };
 
 export default RecommendedPosts;

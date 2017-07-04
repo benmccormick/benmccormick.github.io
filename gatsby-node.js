@@ -1,11 +1,11 @@
-const {copyFile, mkFile} = require('./src/utils/file_system');
+const { copyFile, mkFile } = require('./src/utils/file_system');
 const get = require('lodash/get');
 const sm = require('sitemap');
-const {buildFeeds} = require('./feeds');
+const { buildFeeds } = require('./feeds');
 const path = require('path');
 
 function pagesToSitemap(pages) {
-  const urls = pages.map((p) => {
+  const urls = pages.map(p => {
     if (p.path !== undefined) {
       return {
         url: p.path,
@@ -22,31 +22,34 @@ function generateSiteMap(pages) {
   const sitemap = sm.createSitemap({
     hostname: 'https://benmccormick.org',
     cacheTime: '60000',
-    urls: pagesToSitemap(pages),
+    urls: pagesToSitemap(pages)
   });
   console.log('Generating sitemap.xml');
   mkFile('/public/sitemap.xml', sitemap.toString());
 }
 
-
-const copyCNAME = (cb) => {
-  copyFile('/pages/CNAME', '/public/CNAME', err => err ? cb(false) : cb());
+const copyCNAME = cb => {
+  copyFile('/pages/CNAME', '/public/CNAME', err => (err ? cb(false) : cb()));
 };
 
-const copyManifest = (cb) => {
-  copyFile('/pages/manifest.json',
-    '/public/manifest.json', err => err ? cb(false) : cb());
+const copyManifest = cb => {
+  copyFile(
+    '/pages/manifest.json',
+    '/public/manifest.json',
+    err => (err ? cb(false) : cb())
+  );
 };
 
-const copySW = (cb) => {
-  copyFile('/pages/sw.es6', '/public/sw.js', err => err ? cb(false) : cb());
+const copySW = cb => {
+  copyFile('/pages/sw.es6', '/public/sw.js', err => (err ? cb(false) : cb()));
 };
 
-const createCategoryArchives = (graphql, createPage) => new Promise((resolve, reject) => {
-  const pages = [];
-  const categoryPage = path.resolve('src/templates/category-page.js');
+const createCategoryArchives = (graphql, createPage) =>
+  new Promise((resolve, reject) => {
+    const pages = [];
+    const categoryPage = path.resolve('src/templates/category-page.js');
     // Query for all markdown "nodes" and for the slug we previously created.
-  resolve(
+    resolve(
       graphql(
         `
         {
@@ -72,26 +75,26 @@ const createCategoryArchives = (graphql, createPage) => new Promise((resolve, re
         // Create category archives
         const categories = result.data.site.siteMetadata.categories;
         categories.forEach(category => {
-
           createPage({
             path: `category/${category.key}`, // required
             component: categoryPage,
             context: {
               category: category.key
-            },
+            }
           });
         });
 
         return;
       })
     );
-});
+  });
 
-const createBlogPosts = (graphql, createPage) => new Promise((resolve, reject) => {
-  const pages = [];
-  const blogPost = path.resolve('src/templates/blog-post.js');
+const createBlogPosts = (graphql, createPage) =>
+  new Promise((resolve, reject) => {
+    const pages = [];
+    const blogPost = path.resolve('src/templates/blog-post.js');
     // Query for all markdown "nodes" and for the slug we previously created.
-  resolve(
+    resolve(
       graphql(
         `
         {
@@ -114,28 +117,23 @@ const createBlogPosts = (graphql, createPage) => new Promise((resolve, reject) =
 
         // Create blog posts pages.
         result.data.allMarkdownRemark.edges.forEach(edge => {
-
           createPage({
             path: edge.node.fields.slug, // required
             component: blogPost,
             context: {
-              slug: edge.node.fields.slug,
-            },
+              slug: edge.node.fields.slug
+            }
           });
         });
 
         return;
       })
     );
-});
+  });
 exports.onPostBuild = function(pages, callback) {
   buildFeeds(pages);
   generateSiteMap(pages);
-  copySW(
-    () => copyCNAME(
-      () => copyManifest(callback)
-    )
-  );
+  copySW(() => copyCNAME(() => copyManifest(callback)));
 };
 
 exports.modifyWebpackConfig = function(config, stage) {
@@ -167,7 +165,6 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     createNodeField({ node, name: 'slug', value: slug });
   }
 };
-
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;

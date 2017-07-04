@@ -11,39 +11,47 @@ class PageLink extends React.Component {
     const _title = get(page, 'data.title') || page.path;
     return (
       <li
-        style = {{
+        style={{
           marginBottom: rhythm(1 / 2),
           listStyle: 'none',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center',
+          alignItems: 'center'
         }}
       >
         <div
-          style = {{
+          style={{
             maxWidth: '25rem',
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <div>
-            <Link style = {{boxShadow: 'none'}} to = {(page.path)}>{_title}</Link>
+            <Link style={{ boxShadow: 'none' }} to={page.path}>
+              {_title}
+            </Link>
             <p
-              style = {{
+              style={{
                 fontStyle: 'italic',
                 margin: 0,
                 color: 'rgba(100,100,100, 0.7)'
               }}
-            > {page.data.description}</p>
-            {showCategory ? <CategoryIcon category = {page.data.category} /> : null }
+            >
+              {' '}{page.data.description}
+            </p>
+            {showCategory
+              ? <CategoryIcon category={page.data.category} />
+              : null}
           </div>
         </div>
         <span
-          className = "no-mobile"
-          style = {{
-            color: 'rgba(100,100,100, 0.7)',
+          className="no-mobile"
+          style={{
+            color: 'rgba(100,100,100, 0.7)'
           }}
-        >{moment(page.data.date).fromNow()}</span>
+        >
+          {moment(page.data.date).fromNow()}
+        </span>
       </li>
     );
   }
@@ -51,7 +59,7 @@ class PageLink extends React.Component {
 
 PageLink.propTypes = {
   page: React.PropTypes.object.isRequired,
-  showCategory: React.PropTypes.bool.isRequired,
+  showCategory: React.PropTypes.bool.isRequired
 };
 
 export default PageLink;

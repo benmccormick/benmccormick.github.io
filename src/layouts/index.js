@@ -8,15 +8,15 @@ import '../css/typography.css';
 
 class Template extends React.Component {
   render() {
-    const {children, history } = this.props;
+    const { children, history } = this.props;
     return (
       <Container
-        style = {{
+        style={{
           maxWidth: rhythm(26),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`
         }}
       >
-        <Header blogTitle = {'benmccormick.org'} history = {history}/>
+        <Header blogTitle={'benmccormick.org'} history={history} />
         {children()}
       </Container>
     );
@@ -25,7 +25,7 @@ class Template extends React.Component {
 
 Template.propTypes = {
   children: React.PropTypes.any,
-  route: React.PropTypes.object,
+  route: React.PropTypes.object
 };
 
 export default Template;

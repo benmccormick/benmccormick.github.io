@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { TypographyStyle } from 'react-typography';
-import {GA} from './components/GA';
+import { GA } from './components/GA';
 import typography from './utils/typography';
 
 class HTML extends React.Component {
@@ -15,67 +15,76 @@ class HTML extends React.Component {
     }
 
     return (
-      <html lang = "en">
+      <html lang="en">
         <head>
-          <meta charSet = "utf-8" />
-          <meta httpEquiv = "X-UA-Compatible" content = "IE=edge" />
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
-            name = "viewport"
-            content = "width=device-width, initial-scale=1.0"
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
           />
           <link
-            rel = "apple-touch-icon"
-            sizes = "180x180"
-            href = "/apple-touch-icon.png?v=yyxgnp97qG"
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png?v=yyxgnp97qG"
           />
           <link
-            rel = "icon"
-            type = "image/png"
-            href = "/favicon-32x32.png?v=yyxgnp97qG"
-            sizes = "32x32"
+            rel="icon"
+            type="image/png"
+            href="/favicon-32x32.png?v=yyxgnp97qG"
+            sizes="32x32"
           />
           <link
-            rel = "icon"
-            type = "image/png"
-            href = "/favicon-16x16.png?v=yyxgnp97qG"
-            sizes = "16x16"
+            rel="icon"
+            type="image/png"
+            href="/favicon-16x16.png?v=yyxgnp97qG"
+            sizes="16x16"
           />
-          <link rel = "manifest" href = "/manifest.json"/>
-          <link rel = "mask-icon" href = "/safari-pinned-tab.svg?v=yyxgnp97qG" color = "#57a3e8"/>
+          <link rel="manifest" href="/manifest.json" />
           <link
-            rel = "alternate" title = "JSON Feed"
-            type = "application/json" href = "/feed.json"
+            rel="mask-icon"
+            href="/safari-pinned-tab.svg?v=yyxgnp97qG"
+            color="#57a3e8"
+          />
+          <link
+            rel="alternate"
+            title="JSON Feed"
+            type="application/json"
+            href="/feed.json"
           />
 
-          <link rel = "shortcut icon" href = "/favicon.ico?v=yyxgnp97qG"/>
-          <meta name = "theme-color" content = "#ffffff"/>
+          <link rel="shortcut icon" href="/favicon.ico?v=yyxgnp97qG" />
+          <meta name="theme-color" content="#ffffff" />
+          <script type="text/javascript" src="//use.typekit.net/msd6bqv.js" />
           <script
-            type = "text/javascript"
-            src = "//use.typekit.net/msd6bqv.js"
-          />
-          <script
-            type = "text/javascript"
-            dangerouslySetInnerHTML = {{__html: 'try{Typekit.load();}catch(e){}'}}
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: 'try{Typekit.load();}catch(e){}'
+            }}
           />
           {head.title.toComponent()}
           {head.meta.toComponent()}
           {head.script.toComponent()}
-          <TypographyStyle typography = {typography} />
+          <TypographyStyle typography={typography} />
           {css}
           {this.props.headComponents}
         </head>
         <body
-          className = "landing-page"
-          style = {{
+          className="landing-page"
+          style={{
             background: '#FCFCFC',
-            padding: '0 10px',
+            padding: '0 10px'
           }}
         >
-          <div id = "___gatsby" dangerouslySetInnerHTML = {{ __html: this.props.body }}/>
+          <div
+            id="___gatsby"
+            dangerouslySetInnerHTML={{ __html: this.props.body }}
+          />
           <GA />
           <script
-            type = "text/javascript"
-            dangerouslySetInnerHTML = {{ __html: `
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `
               // adapted from: https://css-tricks.com/serviceworker-for-offline/
               // ServiceWorker is a progressive technology. Ignore unsupported browsers
               if ('serviceWorker' in navigator) {
@@ -88,19 +97,20 @@ class HTML extends React.Component {
               } else {
               console.log('CLIENT: service worker is not supported.');
               }
-            `}}
+            `
+            }}
           />
           {this.props.postBodyComponents}
         </body>
       </html>
     );
   }
-};
+}
 
 HTML.propTypes = {
   body: React.PropTypes.string,
   headComponents: React.PropTypes.any,
-  postBodyComponents: React.PropTypes.any,
+  postBodyComponents: React.PropTypes.any
 };
 
 export default HTML;

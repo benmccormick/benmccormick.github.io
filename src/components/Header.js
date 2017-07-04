@@ -5,89 +5,76 @@ import '../css/header.css';
 
 export class Header extends React.Component {
   render() {
-    let {blogTitle, history} = this.props;
+    let { blogTitle, history } = this.props;
     return (
       <div
-        style = {{
+        style={{
           display: 'flex',
-            // borderBottom: '1px solid rgba(200, 200, 200, 0.5)',
+          // borderBottom: '1px solid rgba(200, 200, 200, 0.5)',
           paddingBottom: '0.5rem',
-          marginBottom: '0.5rem',
+          marginBottom: '0.5rem'
         }}
       >
         <div
-          style = {{
+          style={{
             flexGrow: 3,
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-around',
+            justifyContent: 'space-around'
           }}
         >
           <h3
-            style = {{
+            style={{
               margin: 0,
-              paddingBottom: 0,
+              paddingBottom: 0
             }}
           >
             <Link
-              style = {{
+              style={{
                 boxShadow: 'none',
                 textDecoration: 'none',
-                color: 'inherit',
+                color: 'inherit'
               }}
-              name = "title"
-              to = {'/'}
+              name="title"
+              to={'/'}
             >
               {blogTitle}
             </Link>
           </h3>
           <div
-            style = {{
-              color: 'rgba(100,100,100, 0.7)',
+            style={{
+              color: 'rgba(100,100,100, 0.7)'
             }}
           >
-            <Link
-              className = "header-link"
-              to = {('/subscribe/')}
-            >
-                    Subscribe
+            <Link className="header-link" to={'/subscribe/'}>
+              Subscribe
             </Link>
-            <span style = {{padding: '0 0.33rem'}}>•</span>
-            <Link
-              className = "header-link"
-              to = {('/archive/')}
-            >
-                    Archive
+            <span style={{ padding: '0 0.33rem' }}>•</span>
+            <Link className="header-link" to={'/archive/'}>
+              Archive
             </Link>
-            <span style = {{padding: '0 0.33rem'}}>•</span>
-            <a
-              className = "header-link"
-              href = "http://twitter.com/ben336"
-            >
-                    Twitter
+            <span style={{ padding: '0 0.33rem' }}>•</span>
+            <a className="header-link" href="http://twitter.com/ben336">
+              Twitter
             </a>
-            <span style = {{padding: '0 0.33rem'}}>•</span>
-            <Link
-              className = "header-link"
-              to = {('/about/')}
-            >
-                    About
+            <span style={{ padding: '0 0.33rem' }}>•</span>
+            <Link className="header-link" to={'/about/'}>
+              About
             </Link>
           </div>
         </div>
         <div
-          style = {{
-            flexShrink: 2,
+          style={{
+            flexShrink: 2
           }}
         >
-          <Ad history = {history}/>
+          <Ad history={history} />
         </div>
       </div>
     );
   }
 }
 
-
 Header.propTypes = {
-  blogTitle: React.PropTypes.string.isRequired,
+  blogTitle: React.PropTypes.string.isRequired
 };

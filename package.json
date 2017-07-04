@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "caniuse-db": "1.0.30000670",
+    "eslint-plugin-prettier": "^2.1.2",
     "front-matter": "^2.1.0",
     "gatsby": "next",
     "gatsby-link": "next",
@@ -26,6 +27,7 @@
     "markdown-it-attrs": "^0.8.0",
     "markdown-it-footnote": "^3.0.1",
     "moment": "^2.14.1",
+    "prettier": "^1.5.2",
     "react": "^15.4.2",
     "react-disqus-thread": "^0.4.0",
     "react-dom": "^15.4.2",

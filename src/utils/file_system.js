@@ -5,7 +5,7 @@ const BASE_PATH = __dirname + '/..';
 const copyFile = (sourcePath, targetPath, cb) => {
   let cbCalled = false;
 
-  const done = (err) => {
+  const done = err => {
     if (!cbCalled) {
       cb(err);
       cbCalled = true;
@@ -26,7 +26,7 @@ const mkDir = path => {
   try {
     fs.mkdirSync(BASE_PATH + path);
   } catch (e) {
-        //this is probably fine, it may fail if the file already exists
+    //this is probably fine, it may fail if the file already exists
     console.log('oops');
   }
 };
@@ -35,13 +35,15 @@ const mkFile = (path, content) => {
   try {
     fs.writeFileSync(BASE_PATH + path, content);
   } catch (e) {
-        //this is probably fine, it may fail if the file already exists
-    console.log(`🔥 Failed to write a file to ${path}, something is probably wrong`);
+    //this is probably fine, it may fail if the file already exists
+    console.log(
+      `🔥 Failed to write a file to ${path}, something is probably wrong`
+    );
   }
 };
 
 module.exports = {
   copyFile,
   mkFile,
-  mkDir,
+  mkDir
 };
