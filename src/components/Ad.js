@@ -26,6 +26,7 @@ export class Ad extends React.Component {
   }
 
   componentDidMount() {
+    this.insertScript();
     this.props.history.listen(location => {
       let url = location.pathname;
       if (url !== this.state.url) {

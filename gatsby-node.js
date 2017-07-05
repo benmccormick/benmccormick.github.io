@@ -131,6 +131,7 @@ const createBlogPosts = (graphql, createPage) =>
     );
   });
 exports.onPostBuild = function(pages, callback) {
+  console.log(arguments);
   buildFeeds(pages);
   generateSiteMap(pages);
   copySW(() => copyCNAME(() => copyManifest(callback)));

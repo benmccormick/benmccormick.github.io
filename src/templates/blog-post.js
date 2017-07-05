@@ -59,12 +59,10 @@ class BlogPostTemplate extends React.Component {
   }
 
   render() {
-    const post = this.props.data.markdownRemark.frontmatter;
-    const pages = this.props.data.allMarkdownRemark.edges.map(
-      p => p.node.frontmatter
-    );
-    const body = this.props.data.markdownRemark.html;
-    // const { route, location } = this.props;
+    const { location, data } = this.props;
+    const post = data.markdownRemark.frontmatter;
+    const pages = data.allMarkdownRemark.edges.map(p => p.node.frontmatter);
+    const body = data.markdownRemark.html;
     let isPage = post.layout === 'page';
     let isPost = post.layout === 'post';
     let slug = last(post.path.split('/'));
