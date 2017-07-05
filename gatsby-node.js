@@ -171,6 +171,5 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
   let blogPostPromise = createBlogPosts(graphql, createPage);
   let categoryArchivePromise = createCategoryArchives(graphql, createPage);
-  return blogPostPromise;
-  // return Promise.all(blogPostPromise, categoryArchivePromise);
+  return Promise.all(blogPostPromise, categoryArchivePromise);
 };
