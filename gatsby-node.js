@@ -1,4 +1,4 @@
-const { copyFile, mkFile } = require('./src/utils/file_system');
+const { copyFile, mkFile, mkDir, copyDir } = require('./src/utils/file_system');
 const get = require('lodash/get');
 const sm = require('sitemap');
 const { buildFeeds } = require('./feeds');
@@ -6,9 +6,9 @@ const path = require('path');
 
 function pagesToSitemap(pages) {
   const urls = pages.map(p => {
-    if (p.path !== undefined) {
+    if (p.slug !== undefined) {
       return {
-        url: p.path,
+        url: p.slug,
         changefreq: 'daily',
         priority: 0.7
       };
@@ -28,25 +28,22 @@ function generateSiteMap(pages) {
   mkFile('/public/sitemap.xml', sitemap.toString());
 }
 
-const copyCNAME = cb => {
-  copyFile('/pages/CNAME', '/public/CNAME', err => (err ? cb(false) : cb()));
+const copyCNAME = cb => copyFile('/src/pages/CNAME', '/public/CNAME');
+
+const mkImageDir = () => mkDir('/public/posts/');
+
+const copyImages = cb => {
+  mkImageDir();
+  return copyDir('/src/pages/posts/images/', '/public/posts/images');
 };
 
-const copyManifest = cb => {
-  copyFile(
-    '/pages/manifest.json',
-    '/public/manifest.json',
-    err => (err ? cb(false) : cb())
-  );
-};
+const copyManifest = () =>
+  copyFile('/src/pages/manifest.json', '/public/manifest.json');
 
-const copySW = cb => {
-  copyFile('/pages/sw.es6', '/public/sw.js', err => (err ? cb(false) : cb()));
-};
+const copySW = () => copyFile('/src/pages/sw.es6', '/public/sw.js');
 
 const createCategoryArchives = (graphql, createPage) =>
   new Promise((resolve, reject) => {
-    const pages = [];
     const categoryPage = path.resolve('src/templates/category-page.js');
     // Query for all markdown "nodes" and for the slug we previously created.
     resolve(
@@ -91,7 +88,6 @@ const createCategoryArchives = (graphql, createPage) =>
 
 const createBlogPosts = (graphql, createPage) =>
   new Promise((resolve, reject) => {
-    const pages = [];
     const blogPost = path.resolve('src/templates/blog-post.js');
     // Query for all markdown "nodes" and for the slug we previously created.
     resolve(
@@ -130,11 +126,48 @@ const createBlogPosts = (graphql, createPage) =>
       })
     );
   });
-exports.onPostBuild = function(pages, callback) {
-  console.log(arguments);
-  buildFeeds(pages);
-  generateSiteMap(pages);
-  copySW(() => copyCNAME(() => copyManifest(callback)));
+exports.onPostBuild = ({ graphql, boundActionCreators }) => {
+  let died = () => console.log('died');
+  return graphql(
+    `
+        {
+          allMarkdownRemark {
+            edges {
+              node {
+                frontmatter {
+                  date
+                  layout
+                  title
+                }
+                html
+                fields {
+                  slug
+                }
+              }
+            }
+          }
+        }
+      `
+  )
+    .then(result => {
+      if (result.errors) {
+        console.log(result.errors);
+        return false;
+      }
+      let pages = result.data.allMarkdownRemark.edges.map(edge => ({
+        date: edge.node.frontmatter.date,
+        title: edge.node.frontmatter.title,
+        layout: edge.node.frontmatter.layout,
+        html: edge.node.html,
+        slug: edge.node.fields.slug
+      }));
+      buildFeeds(pages);
+      generateSiteMap(pages);
+    })
+    .then(copySW, died)
+    .then(copyImages, died)
+    .then(copyCNAME, died)
+    .then(copyManifest, died);
 };
 
 exports.modifyWebpackConfig = function(config, stage) {
@@ -172,5 +205,5 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
   let blogPostPromise = createBlogPosts(graphql, createPage);
   let categoryArchivePromise = createCategoryArchives(graphql, createPage);
-  return Promise.all(blogPostPromise, categoryArchivePromise);
+  return Promise.all([blogPostPromise, categoryArchivePromise]);
 };

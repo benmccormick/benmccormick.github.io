@@ -11,7 +11,13 @@ class HTML extends React.Component {
 
     let css;
     if (process.env.NODE_ENV === 'production') {
-      //css = <style dangerouslySetInnerHTML = {{ __html: require('!raw!./public/styles.css') }} />;
+      css = (
+        <style
+          dangerouslySetInnerHTML={{
+            __html: require('!raw!../public/styles.css')
+          }}
+        />
+      );
     }
 
     return (

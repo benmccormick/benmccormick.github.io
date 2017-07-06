@@ -5,30 +5,7 @@ const sortBy = require('lodash/sortBy');
 const forEach = require('lodash/forEach');
 const get = require('lodash/get');
 const moment = require('moment');
-const markdownIt = require('markdown-it');
-const frontmatter = require('front-matter');
-const footnotes = require('markdown-it-footnote');
-const attrs = require('markdown-it-attrs');
 const { mkDir, mkFile } = require('./src/utils/file_system');
-
-const md = markdownIt({
-  html: true,
-  linkify: true,
-  typographer: true
-})
-  .use(footnotes)
-  .use(attrs);
-
-const extractMarkdownContent = file => {
-  let body = md.render(frontmatter(file).body);
-  // handle local links
-  return body.replace(/src="\//g, 'src="http://benmccormick.org/');
-};
-
-const getPageContent = page => {
-  let file = fs.readFileSync(__dirname + '/pages/' + page.requirePath, 'utf-8');
-  return extractMarkdownContent(file);
-};
 
 let buildFeed = pages => {
   let feed = new Feed({
@@ -48,18 +25,18 @@ let buildFeed = pages => {
       email: 'ben@benmccormick.org'
     }
   });
-  pages = sortBy(pages, page => get(page, 'data.date'));
+  pages = sortBy(pages, page => get(page, 'date'));
   pages = pages.reverse();
-  pages = filter(pages, p => !(get(p, 'data.layout', 'page') === 'page'));
+  pages = filter(pages, p => get(p, 'layout', 'page') === 'post');
   pages = pages.slice(0, 10);
 
   forEach(pages, page =>
     feed.addItem({
-      title: page.data.title,
-      id: 'https://benmccormick.org' + page.path,
-      link: 'https://benmccormick.org' + page.path,
-      date: moment(page.data.date).toDate(),
-      content: getPageContent(page),
+      title: page.title,
+      id: 'https://benmccormick.org' + page.slug,
+      link: 'https://benmccormick.org' + page.slug,
+      date: moment(page.date).toDate(),
+      content: page.html,
       author: [
         {
           name: 'Ben McCormick',

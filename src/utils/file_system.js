@@ -1,26 +1,32 @@
 const fs = require('fs');
+const ncp = require('ncp').ncp;
 
-const BASE_PATH = __dirname + '/..';
+const BASE_PATH = __dirname + '/../..';
+
 // From http://stackoverflow.com/questions/11293857/fastest-way-to-copy-file-in-node-js
-const copyFile = (sourcePath, targetPath, cb) => {
-  let cbCalled = false;
+const copyFile = (sourcePath, targetPath) =>
+  new Promise((resolve, reject) => {
+    console.log(`copy ${BASE_PATH + sourcePath} to ${BASE_PATH + targetPath}`);
+    ncp(BASE_PATH + sourcePath, BASE_PATH + targetPath, err => {
+      if (err) {
+        console.log('oops, failed to copy dir');
+        reject();
+      }
+      resolve();
+    });
+  });
 
-  const done = err => {
-    if (!cbCalled) {
-      cb(err);
-      cbCalled = true;
-    }
-  };
-  //read stream
-  let rd = fs.createReadStream(BASE_PATH + sourcePath);
-  rd.on('error', err => done(err));
-
-  //write stream
-  let wr = fs.createWriteStream(BASE_PATH + targetPath);
-  wr.on('error', err => done(err));
-  wr.on('close', ex => done());
-  rd.pipe(wr);
-};
+const copyDir = (sourcePath, targetPath) =>
+  new Promise((resolve, reject) => {
+    console.log(`copy ${BASE_PATH + sourcePath} to ${BASE_PATH + targetPath}`);
+    ncp(BASE_PATH + sourcePath, BASE_PATH + targetPath, err => {
+      if (err) {
+        console.log('oops, failed to copy dir');
+        reject();
+      }
+      resolve();
+    });
+  });
 
 const mkDir = path => {
   try {
@@ -36,8 +42,10 @@ const mkFile = (path, content) => {
     fs.writeFileSync(BASE_PATH + path, content);
   } catch (e) {
     //this is probably fine, it may fail if the file already exists
+    console.log(e);
     console.log(
-      `🔥 Failed to write a file to ${path}, something is probably wrong`
+      `🔥 Failed to write a file to ${BASE_PATH +
+        path}, something is probably wrong`
     );
   }
 };
@@ -45,5 +53,6 @@ const mkFile = (path, content) => {
 module.exports = {
   copyFile,
   mkFile,
-  mkDir
+  mkDir,
+  copyDir
 };

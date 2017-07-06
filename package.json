@@ -27,6 +27,7 @@
     "markdown-it-attrs": "^0.8.0",
     "markdown-it-footnote": "^3.0.1",
     "moment": "^2.14.1",
+    "ncp": "^2.0.0",
     "prettier": "^1.5.2",
     "react": "^15.4.2",
     "react-disqus-thread": "^0.4.0",
@@ -74,8 +75,8 @@
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
-    "build": "gatsby build",
-    "local-serve": "gatsby build && gatsby serve-build",
+    "build": "rm -r public && gatsby build",
+    "serve": "gatsby serve",
     "gh-pages": "gh-pages -d public",
     "deploy": "node analytics.js && gatsby build --prefix-links && gh-pages -d public"
   }
