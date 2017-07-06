@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Thu, 06 Jul 2017 18:22:29 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 06 Jul 2017 18:39:40 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -21,277 +21,271 @@
             <pubDate>Sun, 04 Jun 2017 01:55:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>For the last few months, this blog has been written in <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a>, a static site generator for JavaScript.  One of the first problems I had to solve when migrating the blog was how to maintain my RSS feed, since Gatsby doesn’t have any built in concept of an RSS feed.  This issue came up again this week as I decided to implement the new <a href="https://jsonfeed.org/">JSON Feed</a> spec and give folks an additional option for subscribing to this blog.  Fortunately this turns out to be a pretty easy problem to solve because of the excellent npm module <a href="https://github.com/jpmonette/feed">feed</a>.</p>
 <p><em>feed</em> is an npm module that takes a bunch of information about a blog and its posts, and normalizes them into various syndication feed format.  Here’s what setting up a feed option looks like for this blog:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> Feed <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'feed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> filter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/filter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> sortBy <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/sortBy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> forEach <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/forEach'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token keyword">get</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/get'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> moment <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'moment'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> markdownIt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'markdown-it'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> frontmatter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'front-matter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="language-javascript">const fs = require('fs');
+const Feed = require('feed');
+const filter = require('lodash/filter');
+const sortBy = require('lodash/sortBy');
+const forEach = require('lodash/forEach');
+const get = require('lodash/get');
+const moment = require('moment');
+const markdownIt = require('markdown-it');
+const frontmatter = require('front-matter');
 
 
-<span class="token comment" spellcheck="true">//markdownIt is a markdown parser that takes my raw md files and</span>
-<span class="token comment" spellcheck="true">//translates them into HTML that we can use in the feed</span>
-<span class="token keyword">const</span> md <span class="token operator">=</span> <span class="token function">markdownIt</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  html<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  linkify<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  typographer<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//markdownIt is a markdown parser that takes my raw md files and
+//translates them into HTML that we can use in the feed
+const md = markdownIt({
+  html: true,
+  linkify: true,
+  typographer: true,
+});
 
 
-<span class="token comment" spellcheck="true">// getPageContent is a function to help us grab the html content from a post path</span>
-<span class="token keyword">const</span> getPageContent <span class="token operator">=</span> page <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> file <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">'/pages/'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>requirePath<span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> body <span class="token operator">=</span> md<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token function">frontmatter</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// handle local links</span>
-  <span class="token keyword">return</span> body<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token operator">/</span>src<span class="token operator">=</span><span class="token string">"\//g, 'src="</span>http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>benmccormick<span class="token punctuation">.</span>org<span class="token operator">/</span>'<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+// getPageContent is a function to help us grab the html content from a post path
+const getPageContent = page =&gt; {
+  let file = fs.readFileSync(__dirname + '/pages/' + page.requirePath, 'utf-8');
+  let body = md.render(frontmatter(file).body);
+  // handle local links
+  return body.replace(/src=&quot;\//g, 'src=&quot;http://benmccormick.org/');
+};
 
-<span class="token comment" spellcheck="true">// build feed is our main function to build a `Feed` object which we</span>
-<span class="token comment" spellcheck="true">// can then serialize into various formats</span>
-<span class="token keyword">const</span> buildFeed <span class="token operator">=</span> pages <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> feed <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Feed</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    title<span class="token punctuation">:</span> <span class="token string">'benmccormick.org'</span><span class="token punctuation">,</span>
-    description<span class="token punctuation">:</span> <span class="token string">'A blog by Ben McCormick'</span><span class="token punctuation">,</span>
-    link<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org'</span><span class="token punctuation">,</span>
-    id<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org'</span><span class="token punctuation">,</span>
-    copyright<span class="token punctuation">:</span> <span class="token string">'All rights reserved 2016, Ben McCormick'</span><span class="token punctuation">,</span>
-    feedLinks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      atom<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org/atom.xml'</span><span class="token punctuation">,</span>
-      json<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org/feed.json'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    author<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-      email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// ignore pages (non posts) </span>
-  pages <span class="token operator">=</span> <span class="token function">filter</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> p <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword">get</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token string">'data.layout'</span><span class="token punctuation">,</span> <span class="token string">'page'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'page'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// we only want the last 10 articles to show up in the feed</span>
-  pages <span class="token operator">=</span> <span class="token function">sortBy</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> page <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">get</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span> <span class="token string">'data.date'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  pages <span class="token operator">=</span> pages<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  pages <span class="token operator">=</span> pages<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+// build feed is our main function to build a `Feed` object which we
+// can then serialize into various formats
+const buildFeed = pages =&gt; {
+  let feed = new Feed({
+    title: 'benmccormick.org',
+    description: 'A blog by Ben McCormick',
+    link: 'http://benmccormick.org',
+    id: 'http://benmccormick.org',
+    copyright: 'All rights reserved 2016, Ben McCormick',
+    feedLinks: {
+      atom: 'http://benmccormick.org/atom.xml',
+      json: 'http://benmccormick.org/feed.json',
+    },
+    author: {
+      name: 'Ben McCormick',
+      email: 'ben@benmccormick.org'
+    }
+  });
+  // ignore pages (non posts) 
+  pages = filter(pages, p =&gt; ( !(get(p, 'data.layout', 'page') === 'page')));
+  // we only want the last 10 articles to show up in the feed
+  pages = sortBy(pages, page =&gt; get(page, 'data.date'));
+  pages = pages.reverse();
+  pages = pages.slice(0, 10);
 
-  <span class="token function">forEach</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> page <span class="token operator">=</span><span class="token operator">></span> feed<span class="token punctuation">.</span><span class="token function">addItem</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    title<span class="token punctuation">:</span> page<span class="token punctuation">.</span>data<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
-    id<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>path<span class="token punctuation">,</span>
-    link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>path<span class="token punctuation">,</span>
-    date<span class="token punctuation">:</span> <span class="token function">moment</span><span class="token punctuation">(</span>page<span class="token punctuation">.</span>data<span class="token punctuation">.</span>date<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    content<span class="token punctuation">:</span> <span class="token function">getPageContent</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">,</span>
-    author<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span>
-        name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-        email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span><span class="token punctuation">,</span>
-        link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  feed<span class="token punctuation">.</span><span class="token function">addContributor</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-    email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span><span class="token punctuation">,</span>
-    link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> feed<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+  forEach(pages, page =&gt; feed.addItem({
+    title: page.data.title,
+    id: 'https://benmccormick.org' + page.path,
+    link: 'https://benmccormick.org' + page.path,
+    date: moment(page.data.date).toDate(),
+    content: getPageContent(page),
+    author: [
+      {
+        name: 'Ben McCormick',
+        email: 'ben@benmccormick.org',
+        link: 'https://benmccormick.org'
+      }
+    ]
+  }));
+  feed.addContributor({
+    name: 'Ben McCormick',
+    email: 'ben@benmccormick.org',
+    link: 'https://benmccormick.org'
+  });
+  return feed;
+};
 </code></pre>
-      </div>
 <p>Now we have a <code>buildFeed</code> method that takes a list of pages and generates a feed object.  Then we can use the feed object we’ve created to actually build write some files.  We’ll trigger that in the <code>postBuild</code> callback of <code>gatsby-node</code>.  Here was my first version to support RSS and Atom:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token comment" spellcheck="true">//mkDir and mkFile are just light wrappers around node's file system APIs</span>
-<span class="token keyword">let</span> createRSSFolder <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkDir</span><span class="token punctuation">(</span><span class="token string">'/public/rss/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> generateAtomFeed <span class="token operator">=</span> <span class="token punctuation">(</span>feed<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkFile</span><span class="token punctuation">(</span><span class="token string">'/public/atom.xml'</span><span class="token punctuation">,</span> feed<span class="token punctuation">.</span><span class="token function">atom1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> generateRSS <span class="token operator">=</span> <span class="token punctuation">(</span>feed<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkFile</span><span class="token punctuation">(</span><span class="token string">'/public/rss/index.xml'</span><span class="token punctuation">,</span> feed<span class="token punctuation">.</span><span class="token function">rss2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="language-javascript">
+//mkDir and mkFile are just light wrappers around node's file system APIs
+let createRSSFolder = () =&gt; mkDir('/public/rss/');
+let generateAtomFeed = (feed) =&gt; mkFile('/public/atom.xml', feed.atom1());
+let generateRSS = (feed) =&gt; mkFile('/public/rss/index.xml', feed.rss2());
 
-exports<span class="token punctuation">.</span>postBuild <span class="token operator">=</span> pages <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> feed <span class="token operator">=</span> <span class="token function">buildFeed</span><span class="token punctuation">(</span>pages<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">createRSSFolder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">generateAtomFeed</span><span class="token punctuation">(</span>feed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">generateRSS</span><span class="token punctuation">(</span>feed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+exports.postBuild = pages =&gt; {
+  let feed = buildFeed(pages);
+  createRSSFolder();
+  generateAtomFeed(feed);
+  generateRSS(feed);
+};
 </code></pre>
-      </div>
 <p>Prior to this week, <code>feed</code> didn’t support JSON Feed, so I had stopped here.  But because JSON Feed is super simple to implement (its just JSON!), I decided to try to add it to <code>feed</code> this week.  It turned out it was as simple as adding a single function that looks like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token function">json1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token keyword">const</span> <span class="token punctuation">{</span> options<span class="token punctuation">,</span> items <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span>
-   <span class="token keyword">let</span> feed <span class="token operator">=</span> <span class="token punctuation">{</span>
-     version<span class="token punctuation">:</span> <span class="token string">'https://jsonfeed.org/version/1'</span><span class="token punctuation">,</span>
-     title<span class="token punctuation">:</span> options<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
-   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre><code class="language-javascript">json1() {
+   const { options, items } = this
+   let feed = {
+     version: 'https://jsonfeed.org/version/1',
+     title: options.title,
+   };
 
-   <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>link<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     feed<span class="token punctuation">.</span>home_page_url <span class="token operator">=</span> options<span class="token punctuation">.</span>link<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
+   if (options.link) {
+     feed.home_page_url = options.link;
+   }
 
-   <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>feedLinks <span class="token operator">&amp;&amp;</span> options<span class="token punctuation">.</span>feedLinks<span class="token punctuation">.</span>json<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     feed<span class="token punctuation">.</span>feed_url <span class="token operator">=</span> options<span class="token punctuation">.</span>feedLinks<span class="token punctuation">.</span>json<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
+   if (options.feedLinks &amp;&amp; options.feedLinks.json) {
+     feed.feed_url = options.feedLinks.json;
+   }
 
-   <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>description<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     feed<span class="token punctuation">.</span>description <span class="token operator">=</span> options<span class="token punctuation">.</span>description<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
+   if (options.description) {
+     feed.description = options.description;
+   }
 
 
-   <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>image<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     feed<span class="token punctuation">.</span>icon <span class="token operator">=</span> options<span class="token punctuation">.</span>image<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
+   if (options.image) {
+     feed.icon = options.image;
+   }
 
-   <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>author<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     feed<span class="token punctuation">.</span>author <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>author<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         feed<span class="token punctuation">.</span>author<span class="token punctuation">.</span>name <span class="token operator">=</span> options<span class="token punctuation">.</span>author<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>author<span class="token punctuation">.</span>link<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         feed<span class="token punctuation">.</span>author<span class="token punctuation">.</span>url <span class="token operator">=</span> options<span class="token punctuation">.</span>author<span class="token punctuation">.</span>link<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-   <span class="token punctuation">}</span>
-   feed<span class="token punctuation">.</span>items <span class="token operator">=</span> items<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>item <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-     <span class="token keyword">let</span> feedItem <span class="token operator">=</span> <span class="token punctuation">{</span>
-       id<span class="token punctuation">:</span> item<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
-       <span class="token comment" spellcheck="true">// json_feed distinguishes between html and text content</span>
-       <span class="token comment" spellcheck="true">// but since we only take a single type, we'll assume HTML</span>
-       html_content<span class="token punctuation">:</span> item<span class="token punctuation">.</span>content<span class="token punctuation">,</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>link<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>url <span class="token operator">=</span> item<span class="token punctuation">.</span>link<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>title<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>title <span class="token operator">=</span> item<span class="token punctuation">.</span>title<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>description<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>summary <span class="token operator">=</span> item<span class="token punctuation">.</span>description<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
+   if (options.author) {
+     feed.author = {};
+     if (options.author.name) {
+         feed.author.name = options.author.name;
+     }
+     if (options.author.link) {
+         feed.author.url = options.author.link;
+     }
+   }
+   feed.items = items.map(item =&gt; {
+     let feedItem = {
+       id: item.id,
+       // json_feed distinguishes between html and text content
+       // but since we only take a single type, we'll assume HTML
+       html_content: item.content,
+     }
+     if (item.link) {
+       feedItem.url = item.link;
+     }
+     if(item.title) {
+       feedItem.title = item.title;
+     }
+     if (item.description) {
+       feedItem.summary = item.description;
+     }
 
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>image<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>image <span class="token operator">=</span> item<span class="token punctuation">.</span>image
-     <span class="token punctuation">}</span>
+     if (item.image) {
+       feedItem.image = item.image
+     }
 
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>date<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>date_modified <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ISODateString</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>published<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>date_published <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ISODateString</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>published<span class="token punctuation">)</span><span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
+     if (item.date) {
+       feedItem.date_modified = this.ISODateString(item.date);
+     }
+     if (item.published) {
+       feedItem.date_published = this.ISODateString(item.published);
+     }
 
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>author<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       <span class="token keyword">let</span> author <span class="token operator">=</span> item<span class="token punctuation">.</span>author<span class="token punctuation">;</span>
-       <span class="token keyword">if</span> <span class="token punctuation">(</span>author <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token comment" spellcheck="true">// json feed only supports 1 author per post</span>
-         author <span class="token operator">=</span> author<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-       feedItem<span class="token punctuation">.</span>author <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-       <span class="token keyword">if</span> <span class="token punctuation">(</span>author<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-           feedItem<span class="token punctuation">.</span>author<span class="token punctuation">.</span>name <span class="token operator">=</span> author<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-       <span class="token keyword">if</span> <span class="token punctuation">(</span>author<span class="token punctuation">.</span>link<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-           feedItem<span class="token punctuation">.</span>author<span class="token punctuation">.</span>url <span class="token operator">=</span> author<span class="token punctuation">.</span>link<span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">return</span> feedItem<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     if (item.author) {
+       let author = item.author;
+       if (author instanceof Array) {
+         // json feed only supports 1 author per post
+         author = author[0];
+       }
+       feedItem.author = {};
+       if (author.name) {
+           feedItem.author.name = author.name;
+       }
+       if (author.link) {
+           feedItem.author.url = author.link;
+       }
+     }
+     return feedItem;
+   });
 
-   <span class="token keyword">return</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>feed<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token punctuation">}</span>
+   return JSON.stringify(feed, null, 4);
+ }
 </code></pre>
-      </div>
-<p> My <a href="https://github.com/jpmonette/feed/pull/56/files">pull request</a> was accepted, so feed v1.1.0 now supports JSON feed and my final code to add <a href="http://benmccormick.org/rss/">rss</a>, <a href="http://benmccormick.org/atom.xml">atom</a>, and <a href="http://benmccormick.org/feed.json">json</a> feed to this site looks like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> Feed <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'feed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> filter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/filter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> sortBy <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/sortBy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> forEach <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/forEach'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token keyword">get</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/get'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> moment <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'moment'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> markdownIt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'markdown-it'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> frontmatter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'front-matter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token punctuation">{</span>mkDir<span class="token punctuation">,</span> mkFile<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./utils/file_system'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>My <a href="https://github.com/jpmonette/feed/pull/56/files">pull request</a> was accepted, so feed v1.1.0 now supports JSON feed and my final code to add <a href="http://benmccormick.org/rss/">rss</a>, <a href="http://benmccormick.org/atom.xml">atom</a>, and <a href="http://benmccormick.org/feed.json">json</a> feed to this site looks like this:</p>
+<pre><code class="language-javascript">const fs = require('fs');
+const Feed = require('feed');
+const filter = require('lodash/filter');
+const sortBy = require('lodash/sortBy');
+const forEach = require('lodash/forEach');
+const get = require('lodash/get');
+const moment = require('moment');
+const markdownIt = require('markdown-it');
+const frontmatter = require('front-matter');
+const {mkDir, mkFile} = require('./utils/file_system');
 
 
-<span class="token keyword">const</span> md <span class="token operator">=</span> <span class="token function">markdownIt</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
- html<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
- linkify<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
- typographer<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+const md = markdownIt({
+ html: true,
+ linkify: true,
+ typographer: true,
+});
 
-<span class="token keyword">const</span> extractMarkdownContent <span class="token operator">=</span> file <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
- <span class="token keyword">let</span> body <span class="token operator">=</span> md<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token function">frontmatter</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">// handle local links</span>
- <span class="token keyword">return</span> body<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token operator">/</span>src<span class="token operator">=</span><span class="token string">"\//g, 'src="</span>http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>benmccormick<span class="token punctuation">.</span>org<span class="token operator">/</span>'<span class="token punctuation">)</span><span class="token punctuation">;</span>
+const extractMarkdownContent = file =&gt; {
+ let body = md.render(frontmatter(file).body);
+ // handle local links
+ return body.replace(/src=&quot;\//g, 'src=&quot;http://benmccormick.org/');
 
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+};
 
-<span class="token keyword">const</span> getPageContent <span class="token operator">=</span> page <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
- <span class="token keyword">let</span> file <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">'/pages/'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>requirePath<span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token keyword">return</span> <span class="token function">extractMarkdownContent</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+const getPageContent = page =&gt; {
+ let file = fs.readFileSync(__dirname + '/pages/' + page.requirePath, 'utf-8');
+ return extractMarkdownContent(file);
+};
 
-<span class="token keyword">const</span> buildFeed <span class="token operator">=</span> pages <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
- <span class="token keyword">let</span> feed <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Feed</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-   title<span class="token punctuation">:</span> <span class="token string">'benmccormick.org'</span><span class="token punctuation">,</span>
-   description<span class="token punctuation">:</span> <span class="token string">'A blog by Ben McCormick'</span><span class="token punctuation">,</span>
-   link<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org'</span><span class="token punctuation">,</span>
-   id<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org'</span><span class="token punctuation">,</span>
-   copyright<span class="token punctuation">:</span> <span class="token string">'All rights reserved 2016, Ben McCormick'</span><span class="token punctuation">,</span>
-   feedLinks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-     atom<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org/atom.xml'</span><span class="token punctuation">,</span>
-     json<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org/feed.json'</span><span class="token punctuation">,</span>
-   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-   author<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-     name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-     email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span>
-   <span class="token punctuation">}</span>
- <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">// ignore pages (non posts)</span>
- pages <span class="token operator">=</span> <span class="token function">filter</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> p <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword">get</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token string">'data.layout'</span><span class="token punctuation">,</span> <span class="token string">'page'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'page'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">// we only want the last 10 articles to show up in the feed</span>
- pages <span class="token operator">=</span> <span class="token function">sortBy</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> page <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">get</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span> <span class="token string">'data.date'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- pages <span class="token operator">=</span> pages<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- pages <span class="token operator">=</span> pages<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+const buildFeed = pages =&gt; {
+ let feed = new Feed({
+   title: 'benmccormick.org',
+   description: 'A blog by Ben McCormick',
+   link: 'http://benmccormick.org',
+   id: 'http://benmccormick.org',
+   copyright: 'All rights reserved 2016, Ben McCormick',
+   feedLinks: {
+     atom: 'http://benmccormick.org/atom.xml',
+     json: 'http://benmccormick.org/feed.json',
+   },
+   author: {
+     name: 'Ben McCormick',
+     email: 'ben@benmccormick.org'
+   }
+ });
+ // ignore pages (non posts)
+ pages = filter(pages, p =&gt; ( !(get(p, 'data.layout', 'page') === 'page')));
+ // we only want the last 10 articles to show up in the feed
+ pages = sortBy(pages, page =&gt; get(page, 'data.date'));
+ pages = pages.reverse();
+ pages = pages.slice(0, 10);
 
- <span class="token function">forEach</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> page <span class="token operator">=</span><span class="token operator">></span> feed<span class="token punctuation">.</span><span class="token function">addItem</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-   title<span class="token punctuation">:</span> page<span class="token punctuation">.</span>data<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
-   id<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>path<span class="token punctuation">,</span>
-   link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>path<span class="token punctuation">,</span>
-   date<span class="token punctuation">:</span> <span class="token function">moment</span><span class="token punctuation">(</span>page<span class="token punctuation">.</span>data<span class="token punctuation">.</span>date<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-   content<span class="token punctuation">:</span> <span class="token function">getPageContent</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">,</span>
-   author<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-     <span class="token punctuation">{</span>
-       name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-       email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span><span class="token punctuation">,</span>
-       link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span>
-     <span class="token punctuation">}</span>
-   <span class="token punctuation">]</span>
- <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- feed<span class="token punctuation">.</span><span class="token function">addContributor</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-   name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-   email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span><span class="token punctuation">,</span>
-   link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span>
- <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token keyword">return</span> feed<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+ forEach(pages, page =&gt; feed.addItem({
+   title: page.data.title,
+   id: 'https://benmccormick.org' + page.path,
+   link: 'https://benmccormick.org' + page.path,
+   date: moment(page.data.date).toDate(),
+   content: getPageContent(page),
+   author: [
+     {
+       name: 'Ben McCormick',
+       email: 'ben@benmccormick.org',
+       link: 'https://benmccormick.org'
+     }
+   ]
+ }));
+ feed.addContributor({
+   name: 'Ben McCormick',
+   email: 'ben@benmccormick.org',
+   link: 'https://benmccormick.org'
+ });
+ return feed;
+};
 
-<span class="token keyword">let</span> createRSSFolder <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkDir</span><span class="token punctuation">(</span><span class="token string">'/public/rss/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> generateAtomFeed <span class="token operator">=</span> <span class="token punctuation">(</span>feed<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkFile</span><span class="token punctuation">(</span><span class="token string">'/public/atom.xml'</span><span class="token punctuation">,</span> feed<span class="token punctuation">.</span><span class="token function">atom1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> generateRSS <span class="token operator">=</span> <span class="token punctuation">(</span>feed<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkFile</span><span class="token punctuation">(</span><span class="token string">'/public/rss/index.xml'</span><span class="token punctuation">,</span> feed<span class="token punctuation">.</span><span class="token function">rss2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> generateJSONFeed <span class="token operator">=</span> <span class="token punctuation">(</span>feed<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkFile</span><span class="token punctuation">(</span><span class="token string">'/public/feed.json'</span><span class="token punctuation">,</span> feed<span class="token punctuation">.</span><span class="token function">json1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+let createRSSFolder = () =&gt; mkDir('/public/rss/');
+let generateAtomFeed = (feed) =&gt; mkFile('/public/atom.xml', feed.atom1());
+let generateRSS = (feed) =&gt; mkFile('/public/rss/index.xml', feed.rss2());
+let generateJSONFeed = (feed) =&gt; mkFile('/public/feed.json', feed.json1());
 
-exports<span class="token punctuation">.</span>postBuild <span class="token operator">=</span> pages <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> feed <span class="token operator">=</span> <span class="token function">buildFeed</span><span class="token punctuation">(</span>pages<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">createRSSFolder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">generateAtomFeed</span><span class="token punctuation">(</span>feed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">generateRSS</span><span class="token punctuation">(</span>feed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">generateJSONFeed</span><span class="token punctuation">(</span>feed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+exports.postBuild = pages =&gt; {
+  let feed = buildFeed(pages);
+  createRSSFolder();
+  generateAtomFeed(feed);
+  generateRSS(feed);
+  generateJSONFeed(feed);
+};
 </code></pre>
-      </div>
 <h3>More Resources</h3>
 <ul>
 <li>You can see the whole spec for <a href="https://jsonfeed.org/">JSON Feed</a> on their <a href="https://jsonfeed.org/">site</a>.  It really is remarkably simple.  They also have a list of implementations and example sites.</li>
-</ul>]]></content:encoded>
+</ul>
+]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
@@ -301,59 +295,65 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
             <pubDate>Tue, 30 May 2017 03:20:00 GMT</pubDate>
             <content:encoded><![CDATA[<p><a href="https://atom.io">Atom</a> is a modern hackable text editor.  I’ve been using it as my primary editor for a year and a half, and have picked up some tips along the way that I thought were worth sharing.  These tips assume that you have at least a passing familiarity with Atom: they’re the things that I’ve picked up over time that have made me more productive.</p>
 <h4>1. There is more to the Fuzzy Finder than meets the eye</h4>
-<p>Fuzzy finders have been a key feature on modern editors since TextMate first popularized the ⌘T command[^1] for searching through project files.  ⌘T (or ⌘P) still works great in Atom, but what you may not know is that Atom provides 2 other versions of the command. ⌘B searches only among currently open files.  ⇧⌘B searches only among files that are “dirty” according to git[^2].  Both of those options are built in.  You can also find other uses for the fuzzy-finder if you start exploring plugins, including <a href="https://atom.io/packages/atom-fuzzy-grep">atom-fuzzy-grep</a>, a plugin that lets you use the fuzzy-finder interface to search file contents using grep, <a href="https://benmccormick.org/2016/04/30/ack-tips/">ack</a>, ag, or ripgrep.</p>
+<p>Fuzzy finders have been a key feature on modern editors since TextMate first popularized the ⌘T command<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> for searching through project files.  ⌘T (or ⌘P) still works great in Atom, but what you may not know is that Atom provides 2 other versions of the command. ⌘B searches only among currently open files.  ⇧⌘B searches only among files that are “dirty” according to git<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.  Both of those options are built in.  You can also find other uses for the fuzzy-finder if you start exploring plugins, including <a href="https://atom.io/packages/atom-fuzzy-grep">atom-fuzzy-grep</a>, a plugin that lets you use the fuzzy-finder interface to search file contents using grep, <a href="https://benmccormick.org/2016/04/30/ack-tips/">ack</a>, ag, or ripgrep.</p>
 <h4>2. Atom is a great Vim replacement</h4>
 <p>If you’ve been following this blog for a while, you know I’ve written a lot about <a href="https://benmccormick.org/learning-vim-in-2014/">Vim</a>.  I still love the <a href="https://benmccormick.org/2014/07/16/learning-vim-in-2014-vim-as-art/">philosophy of Vim</a>, and think that the text editing <a href="https://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/">language</a> it implements is the best way to edit code quickly.  But Atom’s <a href="https://atom.io/packages/vim-mode-plus">vim-mode-plus</a> is the best vi implementation I’ve seen outside of Vim, and unlike other editors, you don’t need to get frustrated with a halfway approach to Vi-keybindings, since you can make pretty much everything work in a vim-like way.  That’s because:</p>
 <h4>3. Atom’s keybindings are powerful and flexible</h4>
 <p>Any command exposed by the core editor or a plugin in Atom can be bound to a keyboard shortcut.  None of the default commands are hard-coded, and the editor provides powerful contexts for controlling what keys have lead to what action when.  That means if I want to use <code>ctrl-j/k/l/h</code> to control my navigation between split panes, but also use <code>ctrl-j/k</code> to move up and down in the autocomplete widget, I can just add these lines to my <code>keymap.cson</code> file</p>
-<div class="gatsby-highlight">
-      <pre class="language-coffeescript"><code><span class="token string">'atom-text-editor, body'</span><span class="token punctuation">:</span>
-  <span class="token string">'ctrl-k'</span><span class="token punctuation">:</span> <span class="token string">'window:focus-pane-above'</span>
-  <span class="token string">'ctrl-j'</span><span class="token punctuation">:</span> <span class="token string">'window:focus-pane-below'</span>
-  <span class="token string">'ctrl-h'</span><span class="token punctuation">:</span> <span class="token string">'window:focus-pane-on-left'</span>
-  <span class="token string">'ctrl-l'</span><span class="token punctuation">:</span> <span class="token string">'window:focus-pane-on-right'</span>
+<pre><code class="language-coffeescript">'atom-text-editor, body':
+  'ctrl-k': 'window:focus-pane-above'
+  'ctrl-j': 'window:focus-pane-below'
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-l': 'window:focus-pane-on-right'
 
-<span class="token string">'body atom-text-editor.autocomplete-active'</span><span class="token punctuation">:</span>
-  <span class="token string">'ctrl-k'</span><span class="token punctuation">:</span> <span class="token string">'autocomplete-plus:move-up'</span>
-  <span class="token string">'ctrl-j'</span><span class="token punctuation">:</span> <span class="token string">'autocomplete-plus:move-down'</span>
+'body atom-text-editor.autocomplete-active':
+  'ctrl-k': 'autocomplete-plus:move-up'
+  'ctrl-j': 'autocomplete-plus:move-down'
 </code></pre>
-      </div>
 <p>Different commands are triggered in different context.  You can also take advantage of this with vim-mode to have “normal mode only” keyboard shortcuts like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-coffeescript"><code><span class="token string">'atom-text-editor.vim-mode-plus.normal-mode'</span><span class="token punctuation">:</span>
-  <span class="token string">'] b'</span><span class="token punctuation">:</span> <span class="token string">'pane:show-next-item'</span>
-  <span class="token string">'[ b'</span><span class="token punctuation">:</span> <span class="token string">'pane:show-previous-item'</span>
+<pre><code class="language-coffeescript">'atom-text-editor.vim-mode-plus.normal-mode':
+  '] b': 'pane:show-next-item'
+  '[ b': 'pane:show-previous-item'
 </code></pre>
-      </div>
 <p>That implements a behavior I’d missed from Vim’s <a href="https://github.com/tpope/vim-unimpaired">unimpaired plugin</a> of moving between open files with <code>[b</code> and <code>]b</code>.</p>
 <h4>4. Make sure to sync your settings</h4>
-<p>One area where Atom is less ideal than Vim is setting portability.  It doesn’t have a single file where all configuration is stored, or a nice settings folder that can be synced.  Instead settings are intermingled with other data in a <code>~/.atom</code> folder, a fact that is obscured by the editor’s UI, which attempts to put a nice UI in front of all of these setting files and steer you away from editing them directly or caring about where they’re stored.  Which works great until you need to move your config to a new machine or sync between 2 machines.  </p>
+<p>One area where Atom is less ideal than Vim is setting portability.  It doesn’t have a single file where all configuration is stored, or a nice settings folder that can be synced.  Instead settings are intermingled with other data in a <code>~/.atom</code> folder, a fact that is obscured by the editor’s UI, which attempts to put a nice UI in front of all of these setting files and steer you away from editing them directly or caring about where they’re stored.  Which works great until you need to move your config to a new machine or sync between 2 machines.</p>
 <p>Fortunately, there’s a great plugin <a href="https://github.com/atom-community/sync-settings">sync-settings</a> that makes this simple.  It does require setting up a gist to serve as your repo, but after that the process is painless and allows you to continue on unaware of the implementation details behind settings.</p>
 <h4>5. Check Timecop and clean up plugins that you’re not using</h4>
-<p>Atom is built on web technologies.  This is both the best and worst thing about Atom.  It leads to its greatest strengths: hackability, a focus on UX early on since they didn’t have to build a whole UI engine from scratch, and quick iteration.  But it also has very real tradeoffs, the biggest of which are battery life and startup performance[^3].  There’s not much to be done about the battery life drain; Atom is based on Chromium, and Chromium is a battery hog.  It is simply a tradeoff to understand when choosing an editor.  But startup performance is often greatly influenced by the packages that you choose to use.  Fortunately Atom includes a simple tool for tracking this called Timecop.</p>
+<p>Atom is built on web technologies.  This is both the best and worst thing about Atom.  It leads to its greatest strengths: hackability, a focus on UX early on since they didn’t have to build a whole UI engine from scratch, and quick iteration.  But it also has very real tradeoffs, the biggest of which are battery life and startup performance<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.  There’s not much to be done about the battery life drain; Atom is based on Chromium, and Chromium is a battery hog.  It is simply a tradeoff to understand when choosing an editor.  But startup performance is often greatly influenced by the packages that you choose to use.  Fortunately Atom includes a simple tool for tracking this called Timecop.</p>
 <p>You can find Timecop in the command palette (⇧⌘P by default).  When you run it, Timecop displays a report of all of your packages and themes and how they contribute to startup time.  It will look something like this:</p>
-<p><img src="/posts/images/atom/timecop.png" alt="screenshot of timecop"></p>
+<p><img alt="screenshot of timecop" src="http://benmccormick.org/posts/images/atom/timecop.png"
+class="full-width"></p>
 <p>I wouldn’t recommend obsessing too much over timecop.  For most packages the benefit you receive is going to significantly outweigh any startup burden.  But if your editor starts to feel sluggish, this is a great first step to figuring out if there’s anything you can drop to make an impact.</p>
 <h4>6. The UI is just HTML and CSS, and that means you can edit it</h4>
 <p>Everything you see in an Atom UI is an HTML element, with classes that you can use to select and style them. This fact is mostly relevant when creating themes, but you can also use it to make one-off UI adjustments.  For instance, when I edit Markdown files, the <a href="https://github.com/sindresorhus/atom-editorconfig">editorconfig</a> plugin I have installed warns me about a possible conflict with another atom package. The warning shows up as a small colored mouse icon in the status bar.</p>
-<p><img src="/posts/images/atom/editor-mouse.png" alt="screenshot of editorconfig mouse icon in the status bar"></p>
+<p><img alt="screenshot of editorconfig mouse icon in the status bar" src="http://benmccormick.org/posts/images/atom/editor-mouse.png"
+class="full-width"></p>
 <p>I find this warning distracting.  I know what its there for and have decided I don’t care about it, but I can’t dismiss it normally.  So instead I can take advantage of Atom’s flexibility to just get rid of it. All I need to do is open up devtools (⇧⌘I) and find the class.</p>
-<p><img src="/posts/images/atom/editor-mouse-devtools.png" alt="screenshot of editorconfig mouse icon in the status bar with devtools open"></p>
-<p>Then we can edit our styles.less file.  Atom will open it for you if you click the <em>your stylesheet</em> link at the top of the Settings>Themes page.  My edit to remove the mouse icon looks like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-less"><code><span class="token selector">.aec-icon-mouse</span> <span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<p><img alt="screenshot of editorconfig mouse icon in the status bar with devtools open" src="http://benmccormick.org/posts/images/atom/editor-mouse-devtools.png"
+class="full-width"></p>
+<p>Then we can edit our styles.less file.  Atom will open it for you if you click the <em>your stylesheet</em> link at the top of the Settings&gt;Themes page.  My edit to remove the mouse icon looks like this:</p>
+<pre><code class="language-less">.aec-icon-mouse {
+  display: none;
+}
 </code></pre>
-      </div>
 <h3>More Resources</h3>
 <ul>
 <li>The <a href="https://atom.io/docs">atom documentation</a> is really great, and worth diving into if you want to go deeper into Atom</li>
 <li>If you’re interested in learning more about keyboard driven text editing, check out <a href="https://benmccormick.org/learning-vim-in-2014/">my series on Vim</a>.</li>
 </ul>
-<p>[^1]: I’m using MacOS default keyboard shortcuts for this post.  Windows and Linux shortcuts are usually similar with <code>ctrl</code> often swapped for <code>⌘</code>.
-[^2]: Dirty files are files that have been edited and not yet added to the index or committed.
-[^3]: I’ve definitely seen post-startup perf issues at points as well, but I suspect that those are implementation problems that will continue to improve as the editor matures and the underlying Chromium platform continues to push on performance.  This may be naive.</p>]]></content:encoded>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>I’m using MacOS default keyboard shortcuts for this post.  Windows and Linux shortcuts are usually similar with <code>ctrl</code> often swapped for <code>⌘</code>. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Dirty files are files that have been edited and not yet added to the index or committed. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>I’ve definitely seen post-startup perf issues at points as well, but I suspect that those are implementation problems that will continue to improve as the editor matures and the underlying Chromium platform continues to push on performance.  This may be naive. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
@@ -361,15 +361,24 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
             <link>https://benmccormick.org/2017/05/28/mariana-syntax-atom/</link>
             <guid>https://benmccormick.org/2017/05/28/mariana-syntax-atom/</guid>
             <pubDate>Sun, 28 May 2017 04:05:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>Sometimes the best thing to do is steal somebody else’s good idea. I’ve been using <a href="https://atom.io">Atom</a> as my primary text editor for a year and a half now, but I still occasionally play with other editors and keep up with their updates.  There are a crazy number of good cross platform editors these days, and they all have a bunch of good ideas that get shared and remixed across each other. This week Sublime Text came out with a new release <a href="https://www.sublimetext.com/3dev">Dev Build 3132</a> that included 3 new color schemes.  One of them was Mariana, which I believe is a variation on the also great <a href="http://labs.voronianski.com/oceanic-next-color-scheme/">Oceanic Next</a>, with possibly some influences from my previous favorite dark theme <a href="https://github.com/chriskempson/tomorrow-theme">Tommorrow Night Eighties</a> [^1].  It stood out to me right away.</p>
+            <content:encoded><![CDATA[<p>Sometimes the best thing to do is steal somebody else’s good idea. I’ve been using <a href="https://atom.io">Atom</a> as my primary text editor for a year and a half now, but I still occasionally play with other editors and keep up with their updates.  There are a crazy number of good cross platform editors these days, and they all have a bunch of good ideas that get shared and remixed across each other. This week Sublime Text came out with a new release <a href="https://www.sublimetext.com/3dev">Dev Build 3132</a> that included 3 new color schemes.  One of them was Mariana, which I believe is a variation on the also great <a href="http://labs.voronianski.com/oceanic-next-color-scheme/">Oceanic Next</a>, with possibly some influences from my previous favorite dark theme <a href="https://github.com/chriskempson/tomorrow-theme">Tommorrow Night Eighties</a> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.  It stood out to me right away.</p>
 <div>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The Mariana syntax theme that shipped in the new Sublime Text is really nice <a href="https://t.co/xbmjBTNoWY">pic.twitter.com/xbmjBTNoWY</a></p>&mdash; Ben McCormick (@ben336) <a href="https://twitter.com/ben336/status/868160533345841152">May 26, 2017</a></blockquote>
 </div>
-<p>Since I’m no longer using Sublime Text, I decided to port the theme to Atom.  I built on the work of the great <a href="https://github.com/atom-material/atom-material-syntax">atom-material-syntax</a> package to build out a new theme.  It turns out to be surprisingly easy to build a color scheme in Atom.  Fork an existing theme, change some colors and the details in package.json, delete a bunch of git tags [^2], and then run <code>apm deploy minor</code>, and you’re in business.  </p>
+<p>Since I’m no longer using Sublime Text, I decided to port the theme to Atom.  I built on the work of the great <a href="https://github.com/atom-material/atom-material-syntax">atom-material-syntax</a> package to build out a new theme.  It turns out to be surprisingly easy to build a color scheme in Atom.  Fork an existing theme, change some colors and the details in package.json, delete a bunch of git tags <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>, and then run <code>apm deploy minor</code>, and you’re in business.</p>
 <p>You can now download <a href="https://atom.io/themes/mariana-syntax">mariana-syntax</a> in Atom.  This was a quick port.  I’ll be working to optimize it for the languages I use (JS, Python, CSS/Less, HTML and Markdown) over the next few weeks.  I would love to see pull requests for other languages or for anything that I’ve missed so far.  I look forward to this just getting better and better. <strong>Update:</strong> Version 0.2.0 has shipped with optimized syntax for JavaScript, Python, CSS, JSON and Markdown.</p>
-<p><img src="/posts/images/mariana/screenshot.png" alt="screenshot of mariana-syntax"></p>
-<p>[^1]: To be clear, I’m not sure how great of an influence this was.  The scheme definitely bears a strong resemblance to both of those color schemes, and the release notes credit both authors as inspiration for the 3 new syntax-themes without naming specific schemes.</p>
-<p>[^2]: This Stack Overflow article was helpful <a href="https://stackoverflow.com/a/15755041/1424361">https://stackoverflow.com/a/15755041/1424361</a></p>]]></content:encoded>
+<p><img alt="screenshot of mariana-syntax" src="http://benmccormick.org/posts/images/mariana/screenshot.png"
+class="full-width"></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>To be clear, I’m not sure how great of an influence this was.  The scheme definitely bears a strong resemblance to both of those color schemes, and the release notes credit both authors as inspiration for the 3 new syntax-themes without naming specific schemes. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>This Stack Overflow article was helpful <a href="https://stackoverflow.com/a/15755041/1424361">https://stackoverflow.com/a/15755041/1424361</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
@@ -379,175 +388,124 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
             <pubDate>Fri, 12 May 2017 02:30:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>This week I got to have a little fun remembering some High School math, and using one of my favorite libraries: <a href="https://www.highcharts.com/">Highcharts</a>.  Highcharts is a commercial JavaScript data-viz library, and it makes most standard charts and graphs a breeze to implement.  I was using it to plot a normal distribution in order to display a 95% confidence interval.  It’s a pretty straightforward problem, but its a nice example of a practical use of Highcharts, and comes with a little stats math that many of us may have learned and forgotten.</p>
 <h3>The Problem</h3>
-<p>The goal was to display a <a href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a> to represent a 95% confidence interval, given the upper and lower bounds of the confidence interval.  A normal distribution is the classic bell curve, where the area under any section of the graph represents the probability that the true value of the measure being tracked is within that range.  These curves are usually represented something like this: </p>
-<p><img src="/posts/images/normal-curve/confidence-interval.png" alt="Normal Distribution image"></p>
+<p>The goal was to display a <a href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a> to represent a 95% confidence interval, given the upper and lower bounds of the confidence interval.  A normal distribution is the classic bell curve, where the area under any section of the graph represents the probability that the true value of the measure being tracked is within that range.  These curves are usually represented something like this:</p>
+<p><img src="http://benmccormick.org/posts/images/normal-curve/confidence-interval.png" alt="Normal Distribution image"></p>
 <p>The x axis of the curve represents the range of values, while the y axis is a function of x that shows the relative probability for different areas.  Data sets that are normally distributed conform to the above bell curve and the <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">68-95-99.7 rule</a>. There’s a 68% chance that the true value is within 1 standard deviation of the middle of the curve (the mean), a 95% chance that the true value is within 2 standard deviations, and a 99.7% chance that the true value is within 3 standard deviations.</p>
 <h3>Step 1: Generating a Dataset</h3>
 <p>Highcharts operates by plotting a set of data points, not by handling equations directly.  So our first step is computing a set of data points to plot.  We can find the equation for calculating a normal distribution’s probability density on <a href="https://en.wikipedia.org/wiki/Normal_distribution">Wikipedia</a>.</p>
-<p><img src="/posts/images/normal-curve/equation.png" alt="Normal Distribution equation"></p>
+<p><img src="http://benmccormick.org/posts/images/normal-curve/equation.png" alt="Normal Distribution equation"></p>
 <p>Yep, we get to play with an equation that has both π and e in it.  I hope this feels sufficiently like a high school math class now.  But we can actually choose to drop the left side of the equation.  It is the <a href="https://en.wikipedia.org/wiki/Normalizing_constant">normalization constant</a> for the equation: it ensures that the total area under the curve equals 1, but doesn’t change the shape of the curve.  Since we’re simply displaying the shape of the graph and care primarily about showing the range along the x axis, we can ignore it and instead use this function:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> normalY <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> mean<span class="token punctuation">,</span> stdDev<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> Math<span class="token punctuation">.</span><span class="token function">exp</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token punctuation">(</span>x <span class="token operator">-</span> mean<span class="token punctuation">)</span> <span class="token operator">/</span> stdDev<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="language-javascript">const normalY = (x, mean, stdDev) =&gt; Math.exp((-0.5) * Math.pow((x - mean) / stdDev, 2));
 </code></pre>
-      </div>
-<p>That’s a good start, but right now we only have an upper and lower bound value for a 95% confidence interval.  So before we can apply the equation, we need to find a mean, a standard deviation, and a set of x values to run the formula against.  The mean and standard deviation are fairly straightforward, and we can use lodash to generate a set of points.  For the sake of this example, we’ll plan on generating 100 points ranging from +/- 5 standard deviations from the mean, which should allow us to see all meaningful parts of the distribution, and still have a bit of padding.  </p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> getMean <span class="token operator">=</span> <span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>upperBound <span class="token operator">+</span> lowerBound<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<p>That’s a good start, but right now we only have an upper and lower bound value for a 95% confidence interval.  So before we can apply the equation, we need to find a mean, a standard deviation, and a set of x values to run the formula against.  The mean and standard deviation are fairly straightforward, and we can use lodash to generate a set of points.  For the sake of this example, we’ll plan on generating 100 points ranging from +/- 5 standard deviations from the mean, which should allow us to see all meaningful parts of the distribution, and still have a bit of padding.</p>
+<pre><code class="language-javascript">const getMean = (lowerBound, upperBound) =&gt; (upperBound + lowerBound) / 2;
 
-<span class="token comment" spellcheck="true">// distance between mean and each bound of a 95% confidence interval </span>
-<span class="token comment" spellcheck="true">// is 2 stdDeviation, so distance between the bounds is 4</span>
-<span class="token keyword">const</span> getStdDeviation <span class="token operator">=</span> <span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>upperBound <span class="token operator">-</span> lowerBound<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">;</span>
+// distance between mean and each bound of a 95% confidence interval 
+// is 2 stdDeviation, so distance between the bounds is 4
+const getStdDeviation = (lowerBound, upperBound) =&gt; (upperBound - lowerBound) / 4;
 
 
-<span class="token keyword">const</span> generatePoints <span class="token operator">=</span> <span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> stdDev <span class="token operator">=</span> <span class="token function">getStdDeviation</span><span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-  <span class="token keyword">let</span> min <span class="token operator">=</span> lowerBound <span class="token operator">-</span> <span class="token number">2</span> <span class="token operator">*</span> stdDev<span class="token punctuation">;</span>
-  <span class="token keyword">let</span> max <span class="token operator">=</span> upperBound <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> stdDev<span class="token punctuation">;</span>
-  <span class="token keyword">let</span> unit <span class="token operator">=</span> max <span class="token operator">-</span> min <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> _<span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span>min<span class="token punctuation">,</span> max<span class="token punctuation">,</span> unit<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+const generatePoints = (lowerBound, upperBound) =&gt; {
+  let stdDev = getStdDeviation(lowerBound, upperBound); 
+  let min = lowerBound - 2 * stdDev;
+  let max = upperBound + 2 * stdDev;
+  let unit = max - min / 100;
+  return _.range(min, max, unit);
+}
 </code></pre>
-      </div>
-<p>Now that we have the x axis locations for the points, we can generate a whole data series.  </p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">let</span> mean <span class="token operator">=</span> <span class="token function">getMean</span><span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> stdDev <span class="token operator">=</span> <span class="token function">getStdDeviation</span><span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> points <span class="token operator">=</span> <span class="token function">generatePoints</span><span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>Now that we have the x axis locations for the points, we can generate a whole data series.</p>
+<pre><code class="language-javascript">let mean = getMean(lowerBound, upperBound);
+let stdDev = getStdDeviation(lowerBound, upperBound);
+let points = generatePoints(lowerBound, upperBound);
 
 
-<span class="token keyword">let</span> seriesData <span class="token operator">=</span> points<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>x <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">{</span> x<span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token function">normalY</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> mean<span class="token punctuation">,</span> stdDev<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+let seriesData = points.map(x =&gt; ({ x, y: normalY(x, mean, stdDev)}));
 </code></pre>
-      </div>
 <h3>Step 2: Creating the Chart</h3>
-<p>Now we have what we need to generate a chart!  Given the data, It’s easy to make a simple normal distribution curve with highcharts.  All we need to do is create a <code>&#x3C;div id="container"></code> element and then run this JavaScript:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code>Highcharts<span class="token punctuation">.</span><span class="token function">chart</span><span class="token punctuation">(</span><span class="token string">'container'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-    chart<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        type<span class="token punctuation">:</span> <span class="token string">'area'</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    series<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-        data<span class="token punctuation">:</span> seriesData<span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>Now we have what we need to generate a chart!  Given the data, It’s easy to make a simple normal distribution curve with highcharts.  All we need to do is create a <code>&lt;div id=&quot;container&quot;&gt;</code> element and then run this JavaScript:</p>
+<pre><code class="language-javascript">Highcharts.chart('container', {
+    chart: {
+        type: 'area'
+    },
+    series: [{
+        data: seriesData,
+    }],
+});
 </code></pre>
-      </div>
-<p>Which produces the following graph: </p>
-<div>
-          <div
-            class="gatsby-resp-iframe-wrapper"
-            style="padding-bottom: NaN%; position: relative; height: 0; overflow: hidden;"
-          >
-            <iframe src="//jsfiddle.net/ben336/8bgm1m18/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0" style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          "></iframe>
-          </div>
-          </div>
+<p>Which produces the following graph:</p>
+<iframe width="100%" height="400" src="http://benmccormick.org//jsfiddle.net/ben336/8bgm1m18/embedded/result,js/"
+allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 <p>Thats a good start, but contains a lot of “stuff” that Highcharts provides by default that we don’t necessarily want for our normal distribution illustration.  Let’s cut the title, legend, y-axis, and tooltips/mouse action.  To do that we need a bit more configuration:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code>Highcharts<span class="token punctuation">.</span><span class="token function">chart</span><span class="token punctuation">(</span><span class="token string">'container'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-    chart<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        type<span class="token punctuation">:</span> <span class="token string">'area'</span><span class="token punctuation">,</span>
-        height<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        text<span class="token punctuation">:</span> <span class="token string">''</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    yAxis<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      labels<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        enabled<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>   
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      gridLineWidth<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-      title<span class="token punctuation">:</span> <span class="token string">''</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    tooltip<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-       enabled<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    legend<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      enabled<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    series<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-        data<span class="token punctuation">:</span> seriesData<span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    plotOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      area<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        enableMouseTracking<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="language-javascript">Highcharts.chart('container', {
+    chart: {
+        type: 'area',
+        height: 300,
+    },
+    title: {
+        text: ''
+    },
+    yAxis: {
+      labels: {
+        enabled: false,   
+      },
+      gridLineWidth: 0,
+      title: ''
+    },
+    tooltip: {
+       enabled: false,
+    },
+    legend: {
+      enabled: false,
+    },
+    series: [{
+        data: seriesData,
+    }],
+    plotOptions: {
+      area: {
+        enableMouseTracking: false,
+      }
+    }
+});
 </code></pre>
-      </div>
-<div>
-          <div
-            class="gatsby-resp-iframe-wrapper"
-            style="padding-bottom: NaN%; position: relative; height: 0; overflow: hidden;"
-          >
-            <iframe src="//jsfiddle.net/ben336/w7165m2u/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0" style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          "></iframe>
-          </div>
-          </div>
+<iframe width="100%" height="400" src="http://benmccormick.org//jsfiddle.net/ben336/w7165m2u/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 <p>This is pretty great, but we still want to show our confidence interval like the wikipedia image at the top.  Ideally we’d only be filling in the areas within the 95% curve.  Thats pretty easy to do with Highcharts.  We can use <em>zones</em>, Highcharts way of applying different styles to different sections of the chart.  We want our zones to apply to the x axis, and we’ll define 3 zones: 0 to the lower bound, lower bound to the upper bound, and everything else.  In Highcharts that looks like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token punctuation">{</span>
-  plotOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    area<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      zones<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//fillColor gets the inside of the graph, color would change the lines</span>
-        fillColor<span class="token punctuation">:</span> <span class="token string">'white'</span><span class="token punctuation">,</span>
-        <span class="token comment" spellcheck="true">// everything below this value has this style applied to it</span>
-        value<span class="token punctuation">:</span> lowerBound<span class="token punctuation">,</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
-        value<span class="token punctuation">:</span> upperBound<span class="token punctuation">,</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
-        fillColor<span class="token punctuation">:</span> <span class="token string">'white'</span><span class="token punctuation">,</span>
-      <span class="token punctuation">}</span><span class="token punctuation">]</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
+<pre><code class="language-javascript">{
+  plotOptions: {
+    area: {
+      zones: [{
+        //fillColor gets the inside of the graph, color would change the lines
+        fillColor: 'white',
+        // everything below this value has this style applied to it
+        value: lowerBound,
+      },{
+        value: upperBound,
+      },{
+        fillColor: 'white',
+      }]
+    },
+  },
+}
 </code></pre>
-      </div>
 <p>We also want to show a 95% label on the graph like the image at the start.  There are multiple ways to do that in Highcharts, but for this simple case we’ll just abuse the title attribute and move it down into the middle of the chart:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token punctuation">{</span>
-    title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        text<span class="token punctuation">:</span> <span class="token string">'95%'</span><span class="token punctuation">,</span>
-        y<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
+<pre><code class="language-javascript">{
+    title: {
+        text: '95%',
+        y: 200,
+    },
+}
 </code></pre>
-      </div>
-<div>
-          <div
-            class="gatsby-resp-iframe-wrapper"
-            style="padding-bottom: NaN%; position: relative; height: 0; overflow: hidden;"
-          >
-            <iframe src="//jsfiddle.net/ben336/81kb997x/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0" style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          "></iframe>
-          </div>
-          </div>
-<p>And with that we’ve taken our original inputs and produced a dynamic illustration of a confidence interval that matches the image we started with.  </p>
+<iframe width="100%" height="400" src="http://benmccormick.org//jsfiddle.net/ben336/81kb997x/embedded/result,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<p>And with that we’ve taken our original inputs and produced a dynamic illustration of a confidence interval that matches the image we started with.</p>
 <h3>More Resources</h3>
 <ul>
 <li>
-<p>Highcharts has great <a href="http://api.highcharts.com/highcharts/">documentation</a> and you can see more <a href="https://www.highcharts.com/demo">demos</a> on their site, both for Highcharts and their stock and map chart variants.  Note that Highcharts is not free for commercial use.  I’ve found that it is well worth the money though for any team that is going to be doing many data visualizations, especially if its using relatively standard forms of data visualizations on variable data.  </p>
+<p>Highcharts has great <a href="http://api.highcharts.com/highcharts/">documentation</a> and you can see more <a href="https://www.highcharts.com/demo">demos</a> on their site, both for Highcharts and their stock and map chart variants.  Note that Highcharts is not free for commercial use.  I’ve found that it is well worth the money though for any team that is going to be doing many data visualizations, especially if its using relatively standard forms of data visualizations on variable data.</p>
 </li>
 <li>
-<p>If you need more freeform visualizations, <a href="https://d3js.org/">d3</a> is a great place to look.  Here’s an example of D3 being used to draw a similar chart: <a href="http://bl.ocks.org/phil-pedruco/88cb8a51cdce45f13c7e">http://bl.ocks.org/phil-pedruco/88cb8a51cdce45f13c7e</a>  It’s more involved than the Highcharts example, but allows for more flexibility as a result.  And unlike Highcharts, its free to use for anything.  </p>
+<p>If you need more freeform visualizations, <a href="https://d3js.org/">d3</a> is a great place to look.  Here’s an example of D3 being used to draw a similar chart: <a href="http://bl.ocks.org/phil-pedruco/88cb8a51cdce45f13c7e">http://bl.ocks.org/phil-pedruco/88cb8a51cdce45f13c7e</a>  It’s more involved than the Highcharts example, but allows for more flexibility as a result.  And unlike Highcharts, its free to use for anything.</p>
 </li>
-</ul>]]></content:encoded>
+</ul>
+]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
@@ -562,7 +520,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <h4>B - <em>Easy</em></h4>
 <p>B grade applications are similar to seamless applications, but may have a few more potholes.  Possibly there is some involved setup required to get syncing working initially, or some small chunks of the application configuration don’t sync.</p>
 <h4>C - <em>Workable</em></h4>
-<p>At this point we’ve moved out of the range of easy syncing solutions.  Here it may be possible to import and export settings from a file, without any automatic syncing.  Or there may be a straightforward way to automate the setup, but no declarative representation of the config state. </p>
+<p>At this point we’ve moved out of the range of easy syncing solutions.  Here it may be possible to import and export settings from a file, without any automatic syncing.  Or there may be a straightforward way to automate the setup, but no declarative representation of the config state.</p>
 <h4>D - <em>Hard</em></h4>
 <p>For some applications there is no clear way to sync or import state, but it is probably still possible through scripting if you’re willing to commit to it.</p>
 <h4>F - <em>Impossible</em></h4>
@@ -570,38 +528,45 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <h2>A mixed bag</h2>
 <p>Setting up my new laptop this week, I found that the software I use a lot was all over the map on this scale.  Here are the grades:</p>
 <h4>Atom - <em>B</em></h4>
-<img src="/posts/images/portability/atom.jpg" alt="Atom Logo">
+<img src="http://benmccormick.org/posts/images/portability/atom.jpg" alt ="Atom Logo">
 <p><a href="https://atom.io/">Atom</a> doesn’t have native syncing persay (though most configs are in a ~/.atom folder that can possibly be synced with git).  But it has a very nice <a href="https://github.com/atom-community/sync-settings">sync-settings</a> plugin that uses gists to sync settings across multiple machines.  It loses points due to a little bit of upfront pain (when setting up a new machine you need to either create a new gist or find your old one, and you need to generate github auth keys for each instance), but gains them back with a very nice set of options to selectively restore or choose when to backup, and painless support for all of Atom’s 3rd party plugiuns</p>
 <h4>Sublime Text - <em>B+</em></h4>
-<p><img src="/posts/images/portability/sublime.png" alt="Sublime Logo"></p>
-<p><a href="https://www.sublimetext.com/3">Sublime Text</a> saves all of its configurations as JSON, so its pretty easy to move them over.  It loses a few points though for making you figure out how to sync them, and a few more points for sticking user configs by default in the <code>~/Library/Application Support/</code> directory, where it is a bit more difficult to sync using things like git and dotfiles.  </p>
+<p><img src="http://benmccormick.org/posts/images/portability/sublime.png" alt="Sublime Logo"></p>
+<p><a href="https://www.sublimetext.com/3">Sublime Text</a> saves all of its configurations as JSON, so its pretty easy to move them over.  It loses a few points though for making you figure out how to sync them, and a few more points for sticking user configs by default in the <code>~/Library/Application Support/</code> directory, where it is a bit more difficult to sync using things like git and dotfiles.</p>
 <h4>Command Line programs - <em>A-</em></h4>
 <div class="img-group">
-  <image alt="Vim logo" src="/posts/images/portability/vim.png">
-  <image alt="fish logo" src="/posts/images/portability/fish.png">
+  <image alt="Vim logo" src="http://benmccormick.org/posts/images/portability/vim.png">
+  <image alt="fish logo" src="http://benmccormick.org/posts/images/portability/fish.png">
 </div>
 <div class="img-group">
-  <image alt="git logo" src="/posts/images/portability/git.png">
+  <image alt="git logo" src="http://benmccormick.org/posts/images/portability/git.png">
 </div>
 <p>Command line programs like Vim, Ack, bash/zsh/fish, and git all nail the idea of declarative configuration files that are stored in a common place.  They fall short of a pure A since they don’t provide a sync solution themselves (that would be very non-unixy), but since it is easy to set up <a href="https://dotfiles.github.io/">dotfile repos</a> to sync and backup these settings, they qualify for a strong A-.</p>
 <h4>iTerm2 - <em>C</em></h4>
-<p><img src="/posts/images/portability/iterm.png" alt="iterm2 Logo"></p>
+<p><img src="http://benmccormick.org/posts/images/portability/iterm.png" alt="iterm2 Logo"></p>
 <p><a href="https://www.iterm2.com/">iterm2</a> is probably the most popular terminal replacement on the mac.  It has tons of settings that you normally edit through a GUI menu.  It does allow you to export those settings, and import them on another machine.  So you need to have access to the original file to generate a snapshot at any given time and need a way to transfer the file(s), but otherwise this is still pretty workable.</p>
 <h4>Hyper - <em>A-</em></h4>
-<p><img src="/posts/images/portability/hyper.gif" alt="hyper Logo"></p>
+<p><img src="http://benmccormick.org/posts/images/portability/hyper.gif" alt="hyper Logo"></p>
 <p><a href="https://hyper.is/">Hyper</a> is a newer <a href="https://electron.atom.io/">Electron</a>-based terminal application for OSX.  Like Sublime Text, it defaults to offering a GUI interface into text based configuration files.  Unlike Sublime Text, it stores that file and its plugin files in the users home directory where they can easily be included in a dotfile repo.</p>
 <h4>MacOS - <em>D-</em></h4>
-<p><img src="/posts/images/portability/macos.jpg" alt="macOS sierra Logo"></p>
-<p>Unlike most of the applications I run on it, MacOS is extremely unfriendly to syncing configurations.  There are a few settings I want the same on all my laptops.  Touchpad scrolling should be in the “unnatural”[^1] direction, keys should repeat when held, and caps log should be disabled/mapped to control.  There is a set of apps that I would always want to have installed.  There is no declarative way to configure this, or sync it across computers.  Apple’s preferred strategy seems to be having folks use time machine backups, which is great for setting up a new computer for the same purpose as an old one when it is being replaced, but unhelpful when 2 laptops are being used by the same person for different purposes.  It is possible to script the setup of a new laptop with scripts like <a href="https://github.com/mathiasbynens/dotfiles/blob/master/.macos">this one</a> but its very involved and when you update a setting the “normal MacOS way”, its not always clear how you would add that setting to a script.  Plus a “from scratch” script won’t help keep 2 machines aligned as their configs diverge over time.</p>
+<p><img src="http://benmccormick.org/posts/images/portability/macos.jpg" alt="macOS sierra Logo"></p>
+<p>Unlike most of the applications I run on it, MacOS is extremely unfriendly to syncing configurations.  There are a few settings I want the same on all my laptops.  Touchpad scrolling should be in the “unnatural”<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> direction, keys should repeat when held, and caps log should be disabled/mapped to control.  There is a set of apps that I would always want to have installed.  There is no declarative way to configure this, or sync it across computers.  Apple’s preferred strategy seems to be having folks use time machine backups, which is great for setting up a new computer for the same purpose as an old one when it is being replaced, but unhelpful when 2 laptops are being used by the same person for different purposes.  It is possible to script the setup of a new laptop with scripts like <a href="https://github.com/mathiasbynens/dotfiles/blob/master/.macos">this one</a> but its very involved and when you update a setting the “normal MacOS way”, its not always clear how you would add that setting to a script.  Plus a “from scratch” script won’t help keep 2 machines aligned as their configs diverge over time.</p>
 <h4>Cloud Services - <em>A</em></h4>
 <div class="img-group">
-  <image alt="dropbox" src="/posts/images/portability/dropbox.png">
-  <image alt="bear logo" src="/posts/images/portability/bear.png">
+  <image alt="dropbox" src="http://benmccormick.org/posts/images/portability/dropbox.png">
+  <image alt="bear logo" src="http://benmccormick.org/posts/images/portability/bear.png">
 </div>
-<p>Unsurprisingly, the one class of software that really nails this experience is cloud software.  For services like Dropbox, Bear, Evernote, Slack, email &#x26; calendar clients, etc, most if not all settings and data is stored on servers somewhere else, so getting a new machine up to date and staying in sync over time is just a matter of entering a password.  There are reasons to dislike cloud services, but when moving to a new machine, they’re a thing of beauty.</p>
+<p>Unsurprisingly, the one class of software that really nails this experience is cloud software.  For services like Dropbox, Bear, Evernote, Slack, email &amp; calendar clients, etc, most if not all settings and data is stored on servers somewhere else, so getting a new machine up to date and staying in sync over time is just a matter of entering a password.  There are reasons to dislike cloud services, but when moving to a new machine, they’re a thing of beauty.</p>
 <h2>Takeaways</h2>
 <p>If you are going to be using 2 computers for different purposes as a developer, take the time to setup a good dotfiles repo that contains the configs for the command line programs and editors you use.  These days if you do that, pretty much everything else but the operating system will come right along.</p>
-<p>[^1]: Honestly the wording around that feature is pretty insulting.</p>]]></content:encoded>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Honestly the wording around that feature is pretty insulting. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
@@ -610,21 +575,26 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
             <guid>https://benmccormick.org/2017/03/28/the-mystery-of-docker-and-the-disk-eating-cow/</guid>
             <pubDate>Tue, 28 Mar 2017 14:40:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>Yesterday morning I was innocently minding my own business, downloading some files, when I noticed that nearly all the disk space on my 256GB work laptop had been consumed.  This seemed rather unlikely to me, given that I’d only had the laptop for about a year and I didn’t store anything other than code and work documents on it.  Text files just don’t take up that much space most of the time.  So I decided to make a purchase I’d considered for a while, bought <a href="https://daisydiskapp.com/">Daisy Disk</a>, and began investigating.</p>
-<p>The first thing I noticed was a huge amount of the disk space (about half) was taken up by the <code>~/Library/Containers</code> folder. That folder contained my email history and also data on my <a href="https://www.docker.com/">Docker</a> containers. Docker functions as a lightweight VM, and essentially holds copies of virtualized operating systems and file systems inside each docker container and image, so it made sense to me that it could be taking up a lot of space, though >120GB still seemed wrong for my paltry 4 containers.  So my first step was to delete all of the containers and images on my laptop.  That cleared about 20GB of space but still left my drive looking like this:</p>
-<p><img src="/posts/images/docker-cow/daisy.png" alt="daisy disk showing 100+GB of docker"></p>
+<p>The first thing I noticed was a huge amount of the disk space (about half) was taken up by the <code>~/Library/Containers</code> folder. That folder contained my email history and also data on my <a href="https://www.docker.com/">Docker</a> containers. Docker functions as a lightweight VM, and essentially holds copies of virtualized operating systems and file systems inside each docker container and image, so it made sense to me that it could be taking up a lot of space, though &gt;120GB still seemed wrong for my paltry 4 containers.  So my first step was to delete all of the containers and images on my laptop.  That cleared about 20GB of space but still left my drive looking like this:</p>
+<p><img alt="daisy disk showing 100+GB of docker" src="http://benmccormick.org/posts/images/docker-cow/daisy.png"
+class="full-width"></p>
 <p>At this point, I was annoyed.  103.5 GB was taken up by some folder called Docker.qcow2 and Daisy Disk wouldn’t show me what was inside.  So I drilled in on the file system and immediately found out that Docker.qcow2 was not a directory like I’d assumed due to size, but a single 100+GB file.  At that point I decided to poll my teammates to see if I was the only one dealing with this:</p>
-<p><img src="/posts/images/docker-cow/slack.png" alt="daisy disk showing 100+GB of docker"></p>
+<p><img alt="daisy disk showing 100+GB of docker" src="http://benmccormick.org/posts/images/docker-cow/slack.png"
+class="full-width"></p>
 <p>So between the 5 of us, we each had “cow files” taking up between 23 and 103GB of disk space. Some Googling revealed a <a href="https://github.com/docker/for-mac/issues/371">github thread</a> that showed this is a so far unsolved issue with Docker For Mac.  Summary: qcow2 files are a format for saving disk images.  Docker For Mac’s implementation works well for writing and updating images, but doesn’t automatically free up disk space when a container or image is deleted. So as you use and delete containers over time this file gradually grows.  I have a habit of deleting and recreating containers when I’m trying to debug something, which explains why I had a much larger file than others.  There isn’t currently a true fix for this issue, but you can delete the file.  You’ll lose all your containers and images, but when you recreate them the file will be small again.  There also is supposed to be some automatic limiting of the file.  The current cap is 64GB, but there is work on making it configurable.  Unfortunately the current cap is not respected if you had previously used docker-machine to control docker on your machine, which is how my file exceeded the cap.  I’m also unclear on what happens when the file hits the cap.  I get the impression that things stop working and you need to delete everything anyway (you just avoid running out of disk space on the host machine).</p>
 <p>Fortunately it was no problem for me to delete everything, and so I was able to clear things out, at which point my disk looked a lot happier:</p>
-<p><img src="/posts/images/docker-cow/daisy2.png" alt="daisy disk showing 100+GB of docker"></p>
+<p><img alt="daisy disk showing 100+GB of docker" src="http://benmccormick.org/posts/images/docker-cow/daisy2.png"
+class="full-width"></p>
 <h3>Lessons Learned</h3>
 <p>I had 3 takeaways from this interesting adventure.</p>
 <ol>
 <li>If you’re using Docker For Mac, keep an eye on your disk space.  If you’re able to occasionally delete and recreate your containers without data loss, consider occasionally doing that and deleting the cow file.  If you can’t do that, be careful how many containers you add and delete, and make sure you manage your disk space well.</li>
-<li><a href="https://daisydiskapp.com/">Daisy Disk</a> is awesome and highly recommended.  It’s an example of a rare breed: the beautiful system utility. The visualizations it shows are both pretty and useful; it made diagnosing this issue a breeze.  </li>
+<li><a href="https://daisydiskapp.com/">Daisy Disk</a> is awesome and highly recommended.  It’s an example of a rare breed: the beautiful system utility. The visualizations it shows are both pretty and useful; it made diagnosing this issue a breeze.</li>
 <li>One more thing I learned from my coworkers slack yesterday: <code>ls</code> takes an <code>-h</code> argument that shows file sizes in KBs/MBs/GBs instead of all in bytes.  This is super helpful when examining large files.  Compare the 2 lists of files from my Downloads folder in the image below. The normal form is very nice for comparing 2 files side by side and seeing which one is bigger, but the second form is much more helpful when you want to get an idea of exactly how big something is, or communicate it to others.  Most of us don’t think about file sizes in terms of bytes anymore.</li>
 </ol>
-<p><img src="/posts/images/docker-cow/downloads.png" alt="daisy disk showing 100+GB of docker"></p>]]></content:encoded>
+<p><img alt="daisy disk showing 100+GB of docker" src="http://benmccormick.org/posts/images/docker-cow/downloads.png"
+class="full-width"></p>
+]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
@@ -636,74 +606,69 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <h3>What didn’t work</h3>
 <p>A naive approach to this problem would be to set up a pre-commit hook that simply ran <code>jest</code> to run all tests. The problem is that running our full test suite currently takes between 10 and 20 seconds to run all tests and that time is increasing as we grow our test suite.  Adding that overhead to every commit would cost my team a lot of time, and would be especially inefficient since the repo contains plenty non-JavaScript code that doesn’t require tests to be run when updated.</p>
 <p>For our ESLint hook, we queried git to get a list of staged files, and then ran eslint against each one of them individually, displaying a pass/fail message.  That looked something like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-bash"><code>STAGED_FILES<span class="token operator">=</span><span class="token punctuation">$(</span>git <span class="token function">diff</span> --cached --name-only --diff-filter<span class="token operator">=</span>ACM <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"js$"</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$STAGED_FILES</span>"</span> <span class="token operator">=</span> <span class="token string">""</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-    <span class="token keyword">exit</span> 0
-<span class="token keyword">fi</span>
+<pre><code class="language-bash">STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep &quot;js$&quot;)
+if [[ &quot;$STAGED_FILES&quot; = &quot;&quot; ]]; then
+    exit 0
+fi
 
-PASS<span class="token operator">=</span>true
+PASS=true
 
-<span class="token keyword">for</span> FILE <span class="token keyword">in</span> <span class="token variable">$STAGED_FILES</span>
-<span class="token keyword">do</span>
-    eslint --quiet <span class="token string">"<span class="token variable">$FILE</span>"</span>
+for FILE in $STAGED_FILES
+do
+    eslint --quiet &quot;$FILE&quot;
 
-    <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$?</span>"</span> <span class="token operator">==</span> 0 <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        <span class="token keyword">echo</span> <span class="token string">"\t\033[32mESLint Passed: <span class="token variable">$FILE</span>\033[0m"</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">echo</span> <span class="token string">"\t\033[41mESLint Failed: <span class="token variable">$FILE</span>\033[0m"</span>
-        PASS<span class="token operator">=</span>false
-    <span class="token keyword">fi</span>
-<span class="token keyword">done</span>
+    if [[ &quot;$?&quot; == 0 ]]; then
+        echo &quot;\t\033[32mESLint Passed: $FILE\033[0m&quot;
+    else
+        echo &quot;\t\033[41mESLint Failed: $FILE\033[0m&quot;
+        PASS=false
+    fi
+done
 </code></pre>
-      </div>
 <p>This works great for ESLint, but doesn’t work out of the box for Jest, because I don’t want Jest to run the files that changed, I want them to run any tests that changed AND any tests that might have been broken because of that.</p>
 <p>Jest has a wonderful command line flag <code>jest --onlyChanged</code>/<code>jest -o</code> that runs only the tests related to files that have been changed according to git.  It is extremely helpful since it is smart enough to read the dependency structure for the project and run all tests that might be changed from updating a source file. It also has a <code>--lastCommit</code> option that does the same thing for files that were in the previous commit.  Unfortunately, these options aren’t helpful at the point of committing, since <code>onlyChanged</code> does not look at files that have been staged for commit, and we haven’t actually made a commit yet for <code>lastCommit</code> to read.</p>
 <h3>What Did Work</h3>
 <p>Fortunately Jest has a lower level command that uses the same logic as <code>onlyChanged</code> and <code>lastCommit</code>.  <code>--findRelatedTests</code> is a flag that tells Jest to run any tests related to the files passed to it instead of trying to run those files as tests as it would normally do.</p>
-<img src="/posts/images/jest-related-tests.png" alt="an example of findRelatedTests running against the redux repo">
+<img alt="an example of findRelatedTests running against the redux repo" src="http://benmccormick.org/posts/images/jest-related-tests.png" class="full-width ">
 <p>This is a perfect fit for a pre-commit hook.  I was able to integrate it into my existing script like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-bash"><code>jest --bail --findRelatedTests <span class="token variable">$STAGED_FILES</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$?</span>"</span> <span class="token operator">==</span> 0 <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-    <span class="token keyword">echo</span> <span class="token string">"\t\033[32mJest Tests Passed\033[0m"</span>
-<span class="token keyword">else</span>
-    <span class="token keyword">echo</span> <span class="token string">"\t\033[41mJest Tests Failed\033[0m"</span>
-    PASS<span class="token operator">=</span>false
-<span class="token keyword">fi</span>
+<pre><code class="language-bash">jest --bail --findRelatedTests $STAGED_FILES
+if [[ &quot;$?&quot; == 0 ]]; then
+    echo &quot;\t\033[32mJest Tests Passed\033[0m&quot;
+else
+    echo &quot;\t\033[41mJest Tests Failed\033[0m&quot;
+    PASS=false
+fi
 </code></pre>
-      </div>
-<p><code>$STAGED_FILES</code> is re-used from the eslint portion of the script, and is just a space delimited list of files that are being committed.  The <code>--bail</code> option simply stops running tests as soon as one has failed.  Including that is optional, you won’t see all the tests that have failed, but the failure will happen faster and you’ll be able to decide how to proceed, including possibly running the full test script on your own.   </p>
+<p><code>$STAGED_FILES</code> is re-used from the eslint portion of the script, and is just a space delimited list of files that are being committed.  The <code>--bail</code> option simply stops running tests as soon as one has failed.  Including that is optional, you won’t see all the tests that have failed, but the failure will happen faster and you’ll be able to decide how to proceed, including possibly running the full test script on your own.</p>
 <p>Those lines (along with some sanity checks for the existence of Jest and error handling when PASS is set to false) are enough to get a workable commit hook going, but they’re not ideal.  pre-commit hooks aren’t persisted by git, so each user has to install the hook script individually, and any updates aren’t shared automatically.  Plus I’m inefficiently passing all staged files to eslint and Jest regardless of whether they’re JavaScript that those tools are actually meant to work on.  My ESLint code was also written before ESLint developed robust <code>--fix</code> capabilities, and doesn’t try to fix the errors it is capable of fixing.  Finally, while this is just poor coding and not an inherent limitation of my other method, I’m using globally installed versions of Jest and ESLint instead of scoping them to my project.</p>
 <h3>Making it better</h3>
 <p>Fortunately I’d discovered a better solution the other day while working on something else.  There is an npm package for making this process easier, <a href="https://github.com/okonet/lint-staged">lint-staged</a>.  Lint staged abstracts away the boilerplate of getting the staged files, and makes it easy to run local node executables against specific sets of files.  I was able to replace my whole pre-commit script and address all of the problems mentioned above with only a few lines in my package.json:</p>
-<div class="gatsby-highlight">
-      <pre class="language-json"><code><span class="token punctuation">{</span>
-  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"lint-staged"</span><span class="token operator">:</span> <span class="token string">"lint-staged"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"lint-staged"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"*.js"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"eslint --fix"</span><span class="token punctuation">,</span>
-      <span class="token string">"git add"</span><span class="token punctuation">,</span>
-      <span class="token string">"jest --bail --findRelatedTests"</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">"eslint"</span><span class="token operator">:</span> <span class="token string">"3.16.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"jest"</span><span class="token operator">:</span> <span class="token string">"19.0.1"</span><span class="token punctuation">,</span>
-    <span class="token property">"lint-staged"</span><span class="token operator">:</span> <span class="token string">"3.3.1"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
+<pre><code class="language-json">{
+  &quot;scripts&quot;: {
+    &quot;lint-staged&quot;: &quot;lint-staged&quot;,
+  },
+  &quot;lint-staged&quot;: {
+    &quot;*.js&quot;: [
+      &quot;eslint --fix&quot;,
+      &quot;git add&quot;,
+      &quot;jest --bail --findRelatedTests&quot;
+    ]
+  },
+  &quot;devDependencies&quot;: {
+    &quot;eslint&quot;: &quot;3.16.1&quot;,
+    &quot;jest&quot;: &quot;19.0.1&quot;,
+    &quot;lint-staged&quot;: &quot;3.3.1&quot;,
+  },
+}
 </code></pre>
-      </div>
 <p><code>lint-staged</code> now handles making sure that I’m only running checks against JavaScript files, lets eslint autofix and stage any files that it can fix, and uses the local versions of jest and eslint.  It also adds a nice pretty interface for the results:</p>
-<img src="/posts/images/lint-staged-errors.png" alt="pretty lint-staged output">
+<img alt="pretty lint-staged output" src="http://benmccormick.org/posts/images/lint-staged-errors.png" class="full-width ">
 <p><code>lint-staged</code> docs recommend using an npm based hooks manager like <a href="https://github.com/observing/pre-commit">pre-commit</a> for running the scripts, but due to some quirks in my setup (node_modules is symlinked, and I sometimes want to run these commands inside a docker container), I found it easier to maintain a custom pre-commit script and just replace the previous logic with <code>npm run lint-staged</code>.  Either way, all of the actual logic is now checked into the repository and shared between all users.  The only manual step is adding the call to a pre-commit hook or (if you’re using a helper lib) running npm install.</p>
 <h3>More Resources</h3>
 <ul>
 <li>This maybe merits a future post on its own, but if you’re interested in automating away your code style maintenance look at combining <a href="https://github.com/prettier/prettier">prettier</a> (and possibly  <a href="https://github.com/not-an-aardvark/eslint-plugin-prettier">eslint-plugin-prettier</a>) with the pre-commit hooks from above.  Prettier will guarantee that your code follows a consistent style, and because it handles maximum line lengths, is much more robust than ESLint on its own.  Using its ESLint plugin within my editor and on pre-commit hooks has pretty much eliminated me manually fixing code style problems.</li>
-</ul>]]></content:encoded>
+</ul>
+]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
@@ -720,7 +685,7 @@ PASS<span class="token operator">=</span>true
 <blockquote>
 <p>If you’re working in a large code base with many developers, static typing is extremely useful, because the overhead from writing extra code and compiler errors is more than made up for by reducing bugs and clearly expressing intent when developers edit code they didn’t write.</p>
 </blockquote>
-<p>The first quote presents a tradeoff and declares a universal preference for one direction in the tradeoff.  The second quote adds more details about the context in which the practice has been beneficial, and explains what about those circumstances (developers editing code they didn’t write) affects the tradeoff decision.  </p>
+<p>The first quote presents a tradeoff and declares a universal preference for one direction in the tradeoff.  The second quote adds more details about the context in which the practice has been beneficial, and explains what about those circumstances (developers editing code they didn’t write) affects the tradeoff decision.</p>
 <p>These type of distinctions are often lost in online discussions about development best practices. I have no interest in naming and shaming, but specifically I’ve seen this in discussions around JavaScript performance, testing, frameworks vs other frameworks vs VanillaJS, responsive design, progressive enhancement, and build pipelines.  For this post, I’m going to try to lay out a list  of some of the context that I’ve found helpful to take into account when giving or interpreting best practice advice.</p>
 <h3>Context to keep in mind when discussing and interpreting best practices</h3>
 <h4>Beginner vs Veteran</h4>
@@ -730,66 +695,72 @@ PASS<span class="token operator">=</span>true
 <h4>Personal Project vs Internal tool vs B2B Products vs Consumer Products</h4>
 <p>The audience of a project is also important.  Some projects we build for ourselves.  Some may be internal for a company, or for a group that we’re a part of.  Other projects are sold professionally to businesses or offered freely to consumers on the web.  There are different goals and expectations for each of these groups, that may impact which practices and techniques are important.  For instance, nobody cares if a personal web application you’ve made to organize your todos crashes in Internet Explorer or doesn’t have alt-text for images.  But browser compatibility and accessibility might be extremely important for a consumer web app aimed at a broad population.  Similarly, it might be ok for your internal web tool to have un-minified JavaScript and large un-optimized CSS and JavaScript bundles, since it will always be served locally over a fast connection.  But it could severely hurt the user experience to do the same things for a high traffic public site.</p>
 <h4>Web page vs Web app</h4>
-<p>Distinguishing between web pages[^1] and web apps[^2] would short circuit a large number of internet arguments before they started.  Specifically arguments about progressive enhancement, whether we use too much JavaScript and whether a site is “acceptable” if it doesn’t work without JavaScript.  Many accessibility and performance proponents push very strongly for less JavaScript and sites that work without JavaScript.  And that is a good thing… for the sites that <strong>can</strong> function without JavaScript.  Web apps like Trello, Google Docs, or Postman just don’t make sense without JavaScript.  But saying that we should use less JavaScript isn’t bad advice, it’s just bad advice when given or taken without context.</p>
+<p>Distinguishing between web pages<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and web apps<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> would short circuit a large number of internet arguments before they started.  Specifically arguments about progressive enhancement, whether we use too much JavaScript and whether a site is “acceptable” if it doesn’t work without JavaScript.  Many accessibility and performance proponents push very strongly for less JavaScript and sites that work without JavaScript.  And that is a good thing… for the sites that <strong>can</strong> function without JavaScript.  Web apps like Trello, Google Docs, or Postman just don’t make sense without JavaScript.  But saying that we should use less JavaScript isn’t bad advice, it’s just bad advice when given or taken without context.</p>
 <h4>Existing project vs Greenfield project</h4>
 <p>Some choices are only easy to make at the start of a project.  It is possible to change the language or framework a project is written in midstream, but it is often extremely risky and painful.  So asking a developer working on a 5 year old JavaScript project with thousands of lines of code why they didn’t write it in <a href="http://elm-lang.org/">Elm</a> or <a href="https://clojurescript.org/">ClojureScript</a> is not helpful.  But suggesting that somebody write a new project in Elm may be just fine.</p>
 <h4>Short term project vs Long term project</h4>
 <p>Some software projects are meant to be written, completed, and never seen again.  For instance a promotional site for an event.  Some projects, like financial software, are meant to last for decades.  This is yet another distinction than can impact best practice discussions.  When working on a short term project, speed of delivery and initial quality tend to matter a lot.  For long term projects it may be better to prioritize maintainability, security and ease of deployment.</p>
-<p>[^1]: Web page: sites that are mostly content focused with some possible interactivity layered on top
-[^2]: Web app: sites that are primarily an interactive experience for the user and behave more like traditional desktop or mobile applications</p>]]></content:encoded>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Web page: sites that are mostly content focused with some possible interactivity layered on top <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Web app: sites that are primarily an interactive experience for the user and behave more like traditional desktop or mobile applications <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
             <title><![CDATA[Evaluating Web Apps With Lighthouse]]></title>
-            <link>https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse</link>
-            <guid>https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse</guid>
+            <link>https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse/</link>
+            <guid>https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse/</guid>
             <pubDate>Tue, 14 Feb 2017 03:30:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>Last year Google coined the term “Progressive Web App” as a way of describing the type of sites and applications that they think are the future of the web.  Progressive Web Apps are sites that load quickly, are always responsive to user input, work as well as possible offline, and integrate with native platforms like native apps.  While this site is not an “app” per say, I do want it to be as fast and responsive as possible, and I also wanted to better understand what Google is pulling under the PWA umbrella.  Fortunately, Google has built a tool <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> to help developers profile and improve their web applications, comparing them to a set of PWA benchmarks.  So I took this site through Lighthouse, and worked against their suggestions with the goal of learning more about PWAs and improving the experience of using benmccormick.org.  I’m passing along my experience here.</p>
+            <content:encoded><![CDATA[<p>Last year Google coined the term “Progressive Web App” as a way of describing the type of sites and applications that they think are the future of the web.  Progressive Web Apps are sites that load quickly, are always responsive to user input, work as well as possible offline, and integrate with native platforms like native apps.  While this site is not an “app” per say, I do want it to be as fast and responsive as possible, and I also wanted to better understand what Google is pulling under the PWA umbrella.  Fortunately, Google has built a tool <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> to help developers profile and improve their web applications, comparing them to a set of PWA benchmarks.  So I took this site through Lighthouse, and worked against their suggestions with the goal of learning more about PWAs and improving the experience of using <a href="http://benmccormick.org">benmccormick.org</a>.  I’m passing along my experience here.</p>
 <h3>Getting Started</h3>
 <p>I began by downloading the Lighthouse extension in the <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk">Chrome Web Store</a>.  Lighthouse can be installed either as a chrome extension or a node command line tool.  Both produce the same HTML report, but I chose the chrome extension for the convenience of keeping everything in the browser.  When I ran the initial report, I got the following result:</p>
-<img src="/posts/images/lighthouse/first_report_summary.png" alt="first score: 48/100">
+<img alt="first score: 48/100" src="http://benmccormick.org/posts/images/lighthouse/first_report_summary.png" class="full-width bordered-img">
 <p>48 out of 100 didn’t seem like a bad starting place.  Scrolling down it looked like I was mainly dinged on a few main areas:</p>
 <ol>
 <li>I had no offline support</li>
 <li>I did’t have any special setup for being included on a users homescreen. (I did have platform appropriate icons, but no app configuration)</li>
 <li>I had some possible inefficiencies in the assets I loaded.</li>
 </ol>
-<img src="/posts/images/lighthouse/first_report_offline.png" alt="offline issues">
-<img src="/posts/images/lighthouse/first_report_native.png" alt="native issues">
-<img src="/posts/images/lighthouse/first_report_assets.png" alt="asset issues">
+<img alt="offline issues" src="http://benmccormick.org/posts/images/lighthouse/first_report_offline.png" class="full-width bordered-img">
+<img alt="native issues" src="http://benmccormick.org/posts/images/lighthouse/first_report_native.png" class="full-width bordered-img">
+<img alt="asset issues" src="http://benmccormick.org/posts/images/lighthouse/first_report_assets.png" class="full-width bordered-img">
 <p>Native app support isn’t a huge priority for me, and the assets issue seemed small, so I decided to investigate the offline support issue first.</p>
 <h3>Offline</h3>
-<p>I based my service worker implementation off of <a href="https://github.com/chriscoyier/Simple-Offline-Site">Simple Offline Site</a> a demo Service Worker repo created by Chris Coyier for an article on <a href="https://css-tricks.com/serviceworker-for-offline/">CSS Tricks</a>.  This was perfect since it’s default behavior was what I wanted: cache everything, and check for updates from the server everytime we return from cache so we’re never out of date for long.  You can see what I did specifically in my <a href="https://github.com/benmccormick/benmccormickorg/blob/master/pages/sw.es6">github repo for this site</a>. After adding the service worker, my score moved up to 63/100.  </p>
+<p>I based my service worker implementation off of <a href="https://github.com/chriscoyier/Simple-Offline-Site">Simple Offline Site</a> a demo Service Worker repo created by Chris Coyier for an article on <a href="https://css-tricks.com/serviceworker-for-offline/">CSS Tricks</a>.  This was perfect since it’s default behavior was what I wanted: cache everything, and check for updates from the server everytime we return from cache so we’re never out of date for long.  You can see what I did specifically in my <a href="https://github.com/benmccormick/benmccormickorg/blob/master/pages/sw.es6">github repo for this site</a>. After adding the service worker, my score moved up to 63/100.</p>
 <p>Finally, Service Workers only work on HTTPS connections, but most links to my site are not https currently. So to take full advantage (and to address another metric I was flagged on), I used a <a href="https://support.cloudflare.com/hc/en-us/articles/200170536-How-do-I-redirect-all-visitors-to-HTTPS-SSL-">CloudFlare page rule</a> to redirect all visting traffic to use https.  That bumped me up to 69/100.</p>
-<img src="/posts/images/lighthouse/second_report_offline.png" alt="asset issues">
+<img alt="asset issues" src="http://benmccormick.org/posts/images/lighthouse/second_report_offline.png" class="full-width bordered-img">
 <h3>Native Support</h3>
 <p>As I said previously, native platform support isn’t a major priority for this blog, but I was curious about the process.  Getting native support turned out to be very straightforward.  I had already collected icons for the various platforms, and created a simple manifest when I originally created a favicon for my site.  But the manifest file didn’t have everything and it wasn’t being deployed properly to my site.  Fixing that and making it available at <code>/manifest.json</code>, fixed all of the problems related to native platform support.</p>
 <p>My manifest file now looks like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-json"><code><span class="token punctuation">{</span>
-	<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"benmccormick.org"</span><span class="token punctuation">,</span>
-  <span class="token property">"short_name"</span><span class="token operator">:</span> <span class="token string">"benmccormick"</span><span class="token punctuation">,</span>
-	<span class="token property">"icons"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-		<span class="token punctuation">{</span>
-			<span class="token property">"src"</span><span class="token operator">:</span> <span class="token string">"\/android-chrome-192x192.png?v=yyxgnp97qG"</span><span class="token punctuation">,</span>
-			<span class="token property">"sizes"</span><span class="token operator">:</span> <span class="token string">"192x192"</span><span class="token punctuation">,</span>
-			<span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"image\/png"</span>
-		<span class="token punctuation">}</span><span class="token punctuation">,</span>
-		<span class="token punctuation">{</span>
-			<span class="token property">"src"</span><span class="token operator">:</span> <span class="token string">"\/android-chrome-384x384.png?v=yyxgnp97qG"</span><span class="token punctuation">,</span>
-			<span class="token property">"sizes"</span><span class="token operator">:</span> <span class="token string">"384x384"</span><span class="token punctuation">,</span>
-			<span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"image\/png"</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">]</span><span class="token punctuation">,</span>
-	<span class="token property">"theme_color"</span><span class="token operator">:</span> <span class="token string">"#ffffff"</span><span class="token punctuation">,</span>
-	<span class="token property">"background_color"</span><span class="token operator">:</span> <span class="token string">"#57a3e8"</span><span class="token punctuation">,</span>
-	<span class="token property">"display"</span><span class="token operator">:</span> <span class="token string">"browser"</span>
-<span class="token punctuation">}</span>
+<pre><code class="language-json">{
+	&quot;name&quot;: &quot;benmccormick.org&quot;,
+  &quot;short_name&quot;: &quot;benmccormick&quot;,
+	&quot;icons&quot;: [
+		{
+			&quot;src&quot;: &quot;\/android-chrome-192x192.png?v=yyxgnp97qG&quot;,
+			&quot;sizes&quot;: &quot;192x192&quot;,
+			&quot;type&quot;: &quot;image\/png&quot;
+		},
+		{
+			&quot;src&quot;: &quot;\/android-chrome-384x384.png?v=yyxgnp97qG&quot;,
+			&quot;sizes&quot;: &quot;384x384&quot;,
+			&quot;type&quot;: &quot;image\/png&quot;
+		}
+	],
+	&quot;theme_color&quot;: &quot;#ffffff&quot;,
+	&quot;background_color&quot;: &quot;#57a3e8&quot;,
+	&quot;display&quot;: &quot;browser&quot;
+}
 </code></pre>
-      </div>
 <p>After correctly deploying that manifest file, my score moved all the way up to 100/100!</p>
-<img src="/posts/images/lighthouse/third_report_native.png" alt="asset issues">
-<p>I clearly benefited from starting in a good spot.  <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> is “fast by default” as a platform for building blogs, and I’ve done my best to avoid making it slow.  But it was fun seeing what I could do to make the site a better experience for users with bad connectivity, and to learn more about what Google is trying to do with PWAs.  </p>
+<img alt="asset issues" src="http://benmccormick.org/posts/images/lighthouse/third_report_native.png" class="full-width bordered-img">
+<p>I clearly benefited from starting in a good spot.  <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> is “fast by default” as a platform for building blogs, and I’ve done my best to avoid making it slow.  But it was fun seeing what I could do to make the site a better experience for users with bad connectivity, and to learn more about what Google is trying to do with PWAs.</p>
 <h3>More Resources</h3>
 <ul>
 <li>
@@ -798,7 +769,8 @@ PASS<span class="token operator">=</span>true
 <li>
 <p>It was so easy to make my blog a PWA mostly because it is built on <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a>. Worth looking at if you’re a web developer who blogs.</p>
 </li>
-</ul>]]></content:encoded>
+</ul>
+]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
@@ -815,145 +787,151 @@ PASS<span class="token operator">=</span>true
 <li><strong>Actions</strong> - Code that updates observable state is known as an action.  MobX has a formalized version of actions which can be defined using the <code>action</code> function, but it is also possible to modify state directly using any normal JavaScript code and maintain observable behavior.</li>
 </ol>
 <p>In practice this looks something like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span>observable<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span>observer<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx-react'</span><span class="token punctuation">;</span>
+<pre><code class="language-javascript">import React from 'react';
+import ReactDOM from 'react-dom';
+import {observable} from 'mobx';
+import {observer} from 'mobx-react';
 
-<span class="token keyword">let</span> digits <span class="token operator">=</span> <span class="token function">observable</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+let digits = observable([1, 2]);
 
-<span class="token keyword">const</span> DigitPrinter <span class="token operator">=</span> <span class="token function">observer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span>digits<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>div<span class="token operator">></span>
-    <span class="token punctuation">{</span>digits<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">', '</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+const DigitPrinter = observer(({digits}) =&gt; {
+  return (&lt;div&gt;
+    {digits.join(', ')}
+  &lt;/div&gt;);
+});
 
-ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span> <span class="token operator">&lt;</span>DigitPrinter digits <span class="token operator">=</span> <span class="token punctuation">{</span>digits<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ReactDOM.render( &lt;DigitPrinter digits = {digits} /&gt;, document.getElementById('root'));
 
-<span class="token comment" spellcheck="true">/* prints 1, 2 */</span>
+/* prints 1, 2 */
 
 
-digits<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+digits.push(3);
 
-<span class="token comment" spellcheck="true">/* DOM re-renders to print 1, 2, 3 */</span>
+/* DOM re-renders to print 1, 2, 3 */
 
-digits<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+digits[2] = 4;
 
-<span class="token comment" spellcheck="true">/* DOM re-renders to print 1, 2, 4 */</span>
+/* DOM re-renders to print 1, 2, 4 */
+
 </code></pre>
-      </div>
 <p>The component is able to passively <em>observe</em> changes in the data, and re-render when it changes.  But MobX is actually even smarter than this example shows.  Let’s look at another example, this time using a more complex data structure (a class).</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span>extendObservable<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span>observer<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx-react'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> moment <span class="token keyword">from</span> <span class="token string">'moment'</span><span class="token punctuation">;</span>
+<pre><code class="language-javascript">import React from 'react';
+import ReactDOM from 'react-dom';
+import {extendObservable} from 'mobx';
+import {observer} from 'mobx-react';
+import moment from 'moment';
 
-<span class="token keyword">class</span> <span class="token class-name">Appointment</span> <span class="token punctuation">{</span>
+class Appointment {
 
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">extendObservable</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-      dueDate<span class="token punctuation">:</span> <span class="token string">'01-01-2017'</span><span class="token punctuation">,</span>
-      title<span class="token punctuation">:</span> <span class="token string">'Dinner with Joe'</span>
-      location<span class="token punctuation">:</span> <span class="token string">'Chik-Fil-A'</span><span class="token punctuation">,</span>
-      isToday<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">moment</span><span class="token punctuation">(</span>dueDate<span class="token punctuation">,</span> <span class="token string">'MM-DD-YYYY'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">diff</span><span class="token punctuation">(</span>moment<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'days'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  constructor() {
+    extendObservable(this, {
+      dueDate: '01-01-2017',
+      title: 'Dinner with Joe'
+      location: 'Chik-Fil-A',
+      isToday: computed(function() {
+        return moment(dueDate, 'MM-DD-YYYY').diff(moment.now(), 'days') === 0;
+      }),
+    });
+  }
 
-  <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> @ </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>location<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  toString() {
+    return `${this.title} @ ${this.location}`;
+  }
+}
 
 
-<span class="token keyword">const</span> TodayBox <span class="token operator">=</span> <span class="token function">observer</span><span class="token punctuation">(</span><span class="token keyword">class</span> <span class="token class-name">TodayBox</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-  render <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> <span class="token punctuation">{</span>appointments<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>div<span class="token operator">></span>
-      <span class="token punctuation">{</span>appointments<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>a <span class="token operator">=</span><span class="token operator">></span> a<span class="token punctuation">.</span>isToday<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>a <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&lt;</span>span<span class="token operator">></span>a<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">}</span>     
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+const TodayBox = observer(class TodayBox extends React.Component {
+  render () {
+    let {appointments} = this.props;
+    return (&lt;div&gt;
+      {appointments.filter(a =&gt; a.isToday).map(a =&gt; &lt;span&gt;a.toString()&lt;/span&gt;)}     
+    &lt;/div&gt;);
+  }
+});
 
-<span class="token keyword">let</span> appointment <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Appointment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+let appointment = new Appointment();
 
-ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span> <span class="token operator">&lt;</span>TodayBox appointments <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">[</span>appointment<span class="token punctuation">]</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ReactDOM.render( &lt;TodayBox appointments = {[appointment]} /&gt;, document.getElementById('root'));
 
-<span class="token comment" spellcheck="true">/* prints an empty div */</span>
+/* prints an empty div */
 
-appointment<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'Dinner with Bob'</span><span class="token punctuation">;</span>
+appointment.title = 'Dinner with Bob';
 
-<span class="token comment" spellcheck="true">/* Nothing relevant has changed. The component does not re-render */</span>
+/* Nothing relevant has changed. The component does not re-render */
 
-appointment<span class="token punctuation">.</span>dueDate <span class="token operator">=</span> <span class="token string">'01-09-2017'</span><span class="token punctuation">;</span>  
+appointment.dueDate = '01-09-2017';  
 
-<span class="token comment" spellcheck="true">/*  assume that 01-09-2017 is "today" */</span>
+/*  assume that 01-09-2017 is &quot;today&quot; */
 </code></pre>
-      </div>
 <p>MobX has the “magical” ability to determine what changes actually affect the observer and not make unnecessary calls of reaction functions.  In practice, that magic allows you to write less, more efficient code for updating your UI based on data.</p>
 <h3>How Does MobX work?</h3>
-<p>I have a learned skepticism of magical solutions like this.  Generally I find that time-saving magic like this ends up costing time when it comes to maintenance, and explicit relationships between code saves time over less-boilerplate heavy code. Fortunately, while the libraries code itself is fairly complex, it isn’t too hard to understand the logic behind how MobX works.  </p>
+<p>I have a learned skepticism of magical solutions like this.  Generally I find that time-saving magic like this ends up costing time when it comes to maintenance, and explicit relationships between code saves time over less-boilerplate heavy code. Fortunately, while the libraries code itself is fairly complex, it isn’t too hard to understand the logic behind how MobX works.</p>
 <p>On the Observer side, MobX uses <a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">ES5</a> setters and getters to proxy updates to observable data structure and listen in when data is updated.  This allows the type of event listening that <a href="http://backbonejs.org/">Backbone</a> and other libraries provide, without requiring the user to go through special <code>set</code> or <code>get</code> methods to update an object’s properties.  Most of the time you should be able to just be able to write code as you normally would, and MobX will make it work.  There are some exceptions though that mean its important to actually understand how the library work.  Getters and Setters only work when looking up an existing property on an object, so when using primitive values or adding new values to an existing object, some special syntax (the return of <code>get</code> and <code>set</code> methods) may be required.  In Mobx primitive observables are referred to as <em>boxed</em> values, and objects that require new values over time can be handled by using observable Maps, which use the API of <a href="http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">ES6</a> Maps.</p>
 <p>On the derivative side, reactions and computed values are always defined as functions.  MobX wraps these functions and is able to determine (through the method described above) what properties were accessed during each function run.  It then only listens for changes to these properties.  Thus it doesn’t matter if you theoretically could access thousands of observable properties in a function, if you wrap those references in an if statement to a single property, and that property returns false on first run, the derivative function will only listen for changes on that property before running again. When an observable is updated, all derivative code is run synchronously and atomically so there is no concern of getting into bad intermediate states.</p>
 <p>Most of the “magic” is covered by the 2 paragraphs above, and once you understand the ideas behind them (see the resources at the bottom of this post for more in-depth explanations), it is fairly easy to understand the reasoning behind the cases where the magic fails.</p>
 <h3>Decorators</h3>
-<p>Developers who actually use MobX are probably questioning my examples by now, because I’ve been using a different syntax than the primary MobX documentation for showing my examples.  So let’s talk about decorators.  The preferred way (according to the documentation) to write MobX code is to use decorators to define observers and observables.  Decorators are a <a href="http://tc39.github.io/proposal-decorators/">proposed new JavaScript feature</a> for declaratively adding extra behavior to classes, class properties and class methods.  Using them with MobX, my above example would look like this [^1]:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Appointment</span> <span class="token punctuation">{</span>
+<p>Developers who actually use MobX are probably questioning my examples by now, because I’ve been using a different syntax than the primary MobX documentation for showing my examples.  So let’s talk about decorators.  The preferred way (according to the documentation) to write MobX code is to use decorators to define observers and observables.  Decorators are a <a href="http://tc39.github.io/proposal-decorators/">proposed new JavaScript feature</a> for declaratively adding extra behavior to classes, class properties and class methods.  Using them with MobX, my above example would look like this <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>:</p>
+<pre><code class="language-javascript">
+class Appointment {
 
-  @observable dueDate <span class="token operator">=</span> <span class="token string">'01-01-2017'</span>
-  @observable title <span class="token operator">=</span> <span class="token string">'Dinner with Joe'</span>
-  @observable location <span class="token operator">=</span> <span class="token string">'Chik-Fil-A'</span>
+  @observable dueDate = '01-01-2017'
+  @observable title = 'Dinner with Joe'
+  @observable location = 'Chik-Fil-A'
 
-  @computed <span class="token keyword">get</span> <span class="token function">isToday</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">moment</span><span class="token punctuation">(</span>dueDate<span class="token punctuation">,</span> <span class="token string">'MM-DD-YYYY'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">diff</span><span class="token punctuation">(</span>moment<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'days'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  @computed get isToday() {
+    return moment(dueDate, 'MM-DD-YYYY').diff(moment.now(), 'days') === 0;
+  }
 
-  <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> @ </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>location<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  toString() {
+    return `${this.title} @ ${this.location}`;
+  }
+}
 
 
-@observer <span class="token keyword">class</span> <span class="token class-name">TodayBox</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-  render <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> <span class="token punctuation">{</span>appointments<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>div<span class="token operator">></span>
-      <span class="token punctuation">{</span>appointments<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>a <span class="token operator">=</span><span class="token operator">></span> a<span class="token punctuation">.</span>isToday<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>a <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&lt;</span>span<span class="token operator">></span>a<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">}</span>     
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+@observer class TodayBox extends React.Component {
+  render () {
+    let {appointments} = this.props;
+    return (&lt;div&gt;
+      {appointments.filter(a =&gt; a.isToday).map(a =&gt; &lt;span&gt;a.toString()&lt;/span&gt;)}     
+    &lt;/div&gt;);
+  }
+}
 </code></pre>
-      </div>
-<p>That obviously looks a lot cleaner than my example.  So what’s the problem?  Again, decorators are a <em>proposed</em> JavaScript feature.  Currently they’re in Stage 2, which means roughly that they are very likely to eventually make it into the language, but may change in non-trivial ways before that happens.  Currently decorators are implemented in <a href="https://www.typescriptlang.org/docs/handbook/decorators.html">TypeScript</a>, as well as a <a href="https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy">3rd party babel plugin</a>, but as of January 2017 <a href="http://kangax.github.io/compat-table/esnext/#test-class_decorators">are not implemented in any browser engines</a>, and are not implemented in any first party babel plugins <a href="https://github.com/babel/babel/issues/2645">due to spec instability</a>.  Decorators are a key part of Angular2, and are used by other frameworks including <a href="http://aurelia.io/">Aurelia</a> and <a href="https://github.com/rwjblue/ember-computed-decorators">Ember</a>, so I don’t think they’re going away.  But I also don’t see them as ready for production use for teams that don’t have the capacity to dedicate the time to update existing code if/when the spec changes[^2].  If for one reason or other you’re comfortable with the risks however, decorators are a great way to clean up the MobX API, and I’m excited for the spec to get to the point where I can use them.</p>
+<p>That obviously looks a lot cleaner than my example.  So what’s the problem?  Again, decorators are a <em>proposed</em> JavaScript feature.  Currently they’re in Stage 2, which means roughly that they are very likely to eventually make it into the language, but may change in non-trivial ways before that happens.  Currently decorators are implemented in <a href="https://www.typescriptlang.org/docs/handbook/decorators.html">TypeScript</a>, as well as a <a href="https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy">3rd party babel plugin</a>, but as of January 2017 <a href="http://kangax.github.io/compat-table/esnext/#test-class_decorators">are not implemented in any browser engines</a>, and are not implemented in any first party babel plugins <a href="https://github.com/babel/babel/issues/2645">due to spec instability</a>.  Decorators are a key part of Angular2, and are used by other frameworks including <a href="http://aurelia.io/">Aurelia</a> and <a href="https://github.com/rwjblue/ember-computed-decorators">Ember</a>, so I don’t think they’re going away.  But I also don’t see them as ready for production use for teams that don’t have the capacity to dedicate the time to update existing code if/when the spec changes<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.  If for one reason or other you’re comfortable with the risks however, decorators are a great way to clean up the MobX API, and I’m excited for the spec to get to the point where I can use them.</p>
 <h3>Comparison to Redux and setState</h3>
 <p>As a state management library that was built to be used with React, the obvious questions to ask about MobX are how it improves over React’s built in state handling, and how it compares to <a href="http://redux.js.org/">Redux</a>, the current most popular state management solution for React. MobX takes a different approach to each.</p>
 <p>It’s important to say at the start that MobX isn’t mutually exclusive with using setState.  It’s possible to use them together, with MobX managing application data and setState handling individual component/UI state.  But there is some advantages to using MobX for UI state as well.  The biggest reason is that MobX is smarter than setState about when re-rendering is required.  By default React Components re-render on any call to setState, regardless of whether the state change actually affects what is rendered or not. MobX’s creator <a href="https://medium.com/@mweststrate/3-reasons-why-i-stopped-using-react-setstate-ab73fc67a42e#.x0o6y4rxv">wrote more about this on Medium</a>.</p>
-<p>Comparing MobX and Redux could be a whole article on its own, so I’m not going to go too deep here, but suffice it to say that MobX is more flexible than Redux, but as a result loses some of the benefits of Redux’s structured approach.  Specifically, it is easy to convert a single object to become a MobX observable and use it in an existing React component.  It can be easily inlined in an existing file and used for one component even.  You also don’t have to deal with the ceremony of using <a href="http://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2/">immutable data</a>.  Redux is intended as a solution that will take over all your state, and doesn’t scale down nearly as well or mix with other solutions [^3].  However, Redux’s structure also has benefits.  It allows easy testings of each component of an app individually, the creation of powerful tooling that will work with any Redux app, and reliable guarantees of how state will be updated.  These things are mostly possible with MobX [^4], but require more developer discipline, and/or can’t be written as easily as universal tools. Overgeneralizing, I would prefer Redux in a new application, but would look to MobX for improving data management in an existing application.  MobX also has advantages in applications where you’re displaying a large amount of UI elements based on a relatively small amount of data, or have a lot of derived data (something like a spreadsheet), whereas Redux has benefits for applications that need to be extremely reliable and well tested.  </p>
+<p>Comparing MobX and Redux could be a whole article on its own, so I’m not going to go too deep here, but suffice it to say that MobX is more flexible than Redux, but as a result loses some of the benefits of Redux’s structured approach.  Specifically, it is easy to convert a single object to become a MobX observable and use it in an existing React component.  It can be easily inlined in an existing file and used for one component even.  You also don’t have to deal with the ceremony of using <a href="http://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2/">immutable data</a>.  Redux is intended as a solution that will take over all your state, and doesn’t scale down nearly as well or mix with other solutions <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.  However, Redux’s structure also has benefits.  It allows easy testings of each component of an app individually, the creation of powerful tooling that will work with any Redux app, and reliable guarantees of how state will be updated.  These things are mostly possible with MobX <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>, but require more developer discipline, and/or can’t be written as easily as universal tools. Overgeneralizing, I would prefer Redux in a new application, but would look to MobX for improving data management in an existing application.  MobX also has advantages in applications where you’re displaying a large amount of UI elements based on a relatively small amount of data, or have a lot of derived data (something like a spreadsheet), whereas Redux has benefits for applications that need to be extremely reliable and well tested.</p>
 <h3>Stray Thoughts</h3>
 <ul>
 <li>If you do want more discipline in MobX, make sure to use <code>useStrict</code> to require updates to use Actions</li>
 <li>MobX has a nice set of <a href="https://github.com/mobxjs/mobx-react-devtools">devtools</a> that are useful if you’re opting in to using actions, and using React with MobX.</li>
 <li>If this isn’t clear yet, I definitely recommend hacking around with Mobx’s low level APIs to learn more about how it works before integrating it straight into a framework</li>
-<li><del>Also note that MobX 3.0 is imminent, there is a release candidate that you can play with now.</del> <strong>Update:</strong> That didn’t take long.  <a href="https://medium.com/@mweststrate/mobx-3-released-unpeeling-the-onion-ca877382f443#.mk6mdypt2">MobX 3.0 is out</a>.</li>
+<li><s>Also note that MobX 3.0 is imminent, there is a release candidate that you can play with now.</s> <strong>Update:</strong> That didn’t take long.  <a href="https://medium.com/@mweststrate/mobx-3-released-unpeeling-the-onion-ca877382f443#.mk6mdypt2">MobX 3.0 is out</a>.</li>
 </ul>
 <h3>More Resources</h3>
 <ul>
 <li>
-<p>The two most helpful resources I found for conceptually understanding MobX were in-depth articles by the library’s author <a href="">Michael Westrate</a>: <a href="https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254#.jd4hgh2zi">Becoming fully reactive: an in-depth explanation of MobX</a> on Medium and <a href="https://mobx.js.org/intro/concepts.html">Concepts &#x26; Principles</a> from the MobX documentation</p>
+<p>The two most helpful resources I found for conceptually understanding MobX were in-depth articles by the library’s author <a href="">Michael Westrate</a>: <a href="https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254#.jd4hgh2zi">Becoming fully reactive: an in-depth explanation of MobX</a> on Medium and <a href="https://mobx.js.org/intro/concepts.html">Concepts &amp; Principles</a> from the MobX documentation</p>
 </li>
 <li>
 <p>This <a href="https://twitter.com/AdamRackis/status/775706291259908096">tweet thread</a> and the linked article, are a good breakdown of the tradeoffs between MobX and Redux</p>
 </li>
 </ul>
-<p>[^1]: Technically this also uses class properties as well, another proposal that works well with decorators
-[^2]: It’s possible any spec changes will be trivially fixable with a code mod script, but right now there is more uncertainty than I am personally comfortable with.  I’m grateful to people who are willing to take more risks here than me, they push the language forward.
-[^3]: I’m talking here about what is encouraged and easy, not what is possible.  It is of course possible to mix in Redux with other solutions.
-[^4]: MobX has some nice <a href="https://github.com/mobxjs/mobx-react-devtools">devtools!</a></p>]]></content:encoded>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Technically this also uses class properties as well, another proposal that works well with decorators <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>It’s possible any spec changes will be trivially fixable with a code mod script, but right now there is more uncertainty than I am personally comfortable with.  I’m grateful to people who are willing to take more risks here than me, they push the language forward. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>I’m talking here about what is encouraged and easy, not what is possible.  It is of course possible to mix in Redux with other solutions. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>MobX has some nice <a href="https://github.com/mobxjs/mobx-react-devtools">devtools!</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
