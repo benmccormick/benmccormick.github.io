@@ -78,6 +78,6 @@
     "build": "rm -r public && gatsby build",
     "serve": "gatsby serve",
     "gh-pages": "gh-pages -d public",
-    "deploy": "node analytics.js && gatsby build --prefix-links && gh-pages -d public"
+    "deploy": "node analytics.js && gatsby build && gh-pages -d public"
   }
 }
