@@ -87,7 +87,7 @@ class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           <GA />
-          <script
+          {/* <script
             type="text/javascript"
             dangerouslySetInnerHTML={{
               __html: `
@@ -105,7 +105,7 @@ class HTML extends React.Component {
               }
             `
             }}
-          />
+          /> */}
           {this.props.postBodyComponents}
         </body>
       </html>
