@@ -149,17 +149,4 @@
 
             ga('create', 'UA-37323973-1', 'auto');
             ga('send', 'pageview');
-        </script><script type="text/javascript">
-              // adapted from: https://css-tricks.com/serviceworker-for-offline/
-              // ServiceWorker is a progressive technology. Ignore unsupported browsers
-              if ('serviceWorker' in navigator) {
-              console.log('CLIENT: service worker registration in progress.');
-              navigator.serviceWorker.register('/sw.js').then(function() {
-                console.log('CLIENT: service worker registration complete.');
-              }, function() {
-                console.log('CLIENT: service worker registration failure.');
-              });
-              } else {
-              console.log('CLIENT: service worker is not supported.');
-              }
-            </script></body></html>
+        </script></body></html>
