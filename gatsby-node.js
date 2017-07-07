@@ -128,8 +128,9 @@ const createBlogPosts = (graphql, createPage) =>
   });
 exports.onPostBuild = ({ graphql, boundActionCreators }) => {
   let died = () => console.log('died');
-  return graphql(
-    `
+  return (
+    graphql(
+      `
         {
           allMarkdownRemark {
             edges {
@@ -148,26 +149,27 @@ exports.onPostBuild = ({ graphql, boundActionCreators }) => {
           }
         }
       `
-  )
-    .then(result => {
-      if (result.errors) {
-        console.log(result.errors);
-        return false;
-      }
-      let pages = result.data.allMarkdownRemark.edges.map(edge => ({
-        date: edge.node.frontmatter.date,
-        title: edge.node.frontmatter.title,
-        layout: edge.node.frontmatter.layout,
-        html: edge.node.html,
-        slug: edge.node.fields.slug
-      }));
-      buildFeeds(pages);
-      generateSiteMap(pages);
-    })
-    .then(copySW, died)
-    .then(copyImages, died)
-    .then(copyCNAME, died)
-    .then(copyManifest, died);
+    )
+      .then(result => {
+        if (result.errors) {
+          console.log(result.errors);
+          return false;
+        }
+        let pages = result.data.allMarkdownRemark.edges.map(edge => ({
+          date: edge.node.frontmatter.date,
+          title: edge.node.frontmatter.title,
+          layout: edge.node.frontmatter.layout,
+          html: edge.node.html,
+          slug: edge.node.fields.slug
+        }));
+        buildFeeds(pages);
+        generateSiteMap(pages);
+      })
+      // .then(copySW, died)
+      .then(copyImages, died)
+      .then(copyCNAME, died)
+      .then(copyManifest, died)
+  );
 };
 
 exports.modifyWebpackConfig = function(config, stage) {

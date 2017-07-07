@@ -12,6 +12,7 @@
     "front-matter": "^2.1.0",
     "gatsby": "next",
     "gatsby-link": "next",
+    "gatsby-plugin-offline": "^1.0.1",
     "gatsby-plugin-sharp": "next",
     "gatsby-remark-copy-linked-files": "next",
     "gatsby-remark-images": "next",
