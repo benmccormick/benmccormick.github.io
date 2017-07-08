@@ -7,14 +7,29 @@
     "url": "https://github.com/benmccormick/benmccormickorg/issues"
   },
   "dependencies": {
+    "caniuse-db": "1.0.30000670",
+    "eslint-plugin-prettier": "^2.1.2",
     "front-matter": "^2.1.0",
-    "gatsby": "^0.12.34",
+    "gatsby": "next",
+    "gatsby-link": "next",
+    "gatsby-plugin-offline": "^1.0.1",
+    "gatsby-plugin-sharp": "next",
+    "gatsby-remark-copy-linked-files": "next",
+    "gatsby-remark-images": "next",
+    "gatsby-remark-prismjs": "next",
+    "gatsby-remark-responsive-iframe": "next",
+    "gatsby-remark-responsive-image": "next",
+    "gatsby-remark-smartypants": "next",
+    "gatsby-source-filesystem": "next",
+    "gatsby-transformer-remark": "next",
     "highlight.js": "^9.7.0",
     "lodash": "^4.15.0",
     "markdown-it": "^8.0.0",
     "markdown-it-attrs": "^0.8.0",
     "markdown-it-footnote": "^3.0.1",
     "moment": "^2.14.1",
+    "ncp": "^2.0.0",
+    "prettier": "^1.5.2",
     "react": "^15.4.2",
     "react-disqus-thread": "^0.4.0",
     "react-dom": "^15.4.2",
@@ -61,9 +76,9 @@
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
-    "build": "gatsby build",
-    "local-serve": "gatsby build && gatsby serve-build",
+    "build": "rm -r public && gatsby build",
+    "serve": "gatsby serve",
     "gh-pages": "gh-pages -d public",
-    "deploy": "node analytics.js && gatsby build --prefix-links && gh-pages -d public"
+    "deploy": "node analytics.js && gatsby build && gh-pages -d public"
   }
 }

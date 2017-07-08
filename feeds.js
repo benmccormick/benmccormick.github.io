@@ -5,29 +5,7 @@ const sortBy = require('lodash/sortBy');
 const forEach = require('lodash/forEach');
 const get = require('lodash/get');
 const moment = require('moment');
-const markdownIt = require('markdown-it');
-const frontmatter = require('front-matter');
-const footnotes = require('markdown-it-footnote');
-const attrs = require('markdown-it-attrs');
-const {mkDir, mkFile} = require('./utils/file_system');
-
-const md = markdownIt({
-  html: true,
-  linkify: true,
-  typographer: true,
-}) .use(footnotes) .use(attrs);
-
-const extractMarkdownContent = file => {
-  let body = md.render(frontmatter(file).body);
-  // handle local links
-  return body.replace(/src="\//g, 'src="http://benmccormick.org/');
-
-};
-
-const getPageContent = page => {
-  let file = fs.readFileSync(__dirname + '/pages/' + page.requirePath, 'utf-8');
-  return extractMarkdownContent(file);
-};
+const { mkDir, mkFile } = require('./src/utils/file_system');
 
 let buildFeed = pages => {
   let feed = new Feed({
@@ -40,32 +18,34 @@ let buildFeed = pages => {
     image: 'https://benmccormick.org/logo.png',
     feedLinks: {
       atom: 'http://benmccormick.org/atom.xml',
-      json: 'http://benmccormick.org/feed.json',
+      json: 'http://benmccormick.org/feed.json'
     },
     author: {
       name: 'Ben McCormick',
       email: 'ben@benmccormick.org'
     }
   });
-  pages = sortBy(pages, page => get(page, 'data.date'));
+  pages = sortBy(pages, page => get(page, 'date'));
   pages = pages.reverse();
-  pages = filter(pages, p => ( !(get(p, 'data.layout', 'page') === 'page')));
+  pages = filter(pages, p => get(p, 'layout', 'page') === 'post');
   pages = pages.slice(0, 10);
 
-  forEach(pages, page => feed.addItem({
-    title: page.data.title,
-    id: 'https://benmccormick.org' + page.path,
-    link: 'https://benmccormick.org' + page.path,
-    date: moment(page.data.date).toDate(),
-    content: getPageContent(page),
-    author: [
-      {
-        name: 'Ben McCormick',
-        email: 'ben@benmccormick.org',
-        link: 'http://benmccormick.org'
-      }
-    ]
-  }));
+  forEach(pages, page =>
+    feed.addItem({
+      title: page.title,
+      id: 'https://benmccormick.org' + page.slug,
+      link: 'https://benmccormick.org' + page.slug,
+      date: moment(page.date).toDate(),
+      content: page.html,
+      author: [
+        {
+          name: 'Ben McCormick',
+          email: 'ben@benmccormick.org',
+          link: 'http://benmccormick.org'
+        }
+      ]
+    })
+  );
   feed.addContributor({
     name: 'Ben McCormick',
     email: 'ben@benmccormick.org',
@@ -74,13 +54,12 @@ let buildFeed = pages => {
   return feed;
 };
 
-
 let createRSSFolder = () => mkDir('/public/rss/');
-let generateAtomFeed = (feed) => mkFile('/public/atom.xml', feed.atom1());
-let generateRSS = (feed) => mkFile('/public/rss/index.xml', feed.rss2());
-let generateJSONFeed = (feed) => mkFile('/public/feed.json', feed.json1());
+let generateAtomFeed = feed => mkFile('/public/atom.xml', feed.atom1());
+let generateRSS = feed => mkFile('/public/rss/index.xml', feed.rss2());
+let generateJSONFeed = feed => mkFile('/public/feed.json', feed.json1());
 
-exports.buildFeeds = (pages) => {
+exports.buildFeeds = pages => {
   let feed = buildFeed(pages);
   createRSSFolder();
   generateAtomFeed(feed);
