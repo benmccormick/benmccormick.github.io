@@ -10,6 +10,10 @@ export class Ad extends React.Component {
   }
 
   insertScript() {
+    let existingAd = document.getElementById('_carbonads__js');
+    if (existingAd) {
+      return;
+    }
     //build script
     const script = document.createElement('script');
     script.src =
