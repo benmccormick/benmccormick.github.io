@@ -1,8 +1,8 @@
 ---
 title: "How to follow the JavaScript roadmap"
-date: "2017-06-26 03:20:00+00:00"
+date: "2017-07-10 12:00:00+00:00"
 layout: "post"
-path: "/2017/06/26/how-to-follow-the-javascript-roadmap/"
+path: "/2017/07/10/how-to-follow-the-javascript-roadmap/"
 description: "Tips for how to keep up with where the language is going"
 keywords: "javascript roadmap tc39 ecmascript"
 category: "javascript"

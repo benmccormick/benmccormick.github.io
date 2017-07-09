@@ -6,7 +6,7 @@ path: "/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-version
 description: "A summary of the naming conventions for the JavaScript language"
 keywords: "JavaScript, ECMAScript, ES6, ES7, ES5"
 category: "javascript"
-readNext: "callbacks-to-promises,clean-higher-order-functions,rauchg-on-es6"
+readNext: "following-js-roadmap,callbacks-to-promises,clean-higher-order-functions"
 key: "ecma-explanation"
 pageViews: "130069"
 last30pageViews: "9013"
