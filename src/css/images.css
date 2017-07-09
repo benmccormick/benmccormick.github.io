@@ -6,7 +6,7 @@
 }
 
 .article-body img {
-    max-height: 200px;
+    max-width: 75%;
     display: block;
     margin: 40px auto 20px auto;
 }

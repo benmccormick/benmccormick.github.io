@@ -29,7 +29,7 @@ h2, h3 {
     font-size: .85em;
 }
 
-.footnote p {
-    display: inline-block;
+.footnotes li > * {
+    display: inline;
     margin-bottom: 0;
 }
