@@ -34,6 +34,7 @@ Going forward in this blog, I'll be referring to the recent ECMAScript version a
 
 ### More Resources
 
+- If you're wondering about the best way to keep up with JavaScript language changes, check out the resources [in this post](/2017/07/10/how-to-follow-the-javascript-roadmap/)
 - TC39 has a [github repo][proposalstc39] tracking all of their current open proposals.
 - If you aren't familiar with ES6 yet, Babel has a [great rundown of its features][babeles6]
 - If you want to go deeper with ES6 I've heard great things  about 2 books on the subject: [Exploring ES6][exploringes6] by Axel Rauschmayer and [Understanding ECMAScript 6][understandinges6] by Nicholas Zakas<sup id="fnref:2">[2](#fn:2)</sup>.  Axel's blog [2ality][2ality] is also a great ES6 resource.
