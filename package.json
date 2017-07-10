@@ -79,6 +79,6 @@
     "build": "rm -r public && gatsby build",
     "serve": "gatsby serve",
     "gh-pages": "gh-pages -d public",
-    "deploy": "rm-rf public && node analytics.js && gatsby build && gh-pages -d public"
+    "deploy": "rm -rf public && node analytics.js && gatsby build && gh-pages -d public"
   }
 }
