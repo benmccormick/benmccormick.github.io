@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sun, 09 Jul 2017 21:58:28 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jul 2017 03:04:09 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -332,13 +332,107 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <h4>5. Check Timecop and clean up plugins that you’re not using</h4>
 <p>Atom is built on web technologies.  This is both the best and worst thing about Atom.  It leads to its greatest strengths: hackability, a focus on UX early on since they didn’t have to build a whole UI engine from scratch, and quick iteration.  But it also has very real tradeoffs, the biggest of which are battery life and startup performance<sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup>.  There’s not much to be done about the battery life drain; Atom is based on Chromium, and Chromium is a battery hog.  It is simply a tradeoff to understand when choosing an editor.  But startup performance is often greatly influenced by the packages that you choose to use.  Fortunately Atom includes a simple tool for tracking this called Timecop.</p>
 <p>You can find Timecop in the command palette (⇧⌘P by default).  When you run it, Timecop displays a report of all of your packages and themes and how they contribute to startup time.  It will look something like this:</p>
-<p><img src="/posts/images/atom/timecop.png" alt="screenshot of timecop"></p>
+<p>
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/e54c55880eb9aea6f4fa92ea3c8409a0-20e0c.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 65.93673965936739%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAAB6ElEQVQ4y6VTTW/UMBDNH4LuJk42n3Zs5zv7lexuUUXVAkKUC0i9c+QGt0qVkPivj7GpVtpuekAcnmKPn59n3kwcP1FgscQszBFkGlmu4EccTBTwhITHW+TtgGp9CZZq4ip4kcQrL7b33FBgvuDHtRPmLVR/QKLXCEQ7CZ83iGSPYnkJXg8v8lhWw2G8Am9GZET0suoMbPsZ3qcHLOhh0e6IOxB3C180Z9yL7Rc4Pq8hKUMjupDdGSm6/obk62+EdCb7vYURnXp8Nt7DcdMCSbVBXK4nSW79Ft7Nd5iHU+IlxAso20nB5UcSTDRivURcrBCqHvOkOIG/fA//cA8vLRE98cz6Oc/gdfEGTkCGaypZLw/ws8bCNMrGCIu8s2bbkslDQV4bDksr2yjV7W3cxDyKOW7WI25vkPQf7NemL1bHmAETPVi+Pcai5hq+3MBXI+LuHeHWnrF8BWee0OvlHotiRKoH1LyAa7IsDwhor8oRNXXUTSl7unD0lko0MxoWe7sPaG6F4lQykU2XzUg0WuLnXW1HRJEFxq+7usPDdo1ZpE6bRYKMGmV8NftYllitSzgX9Ic875bxS3Q7u76tejzuhknBWaxPYqYxk4Jm2CP9t7ydrPCjKv9P0GRYbq5syVeU4a9/yPAPd7fLbnIF+IgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="screenshot of timecop"
+                  title=""
+                  src="/static/e54c55880eb9aea6f4fa92ea3c8409a0-96365.png"
+                  srcset="/static/e54c55880eb9aea6f4fa92ea3c8409a0-c0cbb.png 143w,
+/static/e54c55880eb9aea6f4fa92ea3c8409a0-0e313.png 285w,
+/static/e54c55880eb9aea6f4fa92ea3c8409a0-96365.png 570w,
+/static/e54c55880eb9aea6f4fa92ea3c8409a0-20e0c.png 822w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          </p>
 <p>I wouldn’t recommend obsessing too much over timecop.  For most packages the benefit you receive is going to significantly outweigh any startup burden.  But if your editor starts to feel sluggish, this is a great first step to figuring out if there’s anything you can drop to make an impact.</p>
 <h4>6. The UI is just HTML and CSS, and that means you can edit it</h4>
 <p>Everything you see in an Atom UI is an HTML element, with classes that you can use to select and style them. This fact is mostly relevant when creating themes, but you can also use it to make one-off UI adjustments.  For instance, when I edit Markdown files, the <a href="https://github.com/sindresorhus/atom-editorconfig">editorconfig</a> plugin I have installed warns me about a possible conflict with another atom package. The warning shows up as a small colored mouse icon in the status bar.</p>
-<p><img src="/posts/images/atom/editor-mouse.png" alt="screenshot of editorconfig mouse icon in the status bar"></p>
+<p>
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/39200e898c084d11c48d6b6d7da6471e-d9e43.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 44.88567990373045%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABf0lEQVQoz62S2VKDQBBF+RPLJTEhkTUQIBCIBIYtIWYzlsbl/z/i2j2Ulj754sOp2z0909N3QNGnCewoR5zVEIXAMhfISauqwFJQTBRlR0lkoquzJlmBRb1H2hwQ5q1E0dxYNqwPr6h2LxCbJyzXj2hPH6j2Z0lzfEPDdYpXx3cU22eURN4+yfW8Pcnz3EcZOxHMIMVcbOiGtSSim5JyC29RwYwyGP793wSdKl+W/wtFm3aWs90Z6eaMWb6R00asxQNihqZl+L147auWVLtuD9VYZcORFcDwaMq4gBUKTEm9pIA7zymmnDQg67zGeXBfwU9K+ItSxrO0Ia2R1gdY9HTKQHNguCH6Ywu9kYXL27tv+gP9O74aaLI+tF2otkcNKzg0ERNmLTnZYhJmUG5UQza7GvIBE5wzFz0VrZngsjeS8U+uhzpmyzW5EDD9lOKVbDoJ+StbPm61CYa6S1Pov/A0D7rpyAb9sQ12w/vu7Bm5mkM1PGj0l6iuT1MTpo9Pngw0OpULBzcAAAAASUVORK5CYII='); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="screenshot of editorconfig mouse icon in the status bar"
+                  title=""
+                  src="/static/39200e898c084d11c48d6b6d7da6471e-96365.png"
+                  srcset="/static/39200e898c084d11c48d6b6d7da6471e-c0cbb.png 143w,
+/static/39200e898c084d11c48d6b6d7da6471e-0e313.png 285w,
+/static/39200e898c084d11c48d6b6d7da6471e-96365.png 570w,
+/static/39200e898c084d11c48d6b6d7da6471e-d9e43.png 831w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          </p>
 <p>I find this warning distracting.  I know what its there for and have decided I don’t care about it, but I can’t dismiss it normally.  So instead I can take advantage of Atom’s flexibility to just get rid of it. All I need to do is open up devtools (⇧⌘I) and find the class.</p>
-<p><img src="/posts/images/atom/editor-mouse-devtools.png" alt="screenshot of editorconfig mouse icon in the status bar with devtools open"></p>
+<p>
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/bada6a2b6969a5a867626981a6af7347-b3b1d.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 61.800947867298575%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAACjklEQVQoz3VRaU/bUBD0P6nU0hIg5MDkJIlzmNwJEAg5gADqof7SqqRI5QMSBSpQocrhxDlt54Tp+qWN1A9YGs3bfW9nZ9ecxeED7w7CbPfi7coajOte2P0xhJJZ+OO7EFP78Ea24QlvMd4Q04xdoeQ89w96HWd1CjDbZmIzQQ8cgThimUNEd4pIZkvYTOcQ26U4c0C5A0S2ChApF6dcILHHmgqxDNxiCpxLCMET2MSaKwCr0w+zQ2CC0eQWIokUQzyVQjKdRjhBiEYhhiPwixEEiX1iDL7Iztw1ZyUBu3cT74w8c7jCb8Dmo8fUWR9biO4wh5HtAnOiQ4+Df535yZnOemwTIuCMvBtOIYxli4MJLq6uw7jmwpLFzuI3S+b/sLBsxaJpHQazjU1l0ScSYnAHk+A3xJlDmycEg8n2d496AY/XBhMJmBi/WljGgsEMCzUxWXgYzTxWnT4aMUXrSRCnIeg/xRcFt1c4xv7BKbLFE2RyR8TH2CXezhaRyuSQzuQZ8qWP2MsfIUfvCkfvUTz5hMPTz8jTOX/8AfulE7ovgeu2ZVTuK5AqMlpSE416A1KNzoS21EJbbqPfV9Dr9aAoCsbj8Ryj0QiyLEOSJKqtodvtgptMJqhf19C8qUG6e8TdbQPVqoKOrEFpaxhrY7z0PT09sSbD4RCqqrIGnH4xUAfoViqo/O7i8aFPLhVMx1M8Pz/P8ZKgXK1CJoedTgeapoEr3yr4et3H2UUdX75LKF/18I3i8pWM8+suyj96uPyl4fJBw8W9ivOfKs5uFAa9rlmvo91ooEFQFHXmUHfQq7XQk/uQG4TmgPaiodVUqesEmjrESO3R+LTDAY2mjhim0yn6LaojsXa7w8b/AyMldRuDE1ZuAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="screenshot of editorconfig mouse icon in the status bar with devtools open"
+                  title=""
+                  src="/static/bada6a2b6969a5a867626981a6af7347-96365.png"
+                  srcset="/static/bada6a2b6969a5a867626981a6af7347-c0cbb.png 143w,
+/static/bada6a2b6969a5a867626981a6af7347-0e313.png 285w,
+/static/bada6a2b6969a5a867626981a6af7347-96365.png 570w,
+/static/bada6a2b6969a5a867626981a6af7347-58e89.png 855w,
+/static/bada6a2b6969a5a867626981a6af7347-b3b1d.png 1055w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          </p>
 <p>Then we can edit our styles.less file.  Atom will open it for you if you click the <em>your stylesheet</em> link at the top of the Settings>Themes page.  My edit to remove the mouse icon looks like this:</p>
 <div class="gatsby-highlight">
       <pre class="language-less"><code><span class="token selector">.aec-icon-mouse</span> <span class="token punctuation">{</span>
@@ -381,7 +475,38 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 </div>
 <p>Since I’m no longer using Sublime Text, I decided to port the theme to Atom.  I built on the work of the great <a href="https://github.com/atom-material/atom-material-syntax">atom-material-syntax</a> package to build out a new theme.  It turns out to be surprisingly easy to build a color scheme in Atom.  Fork an existing theme, change some colors and the details in package.json, delete a bunch of git tags <sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>, and then run <code>apm deploy minor</code>, and you’re in business.  </p>
 <p>You can now download <a href="https://atom.io/themes/mariana-syntax">mariana-syntax</a> in Atom.  This was a quick port.  I’ll be working to optimize it for the languages I use (JS, Python, CSS/Less, HTML and Markdown) over the next few weeks.  I would love to see pull requests for other languages or for anything that I’ve missed so far.  I look forward to this just getting better and better. <strong>Update:</strong> Version 0.2.0 has shipped with optimized syntax for JavaScript, Python, CSS, JSON and Markdown.</p>
-<p><img src="/posts/images/mariana/screenshot.png" alt="screenshot of mariana-syntax"></p>
+<p>
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/a13c07ac2f3fde691852ce1738103fe8-72ae1.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 83.00970873786407%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsSAAALEgHS3X78AAACBklEQVQ4y51U2ZLaMBD0/6SSBV/4vpBlyxdezJJskkr+/ys6LeOlKGA3JA+NxnjU6pke2dh2L5DDEap/gZc32AQ57DDHykvwxYlg+hk+2+EM08/x5Cb4ZPqwguL0zgqx2qTLuxiGFUsEaYW9VGgPv9A+f0dd90jVgER1CFUPN1dEDZt5ZlTOsJb1Ojb0j59IjGWFtNmjOryi2h+RtTvEsoMnFHzZwC8buIWCFqBhLus1DM3uJCQreghZQ9QKidghLQcUskLRHpA1E9XVdwluCGfJDFwSeGWHDcvSz/oQh8odEul4VrXkfkhoLUmbvIW/Hdi7PULRM+7YigoR14DPj5CdCONTok9lWyqMudnJ1KzMDgVcrZTxmvHZhEcIdXmlaFGxf0X5jKBokPcTknpEIul6N8Gj2r+RGmfXIgnBDY0YiBFZ0aLsjzRlmiH7r3SdzlcjrKWn901hKbocm0kZVUWcuSAS8Ag3ruGyFRu2wEuaufyQ5pmsar3su8aZUJ/q8oQ1CZ54C1bB9grLf36BNdd1eAlxjueSnaymCiqgkk1+Wt/G5BEjbnro0sXtcECh7/XuG+T4SiN287joAzTsD/p215RsN0JoMqI7/oba/0Az/UTGudSz+ab6YYVOTAU0wroo73L2/mGw5WxGkdNlIuEHQN/dVE03fXwPl3nGybH7I2D+B/4A+oRN2m6cG54AAAAASUVORK5CYII='); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="screenshot of mariana-syntax"
+                  title=""
+                  src="/static/a13c07ac2f3fde691852ce1738103fe8-96365.png"
+                  srcset="/static/a13c07ac2f3fde691852ce1738103fe8-c0cbb.png 143w,
+/static/a13c07ac2f3fde691852ce1738103fe8-0e313.png 285w,
+/static/a13c07ac2f3fde691852ce1738103fe8-96365.png 570w,
+/static/a13c07ac2f3fde691852ce1738103fe8-72ae1.png 824w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          </p>
 <div class="footnotes">
 <hr>
 <ol>
@@ -404,12 +529,72 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
             <pubDate>Fri, 12 May 2017 02:30:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>This week I got to have a little fun remembering some High School math, and using one of my favorite libraries: <a href="https://www.highcharts.com/">Highcharts</a>.  Highcharts is a commercial JavaScript data-viz library, and it makes most standard charts and graphs a breeze to implement.  I was using it to plot a normal distribution in order to display a 95% confidence interval.  It’s a pretty straightforward problem, but its a nice example of a practical use of Highcharts, and comes with a little stats math that many of us may have learned and forgotten.</p>
 <h3>The Problem</h3>
-<p>The goal was to display a <a href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a> to represent a 95% confidence interval, given the upper and lower bounds of the confidence interval.  A normal distribution is the classic bell curve, where the area under any section of the graph represents the probability that the true value of the measure being tracked is within that range.  These curves are usually represented something like this: </p>
-<p><img src="/posts/images/normal-curve/confidence-interval.png" alt="Normal Distribution image"></p>
+<p>The goal was to display a <a href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a> to represent a 95% confidence interval, given the upper and lower bounds of the confidence interval.  A normal distribution is the classic bell curve, where the area under any section of the graph represents the probability that the true value of the measure being tracked is within that range.  These curves are usually represented something like this:</p>
+<p>
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/3c13198254a7cdabc416bd2aa060cb7b-a288d.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 66.73346693386773%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAsSAAALEgHS3X78AAABLUlEQVQoz2P4jxs8e/Vmzr5TP37+xKWAAZfEv3//ohbsMF50sm3TIZI17z572XjhCaBm05l7n7x4SZrmpMW7gDohqGfbURI033v81HDWfrhm+2lbf/36Razmjq1H4TohaPOJC0Rp/vLli/X07caLTqiWTdKom6M3aStQc/SCHURpnr0XaptO12q9yVshmo3mHTl2+ToBzc/fvLWZtRvNzRAUOm/779+/cWr+8OFD3fKtWHVC0OLNO38ipRmG9+/f379///r168ePH7906dKcbfsTlu6FI6BXkbk7j5w4e/bsqVOnbt++DdSFYvP379/fv3v3/PlzYPKC+uL5c2TZp0+fvH//AYuz//79c/na9Tt3bq1eueLz1+8QwaPHjsFS69/b9+4Bpa5cvQbXAgBPO6AxF9FI/QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="Normal Distribution image"
+                  title=""
+                  src="/static/3c13198254a7cdabc416bd2aa060cb7b-a288d.png"
+                  srcset="/static/3c13198254a7cdabc416bd2aa060cb7b-c0cbb.png 143w,
+/static/3c13198254a7cdabc416bd2aa060cb7b-0e313.png 285w,
+/static/3c13198254a7cdabc416bd2aa060cb7b-a288d.png 499w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          </p>
 <p>The x axis of the curve represents the range of values, while the y axis is a function of x that shows the relative probability for different areas.  Data sets that are normally distributed conform to the above bell curve and the <a href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule">68-95-99.7 rule</a>. There’s a 68% chance that the true value is within 1 standard deviation of the middle of the curve (the mean), a 95% chance that the true value is within 2 standard deviations, and a 99.7% chance that the true value is within 3 standard deviations.</p>
 <h3>Step 1: Generating a Dataset</h3>
 <p>Highcharts operates by plotting a set of data points, not by handling equations directly.  So our first step is computing a set of data points to plot.  We can find the equation for calculating a normal distribution’s probability density on <a href="https://en.wikipedia.org/wiki/Normal_distribution">Wikipedia</a>.</p>
-<p><img src="/posts/images/normal-curve/equation.png" alt="Normal Distribution equation"></p>
+<p>
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/6a389461177782c04eacef4eb7226e50-d27a6.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 38.82352941176471%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABC0lEQVQoz51S7Y6DIBDk/R/wcr3TWj40elYpoKiIzi3cz0uappsMS3B3nGVgSinwxuKzeuAqDb5uD1RKQ0qB/O3GwTlHVVW4ErTWeBYsxojjBCItIeyI8cRBe+895SMTtG2LVJdr6ewpYVqUkrlR6xHWGoJFURTo+x7rusI5h1eDhRAywbIsuTlhmibUdY15nrOipOxlwnEc/ik4TyLZA94JNowjGaAw+52wEjaYiVQTPKlOPzM0gTEmK3a0TxOlOzZug5tDrrGUUy9bQ4QQkpy15PKASmp8lBoXcv0+aDQ0Ohciu911XXY+Id1v6ml+pr+zdkLbW7Bl24lQEJnFNzcoKZf0fNq7f2vkX2ARazNB9qmOAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="Normal Distribution equation"
+                  title=""
+                  src="/static/6a389461177782c04eacef4eb7226e50-d27a6.png"
+                  srcset="/static/6a389461177782c04eacef4eb7226e50-c0cbb.png 143w,
+/static/6a389461177782c04eacef4eb7226e50-0e313.png 285w,
+/static/6a389461177782c04eacef4eb7226e50-d27a6.png 510w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          </p>
 <p>Yep, we get to play with an equation that has both π and e in it.  I hope this feels sufficiently like a high school math class now.  But we can actually choose to drop the left side of the equation.  It is the <a href="https://en.wikipedia.org/wiki/Normalizing_constant">normalization constant</a> for the equation: it ensures that the total area under the curve equals 1, but doesn’t change the shape of the curve.  Since we’re simply displaying the shape of the graph and care primarily about showing the range along the x axis, we can ignore it and instead use this function:</p>
 <div class="gatsby-highlight">
       <pre class="language-javascript"><code><span class="token keyword">const</span> normalY <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> mean<span class="token punctuation">,</span> stdDev<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> Math<span class="token punctuation">.</span><span class="token function">exp</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token punctuation">(</span>x <span class="token operator">-</span> mean<span class="token punctuation">)</span> <span class="token operator">/</span> stdDev<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -419,13 +604,13 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <div class="gatsby-highlight">
       <pre class="language-javascript"><code><span class="token keyword">const</span> getMean <span class="token operator">=</span> <span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>upperBound <span class="token operator">+</span> lowerBound<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// distance between mean and each bound of a 95% confidence interval </span>
+<span class="token comment" spellcheck="true">// distance between mean and each bound of a 95% confidence interval</span>
 <span class="token comment" spellcheck="true">// is 2 stdDeviation, so distance between the bounds is 4</span>
 <span class="token keyword">const</span> getStdDeviation <span class="token operator">=</span> <span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>upperBound <span class="token operator">-</span> lowerBound<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">;</span>
 
 
 <span class="token keyword">const</span> generatePoints <span class="token operator">=</span> <span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> stdDev <span class="token operator">=</span> <span class="token function">getStdDeviation</span><span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token keyword">let</span> stdDev <span class="token operator">=</span> <span class="token function">getStdDeviation</span><span class="token punctuation">(</span>lowerBound<span class="token punctuation">,</span> upperBound<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> min <span class="token operator">=</span> lowerBound <span class="token operator">-</span> <span class="token number">2</span> <span class="token operator">*</span> stdDev<span class="token punctuation">;</span>
   <span class="token keyword">let</span> max <span class="token operator">=</span> upperBound <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> stdDev<span class="token punctuation">;</span>
   <span class="token keyword">let</span> unit <span class="token operator">=</span> max <span class="token operator">-</span> min <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">;</span>
@@ -456,7 +641,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
       </div>
-<p>Which produces the following graph: </p>
+<p>Which produces the following graph:</p>
 <div>
           <div
             class="gatsby-resp-iframe-wrapper"
@@ -587,7 +772,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <h4>B - <em>Easy</em></h4>
 <p>B grade applications are similar to seamless applications, but may have a few more potholes.  Possibly there is some involved setup required to get syncing working initially, or some small chunks of the application configuration don’t sync.</p>
 <h4>C - <em>Workable</em></h4>
-<p>At this point we’ve moved out of the range of easy syncing solutions.  Here it may be possible to import and export settings from a file, without any automatic syncing.  Or there may be a straightforward way to automate the setup, but no declarative representation of the config state. </p>
+<p>At this point we’ve moved out of the range of easy syncing solutions.  Here it may be possible to import and export settings from a file, without any automatic syncing.  Or there may be a straightforward way to automate the setup, but no declarative representation of the config state.</p>
 <h4>D - <em>Hard</em></h4>
 <p>For some applications there is no clear way to sync or import state, but it is probably still possible through scripting if you’re willing to commit to it.</p>
 <h4>F - <em>Impossible</em></h4>
@@ -595,34 +780,153 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <h2>A mixed bag</h2>
 <p>Setting up my new laptop this week, I found that the software I use a lot was all over the map on this scale.  Here are the grades:</p>
 <h4>Atom - <em>B</em></h4>
-<img src="/posts/images/portability/atom.jpg" alt="Atom Logo">
+
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/093b823a2bee7ef140badd020e6e572c-61cc8.jpg"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 38.46153846153846%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAdkRQf/EABYQAAMAAAAAAAAAAAAAAAAAAAAQIf/aAAgBAQABBQIq/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAGRAAAQUAAAAAAAAAAAAAAAAAAAEQEUGB/9oACAEBAAE/IVmjDf/aAAwDAQACAAMAAAAQ99//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAACAgMAAAAAAAAAAAAAAAARIQABEDFR/9oACAEBAAE/EGUgLM06x//Z'); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="Atom Logo"
+                  title=""
+                  src="/static/093b823a2bee7ef140badd020e6e572c-76033.jpg"
+                  srcset="/static/093b823a2bee7ef140badd020e6e572c-86b1b.jpg 143w,
+/static/093b823a2bee7ef140badd020e6e572c-4eee3.jpg 285w,
+/static/093b823a2bee7ef140badd020e6e572c-76033.jpg 570w,
+/static/093b823a2bee7ef140badd020e6e572c-61cc8.jpg 650w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          
 <p><a href="https://atom.io/">Atom</a> doesn’t have native syncing persay (though most configs are in a ~/.atom folder that can possibly be synced with git).  But it has a very nice <a href="https://github.com/atom-community/sync-settings">sync-settings</a> plugin that uses gists to sync settings across multiple machines.  It loses points due to a little bit of upfront pain (when setting up a new machine you need to either create a new gist or find your old one, and you need to generate github auth keys for each instance), but gains them back with a very nice set of options to selectively restore or choose when to backup, and painless support for all of Atom’s 3rd party plugiuns</p>
 <h4>Sublime Text - <em>B+</em></h4>
-<p><img src="/posts/images/portability/sublime.png" alt="Sublime Logo"></p>
+<p>
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/379627f9a03d1e9aa502e010930f90a7-8c82b.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 100%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAABzklEQVQ4y7XUPUgbYRzH8aeBIkjFQToIikMQQR1aRMFF7iV3SS45Y+pLXXQQglKLqBTsVkolVWJSS821Q2mHdrVL92d1EQQXHesoiKiIKFF//iM+Po82SaXBg89wzz3/L3fHcYzdx+G67gzhZUpeB6PRKCco0/p1MBKJcIK7GozbSI8+Qcx11HUZdByHE5Qy3GvAG2/B2rsa5LwHwBeG/pit7vl3MDHQhe8TTdh8X43zz+wyourrtgoHw+EwJxB+TDZiK/WoYET1zLWgzMlgKBTiBIJ4pEJ2PlTg90w9Xg+1Q50hMhgMBjmBUCh46jEsv2pAPGJC3auQQdu2OYFQ6g5Psj6svHmMVKIVQWWGyKBlWZxASCeasfq2pmQ4r8fRoczJYCAQ4AS39Tgavr7wYz/jw5n3dzAW1tT9xYMj8U58e+nHxmwVjhYZDhYYducY9lLs8lzEiwZN0+QEwsmSD+c0JJxlGXKfGI4/MhxmGLZmH+LXZC3sgAFlTgYNw+AEQi5L7y7/DV7JR7fTFViersPU86ewTB3q/isyqOs6JxBE8M98JX5ONGCstw2Gcr0IGdQ0jRMI2VE/hrs7oK7dQfHgf7oRTOYXyuTdy9//ArsSf5hQYhcEAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="Sublime Logo"
+                  title=""
+                  src="/static/379627f9a03d1e9aa502e010930f90a7-96365.png"
+                  srcset="/static/379627f9a03d1e9aa502e010930f90a7-c0cbb.png 143w,
+/static/379627f9a03d1e9aa502e010930f90a7-0e313.png 285w,
+/static/379627f9a03d1e9aa502e010930f90a7-96365.png 570w,
+/static/379627f9a03d1e9aa502e010930f90a7-58e89.png 855w,
+/static/379627f9a03d1e9aa502e010930f90a7-8c82b.png 1024w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          </p>
 <p><a href="https://www.sublimetext.com/3">Sublime Text</a> saves all of its configurations as JSON, so its pretty easy to move them over.  It loses a few points though for making you figure out how to sync them, and a few more points for sticking user configs by default in the <code>~/Library/Application Support/</code> directory, where it is a bit more difficult to sync using things like git and dotfiles.  </p>
 <h4>Command Line programs - <em>A-</em></h4>
 <div class="img-group">
-  <image alt="Vim logo" src="/posts/images/portability/vim.png">
-  <image alt="fish logo" src="/posts/images/portability/fish.png">
+  <image alt="Vim logo" src="vim.png">
+  <image alt="fish logo" src="fish.png">
 </div>
 <div class="img-group">
-  <image alt="git logo" src="/posts/images/portability/git.png">
+  <image alt="git logo" src="git.png">
 </div>
 <p>Command line programs like Vim, Ack, bash/zsh/fish, and git all nail the idea of declarative configuration files that are stored in a common place.  They fall short of a pure A since they don’t provide a sync solution themselves (that would be very non-unixy), but since it is easy to set up <a href="https://dotfiles.github.io/">dotfile repos</a> to sync and backup these settings, they qualify for a strong A-.</p>
 <h4>iTerm2 - <em>C</em></h4>
-<p><img src="/posts/images/portability/iterm.png" alt="iterm2 Logo"></p>
+<p>
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/6ad77f78686b0db16d3e262640e631b8-012e9.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 100%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsSAAALEgHS3X78AAACjklEQVQ4y83US08aURjG8enSO8gwzCAgl2FuZ2CgWiv1smi6sDUxRFp2Jg0LRE3TxKirLirp1nZhWkyrrWy666Jbd/0AfoF+mafnPZYBEbtyUZJ/JifD+c07JwRJ+u8/9Xpdvby8/H0XXVxcHEpzc3PJnZ0d/Kvt7e1rbW1t+TUaDdHm5iY2NjY+S1NTUynXdeEWXLAHDCzP8xickgNn3oGdt2HbNizLgmmaIsMwRNls1k/XdaRSqS9SLBZL5Qo5sOcMyg8N9hpHVmyoRyoiRxHYjznodNF+OGtcA08JTHsPPSg/o7De2WBrfLqyA+WTgvDHMOynNhzGp3WcG2hnUiqTyWB6evqMwExhtgDrtQ35lwrzlQVWYQKknGcOGGM+2Pv6hCSTSYKQSCTAj++MzlAXYMOG3soidpoAe9EDrnLQ7YL0aoQQEI/HwQcScQeapn0lMFucLYK9dBH9Hoe34sFddaF90KC91+A8cWBaJp3PDYCKRqMijiESiXy7AotF0JTePO++h/xMHu4jF/qMjkQmcStAqaoq4hhkWT6X+E1DgAWOeZ44r3Q67SODANpMKYriFw6HMTk5SaBmEEYQnU0/0juBEulupvhEkEMyQqGQKBAInEv8CwZNdNtr9E4gALkL8IkQDFJB0cTExLk0NjZm9AL9SAfqRa6gIE3kxzFwqy2Njo6ag85j8DRBHyKAGh8fF3EM3GpLQ0NDpv/Uvk39G2nT342iEWpkRDQ8PAxutaVcLmeenJyg1WqJjo+PcXBwgP39fdHu7q5Y7+3tXVt37lOde7VarS3xH2ugWq2+WV9fb1YqlWa5XG4uLy83l5aWRAsLC/6aXw8XFxcP6Tqgt6VSaaXzP3vvjpL+AJoEBnJEvTthAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="iterm2 Logo"
+                  title=""
+                  src="/static/6ad77f78686b0db16d3e262640e631b8-012e9.png"
+                  srcset="/static/6ad77f78686b0db16d3e262640e631b8-c0cbb.png 143w,
+/static/6ad77f78686b0db16d3e262640e631b8-0e313.png 285w,
+/static/6ad77f78686b0db16d3e262640e631b8-012e9.png 512w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          </p>
 <p><a href="https://www.iterm2.com/">iterm2</a> is probably the most popular terminal replacement on the mac.  It has tons of settings that you normally edit through a GUI menu.  It does allow you to export those settings, and import them on another machine.  So you need to have access to the original file to generate a snapshot at any given time and need a way to transfer the file(s), but otherwise this is still pretty workable.</p>
 <h4>Hyper - <em>A-</em></h4>
-<p><img src="/posts/images/portability/hyper.gif" alt="hyper Logo"></p>
 <p><a href="https://hyper.is/">Hyper</a> is a newer <a href="https://electron.atom.io/">Electron</a>-based terminal application for OSX.  Like Sublime Text, it defaults to offering a GUI interface into text based configuration files.  Unlike Sublime Text, it stores that file and its plugin files in the users home directory where they can easily be included in a dotfile repo.</p>
 <h4>MacOS - <em>D-</em></h4>
-<p><img src="/posts/images/portability/macos.jpg" alt="macOS sierra Logo"></p>
+<p>
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/8af8f768ce91ce5a30f67cff603de68e-74348.jpg"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 56.25%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAEFAgT/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAHbms07yWOf/8QAGBAAAwEBAAAAAAAAAAAAAAAAAAECERL/2gAIAQEAAQUC5MRkk0x0xNn/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwFX/8QAFhABAQEAAAAAAAAAAAAAAAAAMQAQ/9oACAEBAAY/AsZnP//EABoQAAICAwAAAAAAAAAAAAAAAAARAVExQXH/2gAIAQEAAT8hWdlwwWwpwIZk/9oADAMBAAIAAwAAABCzL//EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQMBAT8QbukP/8QAFhEAAwAAAAAAAAAAAAAAAAAAAAER/9oACAECAQE/EFUUf//EABoQAQADAQEBAAAAAAAAAAAAAAEAESExkUH/2gAIAQEAAT8QeEQ4oz7cUWeGWUwLqUZbdQRr2n//2Q=='); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="macOS sierra Logo"
+                  title=""
+                  src="/static/8af8f768ce91ce5a30f67cff603de68e-76033.jpg"
+                  srcset="/static/8af8f768ce91ce5a30f67cff603de68e-86b1b.jpg 143w,
+/static/8af8f768ce91ce5a30f67cff603de68e-4eee3.jpg 285w,
+/static/8af8f768ce91ce5a30f67cff603de68e-76033.jpg 570w,
+/static/8af8f768ce91ce5a30f67cff603de68e-74348.jpg 800w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          </p>
 <p>Unlike most of the applications I run on it, MacOS is extremely unfriendly to syncing configurations.  There are a few settings I want the same on all my laptops.  Touchpad scrolling should be in the “unnatural”<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup> direction, keys should repeat when held, and caps log should be disabled/mapped to control.  There is a set of apps that I would always want to have installed.  There is no declarative way to configure this, or sync it across computers.  Apple’s preferred strategy seems to be having folks use time machine backups, which is great for setting up a new computer for the same purpose as an old one when it is being replaced, but unhelpful when 2 laptops are being used by the same person for different purposes.  It is possible to script the setup of a new laptop with scripts like <a href="https://github.com/mathiasbynens/dotfiles/blob/master/.macos">this one</a> but its very involved and when you update a setting the “normal MacOS way”, its not always clear how you would add that setting to a script.  Plus a “from scratch” script won’t help keep 2 machines aligned as their configs diverge over time.</p>
 <h4>Cloud Services - <em>A</em></h4>
-<div class="img-group">
-  <image alt="dropbox" src="/posts/images/portability/dropbox.png">
-  <image alt="bear logo" src="/posts/images/portability/bear.png">
-</div>
 <p>Unsurprisingly, the one class of software that really nails this experience is cloud software.  For services like Dropbox, Bear, Evernote, Slack, email &#x26; calendar clients, etc, most if not all settings and data is stored on servers somewhere else, so getting a new machine up to date and staying in sync over time is just a matter of entering a password.  There are reasons to dislike cloud services, but when moving to a new machine, they’re a thing of beauty.</p>
 <h2>Takeaways</h2>
 <p>If you are going to be using 2 computers for different purposes as a developer, take the time to setup a good dotfiles repo that contains the configs for the command line programs and editors you use.  These days if you do that, pretty much everything else but the operating system will come right along.</p>
@@ -791,21 +1095,176 @@ PASS<span class="token operator">=</span>true
             <content:encoded><![CDATA[<p>Last year Google coined the term “Progressive Web App” as a way of describing the type of sites and applications that they think are the future of the web.  Progressive Web Apps are sites that load quickly, are always responsive to user input, work as well as possible offline, and integrate with native platforms like native apps.  While this site is not an “app” per say, I do want it to be as fast and responsive as possible, and I also wanted to better understand what Google is pulling under the PWA umbrella.  Fortunately, Google has built a tool <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> to help developers profile and improve their web applications, comparing them to a set of PWA benchmarks.  So I took this site through Lighthouse, and worked against their suggestions with the goal of learning more about PWAs and improving the experience of using benmccormick.org.  I’m passing along my experience here.</p>
 <h3>Getting Started</h3>
 <p>I began by downloading the Lighthouse extension in the <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk">Chrome Web Store</a>.  Lighthouse can be installed either as a chrome extension or a node command line tool.  Both produce the same HTML report, but I chose the chrome extension for the convenience of keeping everything in the browser.  When I ran the initial report, I got the following result:</p>
-<img src="/posts/images/lighthouse/first_report_summary.png" alt="first score: 48/100">
+
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/b43f9b9716550b8ad7ac2cd3dad6b796-c68b8.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 15.844402277039848%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAmElEQVQI12PQs9/x38Jz338jlz3/FY22/O/xrP1/Yd+l/0+fPgXjJ0+egPGbN2/+//r1Cyf+8ePH/y9fvvxnUDPf+l/FbPt/eaNtYAwy9Mz+C///vDkFNuTt27f/X79+DaZBGv/9+4cXM9y8/er/rTuv/9+++/b/k2dfwfjbh6f//96bA3flixcv4K58//492PC/f//+xwYAdJjTkOzFp0sAAAAASUVORK5CYII='); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="first score: 48/100"
+                  title=""
+                  src="/static/b43f9b9716550b8ad7ac2cd3dad6b796-96365.png"
+                  srcset="/static/b43f9b9716550b8ad7ac2cd3dad6b796-c0cbb.png 143w,
+/static/b43f9b9716550b8ad7ac2cd3dad6b796-0e313.png 285w,
+/static/b43f9b9716550b8ad7ac2cd3dad6b796-96365.png 570w,
+/static/b43f9b9716550b8ad7ac2cd3dad6b796-58e89.png 855w,
+/static/b43f9b9716550b8ad7ac2cd3dad6b796-c68b8.png 1054w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          
 <p>48 out of 100 didn’t seem like a bad starting place.  Scrolling down it looked like I was mainly dinged on a few main areas:</p>
 <ol>
 <li>I had no offline support</li>
 <li>I did’t have any special setup for being included on a users homescreen. (I did have platform appropriate icons, but no app configuration)</li>
 <li>I had some possible inefficiencies in the assets I loaded.</li>
 </ol>
-<img src="/posts/images/lighthouse/first_report_offline.png" alt="offline issues">
-<img src="/posts/images/lighthouse/first_report_native.png" alt="native issues">
-<img src="/posts/images/lighthouse/first_report_assets.png" alt="asset issues">
+
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/9e55b24731cd8d1af11946a379849de5-39941.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 23.485967503692766%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAAAt0lEQVQY05WP3QrDIAyF+/4vuIuB0vrXWmRWXVuo46xJke1yE+TEmHw56Wqt6PsexhhorWGthZQSQgg45zAMA+uvpzuOg0HUSLBvpbxSipUGTtPEGkKANhb2HORGf+Y9/8UYLyA50CfEe8+wcRxZKT/PM78J3AZRs7YThH5AmgXWJ5RSsO87Olo5pYSorkK6BCAlYM6Zi5dl4bhpeW4IqSLkiry9Piu34HW/8TrNIbklN+u64p/zBpcye/JYzjOeAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="offline issues"
+                  title=""
+                  src="/static/9e55b24731cd8d1af11946a379849de5-96365.png"
+                  srcset="/static/9e55b24731cd8d1af11946a379849de5-c0cbb.png 143w,
+/static/9e55b24731cd8d1af11946a379849de5-0e313.png 285w,
+/static/9e55b24731cd8d1af11946a379849de5-96365.png 570w,
+/static/9e55b24731cd8d1af11946a379849de5-39941.png 677w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          
+
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/39fef9f1d1910ba1d2f0a61fe1e96fcb-0f229.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 91.183879093199%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsSAAALEgHS3X78AAABfklEQVQ4y8VUCW7DIBDM/x8YJb7bpo7rcNiWHcfndBcKjdSqlaNKRRotxrAszAy7dV3RNA3CMESSJDgcDjgej4jjGEEQoCgKaK0hpTRR6BavYsBZDjhRLFVr/jG6rsMO1Nq2RZ7nfqFSyoPHHO7H3DyOVVWZWNe1Tcht0QrV3SKuelkWbG0+4ToKVOICEUfoizMWKbAIgpIWtOFSaeorC/q3jsNPCaVJKKMIOsvQvDxjeCvsYk5OR9pWIZGzXq+YsxTzU4YpiTFTtdx3YxsrFKhpgSpLKJqsCepywdT3WKeRMG2r0CQl2ucoxJwmNoaBrZL7SbS9QnOHpD9FCWs6Znc6PU6KTTpaArT6JOMRUljh+/3eOCQilhnsEnaOc41zgxOzd45UyOVIjumNdk3CYRhoAmmQjuEm3ruDI2/KSvCK+Oi77291WBthx38l7NILWxEhV/L2w3f4q2wY22VTkrArf2f8gvDrcbvdvtzZfwm79MLWaQpNkjHClttIeQc+CW5kIdXlRgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="native issues"
+                  title=""
+                  src="/static/39fef9f1d1910ba1d2f0a61fe1e96fcb-96365.png"
+                  srcset="/static/39fef9f1d1910ba1d2f0a61fe1e96fcb-c0cbb.png 143w,
+/static/39fef9f1d1910ba1d2f0a61fe1e96fcb-0e313.png 285w,
+/static/39fef9f1d1910ba1d2f0a61fe1e96fcb-96365.png 570w,
+/static/39fef9f1d1910ba1d2f0a61fe1e96fcb-0f229.png 794w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          
+
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/9198b7ff42694743ff6a9ceab414b4bd-652c7.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 87.41134751773049%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsSAAALEgHS3X78AAABU0lEQVQ4y52UC2+CQBCE/f8/r42t0iCiIBB8kSCgPLb91iwNjaGBSya3EJibnd29RV3XEkWRxHEsh8NB46IoZO5adF0nVVVJdbnI/X6XPM91B4/HQ8qy1L1pGuHwtm2Ff8BLQgvaKFSFvu/LdrtV8IzyIAj0/W63k81mI5efw/8l9Mongeu6+pPjOKpycsoWvOXvkiSJ7Pd7VRSGofp5PB411UkegrZ7eoNHLEtpzK+XhJyOX3iFKtTh1fV6nVdlCxr3S1MkbbyEmOrPJmTRIhAC1NIukwktZdQBYgoDIJ6tcF04g2kBaZoObLD3Y1XvCT9un/oxqUJshMQQZlk2qPxo29AqgPH6O1pTWqb3EL9QZqkR287IoXayh6vbuvcLMK/n81krP6soq2yphKfTSYFCuxzwzyZobGHPb2P7Xq8QEmbY5tmKxUFcHMAuEeB5Xj/z33u9KOKbzA5XAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="asset issues"
+                  title=""
+                  src="/static/9198b7ff42694743ff6a9ceab414b4bd-652c7.png"
+                  srcset="/static/9198b7ff42694743ff6a9ceab414b4bd-c0cbb.png 143w,
+/static/9198b7ff42694743ff6a9ceab414b4bd-0e313.png 285w,
+/static/9198b7ff42694743ff6a9ceab414b4bd-652c7.png 564w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          
 <p>Native app support isn’t a huge priority for me, and the assets issue seemed small, so I decided to investigate the offline support issue first.</p>
 <h3>Offline</h3>
 <p>I based my service worker implementation off of <a href="https://github.com/chriscoyier/Simple-Offline-Site">Simple Offline Site</a> a demo Service Worker repo created by Chris Coyier for an article on <a href="https://css-tricks.com/serviceworker-for-offline/">CSS Tricks</a>.  This was perfect since it’s default behavior was what I wanted: cache everything, and check for updates from the server everytime we return from cache so we’re never out of date for long.  You can see what I did specifically in my <a href="https://github.com/benmccormick/benmccormickorg/blob/master/pages/sw.es6">github repo for this site</a>. After adding the service worker, my score moved up to 63/100.  </p>
 <p>Finally, Service Workers only work on HTTPS connections, but most links to my site are not https currently. So to take full advantage (and to address another metric I was flagged on), I used a <a href="https://support.cloudflare.com/hc/en-us/articles/200170536-How-do-I-redirect-all-visitors-to-HTTPS-SSL-">CloudFlare page rule</a> to redirect all visting traffic to use https.  That bumped me up to 69/100.</p>
-<img src="/posts/images/lighthouse/second_report_offline.png" alt="asset issues">
+
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/3524d6aba8ebb3d97647be7aa141fefa-0b307.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 86.86868686868686%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsSAAALEgHS3X78AAABnElEQVQ4y51Ua2/CMAzk//+e/YpJ0yYVGJto1dIHDX2lqC3Q140zSmH7RGfpcEjw4bOdLIbsFbX3Atd14XnehLIsMY7jbCzGco0ufUOe58iyTHyapkJIz73T6YRnbUHWuq4RhiF2ux1835cMuY6iCE3TyDlJq6qSNffMPj3PuG7b9kZ4uVzgf6zhWxtBuPqGvQzhXFEHSgLO57P4Rxgy47uuuxESTmTB8Rw4zg3MkLL7RGOO3TN8t7D/3EJ92Yg3Ni4qR3cla8NkPiG1s/hFUfxqjtZavAH3H/fM7xhHNRMhbVmtoHKFOI4FbAgbpJSSgL7vn8+QlncF9FFL7TiTtm3jcDhIwYdhmCeZ5p8D5DoXMmK73cooUcrsOaRZ1RKpTmWYmRkRBIHIT5JE5uxpQs4YC8x6MZhknKn/2HRTKJHzx9rRmzqaueSaTTLd/dtxguM3Sc7aTJpiRseA3xnMazdLMmWax4CenX32haHdX5vrB/+dEtlVk5UBa/qYtcmYcs2r9Hg2SfZcC/G3LdfvuNujiQ447VP0WTmrKT9f9h++NLX0OgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="asset issues"
+                  title=""
+                  src="/static/3524d6aba8ebb3d97647be7aa141fefa-96365.png"
+                  srcset="/static/3524d6aba8ebb3d97647be7aa141fefa-c0cbb.png 143w,
+/static/3524d6aba8ebb3d97647be7aa141fefa-0e313.png 285w,
+/static/3524d6aba8ebb3d97647be7aa141fefa-96365.png 570w,
+/static/3524d6aba8ebb3d97647be7aa141fefa-0b307.png 792w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          
 <h3>Native Support</h3>
 <p>As I said previously, native platform support isn’t a major priority for this blog, but I was curious about the process.  Getting native support turned out to be very straightforward.  I had already collected icons for the various platforms, and created a simple manifest when I originally created a favicon for my site.  But the manifest file didn’t have everything and it wasn’t being deployed properly to my site.  Fixing that and making it available at <code>/manifest.json</code>, fixed all of the problems related to native platform support.</p>
 <p>My manifest file now looks like this:</p>
@@ -832,7 +1291,38 @@ PASS<span class="token operator">=</span>true
 </code></pre>
       </div>
 <p>After correctly deploying that manifest file, my score moved all the way up to 100/100!</p>
-<img src="/posts/images/lighthouse/third_report_native.png" alt="asset issues">
+
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/29582e44730854d3b22d4e55fcc7e560-d75e8.png"
+            style="display: block"
+            target="_blank"
+            rel="noopener"
+          >
+            <span
+              class="gatsby-resp-image-wrapper"
+              style="position: relative; z-index: -1; display: block; "
+            >
+              <span
+                class="gatsby-resp-image-background-image"
+                style="padding-bottom: 21.822849807445444%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAiUlEQVQY05XOywoCIRQGYF85aNWih2kR80KzEHHEXKggSJMMXgb/mgMFbWISPuQczo2FcIfWGsYYKKUwTROklCSlhFrrLsuyYJ4fYPXVlHMmpZSPd+G6rru01gi73Aac1Jku5JxDCEFXjuNI8bb5n8eufsBBHhFjhLUW3ns45+jfhBC+8r33nwOfKXIxNiGRJ5EAAAAASUVORK5CYII='); background-size: cover; display: block;"
+              >
+                <img
+                  class="gatsby-resp-image-image"
+                  style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+                  alt="asset issues"
+                  title=""
+                  src="/static/29582e44730854d3b22d4e55fcc7e560-96365.png"
+                  srcset="/static/29582e44730854d3b22d4e55fcc7e560-c0cbb.png 143w,
+/static/29582e44730854d3b22d4e55fcc7e560-0e313.png 285w,
+/static/29582e44730854d3b22d4e55fcc7e560-96365.png 570w,
+/static/29582e44730854d3b22d4e55fcc7e560-d75e8.png 779w"
+                  sizes="(max-width: 570px) 100vw, 570px"
+                />
+              </span>
+            </span>
+          </a>
+          
 <p>I clearly benefited from starting in a good spot.  <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> is “fast by default” as a platform for building blogs, and I’ve done my best to avoid making it slow.  But it was fun seeing what I could do to make the site a better experience for users with bad connectivity, and to learn more about what Google is trying to do with PWAs.  </p>
 <h3>More Resources</h3>
 <ul>
