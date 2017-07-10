@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Mon, 10 Jul 2017 12:11:58 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jul 2017 12:19:18 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -21,7 +21,7 @@
             <pubDate>Mon, 10 Jul 2017 12:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>It can be difficult to keep up with all the things going on in web development, especially since the JavaScript language itself has been changing over the last several years.  After several years of relative stability<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>, the ECMAScript spec (<a href="https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">ECMAScript is the specification for the JavaScript language</a>) has changed quite a bit over the last 3 years, with more changes on the way.  In this post I wanted to highlight a few of the resources I can recommend for keeping up with the language changes.</p>
 <h3>Learning ES6/ES2015</h3>
-<p>If you haven’t paid attention to any features that aren’t ready in all browsers yet, or you’re getting back to JavaScript development after being away for a while, you probably could use a resource to catchup on the ES6 JavaScript release from 2015.  ES6 is now <a href="https://kangax.github.io/compat-table/es6/">almost completely</a> implemented in the latest versions of all major browsers, so if you’ve been ignoring it due to compatibility concerns, now is the time to learn.  Fortunately there are a lot of great resources for learning about ES6.  My favorite quick reference is the babel <a href="https://babeljs.io/learn-es2015/">Learn ES2015 page</a>.  It’s a short, example filled page with explanations of all the major features of the language update. If you want something meatier, there have been several resources created by JS experts.  <a href="http://amzn.to/2tVcwaW">Understanding ECMAScript 6</a> by <a href="https://www.nczonline.net/about/">Nicholas Zakas</a> and <a href="http://exploringjs.com/es6.html">Exploring ES6</a> by <a href="http://2ality.com/">Axel Rauschmayer</a> are books that go through the new features in detail.  If you prefer video tutorials, <a href="http://wesbos.com/">Wes Bos</a> has a <a href="https://es6.io/">whole video course on ES6</a>.</p>
+<p>If you haven’t paid attention to any features that aren’t ready in all browsers yet, or you’re getting back to JavaScript development after being away for a while, you probably could use a resource to catchup on the ES6 JavaScript release from 2015.  ES6 is now <a href="https://kangax.github.io/compat-table/es6/">almost completely</a> implemented in the latest versions of all major browsers, so if you’ve been ignoring it due to compatibility concerns, now is the time to learn.  Fortunately there are a lot of great resources for learning about ES6.  My favorite quick reference is the <a href="https://babeljs.io/learn-es2015/">Learn ES2015 page</a> from <a href="https://babeljs.io/">Babel</a>.  It’s a short, example filled page with explanations of all the major features of the language update. If you want something meatier, there have been several resources created by JS experts.  <a href="http://amzn.to/2tVcwaW">Understanding ECMAScript 6</a> by <a href="https://www.nczonline.net/about/">Nicholas Zakas</a> and <a href="http://exploringjs.com/es6.html">Exploring ES6</a> by <a href="http://2ality.com/">Axel Rauschmayer</a> are books that go through the new features in detail.  If you prefer video tutorials, <a href="http://wesbos.com/">Wes Bos</a> has a <a href="https://es6.io/">whole video course on ES6</a>.</p>
 <h3>Keeping up with new features</h3>
 <p>Things haven’t been changing as fast since the ES6 release.  The first 2 “annual releases” of the ECMAScript spec contained only a <a href="http://2ality.com/2016/01/ecmascript-2016.html">combined</a> <a href="http://2ality.com/2016/02/ecmascript-2017.html">8 features</a>. but there are still a lot of new features working their way through the ECMAScript pipeline.  If you want to get a quick overview of the features being considered for future releases, the best place to look is the <a href="https://github.com/tc39/proposals">TC39 proposals repo on Github</a>.  TC39 is the organization that guides the future of the ECMAScript spec.  Proposals go through a 4 stage process, where stage 1 can best be understood as “ideas”, and stage 4 is “confirmed for the next ECMAScript release”.  <a href="https://ponyfoo.com/contributors/ponyfoo">Nicolás Bevacqua</a> put up a <a href="https://ponyfoo.com/articles/tc39-ecmascript-proposals-future-of-javascript">good post</a> last week describing this process in depth, as well as giving a brief description of the more advanced proposals in the queue. If you’re interested in keeping up with new proposals but want somebody to walk you through them, I recommend subscribing to Axel Rauschmayer’s <a href="http://2ality.com/">2ality</a> blog.  In addition to writing the ES6 book mentioned above, he regularly writes blog posts highlighting new proposals with detailed explanations of the feature implementation and motivation.</p>
 <h3>Testing new features</h3>
@@ -29,13 +29,12 @@
 <h3>Keeping up with the conversation</h3>
 <p>If you’re a twitter user, probably the easiest way to keep up with language evolution is to follow the people who are shaping and teaching the new language features.  Some twitter follow recommendations:</p>
 <ul>
-<li><a href="https://twitter.com/wycats">Yehuda Katz</a> - TC39 Member, Ember core developer</li>
-<li><a href="https://twitter.com/rauschma">Axel Rauschmayer</a> - JS Blogger and Trainer, ES6 expert</li>
-<li><a href="https://twitter.com/wesbos">Wes Bos</a> - JS teacher</li>
-<li><a href="https://twitter.com/sebmarkbage">Sebastian Markbåge</a> - TC39 Member, React core developer</li>
-<li><a href="https://twitter.com/left_pad">Henry Zhu</a> - Babel Maintainer</li>
+<li><a href="https://twitter.com/wycats">Yehuda Katz</a> - TC39 member, Ember core developer</li>
+<li><a href="https://twitter.com/rauschma">Axel Rauschmayer</a> - JS blogger and trainer</li>
+<li><a href="https://twitter.com/wesbos">Wes Bos</a> - JS blogger and trainer</li>
+<li><a href="https://twitter.com/sebmarkbage">Sebastian Markbåge</a> - TC39 member, React core developer</li>
+<li><a href="https://twitter.com/left_pad">Henry Zhu</a> - Babel maintainer</li>
 </ul>
-<h3>Official Sources</h3>
 <div class="footnotes">
 <hr>
 <ol>
