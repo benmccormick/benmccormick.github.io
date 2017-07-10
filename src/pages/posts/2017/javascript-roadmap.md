@@ -3,7 +3,7 @@ title: "How to follow the JavaScript roadmap"
 date: "2017-07-10 12:00:00+00:00"
 layout: "post"
 path: "/2017/07/10/how-to-follow-the-javascript-roadmap/"
-description: "Tips for how to keep up with where the language is going"
+description: "Keeping up with the languages progress"
 keywords: "javascript roadmap tc39 ecmascript"
 category: "javascript"
 key: "following-js-roadmap"
@@ -14,7 +14,7 @@ It can be difficult to keep up with all the things going on in web development, 
 
 ### Learning ES6/ES2015
 
-If you haven't paid attention to any features that aren't ready in all browsers yet, or you're getting back to JavaScript development after being away for a while, you probably could use a resource to catchup on the ES6 JavaScript release from 2015.  ES6 is now [almost completely](https://kangax.github.io/compat-table/es6/) implemented in the latest versions of all major browsers, so if you've been ignoring it due to compatibility concerns, now is the time to learn.  Fortunately there are a lot of great resources for learning about ES6.  My favorite quick reference is the babel [Learn ES2015 page](https://babeljs.io/learn-es2015/).  It's a short, example filled page with explanations of all the major features of the language update. If you want something meatier, there have been several resources created by JS experts.  [Understanding ECMAScript 6][understandingecma] by [Nicholas Zakas][zakas] and [Exploring ES6][exploring] by [Axel Rauschmayer][2ality] are books that go through the new features in detail.  If you prefer video tutorials, [Wes Bos][wb] has a [whole video course on ES6](https://es6.io/).
+If you haven't paid attention to any features that aren't ready in all browsers yet, or you're getting back to JavaScript development after being away for a while, you probably could use a resource to catchup on the ES6 JavaScript release from 2015.  ES6 is now [almost completely](https://kangax.github.io/compat-table/es6/) implemented in the latest versions of all major browsers, so if you've been ignoring it due to compatibility concerns, now is the time to learn.  Fortunately there are a lot of great resources for learning about ES6.  My favorite quick reference is the [Learn ES2015 page](https://babeljs.io/learn-es2015/) from [Babel][babel].  It's a short, example filled page with explanations of all the major features of the language update. If you want something meatier, there have been several resources created by JS experts.  [Understanding ECMAScript 6][understandingecma] by [Nicholas Zakas][zakas] and [Exploring ES6][exploring] by [Axel Rauschmayer][2ality] are books that go through the new features in detail.  If you prefer video tutorials, [Wes Bos][wb] has a [whole video course on ES6](https://es6.io/).
 
 ### Keeping up with new features
 
@@ -22,21 +22,19 @@ Things haven't been changing as fast since the ES6 release.  The first 2 "annual
 
 ### Testing new features
 
-Almost all of the higher stage proposals on the TC39 list have been implemented by [Babel](https://babeljs.io/) and you can try them out in the Babel [REPL](https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015%2Creact%2Cstage-2&targets=&browsers=&builtIns=false&debug=false&code_lz=Q) or by setting up a small project that loads in Babel.  
+Almost all of the higher stage proposals on the TC39 list have been implemented by [Babel][babel] and you can try them out in the Babel [REPL](https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015%2Creact%2Cstage-2&targets=&browsers=&builtIns=false&debug=false&code_lz=Q) or by setting up a small project that loads in Babel.  
 
 
 ### Keeping up with the conversation
 
 If you're a twitter user, probably the easiest way to keep up with language evolution is to follow the people who are shaping and teaching the new language features.  Some twitter follow recommendations:
 
-- [Yehuda Katz](https://twitter.com/wycats) - TC39 Member, Ember core developer
-- [Axel Rauschmayer](https://twitter.com/rauschma) - JS Blogger and Trainer, ES6 expert
-- [Wes Bos](https://twitter.com/wesbos) - JS teacher
-- [Sebastian Markbåge](https://twitter.com/sebmarkbage) - TC39 Member, React core developer
-- [Henry Zhu](https://twitter.com/left_pad) - Babel Maintainer
+- [Yehuda Katz](https://twitter.com/wycats) - TC39 member, Ember core developer
+- [Axel Rauschmayer](https://twitter.com/rauschma) - JS blogger and trainer
+- [Wes Bos](https://twitter.com/wesbos) - JS blogger and trainer
+- [Sebastian Markbåge](https://twitter.com/sebmarkbage) - TC39 member, React core developer
+- [Henry Zhu](https://twitter.com/left_pad) - Babel maintainer
 
-
-### Official Sources
 
 [^1]: From the release of the ECMAScript 5 spec to the ES6/ECMAScript2015 spec, the language wasn't exactly stable in practice because browser implementations didn't always move quickly, and there were still many incompatibilities.  But standard language syntax stayed stable for quite a while, which allowed the browser ecosystem to iron out some of those kinks prior to the adoption of ES6.
 
@@ -47,3 +45,4 @@ If you're a twitter user, probably the easiest way to keep up with language evol
 [wb]:http://wesbos.com/
 [proposals]: https://github.com/tc39/proposals
 [ponyfoo]: https://ponyfoo.com/contributors/ponyfoo
+[babel]: https://babeljs.io/
