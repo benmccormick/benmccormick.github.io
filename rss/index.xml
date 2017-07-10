@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Mon, 10 Jul 2017 12:19:18 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jul 2017 12:34:15 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -555,7 +555,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
-            <title><![CDATA[Building Normal Distribution Charts using Highcharts]]></title>
+            <title><![CDATA[Building Normal Distribution Charts Using Highcharts]]></title>
             <link>https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/</link>
             <guid>https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/</guid>
             <pubDate>Fri, 12 May 2017 02:30:00 GMT</pubDate>
@@ -793,7 +793,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
-            <title><![CDATA[Grading Applications on Config Portability]]></title>
+            <title><![CDATA[Grading Applications On Config Portability]]></title>
             <link>https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/</link>
             <guid>https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/</guid>
             <pubDate>Fri, 14 Apr 2017 21:30:00 GMT</pubDate>
@@ -974,7 +974,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
-            <title><![CDATA[The Mystery of Docker and the Disk-Eating Cow]]></title>
+            <title><![CDATA[The Mystery Of Docker And The Disk-Eating Cow]]></title>
             <link>https://benmccormick.org/2017/03/28/the-mystery-of-docker-and-the-disk-eating-cow/</link>
             <guid>https://benmccormick.org/2017/03/28/the-mystery-of-docker-and-the-disk-eating-cow/</guid>
             <pubDate>Tue, 28 Mar 2017 14:40:00 GMT</pubDate>
@@ -1076,7 +1076,7 @@ PASS<span class="token operator">=</span>true
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
-            <title><![CDATA[Giving Context to Best Practices]]></title>
+            <title><![CDATA[Giving Context To Best Practices]]></title>
             <link>https://benmccormick.org/2017/02/18/context-to-best-practices/</link>
             <guid>https://benmccormick.org/2017/02/18/context-to-best-practices/</guid>
             <pubDate>Sat, 18 Feb 2017 23:30:00 GMT</pubDate>

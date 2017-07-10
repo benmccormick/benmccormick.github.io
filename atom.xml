@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-07-10T12:19:18Z</updated>
+    <updated>2017-07-10T12:34:15Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -580,7 +580,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Building Normal Distribution Charts using Highcharts]]></title>
+        <title type="html"><![CDATA[Building Normal Distribution Charts Using Highcharts]]></title>
         <id>https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/</id>
         <link href="https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/">
         </link>
@@ -823,7 +823,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Grading Applications on Config Portability]]></title>
+        <title type="html"><![CDATA[Grading Applications On Config Portability]]></title>
         <id>https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/</id>
         <link href="https://benmccormick.org/2017/04/14/grading-applications-on-config-portability/">
         </link>
@@ -1009,7 +1009,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[The Mystery of Docker and the Disk-Eating Cow]]></title>
+        <title type="html"><![CDATA[The Mystery Of Docker And The Disk-Eating Cow]]></title>
         <id>https://benmccormick.org/2017/03/28/the-mystery-of-docker-and-the-disk-eating-cow/</id>
         <link href="https://benmccormick.org/2017/03/28/the-mystery-of-docker-and-the-disk-eating-cow/">
         </link>
@@ -1121,7 +1121,7 @@ PASS<span class="token operator">=</span>true
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Giving Context to Best Practices]]></title>
+        <title type="html"><![CDATA[Giving Context To Best Practices]]></title>
         <id>https://benmccormick.org/2017/02/18/context-to-best-practices/</id>
         <link href="https://benmccormick.org/2017/02/18/context-to-best-practices/">
         </link>
