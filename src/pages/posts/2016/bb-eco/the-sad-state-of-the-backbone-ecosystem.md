@@ -17,7 +17,7 @@ For the past 2 years, ~90% of my coding time has been spent working on a large s
 
 Since then a few things have happened.  First, React has taken off, while Angular and Ember have continued to grow and learn from React and each other. Angular and React have benefited from significant marketing and financial support for a core development team that have helped them grow quickly.  Google Trends gives a pretty good idea of how that has turned out.
 
-![Google trends graph](/posts/images/Google_Trends_-_Web_Search_interest__angular_js__react_js__backbone_js__ember_js_-_Worldwide__Jan_2010_-_Feb_2016.png)
+![Google trends graph](Google_Trends_-_Web_Search_interest__angular_js__react_js__backbone_js__ember_js_-_Worldwide__Jan_2010_-_Feb_2016.png)
 
 **Update:** *I've changed the above graph from an original that used angular.js, backbone.js, ember.js, and react.js as the search terms.  Only Backbone prefixes itself with a .js that way, and it undersold the other libraries, especially Angular.  I believe that this chart more accurately reflects usage trends.*
 
@@ -29,7 +29,7 @@ To be clear, I'm not posting this as a criticism of anyone.  Open source is a vo
 
 ### 1. Backbone
 
-![backbone graph](/posts/images/Contributors_to_jashkenas_backbone.png)
+![backbone graph](Contributors_to_jashkenas_backbone.png)
 
 **Open issues:** 54
 
@@ -41,7 +41,7 @@ I'm starting with Backbone itself to give an idea what a stable mature project g
 
 ### 2. Marionette
 
-![mn graph](/posts/images/Contributors_to_marionettejs_backbone_marionette.png)
+![mn graph](Contributors_to_marionettejs_backbone_marionette.png)
 
 **Open Issues:** 107
 
@@ -53,7 +53,7 @@ Of all the graphs here, this one is the nearest and dearest to me.  I've contrib
 
 ### 3. Backbone.Relational
 
-![bb-relational](/posts/images/Contributors_to_PaulUithol_Backbone-relational.png)
+![bb-relational](Contributors_to_PaulUithol_Backbone-relational.png)
 
 **Open Issues:** 122
 
@@ -65,7 +65,7 @@ Backbone.Relational is another "stable" library.  On its own, there's nothing wr
 
 ### 4. backbone-forms
 
-![bb-forms](/posts/images/Contributors_to_powmedia_backbone-forms.png)
+![bb-forms](Contributors_to_powmedia_backbone-forms.png)
 
 **Open Issues:** 172
 
@@ -76,7 +76,7 @@ Backbone.Relational is another "stable" library.  On its own, there's nothing wr
 
 ### 5. backgrid
 
-![backgrid](/posts/images/Contributors_to_wyuenho_backgrid.png)
+![backgrid](Contributors_to_wyuenho_backgrid.png)
 
 **Open Issues:** 111
 
@@ -88,7 +88,7 @@ This is the first project on this list that I wouldn't consider to be actively m
 
 ### 6. backbone.localStorage
 
-![localstorage](/posts/images/Contributors_to_jeromegn_Backbone_localStorage.png)
+![localstorage](Contributors_to_jeromegn_Backbone_localStorage.png)
 
 **Open Issues:** 45
 
@@ -98,7 +98,7 @@ This is the first project on this list that I wouldn't consider to be actively m
 
 ### 7. backbone.stickit
 
-![stickit](/posts/images/Contributors_to_NYTimes_backbone_stickit.png)
+![stickit](Contributors_to_NYTimes_backbone_stickit.png)
 
 **Open Issues:** 26
 
@@ -108,7 +108,7 @@ This is the first project on this list that I wouldn't consider to be actively m
 
 ### 8. backbone.paginator
 
-![paginator](/posts/images/Contributors_to_backbone-paginator_backbone_paginator.png)
+![paginator](Contributors_to_backbone-paginator_backbone_paginator.png)
 
 **Open Issues:** 20
 
@@ -118,7 +118,7 @@ This is the first project on this list that I wouldn't consider to be actively m
 
 ### 9. Backbone-validation
 
-![validation](/posts/images/Contributors_to_thedersen_backbone_validation.png)
+![validation](Contributors_to_thedersen_backbone_validation.png)
 
 **Open Issues:** 79
 
@@ -130,7 +130,7 @@ I have personal experience with the abandoned state of this library since my tea
 
 ### 10. Knockback
 
-![knockback graph](/posts/images/Contributors_to_kmalakoff_knockback.png)
+![knockback graph](Contributors_to_kmalakoff_knockback.png)
 
 **Open Issues:** 4
 
@@ -140,7 +140,7 @@ I have personal experience with the abandoned state of this library since my tea
 
 ### 11. Exoskeleton
 
-![exoskeleton graph](/posts/images/Contributors_to_paulmillr_exoskeleton.png)
+![exoskeleton graph](Contributors_to_paulmillr_exoskeleton.png)
 
 **Open Issues:** 21
 
@@ -150,7 +150,7 @@ I have personal experience with the abandoned state of this library since my tea
 
 ### 12. Backbone.dualstorage
 
-![backbone.dualstorage](/posts/images/Banners_and_Alerts_and_Contributors_to_nilbus_Backbone_dualStorage.png)
+![backbone.dualstorage](Banners_and_Alerts_and_Contributors_to_nilbus_Backbone_dualStorage.png)
 
 **Open Issues:** 30
 
@@ -160,7 +160,7 @@ I have personal experience with the abandoned state of this library since my tea
 
 ### 13. Backbone-react-component
 
-![backbone react component](/posts/images/Contributors_to_magalhas_backbone-react-component.png)
+![backbone react component](Contributors_to_magalhas_backbone-react-component.png)
 
 **Open Issues:** 8
 
@@ -170,7 +170,7 @@ I have personal experience with the abandoned state of this library since my tea
 
 ### 14. Backbone-offline
 
-![backbone-offline](/posts/images/Contributors_to_alekseykulikov_backbone-offline.png)
+![backbone-offline](Contributors_to_alekseykulikov_backbone-offline.png)
 
 **Open Issues:** 30
 
@@ -182,7 +182,7 @@ This project is actually documented as being deprecated and discontinued.  There
 
 ### 15. React.Backbone
 
-![react.backbone](/posts/images/Contributors_to_clayallsopp_react_backbone.png)
+![react.backbone](Contributors_to_clayallsopp_react_backbone.png)
 
 **Open Issues:** 11
 
@@ -194,7 +194,7 @@ Interesting, and not encouraging, that the 2 newest libraries at this popularity
 
 ### 16. Backbone.expoxy
 
-![backbone.epoxy](/posts/images/Contributors_to_gmac_backbone_epoxy.png)
+![backbone.epoxy](Contributors_to_gmac_backbone_epoxy.png)
 
 **Open Issues:** 19
 
@@ -204,7 +204,7 @@ Interesting, and not encouraging, that the 2 newest libraries at this popularity
 
 ### 17. backbone.iobind
 
-![backbone.iobind](/posts/images/Contributors_to_noveogroup_backbone_iobind.png)
+![backbone.iobind](Contributors_to_noveogroup_backbone_iobind.png)
 
 **Open Issues:** 16
 
@@ -214,7 +214,7 @@ Interesting, and not encouraging, that the 2 newest libraries at this popularity
 
 ### 18. backbone-associations
 
-![backbone-associations graph](/posts/images/Contributors_to_dhruvaray_backbone-associations.png)
+![backbone-associations graph](Contributors_to_dhruvaray_backbone-associations.png)
 
 **Open Issues:** 16
 
@@ -226,7 +226,7 @@ We're really starting to get into the meat of the dead projects now.  While ther
 
 ### 19. backbone-tastypie
 
-![tastypie graph](/posts/images/Contributors_to_PaulUithol_backbone-tastypie.png)
+![tastypie graph](Contributors_to_PaulUithol_backbone-tastypie.png)
 
 **Open Issues:** 12
 
@@ -238,7 +238,7 @@ This is a single use case library that presumably was abandoned after solving a 
 
 ### 20. backbone.syphon
 
-![syphon graph](/posts/images/Contributors_to_marionettejs_backbone_syphon.png)
+![syphon graph](Contributors_to_marionettejs_backbone_syphon.png)
 
 **Open Issues:** 19
 
@@ -248,7 +248,7 @@ This is a single use case library that presumably was abandoned after solving a 
 
 ### 21. backbone-nested
 
-![backbone-nested](/posts/images/Contributors_to_afeld_backbone-nested.png)
+![backbone-nested](Contributors_to_afeld_backbone-nested.png)
 
 **Open Issues:** 45
 
@@ -258,7 +258,7 @@ This is a single use case library that presumably was abandoned after solving a 
 
 ### 22. backbone.radio
 
-![backbone.radio](/posts/images/Contributors_to_marionettejs_backbone_radio.png)
+![backbone.radio](Contributors_to_marionettejs_backbone_radio.png)
 
 **Open Issues:** 9
 
@@ -270,7 +270,7 @@ Backbone.Radio (along with Backbone.syphon) is part of the marionette project.  
 
 ### 23. backbone-fetch-cache
 
-![backbone-fetch-cache graph](/posts/images/Contributors_to_madglory_backbone-fetch-cache.png)
+![backbone-fetch-cache graph](Contributors_to_madglory_backbone-fetch-cache.png)
 
 **Open Issues:** 26
 
@@ -280,7 +280,7 @@ Backbone.Radio (along with Backbone.syphon) is part of the marionette project.  
 
 ### 24. backbone-query-parameters
 
-![backbone-query-parameters](/posts/images/Contributors_to_jhudson8_backbone-query-parameters.png)
+![backbone-query-parameters](Contributors_to_jhudson8_backbone-query-parameters.png)
 
 **Open Issues:** 10
 

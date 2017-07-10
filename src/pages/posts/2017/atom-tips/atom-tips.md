@@ -59,7 +59,7 @@ Atom is built on web technologies.  This is both the best and worst thing about 
 
 You can find Timecop in the command palette (⇧⌘P by default).  When you run it, Timecop displays a report of all of your packages and themes and how they contribute to startup time.  It will look something like this:
 
-<img alt="screenshot of timecop" src="/posts/images/atom/timecop.png"
+<img alt="screenshot of timecop" src="timecop.png"
 class="full-width">
 
 I wouldn't recommend obsessing too much over timecop.  For most packages the benefit you receive is going to significantly outweigh any startup burden.  But if your editor starts to feel sluggish, this is a great first step to figuring out if there's anything you can drop to make an impact.
@@ -68,13 +68,12 @@ I wouldn't recommend obsessing too much over timecop.  For most packages the ben
 
 Everything you see in an Atom UI is an HTML element, with classes that you can use to select and style them. This fact is mostly relevant when creating themes, but you can also use it to make one-off UI adjustments.  For instance, when I edit Markdown files, the [editorconfig](https://github.com/sindresorhus/atom-editorconfig) plugin I have installed warns me about a possible conflict with another atom package. The warning shows up as a small colored mouse icon in the status bar.
 
-<img alt="screenshot of editorconfig mouse icon in the status bar" src="/posts/images/atom/editor-mouse.png"
+<img alt="screenshot of editorconfig mouse icon in the status bar" src="editor-mouse.png"
 class="full-width">
 
 I find this warning distracting.  I know what its there for and have decided I don't care about it, but I can't dismiss it normally.  So instead I can take advantage of Atom's flexibility to just get rid of it. All I need to do is open up devtools (⇧⌘I) and find the class.
 
-<img alt="screenshot of editorconfig mouse icon in the status bar with devtools open" src="/posts/images/atom/editor-mouse-devtools.png"
-class="full-width">
+![screenshot of editorconfig mouse icon in the status bar with devtools open](editor-mouse-devtools.png)
 
 Then we can edit our styles.less file.  Atom will open it for you if you click the *your stylesheet* link at the top of the Settings>Themes page.  My edit to remove the mouse icon looks like this:
 

@@ -20,27 +20,27 @@ Fortunately Vim is able to make easier things easier for you when you use the ri
 
 #### I want to move to a file with a name I know
 
-<img src="/posts/images/ControlP_-____Dropbox_blog_drafts__-_VIM.png" class="full-width" alt ="ctrlp screenshot">
+<img src="ctrlp" class="full-width" alt ="ctrlp screenshot">
 
 
 When you're moving to a file with a name that you know, it's hard to beat the power of a fuzzy finding plugin like [CtrlP][ctrlp] or [Unite][unite].  CtrlP allows me to type in the name of a file without remembering or typing a long directory path and instantly get a list of potential files.  Usually the file I'm looking for is the top hit.  
 
 #### I want to move to a file, but I don't know what it's called
 
-<img src="/posts/images/NERD_tree_1_-____Dropbox_blog_drafts__-_VIM.png" class="full-width" alt ="NerdTree screenshot">
+<img src="nerdtree.png" class="full-width" alt ="NerdTree screenshot">
 
 
 This scenario happens most often on projects that you're unfamiliar with and just getting into.  You're looking for some functionality, but don't know exactly what it's called within the project and need to look through the file system for hints.  In this case you need a directory browsing tool.  Vim bundles [netrw][netrw] by default and it's a good starting place.  If you have issues with netrw, many people install [NerdTree][nerdtree] as an alternative file explorer.  I personally don't use NerdTree very often these days.  Most of my work over the last year or so has been on one large project or smaller experimental projects and I haven't needed it.  But it's been very useful when I've cloned down a github repository to look it over or make changes.  It's the best way to quickly get the lay of the land of a project within Vim, and to find a specific file before you really know what you're looking for.
 
 #### I want to move to a file that I already have open
 
-<img src="/posts/images/switching_between_files_md____Dropbox_blog_drafts__-_VIM.png" class="full-width" alt ="Buffer list">
+<img src="bufferlist.png" class="full-width" alt ="Buffer list">
 
-A common scenario in Vim involves moving back and forth between 2 files, possibly a file and its corresponding test file.  If you don't want to use splits, that means you'll want a quick command to move between open files.  Fortunately Vim keeps a list of active buffers open.  When I'm only flipping between 2 files I'll usually use the `:bprev` and `:bnext` commands, which I've aliased to `[b` and `]b` <sup id="fnref:2">[2](#fn:2)</sup>. If I have more than a few files open though I'll usually either use `:b` and type the name of the file, or just use ctrlp again, which doesn't require me to remeimber if the file I wasn't is actually already open or not.
+A common scenario in Vim involves moving back and forth between 2 files, possibly a file and its corresponding test file.  If you don't want to use splits, that means you'll want a quick command to move between open files.  Fortunately Vim keeps a list of active buffers open.  When I'm only flipping between 2 files I'll usually use the `:bprev` and `:bnext` commands, which I've aliased to `[b` and `]b` <sup id="fnref:2">[2](#fn:2)</sup>. If I have more than a few files open though I'll usually either use `:b` and type the name of the file, or just use ctrlp again, which doesn't require me to remember if the file I wasn't is actually already open or not.
 
 #### I want to move back to the place I just was
 
-<img src="/posts/images/5114935852_49b373e961_b.jpg" class="full-width" alt ="indy">
+<img src="indy.jpg" class="full-width" alt ="indy">
 
 "Rabbit Holing" happens to me all the time when I'm working on code.  I start looking at one thing, then look at code related to that, and before I know it I'm 4 files deep following a chain of stuff I'm debugging.  Oftentime I want to move back up that chain.  I could of course remember what files I opened and use one of the methods above, but that requires me to internalize the memory of events.  The command that maps best to my desire to move back up the chain is using Vim's jumplist.  Vim keeps track of every "jump" you make within a window or split, and allows you to move back up and down that jump list as you like, both within files and across them. The commands to move up and down the jump list are mapped to `<c-o>` and `<c-i>` by default.  When I use them I don't have to keep track of what files I'm moving across or even if I'm switching files at all.  I can just investigate my issue and have confidence that I'll be able to get back.  Think of it as tying down a rope before you dive into a cave full of snakes.
 
@@ -51,7 +51,7 @@ Creating a new file means that we finally find a use for the basic `:e` command.
 
 #### I want to edit a specific piece of code, but don't know what file it's in
 
-<img src="/posts/images/_No_Name__-_-_VIM_and_Ghost_Admin.png" class="full-width" alt ="Ag.vim">
+<img src="agvim.png" class="full-width" alt ="Ag.vim">
 
 Finally, possibly the most common scenario for me is when I know I have a particular piece of code I need to edit, but don't have it mapped to a particular file in my head.  Rather than forcing myself to recall the file, the easiest path is to let Vim take the information I know and help me out.  Specifically I use Ag.vim for code search within projects.  It is a wrapper around Ag, a [fantastic code search program based on Ack][ackag].  It allows me to enter a search term, and then pulls up all occurrences of that term within my project.  One of it's best features is filtering by file type, which allows me to type something like `:Ag --less "\.widget"` and search my LESS files for all rules effecting the class `.widget`.  
 

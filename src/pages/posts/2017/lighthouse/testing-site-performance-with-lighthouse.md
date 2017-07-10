@@ -18,7 +18,7 @@ Last year Google coined the term "Progressive Web App" as a way of describing th
 
 I began by downloading the Lighthouse extension in the [Chrome Web Store](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).  Lighthouse can be installed either as a chrome extension or a node command line tool.  Both produce the same HTML report, but I chose the chrome extension for the convenience of keeping everything in the browser.  When I ran the initial report, I got the following result:
 
-<img alt="first score: 48/100" src="/posts/images/lighthouse/first_report_summary.png" class="full-width bordered-img">
+<img alt="first score: 48/100" src="first_report_summary.png" class="full-width bordered-img">
 
 48 out of 100 didn't seem like a bad starting place.  Scrolling down it looked like I was mainly dinged on a few main areas:
 
@@ -26,11 +26,11 @@ I began by downloading the Lighthouse extension in the [Chrome Web Store](https:
 2. I did't have any special setup for being included on a users homescreen. (I did have platform appropriate icons, but no app configuration)
 3. I had some possible inefficiencies in the assets I loaded.
 
-<img alt="offline issues" src="/posts/images/lighthouse/first_report_offline.png" class="full-width bordered-img">
+<img alt="offline issues" src="first_report_offline.png" class="full-width bordered-img">
 
-<img alt="native issues" src="/posts/images/lighthouse/first_report_native.png" class="full-width bordered-img">
+<img alt="native issues" src="first_report_native.png" class="full-width bordered-img">
 
-<img alt="asset issues" src="/posts/images/lighthouse/first_report_assets.png" class="full-width bordered-img">
+<img alt="asset issues" src="first_report_assets.png" class="full-width bordered-img">
 
 Native app support isn't a huge priority for me, and the assets issue seemed small, so I decided to investigate the offline support issue first.
 
@@ -41,7 +41,7 @@ I based my service worker implementation off of [Simple Offline Site](https://gi
 Finally, Service Workers only work on HTTPS connections, but most links to my site are not https currently. So to take full advantage (and to address another metric I was flagged on), I used a [CloudFlare page rule](https://support.cloudflare.com/hc/en-us/articles/200170536-How-do-I-redirect-all-visitors-to-HTTPS-SSL-) to redirect all visting traffic to use https.  That bumped me up to 69/100.
 
 
-<img alt="asset issues" src="/posts/images/lighthouse/second_report_offline.png" class="full-width bordered-img">
+<img alt="asset issues" src="second_report_offline.png" class="full-width bordered-img">
 
 ### Native Support
 
@@ -73,7 +73,7 @@ My manifest file now looks like this:
 
 After correctly deploying that manifest file, my score moved all the way up to 100/100!
 
-<img alt="asset issues" src="/posts/images/lighthouse/third_report_native.png" class="full-width bordered-img">
+<img alt="asset issues" src="third_report_native.png" class="full-width bordered-img">
 
 I clearly benefited from starting in a good spot.  [Gatsby](https://github.com/gatsbyjs/gatsby) is "fast by default" as a platform for building blogs, and I've done my best to avoid making it slow.  But it was fun seeing what I could do to make the site a better experience for users with bad connectivity, and to learn more about what Google is trying to do with PWAs.  
 

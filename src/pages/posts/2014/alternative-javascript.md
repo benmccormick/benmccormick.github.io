@@ -181,7 +181,7 @@ Relative to the other languages on this list though, Sweet.js lacks a lot of the
 **Why use Sweet.js:** You want your JavaScript syntax to work in a very specific way, and none of the existing options appeal to you, or you find yourself writing a lot of repetitive boilerplate that you can remove with a syntax change.
 
 
-![Traceur logo](/posts/images/68747470733a2f2f676f6f676c652e6769746875622e636f6d2f747261636575722d636f6d70696c65722f6c6f676f2f74632e737667.svg)
+### Traceur
 
 The last alternate syntax that I'm going to be going in depth on is a bit different, because it's technically just JavaScript syntax.  But it's a form of JavaScript syntax that's not supported everywhere yet.  [Traceur][traceur] is a project by Google that allows you to write code that's valid in EcmaScript 6, and transpile it down into browser-compatible ES5 JavaScript.  Effectively it's tomorrow's JavaScript a bit early.  This has some obvious advantages.  First, it will eventually obsolete the compile step as all of the features of ES6 will be supported in browsers someday, and the changing world of browser release policies seem likely to make that sooner than you might expect.  Secondly, tools and other support around ES6 is shaping up nicely, and it's guaranteed to get better, because this is just JavaScript.  It's the future of the web platform.
 

@@ -24,7 +24,7 @@ Since I'm no longer using Sublime Text, I decided to port the theme to Atom.  I 
 You can now download [mariana-syntax](https://atom.io/themes/mariana-syntax) in Atom.  This was a quick port.  I'll be working to optimize it for the languages I use (JS, Python, CSS/Less, HTML and Markdown) over the next few weeks.  I would love to see pull requests for other languages or for anything that I've missed so far.  I look forward to this just getting better and better. **Update:** Version 0.2.0 has shipped with optimized syntax for JavaScript, Python, CSS, JSON and Markdown.
 
 
-<img alt="screenshot of mariana-syntax" src="/posts/images/mariana/screenshot.png"
+<img alt="screenshot of mariana-syntax" src="mariana-screenshot.png"
 class="full-width">
 
 

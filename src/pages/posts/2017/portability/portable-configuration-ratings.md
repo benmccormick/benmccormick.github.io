@@ -28,7 +28,7 @@ B grade applications are similar to seamless applications, but may have a few mo
 
 #### C - *Workable*
 
-At this point we've moved out of the range of easy syncing solutions.  Here it may be possible to import and export settings from a file, without any automatic syncing.  Or there may be a straightforward way to automate the setup, but no declarative representation of the config state. 
+At this point we've moved out of the range of easy syncing solutions.  Here it may be possible to import and export settings from a file, without any automatic syncing.  Or there may be a straightforward way to automate the setup, but no declarative representation of the config state.
 
 #### D - *Hard*
 
@@ -45,55 +45,47 @@ Setting up my new laptop this week, I found that the software I use a lot was al
 
 #### Atom - *B*
 
-<img src="/posts/images/portability/atom.jpg" alt ="Atom Logo">
+<img src="atom.jpg" alt ="Atom Logo">
 
 [Atom](https://atom.io/) doesn't have native syncing persay (though most configs are in a ~/.atom folder that can possibly be synced with git).  But it has a very nice [sync-settings](https://github.com/atom-community/sync-settings) plugin that uses gists to sync settings across multiple machines.  It loses points due to a little bit of upfront pain (when setting up a new machine you need to either create a new gist or find your old one, and you need to generate github auth keys for each instance), but gains them back with a very nice set of options to selectively restore or choose when to backup, and painless support for all of Atom's 3rd party plugiuns
 
 
 #### Sublime Text - *B+*
 
-![Sublime Logo](/posts/images/portability/sublime.png)
+![Sublime Logo](sublime.png)
 
 [Sublime Text](https://www.sublimetext.com/3) saves all of its configurations as JSON, so its pretty easy to move them over.  It loses a few points though for making you figure out how to sync them, and a few more points for sticking user configs by default in the `~/Library/Application Support/` directory, where it is a bit more difficult to sync using things like git and dotfiles.  
 
 #### Command Line programs - *A-*
 
 <div class="img-group">
-  <image alt="Vim logo" src="/posts/images/portability/vim.png">
-  <image alt="fish logo" src="/posts/images/portability/fish.png">
+  <image alt="Vim logo" src="vim.png">
+  <image alt="fish logo" src="fish.png">
 </div>
 <div class="img-group">
-  <image alt="git logo" src="/posts/images/portability/git.png">
+  <image alt="git logo" src="git.png">
 </div>
 
 Command line programs like Vim, Ack, bash/zsh/fish, and git all nail the idea of declarative configuration files that are stored in a common place.  They fall short of a pure A since they don't provide a sync solution themselves (that would be very non-unixy), but since it is easy to set up [dotfile repos](https://dotfiles.github.io/) to sync and backup these settings, they qualify for a strong A-.
 
 #### iTerm2 - *C*
 
-![iterm2 Logo](/posts/images/portability/iterm.png)
+![iterm2 Logo](iterm.png)
 
 [iterm2](https://www.iterm2.com/) is probably the most popular terminal replacement on the mac.  It has tons of settings that you normally edit through a GUI menu.  It does allow you to export those settings, and import them on another machine.  So you need to have access to the original file to generate a snapshot at any given time and need a way to transfer the file(s), but otherwise this is still pretty workable.
 
 
 #### Hyper - *A-*
 
-![hyper Logo](/posts/images/portability/hyper.gif)
-
 [Hyper](https://hyper.is/) is a newer [Electron](https://electron.atom.io/)-based terminal application for OSX.  Like Sublime Text, it defaults to offering a GUI interface into text based configuration files.  Unlike Sublime Text, it stores that file and its plugin files in the users home directory where they can easily be included in a dotfile repo.
 
 #### MacOS - *D-*
 
-![macOS sierra Logo](/posts/images/portability/macos.jpg)
+![macOS sierra Logo](macos.jpg)
 
 Unlike most of the applications I run on it, MacOS is extremely unfriendly to syncing configurations.  There are a few settings I want the same on all my laptops.  Touchpad scrolling should be in the "unnatural"[^1] direction, keys should repeat when held, and caps log should be disabled/mapped to control.  There is a set of apps that I would always want to have installed.  There is no declarative way to configure this, or sync it across computers.  Apple's preferred strategy seems to be having folks use time machine backups, which is great for setting up a new computer for the same purpose as an old one when it is being replaced, but unhelpful when 2 laptops are being used by the same person for different purposes.  It is possible to script the setup of a new laptop with scripts like [this one](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) but its very involved and when you update a setting the "normal MacOS way", its not always clear how you would add that setting to a script.  Plus a "from scratch" script won't help keep 2 machines aligned as their configs diverge over time.
 
 #### Cloud Services - *A*
-
-
-<div class="img-group">
-  <image alt="dropbox" src="/posts/images/portability/dropbox.png">
-  <image alt="bear logo" src="/posts/images/portability/bear.png">
-</div>
 
 Unsurprisingly, the one class of software that really nails this experience is cloud software.  For services like Dropbox, Bear, Evernote, Slack, email & calendar clients, etc, most if not all settings and data is stored on servers somewhere else, so getting a new machine up to date and staying in sync over time is just a matter of entering a password.  There are reasons to dislike cloud services, but when moving to a new machine, they're a thing of beauty.
 
