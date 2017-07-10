@@ -1,5 +1,5 @@
 ---
-title: "The Mystery of Docker and the Disk-Eating Cow"
+title: "The Mystery Of Docker And The Disk-Eating Cow"
 date: "2017-03-28 14:40:00+00:00"
 layout: "post"
 path: "/2017/03/28/the-mystery-of-docker-and-the-disk-eating-cow/"

@@ -1,5 +1,5 @@
 ---
-title: "Giving Context to Best Practices"
+title: "Giving Context To Best Practices"
 date: "2017-02-18 23:30:00+00:00"
 layout: "post"
 path: "/2017/02/18/context-to-best-practices/"

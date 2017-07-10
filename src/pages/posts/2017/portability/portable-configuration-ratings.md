@@ -1,5 +1,5 @@
 ---
-title: "Grading Applications on Config Portability"
+title: "Grading Applications On Config Portability"
 date: "2017-04-14 21:30:00+00:00"
 layout: "post"
 path: "/2017/04/14/grading-applications-on-config-portability/"
