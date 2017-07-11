@@ -49,7 +49,7 @@ Jest has a wonderful command line flag `jest --onlyChanged`/`jest -o` that runs 
 
 Fortunately Jest has a lower level command that uses the same logic as `onlyChanged` and `lastCommit`.  `--findRelatedTests` is a flag that tells Jest to run any tests related to the files passed to it instead of trying to run those files as tests as it would normally do.
 
-<img alt="an example of findRelatedTests running against the redux repo" src="/posts/images/jest-related-tests.png" class="full-width ">
+<img alt="an example of findRelatedTests running against the redux repo" src="jest-related-tests.png" class="full-width ">
 
 This is a perfect fit for a pre-commit hook.  I was able to integrate it into my existing script like this:
 
@@ -94,7 +94,7 @@ Fortunately I'd discovered a better solution the other day while working on some
 
 `lint-staged` now handles making sure that I'm only running checks against JavaScript files, lets eslint autofix and stage any files that it can fix, and uses the local versions of jest and eslint.  It also adds a nice pretty interface for the results:
 
-<img alt="pretty lint-staged output" src="/posts/images/lint-staged-errors.png" class="full-width ">
+<img alt="pretty lint-staged output" src="lint-staged-errors.png" class="full-width ">
 
 `lint-staged` docs recommend using an npm based hooks manager like [pre-commit](https://github.com/observing/pre-commit) for running the scripts, but due to some quirks in my setup (node_modules is symlinked, and I sometimes want to run these commands inside a docker container), I found it easier to maintain a custom pre-commit script and just replace the previous logic with `npm run lint-staged`.  Either way, all of the actual logic is now checked into the repository and shared between all users.  The only manual step is adding the call to a pre-commit hook or (if you're using a helper lib) running npm install.
 

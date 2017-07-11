@@ -13,7 +13,7 @@ last30pageViews: "50"
 
 If you look back at the history of JavaScript and the client-side web as a development platform, you can see that there were several critical turning points for the language. Javascript has evolved from a [10-day toy language][jsorigin] to possibly the [most used language in the world][githubstats], but that didn't happen overnight.
 
-![JavaScript timeline](/posts/images/timeline.png)
+![JavaScript timeline](timeline.png)
 
 
 JavaScript's growth started with its adoption as the lingua franca of the web when it shipped with Netscape and Internet Explorer in the 90s.  The introduction of Ajax and asynchronous data exchange in the mid-aughts was another sea change, bringing the potential for truly responsive web applications like Gmail for the first time.  [jQuery][jquery]'s introduction in 2006 dramatically reduced the pain involved in cross-browser development for rich applications. And the last 5 years have brought 2 more major changes with [Node.JS][node] and a [raft of MVC frameworks][mvc].  NodeJS is a server-side technology, but it has spurred a huge standardization and improvement in tooling for the web platform. That, along with great work by browser vendors on their developer tools, has led to drastically easier workflows for front end developers.  At the same time, frameworks like BackboneJS, AngularJS and EmberJS have brought architecture concepts to the client-side and made a new type of "Single Page App" possible and easy to build.

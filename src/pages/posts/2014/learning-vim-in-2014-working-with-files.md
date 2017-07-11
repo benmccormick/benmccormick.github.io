@@ -31,7 +31,7 @@ Moving beyond the basics, let's talk some more about buffers.  Vim handles open 
 
 While these commands are the fundamental Vim solutions for managing buffers, I've found that they don't map well to my own way of thinking about files.  I don't want to care about the order of buffers, I just want to go to the file I'm thinking about, or maybe to the file I was just in before the current one.  So while its important to understand Vim's underlying buffer model, I wouldn't necessarily recommend its builtin commands as your main file management strategy.  There are more powerful options available.
 
-<img alt="splits example" class="full-width" src="/posts/images/skitch.jpeg">
+<img alt="splits example" class="full-width" src="skitch.jpeg">
 
 ### Splits
 

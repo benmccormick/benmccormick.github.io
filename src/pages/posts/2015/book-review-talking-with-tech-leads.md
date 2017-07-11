@@ -12,7 +12,7 @@ last30pageViews: "3"
 
 Can we be honest for a moment?  Figuring out a career path is hard for software developers.  Talking to some people, you'll get the impression that we face a pretty bleak binary choice.  Behind door number #1 lies a relatively rapid path to a "senior developer" role, followed by stagnation the rest of your career as you reimplement the same solutions in new technologies for minimally increasing pay over time, until youth-friendly tech culture decides that you're too old to be useful.  Door #2 serves basically as an escape hatch, as you trade the opportunity to work with code for a path into management, where you receive a few more pay raises in return for your soul.
 
-![Talking with Tech Leads Cover](/posts/images/twtl.png)
+![Talking with Tech Leads Cover](twtl.png)
 
 I'm not that cynical, and hopefully not that dramatic, but as a relatively young developer it's been hard to figure out what I want from a career and harder still to know exactly what different options would look like if I got there.  I know that I love technology; at the same time I want to have real influence on the things that I'm building, and in most places it's the product and people challenges that ultimately determine whether software projects succeed or fail, rather than the pure technical ones.  So what does it look like to build a career leading across these different areas? That's the question that [Talking with Tech Leads][twtl] tries to answer.
 

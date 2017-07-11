@@ -102,7 +102,7 @@ jest
 
 and jest will automatically find our test file and run the test.
 
-<img src="/posts/images/jest-hello-world.gif" class="full-width" alt ="gif of running jest">
+<img src="jest-hello-world.gif" class="full-width" alt ="gif of running jest">
 
 
 ### Writing Tests
@@ -117,7 +117,7 @@ There are also a great set of codemods for Jest. [jest-codemods](https://github.
 Jest runs tests fast by default.  While I've seen from comments on my last Jest post and elsewhere that some people may have been able to optimize mocha or AVA to be fast enough that switching to Jest was a downgrade, for most people Jest is going to be faster than whatever they may have been using before.  This is true because of performance reasons (tests run in parallel, and mock out timers to avoid unnecessary waiting), but also because of UX decisions.  Jest is able to use git and node's modules system to detect what files have changed since the last commit, and which tests are affected by that.  Because of that, it is able to optionally run only the tests that might have changed on each run (`jest -o`).  Since it is usually able to run tests fast as a result (since it only runs a few at a time), Jest also is able to have an awesome watch mode (`jest --watch`).  In watch mode, tests rerun as files change, and there are options to target specific tests, run all tests, or fix snapshots as you go.
 
 
-<img src="/posts/images/jest-watch.gif" class="full-width" alt ="gif of running jest --watch">
+<img src="jest-watch.gif" class="full-width" alt ="gif of running jest --watch">
 
 
 ### Fixing Tests
@@ -129,7 +129,7 @@ Jest provides 4 main conveniences for fixing tests
 3. Even though tests run in parallel, Jest makes sure that any console output from the test is placed in line with the test output, making it easy to debug with quick console messages
 4. When running Jest multiple times, Jest runs the tests that failed in the previous run prior to other tests, leading to a faster feedback loop even when not using watch mode
 
-<img src="/posts/images/jest-error.png" class="full-width" alt ="gif of running jest --watch">
+<img src="jest-error.png" class="full-width" alt ="gif of running jest --watch">
 
 
 ### More Resources

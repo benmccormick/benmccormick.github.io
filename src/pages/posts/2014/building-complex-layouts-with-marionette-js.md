@@ -24,7 +24,7 @@ In my [first post][caseformarionette], I talked about how one of the strengths o
 
 Regions are the primary tool Marionette provides for defining layouts.  A Region is a defined portion of the page, held within a root DOM element. You can swap different Views in and out of Regions, or show one View and let it stay there permanently.  Like everything in Backbone applications, Regions emit events, which allow you to design functionality that is triggered before or after a region's content changes.  Regions map very well to low fidelity layout wireframes like the one below, but they also can be used for organizing smaller components.  They're an organization tool for attaching and removing Views in a consistent way.
 
-![Regions image](/posts/images/marionette_regions-1.png)
+![Regions image](marionette_regions-1.png)
 
 Regions really shine when it comes to child Views.  When you're setting up Views in a normal Backbone application, you have to be very careful to avoid memory leaks by replacing a view without properly destroying it, especially for long-running SPA style apps. If you're properly cleaning up Views when they're destroyed, another thing that Marionette can help with, Regions remove that pain by ensuring that a View is properly destroyed if replaced in a Region, removing boilerplate and the opportunity for subtle memory bugs.  They also provide a clean central way to attach child Views, making it easier to maintain consistency across a project and promoting readability when moving into different code.
 

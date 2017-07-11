@@ -21,7 +21,7 @@ Talking about this stuff is great, but this is an API for shippable code, not ju
 
 
 
-![source -> display](/posts/images/code_comparison-1.png)
+![source -> display](code_comparison-1.png)
 
 This seems like the perfect opportunity to use a custom element.  If we can encapsulate all that behavior, we'll be able to ensure that the progress bar is always rendered when it appears, and we can hide any ugly transformed DOM elements underneath a shiny semantic element.  Sounds great! So let's see how this works.
 

@@ -19,7 +19,7 @@ should be applicable to any developer who uses Sublime Text as part of their wor
 
 ## Keyboard Shortcuts
 
-![Keyboard Shortcuts](/posts/images/Sublime_cheat_sheet.png)
+![Keyboard Shortcuts](Sublime_cheat_sheet.png)
 
 ##### Update: Get a [printable cheat sheet here](https://github.com/ben336/benmccormick_blog_posts/blob/master/images/post_images/sublime_cheatsheet.pdf?raw=true))
 

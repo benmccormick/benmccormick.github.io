@@ -11,7 +11,7 @@ last30pageViews: "24"
 
 
 
-![bower logo](/posts/images/bower-1.png)
+![bower logo](bower-1.png)
 
 I first heard about [Bower][bower] about a year and half ago, and was immediately confused.  Bower is branded as a package manager for the web.  My immediate question: "Why create another package manager for JavaScript, when [npm][npm] was just starting to become a standard?"  I certainly wasn't the only one thinking it.
 

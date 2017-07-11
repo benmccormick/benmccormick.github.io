@@ -20,7 +20,7 @@ I'll start by standing up for the much maligned vanilla ES5 JavaScript syntax.  
 So what type of advantages can alternatives offer?  The different syntaxes I go through below all provide different strengths, but one mostly shared strength is that they allow you to start using some features of the newest version of JavaScript, EcmaScript 6.  ES6 brings a bunch of new features that make common development patterns easier, and looks to be a great improvement to the language.  By allowing you to take advantage of those features now, alternative syntaxes can speed up development and ease the transition into the new version of the language.  To get an idea of the more specific benefits an alternate syntax can bring, I'm going to go through 4 of the most popular syntaxes and explain why somebody would want to use them.
 
 
-![coffeescript logo](/posts/images/logo.png)
+![coffeescript logo](coffeelogo.png)
 
 CoffeeScript was the first alternative JavaScript syntax to gain popularity, and it is also one of the biggest breaks from the normal syntax.  Rewriting a simple Backbone view from the [TodoMVC project][todomvc] in CoffeeScript would look something like this.
 
@@ -104,7 +104,7 @@ In terms of tooling, CoffeeScript has been around a while, and has built up a go
 
 
 
-![TypeScript logo](/posts/images/CRS-56479.png)
+![TypeScript logo](typescriptlogo.png)
 
 TypeScript is a language created by Microsoft to provide static type checking for JavaScript.  It allows you to annotate variables with types, then validates your code when it's compiled into JavaScript. The benefits are pretty obvious.  Type checking forces you to think about the values that will get passed into functions and help you catch bad logic at compile time rather than runtime.   Static types also allow for smart intellisense-style completion.  As a Microsoft creation, this is fully supported in Visual Studio, but it's also available in other IDES like WebStorm, and there's some support for making it work in text editors like Vim and Sublime Text as well.
 
@@ -133,7 +133,7 @@ TypeScript was obviously built to be tool friendly, and if you're using an IDE l
 
 
 
-![Sweet.js logo](/posts/images/sweetjs-35aabaff7e0dd24e.png)
+![Sweet.js logo](sweetjslogo.png)
 
 Sweet.js is a very different animal than the other syntaxes I'm covering here.  Strictly speaking it's not an alternative syntax at all.  It's a toolkit to building your own your own alternate syntax.  You do that by defining *macros*, which the compiler then loads and uses to transform your code.  For instance the example from [their website][sweetjs] shows how you can define ES6 style classes in your code.
 

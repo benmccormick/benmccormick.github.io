@@ -22,7 +22,7 @@ When you look at the [jQuery Github repo][jqgithub], one of the first things you
 
 Fortunately it's not that hard to get the lay of the land.  jQuery is broken into modules using the AMD format, and built using requireJS.  So each file lists its dependencies, and it's easy enough to trace back what code is referenced where. So we can start by looking at `src/jquery.js`, which serves simply as a base file to require all of the other dependencies, then make the jQuery namespace available globally, both as `jQuery` and the famous `$`.
 
-![jquery_js.png](/posts/images/jquery_js.png)
+![jquery_js.png](jquery_js.png)
 
 From that file we can see the layout of the library.  The core file is loaded and attached to the window, and all of the other "feature files" are also listed as dependencies to make sure they load.  Each of those files lists `core.js` as a dependency, so it is loaded first and creates the main jQuery namespace, which other dependencies then edit as needed.  If you're interested in the process of how the package is built, you can take a read through [build/tasks/build.js][buildfile], where the dependencies are built using requirejs <sup id="fnref:2">[2](#fn:2)</sup>.
 

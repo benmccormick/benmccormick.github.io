@@ -11,7 +11,7 @@ pageViews: "1622"
 last30pageViews: "2"
 ---
 
-![Effective JS](/posts/images/effectivejs.png)
+![Effective JS](effectivejs.png)
 
 After seeing some positive early reviews, I went to Amazon last week and bought "Effective JavaScript" by David Herman.  I'm glad that I did.  The book is a great experience for anyone who wants to deepen their understanding of the JavaScript language in a practical grounded fashion.
 
