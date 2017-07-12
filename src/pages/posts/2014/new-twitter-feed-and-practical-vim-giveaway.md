@@ -20,7 +20,7 @@ The new feed, [@benmccormickorg][twit], will be a Twitter "RSS Feed" with all of
 
 ### Practical Vim Giveaway
 
-![Practical Vim](/posts/images/vim.jpg)
+![Practical Vim](vim.jpg)
 
 
 To go along with that, and as a thanks for all of the great interest and feedback I've gotten for my posts on Vim recently, I'm going to be giving away 2 copies of Drew Neil's book, Practical Vim.

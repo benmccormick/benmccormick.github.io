@@ -11,12 +11,9 @@ last30pageViews: "0"
 
 My practical Vim giveaway ends tomorrow,  Friday July 25th at midnight.  If you haven't subscribed or tweeted to win yet, now is the best time, so go for it!
 
-
-
-
 ### Giveaway Details
 
-![Practical Vim](/posts/images/vim.jpg)
+![Practical Vim](vim.jpg)
 
 
 As a thanks for all of the great interest and feedback I've gotten for my posts on Vim recently, I'm going to be giving away 2 copies of Drew Neil's book, Practical Vim.

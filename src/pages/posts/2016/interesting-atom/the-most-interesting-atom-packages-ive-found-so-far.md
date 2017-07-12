@@ -62,7 +62,7 @@ Similar to autocomplete-plus, you may think you've seen [Linter][linter] before.
 
 [git-time-machine][time-machine] is the newest package on this list.  It's only a month old, but is quite possibly my favorite example of Atom's potential.  After setting it up, you can use a keyboard shortcut to see a bubble plot of that files git history, and then hover to see the commit messages, and click to see an old version of the file.  It is the most accessible UI I've ever seen for working with git history.
 
-<img class="full-width" alt="time-machine" src="/posts/images/Fullscreen_1_10_16__9_24_PM.png">
+<img class="full-width" alt="time-machine" src="Fullscreen_1_10_16__9_24_PM.png">
 
 
 
