@@ -1,11 +1,10 @@
-const fs = require('fs');
 const Feed = require('feed');
 const filter = require('lodash/filter');
 const sortBy = require('lodash/sortBy');
 const forEach = require('lodash/forEach');
 const get = require('lodash/get');
 const moment = require('moment');
-const { mkDir, mkFile } = require('./src/utils/file_system');
+const { mkDir, mkFile } = require('../src/utils/file_system');
 
 let buildFeed = pages => {
   let feed = new Feed({
