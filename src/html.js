@@ -32,24 +32,24 @@ class HTML extends React.Component {
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/apple-touch-icon.png?v=yyxgnp97qG"
+            href="/static/apple-touch-icon.png?v=yyxgnp97qG"
           />
           <link
             rel="icon"
             type="image/png"
-            href="/favicon-32x32.png?v=yyxgnp97qG"
+            href="/static/favicon-32x32.png?v=yyxgnp97qG"
             sizes="32x32"
           />
           <link
             rel="icon"
             type="image/png"
-            href="/favicon-16x16.png?v=yyxgnp97qG"
+            href="/static/favicon-16x16.png?v=yyxgnp97qG"
             sizes="16x16"
           />
           <link rel="manifest" href="/manifest.json" />
           <link
             rel="mask-icon"
-            href="/safari-pinned-tab.svg?v=yyxgnp97qG"
+            href="/static/safari-pinned-tab.svg?v=yyxgnp97qG"
             color="#57a3e8"
           />
           <link
