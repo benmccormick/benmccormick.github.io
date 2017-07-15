@@ -1,4 +1,5 @@
 import React from 'react';
+import defer from 'lodash/defer';
 // import { browserHistory } from 'react-router';
 
 export class Ad extends React.Component {
@@ -10,9 +11,9 @@ export class Ad extends React.Component {
   }
 
   insertScript() {
-    let existingAd = document.getElementById('_carbonads__js');
+    let existingAd = document.getElementById('carbonads');
     if (existingAd) {
-      return;
+      existingAd.remove();
     }
     //build script
     const script = document.createElement('script');
@@ -30,7 +31,7 @@ export class Ad extends React.Component {
   }
 
   componentDidMount() {
-    this.insertScript();
+    defer(() => this.insertScript());
     this.props.history.listen(location => {
       let url = location.pathname;
       if (url !== this.state.url) {
