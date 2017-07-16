@@ -4,9 +4,7 @@ import Helmet from 'react-helmet';
 import PostFooter from '../components/PostFooter';
 import { rhythm } from '../utils/typography';
 import { Disqus } from '../components/Disqus';
-import forEach from 'lodash/forEach';
 import last from 'lodash/last';
-import defer from 'lodash/defer';
 
 import '../css/codeformat.css';
 import '../css/typography.css';
@@ -15,49 +13,6 @@ import '../css/twitter.css';
 import '../css/mailchimp.css';
 
 class BlogPostTemplate extends React.Component {
-  extractTwitterStatusID(tweetEl) {
-    //this is a bit tricky, we have to grab the link to the tweet and extract the id from it
-    let links = tweetEl.querySelectorAll('a');
-    //it should be the last one
-    let statusLink = last(links);
-    if (!statusLink || !statusLink.href) {
-      return undefined;
-    }
-    // regex magic
-    let re = /status\/(\d+)$/;
-    let result = statusLink.href.match(re);
-
-    if (!result) {
-      return undefined;
-    }
-    return result[1];
-  }
-
-  componentDidMount() {
-    let TwitterWidgetsLoader = require('twitter-widgets');
-    TwitterWidgetsLoader.load(twttr => {
-      let tweets = this.markdownContainer.querySelectorAll(
-        'blockquote.twitter-tweet'
-      );
-      let followButtons = this.markdownContainer.querySelectorAll(
-        '.twitter-follow-button'
-      );
-      defer(() => {
-        forEach(tweets, tweet => {
-          let id = this.extractTwitterStatusID(tweet);
-          let parent = tweet.parentNode;
-          tweet.remove();
-          let container = document.createElement('div');
-          parent.appendChild(container);
-          twttr.widgets.createTweet(id, parent);
-        });
-        forEach(followButtons, button => {
-          twttr.widgets.createFollowButton('', button);
-        });
-      });
-    });
-  }
-
   render() {
     const { location, data } = this.props;
     const post = data.markdownRemark.frontmatter;

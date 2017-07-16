@@ -98,6 +98,7 @@ module.exports = {
         ]
       }
     },
+    `gatsby-plugin-twitter`,
     'gatsby-plugin-offline',
     'gatsby-plugin-sharp'
   ]

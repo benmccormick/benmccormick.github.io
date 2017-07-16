@@ -15,9 +15,7 @@ last30pageViews: "0"
 Sometimes the best thing to do is steal somebody else's good idea. I've been using [Atom](https://atom.io) as my primary text editor for a year and a half now, but I still occasionally play with other editors and keep up with their updates.  There are a crazy number of good cross platform editors these days, and they all have a bunch of good ideas that get shared and remixed across each other. This week Sublime Text came out with a new release [Dev Build 3132](https://www.sublimetext.com/3dev) that included 3 new color schemes.  One of them was Mariana, which I believe is a variation on the also great [Oceanic Next](http://labs.voronianski.com/oceanic-next-color-scheme/), with possibly some influences from my previous favorite dark theme [Tommorrow Night Eighties](https://github.com/chriskempson/tomorrow-theme) [^1].  It stood out to me right away.
 
 
-<div>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The Mariana syntax theme that shipped in the new Sublime Text is really nice <a href="https://t.co/xbmjBTNoWY">pic.twitter.com/xbmjBTNoWY</a></p>&mdash; Ben McCormick (@ben336) <a href="https://twitter.com/ben336/status/868160533345841152">May 26, 2017</a></blockquote>
-</div>
 
 Since I'm no longer using Sublime Text, I decided to port the theme to Atom.  I built on the work of the great [atom-material-syntax](https://github.com/atom-material/atom-material-syntax) package to build out a new theme.  It turns out to be surprisingly easy to build a color scheme in Atom.  Fork an existing theme, change some colors and the details in package.json, delete a bunch of git tags [^2], and then run `apm deploy minor`, and you're in business.  
 
