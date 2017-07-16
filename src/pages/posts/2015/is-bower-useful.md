@@ -15,9 +15,7 @@ last30pageViews: "24"
 
 I first heard about [Bower][bower] about a year and half ago, and was immediately confused.  Bower is branded as a package manager for the web.  My immediate question: "Why create another package manager for JavaScript, when [npm][npm] was just starting to become a standard?"  I certainly wasn't the only one thinking it.
 
-<div>
 <blockquote class="twitter-tweet" lang="en"><p>&quot;What&#39;s bower?&quot;&#10;&quot;A package manager, install it with npm.&quot;&#10;&quot;What&#39;s npm?&quot;&#10;&quot;A package manager, you can install it with brew&quot;&#10;&quot;What&#39;s brew?&quot;&#10;...</p>&mdash; Stefan Baumgartner (@ddprrt) <a href="https://twitter.com/ddprrt/status/529909875347030016">November 5, 2014</a></blockquote>
-</div>
 
 If you can use npm to install Bower, you can use it to install packages directly.  And if you don't like npm, is it that hard to just pull in your dependencies manually?  Why use a package manager at all?
 

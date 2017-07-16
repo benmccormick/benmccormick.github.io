@@ -11,9 +11,7 @@ last30pageViews: "12"
 
 On Twitter yesterday, [Alex Sexton][sexton] surfaced Apple's fact sheet on what's new with Safari 9:
 
-<div>
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://t.co/fVg9U9dEq4">https://t.co/fVg9U9dEq4</a>&#10;&#10;Some ES6 and lots of unprefixed CSS (flexbox!), but I really want Intl, ServiceWorkers, PointerEvents, HTTP2, CSP2…</p>&mdash; Alex Sexton (@SlexAxton) <a href="https://twitter.com/SlexAxton/status/608017541173284864">June 8, 2015</a></blockquote>
-</div>
 
 Safari 9 is still in developer preview and won't ship till September or so, so this all could change, but Apple's changelog is underwhelming to say the least.   The developer facing changes in Safari 9 consist of only standardized versions of CSS properties (that were already supported with a prefix), and a handful of ES6 features.
 

@@ -187,17 +187,13 @@ I'm impressed by Jest snapshots.  When combined with React, they're providing my
 
 - The UI output from Jest 15 tests is the best I've ever seen from a testing framework.  Aside from the nice diffs on snapshots, they do a good job explaining how output differed from expectations in assertion based tests, and communicating context for test failures, warnings and logging messages.  They also give great guidance when making configuration changes:
 
-<div style="display:flex; justify-content:center">
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/cpojer">@cpojer</a> This is lovely, thank you! <a href="https://t.co/CX1v11CAVc">pic.twitter.com/CX1v11CAVc</a></p>&mdash; Ben McCormick (@ben336) <a href="https://twitter.com/ben336/status/772906536154894336">September 5, 2016</a></blockquote>
-</div>
 
 - I've also been super impressed with Jest's watch mode in Jest 15.  `--watch` makes it easy to focus on a few files or run tests on all files, and stays up to date as you change code.  If you haven't worked with Jest in a while, the developer experience alone makes it worth trying out.
 
 - One potential future annoyance with snapshot tests:  The snapshot format can't be iterated on without breaking all current tests.  Make sure not to mix functional changes with Jest updates!
 
-<div style="display:flex; justify-content:center">
 <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">We&#39;ll update the snapshot format sometimes in minor/major releases. When updating Jest, please update snapshots<br><br>See <a href="https://t.co/gPE63dMz8P">https://t.co/gPE63dMz8P</a></p>&mdash; Christoph Pojer (@cpojer) <a href="https://twitter.com/cpojer/status/776623521069805568">September 16, 2016</a></blockquote>
-</div>
 
 
 ### More Resources
