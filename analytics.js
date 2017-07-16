@@ -1,7 +1,8 @@
-let google = require('googleapis');
-let _ = require('lodash');
-let fs = require('fs');
-let frontmatter = require('front-matter');
+const google = require('googleapis');
+const _ = require('lodash');
+const fs = require('fs');
+const frontmatter = require('front-matter');
+const recursive = require('recursive-readdir');
 
 const getAuthorizedClient = () =>
   new Promise((res, rej) => {
@@ -76,9 +77,9 @@ const getPageViewCounts = (path, rows) => {
 };
 
 const processRows = (allTimeRows, last30Rows) => {
-  fs.readdir('./pages/posts/', (err, files) => {
+  recursive('./src/pages/posts/', (err, files) => {
     _(files).filter(file => _.includes(file, '.md')).forEach(file => {
-      let fileName = `./pages/posts/${file}`;
+      let fileName = `./${file}`;
       let contents = fs.readFileSync(fileName, 'utf-8');
       let { attributes, body } = frontmatter(contents);
       let analyticsCount = getPageViewCounts(attributes.path, allTimeRows);
