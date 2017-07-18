@@ -75,13 +75,18 @@ Because we're assuming that this job involves using JavaScript in a browser or o
 
 ### You should be comfortable with Node.js based tooling
 
+One of the biggest shifts in the last 5 years in the JavaScript world has been the explosive growth and consolidation of tools to help build JavaScript applications.  Tools like [eslint](http://eslint.org/), [Babel](http://babeljs.io/), [Typescript](https://www.typescriptlang.org/), and [Webpack](https://webpack.js.org/) are essential to many teams workflows.  While you don't necessarily have to be experienced writing applications for Node.js, it is important that you be able to use those tools.  That means knowing how to install Node and use npm to install and update packages.  It also means getting comfortable with build tools like Webpack, Rollup or Ember CLI and knowing how to use them.  Reasonable people can differ on how many tools and libraries you should be using, or what the right ones to use are, but having a basic familiarity with how the Node ecosystem works has become essential.
+
 ### You should know how to use a framework to structure a moderately sized program
+
+A critical requirement for a developer who is expected to complete work with minimum supervision or hand-holding is the ability to structure their code in a maintainable way.  That means having an understanding of (or helping define) the overall architecture of the system, and then writing code that fits into it.  It also means being able to identify and help solve situations where the current architecture or code base norms causes problems.  I put this in terms of frameworks because pretty much all medium to large JavaScript programs are using some sort of framework, whether it is an "official" framework like React, Angular, and Ember or a collection of helper files and functions cobbled together by a development team over time.  For learning purposes, the popular official frameworks will usually be better to learn, since the knowledge can translate elsewhere, the purposes behind the structure are documented on the internet, and at least some sense of best practice architecture should be embedded in the code.  To check this box I think it would be best to get experience with at least 2 frameworks/architectures, since it is difficult to tell which decisions a Framework makes are specific to its architecture and constraints without something to compare it with.
+
+This is probably the most controversial item on this list, since I know a lot of folks believe it's better to learn architecture ideas outside the constraints of a framework.  My stance here is that frameworks are practical: they're most likely to translate to an actual employment background and it's easy to find practical explanations of how they solve architecture problems.  
 
 ### You should know the basics of JavaScript program performance
 
 ### You should have a method of learning new things
 
-**Honorable Mention**: [Testing](https://benmccormick.org/2016/12/10/saving-time-with-jest), [Compile to JS languages](https://benmccormick.org/2014/11/24/alternative-javascript), [React](https://facebook.github.io/react/), [PWAs](https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse)
 
 ### More Resources
 
