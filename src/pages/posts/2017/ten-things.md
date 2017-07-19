@@ -1,5 +1,5 @@
 ---
-title: "Ten Things A Serious JavaScript Developer Should Know in 2017"
+title: "Ten Things A Serious JavaScript Developer Should Learn"
 date: "2017-07-19 04:00:00+00:00"
 layout: "post"
 path: "/2017/07/19/ten-things-javascript/"
