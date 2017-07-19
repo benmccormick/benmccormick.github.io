@@ -58,7 +58,7 @@ When developing JavaScript, its important to be able to debug problems and under
 
 Competence in this means comfort with at least the JavaScript debugger panel of a browser's devtools.  You should be able to set and use breakpoints, use watch mode and the console to test for the value of expressions, and understand the stack traces. But its also good to get comfortable using the elements panel to understand and manipulate the DOM, and the network panel to debug network requests.
 
-#### 4. You should be proficient with JavaScript Functions
+#### 4. You should be proficient with JavaScript functions
 
 Functions are the core of the JavaScript language.  You should be able to use them fluently.  That means understanding function scope, closures, how `this` works, and the difference between normal functions and arrow functions. It also means knowing about how to process arrays with function using methods like map, filter, and reduce.  A good resource for "thinking in functions" is [JavaScript Allonge](https://leanpub.com/javascriptallongesix/read) by Reginald Braithwaite.
 
@@ -69,7 +69,7 @@ No matter how well you learn JavaScript, you'll be limited career-wise if you ca
 When I talk design, I mean both the basics of implementing a visual design with HTML and CSS[^3], and enough of an understanding of design basics to create a simple UI that looks ok and isn't confusing.  That last requirement is harder than you'd think.  Design is hard and mostly orthogonal to the set of skills most folks pick up while learning to code.  For learning design theory, I'd recommend finding a simple resource on visual design first like [White Space is Not Your Enemy](http://amzn.to/2uz3vEG), and ideally supplementing that with a more UX focused resource like [Don't Make Me Think](http://amzn.to/2uvUrR7).  The practical side of HTML/CSS is easiest to pick up with experience.  If you're using devtools you can see what other people are doing with CSS and tweak and explore using the elements panel.  And there are lots of good online resources for learning about CSS and HTML syntax like [MDN](https://developer.mozilla.org/en-US/) for API info or [CSS-Tricks](https://css-tricks.com/) for ideas, tutorials and keeping up with new stuff.
 
 
-#### 6. You should have a basic understanding of networking and http based APIs
+#### 6. You should have a basic understanding of networking and HTTP-based APIs
 
 Because we're assuming that this job involves using JavaScript in a browser or other client context, you should be able to understand the basics of networking.  You should know what a client and server is.  You should be able to explain a rough approximation of what happens when somebody enters a URL into the browser[^4]. There's a bunch of vocabulary thats good to know here. You should know what an HTTP request is and ideally know the conventions of what GET/PUT/POST/DELETE imply.  It will help you to have a working definition of what REST is and what AJAX is. It's good to get experience working with some HTTP based APIs, either at work or playing around with an API like [Twitter](https://dev.twitter.com/rest/public) or [Github](https://developer.github.com/v3/).  You should also get familiar with at least one way to make HTTP requests in JavaScript (XMLHttpRequest, fetch, jQuery's ajax methods).  
 
