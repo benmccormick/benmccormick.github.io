@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Wed, 19 Jul 2017 04:06:42 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 19 Jul 2017 13:28:40 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -15,7 +15,7 @@
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Ten Things A Serious JavaScript Developer Should Know in 2017]]></title>
+            <title><![CDATA[Ten Things A Serious JavaScript Developer Should Learn]]></title>
             <link>https://benmccormick.org/2017/07/19/ten-things-javascript/</link>
             <guid>https://benmccormick.org/2017/07/19/ten-things-javascript/</guid>
             <pubDate>Wed, 19 Jul 2017 04:00:00 GMT</pubDate>
