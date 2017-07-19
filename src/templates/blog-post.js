@@ -129,6 +129,7 @@ export const pageQuery = graphql`
         keywords
         category
         readNext
+        date
         path
         layout
         hideFooter
