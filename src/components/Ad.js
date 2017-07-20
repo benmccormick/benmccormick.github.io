@@ -44,7 +44,7 @@ export class Ad extends React.Component {
   }
 
   render() {
-    return <span ref={el => (this.container = el)} />;
+    return <div className="ad-wrapper" ref={el => (this.container = el)} />;
   }
 }
 

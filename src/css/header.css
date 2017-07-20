@@ -6,6 +6,12 @@
     color: #E2777A;
 }
 
+.ad-wrapper {
+  height: 100px;
+  width: 300px;
+  padding: 0;
+  overflow: hidden;
+}
 
 #carbonads {
   height: 100px;
