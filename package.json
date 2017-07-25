@@ -55,7 +55,8 @@
     "gh-pages": "^0.12.0",
     "googleapis": "^20.0.1",
     "sitemap": "^1.8.2",
-    "svg-inline-loader": "^0.7.1"
+    "svg-inline-loader": "^0.7.1",
+    "@storybook/react": "^3.1.9"
   },
   "homepage": "https://benmccormick.org",
   "keywords": [
@@ -82,6 +83,8 @@
     "build": "rm -r public && gatsby build",
     "serve": "gatsby serve",
     "gh-pages": "gh-pages -d public",
-    "deploy": "rm -rf public && node analytics.js && gatsby build && gh-pages -d public"
+    "deploy": "rm -rf public && node analytics.js && gatsby build && gh-pages -d public",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
