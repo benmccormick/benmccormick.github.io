@@ -52,15 +52,7 @@ class RecommendedPosts extends React.Component {
                 marginBottom: rhythm(1 / 4)
               }}
             >
-              <Link
-                to={{
-                  pathname: nextPost.path,
-                  query: {
-                    readNext: true
-                  },
-                  hash: '#title'
-                }}
-              >
+              <Link to={nextPost.path}>
                 {nextPost.title}
               </Link>
             </h3>
