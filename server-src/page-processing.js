@@ -1,7 +1,12 @@
-const get = require('lodash/get');
 const { mkFile } = require('../src/utils/file_system');
 const sm = require('sitemap');
 const path = require('path');
+const groupBy = require('lodash/groupBy');
+const get = require('lodash/get');
+const compact = require('lodash/compact');
+const sortBy = require('lodash/sortBy');
+const pick = require('lodash/pick');
+const take = require('lodash/take');
 
 const createCategoryArchives = (graphql, createPage) =>
   new Promise((resolve, reject) => {
@@ -82,6 +87,21 @@ const getPages = graphql =>
     return pages;
   });
 
+const getRelatedPosts = (keyMap, categoryMap) => node => {
+  let readNext = node.frontmatter.readNext
+    ? node.frontmatter.readNext.split(',').map(s => s.trim())
+    : null;
+  let nodes = readNext
+    ? compact(readNext.map(key => get(keyMap, [key, 0])))
+    : categoryMap[node.frontmatter.category];
+  nodes = sortBy(nodes, 'frontmatter.date');
+  nodes.reverse();
+  let posts = nodes.map(n =>
+    pick(n.frontmatter, ['title', 'path', 'description'])
+  );
+  return take(posts, 3);
+};
+
 const createBlogPosts = (graphql, createPage) =>
   new Promise((resolve, reject) => {
     const blogPost = path.resolve('src/templates/blog-post.js');
@@ -93,6 +113,16 @@ const createBlogPosts = (graphql, createPage) =>
           allMarkdownRemark {
             edges {
               node {
+                frontmatter {
+                  readNext
+                  category
+                  key
+                  title
+                  description
+                  path
+                  date
+                  dontfeature
+                }
                 fields {
                   slug
                 }
@@ -107,13 +137,21 @@ const createBlogPosts = (graphql, createPage) =>
           reject(result.errors);
         }
 
+        let { edges } = result.data.allMarkdownRemark;
+        let nodes = edges
+          .map(e => e.node)
+          .filter(n => !get(n, 'frontmatter.dontfeature'));
+        let keyMap = groupBy(nodes, 'frontmatter.key');
+        let categoryMap = groupBy(nodes, 'frontmatter.category');
+        let getRelatedPostsFromList = getRelatedPosts(keyMap, categoryMap);
         // Create blog posts pages.
-        result.data.allMarkdownRemark.edges.forEach(edge => {
+        nodes.forEach(node => {
           createPage({
-            path: edge.node.fields.slug, // required
+            path: node.fields.slug,
             component: blogPost,
             context: {
-              slug: edge.node.fields.slug
+              slug: node.fields.slug,
+              relatedPosts: getRelatedPostsFromList(node)
             }
           });
         });

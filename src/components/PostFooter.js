@@ -5,14 +5,14 @@ import '../css/subscribe.css';
 
 class PostFooter extends React.Component {
   render() {
-    const { pages, post } = this.props;
+    const { recommendedPosts, post } = this.props;
 
     return (
       <div>
         <hr />
         <div className="subscribe-container">
-          <Subscribe post={post} pages={pages} />
-          <RecommendedPosts post={post} pages={pages} />
+          <Subscribe post={post} />
+          <RecommendedPosts recommendedPosts={recommendedPosts} />
         </div>
       </div>
     );
@@ -21,7 +21,7 @@ class PostFooter extends React.Component {
 
 PostFooter.propTypes = {
   post: React.PropTypes.object.isRequired,
-  pages: React.PropTypes.array
+  recommendedPosts: React.PropTypes.array
 };
 
 export default PostFooter;

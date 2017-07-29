@@ -14,9 +14,8 @@ import '../css/mailchimp.css';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const { location, data } = this.props;
+    const { location, data, pathContext } = this.props;
     const post = data.markdownRemark.frontmatter;
-    const pages = data.allMarkdownRemark.edges.map(p => p.node.frontmatter);
     const body = data.markdownRemark.html;
     let isPage = post.layout === 'page';
     let isPost = post.layout === 'post';
@@ -102,7 +101,12 @@ class BlogPostTemplate extends React.Component {
           className="article-body"
           dangerouslySetInnerHTML={{ __html: body }}
         />
-        {isPost ? <PostFooter post={post} pages={pages} /> : null}
+        {isPost
+          ? <PostFooter
+              post={post}
+              recommendedPosts={pathContext.relatedPosts}
+            />
+          : null}
         {post.hideFooter
           ? null
           : <hr
@@ -128,29 +132,10 @@ export const pageQuery = graphql`
         title
         keywords
         category
-        readNext
         date
         path
         layout
         hideFooter
-      }
-    }
-    allMarkdownRemark(limit: 2000) {
-      edges {
-        node {
-          frontmatter {
-            title
-            date
-            path
-            description
-            category
-            dontfeature
-            key
-          }
-          fields {
-            slug
-          }
-        }
       }
     }
   }

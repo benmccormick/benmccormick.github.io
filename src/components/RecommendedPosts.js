@@ -1,36 +1,13 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import filter from 'lodash/filter';
-import take from 'lodash/take';
-import includes from 'lodash/includes';
 import map from 'lodash/map';
-import isArray from 'lodash/isArray';
-import orderBy from 'lodash/orderBy';
 import typography from '../utils/typography';
 
 const { rhythm, scale } = typography;
 
 class RecommendedPosts extends React.Component {
   render() {
-    const { pages, post } = this.props;
-    const { readNext, category, path } = post;
-
-    let nextArticleFilter;
-    if (readNext) {
-      const keyList = isArray(readNext) ? readNext : readNext.split(',');
-      nextArticleFilter = page => page && includes(keyList, page.key);
-    } else {
-      nextArticleFilter = page =>
-        page &&
-        page.category === category &&
-        page.path !== path &&
-        page.dontfeature !== 'true';
-    }
-
-    let nextPosts = take(
-      filter(orderBy(pages, 'date', 'desc'), nextArticleFilter),
-      3
-    );
+    const { recommendedPosts } = this.props;
     return (
       <div className="up-next-block">
         <h6
@@ -43,7 +20,7 @@ class RecommendedPosts extends React.Component {
         >
           You Might Also Like:
         </h6>
-        {map(nextPosts, (nextPost, idx) =>
+        {map(recommendedPosts, (nextPost, idx) =>
           <div>
             {idx ? <hr /> : null}
             <h3

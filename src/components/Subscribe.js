@@ -163,8 +163,7 @@ class Subscribe extends React.Component {
 }
 
 Subscribe.propTypes = {
-  post: React.PropTypes.object.isRequired,
-  pages: React.PropTypes.array
+  post: React.PropTypes.object.isRequired
 };
 
 export default Subscribe;
