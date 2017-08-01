@@ -28,7 +28,7 @@ blockquote p {
 }
 
 h2, h3 {
-    color: #57A3E8;
+    color: #57A3E8 !important;
 }
 
 .explanation {

@@ -1,0 +1,8 @@
+.header-link {
+    color: rgba(100,100,100, 0.7);
+    font-family: 'brandon-grotesque', Helvetica, sans-serif;
+}
+
+.header-link:hover {
+    color: #E2777A;
+}
