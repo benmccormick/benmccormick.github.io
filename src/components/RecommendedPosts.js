@@ -15,18 +15,18 @@ class RecommendedPosts extends React.Component {
             margin: 0,
             fontSize: scale(-0.5).fontSize,
             lineHeight: scale(-0.5).lineHeight,
-            letterSpacing: -0.25
+            letterSpacing: -0.25,
           }}
         >
           You Might Also Like:
         </h6>
         {map(recommendedPosts, (nextPost, idx) =>
-          <div>
+          <div key={nextPost.path}>
             {idx ? <hr /> : null}
             <h3
               style={{
                 marginTop: 0,
-                marginBottom: rhythm(1 / 4)
+                marginBottom: rhythm(1 / 4),
               }}
             >
               <Link to={nextPost.path}>
@@ -44,8 +44,7 @@ class RecommendedPosts extends React.Component {
 }
 
 RecommendedPosts.propTypes = {
-  post: React.PropTypes.object.isRequired,
-  pages: React.PropTypes.array
+  pages: React.PropTypes.array,
 };
 
 export default RecommendedPosts;
