@@ -22,7 +22,7 @@ One of the nicest new features of ES6 JavaScript is the standardization of Promi
 
 A simple get request with XMLHttpRequest looks like this:
 
-```
+```javascript
 function reqListener() {  
   var data = JSON.parse(this.responseText);  
   console.log(data);  
@@ -47,7 +47,7 @@ request.send();
 
 whereas with fetch we get this instead
 
-```
+```javascript
 fetch('/api/foo/bar').then(function(data) {
     return data.json();
 }).then(function(jsonData) {
@@ -65,7 +65,7 @@ Promises have been around for a little while in user-land.  There are a bunch of
 
 If you believe that Promises are worthwhile, you'll immediately encounter a problem in today's JavaScript world.  Many JavaScript APIs, including most standard browser APIs and older but still popular libraries like jQuery and Backbone are heavily callback driven.  Rather than mixing 2 different styles of asynchronous code, wouldn't it be nice if we could easily convert callback-based APIs to use Promises?  It turns out that it's not that hard.  Let's take the simplest example possible to start.  `setTimeout` is a straightforward browser API that waits for a specified period of time and then executes a callback.  A standard use looks like this:
 
-```
+```javascript
 function doStuff() {/*...*/}
 
 setTimeout(doStuff, 300);
@@ -73,7 +73,7 @@ setTimeout(doStuff, 300);
 
 A Promise-based API for this function would likely look something like this code.
 
-```
+```javascript
 timeout(300).then(doStuff)
 ```
 
@@ -83,7 +83,7 @@ You can define A+ compliant Promises using the Promise constructor, which expect
 
 Since we already have an API that can handle callbacks, the implementation of our `timeout` function is pretty simple.
 
-```
+```javascript
 function timeout(delay) {
     return new Promise(function(resolve, reject) {
         setTimeout(resolve, delay);
@@ -95,7 +95,7 @@ We don't use the reject callback, since setTimeout doesn't provide any hooks for
 
 Moving on to a more complicated example, let's take our `XMLHttpRequest` code from above and see if we can create a simplified version of the `fetch` API using `XMLHttpRequest` under the covers.  In this case I'm going to use ES6 style arrow functions to reduce the boilerplate a bit.
 
-```
+```javascript
 const fetch = (url, options = {method:'get'}) => new Promise((resolve, reject) => {
     let request = new XMLHttpRequest();  
     request.onload = resolve
@@ -109,7 +109,7 @@ This is a simplified implementation that doesn't come close to covering all the 
 
 For what it's worth, it is equally easy to convert functions in the other direction.  For instance a callback based implementation of fetch can be a one liner.
 
-```
+```javascript
 const callbackFetch = (url, options, succ, err) => fetch(url, options).then(succ).catch(err);
 ```
 

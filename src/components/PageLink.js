@@ -7,7 +7,7 @@ import moment from 'moment';
 
 class PageLink extends React.Component {
   render() {
-    let { page, showCategory } = this.props;
+    let { page, showCategory, showDate } = this.props;
     const _title = get(page, 'data.title') || page.path;
     return (
       <li
@@ -16,25 +16,34 @@ class PageLink extends React.Component {
           listStyle: 'none',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
       >
         <div
           style={{
             maxWidth: '25rem',
             display: 'flex',
-            alignItems: 'center'
+            alignItems: 'center',
           }}
         >
           <div>
-            <Link style={{ boxShadow: 'none' }} to={page.path}>
+            <Link
+              style={{
+                boxShadow: 'none',
+                fontSize: '22px',
+                fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
+              }}
+              to={page.path}
+            >
               {_title}
             </Link>
             <p
               style={{
-                fontStyle: 'italic',
+                fontFamily: 'ff-tisa-web-pro, serif',
+                // fontStyle: 'italic',
+                fontSize: '16px',
                 margin: 0,
-                color: 'rgba(100,100,100, 0.7)'
+                color: 'rgba(100,100,100, 0.7)',
               }}
             >
               {' '}{page.data.description}
@@ -44,14 +53,18 @@ class PageLink extends React.Component {
               : null}
           </div>
         </div>
-        <span
-          className="no-mobile"
-          style={{
-            color: 'rgba(100,100,100, 0.7)'
-          }}
-        >
-          {moment(page.data.date).fromNow()}
-        </span>
+        {showDate
+          ? <span
+              className="no-mobile"
+              style={{
+                fontFamily: 'ff-tisa-web-pro, serif',
+                fontSize: '18px',
+                color: 'rgba(100,100,100, 0.7)',
+              }}
+            >
+              {moment(page.data.date).fromNow()}
+            </span>
+          : null}
       </li>
     );
   }
@@ -59,7 +72,13 @@ class PageLink extends React.Component {
 
 PageLink.propTypes = {
   page: React.PropTypes.object.isRequired,
-  showCategory: React.PropTypes.bool.isRequired
+  showDate: React.PropTypes.bool.isRequired,
+  showCategory: React.PropTypes.bool.isRequired,
+};
+
+PageLink.defaultProps = {
+  showCategory: true,
+  showDate: true,
 };
 
 export default PageLink;

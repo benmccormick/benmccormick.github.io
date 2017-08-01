@@ -78,25 +78,27 @@ class BlogPostTemplate extends React.Component {
             }
           ]}
         />
+        <h1
+          style={{
+            marginTop: rhythm(0.5)
+          }}
+        >
+          {post.title}
+        </h1>
         {isPage
           ? null
           : <h5
               style={{
                 display: 'block',
+                fontFamily: 'ff-tisa-web-pro, serif',
+                fontSize: '14px',
                 color: 'rgba(100,100,100, 0.7)',
-                marginBottom: rhythm(1 / 4)
+                marginTop: rhythm(0.5),
+                marginBottom: rhythm(1.25)
               }}
             >
-              {moment(post.date).format('MMMM D, YYYY')}
+              Originally Posted {moment(post.date).format('MMMM D, YYYY')}
             </h5>}
-        <h1
-          style={{
-            marginTop: 0,
-            marginBottom: '1rem'
-          }}
-        >
-          {post.title}
-        </h1>
         <div
           className="article-body"
           dangerouslySetInnerHTML={{ __html: body }}

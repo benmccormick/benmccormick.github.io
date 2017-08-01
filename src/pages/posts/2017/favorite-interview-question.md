@@ -12,7 +12,7 @@ readNext: "ten-things-js,jest-git,orthogonality-css-js"
 
 I have a favorite question to ask in interviews for web developers.
 
-> “How does the internet work?  In other words, when I open a browser and enter a url then hit enter, and a website shows up on my screen what can you tell me about what is happening”
+> “How does the internet work?  In other words, when I open a browser and enter a url then hit enter, and a website shows up on my screen what can you tell me about what is happening?”
 
 Usually I get one of a few responses:
 
@@ -30,7 +30,7 @@ Some people can give a very basic response, but don't give a lot of details.  Th
 
 #### 3. The CliffNotes
 
-> Browser sends an HTTP request which gets routed through a local modem/router and gets sent to a name server for its url extension.  That name server routes the request to the correct IP address, which will resolve to some sort of web server.  That server will serve up either some static files, or run some backend code in order to generate a resource (probably an html page).  When the HTML page is returned, your browser will parse it, which will likely generate more requests, and the cycle will repeat.  
+> Your browser sends an HTTP request which gets routed through a local modem/router and gets sent to a name server for its url extension.  That name server routes the request to the correct IP address, which will resolve to some sort of web server.  That server will serve up either some static files, or run some backend code in order to generate a resource (probably an html page).  When the HTML page is returned, your browser will parse it, which will likely generate more requests, and the cycle will repeat.  
 
 Some people know how some of this works, maybe with a few hazy areas and can explain it in a reasonably straightforward way.  An explanation like this is a great start.
 

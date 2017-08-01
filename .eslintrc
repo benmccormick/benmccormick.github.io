@@ -18,12 +18,10 @@
      "extends": ["plugin:react/recommended"],
     "rules": {
         "camelcase": [0, {"properties": "never"}],
-        "comma-style": [2, "last"],
         "consistent-return": 0, //maybe enable this later?
         "default-case": 2,
         "dot-notation": [2, { "allowKeywords": true }],
         "eqeqeq": 2,
-        "new-parens": 2,
         "no-alert": 2,
         "no-array-constructor": 2,
         "no-caller": 2,
@@ -64,10 +62,10 @@
         "prettier/prettier": [2, {
           "singleQuote": true,
           "jsxBracketSameLine": false,
+          "trailingComma": 'es5',
         }],
         "react/jsx-no-duplicate-props": [2, {"ignoreCase": true}],
         "react/prop-types": [0],
         "strict": [2, "function"],
-        "yoda": [2, "never"]
     }
 }

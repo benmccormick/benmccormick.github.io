@@ -13,7 +13,8 @@ hideFooter: true
     <div id="mc_embed_signup_scroll">
 
 <div class="mc-field-group">
-	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address"
+  style="font-family:Helvetica,sans-serif; font-size: 14px; padding: 10px">
   <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 </div>
 	<div id="mce-responses" class="clear">

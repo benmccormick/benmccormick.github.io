@@ -4,7 +4,6 @@ import sortBy from 'lodash/sortBy';
 import take from 'lodash/take';
 import parseInt from 'lodash/parseInt';
 import get from 'lodash/get';
-import { rhythm } from '../utils/typography';
 import Helmet from 'react-helmet';
 // import { config } from 'config';
 import include from 'lodash/includes';
@@ -43,12 +42,12 @@ class BlogIndex extends React.Component {
           meta={[
             {
               name: 'description',
-              content: "Ben McCormick's blog on JavaScript and Web Development"
+              content: "Ben McCormick's blog on JavaScript and Web Development",
             },
             {
               name: 'keywords',
-              content: 'blog javascript development code react vim'
-            }
+              content: 'blog javascript development code react vim',
+            },
           ]}
         />
         <LinkList
@@ -61,74 +60,40 @@ class BlogIndex extends React.Component {
           pages={popularPages}
           showCategory={false}
         />
-        <h1> Past Series </h1>
-        <ul
-          style={{
-            marginLeft: 0,
-            paddingLeft: 0,
-            borderBottom: '1px solid rgba(200, 200, 200, 0.5)'
-          }}
-        >
-          <li
-            key="marionette"
-            style={{
-              marginBottom: rhythm(1 / 2),
-              listStyle: 'none',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center'
-              //borderBottom: '1px solid rgba(220,220,220, 0.3)',
-            }}
-          >
-            <div>
-              <Link style={{ boxShadow: 'none' }} to={'/marionette-explained/'}>
-                Marionette: Explained
-              </Link>
-              <p
-                style={{
-                  fontStyle: 'italic',
-                  margin: 0,
-                  color: 'rgba(100,100,100, 0.7)'
-                }}
-              >
-                {' '}An in depth exploration of how to build better Backbone
-                apps with Marionette
-              </p>
-            </div>
-          </li>
-          <li
-            key="vim"
-            style={{
-              marginBottom: rhythm(1 / 2),
-              listStyle: 'none',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center'
-              //borderBottom: '1px solid rgba(220,220,220, 0.3)',
-            }}
-          >
-            <div>
-              <Link style={{ boxShadow: 'none' }} to={'/learning-vim-in-2014/'}>
-                Learning Vim in 2014
-              </Link>
-              <p
-                style={{
-                  fontStyle: 'italic',
-                  margin: 0,
-                  color: 'rgba(100,100,100, 0.7)'
-                }}
-              >
-                {' '}A modern look at text editing with Vim
-              </p>
-            </div>
-          </li>
-        </ul>
+        <LinkList
+          title="Past Series"
+          pages={[
+            {
+              data: {
+                title: 'Marionette: Explained',
+                description:
+                  'An in depth exploration of how to build better Backbone apps with Marionette',
+              },
+              path: '/marionette-explained/',
+            },
+            {
+              data: {
+                title: 'Learning Vim in 2014',
+                description: 'A modern look at text editing with Vim',
+              },
+              path: '/learning-vim-in-2014/',
+            },
+          ]}
+          showCategory={false}
+          showDate={false}
+        />
         <div
           style={{
-            marginBottom: '2rem'
+            marginBottom: '2rem',
           }}
         >
-          <Link style={{ boxShadow: 'none' }} to={'/archive/'}>
+          <Link
+            style={{
+              boxShadow: 'none',
+              fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
+            }}
+            to={'/archive/'}
+          >
             See More Articles »
           </Link>
         </div>
@@ -138,7 +103,7 @@ class BlogIndex extends React.Component {
 }
 
 BlogIndex.propTypes = {
-  route: React.PropTypes.object
+  route: React.PropTypes.object,
 };
 
 export default BlogIndex;

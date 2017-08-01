@@ -1,5 +1,6 @@
 .header-link {
     color: rgba(100,100,100, 0.7);
+    font-family: 'brandon-grotesque', Helvetica, sans-serif;
 }
 
 .header-link:hover {
@@ -7,18 +8,18 @@
 }
 
 .ad-wrapper {
-  height: 100px;
-  width: 300px;
-  padding: 0;
+  height: 120px;
+  width: 360px;
   overflow: hidden;
 }
 
 #carbonads {
-  height: 100px;
+  height: 120px;
   font-size: 14px;
-  width: 300px;
+  width: 360px;
   position: relative;
   background: #f0f0f0;
+  padding: 10px;
 }
 
 .carbon-wrap {

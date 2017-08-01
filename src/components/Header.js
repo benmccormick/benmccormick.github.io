@@ -12,7 +12,7 @@ export class Header extends React.Component {
           display: 'flex',
           // borderBottom: '1px solid rgba(200, 200, 200, 0.5)',
           paddingBottom: '0.5rem',
-          marginBottom: '0.5rem'
+          marginBottom: '0.5rem',
         }}
       >
         <div
@@ -20,20 +20,20 @@ export class Header extends React.Component {
             flexGrow: 3,
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-around'
+            justifyContent: 'center',
           }}
         >
           <h3
             style={{
               margin: 0,
-              paddingBottom: 0
+              paddingBottom: 0,
             }}
           >
             <Link
               style={{
                 boxShadow: 'none',
                 textDecoration: 'none',
-                color: 'inherit'
+                color: 'inherit',
               }}
               name="title"
               to={'/'}
@@ -43,7 +43,7 @@ export class Header extends React.Component {
           </h3>
           <div
             style={{
-              color: 'rgba(100,100,100, 0.7)'
+              color: 'rgba(100,100,100, 0.7)',
             }}
           >
             <Link className="header-link" to={'/subscribe/'}>
@@ -65,7 +65,7 @@ export class Header extends React.Component {
         </div>
         <div
           style={{
-            flexShrink: 2
+            flexShrink: 2,
           }}
         >
           <Ad history={history} />
@@ -76,5 +76,5 @@ export class Header extends React.Component {
 }
 
 Header.propTypes = {
-  blogTitle: React.PropTypes.string.isRequired
+  blogTitle: React.PropTypes.string.isRequired,
 };
