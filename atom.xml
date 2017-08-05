@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-08-01T02:35:08Z</updated>
+    <updated>2017-08-05T18:29:25Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -542,7 +542,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <p>Atom is built on web technologies.  This is both the best and worst thing about Atom.  It leads to its greatest strengths: hackability, a focus on UX early on since they didn’t have to build a whole UI engine from scratch, and quick iteration.  But it also has very real tradeoffs, the biggest of which are battery life and startup performance<sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup>.  There’s not much to be done about the battery life drain; Atom is based on Chromium, and Chromium is a battery hog.  It is simply a tradeoff to understand when choosing an editor.  But startup performance is often greatly influenced by the packages that you choose to use.  Fortunately Atom includes a simple tool for tracking this called Timecop.</p>
 <p>You can find Timecop in the command palette (⇧⌘P by default).  When you run it, Timecop displays a report of all of your packages and themes and how they contribute to startup time.  It will look something like this:</p>
 <p><html><head></head><body>
-  <a class="gatsby-resp-image-link" href="/static/e54c55880eb9aea6f4fa92ea3c8409a0-0167c.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 65.93673965936739%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAAB6ElEQVQ4y6VTTW/UMBDNH4LuJk42n3Zs5zv7lexuUUXVAkKUC0i9c+QGt0qVkPivj7GpVtpuekAcnmKPn59n3kwcP1FgscQszBFkGlmu4EccTBTwhITHW+TtgGp9CZZq4ip4kcQrL7b33FBgvuDHtRPmLVR/QKLXCEQ7CZ83iGSPYnkJXg8v8lhWw2G8Am9GZET0suoMbPsZ3qcHLOhh0e6IOxB3C180Z9yL7Rc4Pq8hKUMjupDdGSm6/obk62+EdCb7vYURnXp8Nt7DcdMCSbVBXK4nSW79Ft7Nd5iHU+IlxAso20nB5UcSTDRivURcrBCqHvOkOIG/fA//cA8vLRE98cz6Oc/gdfEGTkCGaypZLw/ws8bCNMrGCIu8s2bbkslDQV4bDksr2yjV7W3cxDyKOW7WI25vkPQf7NemL1bHmAETPVi+Pcai5hq+3MBXI+LuHeHWnrF8BWee0OvlHotiRKoH1LyAa7IsDwhor8oRNXXUTSl7unD0lko0MxoWe7sPaG6F4lQykU2XzUg0WuLnXW1HRJEFxq+7usPDdo1ZpE6bRYKMGmV8NftYllitSzgX9Ic875bxS3Q7u76tejzuhknBWaxPYqYxk4Jm2CP9t7ydrPCjKv9P0GRYbq5syVeU4a9/yPAPd7fLbnIF+IgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;">
@@ -559,7 +559,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <h4>6. The UI is just HTML and CSS, and that means you can edit it</h4>
 <p>Everything you see in an Atom UI is an HTML element, with classes that you can use to select and style them. This fact is mostly relevant when creating themes, but you can also use it to make one-off UI adjustments.  For instance, when I edit Markdown files, the <a href="https://github.com/sindresorhus/atom-editorconfig">editorconfig</a> plugin I have installed warns me about a possible conflict with another atom package. The warning shows up as a small colored mouse icon in the status bar.</p>
 <p><html><head></head><body>
-  <a class="gatsby-resp-image-link" href="/static/39200e898c084d11c48d6b6d7da6471e-7a88b.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 44.88567990373045%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABf0lEQVQoz62S2VKDQBBF+RPLJTEhkTUQIBCIBIYtIWYzlsbl/z/i2j2Ulj754sOp2z0909N3QNGnCewoR5zVEIXAMhfISauqwFJQTBRlR0lkoquzJlmBRb1H2hwQ5q1E0dxYNqwPr6h2LxCbJyzXj2hPH6j2Z0lzfEPDdYpXx3cU22eURN4+yfW8Pcnz3EcZOxHMIMVcbOiGtSSim5JyC29RwYwyGP793wSdKl+W/wtFm3aWs90Z6eaMWb6R00asxQNihqZl+L147auWVLtuD9VYZcORFcDwaMq4gBUKTEm9pIA7zymmnDQg67zGeXBfwU9K+ItSxrO0Ia2R1gdY9HTKQHNguCH6Ywu9kYXL27tv+gP9O74aaLI+tF2otkcNKzg0ERNmLTnZYhJmUG5UQza7GvIBE5wzFz0VrZngsjeS8U+uhzpmyzW5EDD9lOKVbDoJ+StbPm61CYa6S1Pov/A0D7rpyAb9sQ12w/vu7Bm5mkM1PGj0l6iuT1MTpo9Pngw0OpULBzcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;">
@@ -576,7 +576,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <p>
   <a
     class="gatsby-resp-image-link"
-    href="/static/bada6a2b6969a5a867626981a6af7347-fbee6.png"
+    href="undefined"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -654,7 +654,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <p>Since I’m no longer using Sublime Text, I decided to port the theme to Atom.  I built on the work of the great <a href="https://github.com/atom-material/atom-material-syntax">atom-material-syntax</a> package to build out a new theme.  It turns out to be surprisingly easy to build a color scheme in Atom.  Fork an existing theme, change some colors and the details in package.json, delete a bunch of git tags <sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>, and then run <code>apm deploy minor</code>, and you’re in business.  </p>
 <p>You can now download <a href="https://atom.io/themes/mariana-syntax">mariana-syntax</a> in Atom.  This was a quick port.  I’ll be working to optimize it for the languages I use (JS, Python, CSS/Less, HTML and Markdown) over the next few weeks.  I would love to see pull requests for other languages or for anything that I’ve missed so far.  I look forward to this just getting better and better. <strong>Update:</strong> Version 0.2.0 has shipped with optimized syntax for JavaScript, Python, CSS, JSON and Markdown.</p>
 <p><html><head></head><body>
-  <a class="gatsby-resp-image-link" href="/static/a13c07ac2f3fde691852ce1738103fe8-7267d.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 83.00970873786407%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsSAAALEgHS3X78AAACBklEQVQ4y51U2ZLaMBD0/6SSBV/4vpBlyxdezJJskkr+/ys6LeOlKGA3JA+NxnjU6pke2dh2L5DDEap/gZc32AQ57DDHykvwxYlg+hk+2+EM08/x5Cb4ZPqwguL0zgqx2qTLuxiGFUsEaYW9VGgPv9A+f0dd90jVgER1CFUPN1dEDZt5ZlTOsJb1Ojb0j59IjGWFtNmjOryi2h+RtTvEsoMnFHzZwC8buIWCFqBhLus1DM3uJCQreghZQ9QKidghLQcUskLRHpA1E9XVdwluCGfJDFwSeGWHDcvSz/oQh8odEul4VrXkfkhoLUmbvIW/Hdi7PULRM+7YigoR14DPj5CdCONTok9lWyqMudnJ1KzMDgVcrZTxmvHZhEcIdXmlaFGxf0X5jKBokPcTknpEIul6N8Gj2r+RGmfXIgnBDY0YiBFZ0aLsjzRlmiH7r3SdzlcjrKWn901hKbocm0kZVUWcuSAS8Ag3ruGyFRu2wEuaufyQ5pmsar3su8aZUJ/q8oQ1CZ54C1bB9grLf36BNdd1eAlxjueSnaymCiqgkk1+Wt/G5BEjbnro0sXtcECh7/XuG+T4SiN287joAzTsD/p215RsN0JoMqI7/oba/0Az/UTGudSz+ab6YYVOTAU0wroo73L2/mGw5WxGkdNlIuEHQN/dVE03fXwPl3nGybH7I2D+B/4A+oRN2m6cG54AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;">
@@ -698,7 +698,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <p>
   <a
     class="gatsby-resp-image-link"
-    href="/static/3c13198254a7cdabc416bd2aa060cb7b-bc92a.png"
+    href="undefined"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -734,7 +734,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <p>
   <a
     class="gatsby-resp-image-link"
-    href="/static/6a389461177782c04eacef4eb7226e50-17fa3.png"
+    href="undefined"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -955,7 +955,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <p>Setting up my new laptop this week, I found that the software I use a lot was all over the map on this scale.  Here are the grades:</p>
 <h4>Atom - <em>B</em></h4>
 <html><head></head><body>
-  <a class="gatsby-resp-image-link" href="/static/093b823a2bee7ef140badd020e6e572c-e5ca9.jpg" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 38.46153846153846%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAdkRQf/EABYQAAMAAAAAAAAAAAAAAAAAAAAQIf/aAAgBAQABBQIq/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAGRAAAQUAAAAAAAAAAAAAAAAAAAEQEUGB/9oACAEBAAE/IVmjDf/aAAwDAQACAAMAAAAQ99//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAACAgMAAAAAAAAAAAAAAAARIQABEDFR/9oACAEBAAE/EGUgLM06x//Z&apos;); background-size: cover; display: block;">
@@ -973,7 +973,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <p>
   <a
     class="gatsby-resp-image-link"
-    href="/static/379627f9a03d1e9aa502e010930f90a7-acf54.png"
+    href="undefined"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -1009,7 +1009,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <h4>Command Line programs - <em>A-</em></h4>
 <html><head></head><body><div class="img-group">
   
-  <a class="gatsby-resp-image-link" href="/static/ae8d50a17bcac108e0974582ab929911-a08e0.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 100%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsSAAALEgHS3X78AAACnUlEQVQ4y+WUW0iTYRzGpcNFeVEbChEU0kXQldSFZOYJbWpaMaSTko7JaCPUC2Gh+e3gNzV20k/nNieC5CF1bG5f6Ke05Q7Q3Jwxu7Kb6EZheRMS1E0+7fsomenQi67qhYf3BD/e//M+/NPS/u8hl8uPxePxks3NzRvJCkfCogn3i0mHw5Gxvr5etLGxsUuxWCxzX+Acw0i1Oh0sFmuSLBDKa3HVJkCHqXVLr9fDZBrYUV9fH/QGw/y+QJfLJSZJzXYkHMZKNMpJSapxrrEA/MFynCfzoCBVCP+6jy4vo7+/H70U5UhV9RGlSk2/X13dAZaLqjkYqxzNPQSCAQ7EymAwoLeX8hAEcSqlj+2EYuJPIM9ahhJNHcJLS9zZciQCpVoBi9X6pr6+/mRKWCAQSG8l2qK7gHVCVHdJ8W5lhduz0BbiKbJU+WgeEW8t+hbL9oWFQqGMYdfw29yWciQDjT09WI3FuPVSKASpvBn8jkLOgrODAjweqf3OvJ6t2QP0er1VtzrF3/jSnF3AgN/PzX6fD7pEAk4T13c8Za240FYE25jVyfq/Bzo1NVVWKbn/JRnIKhgMQih+iMpOMXg9JeCZBOBRpbgoL8Wky/5xYWHhyqE/hX1ZheQutANGVGolaDeSUBm7MDo5DoqiMDMzg9GxsdlDAb0eDwobbiODLAb9isYZohjjLydwqSYP09PT8Hg8nxPZhZummw4EzjMMJE9k2zxFAfLIB1BqNbj87A46u7vgcrt/2Gw2zM7NfTWbzVhbWxOkBCay1dTd/fyTQqn6YLfbK1Q2nS9TUQR+wruq1kdbDMM0JMq85vf7K2iazk9E7aZMJjtxUJ84+vvXRCJRunbE5BSpG+MOpzP3r3Sh7Ozs40NDQ1n/Rk/9CfBx+1OP+w7bAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;">
@@ -1023,7 +1023,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
   </a>
     
   
-  <a class="gatsby-resp-image-link" href="/static/8e8d12e9c97d6f070368e93dd89050ff-ac588.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 69.64285714285714%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsSAAALEgHS3X78AAAB00lEQVQoz42SaW/TQBCG8/9/DRICCYEQAppKVOR2mjR2Lju+77W91+xs17EqqhIJ5tNqZ5539t2ZkR5CKWY77XTeTmfdZttfMC6TWHhbsXvgu7XqaF+GqF/FiJ/OzWTGg1AxNlwh5yIIqe2Ii6dVgvmKr++hzG/A7HgScYpdgu57bAuUUlx81bYmZyRklmoM+NMYilsw1ERm14QSKJgII+oc2HapeXXlI0h9uCygjG/AQwcwPCIQAlVpzHezmfQ3GjJTrmrCnL1qu9swUsoOR+H7QGpFGvJj3M3n8rzV9KJl3atH0WDkTYwGPeE5nbURfiijCz9abDXHysPGHWCUCptcA78BY5tiuYfU4ecTZmssLQhtbUiRmFebfF9DQi3av2HEwoWoxyDPVbjAfIG1j3wofTGpJJJElyvd7TXCq85dTR/X4Dv9uXJVsBTuge2eZOAhrV8krirNRhNLhRMk0R/PMk4UpVd7jNsr+rgRUQxpDNFRZR7EJxXvNS90e9TFGIM7zA5Iq9HbH1QIeWGGh9eFMzsj81ymGWQJxgtpfxHub7A/qXBJrdlI/zOuszVyYnvHpx9EFHDrZ/P9Y/X12//CMi+7yT35/A5pa5ai+fXQLZbPOlMh4Cb6aCIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;">
@@ -1037,7 +1037,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 </div>
 <div class="img-group">
   
-  <a class="gatsby-resp-image-link" href="/static/042664999475fd8cc3672db6567e2e53-cfb90.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 41.75824175824175%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABFklEQVQoz43Rv0pCURzA8YM9hNqos0Kc26bioogNXSWkNxAFNxdBVGryHVxsiKitLWgKWqJ0yH+IuPgAWmiDIPU98TOuVuCFD+deL+d7z/Eo5bjebF2b2fr13dYetcMVDqgh8uY+ElDBjZdEcgSLBKfo7RIlloYPB2hlosr1/YLAOT7RmKe0n3G1HWXCMTro4gU5TFDGGAs8m9iZxIwlqzwiVOC+b6IfacstwUdkcYiR/HaHitm2+cj6f+s6giueS6jKh8xKkzK5LCvqo/FvcJ6yvEwaSLBDLLOOs9KsY8s3eEAdCQ5hn7GHW5zKli+3o21Z3UZMgve4wDWWOEHciGm1xxiC9TPBEf0Vk+ATrtCUQ/D+dfJfThSkSQLB5ZwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;">
@@ -1057,7 +1057,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <p>
   <a
     class="gatsby-resp-image-link"
-    href="/static/6ad77f78686b0db16d3e262640e631b8-751de.png"
+    href="undefined"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -1094,7 +1094,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <p>
   <a
     class="gatsby-resp-image-link"
-    href="/static/8af8f768ce91ce5a30f67cff603de68e-69191.jpg"
+    href="undefined"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -1154,7 +1154,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
         <content type="html"><![CDATA[<p>Yesterday morning I was innocently minding my own business, downloading some files, when I noticed that nearly all the disk space on my 256GB work laptop had been consumed.  This seemed rather unlikely to me, given that I’d only had the laptop for about a year and I didn’t store anything other than code and work documents on it.  Text files just don’t take up that much space most of the time.  So I decided to make a purchase I’d considered for a while, bought <a href="https://daisydiskapp.com/">Daisy Disk</a>, and began investigating.</p>
 <p>The first thing I noticed was a huge amount of the disk space (about half) was taken up by the <code>~/Library/Containers</code> folder. That folder contained my email history and also data on my <a href="https://www.docker.com/">Docker</a> containers. Docker functions as a lightweight VM, and essentially holds copies of virtualized operating systems and file systems inside each docker container and image, so it made sense to me that it could be taking up a lot of space, though >120GB still seemed wrong for my paltry 4 containers.  So my first step was to delete all of the containers and images on my laptop.  That cleared about 20GB of space but still left my drive looking like this:</p>
 <p><html><head></head><body>
-  <a class="gatsby-resp-image-link" href="/static/738d6393507d403118839c48ca17b0da-c0d7a.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 75.02668089647813%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsrAAALLwGbQGAnAAABz0lEQVQ4y52TS0sbURiG/TnVyYyJM2ecSyZxcqGZZKg1ilErtJYKalVqMmh6EZqFQvGC4gXFVBCFkpXSutCF/6AVl26aVV0FLCMx4+71OKtCQTJZPOe2eA7f+d7TpAXIb9Ih2Awn2i1+zY70F1z0voItKHFbCsbtAAnZTxi+LproUGn2CfBCa5uCdiUCSY1Cpvh5FRLdK1oMDQkf4z8hG1DpTd0wUhkkkp1gONKYUEkPwsh+hjk8hxFrD7MT51gbvUBS6/MubOFEDOyWkC+XsXC1BuvnASZPf2GpdA6ZxBCPmt6EQX8QH4rj+FpdReF2GgPOLqLlBXwq7eOkdx0fk2/BsmL9QtIqY/tsAntUZt3Nwfi7Aakjhgx5jmGS9l4y4WQsH47gmzOD97VZdDlFyDtj4HOZxrqc4HW8tnpwXM1jxclhqvYFL26LeFXdgj5qeBf6fATdWgLrp2M4cvLYqFlYdLJYpvLNSha6GfYeG1OgqQ+FMX/wBod/cvhxM4Pv19MoXU7h5bt0A8FmeBi09HBbCF1mCpmhZ0gPmkjpT5ESImDqFTazxM3hv4c8J0Hxq65IpA3z9IYsr1U4IUQ/vAqOfnp3Dsju+gGGEz0J7wEJgg97vsFVZgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;">
@@ -1170,7 +1170,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
     </body></html></p>
 <p>At this point, I was annoyed.  103.5 GB was taken up by some folder called Docker.qcow2 and Daisy Disk wouldn’t show me what was inside.  So I drilled in on the file system and immediately found out that Docker.qcow2 was not a directory like I’d assumed due to size, but a single 100+GB file.  At that point I decided to poll my teammates to see if I was the only one dealing with this:</p>
 <p><html><head></head><body>
-  <a class="gatsby-resp-image-link" href="/static/eafd4ae8771dc7dea9d49817f530f12f-3e5d8.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 112.92613636363636%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAAsSAAALEgHS3X78AAADNElEQVQ4y51VyY4cRRDt/z8AviFx5sDB4mBZIAsk7mjA8phh2uPpvfbKWjNr7a7nF9ELbQsbm2w9RVRm1YslI6JnxhisNxusVmv839X3PVzTwDmH2WHMYdsWXdfBWouGB9Y61HWtL5z3+tZhmqZ/xTjuMQyDcsxub27w29MfMJ/P8fDwgPv7exiToaqqC6E9ycsz0dKJs9HD4aDEImctrddFCc/3EYQhdp6HKI4RRpEijVMUSQZHr1t60J886RimSkKIZAnpTBWiWHjIH7Yo3u5QUrcxSZIcLi3QCKi3WYU2KdAV9VHn/jlsWerhObEmZ1Jth7pqkWQOJfW27bEfRkz7PQ7M0+Ekp/3hol8vJXy8m+Onb75HGCcM14fJ5JI6jDw8XKxPx990JU/7QnKNWWlyrF7OEUcBlou38HZb6iHyLIVJY0VmUpRljqosiJxRlLyQkmcJb5fGh17xXshJHJJso8S+x1zmBinJhFj2otBXXciFtGMZNa4mUXfCB4SBv1OiMPBUF5mZ5OKpGJTnM+qqQFlkKi29tXV1JJQ6ClkuRl7kx3lmWIOFhtg09IKetFeQPWdrSqnHSmXbyFlzJFwslnj+7Bkq1mKeSX74cmXR1Q69a7VEej73tlEMTffRjlHCJElx++oW5SZCvotQ+czRNoKL6WFawvHZhRnrkLXIPanDwXUYTuSq1w3k0o8hs32C9RrpyoMhYbzcwax9dCW9opcjvRz54RmDbS8kuid65f6pw+16g1+ev0DiR0jCGEEQImUvNyRq3wvbqezySo115dHYvhuw70cc2ABKWNH1pZ/B7hI0EcPMmcOCCTestcCw9SiZAsvQRdarANZLFC1TcDYm3l6VzQQTsDQ2Pir2bBUa1ImQV9otH1vTB1DCoWuRehu84egSFGWpcLXVSSJz7nOXEnrbLX7+8Sl8P9BBumfTT5/w6lNLBu3s5uYPPPnqa6x5OTHnYMF67E5z79zwYuQ88/7TQ/2AzPLfIog4VEWmqSF5gVyQFzrBP4vw5c2f+O7Jt7i7+xuvWODi8evXfymJEEprflEOH+dv8PuvL/C4WGChWOqfVNOwoMdR8SWE7wCWPOn1laP3FAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;">
@@ -1186,7 +1186,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <p>So between the 5 of us, we each had “cow files” taking up between 23 and 103GB of disk space. Some Googling revealed a <a href="https://github.com/docker/for-mac/issues/371">github thread</a> that showed this is a so far unsolved issue with Docker For Mac.  Summary: qcow2 files are a format for saving disk images.  Docker For Mac’s implementation works well for writing and updating images, but doesn’t automatically free up disk space when a container or image is deleted. So as you use and delete containers over time this file gradually grows.  I have a habit of deleting and recreating containers when I’m trying to debug something, which explains why I had a much larger file than others.  There isn’t currently a true fix for this issue, but you can delete the file.  You’ll lose all your containers and images, but when you recreate them the file will be small again.  There also is supposed to be some automatic limiting of the file.  The current cap is 64GB, but there is work on making it configurable.  Unfortunately the current cap is not respected if you had previously used docker-machine to control docker on your machine, which is how my file exceeded the cap.  I’m also unclear on what happens when the file hits the cap.  I get the impression that things stop working and you need to delete everything anyway (you just avoid running out of disk space on the host machine).</p>
 <p>Fortunately it was no problem for me to delete everything, and so I was able to clear things out, at which point my disk looked a lot happier:</p>
 <p><html><head></head><body>
-  <a class="gatsby-resp-image-link" href="/static/22b1203e29be4211209bdd1c97f9bc85-c9a27.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 56.04534005037783%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsRAAALEwFNUj0TAAABZUlEQVQoz72SP0/CUBTF+RZAEBUClAKlTdtXpIVSa/kbSogMRKOLMWI0ikljTEgYHJxYTPwG7s7GxMXFVY2rO4lhdXI4lg4QxAExcTh5eefd/O577x4Xs5RGzCch4uYRDxegmV1H2UoHAqdD4g2wdNY5n0WuWQu/S4xokGjdXnNgAwoIters5wLG/CloQgUZtojksux4w5cW5PoYSHl45AUVhF5BuViFbNbQrG/ZXbUpIOdNQ+VKUJj8yKN9BDqpjoGWaeKht4/Hm0Nc3rfQvj2H1X9HbacHNqhMABmPCD6gIuFJIW6Lsr2oV0A6YYyBGxkDb9cn+Hw+xeugjdZHF63BHczNq6kbJm0gCWkQgxpoNxn5SrIw+YfMgojOWQ2N/i7Ul3U0nywcNSzskQNwfnlUR7kFCIs5yHYqslTJ8diAjBxf/nkoNCUhFdfRDG/jgj+GEVr7e2yGU4t6xV8nYO4c/hvwCxvbXcmD0tGEAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;">
@@ -1207,7 +1207,7 @@ exports<span class="token punctuation">.</span>postBuild <span class="token oper
 <li>One more thing I learned from my coworkers slack yesterday: <code>ls</code> takes an <code>-h</code> argument that shows file sizes in KBs/MBs/GBs instead of all in bytes.  This is super helpful when examining large files.  Compare the 2 lists of files from my Downloads folder in the image below. The normal form is very nice for comparing 2 files side by side and seeing which one is bigger, but the second form is much more helpful when you want to get an idea of exactly how big something is, or communicate it to others.  Most of us don’t think about file sizes in terms of bytes anymore.</li>
 </ol>
 <p><html><head></head><body>
-  <a class="gatsby-resp-image-link" href="/static/444921e84047cde23158b43eab28f35a-b1f7d.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 59.285714285714285%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAABzklEQVQoz6WTWZKrMAxFs/+V5VWFGQLBeGCekx2I1hVJd1f15/tQ2Tj20dWVcslNT3m9UGEnWrcn7ft+/EfQpaoqstaRqxuq65r3ltI0FXCR56SUoqpSpOWepTiOKedzrTW1bUtN09Dz+RvID4zWh3OOrDHYUxiGAsSjLMsov98lCeBJEtOdv5EMb7ZtY+BZ2RPAoiiIoQeyW2vkURAEcsH3fVaUCDCOIypLJQpxHkWRJEOivu9omiZaluUHaBgIRaosyeMHAAKS8IOMI2LVRfEQ0PV6FSgSQ8g4DDSO4wmsWXbbNEfXdVjFRyQBEP5obTgqUe5cTY/HQzw0bA9+h2/7vknpiItpBtLdQq6baJxXWtdVMn06hz3OEHg8z7P8Dt9er9fBq8R3Uwrd8MgMpFxPbT+KF+geAFCA777vJXCOSgTKgfXP2ChVcmerw3085NI8z2MVM/mBLyWmHx/ZvzAMuDklW8NWMfwPEH7xhcOYE4jL/tkUAQgsS6WjiLPD8beHqOTjnwChgIdbgOatEN3DBYwI5g4gzB7Wf9zh2+0migGHBbDjXT5KVlB2WO42suIfAWUDX4qTRNRhDu/v4fYYFoaRfCMpGoTgvZT8Bd68ZADqgmUsAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;">
@@ -1262,7 +1262,7 @@ PASS<span class="token operator">=</span>true
 <h3>What Did Work</h3>
 <p>Fortunately Jest has a lower level command that uses the same logic as <code>onlyChanged</code> and <code>lastCommit</code>.  <code>--findRelatedTests</code> is a flag that tells Jest to run any tests related to the files passed to it instead of trying to run those files as tests as it would normally do.</p>
 <html><head></head><body>
-  <a class="gatsby-resp-image-link" href="/static/9350cbcea06e8f1f423335d94d84ac98-1b819.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 81.97573656845753%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAAB4klEQVQ4y6WTTW/TQBCG88u4ceOAxC/gzJ0T/4YDQohDVSGoQEhUqErTElzZ8ffaa69jJ3ZsJ7aTNi3wMrtBQNUDbjmMxh5p3p2PZwZl4cGLOXwyJrj6FunOVzlDW3r4vhH4cd7PBgefnmDvw2PUiwDFzAXzNUShjjQxkQqDRO3bCb588wDP9+6hrXyUcwvmZAjHPobnnoB5pwjZGKuFi8uW9xN8/e4RXuzfR0OtpUKHpn2GYRxB149g2yP47qkSLmYWVRr/W/DV24eqwo4qXBYOePAVSXQG1znBLDFU/HwV9G9ZRAeYJu9V0mXHcdGE2CwZutpXC1nXrHe7SpDTjGQlde4oEVmhnF+emajmNrJkoh7qLWhbx2rwMlkm7jbr9Ba4IShntG13rUovW9/eosUbglUZYDrnyrI8QjLjyIudb0pGfNJSOoGLtVB+S/5qI37HpG3Xf+KDw+Ez7H98iiwLIIQHxzPA2ARhaCHiBtLMRbGcomoSVKupsrZNsKT/BcVr8jXFFr/i1zjM0wnG40O4xJ/kMOaaiimwey7mGodFasIyh8TgiK5lRGf4BYKfIQ41dUW9wP6bQ2mNYs9XD0ge5UnKhX1bx3fgkJIDqkpyOKdWy//l8KqLMI11BfVdsfkJ8S6g9C3bagEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;">
@@ -1312,7 +1312,7 @@ PASS<span class="token operator">=</span>true
       </div>
 <p><code>lint-staged</code> now handles making sure that I’m only running checks against JavaScript files, lets eslint autofix and stage any files that it can fix, and uses the local versions of jest and eslint.  It also adds a nice pretty interface for the results:</p>
 <html><head></head><body>
-  <a class="gatsby-resp-image-link" href="/static/07049d14abcd3c0065c9779b76d22045-41b68.png" style="display: block" target="_blank" rel="noopener">
+  <a class="gatsby-resp-image-link" href="undefined" style="display: block" target="_blank" rel="noopener">
   
   <span class="gatsby-resp-image-wrapper" style="position: relative; z-index: -1; display: block; ">
     <span class="gatsby-resp-image-background-image" style="padding-bottom: 35.321100917431195%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAAA3UlEQVQoz42R2RKCMAxF+///5oyOGyqLqIxABQqUze2aBngUfTiTNJO29yYilTYi6aJQHmrlQqc2iuSAKnOQxRbnfFYO19ryiHdz/oqolI2SLmhqfmgfj8rHqz4xz2pgOI9MPtilB1wvK1KzQ1d6uOtpBb8QbbxBfttDDdzCLVOSdWOzzl0ahYOGonExWv+mVPz78/jAL9siITWF3CMPlqxMXnvSyIIMLcSUG1VFQj0061zuoIi+1i9MZza7NFG0co0mmKMLFqjDJXS0hvJnHI01tkyY2Xa04TsxpfADQvERZDfQoGMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;">
