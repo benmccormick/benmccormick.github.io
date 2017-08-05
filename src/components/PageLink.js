@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 import get from 'lodash/get';
 import { rhythm } from '../utils/typography';
 import CategoryIcon from './CategoryIcon';
-import moment from 'moment';
+import format from 'date-fns/format';
 
 class PageLink extends React.Component {
   render() {
@@ -62,7 +62,7 @@ class PageLink extends React.Component {
                 color: 'rgba(100,100,100, 0.7)',
               }}
             >
-              {moment(page.data.date).fromNow()}
+              {format(new Date(page.data.date), 'MMM Qo YYYY')}
             </span>
           : null}
       </li>

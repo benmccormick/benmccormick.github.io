@@ -1,10 +1,10 @@
 import React from 'react';
-import moment from 'moment';
 import Helmet from 'react-helmet';
 import PostFooter from '../components/PostFooter';
 import { rhythm } from '../utils/typography';
 import { Disqus } from '../components/Disqus';
 import last from 'lodash/last';
+import format from 'date-fns/format';
 
 import '../css/codeformat.css';
 import '../css/typography.css';
@@ -30,7 +30,7 @@ class BlogPostTemplate extends React.Component {
               name: 'description',
               content:
                 post.description ||
-                "Ben McCormick's blog on JavaScript and Web Development"
+                "Ben McCormick's blog on JavaScript and Web Development",
             },
             { name: 'keywords', content: post.keywords || '' },
             { name: 'twitter:card', content: 'summary' },
@@ -40,8 +40,8 @@ class BlogPostTemplate extends React.Component {
             { name: 'twitter:description', content: post.description || '' },
             {
               name: 'twitter:image',
-              content: post.image || 'http://benmccormick.org/logo.png'
-            }
+              content: post.image || 'http://benmccormick.org/logo.png',
+            },
           ]}
           script={[
             {
@@ -54,7 +54,10 @@ class BlogPostTemplate extends React.Component {
                   "keywords": "${post.keywords || ''}",
                   "url": "${url}",
                   "image": "${'http://benmccormick.org/logo.png'}",
-                  "datePublished": "${moment(post.date).format('YYYY-MM-D')}",
+                  "datePublished": "${format(
+                    new Date(post.date),
+                    'YYYY-MM-D'
+                  )}",
                   ${post.description
                     ? `"description": "${post.description}",`
                     : ''}
@@ -74,13 +77,13 @@ class BlogPostTemplate extends React.Component {
                         "http://twitter.com/ben336",
                       ]
                    }
-                }`
-            }
+                }`,
+            },
           ]}
         />
         <h1
           style={{
-            marginTop: rhythm(0.5)
+            marginTop: rhythm(0.5),
           }}
         >
           {post.title}
@@ -94,10 +97,10 @@ class BlogPostTemplate extends React.Component {
                 fontSize: '14px',
                 color: 'rgba(100,100,100, 0.7)',
                 marginTop: rhythm(0.5),
-                marginBottom: rhythm(1.25)
+                marginBottom: rhythm(1.25),
               }}
             >
-              Originally Posted {moment(post.date).format('MMMM D, YYYY')}
+              Originally Posted {format(new Date(post.date), 'MMMM Qo YYYY')}
             </h5>}
         <div
           className="article-body"
@@ -113,7 +116,7 @@ class BlogPostTemplate extends React.Component {
           ? null
           : <hr
               style={{
-                marginBottom: rhythm(2)
+                marginBottom: rhythm(2),
               }}
             />}
         {isPage || post.hideFooter
