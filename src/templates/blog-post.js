@@ -1,20 +1,34 @@
-import React from 'react';
-import moment from 'moment';
-import Helmet from 'react-helmet';
-import PostFooter from '../components/PostFooter';
-import { rhythm } from '../utils/typography';
-import { Disqus } from '../components/Disqus';
-import last from 'lodash/last';
-
 import '../css/codeformat.css';
-import '../css/typography.css';
 import '../css/images.css';
-import '../css/twitter.css';
 import '../css/mailchimp.css';
+import '../css/twitter.css';
+import '../css/typography.css';
+
+import Helmet from 'react-helmet';
+import React from 'react';
+import last from 'lodash/last';
+import moment from 'moment';
+
+import { Ad } from '../components/Ad';
+import { Disqus } from '../components/Disqus';
+import { rhythm } from '../utils/typography';
+import PostFooter from '../components/PostFooter';
 
 class BlogPostTemplate extends React.Component {
+  componentDidMount() {
+    // Get the components DOM node
+    let elem = this.markdownContainer;
+    // Set the opacity of the element to 0
+    elem.style.opacity = 0;
+    window.requestAnimationFrame(function() {
+      // Now set a transition on the opacity
+      elem.style.transition = 'opacity 500ms';
+      // and set the opacity to 1
+      elem.style.opacity = 1;
+    });
+  }
   render() {
-    const { location, data, pathContext } = this.props;
+    const { location, data, pathContext, history } = this.props;
     const post = data.markdownRemark.frontmatter;
     const body = data.markdownRemark.html;
     let isPage = post.layout === 'page';
@@ -30,7 +44,7 @@ class BlogPostTemplate extends React.Component {
               name: 'description',
               content:
                 post.description ||
-                "Ben McCormick's blog on JavaScript and Web Development"
+                "Ben McCormick's blog on JavaScript and Web Development",
             },
             { name: 'keywords', content: post.keywords || '' },
             { name: 'twitter:card', content: 'summary' },
@@ -40,8 +54,8 @@ class BlogPostTemplate extends React.Component {
             { name: 'twitter:description', content: post.description || '' },
             {
               name: 'twitter:image',
-              content: post.image || 'http://benmccormick.org/logo.png'
-            }
+              content: post.image || 'http://benmccormick.org/logo.png',
+            },
           ]}
           script={[
             {
@@ -74,13 +88,13 @@ class BlogPostTemplate extends React.Component {
                         "http://twitter.com/ben336",
                       ]
                    }
-                }`
-            }
+                }`,
+            },
           ]}
         />
         <h1
           style={{
-            marginTop: rhythm(0.5)
+            marginTop: rhythm(0.5),
           }}
         >
           {post.title}
@@ -94,15 +108,20 @@ class BlogPostTemplate extends React.Component {
                 fontSize: '14px',
                 color: 'rgba(100,100,100, 0.7)',
                 marginTop: rhythm(0.5),
-                marginBottom: rhythm(1.25)
+                marginBottom: rhythm(1.25),
               }}
             >
               Originally Posted {moment(post.date).format('MMMM D, YYYY')}
             </h5>}
-        <div
-          className="article-body"
-          dangerouslySetInnerHTML={{ __html: body }}
-        />
+        <div className="columns">
+          <div
+            className="article-body"
+            dangerouslySetInnerHTML={{ __html: body }}
+          />
+          <div className="sidebar">
+            <Ad history={history} />
+          </div>
+        </div>
         {isPost
           ? <PostFooter
               post={post}
@@ -113,7 +132,7 @@ class BlogPostTemplate extends React.Component {
           ? null
           : <hr
               style={{
-                marginBottom: rhythm(2)
+                marginBottom: rhythm(2),
               }}
             />}
         {isPage || post.hideFooter

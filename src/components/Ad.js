@@ -6,7 +6,7 @@ export class Ad extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: null
+      url: null,
     };
   }
 
@@ -38,7 +38,7 @@ export class Ad extends React.Component {
         this.insertScript();
       }
       this.setState({
-        url
+        url,
       });
     });
   }

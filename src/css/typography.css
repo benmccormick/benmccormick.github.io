@@ -4,9 +4,10 @@ a {
     cursor: pointer;
 }
 
-.article-body a {
-    text-decoration: underline;
+a:hover {
+  text-decoration: underline;
 }
+
 
 .footnote-ref, .footnote-backref {
   text-decoration: none;
@@ -28,7 +29,7 @@ blockquote p {
 }
 
 h2, h3 {
-    color: #57A3E8 !important;
+    color: #57A3E8;
 }
 
 .explanation {

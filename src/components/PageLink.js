@@ -30,8 +30,9 @@ class PageLink extends React.Component {
             <Link
               style={{
                 boxShadow: 'none',
-                fontSize: '22px',
+                fontSize: '20px',
                 fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
+                textDecoration: 'none',
               }}
               to={page.path}
             >
