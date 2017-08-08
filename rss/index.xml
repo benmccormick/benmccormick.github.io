@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sat, 05 Aug 2017 18:29:25 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 08 Aug 2017 00:31:18 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -251,7 +251,7 @@ Narrow it down to your ten for me, or for you..
       email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// ignore pages (non posts) </span>
+  <span class="token comment" spellcheck="true">// ignore pages (non posts)</span>
   pages <span class="token operator">=</span> <span class="token function">filter</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> p <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword">get</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token string">'data.layout'</span><span class="token punctuation">,</span> <span class="token string">'page'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'page'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// we only want the last 10 articles to show up in the feed</span>
   pages <span class="token operator">=</span> <span class="token function">sortBy</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> page <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">get</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span> <span class="token string">'data.date'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
