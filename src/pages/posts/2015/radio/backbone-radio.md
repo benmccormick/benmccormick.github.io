@@ -1,6 +1,6 @@
 ---
 title: "Building Modular Web Apps With Backbone.Radio"
-date: "2015-01-26 12:00:00+00:00"
+date: "2015-01-26T12:00:00+00:00"
 layout: "post"
 path: "/2015/01/26/backbone-radio"
 description: "An overview of using Backbone.Radio in Marionette apps"

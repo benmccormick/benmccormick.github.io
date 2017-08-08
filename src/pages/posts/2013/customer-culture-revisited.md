@@ -1,6 +1,6 @@
 ---
 title: "Customer Culture Revisited"
-date: "2013-06-08 18:45:00+00:00"
+date: "2013-06-08T18:45:00+00:00"
 layout: "post"
 path: "/2013/06/08/customer-culture-revisited"
 category: "opinion"

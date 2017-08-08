@@ -1,6 +1,6 @@
 ---
 title: "Grading Applications On Config Portability"
-date: "2017-04-14 21:30:00+00:00"
+date: "2017-04-14T21:30:00+00:00"
 layout: "post"
 path: "/2017/04/14/grading-applications-on-config-portability/"
 description: "Which applications allow syncing settings cross-device?"

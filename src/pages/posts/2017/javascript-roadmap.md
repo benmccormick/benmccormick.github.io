@@ -1,6 +1,6 @@
 ---
 title: "How to follow the JavaScript roadmap"
-date: "2017-07-10 12:00:00+00:00"
+date: "2017-07-10T12:00:00+00:00"
 layout: "post"
 path: "/2017/07/10/how-to-follow-the-javascript-roadmap/"
 description: "Keeping up with the language's progress"

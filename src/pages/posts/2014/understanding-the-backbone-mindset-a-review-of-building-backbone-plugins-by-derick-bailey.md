@@ -1,6 +1,6 @@
 ---
 title: "Understanding the Backbone Mindset: A review of Building  Backbone Plugins by Derick Bailey"
-date: "2014-07-09 11:38:40+00:00"
+date: "2014-07-09T11:38:40+00:00"
 layout: "post"
 path: "/2014/07/09/understanding-the-backbone-mindset-a-review-of-building-backbone-plugins-by-derick-bailey"
 category: "reviews"

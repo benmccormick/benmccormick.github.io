@@ -1,6 +1,6 @@
 ---
 title: "Digging Into React: Choosing Component Styles"
-date: "2016-05-02 02:32:36+00:00"
+date: "2016-05-02T02:32:36+00:00"
 layout: "post"
 path: "/2016/05/02/digging-into-react-choosing-component-styles"
 description: "An examination of the various styles for defining React components"

@@ -1,6 +1,6 @@
 ---
 title: "Why Backbone.js and ES6 Classes Don't Mix"
-date: "2015-04-07 03:19:44+00:00"
+date: "2015-04-07T03:19:44+00:00"
 layout: "post"
 path: "/2015/04/07/es6-classes-and-backbone-js"
 description: "A rundown of the challenges of using ES6 classes in Backbone"

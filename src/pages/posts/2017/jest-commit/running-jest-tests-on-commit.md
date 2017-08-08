@@ -1,6 +1,6 @@
 ---
 title: "Running Jest Tests Before Each Git Commit"
-date: "2017-02-26 23:00:00+00:00"
+date: "2017-02-26T23:00:00+00:00"
 layout: "post"
 path: "/2017/02/26/running-jest-tests-before-each-git-commit/"
 description: "A simple setup to run your Jest tests before every commit"

@@ -1,6 +1,6 @@
 ---
 title: "BlendConf 2013: Takeaways From A Very Human Tech Conference"
-date: "2013-09-10 20:00:00+00:00"
+date: "2013-09-10T20:00:00+00:00"
 layout: "post"
 path: "/2013/09/10/blendconf-2013-takeaways-from-a-very-human-tech-conference"
 category: "software-productivity"

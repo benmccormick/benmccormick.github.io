@@ -1,6 +1,6 @@
 ---
 title: "The Life of a Marionette View"
-date: "2015-01-05 04:01:45+00:00"
+date: "2015-01-05T04:01:45+00:00"
 layout: "post"
 path: "/2015/01/05/marionette-view-life-cycles"
 description: "A breakdown of the lifecycle of Marionette Views"

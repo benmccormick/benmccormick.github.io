@@ -1,6 +1,6 @@
 ---
 title: "Book Review: Talking with Tech Leads"
-date: "2015-06-15 11:30:44+00:00"
+date: "2015-06-15T11:30:44+00:00"
 layout: "post"
 path: "/2015/06/15/book-review-talking-with-tech-leads"
 description: "A book review of Talking with Tech Leads"

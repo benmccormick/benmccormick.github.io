@@ -1,6 +1,6 @@
 ---
 title: "marionette-service: Service Objects for Marionette"
-date: "2015-05-25 14:02:00+00:00"
+date: "2015-05-25T14:02:00+00:00"
 layout: "post"
 path: "/2015/05/25/marionette-service-service-objects-for-marionette"
 description: "Introducing marionette-service, a services library for Marionette apps"

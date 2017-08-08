@@ -1,6 +1,6 @@
 ---
 title: "Adding RSS, Atom, and JSON Feed to Gatsby"
-date: "2017-06-04 01:55:00+00:00"
+date: "2017-06-04T01:55:00+00:00"
 layout: "post"
 path: "/2017/06/03/rss-atom-json-gatsby/"
 description: "How to support subscription feeds with Gastby"
@@ -63,7 +63,7 @@ const buildFeed = pages => {
       email: 'ben@benmccormick.org'
     }
   });
-  // ignore pages (non posts) 
+  // ignore pages (non posts)
   pages = filter(pages, p => ( !(get(p, 'data.layout', 'page') === 'page')));
   // we only want the last 10 articles to show up in the feed
   pages = sortBy(pages, page => get(page, 'data.date'));

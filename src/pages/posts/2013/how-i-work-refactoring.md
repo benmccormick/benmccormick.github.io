@@ -1,6 +1,6 @@
 ---
 title: "How I Work:  Refactoring"
-date: "2013-02-03 21:00:00+00:00"
+date: "2013-02-03T21:00:00+00:00"
 layout: "post"
 path: "/2013/02/03/how-i-work-refactoring"
 category: "software-productivity"

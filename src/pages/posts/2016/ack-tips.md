@@ -1,6 +1,6 @@
 ---
 title: "Ack Tips"
-date: "2016-04-30 15:48:25+00:00"
+date: "2016-04-30T15:48:25+00:00"
 layout: "post"
 path: "/2016/04/30/ack-tips"
 description: "A set of tips for using Ack, a command line search tool"

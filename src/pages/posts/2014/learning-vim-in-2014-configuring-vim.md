@@ -1,6 +1,6 @@
 ---
 title: "Learning Vim in 2014: Configuring Vim"
-date: "2014-07-14 10:50:00+00:00"
+date: "2014-07-14T10:50:00+00:00"
 layout: "post"
 path: "/2014/07/14/learning-vim-in-2014-configuring-vim"
 description: "How to set up a modern vim config"

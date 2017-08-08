@@ -1,6 +1,6 @@
 ---
 title: "Vim Workflows: File Switching"
-date: "2014-11-10 04:06:52+00:00"
+date: "2014-11-10T04:06:52+00:00"
 layout: "post"
 path: "/2014/11/10/vim-workflows-file-switching-strategies"
 description: "A look at the different approaches you can take to managing files in Vim"

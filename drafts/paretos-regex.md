@@ -1,6 +1,6 @@
 ---
 title: "Pareto's Regex"
-date: "2017-02-05 13:00:00+00:00"
+date: "2017-02-05T13:00:00+00:00"
 layout: "post"
 path: "/2017/02/05/paretos-regex/"
 description: "The most valuable information for occasional regular expression users"

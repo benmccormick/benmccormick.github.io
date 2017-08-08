@@ -1,6 +1,6 @@
 ---
 title: "Simple Publish-Subscribe with jQuery"
-date: "2013-02-13 21:00:00+00:00"
+date: "2013-02-13T21:00:00+00:00"
 layout: "post"
 path: "/2013/02/13/simple-publish-subscribe-with-jquery"
 description: "Building a basic pub-sub wrapper around jQuery"

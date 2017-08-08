@@ -4,6 +4,7 @@ import get from 'lodash/get';
 import { rhythm } from '../utils/typography';
 import CategoryIcon from './CategoryIcon';
 import format from 'date-fns/format';
+import parse from 'date-fns/parse';
 
 class PageLink extends React.Component {
   render() {
@@ -21,7 +22,7 @@ class PageLink extends React.Component {
       >
         <div
           style={{
-            maxWidth: '25rem',
+            maxWidth: '22rem',
             display: 'flex',
             alignItems: 'center',
           }}
@@ -58,11 +59,12 @@ class PageLink extends React.Component {
               className="no-mobile"
               style={{
                 fontFamily: 'ff-tisa-web-pro, serif',
+                whiteSpace: 'nowrap',
                 fontSize: '18px',
                 color: 'rgba(100,100,100, 0.7)',
               }}
             >
-              {format(new Date(page.data.date), 'MMM Qo YYYY')}
+              {format(parse(page.data.date), 'MMM Qo YYYY')}
             </span>
           : null}
       </li>

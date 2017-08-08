@@ -1,6 +1,6 @@
 ---
 title: "Learning Vim in 2014: Getting More from Vim with Plugins"
-date: "2014-07-21 10:50:00+00:00"
+date: "2014-07-21T10:50:00+00:00"
 layout: "post"
 path: "/2014/07/21/learning-vim-in-2014-getting-more-from-vim-with-plugins"
 description: "How plugins fit into a Vim workflow"

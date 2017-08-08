@@ -1,6 +1,6 @@
 ---
 title: "Custom Elements By Example"
-date: "2014-08-28 12:33:00+00:00"
+date: "2014-08-28T12:33:00+00:00"
 layout: "post"
 path: "/2014/08/28/custom-elements-by-example"
 category: "platform"

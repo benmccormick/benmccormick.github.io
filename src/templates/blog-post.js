@@ -5,6 +5,7 @@ import { rhythm } from '../utils/typography';
 import { Disqus } from '../components/Disqus';
 import last from 'lodash/last';
 import format from 'date-fns/format';
+import parse from 'date-fns/parse';
 
 import '../css/codeformat.css';
 import '../css/typography.css';
@@ -54,10 +55,7 @@ class BlogPostTemplate extends React.Component {
                   "keywords": "${post.keywords || ''}",
                   "url": "${url}",
                   "image": "${'http://benmccormick.org/logo.png'}",
-                  "datePublished": "${format(
-                    new Date(post.date),
-                    'YYYY-MM-D'
-                  )}",
+                  "datePublished": "${format(parse(post.date), 'YYYY-MM-D')}",
                   ${post.description
                     ? `"description": "${post.description}",`
                     : ''}

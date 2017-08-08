@@ -1,6 +1,6 @@
 ---
 title: "Medium: The end of History and the last website"
-date: "2012-12-25 21:00:00+00:00"
+date: "2012-12-25T21:00:00+00:00"
 layout: "post"
 path: "/2012/12/25/medium-the-end-of-history-and-the-last-website"
 description: "Is there any use in personal websites anymore?"

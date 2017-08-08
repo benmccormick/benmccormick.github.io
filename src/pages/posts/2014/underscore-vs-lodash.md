@@ -1,6 +1,6 @@
 ---
 title: "Underscore vs Lo-Dash"
-date: "2014-11-12 13:00:00+00:00"
+date: "2014-11-12T13:00:00+00:00"
 layout: "post"
 path: "/2014/11/12/underscore-vs-lodash"
 description: "A comparison between Underscore and lodash"

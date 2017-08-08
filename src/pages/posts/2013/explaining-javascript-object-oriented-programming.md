@@ -1,6 +1,6 @@
 ---
 title: "Explaining Javascript: Object Oriented Programming"
-date: "2013-01-12 03:05:00+00:00"
+date: "2013-01-12T03:05:00+00:00"
 layout: "post"
 path: "/2013/01/12/explaining-javascript-object-oriented-programming"
 category: "javascript"

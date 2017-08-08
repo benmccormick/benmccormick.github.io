@@ -1,6 +1,6 @@
 ---
 title: "Testing with Jest Snapshots: First Impressions"
-date: "2016-09-19 12:41:00+00:00"
+date: "2016-09-19T12:41:00+00:00"
 layout: "post"
 path: "/2016/09/19/testing-with-jest-snapshots-first-impressions/"
 description: "First impression of testing UI components using Jest snapshots"

@@ -1,6 +1,6 @@
 ---
 title: "Building Complex Layouts With Marionette.js"
-date: "2014-12-22 04:43:47+00:00"
+date: "2014-12-22T04:43:47+00:00"
 layout: "post"
 path: "/2014/12/22/building-complex-layouts-with-marionette-js"
 description: "How to build complex UIs with Marionette.js"

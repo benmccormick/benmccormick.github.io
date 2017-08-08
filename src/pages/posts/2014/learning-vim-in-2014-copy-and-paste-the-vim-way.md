@@ -1,6 +1,6 @@
 ---
 title: "Learning Vim in 2014: Copy and Paste the Vim Way"
-date: "2014-07-27 23:00:00+00:00"
+date: "2014-07-27T23:00:00+00:00"
 layout: "post"
 path: "/2014/07/27/learning-vim-in-2014-copy-and-paste-the-vim-way"
 description: "How to use copy and paste in Vim"

@@ -1,6 +1,6 @@
 ---
 title: "Digging Into Knockout Builds"
-date: "2014-01-06 23:30:00+00:00"
+date: "2014-01-06T23:30:00+00:00"
 layout: "post"
 path: "/2014/01/06/digging-into-knockout-builds"
 category: "frameworks"

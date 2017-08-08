@@ -1,6 +1,6 @@
 ---
 title: "Searching for the perfect reading device:  My Nexus 7 (2013) Review"
-date: "2013-08-16 12:00:00+00:00"
+date: "2013-08-16T12:00:00+00:00"
 layout: "post"
 path: "/2013/08/16/searching-for-the-perfect-reading-device-my-nexus-7-2013-review"
 description: "Reviewing a small Android Tablet"

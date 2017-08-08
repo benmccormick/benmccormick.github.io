@@ -1,6 +1,6 @@
 ---
 title: "A whole new site"
-date: "2016-12-02 16:00:00+00:00"
+date: "2016-12-02T16:00:00+00:00"
 layout: "post"
 path: "/2016/12/02/whole-new-site/"
 description: "Introducing a new look for benmccormick.org"

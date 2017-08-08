@@ -1,6 +1,6 @@
 ---
 title: "Staying DRY with Marionette Behaviors"
-date: "2015-03-23 04:04:17+00:00"
+date: "2015-03-23T04:04:17+00:00"
 layout: "post"
 path: "/2015/03/23/staying-dry-with-marionette-behaviors"
 description: "How to keep your Views DRY using Behaviors in your Marionette app"

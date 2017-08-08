@@ -1,6 +1,6 @@
 ---
 title: "Building Normal Distribution Charts Using Highcharts"
-date: "2017-05-12 02:30:00+00:00"
+date: "2017-05-12T02:30:00+00:00"
 layout: "post"
 path: "/2017/05/11/building-normal-curves-highcharts/"
 description: "Creating a statistical visualization in JavaScript"

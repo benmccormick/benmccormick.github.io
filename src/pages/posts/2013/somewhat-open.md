@@ -1,6 +1,6 @@
 ---
 title: "Somewhat Open"
-date: "2013-08-15 16:15:00+00:00"
+date: "2013-08-15T16:15:00+00:00"
 layout: "post"
 path: "/2013/08/15/somewhat-open"
 category: "opinion"

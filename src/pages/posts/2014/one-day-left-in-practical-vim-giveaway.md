@@ -1,6 +1,6 @@
 ---
 title: "One Day Left In Practical Vim Giveaway"
-date: "2014-07-24 23:55:45+00:00"
+date: "2014-07-24T23:55:45+00:00"
 layout: "post"
 path: "/2014/07/24/one-day-left-in-practical-vim-giveaway"
 description: "If you're reading this now... its too late sorry ¯ (ツ)_/¯"

@@ -1,6 +1,6 @@
 ---
 title: "Meetings And Concurrency"
-date: "2013-12-30 11:00:00+00:00"
+date: "2013-12-30T11:00:00+00:00"
 layout: "post"
 path: "/2013/12/30/meetings-and-concurrency"
 description: "The trouble with in-person meetings"

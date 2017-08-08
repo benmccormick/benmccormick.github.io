@@ -1,6 +1,6 @@
 ---
 title: "Cleaning My Digital House"
-date: "2012-12-29 01:00:00+00:00"
+date: "2012-12-29T01:00:00+00:00"
 layout: "post"
 path: "/2012/12/29/cleaning-my-digital-house"
 description: "Organizing what software I use"

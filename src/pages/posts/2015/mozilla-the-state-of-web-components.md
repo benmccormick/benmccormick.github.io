@@ -1,6 +1,6 @@
 ---
 title: "Mozilla: The state of Web Components"
-date: "2015-06-14 21:35:58+00:00"
+date: "2015-06-14T21:35:58+00:00"
 layout: "post"
 path: "/2015/06/14/mozilla-the-state-of-web-components"
 description: "A look at Mozilla's writeup on the current status of the web components spec"

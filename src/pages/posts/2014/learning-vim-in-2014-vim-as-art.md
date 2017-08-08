@@ -1,6 +1,6 @@
 ---
 title: "Learning Vim in 2014: Vim as Art"
-date: "2014-07-16 10:41:00+00:00"
+date: "2014-07-16T10:41:00+00:00"
 layout: "post"
 path: "/2014/07/16/learning-vim-in-2014-vim-as-art"
 description: "How using Vim is more of an artform than a science"

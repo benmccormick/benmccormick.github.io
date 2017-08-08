@@ -1,6 +1,6 @@
 ---
 title: "The Most Interesting Atom Packages I've found (so far)"
-date: "2016-01-11 02:25:49+00:00"
+date: "2016-01-11T02:25:49+00:00"
 layout: "post"
 path: "/2016/01/11/the-most-interesting-atom-packages-ive-found-so-far"
 category: "tools"

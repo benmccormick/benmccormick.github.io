@@ -1,6 +1,6 @@
 ---
 title: "Learning Vim in 2014: Vim as Language"
-date: "2014-07-02 11:27:00+00:00"
+date: "2014-07-02T11:27:00+00:00"
 layout: "post"
 path: "/2014/07/02/learning-vim-in-2014-vim-as-language"
 description: "An explanation of the grammar behind Vim"

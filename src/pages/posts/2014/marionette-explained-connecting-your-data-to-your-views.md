@@ -1,6 +1,6 @@
 ---
 title: "Marionette Explained: Connecting Data to Your Views"
-date: "2014-12-10 12:30:00+00:00"
+date: "2014-12-10T12:30:00+00:00"
 layout: "post"
 path: "/2014/12/10/marionette-explained-connecting-your-data-to-your-views"
 description: "How to bind data to your views in Marionette.js"

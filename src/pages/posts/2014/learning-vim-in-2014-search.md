@@ -1,6 +1,6 @@
 ---
 title: "Learning Vim in 2014: Search"
-date: "2014-08-04 01:16:20+00:00"
+date: "2014-08-04T01:16:20+00:00"
 layout: "post"
 path: "/2014/08/04/learning-vim-in-2014-search"
 description: "How to search for anything in Vim"

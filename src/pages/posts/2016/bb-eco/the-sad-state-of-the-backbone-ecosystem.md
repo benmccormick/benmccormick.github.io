@@ -1,6 +1,6 @@
 ---
 title: "The Sad State of the Backbone Ecosystem"
-date: "2016-03-07 05:06:40+00:00"
+date: "2016-03-07T05:06:40+00:00"
 layout: "post"
 path: "/2016/03/07/the-sad-state-of-the-backbone-ecosystem"
 description: "A look at the current state of Backbone libraries"

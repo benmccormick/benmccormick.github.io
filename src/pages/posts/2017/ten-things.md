@@ -1,6 +1,6 @@
 ---
 title: "Ten Things A Serious JavaScript Developer Should Learn"
-date: "2017-07-19 04:00:00+00:00"
+date: "2017-07-19T04:00:00+00:00"
 layout: "post"
 path: "/2017/07/19/ten-things-javascript/"
 description: "Some of the important things to pick up in the JS world"

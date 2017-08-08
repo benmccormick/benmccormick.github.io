@@ -1,6 +1,6 @@
 ---
 title: "ES6 Patterns: Clean Higher Order Functions"
-date: "2015-11-30 05:06:03+00:00"
+date: "2015-11-30T05:06:03+00:00"
 layout: "post"
 path: "/2015/11/30/es6-patterns-clean-higher-order-functions"
 category: "javascript"

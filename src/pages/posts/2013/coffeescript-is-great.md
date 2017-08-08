@@ -1,6 +1,6 @@
 ---
 title: "Coffeescript Is Great"
-date: "2013-02-23 23:50:00+00:00"
+date: "2013-02-23T23:50:00+00:00"
 layout: "post"
 path: "/2013/02/23/coffeescript-is-great"
 category: "javascript"

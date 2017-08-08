@@ -1,6 +1,6 @@
 ---
 title: "The Debugging Toolbox"
-date: "2014-08-19 11:35:00+00:00"
+date: "2014-08-19T11:35:00+00:00"
 layout: "post"
 path: "/2014/08/19/the-debugging-toolbox"
 category: "software-productivity"

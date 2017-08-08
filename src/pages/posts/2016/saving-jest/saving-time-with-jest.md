@@ -1,6 +1,6 @@
 ---
 title: "Saving Time With Jest: Meetup Summary"
-date: "2016-12-10 05:15:00+00:00"
+date: "2016-12-10T05:15:00+00:00"
 layout: "post"
 path: "/2016/12/10/saving-time-with-jest"
 description: "A summary of my meetup talk on saving time with Jest"

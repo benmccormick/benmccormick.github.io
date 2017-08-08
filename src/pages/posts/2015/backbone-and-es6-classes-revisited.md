@@ -1,6 +1,6 @@
 ---
 title: "Backbone and ES6 Classes Revisited"
-date: "2015-07-06 11:22:22+00:00"
+date: "2015-07-06T11:22:22+00:00"
 layout: "post"
 path: "/2015/07/06/backbone-and-es6-classes-revisited"
 description: "A second look at using ES6 classes with Backbone"

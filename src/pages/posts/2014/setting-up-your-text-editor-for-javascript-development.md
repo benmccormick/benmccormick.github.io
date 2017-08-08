@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Your Text Editor For JavaScript Development"
-date: "2014-10-13 01:05:51+00:00"
+date: "2014-10-13T01:05:51+00:00"
 layout: "post"
 path: "/2014/10/13/setting-up-your-text-editor-for-javascript-development"
 description: "A look at some tools and plugins that help create a productive JavaScript development workflow"

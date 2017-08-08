@@ -1,6 +1,6 @@
 ---
 title: "Guillermo Rauch on ECMAScript 6"
-date: "2015-02-22 21:38:46+00:00"
+date: "2015-02-22T21:38:46+00:00"
 layout: "post"
 path: "/2015/02/22/rauchg-on-es6"
 category: "javascript"

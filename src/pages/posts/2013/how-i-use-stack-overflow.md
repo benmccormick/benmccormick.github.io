@@ -1,6 +1,6 @@
 ---
 title: "How I Use Stack Overflow"
-date: "2013-06-11 21:19:00+00:00"
+date: "2013-06-11T21:19:00+00:00"
 layout: "post"
 path: "/2013/06/11/how-i-use-stack-overflow"
 category: "tools"

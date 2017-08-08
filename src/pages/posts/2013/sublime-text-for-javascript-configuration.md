@@ -1,6 +1,6 @@
 ---
 title: "Sublime Text For Javascript: Configuration"
-date: "2013-01-01 18:00:00+00:00"
+date: "2013-01-01T18:00:00+00:00"
 layout: "post"
 path: "/2013/01/01/sublime-text-for-javascript-configuration"
 category: "tools"

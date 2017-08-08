@@ -1,6 +1,6 @@
 ---
 title: "Atom Productivity Tips"
-date: "2017-05-30 03:20:00+00:00"
+date: "2017-05-30T03:20:00+00:00"
 layout: "post"
 path: "/2017/05/29/atom-tips/"
 description: "Getting the most out of Atom"

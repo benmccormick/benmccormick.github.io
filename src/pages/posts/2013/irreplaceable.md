@@ -1,6 +1,6 @@
 ---
 title: "Irreplaceable"
-date: "2013-05-04 17:00:00+00:00"
+date: "2013-05-04T17:00:00+00:00"
 layout: "post"
 path: "/2013/05/04/irreplaceable"
 category: "opinion"

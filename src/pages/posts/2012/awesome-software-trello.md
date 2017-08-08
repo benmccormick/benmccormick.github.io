@@ -1,6 +1,6 @@
 ---
 title: "Awesome Software: Trello"
-date: "2012-12-20 12:00:00+00:00"
+date: "2012-12-20T12:00:00+00:00"
 layout: "post"
 path: "/2012/12/20/awesome-software-trello"
 category: "reviews"

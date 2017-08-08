@@ -1,6 +1,6 @@
 ---
 title: "Modern Dojo: Exploring declare"
-date: "2013-11-14 23:15:00+00:00"
+date: "2013-11-14T23:15:00+00:00"
 layout: "post"
 path: "/2013/11/14/modern-dojo-exploring-dojo_basedeclare"
 description: "A dive into the _base/declare module"

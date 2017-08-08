@@ -1,6 +1,6 @@
 ---
 title: "Unexpected Javascript: That Doesn't Do What You Think"
-date: "2013-01-15 23:30:00+00:00"
+date: "2013-01-15T23:30:00+00:00"
 layout: "post"
 path: "/2013/01/15/unexpected-javascript-that-doesnt-do-what-you-think"
 category: "javascript"

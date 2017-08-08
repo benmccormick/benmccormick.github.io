@@ -1,6 +1,6 @@
 ---
 title: "Stability vs Decline"
-date: "2016-03-09 06:04:39+00:00"
+date: "2016-03-09T06:04:39+00:00"
 layout: "post"
 path: "/2016/03/09/stability-vs-decline"
 category: "software-productivity"

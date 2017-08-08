@@ -1,6 +1,6 @@
 ---
 title: "2015 Roundup"
-date: "2015-12-31 05:56:04+00:00"
+date: "2015-12-31T05:56:04+00:00"
 layout: "post"
 path: "/2015/12/31/2015-roundup-2"
 category: "meta"

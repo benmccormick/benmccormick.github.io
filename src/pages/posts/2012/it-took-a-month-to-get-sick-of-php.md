@@ -1,6 +1,6 @@
 ---
 title: "It took a month to get sick of php"
-date: "2012-10-06 11:00:00+00:00"
+date: "2012-10-06T11:00:00+00:00"
 layout: "post"
 path: "/2012/10/06/it-took-a-month-to-get-sick-of-php"
 category: "meta"

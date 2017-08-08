@@ -1,6 +1,6 @@
 ---
 title: "Is Safari being left behind?"
-date: "2015-06-10 04:03:41+00:00"
+date: "2015-06-10T04:03:41+00:00"
 layout: "post"
 path: "/2015/06/10/is-safari-being-left-behind"
 description: "Should we be concerned about Safari holding back the web?"

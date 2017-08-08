@@ -1,6 +1,6 @@
 ---
 title: "Orthogonality and CSS in JS"
-date: "2017-01-03 00:00:00+00:00"
+date: "2017-01-03T00:00:00+00:00"
 layout: "post"
 path: "/2017/01/03/orthogonality-and-css-in-js/"
 description: "Separation of concerns in the context of CSS and JavaScript"

@@ -1,6 +1,6 @@
 ---
 title: "Thoughts on Angular 2.0"
-date: "2014-11-08 19:24:09+00:00"
+date: "2014-11-08T19:24:09+00:00"
 layout: "post"
 path: "/2014/11/08/all-about-angular-2-0"
 category: "frameworks"

@@ -1,6 +1,6 @@
 ---
 title: "Sublime Text For Javascript: Keyboard Shortcuts"
-date: "2012-12-30 21:00:00+00:00"
+date: "2012-12-30T21:00:00+00:00"
 layout: "post"
 path: "/2012/12/30/sublime-text-for-javascript-keyboard-shortcuts"
 category: "tools"

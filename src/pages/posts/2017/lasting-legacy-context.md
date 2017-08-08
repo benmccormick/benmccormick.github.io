@@ -1,6 +1,6 @@
 ---
 title: "Giving Context To Best Practices"
-date: "2017-02-18 23:30:00+00:00"
+date: "2017-02-18T23:30:00+00:00"
 layout: "post"
 path: "/2017/02/18/context-to-best-practices/"
 description: "What we talk about when we talk about best practices"

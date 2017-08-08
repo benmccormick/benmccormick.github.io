@@ -1,6 +1,6 @@
 ---
 title: "Quick Tip: Take advantage of lodash collections"
-date: "2016-06-26 21:27:55+00:00"
+date: "2016-06-26T21:27:55+00:00"
 layout: "post"
 path: "/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2"
 description: "A quick look at the benefits of using lodash collection methods"

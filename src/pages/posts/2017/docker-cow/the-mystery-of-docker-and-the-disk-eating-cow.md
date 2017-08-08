@@ -1,6 +1,6 @@
 ---
 title: "The Mystery Of Docker And The Disk-Eating Cow"
-date: "2017-03-28 14:40:00+00:00"
+date: "2017-03-28T14:40:00+00:00"
 layout: "post"
 path: "/2017/03/28/the-mystery-of-docker-and-the-disk-eating-cow/"
 description: "Tracking down how Docker ate half my hard drive"

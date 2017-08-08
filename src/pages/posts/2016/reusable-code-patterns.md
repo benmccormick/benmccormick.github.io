@@ -1,6 +1,6 @@
 ---
 title: "Reusable Code Patterns"
-date: "2016-01-08 05:22:29+00:00"
+date: "2016-01-08T05:22:29+00:00"
 layout: "post"
 path: "/2016/01/08/reusable-code-patterns"
 category: "software-productivity"

@@ -1,6 +1,6 @@
 ---
 title: "Modern Dojo: Exploring query"
-date: "2013-11-13 23:15:00+00:00"
+date: "2013-11-13T23:15:00+00:00"
 layout: "post"
 path: "/2013/11/13/modern-dojo-exploring-dojoquery"
 description: "A dive into the query module"

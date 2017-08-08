@@ -1,6 +1,6 @@
 ---
 title: "Readable code: Know your audience "
-date: "2016-12-12 04:00:00+00:00"
+date: "2016-12-12T04:00:00+00:00"
 layout: "post"
 path: "/2016/12/11/readable-code-audience"
 description: "A quick observation about what it means to write readable code"

@@ -1,6 +1,6 @@
 ---
 title: "The iPhone 5 Conversation so Far"
-date: "2012-09-19 11:00:00+00:00"
+date: "2012-09-19T11:00:00+00:00"
 layout: "post"
 path: "/2012/09/19/the-iphone-5-conversation-so-far"
 category: "opinion"

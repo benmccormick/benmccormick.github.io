@@ -1,6 +1,6 @@
 ---
 title: "My Favorite Interview Question"
-date: "2017-07-24 11:45:00+00:00"
+date: "2017-07-24T11:45:00+00:00"
 layout: "post"
 path: "/2017/07/24/my-favorite-interview-question/"
 description: "How does the Internet work anyway?"

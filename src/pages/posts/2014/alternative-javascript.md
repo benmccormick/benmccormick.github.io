@@ -1,6 +1,6 @@
 ---
 title: "Alternative JavaScript"
-date: "2014-11-24 03:58:00+00:00"
+date: "2014-11-24T03:58:00+00:00"
 layout: "post"
 path: "/2014/11/24/alternative-javascript"
 description: "A non-comprehensive run-through of the various compile to JS languages out there"

@@ -1,6 +1,6 @@
 ---
 title: "RSS Roundup"
-date: "2013-06-29 11:40:00+00:00"
+date: "2013-06-29T11:40:00+00:00"
 layout: "post"
 path: "/2013/06/29/rss-roundup"
 category: "reviews"

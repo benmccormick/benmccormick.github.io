@@ -1,6 +1,6 @@
 ---
 title: "Productive JavaScript Development"
-date: "2015-11-25 14:43:46+00:00"
+date: "2015-11-25T14:43:46+00:00"
 layout: "post"
 path: "/2015/11/25/productive-javascript-development"
 category: "software-productivity"

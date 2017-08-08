@@ -1,6 +1,6 @@
 ---
 title: "A look at Ack"
-date: "2013-11-25 23:50:00+00:00"
+date: "2013-11-25T23:50:00+00:00"
 layout: "post"
 path: "/2013/11/25/a-look-at-ack"
 category: "tools"

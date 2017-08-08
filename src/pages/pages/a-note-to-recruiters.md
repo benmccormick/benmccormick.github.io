@@ -1,6 +1,6 @@
 ---
 title: "A note to recruiters"
-date: "2015-06-04 13:42:18+00:00"
+date: "2015-06-04T13:42:18+00:00"
 layout: "page"
 path: "/a-note-to-recruiters"
 hideFooter: true

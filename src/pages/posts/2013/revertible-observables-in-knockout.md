@@ -1,6 +1,6 @@
 ---
 title: "Revertible Observables in Knockout"
-date: "2013-05-07 20:05:00+00:00"
+date: "2013-05-07T20:05:00+00:00"
 layout: "post"
 path: "/2013/05/07/revertible-observables-in-knockout"
 description: "Building an observable with simple undo functionality"

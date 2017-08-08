@@ -1,6 +1,6 @@
 ---
 title: "Mariana Syntax Theme For Atom"
-date: "2017-05-28 04:05:00+00:00"
+date: "2017-05-28T04:05:00+00:00"
 layout: "post"
 path: "/2017/05/28/mariana-syntax-atom/"
 description: "Announcing a port of the Mariana color scheme to Atom"

@@ -1,6 +1,6 @@
 ---
 title: "Staying Productive"
-date: "2016-01-25 04:41:46+00:00"
+date: "2016-01-25T04:41:46+00:00"
 layout: "post"
 path: "/2016/01/25/staying-productive"
 category: "software-productivity"

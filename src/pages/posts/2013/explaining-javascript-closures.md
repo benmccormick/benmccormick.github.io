@@ -1,6 +1,6 @@
 ---
 title: "Explaining Javascript: Closures"
-date: "2013-01-08 23:30:00+00:00"
+date: "2013-01-08T23:30:00+00:00"
 layout: "post"
 path: "/2013/01/08/explaining-javascript-closures"
 category: "javascript"

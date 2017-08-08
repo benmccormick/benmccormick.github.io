@@ -1,6 +1,6 @@
 ---
 title: "Lessons Backbone Developers Can Learn From React"
-date: "2015-09-09 11:19:43+00:00"
+date: "2015-09-09T11:19:43+00:00"
 layout: "post"
 path: "/2015/09/09/what-can-backbone-developers-learn-from-react"
 description: "A look at the lessons that Backbone developers can learn from React"

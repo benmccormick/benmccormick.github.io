@@ -1,6 +1,6 @@
 ---
 title: "Lasting Legacy: Improving a JavaScript Application over Time"
-date: "2017-02-18 23:30:00+00:00"
+date: "2017-02-18T23:30:00+00:00"
 layout: "post"
 path: "/2017/02/27/improving-over-time/"
 description: "How to keep a large application fresh as it ages"

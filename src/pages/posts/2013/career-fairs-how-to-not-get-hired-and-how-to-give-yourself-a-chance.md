@@ -1,6 +1,6 @@
 ---
 title: "Career Fairs: How To Not Get Hired (And How To Give Yourself A Chance)"
-date: "2013-01-25 19:30:00+00:00"
+date: "2013-01-25T19:30:00+00:00"
 layout: "post"
 path: "/2013/01/25/career-fairs-how-to-not-get-hired-and-how-to-give-yourself-a-chance"
 description: "What to do when you want a job"

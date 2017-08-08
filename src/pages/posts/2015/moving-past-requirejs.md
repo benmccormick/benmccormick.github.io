@@ -1,6 +1,6 @@
 ---
 title: "Moving Past RequireJS"
-date: "2015-05-28 14:10:00+00:00"
+date: "2015-05-28T14:10:00+00:00"
 layout: "post"
 path: "/2015/05/28/moving-past-requirejs"
 category: "frameworks"

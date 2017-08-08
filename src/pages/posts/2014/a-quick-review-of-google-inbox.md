@@ -1,6 +1,6 @@
 ---
 title: "A Quick Review Of Google Inbox"
-date: "2014-11-04 03:45:30+00:00"
+date: "2014-11-04T03:45:30+00:00"
 layout: "post"
 description: "A product review of Google's new email UI"
 path: "/2014/11/04/a-quick-review-of-google-inbox"

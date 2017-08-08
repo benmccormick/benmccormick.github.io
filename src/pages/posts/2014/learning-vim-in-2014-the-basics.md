@@ -1,6 +1,6 @@
 ---
 title: "Learning Vim in 2014: The Basics"
-date: "2014-06-30 11:28:00+00:00"
+date: "2014-06-30T11:28:00+00:00"
 layout: "post"
 path: "/2014/06/30/learning-vim-in-2014-the-basics"
 description: "The basics of learning Vim"

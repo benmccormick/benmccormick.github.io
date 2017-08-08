@@ -1,6 +1,6 @@
 ---
 title: "Bayesian Witch Hunt"
-date: "2012-11-09 12:00:00+00:00"
+date: "2012-11-09T12:00:00+00:00"
 layout: "post"
 path: "/2012/11/09/bayesian-witch-hunt"
 category: "opinion"

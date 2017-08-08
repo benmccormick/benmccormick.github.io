@@ -1,6 +1,6 @@
 ---
 title: "ES6 Patterns: Converting Callbacks to Promises"
-date: "2015-12-30 03:30:47+00:00"
+date: "2015-12-30T03:30:47+00:00"
 layout: "post"
 path: "/2015/12/30/es6-patterns-converting-callbacks-to-promises"
 category: "javascript"

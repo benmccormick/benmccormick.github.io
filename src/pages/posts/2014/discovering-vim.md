@@ -1,6 +1,6 @@
 ---
 title: "Discovering Vim"
-date: "2014-06-02 22:00:00+00:00"
+date: "2014-06-02T22:00:00+00:00"
 layout: "post"
 path: "/2014/06/02/discovering-vim"
 category: "tools"

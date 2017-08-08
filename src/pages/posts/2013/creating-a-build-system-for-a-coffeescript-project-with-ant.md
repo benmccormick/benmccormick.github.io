@@ -1,6 +1,6 @@
 ---
 title: "Creating a Build System For a Coffeescript Project with Ant"
-date: "2013-03-23 16:23:00+00:00"
+date: "2013-03-23T16:23:00+00:00"
 layout: "post"
 path: "/2013/03/23/creating-a-build-system-for-a-coffeescript-project-with-ant"
 description: "Using Ant to build my coffeescript projects"

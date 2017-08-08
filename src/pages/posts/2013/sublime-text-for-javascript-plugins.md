@@ -1,6 +1,6 @@
 ---
 title: "Sublime Text For Javascript: Packages"
-date: "2013-01-03 21:00:00+00:00"
+date: "2013-01-03T21:00:00+00:00"
 layout: "post"
 path: "/2013/01/03/sublime-text-for-javascript-plugins"
 category: "tools"

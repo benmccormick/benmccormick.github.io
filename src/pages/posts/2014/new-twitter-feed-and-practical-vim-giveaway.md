@@ -1,6 +1,6 @@
 ---
 title: "New Twitter Feed and Practical Vim Giveaway"
-date: "2014-07-11 11:12:00+00:00"
+date: "2014-07-11T11:12:00+00:00"
 layout: "post"
 path: "/2014/07/11/new-twitter-feed-and-practical-vim-giveaway"
 description: "New ways to subscribe"

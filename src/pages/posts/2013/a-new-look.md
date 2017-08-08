@@ -1,6 +1,6 @@
 ---
 title: "A New Look"
-date: "2013-04-06 17:00:00+00:00"
+date: "2013-04-06T17:00:00+00:00"
 layout: "post"
 path: "/2013/04/06/a-new-look"
 description: "A clean redesign for benmccormick.org"

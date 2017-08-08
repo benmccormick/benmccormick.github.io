@@ -1,6 +1,6 @@
 ---
 title: "Is Bower Useful?"
-date: "2015-01-22 04:52:06+00:00"
+date: "2015-01-22T04:52:06+00:00"
 layout: "post"
 path: "/2015/01/22/is-bower-useful"
 category: "tools"

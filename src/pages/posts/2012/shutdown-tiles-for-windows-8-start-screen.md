@@ -1,6 +1,6 @@
 ---
 title: "Shutdown Tiles for Windows 8 Start Screen"
-date: "2012-11-08 12:00:00+00:00"
+date: "2012-11-08T12:00:00+00:00"
 layout: "post"
 path: "/2012/11/08/shutdown-tiles-for-windows-8-start-screen"
 category: "tools"
