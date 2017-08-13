@@ -6,11 +6,10 @@ import '../css/typography.css';
 
 import Helmet from 'react-helmet';
 import React from 'react';
-import last from 'lodash/last';
 import moment from 'moment';
 
 import { Ad } from '../components/Ad';
-import { Disqus } from '../components/Disqus';
+import { EmailSubscribe } from '../components/EmailSubscribe';
 import { rhythm } from '../utils/typography';
 import PostFooter from '../components/PostFooter';
 
@@ -33,7 +32,6 @@ class BlogPostTemplate extends React.Component {
     const body = data.markdownRemark.html;
     let isPage = post.layout === 'page';
     let isPost = post.layout === 'post';
-    let slug = last(post.path.split('/'));
     let url = `http://benmccormick.org${location.pathname}`;
     return (
       <div className="markdown" ref={el => (this.markdownContainer = el)}>
@@ -92,52 +90,58 @@ class BlogPostTemplate extends React.Component {
             },
           ]}
         />
-        <h1
-          style={{
-            marginTop: rhythm(0.5),
-          }}
-        >
-          {post.title}
-        </h1>
-        {isPage
-          ? null
-          : <h5
-              style={{
-                display: 'block',
-                fontFamily: 'ff-tisa-web-pro, serif',
-                fontSize: '14px',
-                color: 'rgba(100,100,100, 0.7)',
-                marginTop: rhythm(0.5),
-                marginBottom: rhythm(1.25),
-              }}
-            >
-              Originally Posted {moment(post.date).format('MMMM D, YYYY')}
-            </h5>}
+        <div className="post-title-area">
+          <h1
+            style={{
+              marginTop: rhythm(0.5),
+            }}
+          >
+            {post.title}
+          </h1>
+          {isPage
+            ? null
+            : <h5
+                style={{
+                  display: 'block',
+                  fontFamily: 'ff-tisa-web-pro, serif',
+                  fontSize: '14px',
+                  color: 'rgba(100,100,100, 0.7)',
+                  marginTop: rhythm(0.5),
+                  marginBottom: rhythm(1.25),
+                }}
+              >
+                Originally Posted {moment(post.date).format('MMMM D, YYYY')}
+              </h5>}
+        </div>
         <div className="columns">
           <div
             className="article-body"
             dangerouslySetInnerHTML={{ __html: body }}
           />
-          <div className="sidebar">
-            <Ad history={history} />
-          </div>
+          {isPost
+            ? <div className="sidebar">
+                <Ad history={history} />
+                <EmailSubscribe />
+              </div>
+            : null}
         </div>
+        {isPost
+          ? <div>
+              <hr />
+              Have Comments? <a href="mailto:ben@benmccormick.org">
+                Email me
+              </a>, <a href="http://twitter.com/ben336">tweet at @ben336</a>, or
+              write your own blog post and send me a link. I'll update the post
+              to link to replies where possible.
+              <hr />
+            </div>
+          : null}
         {isPost
           ? <PostFooter
               post={post}
               recommendedPosts={pathContext.relatedPosts}
             />
           : null}
-        {post.hideFooter
-          ? null
-          : <hr
-              style={{
-                marginBottom: rhythm(2),
-              }}
-            />}
-        {isPage || post.hideFooter
-          ? null
-          : <Disqus title={post.title} shortName={slug} url={url} />}
       </div>
     );
   }

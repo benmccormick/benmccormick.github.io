@@ -11,7 +11,7 @@
   height: 300px;
   width: 150px;
   overflow: hidden;
-  margin: 0 0 0 1rem;
+  margin: 0 0 1rem 0;
 }
 
 #carbonads {
@@ -43,4 +43,8 @@
   position: absolute;
   right: 5px;
   bottom: 0;
+}
+
+.post-title-area {
+  padding: 1em 0 1em 0;
 }

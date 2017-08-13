@@ -12,10 +12,10 @@ hideFooter: true
 <form action="//benmccormick.us8.list-manage.com/subscribe/post?u=115446b80fd9d930ba091cc27&amp;id=f5b9f5acf2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
 
-<div class="mc-field-group">
+<div class="mc-field-group subscribe-page-group">
 	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address"
   style="font-family:Helvetica,sans-serif; font-size: 14px; padding: 10px">
-  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="subscribe-button-large button">
 </div>
 	<div id="mce-responses" class="clear">
 		<div class="response" id="mce-error-response" style="display:none"></div>

@@ -1,11 +1,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { Ad } from './Ad';
 import '../css/header.css';
 
 export class Header extends React.Component {
   render() {
-    let { blogTitle, history } = this.props;
+    let { blogTitle } = this.props;
     return (
       <div
         style={{
@@ -41,18 +40,22 @@ export class Header extends React.Component {
             color: 'rgba(100,100,100, 0.7)',
           }}
         >
+          <Link className="header-link" to={'/archive/'}>
+            Blog
+          </Link>
+          <span style={{ padding: '0 0.5rem' }} />
           <Link className="header-link" to={'/subscribe/'}>
             Subscribe
           </Link>
-          <span style={{ padding: '0 0.33rem' }}>•</span>
-          <Link className="header-link" to={'/archive/'}>
-            Archive
+          <span style={{ padding: '0 0.5rem' }} />
+          <Link className="header-link" to={'/speaking/'}>
+            Speaking
           </Link>
-          <span style={{ padding: '0 0.33rem' }}>•</span>
+          <span style={{ padding: '0 0.5rem' }} />
           <a className="header-link" href="http://twitter.com/ben336">
             Twitter
           </a>
-          <span style={{ padding: '0 0.33rem' }}>•</span>
+          <span style={{ padding: '0 0.5rem' }} />
           <Link className="header-link" to={'/about/'}>
             About
           </Link>

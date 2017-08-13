@@ -1,4 +1,4 @@
-.mc-field-group {
+.subscribe-page-group {
   width: 400px;
   display: flex;
   flex-direction: row;
@@ -7,7 +7,7 @@
   padding: 8px 0;
 }
 
-.mc-field-group input {
+.subscribe-page-group input {
   border-radius: 3px;
   max-width: 350px;
   width: 80vw;
@@ -21,7 +21,7 @@
   font-weight: 600;
 }
 
-#mc-embedded-subscribe {
+.subscribe-button-large {
   color: white;
   background: #57A3E8;
   border-radius: 4px;
@@ -32,7 +32,7 @@
   width: 40vw;
 }
 
-#mc-embedded-subscribe:hover {
+.subscribe-button-large:hover {
   background: #3E8ACF;
 }
 

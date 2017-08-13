@@ -1,12 +1,22 @@
+.sidebar-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.sidebar {
+  padding-left: 2rem;
+}
+
 .subscribe-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap:wrap;
 }
 
 .subscribe-block {
-  width:400px;
-  padding-right: 30px;
   overflow: hidden;
 }
 
@@ -15,16 +25,35 @@
 }
 
 .up-next-block {
-  width: 300px;
+  /*display: flex;*/
+}
+
+.subscribe-block {
+  margin: 0;
+}
+
+.subscribe-email {
+  padding: 0px 0.1rem;
+  margin: 0 0.2rem 0 0;
+  font-size: 0.7rem;
+  height: 1.5rem;
+  width: 6rem;
 }
 
 .subscribe-button {
   color: white;
+  margin: 0;
+  cursor: pointer;
   background: #57A3E8;
   border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  max-width: 2rem;
+  flex-grow: 0;
   border: 0px;
-  padding: 5px 10px;
-  margin: 20px 0;
+  margin: 0;
   cursor: pointer;
 }
 
