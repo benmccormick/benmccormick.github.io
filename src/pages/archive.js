@@ -5,6 +5,18 @@ import Helmet from 'react-helmet';
 import LinkList from '../components/LinkList';
 
 class CategoryArchive extends React.Component {
+  componentDidMount() {
+    // Get the components DOM node
+    let elem = this.archiveContainer;
+    // Set the opacity of the element to 0
+    elem.style.opacity = 0;
+    window.requestAnimationFrame(function() {
+      // Now set a transition on the opacity
+      elem.style.transition = 'opacity 500ms';
+      // and set the opacity to 1
+      elem.style.opacity = 1;
+    });
+  }
   render() {
     // Sort pages.
     const posts = this.props.data.allMarkdownRemark.edges;
@@ -15,13 +27,13 @@ class CategoryArchive extends React.Component {
       .filter(page => get(page, 'node.frontmatter.layout') === 'post')
       .map(p => ({ data: p.node.frontmatter, path: p.node.fields.slug }));
     return (
-      <div>
+      <div ref={el => (this.archiveContainer = el)}>
         <Helmet
           // title = {config.blogTitle}
           title={'benmccormick.org'}
           meta={[
             { name: 'description', content: "Ben McCormick's blog" },
-            { name: 'keywords', content: 'blog, articles' }
+            { name: 'keywords', content: 'blog, articles' },
           ]}
         />
         <LinkList pages={sortedPages} title="Articles" showCategory={true} />
@@ -31,7 +43,7 @@ class CategoryArchive extends React.Component {
 }
 
 CategoryArchive.propTypes = {
-  route: React.PropTypes.object
+  route: React.PropTypes.object,
 };
 
 export default CategoryArchive;

@@ -8,8 +8,21 @@ import Helmet from 'react-helmet';
 // import { config } from 'config';
 import include from 'lodash/includes';
 import LinkList from '../components/LinkList';
+import '../css/homepage.css';
 
 class BlogIndex extends React.Component {
+  componentDidMount() {
+    // Get the components DOM node
+    let elem = this.indexContainer;
+    // Set the opacity of the element to 0
+    elem.style.opacity = 0;
+    window.requestAnimationFrame(function() {
+      // Now set a transition on the opacity
+      elem.style.transition = 'opacity 500ms';
+      // and set the opacity to 1
+      elem.style.opacity = 1;
+    });
+  }
   render() {
     // Sort pages.
     const posts = this.props.data.allMarkdownRemark.edges;
@@ -18,7 +31,7 @@ class BlogIndex extends React.Component {
         .reverse()
         .filter(page => get(page, 'node.frontmatter.layout') === 'post')
         .map(p => ({ data: p.node.frontmatter, path: p.node.fields.slug })),
-      10
+      5
     );
     const popularPages = take(
       sortBy(posts, page =>
@@ -32,10 +45,10 @@ class BlogIndex extends React.Component {
             get(page, 'node.frontmatter.layout') === 'post'
         )
         .map(p => ({ data: p.node.frontmatter, path: p.node.fields.slug })),
-      6
+      5
     );
     return (
-      <div>
+      <div ref={el => (this.indexContainer = el)}>
         <Helmet
           // title = {config.blogTitle}
           title={'benmccormick.org'}
@@ -50,17 +63,63 @@ class BlogIndex extends React.Component {
             },
           ]}
         />
-        <LinkList
-          title="Recent Articles"
-          pages={sortedPages}
-          showCategory={false}
-        />
-        <LinkList
-          title="Popular Articles"
-          pages={popularPages}
-          showCategory={false}
-        />
-        <LinkList
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <div style={{ maxWidth: '1000px', margin: '1rem 0' }}>
+            <h1> Hi! I'm Ben. </h1>
+            <p>
+              {' '}I'm a software developer from Durham, North Carolina. I write
+              and speak about JavaScript, software development, and developer
+              tools. If you're interested in my writings here, feel free to{' '}
+              <Link to="/subscribe">subscribe</Link> or message me on{' '}
+              <a href="http://twitter.com/ben336" target="_blank">
+                Twitter
+              </a>{' '}
+              or <a href="mailto:ben@benmccormick.org">email</a>.
+            </p>
+          </div>
+          <div className="image-container no-mobile">
+            <img src="/headshot.jpeg" />
+          </div>
+        </div>
+        <div style={{ display: 'flex' }} className="columns">
+          <div style={{ margin: 0, minWidth: '200px' }}>
+            <LinkList
+              title="Recent Articles"
+              pages={sortedPages}
+              showCategory={false}
+              showDate={false}
+            />
+          </div>
+          {/* <div style={{ width: '2rem', height: '0.5px' }} /> */}
+          <div style={{ margin: 0, minWidth: '200px' }}>
+            <LinkList
+              title="Popular Articles"
+              pages={popularPages}
+              showCategory={false}
+              showDate={false}
+            />
+          </div>
+        </div>
+        <hr />
+        <div>
+          <Link
+            style={{
+              boxShadow: 'none',
+              fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
+              textDecoration: 'none',
+            }}
+            to={'/archive/'}
+          >
+            See More Articles »
+          </Link>
+        </div>
+        {/* <LinkList
           title="Past Series"
           pages={[
             {
@@ -81,22 +140,12 @@ class BlogIndex extends React.Component {
           ]}
           showCategory={false}
           showDate={false}
-        />
+        /> */}
         <div
           style={{
             marginBottom: '2rem',
           }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
-            }}
-            to={'/archive/'}
-          >
-            See More Articles »
-          </Link>
-        </div>
+        />
       </div>
     );
   }

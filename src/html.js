@@ -14,7 +14,7 @@ class HTML extends React.Component {
       css = (
         <style
           dangerouslySetInnerHTML={{
-            __html: require('!raw!../public/styles.css')
+            __html: require('!raw!../public/styles.css'),
           }}
         />
       );
@@ -65,7 +65,7 @@ class HTML extends React.Component {
           <script
             type="text/javascript"
             dangerouslySetInnerHTML={{
-              __html: 'try{Typekit.load();}catch(e){}'
+              __html: 'try{Typekit.load();}catch(e){}',
             }}
           />
           {head.title.toComponent()}
@@ -79,7 +79,7 @@ class HTML extends React.Component {
           className="landing-page"
           style={{
             background: '#FCFCFC',
-            padding: '0 10px'
+            padding: '0 10px',
           }}
         >
           <div
@@ -87,25 +87,6 @@ class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           <GA />
-          {/* <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: `
-              // adapted from: https://css-tricks.com/serviceworker-for-offline/
-              // ServiceWorker is a progressive technology. Ignore unsupported browsers
-              if ('serviceWorker' in navigator) {
-              console.log('CLIENT: service worker registration in progress.');
-              navigator.serviceWorker.register('/sw.js').then(function() {
-                console.log('CLIENT: service worker registration complete.');
-              }, function() {
-                console.log('CLIENT: service worker registration failure.');
-              });
-              } else {
-              console.log('CLIENT: service worker is not supported.');
-              }
-            `
-            }}
-          /> */}
           {this.props.postBodyComponents}
         </body>
       </html>
@@ -116,7 +97,7 @@ class HTML extends React.Component {
 HTML.propTypes = {
   body: React.PropTypes.string,
   headComponents: React.PropTypes.any,
-  postBodyComponents: React.PropTypes.any
+  postBodyComponents: React.PropTypes.any,
 };
 
 export default HTML;

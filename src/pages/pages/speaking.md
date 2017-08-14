@@ -11,9 +11,19 @@ I occasionally give talks about JavaScript and software development.  If you're 
 
 I am open to talking about pretty much anything that I write about on this blog.  Here are some talks I've given in the past:
 
-### 2017
+## 2017
 
-**The Vim Survival Guide** *Open Source 101 Conference*
+#### Saving Time With Jest - *All Things Open*
+
+*This talk is upcoming, I'll be speaking about Jest at [All Things Open](https://allthingsopen.org/) on October 24th.*
+
+#### Intro to Gatsby.js - *Triangle Modern Web Meetup*
+
+- [Slides](https://www.slideshare.net/BenMcCormick/gatsby-intro)
+
+This talk was at the [Modern Web](https://www.meetup.com/trianglemodernweb/) Triangle Meetup. I gave an introduction to [Gatsby.js](https://www.gatsbyjs.org/), a static site generator built with modern web technologies.
+
+#### The Vim Survival Guide - *Open Source 101 Conference*
 
 - [Slides](http://www.slideshare.net/BenMcCormick/vim-survival-guide-71763917)
 
@@ -21,26 +31,26 @@ This talk was at the [Open Source 101](http://opensource101.com/) conference (a 
 It was an introduction to Vim, both for those who needed to "survive" Vim on a server, and those
 who were interested in using it as their primary editor.
 
-### 2016
+## 2016
 
-**Saving Time With Jest** *Triangle ReactJS Meetup*
+#### Saving Time With Jest - *Triangle ReactJS Meetup*
 
 - [Writeup](http://benmccormick.org/2016/12/10/saving-time-with-jest/)
 
 I gave a talk at the first Triangle ReactJS meetup about testing with Jest and how it can save you time.  
 
-### 2015
+## 2015
 
-**Backbone.js** *Triangle JavaScript Meetup*
+#### Backbone.js - *Triangle JavaScript Meetup*
 
 - [Slides]( http://www.slideshare.net/BenMcCormick/backbonemeetup)
 - [Code](https://github.com/benmccormick/bb-comments/tree/master)
 
 I gave a talk to the Triangle JavaScript Meetup about Backbone and where it fits into today's JavaScript landscape, specifically comparing it to more "modern" frameworks like Angular and React, and demonstrating how you can incorporate new technologies like Firebase and a virtual DOM into a Backbone app.
 
-### 2014
+## 2014
 
-**Component Based Development** *Triangle DevCon*
+#### Component Based Development - *Triangle DevCon*
 
 - [Slides](http://www.slideshare.net/BenMcCormick/component-based-development)
 

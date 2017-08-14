@@ -10,7 +10,7 @@ module.exports = {
           'These posts cover development using JavaScript frameworks and libraries, including React, jQuery, Knockout, and Backbone',
         key: 'frameworks',
         icon: 'beaker',
-        subscribeText: 'JavaScript development'
+        subscribeText: 'JavaScript development',
       },
       {
         title: 'JavaScript Language',
@@ -18,7 +18,7 @@ module.exports = {
           'These posts cover the JavaScript language, its evolution over time, and practical usage examples.',
         key: 'javascript',
         icon: 'code',
-        subscribeText: 'JavaScript'
+        subscribeText: 'JavaScript',
       },
       {
         title: 'Productivity and Software Engineering',
@@ -26,7 +26,7 @@ module.exports = {
           'These posts cover techniques and ideas around improving productivity and writing better software.',
         key: 'software-productivity',
         icon: 'project',
-        subscribeText: 'Software engineering'
+        subscribeText: 'Software engineering',
       },
       {
         title: 'Meta',
@@ -34,7 +34,7 @@ module.exports = {
         description:
           'These posts are updates about the site, messages to the readers or news from me',
         icon: 'info',
-        subscribeText: 'Web development'
+        subscribeText: 'Web development',
       },
       {
         title: 'Software Tools',
@@ -42,7 +42,7 @@ module.exports = {
           'These posts cover tools and applications I use in software development',
         key: 'tools',
         icon: 'tools',
-        subscribeText: 'Software tooling'
+        subscribeText: 'Software tooling',
       },
       {
         title: 'Book and Product Reviews',
@@ -50,7 +50,7 @@ module.exports = {
           "These posts are reviews of books I've read and products I've used",
         key: 'reviews',
         icon: 'book',
-        subscribeText: 'Web development'
+        subscribeText: 'Web development',
       },
       {
         title: 'Web Platform',
@@ -58,7 +58,7 @@ module.exports = {
           'These posts cover the technologies and standards behind the web, especially how they relate to software development',
         key: 'platform',
         icon: 'globe',
-        subscribeText: 'The web platform'
+        subscribeText: 'The web platform',
       },
       {
         title: 'Opinion',
@@ -66,9 +66,9 @@ module.exports = {
           'These posts cover my thoughts on a variety of technology related subjects',
         key: 'opinion',
         icon: 'megaphone',
-        subscribeText: 'Web development'
-      }
-    ]
+        subscribeText: 'Web development',
+      },
+    ],
   },
 
   plugins: [
@@ -76,8 +76,8 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: `${__dirname}/src/pages/`
-      }
+        path: `${__dirname}/src/pages/`,
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -86,20 +86,21 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 570
-            }
+              maxWidth: 570,
+            },
           },
           {
-            resolve: 'gatsby-remark-responsive-iframe'
+            resolve: 'gatsby-remark-responsive-iframe',
           },
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants'
-        ]
-      }
+          'gatsby-remark-smartypants',
+        ],
+      },
     },
     `gatsby-plugin-twitter`,
     'gatsby-plugin-offline',
-    'gatsby-plugin-sharp'
-  ]
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+  ],
 };
