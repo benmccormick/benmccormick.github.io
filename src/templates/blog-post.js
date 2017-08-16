@@ -28,12 +28,13 @@ class BlogPostTemplate extends React.Component {
     });
   }
   render() {
-    const { location, data, pathContext, history } = this.props;
+    const { data, pathContext, history } = this.props;
     const post = data.markdownRemark.frontmatter;
     const body = data.markdownRemark.html;
+    const slug = data.markdownRemark.fields.slug;
     let isPage = post.layout === 'page';
     let isPost = post.layout === 'post';
-    let url = `http://benmccormick.org${location.pathname}`;
+    let url = `http://benmccormick.org/${slug}`;
     return (
       <div className="markdown" ref={el => (this.markdownContainer = el)}>
         <Helmet
@@ -162,6 +163,9 @@ export const pageQuery = graphql`
         path
         layout
         hideFooter
+      }
+      fields {
+        slug
       }
     }
   }
