@@ -12,6 +12,10 @@
       "path---2014-12-02-the-case-for-marionette-js-079dbbfbe2dd7dc581b2.js",
       "path---2014-12-02-the-case-for-marionette-js-079dbbfbe2dd7dc581b2.js.map"
     ],
+    "path---2017-08-14-jest-matchers": [
+      "path---2017-08-14-jest-matchers-516bb62f127b2a517eb3.js",
+      "path---2017-08-14-jest-matchers-516bb62f127b2a517eb3.js.map"
+    ],
     "path---2015-05-25-marionette-service-service-objects-for-marionette": [
       "path---2015-05-25-marionette-service-service-objects-for-marionette-d31936feb481b6625a90.js",
       "path---2015-05-25-marionette-service-service-objects-for-marionette-d31936feb481b6625a90.js.map"
@@ -65,8 +69,8 @@
       "path---2015-12-31-2015-roundup-2-9734878edfb657af462a.js.map"
     ],
     "path---category-frameworks": [
-      "path---category-frameworks-1acebe3fc2e836dd75f2.js",
-      "path---category-frameworks-1acebe3fc2e836dd75f2.js.map"
+      "path---category-frameworks-0ca533f38dea15cb32af.js",
+      "path---category-frameworks-0ca533f38dea15cb32af.js.map"
     ],
     "path---2015-09-14-es-5-es-6-es-2016-es-next-whats-going-on-with-javascript-versioning": [
       "path---2015-09-14-es-5-es-6-es-2016-es-next-whats-going-on-with-javascript-versioning-3e84e1155326747d86a3.js",
@@ -213,8 +217,8 @@
       "path---2016-05-02-digging-into-react-choosing-component-styles-8c84746e00dff47d0c4d.js.map"
     ],
     "path---category-meta": [
-      "path---category-meta-89ecca7a302e6904fff7.js",
-      "path---category-meta-89ecca7a302e6904fff7.js.map"
+      "path---category-meta-ff25a7f1ad31468045dd.js",
+      "path---category-meta-ff25a7f1ad31468045dd.js.map"
     ],
     "path---2013-01-01-sublime-text-for-javascript-configuration": [
       "path---2013-01-01-sublime-text-for-javascript-configuration-aac3bb61a553238ecaa9.js",
@@ -241,8 +245,8 @@
       "path---2016-03-09-stability-vs-decline-628472dd339362ba802d.js.map"
     ],
     "path---index": [
-      "path---index-7e774ff91c9941d2155e.js",
-      "path---index-7e774ff91c9941d2155e.js.map"
+      "path---index-c1053114d583653baf04.js",
+      "path---index-c1053114d583653baf04.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-8da446518a881470750e.js",
@@ -261,12 +265,12 @@
       "path---2013-05-07-revertible-observables-in-knockout-441601c2537315fdf5c1.js.map"
     ],
     "path---category-platform": [
-      "path---category-platform-aaf90cdf0c8b32fa5bbc.js",
-      "path---category-platform-aaf90cdf0c8b32fa5bbc.js.map"
+      "path---category-platform-a337e16df554b3ba54bc.js",
+      "path---category-platform-a337e16df554b3ba54bc.js.map"
     ],
     "path---category-javascript": [
-      "path---category-javascript-b42efa5402bfa079050e.js",
-      "path---category-javascript-b42efa5402bfa079050e.js.map"
+      "path---category-javascript-55bdb29251a94a29268c.js",
+      "path---category-javascript-55bdb29251a94a29268c.js.map"
     ],
     "path---2013-09-10-blendconf-2013-takeaways-from-a-very-human-tech-conference": [
       "path---2013-09-10-blendconf-2013-takeaways-from-a-very-human-tech-conference-38d4ca791cb6abafce7d.js",
@@ -293,8 +297,8 @@
       "path---2013-01-03-sublime-text-for-javascript-plugins-28d0cf04ecfd3084813b.js.map"
     ],
     "path---category-software-productivity": [
-      "path---category-software-productivity-2f79313f937be037b844.js",
-      "path---category-software-productivity-2f79313f937be037b844.js.map"
+      "path---category-software-productivity-a77f744c7bdece72d55f.js",
+      "path---category-software-productivity-a77f744c7bdece72d55f.js.map"
     ],
     "path---2016-09-19-testing-with-jest-snapshots-first-impressions": [
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-b3a6034fa24c96b9be9d.js",
@@ -377,8 +381,8 @@
       "path---2013-06-11-how-i-use-stack-overflow-abede569ac6a83cac60a.js.map"
     ],
     "path---category-tools": [
-      "path---category-tools-c8baf2a546d238aa3f06.js",
-      "path---category-tools-c8baf2a546d238aa3f06.js.map"
+      "path---category-tools-c6c7ba5c7354e9d827df.js",
+      "path---category-tools-c6c7ba5c7354e9d827df.js.map"
     ],
     "path---2017-01-03-orthogonality-and-css-in-js": [
       "path---2017-01-03-orthogonality-and-css-in-js-84369ae547450e8984ef.js",
@@ -393,8 +397,8 @@
       "path---2016-06-26-quick-tip-take-advantage-of-lodash-collections-2-59339f905dc52b28e893.js.map"
     ],
     "path---category-opinion": [
-      "path---category-opinion-ea87695a5b7008e72517.js",
-      "path---category-opinion-ea87695a5b7008e72517.js.map"
+      "path---category-opinion-aede61c17a2a9418c8dc.js",
+      "path---category-opinion-aede61c17a2a9418c8dc.js.map"
     ],
     "path---2013-01-25-career-fairs-how-to-not-get-hired-and-how-to-give-yourself-a-chance": [
       "path---2013-01-25-career-fairs-how-to-not-get-hired-and-how-to-give-yourself-a-chance-adca134bf9fc091d83fc.js",
@@ -433,12 +437,12 @@
       "path---2014-11-24-alternative-javascript-0542e67ccc070088810c.js.map"
     ],
     "app": [
-      "app-07661b54e600912ac645.js",
-      "app-07661b54e600912ac645.js.map"
+      "app-65836f4e6440f6b41b04.js",
+      "app-65836f4e6440f6b41b04.js.map"
     ],
     "path---archive": [
-      "path---archive-ff0163694f9345190533.js",
-      "path---archive-ff0163694f9345190533.js.map"
+      "path---archive-a719e672bf1790055a1d.js",
+      "path---archive-a719e672bf1790055a1d.js.map"
     ],
     "path---2014-07-24-one-day-left-in-practical-vim-giveaway": [
       "path---2014-07-24-one-day-left-in-practical-vim-giveaway-841cfdf08863490010da.js",
@@ -472,6 +476,10 @@
       "path---2016-06-04-what-are-mutable-and-immutable-data-structures-2-368d04d9915ac8660077.js",
       "path---2016-06-04-what-are-mutable-and-immutable-data-structures-2-368d04d9915ac8660077.js.map"
     ],
+    "path---2017-08-15-jest-matchers-1": [
+      "path---2017-08-15-jest-matchers-1-4174d789fb86a7691c1b.js",
+      "path---2017-08-15-jest-matchers-1-4174d789fb86a7691c1b.js.map"
+    ],
     "path---2014-11-10-vim-workflows-file-switching-strategies": [
       "path---2014-11-10-vim-workflows-file-switching-strategies-e84cc6d2550edfdd1de2.js",
       "path---2014-11-10-vim-workflows-file-switching-strategies-e84cc6d2550edfdd1de2.js.map"
@@ -493,8 +501,8 @@
       "path---2014-07-02-learning-vim-in-2014-vim-as-language-30c71d0aca378f373285.js.map"
     ],
     "path---category-reviews": [
-      "path---category-reviews-baabd5c0abce84b1bd03.js",
-      "path---category-reviews-baabd5c0abce84b1bd03.js.map"
+      "path---category-reviews-7addca818ebc2d90ca8d.js",
+      "path---category-reviews-7addca818ebc2d90ca8d.js.map"
     ],
     "path---2013-02-23-coffeescript-is-great": [
       "path---2013-02-23-coffeescript-is-great-028fc4ddeae40fd1b213.js",

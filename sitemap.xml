@@ -120,4 +120,6 @@
 <url> <loc>https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/05/28/mariana-syntax-atom/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/11/10/vim-workflows-file-switching-strategies</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2017/08/15/jest-matchers-1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2017/08/14/jest-matchers/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
