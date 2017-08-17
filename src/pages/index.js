@@ -88,7 +88,7 @@ class BlogIndex extends React.Component {
           </div>
         </div>
         <div style={{ display: 'flex' }} className="columns">
-          <div style={{ margin: 0, minWidth: '200px' }}>
+          <div style={{ padding: '0 0.8rem 0 0', minWidth: '200px' }}>
             <LinkList
               title="Recent Articles"
               pages={sortedPages}
@@ -97,7 +97,7 @@ class BlogIndex extends React.Component {
             />
           </div>
           {/* <div style={{ width: '2rem', height: '0.5px' }} /> */}
-          <div style={{ margin: 0, minWidth: '200px' }}>
+          <div style={{ padding: '0 0 0 0.8rem', minWidth: '200px' }}>
             <LinkList
               title="Popular Articles"
               pages={popularPages}
