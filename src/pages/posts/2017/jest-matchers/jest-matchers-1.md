@@ -7,7 +7,7 @@ description: "Looking at the different API options Jest provides for assertions"
 keywords: "jest matchers"
 category: "javascript"
 key: "jest-matchers-1"
-readNext: "jest-git,ten-things-js,jest-first"
+readNext: "jest-matchers-2,ten-things-js,jest-git"
 pageViews: "0"
 last30pageViews: "0"
 ---
