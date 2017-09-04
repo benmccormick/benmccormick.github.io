@@ -38,11 +38,58 @@ expect(['a', 'b', 'c']).toContainEqual('a') // true
 expect([{a: 'bc'}, {b: 'cd'}]).toContainEqual({a: 'bc'}); // true
 ```
 
-
-
 ### Async Matchers
-.resolves
-.rejects
+
+Async matchers handle testing functions that have an asynchronous component.  We'll look at `resolves` and `rejects` for testing Promises.  But first, it is worth noting that any matcher can be used for asynchronous testing if necessary.  You just have to use the callback option that is passed to each test function, like so:
+
+```javascript
+test('Delayed Test', done => {
+  let delayedEval = condition => () => {
+    expect(condition).toBe(true);
+    done();
+  }
+  setTimeout(delayedEval(1 === 1), 0) // true
+})
+```
+
+Jest detects whether the `done` callback has been defined for the function, and if it is waits for 5 seconds to see if `done` is called before failing, and evaluates any
+asynchronous expects that occur before then.  This behavior is inherited from Jasmine, and works ok, but can be a bit difficult to work with.  Jest makes this easier in 2 ways.  First with a set of special matchers for working with promises, and second with a set of meta matchers that can make async tests more reliable.  We'll get to the meta matchers in a second, but first we'll look at the promise matchers.
+
+# .resolves, .rejects
+
+`resolves` and `rejects` are chaining matchers like `not` that let you write async tests with Promises.  Using `resolves` to rewrite the previous example looks like this:
+
+```javascript
+test('Delayed Test with promises', () => {
+  let testPromise = new Promise((res, rej) => {
+      setTimeout(() => res(1 === 1), 0);
+  });
+  expect(testPromise).resolves.toBe(true); // true
+})
+```
+
+This waits for the promise to resolve, and then compares the resolved output with `toBe`.  If a rejection is expected, you can replace `resolves` with `rejects` for a similar test. This ends up being much clearer in my opinion than the callback-based async tests, since the assertion is much more direct, and you don't have to worry about cases where `done` might not be called where it should be.
+
+
+### Meta Matchers
+
+Meta matchers pair well with the `done` async matchers above, if you have to use them.  They just let you test that all of your assertions have actually run. The first one, `expect.assertions` tests that a specific number of assertions have been run at that point in the test.
+
+```javascript
+test('records have a name and an ID', () => {
+    let record = getRecord(1);
+    expect(record).toHaveProperty('id');  
+    expect.assertions(1);  // true
+    expect(record).toHaveProperty('fullName');
+    expect.assertions(2);  // true
+})
+```
+
+This can be useful for async tests to make sure things have run correctly before calling `done()`, for tests with conditional logic to make sure that the logic played out as expected, and for normal tests as an extra paranoid quality check to make sure that tests aren't accidentally deleted.
+
+`expect.hasAssertions` is just a simpler version of this test that checks that you've asserted something in the test.  It's useful for the same things as `expect.assertions` but will be a little less reliable and also a bit less fragile when tests change.
+
+Note that neither `expect.assertions` nor `expect.hasAssertions` count as assertions themselves and don't contribute to the assertion count.
 
 ### Snapshot Matchers
 .toMatchSnapshot(optionalString)
@@ -54,9 +101,6 @@ expect([{a: 'bc'}, {b: 'cd'}]).toContainEqual({a: 'bc'}); // true
 .toHaveBeenCalledWith(arg1, arg2, ...)
 .toHaveBeenLastCalledWith(arg1, arg2, ...)
 
-### Meta Matchers
-expect.assertions(number)
-expect.hasAssertions()
 
 
 ### Customization Methods
