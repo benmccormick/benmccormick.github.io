@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Tue, 05 Sep 2017 03:05:01 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 05 Sep 2017 03:10:37 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -16,9 +16,9 @@
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Taking Advantage of Jest Matchers (Part 2)]]></title>
-            <link>https://benmccormick.org/2017/08/21/jest-matchers-2/</link>
-            <guid>https://benmccormick.org/2017/08/21/jest-matchers-2/</guid>
-            <pubDate>Mon, 21 Aug 2017 04:00:00 GMT</pubDate>
+            <link>https://benmccormick.org/2017/09/04/jest-matchers-2/</link>
+            <guid>https://benmccormick.org/2017/09/04/jest-matchers-2/</guid>
+            <pubDate>Tue, 05 Sep 2017 03:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p><em>This post continues my look at Jest matchers from <a href="https://benmccormick.org/2017/08/15/jest-matchers-1/">Part 1</a>.</em></p>
 <p>In part 1 I covered the first 4 types of Jest matchers.  In this post I’m going to cover <em>contains</em> matchers, <em>async</em> matchers, <em>snapshot</em> matchers, <em>function</em> matchers and <em>meta</em> matchers, as well as looking at a few extra tips and tricks for using matchers.</p>
 <h3>Contains Matchers</h3>
