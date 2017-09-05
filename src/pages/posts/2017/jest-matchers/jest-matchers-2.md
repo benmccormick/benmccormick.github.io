@@ -1,8 +1,8 @@
 ---
 title: "Taking Advantage of Jest Matchers (Part 2)"
-date: "2017-08-21T04:00:00+00:00"
+date: "2017-09-05T03:00:00+00:00"
 layout: "post"
-path: "/2017/08/21/jest-matchers-2/"
+path: "/2017/09/04/jest-matchers-2/"
 description: "More API options for descriptive Jest tests"
 keywords: "jest matchers"
 category: "javascript"
