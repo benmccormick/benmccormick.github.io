@@ -233,4 +233,4 @@ test('Floating Point Math Is Hard', () => {
 
 ### Part 2 Coming Soon
 
-There's a lot to cover here, so check back next week for part 2 of this post, with contains matchers, async matchers, snapshot matchers, function matchers, meta matchers, and a few extra tricks for using matchers.
+There's a lot to cover here, so check back soon for part 2 of this post, with contains matchers, async matchers, snapshot matchers, function matchers, meta matchers, and a few extra tricks for using matchers.
