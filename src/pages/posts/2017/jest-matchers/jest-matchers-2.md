@@ -19,7 +19,7 @@ In part 1 I covered the first 4 types of Jest matchers.  In this post I'm going 
 
 ### Contains Matchers
 
-Contains matchers are exactly what they sound like.  They're matchers that check and see if an array or string contains an item or substring.  
+Contains matchers are exactly what they sound like.  They're matchers that check to see if an array contains an item or if a string contains a substring.  
 
 #### toContain and toContainEqual
 
