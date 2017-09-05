@@ -20,6 +20,7 @@ I am open to talking about pretty much anything that I write about on this blog.
 #### Intro to Gatsby.js - *Triangle Modern Web Meetup*
 
 - [Slides](https://www.slideshare.net/BenMcCormick/gatsby-intro)
+- [Video](https://www.youtube.com/watch?v=TJ09SYDuvfo&list=PL-G5r6j4GptGMQWj0ph4FaZqiBnIU9leu&index=4)
 
 This talk was at the [Modern Web](https://www.meetup.com/trianglemodernweb/) Triangle Meetup. I gave an introduction to [Gatsby.js](https://www.gatsbyjs.org/), a static site generator built with modern web technologies.
 
