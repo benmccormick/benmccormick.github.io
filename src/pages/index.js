@@ -1,27 +1,20 @@
-import React from 'react';
+import '../css/homepage.css';
+
+import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
+import React from 'react';
+import get from 'lodash/get';
+import include from 'lodash/includes';
+import parseInt from 'lodash/parseInt';
 import sortBy from 'lodash/sortBy';
 import take from 'lodash/take';
-import parseInt from 'lodash/parseInt';
-import get from 'lodash/get';
-import Helmet from 'react-helmet';
-// import { config } from 'config';
-import include from 'lodash/includes';
+
+import { fadeIn } from '../utils/react-helpers';
 import LinkList from '../components/LinkList';
-import '../css/homepage.css';
 
 class BlogIndex extends React.Component {
   componentDidMount() {
-    // Get the components DOM node
-    let elem = this.indexContainer;
-    // Set the opacity of the element to 0
-    elem.style.opacity = 0;
-    window.requestAnimationFrame(function() {
-      // Now set a transition on the opacity
-      elem.style.transition = 'opacity 500ms';
-      // and set the opacity to 1
-      elem.style.opacity = 1;
-    });
+    fadeIn(this.indexContainer);
   }
   render() {
     // Sort pages.
@@ -65,6 +58,7 @@ class BlogIndex extends React.Component {
         />
         <div
           style={{
+            marginTop: '2rem',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',

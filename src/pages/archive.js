@@ -1,21 +1,14 @@
-import React from 'react';
-import sortBy from 'lodash/sortBy';
-import get from 'lodash/get';
 import Helmet from 'react-helmet';
+import React from 'react';
+import get from 'lodash/get';
+import sortBy from 'lodash/sortBy';
+
+import { fadeIn } from '../utils/react-helpers';
 import LinkList from '../components/LinkList';
 
 class CategoryArchive extends React.Component {
   componentDidMount() {
-    // Get the components DOM node
-    let elem = this.archiveContainer;
-    // Set the opacity of the element to 0
-    elem.style.opacity = 0;
-    window.requestAnimationFrame(function() {
-      // Now set a transition on the opacity
-      elem.style.transition = 'opacity 500ms';
-      // and set the opacity to 1
-      elem.style.opacity = 1;
-    });
+    fadeIn(this.archiveContainer);
   }
   render() {
     // Sort pages.

@@ -11,28 +11,19 @@ import parse from 'date-fns/parse';
 
 import { Ad } from '../components/Ad';
 import { EmailSubscribe } from '../components/EmailSubscribe';
+import { fadeIn } from '../utils/react-helpers';
 import { rhythm } from '../utils/typography';
 import PostFooter from '../components/PostFooter';
 
 class BlogPostTemplate extends React.Component {
   componentDidMount() {
-    // Get the components DOM node
-    let elem = this.markdownContainer;
-    // Set the opacity of the element to 0
-    elem.style.opacity = 0;
-    window.requestAnimationFrame(function() {
-      // Now set a transition on the opacity
-      elem.style.transition = 'opacity 500ms';
-      // and set the opacity to 1
-      elem.style.opacity = 1;
-    });
+    fadeIn(this.markdownContainer);
   }
   render() {
     const { data, pathContext, history } = this.props;
     const post = data.markdownRemark.frontmatter;
     const body = data.markdownRemark.html;
     const slug = data.markdownRemark.fields.slug;
-    let isPage = post.layout === 'page';
     let isPost = post.layout === 'post';
     let url = `http://benmccormick.org/${slug}`;
     return (
@@ -93,11 +84,7 @@ class BlogPostTemplate extends React.Component {
           ]}
         />
         <div className="post-title-area">
-          <h1
-            style={{
-              marginTop: rhythm(0.5),
-            }}
-          >
+          <h1>
             {post.title}
           </h1>
           {isPost
@@ -108,7 +95,7 @@ class BlogPostTemplate extends React.Component {
                   fontSize: '14px',
                   color: 'rgba(100,100,100, 0.7)',
                   marginTop: rhythm(0.5),
-                  marginBottom: rhythm(1.25),
+                  marginBottom: rhythm(0.5),
                 }}
               >
                 Originally Posted {format(new Date(post.date), 'MMMM Qo YYYY')}

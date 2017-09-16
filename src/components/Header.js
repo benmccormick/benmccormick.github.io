@@ -11,7 +11,6 @@ export class Header extends React.Component {
           display: 'flex',
           // borderBottom: '1px solid rgba(200, 200, 200, 0.5)',
           paddingBottom: '0.5rem',
-          marginBottom: '0.5rem',
           flexDirection: 'row',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
