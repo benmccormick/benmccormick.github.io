@@ -128,17 +128,6 @@ class BlogPostTemplate extends React.Component {
             : null}
         </div>
         {isPost
-          ? <div>
-              <hr />
-              Have Comments? <a href="mailto:ben@benmccormick.org">
-                Email me
-              </a>, <a href="http://twitter.com/ben336">tweet at @ben336</a>, or
-              write your own blog post and send me a link. I'll update the post
-              to link to replies where possible.
-              <hr />
-            </div>
-          : null}
-        {isPost
           ? <PostFooter
               post={post}
               recommendedPosts={pathContext.relatedPosts}

@@ -40,6 +40,10 @@ h2, h3 {
     font-size: .85em;
 }
 
+.footnotes {
+  font-size: 80%;
+}
+
 .footnotes li > * {
     display: inline;
     margin-bottom: 0;

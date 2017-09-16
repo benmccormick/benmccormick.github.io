@@ -5,6 +5,9 @@
   .columns {
     flex-wrap: wrap;
   }
+  .columns > * {
+    max-width: 100%;
+  }
   .no-mobile {
     display: none;
   }

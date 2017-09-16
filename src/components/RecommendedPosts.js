@@ -9,7 +9,7 @@ class RecommendedPosts extends React.Component {
   render() {
     const { recommendedPosts } = this.props;
     return (
-      <div className="up-next-block">
+      <div style={{ marginTop: rhythm(3 / 4) }} className="up-next-block">
         <h4
           style={{
             margin: 0,

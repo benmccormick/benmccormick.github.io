@@ -42,8 +42,8 @@ const createCategoryArchives = (graphql, createPage) =>
             path: `category/${category.key}`, // required
             component: categoryPage,
             context: {
-              category: category.key
-            }
+              category: category.key,
+            },
           });
         });
 
@@ -82,7 +82,7 @@ const getPages = graphql =>
       title: edge.node.frontmatter.title,
       layout: edge.node.frontmatter.layout,
       html: edge.node.html,
-      slug: edge.node.fields.slug
+      slug: edge.node.fields.slug,
     }));
     return pages;
   });
@@ -138,9 +138,7 @@ const createBlogPosts = (graphql, createPage) =>
         }
 
         let { edges } = result.data.allMarkdownRemark;
-        let nodes = edges
-          .map(e => e.node)
-          .filter(n => !get(n, 'frontmatter.dontfeature'));
+        let nodes = edges.map(e => e.node);
         let keyMap = groupBy(nodes, 'frontmatter.key');
         let categoryMap = groupBy(nodes, 'frontmatter.category');
         let getRelatedPostsFromList = getRelatedPosts(keyMap, categoryMap);
@@ -151,8 +149,8 @@ const createBlogPosts = (graphql, createPage) =>
             component: blogPost,
             context: {
               slug: node.fields.slug,
-              relatedPosts: getRelatedPostsFromList(node)
-            }
+              relatedPosts: getRelatedPostsFromList(node),
+            },
           });
         });
 
@@ -167,7 +165,7 @@ function pagesToSitemap(pages) {
       return {
         url: p.slug,
         changefreq: 'daily',
-        priority: 0.7
+        priority: 0.7,
       };
     }
   });
@@ -179,7 +177,7 @@ function generateSiteMap(pages) {
   const sitemap = sm.createSitemap({
     hostname: 'https://benmccormick.org',
     cacheTime: '60000',
-    urls: pagesToSitemap(pages)
+    urls: pagesToSitemap(pages),
   });
   console.log('Generating sitemap.xml');
   mkFile('/public/sitemap.xml', sitemap.toString());
@@ -209,5 +207,5 @@ module.exports = {
   getPages,
   addSlugToPage,
   createBlogPosts,
-  generateSiteMap
+  generateSiteMap,
 };
