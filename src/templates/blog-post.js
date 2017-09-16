@@ -121,7 +121,7 @@ class BlogPostTemplate extends React.Component {
             dangerouslySetInnerHTML={{ __html: body }}
           />
           {isPost
-            ? <div className="sidebar">
+            ? <div className="sidebar no-mobile">
                 <Ad history={history} />
                 <EmailSubscribe />
               </div>
