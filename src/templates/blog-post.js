@@ -100,9 +100,8 @@ class BlogPostTemplate extends React.Component {
           >
             {post.title}
           </h1>
-          {isPage
-            ? null
-            : <h5
+          {isPost
+            ? <h5
                 style={{
                   display: 'block',
                   fontFamily: 'ff-tisa-web-pro, serif',
@@ -113,7 +112,8 @@ class BlogPostTemplate extends React.Component {
                 }}
               >
                 Originally Posted {format(new Date(post.date), 'MMMM Qo YYYY')}
-              </h5>}
+              </h5>
+            : null}
         </div>
         <div className="columns">
           <div
