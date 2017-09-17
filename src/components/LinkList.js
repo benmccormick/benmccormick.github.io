@@ -1,9 +1,19 @@
 import React from 'react';
 import PageLink from './PageLink';
+import glamorous from 'glamorous';
+
+const ListTitle = glamorous.h2({
+  color: 'inherit',
+});
+
+const List = glamorous.ul({
+  marginLeft: 0,
+  paddingLeft: 0,
+});
 
 class LinkList extends React.Component {
   render() {
-    let { pages, title, showCategory, showDate } = this.props;
+    let { pages, title, showCategory, showDate, description } = this.props;
     let pageLinks = pages.map(page =>
       <PageLink
         page={page}
@@ -15,22 +25,18 @@ class LinkList extends React.Component {
     return (
       <div>
         {title
-          ? <h2
-              style={{
-                color: 'inherit',
-              }}
-            >
+          ? <ListTitle>
               {title}
-            </h2>
+            </ListTitle>
           : null}
-        <ul
-          style={{
-            marginLeft: 0,
-            paddingLeft: 0,
-          }}
-        >
+        {description
+          ? <p>
+              {description}
+            </p>
+          : null}
+        <List>
           {pageLinks}
-        </ul>
+        </List>
       </div>
     );
   }
@@ -39,6 +45,7 @@ class LinkList extends React.Component {
 LinkList.propTypes = {
   pages: React.PropTypes.array.isRequired,
   title: React.PropTypes.string,
+  description: React.PropTypes.string,
   showCategory: React.PropTypes.bool.isRequired,
   showDate: React.PropTypes.bool.isRequired,
 };

@@ -28,7 +28,7 @@ class Subscribe extends React.Component {
         </p>
         <div
           style={{
-            marginBottom: rhythm(2.5)
+            marginBottom: rhythm(2.5),
           }}
         >
           <div id="mc_embed_signup">
@@ -37,7 +37,7 @@ class Subscribe extends React.Component {
                 margin: 0,
                 fontSize: scale(-0.5).fontSize,
                 lineHeight: scale(-0.5).lineHeight,
-                letterSpacing: -0.25
+                letterSpacing: -0.25,
               }}
             >
               EMAIL
@@ -112,7 +112,7 @@ class Subscribe extends React.Component {
                 margin: 0,
                 fontSize: scale(-0.5).fontSize,
                 lineHeight: scale(-0.5).lineHeight,
-                letterSpacing: -0.25
+                letterSpacing: -0.25,
               }}
             >
               RSS
@@ -128,7 +128,7 @@ class Subscribe extends React.Component {
                 margin: 0,
                 fontSize: scale(-0.5).fontSize,
                 lineHeight: scale(-0.5).lineHeight,
-                letterSpacing: -0.25
+                letterSpacing: -0.25,
               }}
             >
               TWITTER
@@ -163,7 +163,7 @@ class Subscribe extends React.Component {
 }
 
 Subscribe.propTypes = {
-  post: React.PropTypes.object.isRequired
+  post: React.PropTypes.object.isRequired,
 };
 
 export default Subscribe;

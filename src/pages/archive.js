@@ -1,8 +1,6 @@
-import Helmet from 'react-helmet';
 import React from 'react';
-import get from 'lodash/get';
-import sortBy from 'lodash/sortBy';
-
+import { HeadContent } from '../components/HeadContent';
+import { getSortedPosts } from '../utils/page-helpers';
 import { fadeIn } from '../utils/react-helpers';
 import LinkList from '../components/LinkList';
 
@@ -13,23 +11,11 @@ class CategoryArchive extends React.Component {
   render() {
     // Sort pages.
     const posts = this.props.data.allMarkdownRemark.edges;
-    const sortedPages = sortBy(posts, page =>
-      get(page, 'node.frontmatter.date')
-    )
-      .reverse()
-      .filter(page => get(page, 'node.frontmatter.layout') === 'post')
-      .map(p => ({ data: p.node.frontmatter, path: p.node.fields.slug }));
+    const sortedPosts = getSortedPosts(posts);
     return (
       <div ref={el => (this.archiveContainer = el)}>
-        <Helmet
-          // title = {config.blogTitle}
-          title={'benmccormick.org'}
-          meta={[
-            { name: 'description', content: "Ben McCormick's blog" },
-            { name: 'keywords', content: 'blog, articles' },
-          ]}
-        />
-        <LinkList pages={sortedPages} title="Articles" showCategory={true} />
+        <HeadContent keywords="blog,articles,posts,javascript,software tools,web development" />
+        <LinkList pages={sortedPosts} title="Articles" showCategory={true} />
       </div>
     );
   }

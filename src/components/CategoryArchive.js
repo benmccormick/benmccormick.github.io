@@ -1,8 +1,10 @@
-import React from 'react';
-import sortBy from 'lodash/sortBy';
-import get from 'lodash/get';
-import find from 'lodash/find';
 import Helmet from 'react-helmet';
+import React from 'react';
+import find from 'lodash/find';
+import get from 'lodash/get';
+import sortBy from 'lodash/sortBy';
+
+import { HeadContent } from './HeadContent';
 import LinkList from '../components/LinkList';
 import categoryHash from '../pages/categories.json';
 
@@ -24,21 +26,16 @@ class CategoryArchive extends React.Component {
     let titleText = `${title} Articles`;
     return (
       <div>
-        <Helmet
-          // title = {config.blogTitle}
-          title={'benmccormick.org'}
-          meta={[
-            { name: 'description', content: "Ben McCormick's blog" },
-            { name: 'keywords', content: 'blog, articles' }
-          ]}
+        <HeadContent
+          title={`benmccormick.org - ${titleText}`}
+          keywords={`blog,articles,posts,${titleText}`}
         />
-        <h1>
-          {' '}{titleText}{' '}
-        </h1>
-        <p>
-          {' '}{description}
-        </p>
-        <LinkList pages={sortedPages} title={null} showCategory={false} />
+        <LinkList
+          pages={sortedPages}
+          title={titleText}
+          description={description}
+          showCategory={false}
+        />
       </div>
     );
   }

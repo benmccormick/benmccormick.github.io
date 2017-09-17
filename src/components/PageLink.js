@@ -5,70 +5,73 @@ import { rhythm } from '../utils/typography';
 import CategoryIcon from './CategoryIcon';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
+import glamorous from 'glamorous';
+import { css } from 'glamor';
+
+const ListItem = glamorous.li({
+  marginBottom: rhythm(1 / 2),
+  listStyle: 'none',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+});
+
+const PageWrapper = glamorous.div({
+  maxWidth: '50vw',
+  '@media all and (max-width: 700px)': {
+    maxWidth: '100vw',
+  },
+  display: 'flex',
+  alignItems: 'centglamor.er',
+});
+
+const linkClass = css({
+  boxShadow: 'none',
+  fontSize: '20px',
+  fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
+  textDecoration: 'none',
+});
+
+const PageDescription = glamorous.p({
+  fontFamily: 'ff-tisa-web-pro, serif',
+  // fontStyle: 'italic',
+  fontSize: '16px',
+  margin: 0,
+  color: 'rgba(100,100,100, 0.7)',
+});
+
+const DateContainer = glamorous.span({
+  fontFamily: 'ff-tisa-web-pro, serif',
+  whiteSpace: 'nowrap',
+  fontSize: '18px',
+  color: 'rgba(100,100,100, 0.7)',
+});
 
 class PageLink extends React.Component {
   render() {
     let { page, showCategory, showDate } = this.props;
     const _title = get(page, 'data.title') || page.path;
     return (
-      <li
-        style={{
-          marginBottom: rhythm(1 / 2),
-          listStyle: 'none',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '22rem',
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
+      <ListItem>
+        <PageWrapper>
           <div>
-            <Link
-              style={{
-                boxShadow: 'none',
-                fontSize: '20px',
-                fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
-                textDecoration: 'none',
-              }}
-              to={page.path}
-            >
+            <Link className={linkClass} to={page.path}>
               {_title}
             </Link>
-            <p
-              style={{
-                fontFamily: 'ff-tisa-web-pro, serif',
-                // fontStyle: 'italic',
-                fontSize: '16px',
-                margin: 0,
-                color: 'rgba(100,100,100, 0.7)',
-              }}
-            >
-              {' '}{page.data.description}
-            </p>
+            <PageDescription>
+              {page.data.description}
+            </PageDescription>
             {showCategory
               ? <CategoryIcon category={page.data.category} />
               : null}
           </div>
-        </div>
+        </PageWrapper>
         {showDate
-          ? <span
-              className="no-mobile"
-              style={{
-                fontFamily: 'ff-tisa-web-pro, serif',
-                whiteSpace: 'nowrap',
-                fontSize: '18px',
-                color: 'rgba(100,100,100, 0.7)',
-              }}
-            >
+          ? <DateContainer className="no-mobile">
               {format(parse(page.data.date), 'MMM Qo YYYY')}
-            </span>
+            </DateContainer>
           : null}
-      </li>
+      </ListItem>
     );
   }
 }
