@@ -1,4 +1,3 @@
-import Helmet from 'react-helmet';
 import React from 'react';
 import find from 'lodash/find';
 import get from 'lodash/get';
