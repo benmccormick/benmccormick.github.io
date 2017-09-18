@@ -12,7 +12,9 @@ export class BlogPostHeadContent extends React.Component {
     let url = `http://benmccormick.org/${slug}`;
     return (
       <HeadContent
-        title={`${post.title} | benmccormick.org`}
+        title={
+          post.title ? `${post.title} | benmccormick.org` : 'benmccormick.org'
+        }
         description={post.description}
         keywords={post.keywords}
         meta={{

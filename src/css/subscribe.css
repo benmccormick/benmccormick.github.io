@@ -16,22 +16,6 @@
   flex-wrap:wrap;
 }
 
-.subscribe-block {
-  overflow: hidden;
-}
-
-.subscribe-block #mc_embed_signup form {
-  margin-bottom: 20px;
-}
-
-.up-next-block {
-  /*display: flex;*/
-}
-
-.subscribe-block {
-  margin: 0;
-}
-
 .subscribe-email {
   padding: 0px 0.1rem;
   margin: 0 0.2rem 0 0;

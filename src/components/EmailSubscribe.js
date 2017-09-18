@@ -1,23 +1,22 @@
 import React from 'react';
 import { scale } from '../utils/typography';
+import { SubscribeBlock } from './SubscribeBlock';
+import glamorous from 'glamorous';
+
+const SubscribeHeader = glamorous.h6({
+  margin: 0,
+  fontSize: scale(-0.5).fontSize,
+  lineHeight: scale(-0.5).lineHeight,
+  letterSpacing: -0.25,
+});
 
 export class EmailSubscribe extends React.Component {
   render() {
     /* eslint-disable no-inline-comments */
     return (
-      <div className="subscribe-block">
+      <SubscribeBlock>
         <div id="mc_embed_signup">
-          <h6
-            style={{
-              margin: 0,
-              fontSize: scale(-0.5).fontSize,
-              lineHeight: scale(-0.5).lineHeight,
-              letterSpacing: -0.25,
-            }}
-          >
-            Subscribe via email
-          </h6>
-          {/* eslint-disable max-len */}
+          <SubscribeHeader>Subscribe via email</SubscribeHeader>
           <form
             action="//benmccormick.us8.list-manage.com/subscribe/post?u=115446b80fd9d930ba091cc27&amp;id=f5b9f5acf2"
             method="post"
@@ -77,7 +76,7 @@ export class EmailSubscribe extends React.Component {
             </div>
           </form>
         </div>
-      </div>
+      </SubscribeBlock>
     );
   }
 }

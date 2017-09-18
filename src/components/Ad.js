@@ -1,6 +1,16 @@
 import React from 'react';
 import defer from 'lodash/defer';
-// import { browserHistory } from 'react-router';
+import glamorous from 'glamorous';
+
+const AdWrapper = glamorous.div({
+  height: '300px',
+  width: '150px',
+  overflow: 'hidden',
+  margin: '0 0 1rem 0',
+  '@media all and (max-width: 700px)': {
+    display: 'none',
+  },
+});
 
 export class Ad extends React.Component {
   constructor(props) {
@@ -44,7 +54,7 @@ export class Ad extends React.Component {
   }
 
   render() {
-    return <div className="ad-wrapper" ref={el => (this.container = el)} />;
+    return <AdWrapper ref={el => (this.container = el)} />;
   }
 }
 

@@ -6,6 +6,7 @@ import { rhythm, scale } from '../utils/typography';
 import categoryHash from '../pages/categories.json';
 import InlineSVG from 'svg-inline-react';
 import rss from '../pages/rss.svgi';
+import { SubscribeBlock } from './SubscribeBlock';
 
 class Subscribe extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class Subscribe extends React.Component {
 
     /* eslint-disable no-inline-comments */
     return (
-      <div className="subscribe-block">
+      <SubscribeBlock>
         <p>
           Thanks for taking the time to read this post!
           {' ' + topic} is one of the main topics of this blog, so if you
@@ -157,7 +158,7 @@ class Subscribe extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </SubscribeBlock>
     );
   }
 }

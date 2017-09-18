@@ -13,7 +13,7 @@ export class GA extends React.Component {
 
             ga('create', 'UA-37323973-1', 'auto');
             ga('send', 'pageview');
-        `
+        `,
         }}
       />
     );

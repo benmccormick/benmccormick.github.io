@@ -14,7 +14,8 @@ import categoryList from '../pages/categories.json';
 import Link from 'gatsby-link';
 import get from 'lodash/get';
 import find from 'lodash/find';
-import '../css/categoryicon.css';
+import { css } from 'glamor';
+import glamorous from 'glamorous';
 
 let icons = {
   beaker,
@@ -28,6 +29,24 @@ let icons = {
   tools,
 };
 
+const iconWrapper = css({
+  fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
+  fontSize: '18px',
+  color: 'rgba(87, 163, 232, 0.5)',
+});
+
+const Icon = glamorous.span({
+  display: 'inline-block',
+  width: '0.75em',
+  marginRight: '0.5em',
+  '& *': {
+    fill: 'rgba(87, 163, 232, 0.5)',
+  },
+  '& > i': {
+    height: '30px',
+  },
+});
+
 class CategoryIcon extends React.Component {
   render() {
     let { category, includeText } = this.props;
@@ -37,17 +56,10 @@ class CategoryIcon extends React.Component {
     let icon = selectedCategory ? icons[selectedCategory.icon] : question;
     let text = selectedCategory ? selectedCategory.title : 'Uncategorized';
     return (
-      <Link
-        style={{
-          fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
-          fontSize: '18px',
-        }}
-        to={`/category/${category}/`}
-        className="category-icon-wrapper"
-      >
-        <span className={`category-icon category-icon-${category}`}>
+      <Link to={`/category/${category}/`} className={iconWrapper}>
+        <Icon>
           <InlineSVG src={icon} />
-        </span>
+        </Icon>
         {includeText ? text : null}
       </Link>
     );
