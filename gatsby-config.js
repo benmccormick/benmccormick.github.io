@@ -100,6 +100,7 @@ module.exports = {
     },
     `gatsby-plugin-twitter`,
     'gatsby-plugin-offline',
+    'gatsby-plugin-glamor',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
   ],
