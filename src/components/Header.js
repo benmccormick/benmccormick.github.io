@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import '../css/header.css';
 import glamorous from 'glamorous';
+import { css } from 'glamor';
 
 const HeaderWrapper = glamorous.div({
   display: 'flex',
@@ -32,6 +33,14 @@ const LinksWrapper = glamorous.div({
   color: 'rgba(100,100,100, 0.7)',
 });
 
+const headerLink = css({
+  color: 'rgba(100,100,100, 0.7)',
+  fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
+  ':hover': {
+    color: '#E2777A',
+  },
+});
+
 export class Header extends React.Component {
   render() {
     let { blogTitle } = this.props;
@@ -43,23 +52,23 @@ export class Header extends React.Component {
           </Link>
         </Logo>
         <LinksWrapper>
-          <Link className="header-link" to={'/archive/'}>
+          <Link className={headerLink} to={'/archive/'}>
             Blog
           </Link>
           <Padding />
-          <Link className="header-link" to={'/subscribe/'}>
+          <Link className={headerLink} to={'/subscribe/'}>
             Subscribe
           </Link>
           <Padding />
-          <Link className="header-link" to={'/speaking/'}>
+          <Link className={headerLink} to={'/speaking/'}>
             Speaking
           </Link>
           <Padding />
-          <a className="header-link" href="http://twitter.com/ben336">
+          <a className={headerLink} href="http://twitter.com/ben336">
             Twitter
           </a>
           <Padding />
-          <Link className="header-link" to={'/about/'}>
+          <Link className={headerLink} to={'/about/'}>
             About
           </Link>
         </LinksWrapper>

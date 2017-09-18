@@ -5,14 +5,6 @@
   color: #D8DEE9;
 }
 
-/*.gatsby-highlight >  {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #343D46;
-  color: #D8DEE9;
-}*/
-
 .token.comment,
 .token.quote {
   color: #A7ADBA;
