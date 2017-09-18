@@ -37,8 +37,8 @@
       "path---2017-02-13-improving-site-performance-with-lighthouse-25e83907959b8c5814c3.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-c4e7d5b9792fd44ac52f.js",
-      "component---src-pages-index-js-c4e7d5b9792fd44ac52f.js.map"
+      "component---src-pages-index-js-c5e817410b0d13a694cd.js",
+      "component---src-pages-index-js-c5e817410b0d13a694cd.js.map"
     ],
     "path---2013-06-08-customer-culture-revisited": [
       "path---2013-06-08-customer-culture-revisited-de85d89a5d702117f0ba.js",
@@ -145,8 +145,8 @@
       "path---2015-04-07-es-6-classes-and-backbone-js-a0535bdf7eee81820dff.js.map"
     ],
     "component---src-pages-archive-js": [
-      "component---src-pages-archive-js-f8938d6c46766f3d1957.js",
-      "component---src-pages-archive-js-f8938d6c46766f3d1957.js.map"
+      "component---src-pages-archive-js-5c68e32308ac14c24940.js",
+      "component---src-pages-archive-js-5c68e32308ac14c24940.js.map"
     ],
     "path---2015-11-30-es-6-patterns-clean-higher-order-functions": [
       "path---2015-11-30-es-6-patterns-clean-higher-order-functions-9ca2fd2b76035c66ba91.js",
@@ -169,8 +169,8 @@
       "path---2017-02-18-context-to-best-practices-b84a03d722930c287f22.js.map"
     ],
     "component---src-templates-blog-post-js": [
-      "component---src-templates-blog-post-js-407060a783f44cdf2964.js",
-      "component---src-templates-blog-post-js-407060a783f44cdf2964.js.map"
+      "component---src-templates-blog-post-js-d7a8cfea06f186ce27d3.js",
+      "component---src-templates-blog-post-js-d7a8cfea06f186ce27d3.js.map"
     ],
     "path---2015-01-05-marionette-view-life-cycles": [
       "path---2015-01-05-marionette-view-life-cycles-bf64eb9a735796e5369b.js",
@@ -189,8 +189,8 @@
       "path---2017-05-28-mariana-syntax-atom-7d403db01cb9605302d9.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-8bdb94d4abec3d0eedd9.js",
-      "component---src-layouts-index-js-8bdb94d4abec3d0eedd9.js.map"
+      "component---src-layouts-index-js-b367be037b716367a19a.js",
+      "component---src-layouts-index-js-b367be037b716367a19a.js.map"
     ],
     "path---2013-04-06-a-new-look": [
       "path---2013-04-06-a-new-look-df895d6979807f04a0b1.js",
@@ -213,8 +213,8 @@
       "path---2015-09-09-what-can-backbone-developers-learn-from-react-41fe6e43ea1ab2536e08.js.map"
     ],
     "component---src-templates-category-page-js": [
-      "component---src-templates-category-page-js-9467d56712d75d625c7e.js",
-      "component---src-templates-category-page-js-9467d56712d75d625c7e.js.map"
+      "component---src-templates-category-page-js-4b4613e645cbbc111227.js",
+      "component---src-templates-category-page-js-4b4613e645cbbc111227.js.map"
     ],
     "path---2016-05-02-digging-into-react-choosing-component-styles": [
       "path---2016-05-02-digging-into-react-choosing-component-styles-6f217903136ed512cea2.js",
@@ -249,8 +249,8 @@
       "path---2016-03-09-stability-vs-decline-d4ac73da199b2eb6ee37.js.map"
     ],
     "path---index": [
-      "path---index-32b744b3056fdaeb121f.js",
-      "path---index-32b744b3056fdaeb121f.js.map"
+      "path---index-3031d8e23b129e0f9718.js",
+      "path---index-3031d8e23b129e0f9718.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-7d852e4351dbaef88d93.js",
@@ -325,8 +325,8 @@
       "path---2014-08-28-custom-elements-by-example-760e914b431ea347f086.js.map"
     ],
     "commons": [
-      "commons-61ed519a33f467186504.js",
-      "commons-61ed519a33f467186504.js.map"
+      "commons-749cfc4b485b133efc8a.js",
+      "commons-749cfc4b485b133efc8a.js.map"
     ],
     "path---2015-12-30-es-6-patterns-converting-callbacks-to-promises": [
       "path---2015-12-30-es-6-patterns-converting-callbacks-to-promises-020b1242d3393efd7f8b.js",
@@ -441,12 +441,12 @@
       "path---2014-11-24-alternative-javascript-e44ad3e7292145568a98.js.map"
     ],
     "app": [
-      "app-fed3c35033ee6db3c0b8.js",
-      "app-fed3c35033ee6db3c0b8.js.map"
+      "app-c1b3df96c79574f13e15.js",
+      "app-c1b3df96c79574f13e15.js.map"
     ],
     "path---archive": [
-      "path---archive-897ecbcb1604da627ee0.js",
-      "path---archive-897ecbcb1604da627ee0.js.map"
+      "path---archive-25914c3b38cb80e50f30.js",
+      "path---archive-25914c3b38cb80e50f30.js.map"
     ],
     "path---2014-07-24-one-day-left-in-practical-vim-giveaway": [
       "path---2014-07-24-one-day-left-in-practical-vim-giveaway-c8ae21092d273ab35d6b.js",
