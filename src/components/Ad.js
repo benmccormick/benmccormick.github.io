@@ -54,7 +54,7 @@ export class Ad extends React.Component {
   }
 
   render() {
-    return <AdWrapper ref={el => (this.container = el)} />;
+    return <AdWrapper innerRef={el => (this.container = el)} />;
   }
 }
 
