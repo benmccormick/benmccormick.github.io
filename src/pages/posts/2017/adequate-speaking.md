@@ -63,35 +63,81 @@ Unlike the "topic", the takeaway should be pretty specific.  Given the audience 
 
 #### 5. Pick a talk format
 
+There are a few main formats that most tech talks fall into:
+
+- Present a problem, describe several possible solutions (possibly recommending one)
+- Present a tool, explain what problems it solves and give examples of using it
+- Present an idea or way of looking at things, and show how it applies in different situations
+- Tell your story. Explain how a certain technology, idea, or problem in the tech community has affected your life.
+
+All of these formats can work, for a first talk I'd recommend one of the first 2, keeping things concrete and making it easier to get to that "main takeaway".  
 
 
 #### 6. Write a description that tells your audience what to expect
 
+The final step of putting together a pitch is writing a description that accurately lets attendees know what to expect.  A great title and description do a few things.  
+
+- You actually have something to submit to a meetup organizer or a conferences call for papers.
+- A good description helps ground you as you prepare the content of the talk.  You can look at your slides and see if you're actually focusing on the things you wanted to communicate[^1].  
+- A well written title and description will help attract your target audience to your talk.  If you're giving a talk for beginners or advanced users, or users of a particular technology, make sure that's clear in the description.  People go out of their way to go to talks where they know they're the target audience, and nothing kills the mood of a talk than a situation where the talk isn't relevant to most of the audience.  
+
+Note that in general, a good description matters more than the exact title of the talk, but if you're at a multi-track conference, make sure to give a descriptive title, as conferences will often only include the talk name in their schedules, without a top-level description.  Naming your talk about the creative uses of Golang "Go-ing Crazy" is fine for a Go meetup, but if people are going to be choosing what session to attend based on your talks name, something more descriptive would be nice, even if it has a little less personality.
 
 ## The Preparation
 
-
-
 #### 7. Have slides
 
+I've seen some amazing live-coding talks.  I've given one myself at a meetup.  There is definitely a place for them, as well as for minimally visual talks with 2-3 slides.  But if you're aiming for informative, structuring your talk around a good slide deck is your best bet.  
 
+Slides shouldn't have too much information: they're the backbone of your talk, and aren't meant to stand alone[^2].  Instead, they provide structure both for you and the audience as you move through your presentation.
 
 #### 8. Have a talk track
 
+Slides are good, but they're just the start.  You need a talk track that is more than just "reading off my slides".  To feel really well prepared for a talk, I usually write out a complete script for the talk that I intend to follow, and then edit that after several practice run throughs.  For the actual talk I usually boil most of that script down to bullet points to keep me focused.  There will be some experimentation needed there to figure out what works best for you.
 
+#### 9. Make sure your A/V setup works!
 
-#### 9. Make sure your AV works!
+I was reminded just last week about the importance of testing that you can give your talk in the venue you're speaking at with the equipment you have as early as possible.  I was forced to give a talk last week on my manager's laptop after mine failed to connect to the venue's projector.  It ended up being a dumb problem on my side that I could have solved if I'd verified my setup earlier and had more time to figure things out.  So that's my a/v setup parable.  The things to remember here:
 
+- Show up early and test your setup if at all possible (event organizers are usually happy to help with this and may insist on this)
+- Bring your own adapters.  In the US, at least be ready to connect to HDMI and VGA.  I can't speak to what might be common internationally, but at the very least it's good to be paranoid
+- Make sure to bring a power cable.  Your slides going black in the middle of your talk is not a good look.
 
 
 ## The Delivery
 
-#### 10. Set expectations (again)
+#### 10. Have notes
+
+So now it is time to actually give your talk.  Make sure to bring notes.  Most presentation software programs like Powerpoint and Keynote have nice built in presenter note features for this (make sure to practice setting it up so that you see the notes and the audience just sees the slide). You also can just use paper notes in a notebook. Notes are important to keep you on track in case you freeze, and may be something you just want to read for portions of the talk.  
+
+Here again you have several choices for how to handle notes:
+
+- You can read your talk from a script. This lowers your ability to connect with your audience, but it is low risk, and you'll guarantee that you'll hit the content you intend to.  As a native english speaker, I probably underrate this a bit too.  If you're presenting in a second language and reading can help you confidently deliver the material, it may be worth doing so.  
+- You can work off of bullet point notes, which were ideally pulled out of a full script that you wrote originally.  So you're talking naturally, with some notes to give you structure and help pull you back in if you're fumbling around.  
+- You can memorize your talk verbatim.  This is hard and high risk (if you forget something it can become an awkward stumble as you try to get back to your script), but has a chance at being a very compelling experience
+
+I have found that bullet point notes work well for me, but if you're great at memorizing things, or would be more comfortable reading and are ok with sacrificing some connection to the audience, all 3 can work.  
+
+#### 11. Give context and set expectations (again)
+
+At the start of your talk, you want to answer 3 questions:
+
+1. Who are you?
+2. Who is this for?
+3. What are you going to be talking about?
+
+You may think you answered these questions with your description, but there will definitely be people at your talk who didn't read your description, and others who misread it.  Giving context at the beginning of your talk helps people prepare to hear the things that matter in your talk.  If this is a conference, it lets people decide whether they want to stay for your talk or not.  Don't be discouraged if some people walk out of your talk after your explanation.  That's a sign that you've done a good job clarifying the scope of your talk, and honoring their time. Having those folks leave now will be a much better experience than having them staring at Facebook and distracting others throughout your talk, and it is now more likely that the people in front of you are the audience you wanted to address.
+
+#### 12. Be Confident and Grateful
+
+When you know your topic and you've prepared well, the actual speaking part
 
 
 
-#### 11. Be Confident
+### More Resources
+
+- Rands has a [great post](http://randsinrepose.com/archives/out-loud/) on preparing for a presentation.  Lots of great little details in there.
 
 
-
-#### 12. Be Grateful
+[^1]: It's ok to change your description later if things change as you prep the talk.
+[^2]: People will often ask for the slides of my talk after I give them.  I usually link them, since people ask, but the slides on their own really aren't a substitute for the talk (and if they are informative to that level, the talk will probably suffer as the audience tries to take in too much information).

@@ -15,7 +15,9 @@ I am open to talking about pretty much anything that I write about on this blog.
 
 #### Saving Time With Jest - *All Things Open*
 
-*This talk is upcoming, I'll be speaking about Jest at [All Things Open](https://allthingsopen.org/) on October 24th.*
+I spoke about Jest at [All Things Open 2017](https://allthingsopen.org/).  This was an expanded version of my Meetup talk from the previous December and was an introductory level talk to Jest and the benefits it provides.
+
+- [Slides](https://www.slideshare.net/secret/f9gyWYms9dQLwK)
 
 #### Intro to Gatsby.js - *Triangle Modern Web Meetup*
 
