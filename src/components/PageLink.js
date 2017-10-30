@@ -68,7 +68,7 @@ class PageLink extends React.Component {
         </PageWrapper>
         {showDate
           ? <DateContainer className="no-mobile">
-              {format(parse(page.data.date), 'MMM Qo YYYY')}
+              {format(parse(page.data.date), 'MMM Do YYYY')}
             </DateContainer>
           : null}
       </ListItem>

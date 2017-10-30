@@ -126,17 +126,19 @@ At the start of your talk, you want to answer 3 questions:
 2. Who is this for?
 3. What are you going to be talking about?
 
-You may think you answered these questions with your description, but there will definitely be people at your talk who didn't read your description, and others who misread it.  Giving context at the beginning of your talk helps people prepare to hear the things that matter in your talk.  If this is a conference, it lets people decide whether they want to stay for your talk or not.  Don't be discouraged if some people walk out of your talk after your explanation.  That's a sign that you've done a good job clarifying the scope of your talk, and honoring their time. Having those folks leave now will be a much better experience than having them staring at Facebook and distracting others throughout your talk, and it is now more likely that the people in front of you are the audience you wanted to address.
+You may think you answered these questions with your description, but there will definitely be people at your talk who didn't read your description, and others who misread it.  Giving context at the beginning of your talk helps people prepare to hear the things that matter in your talk.  If this is a conference, it lets people decide whether they want to stay for your talk or not.  Don't be discouraged if some people walk out of your talk after your explanation.  That's a sign that you've done a good job clarifying the scope of your talk, and honoring their time. Having those folks leave now will be a much better experience than having them staring at Facebook and distracting others through out your talk, and it is now more likely that the people in front of you are the audience you wanted to address.
 
 #### 12. Be Confident and Grateful
 
-When you know your topic and you've prepared well, the actual speaking part
+When you know your topic and you've prepared well, the actual speaking part will usually end up being the easiest part.  So be confident.  Not because you're already a great speaker, or because of some feeling of baseless optimism, but because you've done the work to be ready and you have the structure around you to succeed.  Also make sure to be grateful.  A bunch of people showed up to hear you speak.  Appreciate them, give them your best and hopefully try to answer their questions.  Speaking is a great opportunity, and I hope you get the chance to try it.
 
 
 
 ### More Resources
 
 - Rands has a [great post](http://randsinrepose.com/archives/out-loud/) on preparing for a presentation.  Lots of great little details in there.
+- [Papercall.io](https://www.papercall.io/events) is a great way to find conferences that are looking for speakers
+- If you're not already connected with local meetup/interest groups, take a look at [Meetup.com](https://www.meetup.com/) and see if there are any in your area.
 
 
 [^1]: It's ok to change your description later if things change as you prep the talk.

@@ -66,7 +66,7 @@ class BlogPostTemplate extends React.Component {
           </h1>
           {showForPostsOnly(
             <PostedDateContainer>
-              Originally Posted {format(new Date(post.date), 'MMMM Qo YYYY')}
+              Originally Posted {format(new Date(post.date), 'MMMM Do YYYY')}
             </PostedDateContainer>
           )}
         </div>

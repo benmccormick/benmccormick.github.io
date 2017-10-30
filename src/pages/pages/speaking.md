@@ -17,7 +17,7 @@ I am open to talking about pretty much anything that I write about on this blog.
 
 I spoke about Jest at [All Things Open 2017](https://allthingsopen.org/).  This was an expanded version of my Meetup talk from the previous December and was an introductory level talk to Jest and the benefits it provides.
 
-- [Slides](https://www.slideshare.net/secret/f9gyWYms9dQLwK)
+- [Slides](https://www.slideshare.net/BenMcCormick/saving-time-by-testing-with-jest)
 
 #### Intro to Gatsby.js - *Triangle Modern Web Meetup*
 
