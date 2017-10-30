@@ -1,8 +1,8 @@
 ---
 title: "How To Give A Perfectly Adequate Conference Talk"
-date: "2017-10-30T04:00:00+00:00"
+date: "2017-10-30T02:00:00+00:00"
 layout: "post"
-path: "/2017/10/30/adequate-talks/"
+path: "/2017/10/29/adequate-talks/"
 description: "Tips for making your talk useful and rewarding"
 keywords: "conference talk speaking tech"
 category: "opinion"
@@ -36,13 +36,13 @@ I have no idea how to give a talk that inspires people.  But after speaking a de
 
 #### 1. Show up!
 
-The only way to give a talk that will interest and inform other people is to actually attempt it.  If you live in a place that has meetups, those are often the easiest place to start.  They're often run by one or 2 people who are going to be grateful to find new people who are willing to speak. Depending on format, you may be able to give a 5 or 15 minute talk along with other speakers at a meetup to ease into things.  If there's no meetup, you can apply to conferences.  Almost all conferences have open "Call for Paper"s, and many of them try to save some spots for new speakers.  Conference speaking is more of a crapshoot though, since they often have many applications for few spots, and your best bet is to apply widely, and possibly suggest several different talk ideas.  This year I applied to speak at 6 conferences, and actually spoke at 2, and that was by far my best ratio since I started applying to speak a few years ago.  
+The only way to give a talk that will interest and inform other people is to actually attempt it.  If you live in a place that has meetups, those are often the easiest place to start.  They're usually run by 1 or 2 people who are going to be grateful to find new folks who are willing to speak. Depending on format, you may be able to give a 5 or 15 minute talk along with other speakers at a meetup to ease into things.  If there's no meetup, you can also apply to conferences.  Almost all conferences have open "Call for Papers" periods where they invite applications, and many of them try to save some spots for new speakers.  Conference speaking is more of a crapshoot though, since they often have many applications for few spots, and your best bet is to apply widely, and possibly suggest several different talk ideas.  This year I applied to speak at 6 conferences, and actually spoke at 2, and that was by far my best ratio since I started applying to speak a few years ago.  
 
 #### 2. Pick a topic that you’re interested in
 
 Giving a talk can be a fun experience, but it can also be frustrating for both you and the audience.  The best way to suck all of the joy out it is to give a talk about something that you don't care about.  If you're uninterested in the topic, the work to prepare is either going to be a painful grind, or you won't do it.  In which case sitting through your talk may well be a painful grind for your audience.  
 
-Note that I don't say to pick a topic you're passionate about.  Not every talk is going to be the pinnacle of your speaking career, and sometimes there may be nothing out there that is currently changing your life.  You can really help people by informing them of the useful, interesting information you have, and this doesn't need to be more than that.
+Note that I don't say to pick a topic you're passionate about.  Not every talk is going to be the pinnacle of your speaking career, and sometimes there may be nothing out there that is currently changing your life.  You can really help people by sharing the useful, interesting information you have, and this doesn't need to be more than that.
 
 #### 3. Pick an audience for whom that topic is relevant
 
