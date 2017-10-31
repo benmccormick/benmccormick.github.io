@@ -94,8 +94,6 @@ const getRelatedPosts = (keyMap, categoryMap) => node => {
   let nodes = readNext
     ? compact(readNext.map(key => get(keyMap, [key, 0])))
     : categoryMap[node.frontmatter.category];
-  nodes = sortBy(nodes, 'frontmatter.date');
-  nodes.reverse();
   let posts = nodes.map(n => ({
     path: n.fields.slug,
     data: pick(n.frontmatter, ['title', 'path', 'description', 'date']),
