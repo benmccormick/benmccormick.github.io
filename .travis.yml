@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-  - "node"
-  - "7"
+- node
+- '7'
 deploy:
   skip_cleanup: true
   provider: script
@@ -9,3 +9,11 @@ deploy:
   on:
     branch: master
     node: '5'
+env:
+  global:
+  - ANALYTICS_KEY=./analytics-api-key.json
+  - secure: r43TdsxdDrqYtmZiBmBSe+7u0UBdepMWAYmpTGzGJoAt9p0z+CxcR9ZIj4uMPvBtO3n1wcEvylWcmmY6smu57uXNPhQpyYJaw6HlnfKrz5GjRVX6Ti6oDm8Yyhha1IlcS73dJTpApFis30Kv7fsfDvpNcvVxpF1eDUlw2UAYCwI=
+  - secure: cBhAjztNNAVciVF2TXJLCEWZOUNqeHIDIVil/QSPSScR2w6Af03Ez0Jz5ZnN0AuHpmoAsTBntMOLbSDjEbmzWy+ywHRErc+yDKBoQc99NV4iMMNIihSKBw6FplEliakYOLblMU1fV7qf4Lf8GborMCBHRkPkB3ywsgsMZdGPouI=
+before_install:
+- openssl aes-256-cbc -K $encrypted_dd5d287df7ed_key -iv $encrypted_dd5d287df7ed_iv
+  -in analytics-api-key.json.enc -out analytics-api-key.json -d
