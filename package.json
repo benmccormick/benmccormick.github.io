@@ -79,12 +79,13 @@
   "scripts": {
     "dev": "gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No tests yet\" && exit 0",
     "develop": "gatsby develop",
     "build": "rm -r public && gatsby build",
     "serve": "gatsby serve",
     "gh-pages": "gh-pages -d public",
     "deploy": "node analytics.js && gatsby build && gh-pages -d public",
+    "deploy-travis": "node analytics.js && gatsby build && gh-pages -d public",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   }
