@@ -1,7 +1,8 @@
 const fs = require('fs');
 const ncp = require('ncp').ncp;
+const config = require('../../gatsby-config');
 
-const BASE_PATH = __dirname + '/../..';
+const BASE_PATH = config.siteMetadata.rootPath;
 
 // From http://stackoverflow.com/questions/11293857/fastest-way-to-copy-file-in-node-js
 const copyFile = (sourcePath, targetPath) =>
@@ -54,5 +55,5 @@ module.exports = {
   copyFile,
   mkFile,
   mkDir,
-  copyDir
+  copyDir,
 };

@@ -1,5 +1,5 @@
 ---
-title: "Friday Links: November 30th 2017"
+title: "Friday Links: November 3 2017"
 date: "2017-11-03T04:00:00+00:00"
 layout: "post"
 path: "/2017/11/03/friday-links/"

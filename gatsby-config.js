@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    rootPath: __dirname,
     author: 'Ben McCormick',
     foo: 'bar',
     blogTitle: 'benmccormick.org',
