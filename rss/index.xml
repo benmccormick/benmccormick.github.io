@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Fri, 03 Nov 2017 02:49:38 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 07 Nov 2017 03:06:15 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -15,7 +15,7 @@
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Friday Links: November 30th 2017]]></title>
+            <title><![CDATA[Friday Links: November 3 2017]]></title>
             <link>https://benmccormick.org/2017/11/03/friday-links/</link>
             <guid>https://benmccormick.org/2017/11/03/friday-links/</guid>
             <pubDate>Fri, 03 Nov 2017 04:00:00 GMT</pubDate>
