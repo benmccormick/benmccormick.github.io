@@ -3,7 +3,7 @@ import CodePlugin from 'typography-plugin-code';
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants';
 
 const typography = new Typography({
-  baseFontSize: '20px',
+  baseFontSize: '18px',
   //baseLineHeight: 1.666,
   baseLineHeight: 1.6,
   headerFontFamily: [
@@ -27,7 +27,7 @@ const typography = new Typography({
       lineHeight: 1.1,
     },
     'tt,code': {
-      fontSize: '75%',
+      fontSize: '14px',
     },
     pre: {
       lineHeight: 1.1,

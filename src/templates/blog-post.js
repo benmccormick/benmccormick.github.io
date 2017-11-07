@@ -25,6 +25,7 @@ const PostedDateContainer = glamorous.h5({
 });
 
 const ArticleBody = glamorous.div({
+  maxWidth: '600px',
   '& li': {
     paddingLeft: '10px',
   },

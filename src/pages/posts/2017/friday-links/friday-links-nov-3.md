@@ -1,5 +1,5 @@
 ---
-title: "Friday Links: November 3 2017"
+title: "Friday Links: November 3rd 2017"
 date: "2017-11-03T04:00:00+00:00"
 layout: "post"
 path: "/2017/11/03/friday-links/"
@@ -24,9 +24,9 @@ Without further ado, here are this week's Friday links:
 
 ### Programming Tools
 
-[What are the Most Disliked Programming Languages? - Stack Overflow Blog](https://stackoverflow.blog/2017/10/31/disliked-programming-languages/).  To be honest, I don’t totally buy the premise of this post.  I don’t think people always list their most disliked languages as the languages they don’t want to work with on Stack Overflow, I think they also list the languages or technologies that people might expect them to work with, but they don’t want to.   Like PHP or CoffeeScript for a web developer, or SQLServer for a DBA. Thats acknowledged but not fully grappled with in the article.  That said, it’s still an interesting dataset, no matter how you label the languages that are being excluded.  
+[What are the Most Disliked Programming Languages? - Stack Overflow Blog](https://stackoverflow.blog/2017/10/31/disliked-programming-languages/) -  To be honest, I don’t totally buy the premise of this post.  I don’t think people always list their most disliked languages as the languages they don’t want to work with on Stack Overflow, I think they also list the languages or technologies that people might expect them to work with, but they don’t want to.   Like PHP or CoffeeScript for a web developer, or SQLServer for a DBA. Thats acknowledged but not fully grappled with in the article.  That said, it’s still an interesting dataset, no matter how you label the languages that are being excluded.  
 
-[Modern Vim: Craft Your Development Environment with Vim 8 and Neovim by Drew Neil |  The Pragmatic Bookshelf](https://pragprog.com/book/modvim/modern-vim). Drew Neil’s first book,[Practical Vim](http://amzn.to/2h7tQp3), was my introduction to useful text editing.  I’ve moved off of Vim for my day to day editing over the last few years, but I still plan on buying this book when it goes paperback, because I know I’ll learn at least a few useful tips, and it’s totally possible I’ll be back to Vim as my day to day editor again someday soon.  If you're a Vim user I definitely recommend checking this out.
+[Modern Vim - Drew Neil](https://pragprog.com/book/modvim/modern-vim) - Drew Neil’s first book,[Practical Vim](http://amzn.to/2h7tQp3), was my introduction to useful text editing.  I’ve moved off of Vim for my day to day editing over the last few years, but I still plan on buying this book when it goes paperback, because I know I’ll learn at least a few useful tips, and it’s totally possible I’ll be back to Vim as my day to day editor again someday soon.  If you're a Vim user I definitely recommend checking this out.
 
 
 [Extending the command line - Wynn Netherland](https://wynnnetherland.com/journal/extending-the-command-line/) - This is a nice roundup of the various ways you can customize your command line commands to aid in recall, reliability and efficiency.

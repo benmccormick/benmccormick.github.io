@@ -1,5 +1,6 @@
 .columns {
   display: flex;
+  justify-content: space-between;
 }
 @media all and (max-width: 700px) {
   .columns {
