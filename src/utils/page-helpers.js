@@ -25,7 +25,12 @@ export const getSlugsForMostPopularPosts = (pages, count) =>
 
 // this gets a list of slugs for most recently popular posts
 export const getSlugsForTrendingPosts = (pages, count) => {
-  let eligiblePages = pages.filter(isEligiblePage);
+  let eligiblePages = pages
+    .filter(isEligiblePage)
+    // prevent cases where we're just moving up a deep pit at the bottom
+    .filter(
+      page => parseInt(get(page, 'node.frontmatter.last30pageViews') || 0) > 30
+    );
   let rankByPopular = sortBy(pages, page =>
     parseInt(get(page, 'node.frontmatter.pageViews') || 0)
   );
