@@ -8,6 +8,7 @@ keywords: "gatsby travis inquirer.js ci cli"
 category: "tools"
 key: "blog-deploy-ux"
 readNext: "rss-atom-json-feeds,ten-things-js,friday-links-11-03-17"
+pageViews: '0'
 ---
 
 About a year ago I switched back to using a static site generator for this blog.  Specifically, I chose [Gatsby](https://www.gatsbyjs.org/) and it has been fantastic.  It's incredibly easy to customize and make my own, and I can do fun things like adding metadata to my posts to enable features like the "read next" list at the bottom of each post, and the "most popular" posts feature that is actually generated from google analytics data.  The biggest downside of using a static site generator relative to a hosted service though is the annoyance of actually posting.  I could edit or write a post to my [Ghost](https://ghost.org/) blog from anywhere, which was a real perk of using that platform.  Until recently I was only able to deploy this site from a single computer, because I needed an API key for Google Analytics to be available.  That has been mostly fine, since I usually work on posts for this site over the course of a few days.

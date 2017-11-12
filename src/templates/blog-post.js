@@ -57,7 +57,11 @@ class BlogPostTemplate extends React.Component {
     const body = data.markdownRemark.html;
     const slug = data.markdownRemark.fields.slug;
     let isPost = post.layout === 'post';
+    let isWeeklyLinks = post.layout === 'weekly-links';
+    let isPostOrWeeklyLinks = isPost || isWeeklyLinks;
     let showForPostsOnly = content => (isPost ? content : null);
+    let showForPostsAndWeeklyLinksOnly = content =>
+      isPostOrWeeklyLinks ? content : null;
     return (
       <div className="markdown" ref={el => (this.markdownContainer = el)}>
         <BlogPostHeadContent post={post} slug={slug} body={body} />
@@ -73,14 +77,14 @@ class BlogPostTemplate extends React.Component {
         </div>
         <div className="columns">
           <ArticleBody dangerouslySetInnerHTML={{ __html: body }} />
-          {showForPostsOnly(
+          {showForPostsAndWeeklyLinksOnly(
             <Sidebar className="no-mobile">
               <Ad history={history} />
               <EmailSubscribe />
             </Sidebar>
           )}
         </div>
-        {showForPostsOnly(
+        {showForPostsAndWeeklyLinksOnly(
           <PostFooter post={post} recommendedPosts={pathContext.relatedPosts} />
         )}
       </div>

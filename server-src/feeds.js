@@ -3,6 +3,7 @@ const filter = require('lodash/filter');
 const sortBy = require('lodash/sortBy');
 const forEach = require('lodash/forEach');
 const get = require('lodash/get');
+const includes = require('lodash/includes');
 const moment = require('moment');
 const { mkDir, mkFile } = require('../src/utils/file_system');
 
@@ -17,16 +18,18 @@ let buildFeed = pages => {
     image: 'https://benmccormick.org/logo.png',
     feedLinks: {
       atom: 'http://benmccormick.org/atom.xml',
-      json: 'http://benmccormick.org/feed.json'
+      json: 'http://benmccormick.org/feed.json',
     },
     author: {
       name: 'Ben McCormick',
-      email: 'ben@benmccormick.org'
-    }
+      email: 'ben@benmccormick.org',
+    },
   });
   pages = sortBy(pages, page => get(page, 'date'));
   pages = pages.reverse();
-  pages = filter(pages, p => get(p, 'layout', 'page') === 'post');
+  pages = filter(pages, p =>
+    includes(['post', 'weekly-links'], get(p, 'layout'))
+  );
   pages = pages.slice(0, 10);
 
   forEach(pages, page =>
@@ -40,15 +43,15 @@ let buildFeed = pages => {
         {
           name: 'Ben McCormick',
           email: 'ben@benmccormick.org',
-          link: 'http://benmccormick.org'
-        }
-      ]
+          link: 'http://benmccormick.org',
+        },
+      ],
     })
   );
   feed.addContributor({
     name: 'Ben McCormick',
     email: 'ben@benmccormick.org',
-    link: 'http://benmccormick.org'
+    link: 'http://benmccormick.org',
   });
   return feed;
 };

@@ -1,12 +1,17 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import get from 'lodash/get';
 import { rhythm } from '../utils/typography';
 import CategoryIcon from './CategoryIcon';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import glamorous from 'glamorous';
+import star from '../svg/star.svgi';
+import flame from '../svg/flame.svgi';
+import Icon from './Icon';
 import { css } from 'glamor';
+
+export const TrendingIcon = () => <Icon color="#E55934" icon={flame} />;
+export const FavoriteIcon = () => <Icon color="#D7AF70" icon={star} />;
 
 const ListItem = glamorous.li({
   marginBottom: rhythm(1 / 2),
@@ -47,20 +52,42 @@ const DateContainer = glamorous.span({
   color: 'rgba(100,100,100, 0.7)',
 });
 
+const TitleRow = glamorous.div({
+  display: 'flex',
+  alignItems: 'center',
+  '> *': {
+    marginRight: '10px',
+  },
+});
+
 class PageLink extends React.Component {
   render() {
-    let { page, showCategory, showDate } = this.props;
-    const _title = get(page, 'data.title') || page.path;
+    let {
+      page,
+      showCategory,
+      showDate,
+      showDescription,
+      titleFn,
+      showPopular,
+      showTrending,
+    } = this.props;
+    const _title = titleFn(page);
     return (
       <ListItem>
         <PageWrapper>
           <div>
-            <Link className={linkClass} to={page.path}>
-              {_title}
-            </Link>
-            <PageDescription>
-              {page.data.description}
-            </PageDescription>
+            <TitleRow>
+              <Link className={linkClass} to={page.path}>
+                {_title}
+              </Link>
+              {showTrending && page.data.isTrending ? <TrendingIcon /> : null}
+              {showPopular && page.data.isPopular ? <FavoriteIcon /> : null}
+            </TitleRow>
+            {showDescription
+              ? <PageDescription>
+                  {page.data.description}
+                </PageDescription>
+              : null}
             {showCategory
               ? <CategoryIcon category={page.data.category} />
               : null}
@@ -80,11 +107,16 @@ PageLink.propTypes = {
   page: React.PropTypes.object.isRequired,
   showDate: React.PropTypes.bool.isRequired,
   showCategory: React.PropTypes.bool.isRequired,
+  showDescription: React.PropTypes.bool.isRequired,
+  showPopular: React.PropTypes.bool.isRequired,
+  showTrending: React.PropTypes.bool.isRequired,
+  titleFn: React.PropTypes.func.isRequired,
 };
 
 PageLink.defaultProps = {
   showCategory: true,
   showDate: true,
+  showDescription: true,
 };
 
 export default PageLink;

@@ -1,7 +1,7 @@
 ---
-title: "Friday Links: November 10th 2017"
-date: "2017-11-10"
-layout: "post"
+title: "Weekly Links: November 10th 2017"
+date: "2017/11/10"
+layout: "weekly-links"
 path: "/2017/11/10/friday-links/"
 description: "React, Social Media, and Comments"
 keywords: "react social media comments economist"

@@ -3,7 +3,11 @@ import React from 'react';
 import { HeadContent } from '../components/HeadContent';
 import { WelcomeBox } from '../components/WelcomeBox';
 import { fadeIn } from '../utils/react-helpers';
-import { getSortedPosts, getPopularPosts } from '../utils/page-helpers';
+import {
+  getSortedPosts,
+  getPopularPosts,
+  getWeeklyLinks,
+} from '../utils/page-helpers';
 import { HomeMenu } from '../components/HomeMenu';
 
 class BlogIndex extends React.Component {
@@ -14,11 +18,16 @@ class BlogIndex extends React.Component {
     const pages = this.props.data.allMarkdownRemark.edges;
     const sortedPosts = getSortedPosts(pages, 5);
     const popularPosts = getPopularPosts(pages, 5);
+    const weeklyLinks = getWeeklyLinks(pages, 5);
     return (
       <div ref={el => (this.indexContainer = el)}>
         <HeadContent />
         <WelcomeBox />
-        <HomeMenu sortedPosts={sortedPosts} popularPosts={popularPosts} />
+        <HomeMenu
+          sortedPosts={sortedPosts}
+          popularPosts={popularPosts}
+          weeklyLinks={weeklyLinks}
+        />
       </div>
     );
   }

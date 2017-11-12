@@ -1,16 +1,16 @@
 ---
-title: "Friday Links: November 3rd 2017"
+title: "Weekly Links: November 3rd 2017"
 date: "2017-11-03T04:00:00+00:00"
-layout: "post"
+layout: "weekly-links"
 path: "/2017/11/03/friday-links/"
-description: "The very first Friday Links post"
+description: "The very first Weekly Links post: Snapshot Testing and being Tech-wise"
 keywords: "Vim Andy Crouch PWAs"
 category: "opinion"
 key: "friday-links-11-03-17"
 readNext: "ten-things-js,adequate-talk,jest-matchers-1"
 ---
 
-Today marks the start of a new thing I'm trying with this blog: *Friday Links*.  Every Friday I'm going to be gathering some of the best links and content I've found that week and sharing it here.  It will be primarily but not completely programming focused, with minimal commentary. Some weeks it may be 2-3 links, some weeks it may be 10, but I'm going to give it a run at making this a true weekly feature.  
+Today marks the start of a new thing I'm trying with this blog: *Friday Links* (**Edit: Since renamed to Weekly Links**).  Every Friday I'm going to be gathering some of the best links and content I've found that week and sharing it here.  It will be primarily but not completely programming focused, with minimal commentary. Some weeks it may be 2-3 links, some weeks it may be 10, but I'm going to give it a run at making this a true weekly feature.  
 
 If you're a regular reader (or not) and you have feelings about this, feel free to fill out this [survey](https://goo.gl/forms/MwEtFrDwFWzXSRv13) and let me know what you think.  I'm still working through how this should work, though eventually it will almost definitely get integrated into the site as a different type of post than my main articles.  
 
