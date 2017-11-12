@@ -10,16 +10,15 @@ const isEligiblePage = page =>
   !page.node.frontmatter.dontfeature &&
   get(page, 'node.frontmatter.layout') === 'post';
 const getSlug = p => get(p, 'node.fields.slug');
+const getRecentPageViews = page =>
+  parseInt(get(page, 'node.frontmatter.last30pageViews') || 0);
+const getPageViews = page =>
+  parseInt(get(page, 'node.frontmatter.pageViews') || 0);
 
 // this gets a list of slugs for most popular all time posts
 export const getSlugsForMostPopularPosts = (pages, count) =>
   take(
-    sortBy(pages, page =>
-      parseInt(get(page, 'node.frontmatter.pageViews') || 0)
-    )
-      .reverse()
-      .filter(isEligiblePage)
-      .map(getSlug),
+    sortBy(pages, getPageViews).reverse().filter(isEligiblePage).map(getSlug),
     count
   );
 
@@ -28,15 +27,11 @@ export const getSlugsForTrendingPosts = (pages, count) => {
   let eligiblePages = pages
     .filter(isEligiblePage)
     // prevent cases where we're just moving up a deep pit at the bottom
-    .filter(
-      page => parseInt(get(page, 'node.frontmatter.last30pageViews') || 0) > 30
-    );
-  let rankByPopular = sortBy(pages, page =>
-    parseInt(get(page, 'node.frontmatter.pageViews') || 0)
-  );
-  let rankByRecentlyPopular = sortBy(eligiblePages, page =>
-    parseInt(get(page, 'node.frontmatter.last30pageViews') || 0)
-  );
+    .filter(page => getRecentPageViews(page) > 30)
+    // don't include things posted in the last 30 days
+    .filter(page => getRecentPageViews(page) !== getPageViews(page));
+  let rankByPopular = sortBy(pages, getPageViews);
+  let rankByRecentlyPopular = sortBy(eligiblePages, getRecentPageViews);
   let rankByTrending = sortBy(eligiblePages, page => {
     let getRankInList = list =>
       findIndex(list, popPage => getSlug(popPage) === getSlug(page));
@@ -48,9 +43,7 @@ export const getSlugsForTrendingPosts = (pages, count) => {
 // this returns a list of popular posts, deprecated for now
 export const getPopularPosts = (pages, count = Infinity) =>
   take(
-    sortBy(pages, page =>
-      parseInt(get(page, 'node.frontmatter.last30pageViews', 0))
-    )
+    sortBy(pages, getRecentPageViews)
       .reverse()
       .filter(
         page =>
