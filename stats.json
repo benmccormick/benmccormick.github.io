@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "path---2014-11-04-a-quick-review-of-google-inbox": [
-      "path---2014-11-04-a-quick-review-of-google-inbox-66ac525e6ceafe3a8d52.js",
-      "path---2014-11-04-a-quick-review-of-google-inbox-66ac525e6ceafe3a8d52.js.map"
+      "path---2014-11-04-a-quick-review-of-google-inbox-24c8563ac8332e6db407.js",
+      "path---2014-11-04-a-quick-review-of-google-inbox-24c8563ac8332e6db407.js.map"
     ],
     "path---2015-01-22-is-bower-useful": [
       "path---2015-01-22-is-bower-useful-79f320d757f710e8924e.js",
@@ -93,8 +93,8 @@
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---2013-08-12-book-review-user-centered-design": [
-      "path---2013-08-12-book-review-user-centered-design-a07115550d4bf91621aa.js",
-      "path---2013-08-12-book-review-user-centered-design-a07115550d4bf91621aa.js.map"
+      "path---2013-08-12-book-review-user-centered-design-9db6cd7d279c5628ead1.js",
+      "path---2013-08-12-book-review-user-centered-design-9db6cd7d279c5628ead1.js.map"
     ],
     "path---2014-06-02-discovering-vim": [
       "path---2014-06-02-discovering-vim-0563be4547e216d571ae.js",
@@ -133,8 +133,8 @@
       "path---2016-04-30-ack-tips-fe02734bcd9a8952208d.js.map"
     ],
     "path---2013-06-29-rss-roundup": [
-      "path---2013-06-29-rss-roundup-82603d38f92ec4cf6324.js",
-      "path---2013-06-29-rss-roundup-82603d38f92ec4cf6324.js.map"
+      "path---2013-06-29-rss-roundup-a5faf338afd8a21e84e1.js",
+      "path---2013-06-29-rss-roundup-a5faf338afd8a21e84e1.js.map"
     ],
     "path---2012-12-29-cleaning-my-digital-house": [
       "path---2012-12-29-cleaning-my-digital-house-462244a8767ddcfcc3b3.js",
@@ -249,8 +249,8 @@
       "path---2014-12-22-building-complex-layouts-with-marionette-js-24113b99aa1b14327b69.js.map"
     ],
     "path---2013-04-23-book-review-javascript-testing-with-jasmine": [
-      "path---2013-04-23-book-review-javascript-testing-with-jasmine-10a8a729103404d3b682.js",
-      "path---2013-04-23-book-review-javascript-testing-with-jasmine-10a8a729103404d3b682.js.map"
+      "path---2013-04-23-book-review-javascript-testing-with-jasmine-6091319acb47584eab9b.js",
+      "path---2013-04-23-book-review-javascript-testing-with-jasmine-6091319acb47584eab9b.js.map"
     ],
     "path---2015-06-10-is-safari-being-left-behind": [
       "path---2015-06-10-is-safari-being-left-behind-de9422234201d7bccdf0.js",
@@ -261,8 +261,8 @@
       "path---2016-03-09-stability-vs-decline-d4ac73da199b2eb6ee37.js.map"
     ],
     "path---index": [
-      "path---index-813544c372e92a9e4366.js",
-      "path---index-813544c372e92a9e4366.js.map"
+      "path---index-ec9fdbd8a6cfe1cfe0ad.js",
+      "path---index-ec9fdbd8a6cfe1cfe0ad.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-c6b8ae317b4241b27c27.js",
@@ -273,8 +273,8 @@
       "path---speaking-669f476a89217d284e14.js.map"
     ],
     "path---2013-01-06-book-review-effective-javascript": [
-      "path---2013-01-06-book-review-effective-javascript-136dc0e9ff5632e74f8a.js",
-      "path---2013-01-06-book-review-effective-javascript-136dc0e9ff5632e74f8a.js.map"
+      "path---2013-01-06-book-review-effective-javascript-fdd74b2b64d3a71b66b6.js",
+      "path---2013-01-06-book-review-effective-javascript-fdd74b2b64d3a71b66b6.js.map"
     ],
     "path---2013-05-07-revertible-observables-in-knockout": [
       "path---2013-05-07-revertible-observables-in-knockout-5c7ed972afbec31ad1ef.js",
@@ -337,8 +337,8 @@
       "path---2014-08-28-custom-elements-by-example-760e914b431ea347f086.js.map"
     ],
     "commons": [
-      "commons-887a92b30ae9ee917d55.js",
-      "commons-887a92b30ae9ee917d55.js.map"
+      "commons-165f1f875130a221b2f3.js",
+      "commons-165f1f875130a221b2f3.js.map"
     ],
     "path---2015-12-30-es-6-patterns-converting-callbacks-to-promises": [
       "path---2015-12-30-es-6-patterns-converting-callbacks-to-promises-d3a1e5c632b069b1d794.js",
@@ -461,12 +461,12 @@
       "path---2014-11-24-alternative-javascript-b5252c33e71eb98e6428.js.map"
     ],
     "app": [
-      "app-2066f5c1d2360ec625d5.js",
-      "app-2066f5c1d2360ec625d5.js.map"
+      "app-4f137d5442641156e6a2.js",
+      "app-4f137d5442641156e6a2.js.map"
     ],
     "path---archive": [
-      "path---archive-d2409a698348d933a528.js",
-      "path---archive-d2409a698348d933a528.js.map"
+      "path---archive-3e712380ac71eb8ee684.js",
+      "path---archive-3e712380ac71eb8ee684.js.map"
     ],
     "path---2014-07-24-one-day-left-in-practical-vim-giveaway": [
       "path---2014-07-24-one-day-left-in-practical-vim-giveaway-528c520230e3dc67db41.js",
@@ -549,12 +549,12 @@
       "path---2012-11-07-sync-multiple-google-calendars-in-windows-8-55e7e3dd2a2688fd2756.js.map"
     ],
     "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review": [
-      "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review-6070fc69389f5765c080.js",
-      "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review-6070fc69389f5765c080.js.map"
+      "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review-084955efca55e8085717.js",
+      "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review-084955efca55e8085717.js.map"
     ],
     "path---2015-06-15-book-review-talking-with-tech-leads": [
-      "path---2015-06-15-book-review-talking-with-tech-leads-2d5f123db6f5799b1961.js",
-      "path---2015-06-15-book-review-talking-with-tech-leads-2d5f123db6f5799b1961.js.map"
+      "path---2015-06-15-book-review-talking-with-tech-leads-ae1e55d5fd401b4a50c0.js",
+      "path---2015-06-15-book-review-talking-with-tech-leads-ae1e55d5fd401b4a50c0.js.map"
     ],
     "path---2016-12-02-whole-new-site": [
       "path---2016-12-02-whole-new-site-d8ed0077a37b9dc01a64.js",
@@ -569,8 +569,8 @@
       "path---2016-12-11-readable-code-audience-c12957c14af460f04baf.js.map"
     ],
     "path---2012-12-20-awesome-software-trello": [
-      "path---2012-12-20-awesome-software-trello-ac0edb46255bb3e9f3e6.js",
-      "path---2012-12-20-awesome-software-trello-ac0edb46255bb3e9f3e6.js.map"
+      "path---2012-12-20-awesome-software-trello-0ca0afb31f889fd91266.js",
+      "path---2012-12-20-awesome-software-trello-0ca0afb31f889fd91266.js.map"
     ],
     "path---2017-05-29-atom-tips": [
       "path---2017-05-29-atom-tips-f51f89c4b59d4865b7db.js",
