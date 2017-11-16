@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-11-12T04:16:23Z</updated>
+    <updated>2017-11-16T04:13:49Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,46 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[A Quick Browser Compatibility Checkup]]></title>
+        <id>https://benmccormick.org/2017/11/15/browser-compatibility-checkup/</id>
+        <link href="https://benmccormick.org/2017/11/15/browser-compatibility-checkup/">
+        </link>
+        <updated>2017-11-15T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>I’ve written a few times about the state of browser compatibility and the web platform over the years.  Over 4 years ago I <a href="https://benmccormick.org/2013/06/11/evergreen-browsers">linked to a post celebrating the rise of evergreen browsers</a>. Then 2 years ago I was one of several people stressing about <a href="https://benmccormick.org/2015/06/10/is-safari-being-left-behind/">whether Safari was going to hold the web back</a>.  It’s something I’ve followed closely because supporting many different subtly incompatible execution environments is one of the most unique and frustrating challenges of front-end development.  </p>
+<p>The last few years have been really good for web compatibility with Microsoft dumping Internet Explorer in favor of the evergreen Edge, and <a href="https://babeljs.io/">Babel</a> allowing JavaScript developers to write modern JS spec-compliant code and then have it transpiled back into something that runs in a wide variety of environments.  But fairly recently things have started to get even better.</p>
+<p>For the web application I have spent my workdays building over the past 4 years, we target the <a href="http://browserl.ist/?q=last+2+Chrome+versions%252C+last+2+Safari+versions%252C+last+2+Firefox+versions%252C+last+2+Edge+versions">last 2 versions of the major desktop browsers</a> (Chrome, Firefox, Safari, Edge).  At the time of writing that means we target</p>
+<ul>
+<li>Chrome 61 + 62</li>
+<li>Edge 15 + 16</li>
+<li>Firefox 55 + 56</li>
+<li>Safari 10.1 + 11</li>
+</ul>
+<p>I get that for some of you this is a very lax browser support standard, and you’re still supporting IE9 or old Android versions.  For others you don’t care about browser compatibility at all and are just hacking demos on the newest Chrome.  But “last 2 versions” is a real world standard that I know plenty of teams target.  And it certainly is a reasonable target for new devs learning about JavaScript and the web.  So let’s look at what is natively supported in all targeted browsers if you use this standard today. Spoiler Alert: life is pretty good.</p>
+<h3>Available Now</h3>
+<h4>All of ES6 and ES2016, and almost all of ES2017</h4>
+<p>If you’re distrustful of Babel and have been holding off on learning the new features that have transformed JavaScript over the past few years until they were “browser supported”, now is your time.  Other than shared memory and atomics (more on that below), every single feature from the recent updates to the ECMAScript spec is available in the last 2 versions of all 4 major browsers.</p>
+<p>That includes core ES6 stuff like classes, destructuring, and arrow functions.  But also features that were just standardized this summer like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">async functions</a>.</p>
+<h4>Modern CSS</h4>
+<p>Modern CSS specifications like <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a>, <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Grid</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS Variables</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">CSS Feature Queries</a> are all fully supported in these browsers, making creating layouts especially much easier than it had been in the past.</p>
+<h4>Promises and Fetch</h4>
+<p>Promises have been mostly supported for a while, but they didn’t have native support in IE11, so some folks may still be polyfilling them.  With a last 2 versions standard, you not only don’t need to polyfill Promises, but also can drop any polyfills for the promise based fetch api as well (and use them with async-await natively!).</p>
+<h3>Coming Soon</h3>
+<p>So there is a ton of stuff that is available today for people targeting the last 2 versions of browsers.  But there is also a bunch of stuff that is almost there:</p>
+<h4>Web Assembly and low level primitives</h4>
+<p><a href="https://blog.mozilla.org/blog/2017/11/13/webassembly-in-browsers/">WebAssembly is now shipping in the latest version of every major browser</a>.  WebAssembly is a target bytecode for the web that can interop with JavaScript.  Essentially somebody can write C, C++ or Rust code and then compile it to WebAssembly, which runs natively in the browser, potentially much more performantly than equivalent JavaScript code.  The latest version of all browsers also support <a href="http://2ality.com/2017/01/shared-array-buffer.html">SharedArrayBuffer and Atomics</a>, low level APIs for exploring better parallelism support in JavaScript.  In short, it will soon be possible to create much more performant experiences in web browsers than is currently possible.</p>
+<h4>WebRTC</h4>
+<p>The latest versions of all browsers also support WebRTC, an API for peer to peer communication through browsers.  This potentially opens the door for all types of browser-based text/video chat and collaboration applications.</p>
+<h4>Service Workers</h4>
+<p><a href="https://jakearchibald.github.io/isserviceworkerready/">Service workers are getting close</a>.  They’re available in every browser but Safari now, and Safari is working on them.  If we get another big <code>x.1</code> release of Safari like last year, they could be available for early adopters across the board within the next 6 months.  </p>
+<h3>The web is moving forward together</h3>
+<p>It’s fun to see this level of unified activity across the web platform over the past 2 years.  In my 7+ years of front-end development, I’ve never seen a more compatible web than the one we can develop against today.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weekly Links: November 10th 2017]]></title>
         <id>https://benmccormick.org/2017/11/10/friday-links/</id>
@@ -977,291 +1017,6 @@ Narrow it down to your ten for me, or for you..
 </li>
 </ol>
 </div>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Adding RSS, Atom, and JSON Feed to Gatsby]]></title>
-        <id>https://benmccormick.org/2017/06/03/rss-atom-json-gatsby/</id>
-        <link href="https://benmccormick.org/2017/06/03/rss-atom-json-gatsby/">
-        </link>
-        <updated>2017-06-04T01:55:00Z</updated>
-        <content type="html"><![CDATA[<p>For the last few months, this blog has been written in <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a>, a static site generator for JavaScript.  One of the first problems I had to solve when migrating the blog was how to maintain my RSS feed, since Gatsby doesn’t have any built in concept of an RSS feed.  This issue came up again this week as I decided to implement the new <a href="https://jsonfeed.org/">JSON Feed</a> spec and give folks an additional option for subscribing to this blog.  Fortunately this turns out to be a pretty easy problem to solve because of the excellent npm module <a href="https://github.com/jpmonette/feed">feed</a>.</p>
-<p><em>feed</em> is an npm module that takes a bunch of information about a blog and its posts, and normalizes them into various syndication feed format.  Here’s what setting up a feed option looks like for this blog:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> Feed <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'feed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> filter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/filter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> sortBy <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/sortBy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> forEach <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/forEach'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token keyword">get</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/get'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> moment <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'moment'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> markdownIt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'markdown-it'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> frontmatter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'front-matter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-<span class="token comment" spellcheck="true">//markdownIt is a markdown parser that takes my raw md files and</span>
-<span class="token comment" spellcheck="true">//translates them into HTML that we can use in the feed</span>
-<span class="token keyword">const</span> md <span class="token operator">=</span> <span class="token function">markdownIt</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  html<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  linkify<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  typographer<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-<span class="token comment" spellcheck="true">// getPageContent is a function to help us grab the html content from a post path</span>
-<span class="token keyword">const</span> getPageContent <span class="token operator">=</span> page <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> file <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">'/pages/'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>requirePath<span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> body <span class="token operator">=</span> md<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token function">frontmatter</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// handle local links</span>
-  <span class="token keyword">return</span> body<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token operator">/</span>src<span class="token operator">=</span><span class="token string">"\//g, 'src="</span>http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>benmccormick<span class="token punctuation">.</span>org<span class="token operator">/</span>'<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// build feed is our main function to build a `Feed` object which we</span>
-<span class="token comment" spellcheck="true">// can then serialize into various formats</span>
-<span class="token keyword">const</span> buildFeed <span class="token operator">=</span> pages <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> feed <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Feed</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    title<span class="token punctuation">:</span> <span class="token string">'benmccormick.org'</span><span class="token punctuation">,</span>
-    description<span class="token punctuation">:</span> <span class="token string">'A blog by Ben McCormick'</span><span class="token punctuation">,</span>
-    link<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org'</span><span class="token punctuation">,</span>
-    id<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org'</span><span class="token punctuation">,</span>
-    copyright<span class="token punctuation">:</span> <span class="token string">'All rights reserved 2016, Ben McCormick'</span><span class="token punctuation">,</span>
-    feedLinks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      atom<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org/atom.xml'</span><span class="token punctuation">,</span>
-      json<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org/feed.json'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    author<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-      email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// ignore pages (non posts)</span>
-  pages <span class="token operator">=</span> <span class="token function">filter</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> p <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword">get</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token string">'data.layout'</span><span class="token punctuation">,</span> <span class="token string">'page'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'page'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// we only want the last 10 articles to show up in the feed</span>
-  pages <span class="token operator">=</span> <span class="token function">sortBy</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> page <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">get</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span> <span class="token string">'data.date'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  pages <span class="token operator">=</span> pages<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  pages <span class="token operator">=</span> pages<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-  <span class="token function">forEach</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> page <span class="token operator">=</span><span class="token operator">></span> feed<span class="token punctuation">.</span><span class="token function">addItem</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    title<span class="token punctuation">:</span> page<span class="token punctuation">.</span>data<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
-    id<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>path<span class="token punctuation">,</span>
-    link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>path<span class="token punctuation">,</span>
-    date<span class="token punctuation">:</span> <span class="token function">moment</span><span class="token punctuation">(</span>page<span class="token punctuation">.</span>data<span class="token punctuation">.</span>date<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    content<span class="token punctuation">:</span> <span class="token function">getPageContent</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">,</span>
-    author<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span>
-        name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-        email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span><span class="token punctuation">,</span>
-        link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  feed<span class="token punctuation">.</span><span class="token function">addContributor</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-    email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span><span class="token punctuation">,</span>
-    link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> feed<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      </div>
-<p>Now we have a <code>buildFeed</code> method that takes a list of pages and generates a feed object.  Then we can use the feed object we’ve created to actually build write some files.  We’ll trigger that in the <code>postBuild</code> callback of <code>gatsby-node</code>.  Here was my first version to support RSS and Atom:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token comment" spellcheck="true">//mkDir and mkFile are just light wrappers around node's file system APIs</span>
-<span class="token keyword">let</span> createRSSFolder <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkDir</span><span class="token punctuation">(</span><span class="token string">'/public/rss/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> generateAtomFeed <span class="token operator">=</span> <span class="token punctuation">(</span>feed<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkFile</span><span class="token punctuation">(</span><span class="token string">'/public/atom.xml'</span><span class="token punctuation">,</span> feed<span class="token punctuation">.</span><span class="token function">atom1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> generateRSS <span class="token operator">=</span> <span class="token punctuation">(</span>feed<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkFile</span><span class="token punctuation">(</span><span class="token string">'/public/rss/index.xml'</span><span class="token punctuation">,</span> feed<span class="token punctuation">.</span><span class="token function">rss2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-exports<span class="token punctuation">.</span>postBuild <span class="token operator">=</span> pages <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> feed <span class="token operator">=</span> <span class="token function">buildFeed</span><span class="token punctuation">(</span>pages<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">createRSSFolder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">generateAtomFeed</span><span class="token punctuation">(</span>feed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">generateRSS</span><span class="token punctuation">(</span>feed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      </div>
-<p>Prior to this week, <code>feed</code> didn’t support JSON Feed, so I had stopped here.  But because JSON Feed is super simple to implement (its just JSON!), I decided to try to add it to <code>feed</code> this week.  It turned out it was as simple as adding a single function that looks like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token function">json1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token keyword">const</span> <span class="token punctuation">{</span> options<span class="token punctuation">,</span> items <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span>
-   <span class="token keyword">let</span> feed <span class="token operator">=</span> <span class="token punctuation">{</span>
-     version<span class="token punctuation">:</span> <span class="token string">'https://jsonfeed.org/version/1'</span><span class="token punctuation">,</span>
-     title<span class="token punctuation">:</span> options<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
-   <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-   <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>link<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     feed<span class="token punctuation">.</span>home_page_url <span class="token operator">=</span> options<span class="token punctuation">.</span>link<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-
-   <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>feedLinks <span class="token operator">&amp;&amp;</span> options<span class="token punctuation">.</span>feedLinks<span class="token punctuation">.</span>json<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     feed<span class="token punctuation">.</span>feed_url <span class="token operator">=</span> options<span class="token punctuation">.</span>feedLinks<span class="token punctuation">.</span>json<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-
-   <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>description<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     feed<span class="token punctuation">.</span>description <span class="token operator">=</span> options<span class="token punctuation">.</span>description<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-
-
-   <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>image<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     feed<span class="token punctuation">.</span>icon <span class="token operator">=</span> options<span class="token punctuation">.</span>image<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-
-   <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>author<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     feed<span class="token punctuation">.</span>author <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>author<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         feed<span class="token punctuation">.</span>author<span class="token punctuation">.</span>name <span class="token operator">=</span> options<span class="token punctuation">.</span>author<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>author<span class="token punctuation">.</span>link<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         feed<span class="token punctuation">.</span>author<span class="token punctuation">.</span>url <span class="token operator">=</span> options<span class="token punctuation">.</span>author<span class="token punctuation">.</span>link<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-   <span class="token punctuation">}</span>
-   feed<span class="token punctuation">.</span>items <span class="token operator">=</span> items<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>item <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-     <span class="token keyword">let</span> feedItem <span class="token operator">=</span> <span class="token punctuation">{</span>
-       id<span class="token punctuation">:</span> item<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
-       <span class="token comment" spellcheck="true">// json_feed distinguishes between html and text content</span>
-       <span class="token comment" spellcheck="true">// but since we only take a single type, we'll assume HTML</span>
-       html_content<span class="token punctuation">:</span> item<span class="token punctuation">.</span>content<span class="token punctuation">,</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>link<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>url <span class="token operator">=</span> item<span class="token punctuation">.</span>link<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>title<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>title <span class="token operator">=</span> item<span class="token punctuation">.</span>title<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>description<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>summary <span class="token operator">=</span> item<span class="token punctuation">.</span>description<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>image<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>image <span class="token operator">=</span> item<span class="token punctuation">.</span>image
-     <span class="token punctuation">}</span>
-
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>date<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>date_modified <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ISODateString</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>published<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       feedItem<span class="token punctuation">.</span>date_published <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ISODateString</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>published<span class="token punctuation">)</span><span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-
-     <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>author<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-       <span class="token keyword">let</span> author <span class="token operator">=</span> item<span class="token punctuation">.</span>author<span class="token punctuation">;</span>
-       <span class="token keyword">if</span> <span class="token punctuation">(</span>author <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token comment" spellcheck="true">// json feed only supports 1 author per post</span>
-         author <span class="token operator">=</span> author<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-       feedItem<span class="token punctuation">.</span>author <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-       <span class="token keyword">if</span> <span class="token punctuation">(</span>author<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-           feedItem<span class="token punctuation">.</span>author<span class="token punctuation">.</span>name <span class="token operator">=</span> author<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-       <span class="token keyword">if</span> <span class="token punctuation">(</span>author<span class="token punctuation">.</span>link<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-           feedItem<span class="token punctuation">.</span>author<span class="token punctuation">.</span>url <span class="token operator">=</span> author<span class="token punctuation">.</span>link<span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-     <span class="token punctuation">}</span>
-     <span class="token keyword">return</span> feedItem<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-   <span class="token keyword">return</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>feed<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<p> My <a href="https://github.com/jpmonette/feed/pull/56/files">pull request</a> was accepted, so feed v1.1.0 now supports JSON feed and my final code to add <a href="http://benmccormick.org/rss/">rss</a>, <a href="http://benmccormick.org/atom.xml">atom</a>, and <a href="http://benmccormick.org/feed.json">json</a> feed to this site looks like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> Feed <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'feed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> filter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/filter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> sortBy <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/sortBy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> forEach <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/forEach'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token keyword">get</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/get'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> moment <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'moment'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> markdownIt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'markdown-it'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> frontmatter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'front-matter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token punctuation">{</span>mkDir<span class="token punctuation">,</span> mkFile<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./utils/file_system'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-<span class="token keyword">const</span> md <span class="token operator">=</span> <span class="token function">markdownIt</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
- html<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
- linkify<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
- typographer<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> extractMarkdownContent <span class="token operator">=</span> file <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
- <span class="token keyword">let</span> body <span class="token operator">=</span> md<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token function">frontmatter</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">// handle local links</span>
- <span class="token keyword">return</span> body<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token operator">/</span>src<span class="token operator">=</span><span class="token string">"\//g, 'src="</span>http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>benmccormick<span class="token punctuation">.</span>org<span class="token operator">/</span>'<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> getPageContent <span class="token operator">=</span> page <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
- <span class="token keyword">let</span> file <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">'/pages/'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>requirePath<span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token keyword">return</span> <span class="token function">extractMarkdownContent</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> buildFeed <span class="token operator">=</span> pages <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
- <span class="token keyword">let</span> feed <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Feed</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-   title<span class="token punctuation">:</span> <span class="token string">'benmccormick.org'</span><span class="token punctuation">,</span>
-   description<span class="token punctuation">:</span> <span class="token string">'A blog by Ben McCormick'</span><span class="token punctuation">,</span>
-   link<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org'</span><span class="token punctuation">,</span>
-   id<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org'</span><span class="token punctuation">,</span>
-   copyright<span class="token punctuation">:</span> <span class="token string">'All rights reserved 2016, Ben McCormick'</span><span class="token punctuation">,</span>
-   feedLinks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-     atom<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org/atom.xml'</span><span class="token punctuation">,</span>
-     json<span class="token punctuation">:</span> <span class="token string">'http://benmccormick.org/feed.json'</span><span class="token punctuation">,</span>
-   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-   author<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-     name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-     email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span>
-   <span class="token punctuation">}</span>
- <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">// ignore pages (non posts)</span>
- pages <span class="token operator">=</span> <span class="token function">filter</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> p <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword">get</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token string">'data.layout'</span><span class="token punctuation">,</span> <span class="token string">'page'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'page'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment" spellcheck="true">// we only want the last 10 articles to show up in the feed</span>
- pages <span class="token operator">=</span> <span class="token function">sortBy</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> page <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">get</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span> <span class="token string">'data.date'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- pages <span class="token operator">=</span> pages<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- pages <span class="token operator">=</span> pages<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
- <span class="token function">forEach</span><span class="token punctuation">(</span>pages<span class="token punctuation">,</span> page <span class="token operator">=</span><span class="token operator">></span> feed<span class="token punctuation">.</span><span class="token function">addItem</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-   title<span class="token punctuation">:</span> page<span class="token punctuation">.</span>data<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
-   id<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>path<span class="token punctuation">,</span>
-   link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span> <span class="token operator">+</span> page<span class="token punctuation">.</span>path<span class="token punctuation">,</span>
-   date<span class="token punctuation">:</span> <span class="token function">moment</span><span class="token punctuation">(</span>page<span class="token punctuation">.</span>data<span class="token punctuation">.</span>date<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-   content<span class="token punctuation">:</span> <span class="token function">getPageContent</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">,</span>
-   author<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-     <span class="token punctuation">{</span>
-       name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-       email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span><span class="token punctuation">,</span>
-       link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span>
-     <span class="token punctuation">}</span>
-   <span class="token punctuation">]</span>
- <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- feed<span class="token punctuation">.</span><span class="token function">addContributor</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-   name<span class="token punctuation">:</span> <span class="token string">'Ben McCormick'</span><span class="token punctuation">,</span>
-   email<span class="token punctuation">:</span> <span class="token string">'ben@benmccormick.org'</span><span class="token punctuation">,</span>
-   link<span class="token punctuation">:</span> <span class="token string">'https://benmccormick.org'</span>
- <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token keyword">return</span> feed<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> createRSSFolder <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkDir</span><span class="token punctuation">(</span><span class="token string">'/public/rss/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> generateAtomFeed <span class="token operator">=</span> <span class="token punctuation">(</span>feed<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkFile</span><span class="token punctuation">(</span><span class="token string">'/public/atom.xml'</span><span class="token punctuation">,</span> feed<span class="token punctuation">.</span><span class="token function">atom1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> generateRSS <span class="token operator">=</span> <span class="token punctuation">(</span>feed<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkFile</span><span class="token punctuation">(</span><span class="token string">'/public/rss/index.xml'</span><span class="token punctuation">,</span> feed<span class="token punctuation">.</span><span class="token function">rss2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> generateJSONFeed <span class="token operator">=</span> <span class="token punctuation">(</span>feed<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">mkFile</span><span class="token punctuation">(</span><span class="token string">'/public/feed.json'</span><span class="token punctuation">,</span> feed<span class="token punctuation">.</span><span class="token function">json1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-exports<span class="token punctuation">.</span>postBuild <span class="token operator">=</span> pages <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> feed <span class="token operator">=</span> <span class="token function">buildFeed</span><span class="token punctuation">(</span>pages<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">createRSSFolder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">generateAtomFeed</span><span class="token punctuation">(</span>feed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">generateRSS</span><span class="token punctuation">(</span>feed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">generateJSONFeed</span><span class="token punctuation">(</span>feed<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      </div>
-<h3>More Resources</h3>
-<ul>
-<li>You can see the whole spec for <a href="https://jsonfeed.org/">JSON Feed</a> on their <a href="https://jsonfeed.org/">site</a>.  It really is remarkably simple.  They also have a list of implementations and example sites.</li>
-</ul>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
