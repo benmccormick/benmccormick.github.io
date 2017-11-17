@@ -26,11 +26,11 @@ key: "weekly-links-11-17-17"
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">As one of the three engineers that built Teletype, I share your curiosity! 🙈</p>&mdash; Jason Rudolph (@jasonrudolph) <a href="https://twitter.com/jasonrudolph/status/930856578915344384?ref_src=twsrc%5Etfw">November 15, 2017</a></blockquote>
 
 
+[Managing Humans - Michael Lopp (AKA Rands)](http://amzn.to/2AVaAjx) - This book was a great roundup of some of the best writings from one of my favorite blogs [Rands in Repose](http://randsinrepose.com/).  Michael Lopp has been a manager and executive at Netscape, Apple, Palantir, Pinterest and now Slack.  He's seen a lot.  While the book is aimed first at managers, it's helpful for anyone who is interested in understanding how engineering teams work, and how to lead or work in one better.
+
 
 ### Non-Tech
 
-[On the Table, the Brain Appeared Normal - The New York Times](https://www.nytimes.com/2017/11/09/sports/aaron-hernandez-brain-cte.html?_r=0)
+[On the Table, the Brain Appeared Normal - The New York Times](https://www.nytimes.com/2017/11/09/sports/aaron-hernandez-brain-cte.html?_r=0) - Powerful reading about the dangers of football, a sport that I still love watching.  [More context here if you're confused after reading the NYT story](https://www.si.com/nfl/2017/09/21/aaron-hernandez-brain-cte-video-photos).
 
-[Security Breach and Spilled Secrets Have Shaken the N.S.A. to Its Core - The New York Times](https://www.nytimes.com/2017/11/12/us/nsa-shadow-brokers.html?_r=0)
-
-[She Warned of ‘Peer-to-Peer Misinformation.’ Congress Listened. - The New York Times](https://www.nytimes.com/2017/11/12/technology/social-media-disinformation.html?_r=0)
+[Security Breach and Spilled Secrets Have Shaken the N.S.A. to Its Core - The New York Times](https://www.nytimes.com/2017/11/12/us/nsa-shadow-brokers.html?_r=0) - Interesting to see such mainstream questioning of the NSA's habit of hording zero-day exploits.  Don't read this one if you want to maintain any naive good feelings about US cybersecurity.
