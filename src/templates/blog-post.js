@@ -84,7 +84,7 @@ class BlogPostTemplate extends React.Component {
             </Sidebar>
           )}
         </div>
-        {showForPostsAndWeeklyLinksOnly(
+        {showForPostsOnly(
           <PostFooter post={post} recommendedPosts={pathContext.relatedPosts} />
         )}
       </div>
