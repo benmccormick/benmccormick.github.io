@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sun, 26 Nov 2017 21:43:54 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 29 Nov 2017 04:27:16 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,174 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Implementing The Sieve Of Eratosthenes in JavaScript]]></title>
+            <link>https://benmccormick.org/2017/11/28/sieveoferatosthenes/</link>
+            <guid>https://benmccormick.org/2017/11/28/sieveoferatosthenes/</guid>
+            <pubDate>Tue, 28 Nov 2017 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>As a way of keeping my math skills sharp, I’ve recently started to work through the <a href="https://projecteuler.net/">Project Euler</a> set of computational math problems.  They ask you not to post your work publicly, so I won’t be posting about any of my specific solutions, but I did think it would be fun to share about a helper method I’ve been using.</p>
+<p>For several of the Project Euler problems I’ve worked on, I needed to be able to generate a list of prime numbers.  To do that, I borrowed a Python implementation of the Sieve Of Erathosthenes from <a href="https://stackoverflow.com/a/568618/1424361">this StackOverflow answer</a>.  Since I haven’t had much reason to use generators in JavaScript yet, I thought it would be fun to translate that algorithm to JavaScript and share that here.</p>
+<h3>Sieve of Eratosthenes</h3>
+<p>The Sieve of Erathosthenes is a very old<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup> simple algorithm for identifying prime numbers.  In its normal implementation it is a useful way of finding small primes up to a certain number.  Beginning at 2, the algorithm iterates upward.  For the current number, if the number has not been marked, we identify it as a prime, and then mark all multiples of that number up to our target number.  So to find all primes up to 12, we would</p>
+<ul>
+<li>start at 2, note <strong>2</strong> as prime, and mark 4, 6, 8, 10 and 12 as non-prime</li>
+<li>move to 3, note <strong>3</strong> as prime, and mark 6, 9, 12 as non-prime</li>
+<li>move to 4, see that it is marked, and skip it</li>
+<li>move to 5, note <strong>5</strong> as prime and mark 10 as non-prime</li>
+<li>move to 6, see that it is marked and skip it</li>
+<li>move to 7 , note <strong>7</strong> as prime</li>
+<li>see that 8-10 are marked and skip them</li>
+<li>move to 11, note <strong>11</strong> as prime</li>
+<li>move to 12, see that it is marked and skip it</li>
+</ul>
+<p>You can see it graphically with this visualization from <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Wikipedia</a>:</p>
+<p><img src="/6420e3488e509dce176a1e957ea07ff5.gif" alt="sieve animation, shows the numbers being marked visually"></p>
+<h3>Python Implementation</h3>
+<p>The Python implementation that I used makes some modifications to the classic version of the algorithm that lets it generate an indefinite number of primes while being memory efficient</p>
+<div class="gatsby-highlight">
+      <pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">gen_primes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">""" Generate an infinite sequence of prime numbers."""</span>
+    marked_not_prime <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    value_to_check <span class="token operator">=</span> <span class="token number">2</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> value_to_check <span class="token operator">not</span> <span class="token keyword">in</span> marked_not_prime<span class="token punctuation">:</span>
+            <span class="token keyword">yield</span> value_to_check
+            marked_not_prime<span class="token punctuation">[</span>value_to_check <span class="token operator">*</span> value_to_check<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>value_to_check<span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> prime <span class="token keyword">in</span> marked_not_prime<span class="token punctuation">[</span>value_to_check<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                marked_not_prime<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span>prime <span class="token operator">+</span> value_to_check<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>prime<span class="token punctuation">)</span>
+            <span class="token keyword">del</span> marked_not_prime<span class="token punctuation">[</span>value_to_check<span class="token punctuation">]</span>
+        value_to_check <span class="token operator">+=</span> <span class="token number">1</span>
+</code></pre>
+      </div>
+<p>This version of the algorithm keeps a running set of the relevant matches, and keeps only the ones it needs.  We can translate it more or less directly to JavaScript like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">generatePrimes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> markedNotPrime <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> valueToCheck <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>valueToCheck <span class="token keyword">in</span> markedNotPrime<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">yield</span> valueToCheck
+            markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> primes <span class="token operator">=</span>markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            primes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>prime<span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                <span class="token keyword">let</span> nextMultipleOfPrime <span class="token operator">=</span> prime <span class="token operator">+</span> valueToCheck<span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>nextMultipleOfPrime <span class="token keyword">in</span> markedNotPrime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    markedNotPrime<span class="token punctuation">[</span>nextMultipleOfPrime<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>prime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    markedNotPrime<span class="token punctuation">[</span>nextMultipleOfPrime<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>prime<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token keyword">delete</span> markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        valueToCheck <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>Let’s break down what this is doing.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">generatePrimes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p><code>generatePrimes</code> is a JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator">generator</a>.  Generators “generate” a series of values in a “just in time” fashion; they only calculate the next value when it is needed, making them an efficient solution for working with large or infinite series.  You specify a generator function by adding the <code>*</code> to the function declaration.  Generators then use the <code>yield</code> keyword rather than <code>return</code> to return their values, and can <code>yield</code> multiple times. After a generator yields, it pauses execution until it is asked for another value.  For our <code>generatePrimes</code> function, we are operating inside an infinite loop and will yield continuously without stopping<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">const</span> markedNotPrime <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> valueToCheck <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//...</span>
+    valueToCheck <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>We’re using a plain object to keep track of our marked numbers, and using <code>valueToCheck</code> to keep track of where we are in iterating through numbers. As noted, we will iterate it forever if the generator continues to be called.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>valueToCheck <span class="token keyword">in</span> markedNotPrime<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">yield</span> valueToCheck
+    markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>As in the original algorithm, if we get to a number that isn’t marked, we know that it is a prime.  So we <code>yield</code> it, which pauses execution.  If the generator is queried again, when we resume execution we mark the prime squared as not-prime, and we do that by assigning it an array with the current prime value in it.  Using arrays for markers will make more sense in a moment. For now its worth noting that we only need to mark prime-squared as non-prime since every multiple below that is the current prime multiplied by a number less than it, which means it will already be covered, as we will see below.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>valueToCheck <span class="token keyword">in</span> markedNotPrime<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//...</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> primes <span class="token operator">=</span> markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    primes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>prime <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> nextMultipleOfPrime <span class="token operator">=</span> prime <span class="token operator">+</span> valueToCheck<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nextMultipleOfPrime <span class="token keyword">in</span> markedNotPrime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            markedNotPrime<span class="token punctuation">[</span>nextMultipleOfPrime<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>prime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            markedNotPrime<span class="token punctuation">[</span>nextMultipleOfPrime<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>prime<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">delete</span> markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>Here’s the clever part of this implementation.  When we hit a number that is marked as not-prime, instead of just skipping it and moving on, we use some logic to keep our list of marked values small and memory efficient. This is also what allows us to get an infinite list of primes instead of settling for those under a particular value.  What we want to do is keep a list of all the primes that are factors of each marked number.  Then when we hit a number that is marked, we mark the next multiple for each prime (<code>valueToCheck + prime</code>), and remove the current value from the object.  That keeps checks fairly cheap by eliminating the number of marked numbers, and allows us to only add values to the marked list as we need them.</p>
+<p>We can then use this code to get the 1,000,001st prime like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">let</span> gen <span class="token operator">=</span> <span class="token function">generatePrimes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span> <span class="token number">1000000</span><span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>That executed on my laptop in ~20seconds, approximately the same as the python implementation in python2, a little slower than running it under python3.  I was curious whether using a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a> for our marked prime list would speed things up:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">generatePrimes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> markedNotPrimeMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> valueToCheck <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>markedNotPrimeMap<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>valueToCheck<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">yield</span> valueToCheck
+            markedNotPrimeMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>valueToCheck<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> primes <span class="token operator">=</span>markedNotPrimeMap<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>valueToCheck<span class="token punctuation">)</span>
+            primes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>prime<span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                <span class="token keyword">let</span> nextMultipleOfPrime <span class="token operator">=</span> prime <span class="token operator">+</span> valueToCheck<span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>markedNotPrimeMap<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>nextMultipleOfPrime<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    markedNotPrimeMap<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>nextMultipleOfPrime<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>prime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    markedNotPrimeMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>nextMultipleOfPrime<span class="token punctuation">,</span> <span class="token punctuation">[</span>prime<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            markedNotPrimeMap<span class="token punctuation">.</span><span class="token keyword">delete</span><span class="token punctuation">(</span>valueToCheck<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        valueToCheck <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>This version of the code runs about 25% faster, in 15 seconds on my machine. Not bad.</p>
+<h3>More Resources</h3>
+<ul>
+<li>You can dig in more on the Sieve of Erosthenes on <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Wikipedia</a></li>
+<li>Check out <a href="https://projecteuler.net/">Project Euler</a> for some fun computational math problems.</li>
+</ul>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>There are references as old as ~100 AD</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>At least until we hit system boundaries for memory/number size/etc.</p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: Thanksgiving 2017 edition]]></title>
             <link>https://benmccormick.org/2017/11/26/weekly-links-11-26-17/</link>
@@ -822,75 +990,6 @@ you can use to describe the acceptable list of strings.</p>
       </div>
 <h3>Part 2 Coming Soon</h3>
 <p>There’s a lot to cover here, so check back soon for part 2 of this post, with contains matchers, async matchers, snapshot matchers, function matchers, meta matchers, and a few extra tricks for using matchers.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[My Favorite Interview Question]]></title>
-            <link>https://benmccormick.org/2017/07/24/my-favorite-interview-question/</link>
-            <guid>https://benmccormick.org/2017/07/24/my-favorite-interview-question/</guid>
-            <pubDate>Mon, 24 Jul 2017 11:45:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>I have a favorite question to ask in interviews for web developers.</p>
-<blockquote>
-<p>“How does the internet work?  In other words, when I open a browser and enter a url then hit enter, and a website shows up on my screen what can you tell me about what is happening?”</p>
-</blockquote>
-<p>Usually I get one of a few responses:</p>
-<h4>1. The clueless shrug</h4>
-<blockquote>
-<p>Uh….  ¯\_(ツ)_/¯  </p>
-</blockquote>
-<p>Some people have no idea what to do with the question.  Things get awkward. This is mostly for junior positions but still isn’t the best sign.  Sometimes a few prods will get things back on track.</p>
-<h4>2. The bare minimum</h4>
-<blockquote>
-<p>It is asking a server for the site and the server sends you the site.    </p>
-</blockquote>
-<p>Some people can give a very basic response, but don’t give a lot of details.  This again mostly corresponds to less experienced devs and can be fine as a starting spot with some follow-up questions.</p>
-<h4>3. The CliffNotes</h4>
-<blockquote>
-<p>Your browser sends an HTTP request which gets routed through a local modem/router and gets sent to a name server for its url extension.  That name server routes the request to the correct IP address, which will resolve to some sort of web server.  That server will serve up either some static files, or run some backend code in order to generate a resource (probably an html page).  When the HTML page is returned, your browser will parse it, which will likely generate more requests, and the cycle will repeat.  </p>
-</blockquote>
-<p>Some people know how some of this works, maybe with a few hazy areas and can explain it in a reasonably straightforward way.  An explanation like this is a great start.</p>
-<h4>4. The Geek-out</h4>
-<blockquote>
-<p><Some variation on the previous answer... followed by:> Let me tell you all about my in depth knowledge of &#x3C;HTTP<em>network routing</em>JavaScript parsing/TCP/other related topic>  </p>
-</blockquote>
-<p>Some people dive in and explode with information.  </p>
-<h3>So why is this a good interview question again?</h3>
-<p>So which answer is best?  The geek-out right?  Well… its great when somebody gets there, but in my mind this question is more about the journey than the destination.</p>
-<p>It’s pretty easy to make the case that this is a pretty bad interview question.  It’s not clear what the expected answer is.  When I ask it in junior dev interviews, they often don’t have much of a clue how to answer it.  And it’s not strictly answerable in full detail by pretty much anyone.  But I’d argue that those things actually end up being strengths.  I like this question for 5 reasons.</p>
-<ol>
-<li>
-<p><strong>It tests the candidate’s ability to deal with ambiguity.</strong>  The question is intentionally vague and open ended.  Am I just looking for a perfunctory response like “it gets a resource from a server”?  Do I want a deep dive into how DNS works?  It’s ambiguous.  Candidates can respond to that ambiguity in one of a few ways.  </p>
-<p>They can freeze because they’re afraid of saying the wrong thing.  </p>
-<p>They can ask a clarifying question.  </p>
-<p>They can make a guess at what I want and start going down that road, while reading my reaction to see if they’re still on track.  </p>
-<p>Or they can decide they know what I want (or what they want to tell me) and shoot off like a rocket (potentially for a very long time).</p>
-<p>This is super useful information in an interview because developers deal with ambiguity all the time.  When a candidate encounters unclear requirements from a product manager, or unclear documentation from another developer, it’s good to have an idea how they’ll respond<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.</p>
-</li>
-<li>
-<p><strong>It tests the breadth of a candidates knowledge.</strong> - For the most part, when I interview people, I ask them questions about the role they’re applying for:  Front-End Dev, Backend Dev, QA Engineer, etc.  But this question gives a candidate the chance to show that they understand what’s happening up and down the web stack from the code they interact with the most.</p>
-</li>
-<li>
-<p><strong>It gives the candidate a chance to explain a complex technical topic.</strong> - In my mind, good communication ability is the most important skill for a developer once they’ve achieved a minimum level of technical competence.  Being able to talk about problems and solutions clearly and explain them to a variety of audiences matters, and it matters a lot.  Can the candidate summarize a complex technical topic without getting bogged down in details?  Are they communicating with me (verbally or otherwise) to make sure I’m following their explanation?  Or are they fading off into a rambling run-on explanation of a trivial detail without any big picture context?</p>
-</li>
-<li>
-<p><strong>It forces the candidate to confront something they don’t know.</strong> - The internet is a perfect example of the Isaac Newton quote about <a href="https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants">standing on the shoulders of giants</a>.  It is the culmination of 50+ years of research and work on networked computer systems.  No candidate I interview for a web development position is going to understand every detail of how it works, because you can always go a layer deeper in the stack or afield into crazier edge case behavior.  So at some point in questioning (possibly very early), this question exhausts every candidate’s knowledge.  The question is how do they react?  Some candidates start guessing at things.  Some admit they don’t know.  Some try to skirt around areas they don’t feel confident in and work at avoiding any questions where they would have to admit they don’t know something.  And some will actually ask me how part of the system works.  This again is helpful because “not knowing the answer” is such a common experience in real world web dev.  It’s great to have some clues to how a candidate handles that.</p>
-</li>
-<li>
-<p><strong>It gives the candidate an opportunity to show off what they know.</strong>  I’ve gotten some amazing answers to this question.  It turns out some candidates actually know a lot about networking and HTTP/TCP/nameservers.  Some can give detailed answers about browsers and how they parse resources and display the DOM.  Maybe they just know a lot of random trivia about URLs and DNS.  Regardless, this is a chance to show off and prove that they’ve delved deep into something.</p>
-</li>
-</ol>
-<p>To be clear, I don’t think every interview question should be like this one.  Most should probably directly relate to the work the candidate is doing, be clearly comparable in an objective way candidate to candidate, and not risk sending the interview down a 10 minute rabbit hole.  But this one is my favorite, and I think there’s a place for questions that show how a candidate might handle some real world lack of structure.</p>
-<hr>
-<p>Feel free to hit me up on Twitter at <a href="https://twitter.com/ben336">@ben336</a> to tell me your favorite interview question.  I’ll retweet them.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>There is of course a limit to how much any interview is going to teach you about how somebody will behave in a future job situation.  We’re all chasing breadcrumbs here.  </p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
