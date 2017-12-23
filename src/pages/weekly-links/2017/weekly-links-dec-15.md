@@ -1,5 +1,5 @@
 ---
-title: "Weekly Links: December 8th 2017"
+title: "Weekly Links: December 15th 2017"
 date: "2017/12/15"
 layout: "weekly-links"
 path: "/2017/12/15/weekly-links-12-15-17/"
