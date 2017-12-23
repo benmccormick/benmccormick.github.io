@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-12-15T14:05:50Z</updated>
+    <updated>2017-12-23T14:13:40Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -20,7 +20,27 @@
         <uri>http://benmccormick.org</uri>
     </contributor>
     <entry>
-        <title type="html"><![CDATA[Weekly Links: December 8th 2017]]></title>
+        <title type="html"><![CDATA[Weekly Links: December 23rd 2017]]></title>
+        <id>https://benmccormick.org/2017/12/23/weekly-links-12-23-17/</id>
+        <link href="https://benmccormick.org/2017/12/23/weekly-links-12-23-17/">
+        </link>
+        <updated>2017-12-23T00:00:00Z</updated>
+        <content type="html"><![CDATA[<h3>JavaScript And The Web</h3>
+<p><a href="http://raganwald.com/2017/12/14/73939133.html">73,939,133 / Truncatable Primes | Reg Braithwaite</a> - A nice writeup about how brute force can be useful in solving a <a href="https://projecteuler.net/">Project Euler</a> style math problem.</p>
+<h3>Programming Tools and Practices</h3>
+<p><a href="http://facebook.github.io/jest/blog/2017/12/18/jest-22.html">Jest 22: Refinements &#x26; Custom Runners | Jest Blog</a> - This looks like a solid refinement release for Jest.  One warning: If you’re running <code>jest -o</code> on precommit hooks as I described <a href="https://benmccormick.org/2017/02/26/running-jest-tests-before-each-git-commit/">here</a>, Jest 22 fails when run with 0 tests, so you need to specify the <code>--passWithNoTests</code> flag in order to let things go when you make a change that doesn’t affect any tests.</p>
+<p><a href="https://www.gatsbyjs.org/blog/2017-12-20-introducing-the-gatsby-ux-research-program/">Introducing The Gatsby UX Research Program | Gatsby Blog</a> - An unusual case of doing real UX research for an open source developer tool.  Very cool stuff.</p>
+<h3>Non-Tech</h3>
+<p><a href="https://www.justinobeirne.com/google-maps-moat">Google Maps’s Moat</a> - If you have any interest in product design, maps, or computer intelligence, this is the one article you need to read this week.  Beautifully put together.  It’s an in depth examination of the difference between Google and Apple maps, but it reads as a deeper exploration of how big data combined with computer learning and automation can have a huge impact on product design.</p>
+<p><a href="https://izbicki.me/blog/how-to-cheat-at-settlers-of-catan-by-loading-the-dice-and-prove-it-with-p-values.html">How to cheat at settlers by loading the dice | Mike Izbicki</a> - This is just a fun application of statistics to my favorite board game.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Weekly Links: December 15th 2017]]></title>
         <id>https://benmccormick.org/2017/12/15/weekly-links-12-15-17/</id>
         <link href="https://benmccormick.org/2017/12/15/weekly-links-12-15-17/">
         </link>
@@ -531,40 +551,6 @@ readNext: "ten-things-js,favorite-interview,jest-matchers-1"
 </code></pre>
       </div>
 <p>Inquirer makes it really nice to gather up all the information, then I use a utility I’ve already written to dump it in a file.  I want to do a bunch more here in the future here, starting by giving this script the ability to read and parse my existing posts, which will let me enforce uniqueness on names and keys, as well as offer autocomplete on the readNext column, which I’ve left hardcoded for now, since its hard to type free form.  There’s more to come here, and you all may feel free to steal and remix anything you find useful for your own blogs here.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: November 3rd 2017]]></title>
-        <id>https://benmccormick.org/2017/11/03/friday-links/</id>
-        <link href="https://benmccormick.org/2017/11/03/friday-links/">
-        </link>
-        <updated>2017-11-03T04:00:00Z</updated>
-        <content type="html"><![CDATA[<p>Today marks the start of a new thing I’m trying with this blog: <em>Friday Links</em> (<strong>Edit: Since renamed to Weekly Links</strong>).  Every Friday I’m going to be gathering some of the best links and content I’ve found that week and sharing it here.  It will be primarily but not completely programming focused, with minimal commentary. Some weeks it may be 2-3 links, some weeks it may be 10, but I’m going to give it a run at making this a true weekly feature.  </p>
-<p>If you’re a regular reader (or not) and you have feelings about this, feel free to fill out this <a href="https://goo.gl/forms/MwEtFrDwFWzXSRv13">survey</a> and let me know what you think.  I’m still working through how this should work, though eventually it will almost definitely get integrated into the site as a different type of post than my main articles.  </p>
-<p>Without further ado, here are this week’s Friday links:</p>
-<h3>JavaScript And The Web</h3>
-<p><a href="https://blog.kentcdodds.com/effective-snapshot-testing-e0d1a2c28eca">Effective Snapshot Testing – Kent Dodds</a> - This is a great set of practical tips for using snapshot testing well with Jest.  I’m guilty of sometimes making really large snapshots, and as he says here, I’ve found those tests to be useless because the diffs cause eyes to glaze over.</p>
-<p><a href="https://mobiforge.com/news-comment/safari-service-workers-and-other-pwa-good-news-stories">Safari service workers and other PWA good news stories - mobiForge</a> - I’ve never been a big fan of the PWA terminology.  It smells very “marketing-y” to me, in the sense of the word that engineers use as an insult.  Exactly what people mean by a Progressive Web App seems hard to pin down and contextual.  Is it about the technologies used?  The user experience? Is it just that it is installable on phones? Is there a clear checklist that you can check against to see if something is a PWA?  In any case, I am a fan of many of the trends and technology that are getting pushed under the PWA banner, so this article, which discusses how the underlying technologies are being adapted in different places, is indeed good news from my point of view.</p>
-<h3>Programming Tools</h3>
-<p><a href="https://stackoverflow.blog/2017/10/31/disliked-programming-languages/">What are the Most Disliked Programming Languages? - Stack Overflow Blog</a> -  To be honest, I don’t totally buy the premise of this post.  I don’t think people always list their most disliked languages as the languages they don’t want to work with on Stack Overflow, I think they also list the languages or technologies that people might expect them to work with, but they don’t want to.   Like PHP or CoffeeScript for a web developer, or SQLServer for a DBA. Thats acknowledged but not fully grappled with in the article.  That said, it’s still an interesting dataset, no matter how you label the languages that are being excluded.  </p>
-<p><a href="https://pragprog.com/book/modvim/modern-vim">Modern Vim - Drew Neil</a> - Drew Neil’s first book,<a href="http://amzn.to/2h7tQp3">Practical Vim</a>, was my introduction to useful text editing.  I’ve moved off of Vim for my day to day editing over the last few years, but I still plan on buying this book when it goes paperback, because I know I’ll learn at least a few useful tips, and it’s totally possible I’ll be back to Vim as my day to day editor again someday soon.  If you’re a Vim user I definitely recommend checking this out.</p>
-<p><a href="https://wynnnetherland.com/journal/extending-the-command-line/">Extending the command line - Wynn Netherland</a> - This is a nice roundup of the various ways you can customize your command line commands to aid in recall, reliability and efficiency.</p>
-<h3>Non-Tech</h3>
-<p><a href="https://www.nytimes.com/2017/10/30/opinion/when-politics-becomes-your-idol.html?_r=0">When Politics Becomes Your Idol - The New York Times</a> - I thought this was an extremely insightful take on the current state of my country’s relationship with politics.  How many of us are looking to politics for solutions to problems and seeing it demand more and more for fewer and fewer results?  </p>
-<p><a href="http://amzn.to/2ipypHO">The Tech-wise Family - Andy Crouch</a> - This is a book that is to some extent written for Christians and to some extent written for parents<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>, but I think that it has a lot to offer anyone who has a sneaking suspicion that the tech in their life, while helping with many things, is also distracting them from things that are more valuable.  This book was the most challenging thing I’ve read this year, and I highly recommend it.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>I am a Christian, I am not yet a parent.</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
