@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sat, 30 Dec 2017 22:34:47 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 30 Dec 2017 23:48:30 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,112 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[2017 Roundup]]></title>
+            <link>https://benmccormick.org/2017/12/30/2017-roundup</link>
+            <guid>https://benmccormick.org/2017/12/30/2017-roundup</guid>
+            <pubDate>Sat, 30 Dec 2017 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>2017 was the 5th full year of this blog, and in many ways it was the most productive.  I wrote one of the most popular things I’ve written on here, started the weekly links section (on hiatus for New Years, but will return next week), and wrote 21 full articles and 8 weekly links post, the most I’ve ever posted here in a year.  Here are some of the highlights from my blog and development this year.</p>
+<h3>Most Read Posts Published in 2017</h3>
+<ol>
+<li>
+<p><a href="https://benmccormick.org/2017/07/19/ten-things-javascript/">Ten Things A Serious JavaScript Developer Should Learn</a> - It turns out that making lists of things is a good way to get traffic.  I wonder if anybody else on the internet has figured this out?</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="undefined"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; z-index: -1; display: block; "
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 18.202247191011235%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAlklEQVQY042Puw7CMAxF8/9/xsLMytIUaCgiSdM4ji9OCgwICYYj+XlkGxHBP9RGJrBfQHYCDU+sA43uPWdeAX4Ir6kgpQxpUhWwiqrKQWUD0ulCrgLiul3xRdb6B7fgOCf4teA+BwQlaRx1L5SKSNwdpgmIBUELbbFRP17NOrgbPPaniDEQbCyYEuO2Mi6L5lo7R+rSB/qnOWb4mDEeAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="An analytics graph with a big spike in July when I posted my list post"
+        title=""
+        src="/static/bf4aa20172b0ec0f0d0791d56219f6d6-d766e.png"
+        srcset="/static/bf4aa20172b0ec0f0d0791d56219f6d6-a6b6e.png 143w,
+/static/bf4aa20172b0ec0f0d0791d56219f6d6-8e488.png 285w,
+/static/bf4aa20172b0ec0f0d0791d56219f6d6-d766e.png 570w,
+/static/bf4aa20172b0ec0f0d0791d56219f6d6-13239.png 855w,
+/static/bf4aa20172b0ec0f0d0791d56219f6d6-cb86a.png 890w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>In all seriousness, I think there’s a hunger out there for clearer roadmaps for folks who are early out in their front end development career.  People are telling them to learn all the frameworks, all the tools and all the compile-to-JS languages, and everyone knows they can’t learn it all.  So even an imperfect list that can serve as a starting point for figuring that out can get some traction.  This article was my attempt to answer “what should a serious mid-level JavaScript developer have learned and be learning?“.  </p>
+</li>
+</ol>
+<ol start="2">
+<li>
+<p><a href="https://benmccormick.org/2017/07/10/how-to-follow-the-javascript-roadmap/">How To Follow The JavaScript Roadmap</a> - This post was aimed at a similar audience to the “Serious JavaScript Developer” post, but aimed to help folks who want to follow changes in the JavaScript language keep up with new developments.</p>
+</li>
+<li>
+<p><a href="https://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/">Orthogonality and CSS in JS</a> - This article was an examination of the architecture tradeoffs of CSS in JS solutions, and also an examination of how people discuss “separations of concerns” in general.  If you liked this one, keep your eyes open.  I’m planning on writing more architecture level posts in 2018.</p>
+</li>
+</ol>
+<h3>Code I wrote in 2017</h3>
+<p>Most of the code I wrote this year was again for my work at Windsor Circle.  But I’ve continued to add new features to this blog, which is based on React and Gatsby, and the source code for that is available <a href="https://github.com/benmccormick/benmccormickorg">on Github</a>.</p>
+<h3>Talks I gave in 2017</h3>
+<p>This was a big speaking year for me.  I gave 3 different talks: <a href="https://www.slideshare.net/BenMcCormick/vim-survival-guide-71763917">The Vim Survival Guide</a> at Open Source 101, <a href="https://www.slideshare.net/BenMcCormick/gatsby-intro">Intro to Gatsby</a> at a local meetup group and <a href="https://www.slideshare.net/BenMcCormick/saving-time-by-testing-with-jest">Saving Time with Jest</a> at All Things Open.  I’d be interested in giving any of those talks again next year, so if you’re looking for a speaker, feel free to reach out.</p>
+<h3>Languages, Libraries, and Technologies I started using in 2017</h3>
+<ul>
+<li>
+<p><a href="https://mobx.js.org/">Mobx</a> is a JavaScript data modeling library that serves as an alternative to Redux or React state for state management.  I wrote about my <a href="https://benmccormick.org/2017/01/09/mobx-first-impressions/">first impressions</a> at the beginning of the year, but I’ve continued to use it and love it since then.</p>
+</li>
+<li>
+<p><a href="https://yarnpkg.com/en/">Yarn</a> was a nice upgrade over npm.  My understanding is that npm has since stepped up and closed the gap here, but I’m continuing to use Yarn for now since it has taken over my projects and muscle memory.</p>
+</li>
+<li>
+<p>When I upgraded this blog to Gatsby 1.0, I had the opportunity to learn about <a href="http://graphql.org/">GraphQL</a>.  I’ve really enjoyed getting to play with it and love the GraphQL community’s dedication to providing a great developer experience.</p>
+</li>
+</ul>
+<h3>Languages and Libraries I used (more or less) every day in 2017</h3>
+<p>JavaScript (ES6), Python, React, PostgreSQL, Backbone (<strong>sigh</strong>), lodash, MobX, Jest</p>
+<h3>Languages and Libraries I want to try in 2018</h3>
+<p><a href="https://github.com/FormidableLabs/victory">Victory</a>, Rust, and Pandas/other python data analysis libraries <sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup></p>
+<h3>Blogs I started following in 2017</h3>
+<p><a href="http://blog.isquaredsoftware.com/">Mark Erikson’s Dev blog</a></p>
+<h3>Blogs I read every post from in 2017</h3>
+<p><a href="http://randsinrepose.com/">Rands In Repose</a>, <a href="https://stratechery.com/">Stratechery</a>, <a href="https://daringfireball.net/">Daring Fireball</a>, <a href="http://purposedworking.org/">purposedworking.org</a>, <a href="https://wynnnetherland.com/">wynnnetherland.com</a></p>
+<h3>Podcasts I started listening to in 2017</h3>
+<ul>
+<li>
+<p><a href="https://www.npr.org/sections/money/">Planet Money</a> - A long running NPR podcast about money, the economy, and the unexpected ways they affect our everyday lives</p>
+</li>
+<li>
+<p><a href="https://www.theallusionist.org/">The Allusionist</a> - A great podcast on the crazy history behind different words in the English language.</p>
+</li>
+</ul>
+<h3>Software I started using in 2017</h3>
+<ul>
+<li><a href="http://www.bear-writer.com/">Bear</a> - I mentioned I was testing this out at the end of last year, but it has become my go-to notes application, and I would recommend it to anyone who wants a stylish notes app in the middle ground between Apple Notes and Evernote (and who uses Apple products).</li>
+</ul>
+<h3>Software I used (nearly) every day in 2017</h3>
+<p>MacOS/iOS, Google Search, Chrome/Safari/Firefox, GMail/MailPlane 3, Twitter/Tweetbot, Feedbin/Reeder, Instapaper, iMessage, Slack, Trello, 1Password, Atom/Vim, iTerm, Fish Shell, Bitbucket, Fantastical, Spotify, Bear, Annotate, Dash</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>Yes this is basically the same list as last year.  ¯\_(ツ)_/¯ I mostly learn tech as I have need for it, and it was a very “nose to the grindstone” year focused on improving existing codebases this year</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: December 23rd 2017]]></title>
             <link>https://benmccormick.org/2017/12/23/weekly-links-12-23-17/</link>
@@ -336,170 +442,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p><a href="http://amzn.to/2zvm12Z">The Pragmatic Programmer - Andy Hunt &#x26; Dave Thomas</a> - Not a new book at all, but I like to recommend it at every opportunity.  It’s my favorite resource on the practice of Software Engineering and well worth checking out if you’ve never read it.</p>
 <h3>Non-Tech</h3>
 <p><a href="https://www.economist.com/news/briefing/21730870-economy-based-attention-easily-gamed-once-considered-boon-democracy-social-media">Once considered a boon to democracy, social media have started to look like its nemesis - The Economist</a> - This is a wide-ranging take on the downsides of social media with a focus on it’s deleterious effects on our political systems.  If you’re on social media and/or you care about the future of politics in your place of living, it is worth a read.  </p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Improving Gatsby Blog Deploy UX]]></title>
-            <link>https://benmccormick.org/2017/11/07/blog-deploy-ux/</link>
-            <guid>https://benmccormick.org/2017/11/07/blog-deploy-ux/</guid>
-            <pubDate>Tue, 07 Nov 2017 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>About a year ago I switched back to using a static site generator for this blog.  Specifically, I chose <a href="https://www.gatsbyjs.org/">Gatsby</a> and it has been fantastic.  It’s incredibly easy to customize and make my own, and I can do fun things like adding metadata to my posts to enable features like the “read next” list at the bottom of each post, and the “most popular” posts feature that is actually generated from google analytics data.  The biggest downside of using a static site generator relative to a hosted service though is the annoyance of actually posting.  I could edit or write a post to my <a href="https://ghost.org/">Ghost</a> blog from anywhere, which was a real perk of using that platform.  Until recently I was only able to deploy this site from a single computer, because I needed an API key for Google Analytics to be available.  That has been mostly fine, since I usually work on posts for this site over the course of a few days.</p>
-<p>But last week I decided to start aiming for <a href="https://benmccormick.org/2017/11/03/friday-links/">weekly shorter linklog posts</a>, and that meant having a bit more flexibility with my deploys.  So this week I did 2 things: I set up a <a href="https://travis-ci.org/">Travis CI</a> job to auto-deploy my app when changes hit the master branch, and wrote an initial version of a CLI for managing the blog.  The first version just helps me write out a templated new post.  My setup is pretty tailored to this blog, but I thought it’d be helpful to share, and maybe inspire some folks looking to do the same thing for their static site.</p>
-<h3>Travis CI</h3>
-<p>Travis is a continuous integration environment that is free for open source.  I had used it very minimally for some open source projects, but never to deploy anything so I had to learn about the <code>deploy</code> option travis provides.  In the end my <code>.travis.yml</code> file was pretty simple and looked like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-yml"><code>language: node_js
-node_js:
-- '8'
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: scripts/deploy.sh
-  on:
-    branch: master
-env:
-  global:
-  - ANALYTICS_KEY=./analytics-api-key.json
-  - secure: r43TdsxdDrqYtmZiBmBSe+7u0UBdepMWAYmpTGzGJoAt9p0z+CxcR9ZIj4uMPvBtO3n1wcEvylWcmmY6smu57uXNPhQpyYJaw6HlnfKrz5GjRVX6Ti6oDm8Yyhha1IlcS73dJTpApFis30Kv7fsfDvpNcvVxpF1eDUlw2UAYCwI=
-before_install:
-- openssl aes-256-cbc -K $encrypted_dd5d287df7ed_key -iv $encrypted_dd5d287df7ed_iv
-  -in analytics-api-key.json.enc -out analytics-api-key.json -d</code></pre>
-      </div>
-<p>Breaking that down a bit:</p>
-<div class="gatsby-highlight">
-      <pre class="language-yml"><code>language: node_js
-node_js:
-- '8'</code></pre>
-      </div>
-<p>I’m using node for this project and I want to deploy on node 8, so these lines just make sure I have that environment available.</p>
-<div class="gatsby-highlight">
-      <pre class="language-yml"><code>deploy:
-  skip_cleanup: true
-  provider: script
-  script: scripts/deploy.sh
-  on:
-    branch: master</code></pre>
-      </div>
-<p>I’ve bundled my deploy steps into a script, <code>deploy.sh</code>.  This config tells travis to run the script after my (currently non-existent) tests have completed, and not to remove any built files before starting the deploy.  It also makes it clear that this should only happen for changes to the master branch.</p>
-<div class="gatsby-highlight">
-      <pre class="language-yml"><code>env:
-  global:
-  - ANALYTICS_KEY=./analytics-api-key.json
-  - secure: r43TdsxdDrqYtmZiBmBSe+7u0UBdepMWAYmpTGzGJoAt9p0z+CxcR9ZIj4uMPvBtO3n1wcEvylWcmmY6smu57uXNPhQpyYJaw6HlnfKrz5GjRVX6Ti6oDm8Yyhha1IlcS73dJTpApFis30Kv7fsfDvpNcvVxpF1eDUlw2UAYCwI=
-before_install:
-- openssl aes-256-cbc -K $encrypted_dd5d287df7ed_key -iv $encrypted_dd5d287df7ed_iv
-  -in analytics-api-key.json.enc -out analytics-api-key.json -d</code></pre>
-      </div>
-<p>This section looks messy, but its all about the environment variables I need for deploying.  Specifically I’m pulling in a github key for deploys (thats the secure key), and then also pulling my google analytics key from a json file.  The JSON file is stored as an encrypted file in the directory with a key that only Travis can decrypt.  Then I use a public environment variable to tell my deploy script where to look up the file.  That allows me to set a different path locally and still have local deploys work even though I can’t decrypt the checked in JSON file.</p>
-<h3>CLI</h3>
-<p>I’ve started with an extremely basic CLI using <a href="https://github.com/SBoudrias/Inquirer.js">Inquirer.js</a>.  It asks me a series of questions and then generates a markdown doc with the appropriate YAML headings.  Inquirer.js, lodash, and ES6 template strings make this super easy.  It looks like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> inquirer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'inquirer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/map'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> find <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'lodash/find'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token punctuation">{</span> mkFile <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../src/utils/file_system'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> categories <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../src/pages/categories.json'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>categories<span class="token punctuation">;</span>
-<span class="token keyword">const</span> moment <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'moment'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> dates <span class="token operator">=</span> <span class="token punctuation">{</span>
-  Today<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-  Tomorrow<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-  <span class="token string">'Two Days From Now'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-  <span class="token string">'Three Days From Now'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-inquirer
-  <span class="token punctuation">.</span><span class="token function">prompt</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-      type<span class="token punctuation">:</span> <span class="token string">'list'</span><span class="token punctuation">,</span>
-      name<span class="token punctuation">:</span> <span class="token string">'type'</span><span class="token punctuation">,</span>
-      message<span class="token punctuation">:</span> <span class="token string">'What Type of Post is this'</span><span class="token punctuation">,</span>
-      choices<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Post'</span><span class="token punctuation">,</span> <span class="token string">'Page'</span><span class="token punctuation">,</span> <span class="token string">'Friday-Links'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      filter<span class="token punctuation">:</span> val <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> val<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      type<span class="token punctuation">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
-      name<span class="token punctuation">:</span> <span class="token string">'title'</span><span class="token punctuation">,</span>
-      message<span class="token punctuation">:</span> <span class="token string">'What should the title be?'</span><span class="token punctuation">,</span>
-      validate<span class="token punctuation">:</span> value <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token string">"Title can't be empty"</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      type<span class="token punctuation">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
-      name<span class="token punctuation">:</span> <span class="token string">'description'</span><span class="token punctuation">,</span>
-      message<span class="token punctuation">:</span> <span class="token string">'What should the description say?'</span><span class="token punctuation">,</span>
-      validate<span class="token punctuation">:</span> value <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token string">"Description can't be empty"</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      type<span class="token punctuation">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
-      name<span class="token punctuation">:</span> <span class="token string">'key'</span><span class="token punctuation">,</span>
-      message<span class="token punctuation">:</span> <span class="token string">'What should the post key be?'</span><span class="token punctuation">,</span>
-      validate<span class="token punctuation">:</span> value <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token string">"Key can't be empty"</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      type<span class="token punctuation">:</span> <span class="token string">'list'</span><span class="token punctuation">,</span>
-      name<span class="token punctuation">:</span> <span class="token string">'category'</span><span class="token punctuation">,</span>
-      message<span class="token punctuation">:</span> <span class="token string">'What Category of post is this'</span><span class="token punctuation">,</span>
-      choices<span class="token punctuation">:</span> <span class="token function">map</span><span class="token punctuation">(</span>categories<span class="token punctuation">,</span> <span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      filter<span class="token punctuation">:</span> title <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">find</span><span class="token punctuation">(</span>categories<span class="token punctuation">,</span> <span class="token punctuation">{</span> title <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>key<span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      type<span class="token punctuation">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
-      name<span class="token punctuation">:</span> <span class="token string">'tags'</span><span class="token punctuation">,</span>
-      message<span class="token punctuation">:</span> <span class="token string">'Write out any tags you want to use'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      type<span class="token punctuation">:</span> <span class="token string">'list'</span><span class="token punctuation">,</span>
-      name<span class="token punctuation">:</span> <span class="token string">'date'</span><span class="token punctuation">,</span>
-      message<span class="token punctuation">:</span> <span class="token string">'When is this going to be posted'</span><span class="token punctuation">,</span>
-      choices<span class="token punctuation">:</span> <span class="token function">map</span><span class="token punctuation">(</span>dates<span class="token punctuation">,</span> <span class="token punctuation">(</span>value<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> key<span class="token punctuation">)</span><span class="token punctuation">,</span>
-      filter<span class="token punctuation">:</span> key <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> dates<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">]</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>answers <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> postDate <span class="token operator">=</span> <span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>answers<span class="token punctuation">.</span>date<span class="token punctuation">,</span> <span class="token string">'days'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">let</span> year <span class="token operator">=</span> postDate<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">let</span> formattedDate <span class="token operator">=</span> postDate<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY/MM/DD'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">mkFile</span><span class="token punctuation">(</span>
-      <span class="token template-string"><span class="token string">`/src/pages/posts/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>year<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>answers<span class="token punctuation">.</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.md`</span></span><span class="token punctuation">,</span>
-      <span class="token template-string"><span class="token string">`---
-title: "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>answers<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"
-date: "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>formattedDate<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"
-layout: "post"
-path: "/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>formattedDate<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>answers<span class="token punctuation">.</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/"
-description: "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>answers<span class="token punctuation">.</span>description<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"
-keywords: "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>answers<span class="token punctuation">.</span>tags<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"
-category: "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>answers<span class="token punctuation">.</span>category<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"
-key: "</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>answers<span class="token punctuation">.</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">"
-readNext: "ten-things-js,favorite-interview,jest-matchers-1"
----
-
-    `</span></span>
-    <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      </div>
-<p>Inquirer makes it really nice to gather up all the information, then I use a utility I’ve already written to dump it in a file.  I want to do a bunch more here in the future here, starting by giving this script the ability to read and parse my existing posts, which will let me enforce uniqueness on names and keys, as well as offer autocomplete on the readNext column, which I’ve left hardcoded for now, since its hard to type free form.  There’s more to come here, and you all may feel free to steal and remix anything you find useful for your own blogs here.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
