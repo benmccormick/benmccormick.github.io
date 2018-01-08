@@ -1,5 +1,5 @@
 ---
-title: "Tips For Improving a Large Codebase With A Small Team"
+title: "Tips For Improving a Large Code Base With A Small Team"
 date: "2018/01/07"
 layout: "post"
 path: "/2018/01/07/large-improvements-small-team/"
