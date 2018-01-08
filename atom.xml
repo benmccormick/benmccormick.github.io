@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2017-12-30T23:48:30Z</updated>
+    <updated>2018-01-08T01:44:47Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,125 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Tips For Improving a Large Codebase With A Small Team]]></title>
+        <id>https://benmccormick.org/2018/01/07/large-improvements-small-team/</id>
+        <link href="https://benmccormick.org/2018/01/07/large-improvements-small-team/">
+        </link>
+        <updated>2018-01-07T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>Over the last year I’ve been acting as the lone JavaScript resource working on a codebase with around 90k lines of JavaScript code.  That has left me spending the vast majority of my work time trying to knock out features and deal with bugs across the large code surface area.  But I’ve also wanted to do my best to continue to improve code quality with limited resources.  Here are a few things I’ve learned about trying to improve code quality across a large project with limited resources.</p>
+<h4>1. You need to accept not being on the bleeding edge</h4>
+<p>Let’s be real, in the JavaScript world the only way to always be on the bleeding edge is to never maintain an application for more than a few weeks.  And even in other contexts, it often is much less feasible than hype bubbles at conferences or sites like Hacker News might make it seem.  Most companies that are shipping software that users actually pay for are using quite a lot of very old technology quite extensively.  That’s not to say there’s no place for new and shiny things, but there will always be limits to how new and shiny things get.  When you’re low on people resources for the size of your project, those limits get a lot more restrictive.</p>
+<h4>2. It’s important to identify your pain points.</h4>
+<p>There are 3 main type of value that developers can add by changing a software system. They can write new <strong>features</strong>, which give users new capabilities.  They can improve some <strong>cross-feature attributes</strong> of the system like loading speed, accessibility, design, logging or documentation.  Or they can make <strong>architecture improvements</strong> that make it easier to make other changes.  Generally engineers don’t have to argue to add features, because the business decision makers will be calling for them constantly.  Cross-feature things like performance, design or logging sometimes come from business decision makers, but often only when things have become problematic, and then the conversations around how long it will take to achieve improvements can be tense ones.  Architecture concerns pretty much never come from business folks, because they usually don’t see the effects of a bad architecture until it is too late and shipping simple features has become a disastrously slow process<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  It’s part of a developer’s job to push for the latter 2 type of changes when they’re needed.   But with limited resources, <em>needed</em> is often hard to quantify.</p>
+<p>That’s why it is important to know what is <em>actually</em> causing you pain, or will soon be causing pain.  Is your site getting slower and slower?  Is your CSS a giant tangled mess that creates bugs with every change<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>?  Make a list, and then prioritize it by importance and expected effort.</p>
+<h4>3. Take things one at a time</h4>
+<p>Once you have a list of things that you want to fix, it can be tempting to try to fit those fixes in all over the places.  You’re creating a new page, might as well write it in Vue instead of Angular.  You’re changing some styles, maybe you can use a CSS in JS library.  But the absolute worst thing you can do with limited resources is try to improve too many things at once.  You’ll end up with a codebase with many different ways to do everything, so that every change requires a full context reset, and maintenance means dealing with multiple sets of bugs and compatibility issues for each duplicated approach.  That’s why prioritization is critical.  With limited bandwidth, you need to know what <strong>one thing</strong> will be the best use of your time.</p>
+<h4>4. Expand from small footholds, don’t boil the ocean</h4>
+<p>A few truths to note at this point:</p>
+<ol>
+<li><strong>Changing large systems is hard.</strong>  They have a million different subtle assumptions weaved into their code, and making seemingly the same change in different places can often produce subtly different results.  </li>
+<li><strong>Practice is how you learn to use a tool or technique optimally.</strong> Unless you’ve already used a technology extensively in a different context, you will never be more blind to it’s downsides than at the start of adding it to a project.  As you begin using it, you’ll learn more about it and how to use it better in your system.</li>
+<li><strong>Well designed systems have good interface points</strong>.  Interface points are areas where one part of the system doesn’t need to care about the details of how other parts of the system are implemented, they just need to know the <em>interface</em> for interacting with that part of the system.  For example, when using React, parent components don’t need to know the details of how a child component work, just what props they take.  Similarly when writing HTMl, you don’t need to know the details of how CSS will work for layout, you just need to expose meaningful class names that CSS can use.  A website doesn’t need to know what language a web server is written in to make HTML requests to it.  These are examples of interface points, and while well designed systems will have more of them and fewer “breaches” of the interface lines, all systems have them to some extent.</li>
+</ol>
+<p>The implication of these truths is that there is value in starting small and expanding.  If we can pick a small section of the application that is cordoned off from the rest of the code in a meaningful way, we can create a foothold for the new technology.  This serves as a learning opportunity, an example, and a starting place.  If it goes badly, small changes are easy to revert or fix.  If it works well, we can look for more similar interface boundaries, or expand out to convert some of the code that uses the new code.</p>
+<p>When I converted a large Backbone app to use React, I took advantage of 2 different interface boundaries.  I started by converting small “widget” components to be written in React, and came up with a method of calling these widgets from within Backbone code.  Once I had enough of these building block widgets written in React, I started writing new pages in React.  Then finally I would convert subsections of Backbone driven pages to React, starting from the bottom up and converting the top level layouts of the page last.  I was using 2 interface boundaries: components and pages.  That made sense for Backbone to React, where I was essentially converting one type of component tree to another.  But the lines may be different for other changes, and you’ll need to use your judgement.</p>
+<h4>5. Automate what you can</h4>
+<p>Not every change needs to be hard and slow.  Sometimes we can take advantage of automation. Tools like <a href="https://prettier.io/">Prettier</a> and <a href="https://eslint.org/">ESLint</a> make it easy to automate code style and correctness fixes.  Tools like React often provide <a href="https://github.com/reactjs/react-codemod">codemods</a> to help make it easier to update to a new version of the tool or use best practices.  Unit tests can help you prevent regression bugs and are easy to automate with a CI server or <a href="https://benmccormick.org/2017/02/26/running-jest-tests-before-each-git-commit/">pre-commit hooks</a>.  </p>
+<p>If you’re dealing with problems that are more specific to your codebase, it may make sense to invest time into writing your own automation scripts, whether that means hacking together a crazy bash/python script to do a massive find and replace, or using a tool like Ansible to automate some previously manual developer processes. It made a big difference in our company when our QA developer put in the work to automate the creation of consistent local environments.</p>
+<h4>6. Count the cost of maintenance</h4>
+<p>With a small team, some improvements may simply not be worth it over time.  Genuinely valuable things like test coverage, JSDoc style automated documentation, old browser support, add overhead to future changes as well as any up front cost to implement. These are the type of things that advocates tend to moralize about, and say that it’s the developers job to advocate for them.  And that is true as I alluded to earlier.  But when faced with limited resources, it’s important to prioritize, and understanding the cost of maintaining certain improvements is part of that.</p>
+<h4>7. Distinguish between craftsmanship and business needs</h4>
+<p>Along the same lines, as developers we’re often encouraged to think of ourselves as craftsmen.  Think of <a href="https://thenextweb.com/apple/2011/10/24/steve-jobs-obsession-with-the-quality-of-the-things-unseen/">Steve Jobs talking about using good wood for the back of a cabinet</a> or the aforementioned moralizing about code and process quality.  There are great things about this, since it is a developers job to look after the quality and craftsmanship of their product.  But it also is good to align that craftsmanship with business needs and create something that is useful rather than merely theoretically beautiful.  So there is a place for making changes to improve the “purity” of code, but when investing limited resources, it’s even more important than usual to balance that with business needs.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>I’ve gotten to work with plenty of non-devs who respect the need for good architecture.  They still aren’t going to be able to identify when changes need to happen.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>Little known fact: CSS actually stands for “Giant Tangled Mess that creates bugs with every change”</p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Weekly Links: January 5th]]></title>
+        <id>https://benmccormick.org/2018/01/05/weekly-links-01-05-18/</id>
+        <link href="https://benmccormick.org/2018/01/05/weekly-links-01-05-18/">
+        </link>
+        <updated>2018-01-05T00:00:00Z</updated>
+        <content type="html"><![CDATA[<h3>Working in The Tech Industry</h3>
+<p><a href="https://blog.codinghorror.com/to-serve-man-with-software/">To Serve Man With Software | Jeff Atwood</a> - This is a great review of the ethical questions that software developer’s face in the modern world.  Is your work actually serving anyone who isn’t invested in your employer?</p>
+<p><a href="https://m.signalvnoise.com/basecamp-doesnt-employ-anyone-in-san-francisco-but-now-we-pay-everyone-as-though-all-did-3ee87013cfc2">Basecamp doesn’t employ anyone in San Francisco, but now we pay everyone as though all did | Basecamp</a> - On a similar vein, this is a tech employer holding themselves to a higher standard in terms of benefiting their employees<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  Also this quote is a fantastic summary of the type of software companies I want to work for:</p>
+<blockquote>
+<p>Especially in software, which is a profitable business when run with restraint and sold to businesses.</p>
+</blockquote>
+<p>There’s a glorification of the unicorn startup in the tech world, but you can go a long way with low costs and high paying customers (and it’s easier to “serve man with software” without outside pressure to grow like crazy)</p>
+<h3>Non-Tech (“Less-Tech”?)</h3>
+<p><a href="https://github.com/zonination/perceptions">Perceptions of Probability and Numbers | Zoni Nation</a> -  This is simply a collection of visualizations of a dataset pulled from Reddit of what probabilities people associate with common english phrases used to express uncertainty.  I found it fascinating.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="undefined"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; z-index: -1; display: block; "
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 100%;position: relative; width: 100%; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsSAAALEgHS3X78AAACk0lEQVQ4y5WUy0/UUBTG+UNcqEtXJiauXLky7NyKMTFiXBiNrtAFJkJiYtRgXOBrY4xGBAXD8B5hGAQyKcO08yjTdqbtbXvv7RSmw8TAxpVfpyMtEDV8SSdn7tzf/c4593Q6mjH5vp/P57PZrCRJsiyXSiVRFAVBME0zvq3hN8Kgo3lE+XW/9noy5I8G+1t1511qt2/ME5U2TCklhCA3y7Lq9bp7WJy7luNYTqU/s9uT2Xmw6olqo9Ho2G7JMAzwEYzdNovjjLLiy2Ktl9b7rM0la9PkAYzdtm0DrlQq+MRXHhNjjJhWeYWIw1bycUN4tl1NbNobFOsBHBYDc8dxwHueR2IyTTyORVhq2p8a+TX80c+kt3SN4ydcTRtG2TFnl9Ao4aLhXppYvj5ZvTXFzo3WBlGvUUNN+5zNwIUcbth6RT85O308Kd/IeHfE5nPJVRyO9TYMQ5QNGP6AGec643vwUCl/Ymmup6CPaCRvU8K4yTjlPHJGA/ZgAEtqYaEsPRRnxuW1txvSC728RswDGUVw2Cf4Ax6XV86k7nWuDtzNfX4qfx81JcOxC7aBjFqXyMuUWIxGMJbCqwY8b6zdXrx6ef5C1/T5m+lrK9X1tJnjnP/VGREmJIQLubGZqe73iYuvJk6/SXZ++9GrG8rhqYtg3JOqqigbsDTXPztwLJU4uzh3RScC91TqatyNnA1TNYzWeOJBnzRN03UdzhjE3FCX8uSUmpvhzKFOMHz7pdtEw6DDJphtHKYoSrVaBR9M6/IH91G3MXifKQJ3rIPvCLVdztppYzdOCycknDBWLOx8Hfr55ZOXXqhlBTdIx/1XzXHhztFb9M/+I8Q4PQxCYcN//gyQRaUlkGgKgnARMN4inPUbWRkMZn+diEgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="An example graph from the repo"
+        title=""
+        src="/static/31375424926ff146bd5d5564b41153e0-d766e.png"
+        srcset="/static/31375424926ff146bd5d5564b41153e0-a6b6e.png 143w,
+/static/31375424926ff146bd5d5564b41153e0-8e488.png 285w,
+/static/31375424926ff146bd5d5564b41153e0-d766e.png 570w,
+/static/31375424926ff146bd5d5564b41153e0-13239.png 855w,
+/static/31375424926ff146bd5d5564b41153e0-4f46e.png 960w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p><a href="http://mashable.com/2017/12/27/browser-bar-url-facebook-bad/">Stop Using Facebook and Start Using Your Browser | Foster Kamer</a> - This is a call for people to get out of their social media bubble and <em>internet like it’s 2005</em>.  Use bookmarks, type in URLs directly, basically go to sites directly for content instead of relying on social media algorithms to find stuff for you.  I think this is easier said than done.  Social networking sites are ingrained into our culture at this point. You don’t replace culture by condemning it, and telling everyone to go without but by creating something new or better<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  So what can we make as Internet users that provides something as easy or easier than the mindless serendipity of social media, but produces better outcomes?  </p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>Feel free to be cynical about this as a marketing ploy, but I’m all for companies marketing themselves by actually improving how they compensate their employees.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>If you’d like to read a whole book making that argument, I recommend <a href="http://amzn.to/2F9xdD6"> Culture Making by Andy Crouch</a></p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2017 Roundup]]></title>
         <id>https://benmccormick.org/2017/12/30/2017-roundup</id>
@@ -432,67 +551,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3>Non-Tech</h3>
 <p><a href="https://www.nytimes.com/2017/11/09/sports/aaron-hernandez-brain-cte.html?_r=0">On the Table, the Brain Appeared Normal | The New York Times</a> - Powerful reading about the dangers of football, a sport that I still love watching.  <a href="https://www.si.com/nfl/2017/09/21/aaron-hernandez-brain-cte-video-photos">More context here if you’re confused after reading the NYT story</a>.</p>
 <p><a href="https://www.nytimes.com/2017/11/12/us/nsa-shadow-brokers.html?_r=0">Security Breach and Spilled Secrets Have Shaken the N.S.A. to Its Core | The New York Times</a> - Interesting to see such mainstream questioning of the NSA’s habit of hording zero-day exploits.  Don’t read this one if you want to maintain any naive good feelings about US cybersecurity.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A Quick Browser Compatibility Checkup]]></title>
-        <id>https://benmccormick.org/2017/11/15/browser-compatibility-checkup/</id>
-        <link href="https://benmccormick.org/2017/11/15/browser-compatibility-checkup/">
-        </link>
-        <updated>2017-11-15T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>I’ve written a few times about the state of browser compatibility and the web platform over the years.  Over 4 years ago I <a href="https://benmccormick.org/2013/06/11/evergreen-browsers">linked to a post celebrating the rise of evergreen browsers</a>. Then 2 years ago I was one of several people stressing about <a href="https://benmccormick.org/2015/06/10/is-safari-being-left-behind/">whether Safari was going to hold the web back</a>.  It’s something I’ve followed closely because supporting many different subtly incompatible execution environments is one of the most unique and frustrating challenges of front-end development.  </p>
-<p>The last few years have been really good for web compatibility with Microsoft dumping Internet Explorer in favor of the evergreen Edge, and <a href="https://babeljs.io/">Babel</a> allowing JavaScript developers to write modern JS spec-compliant code and then have it transpiled back into something that runs in a wide variety of environments.  But fairly recently things have started to get even better.</p>
-<p>For the web application I have spent my workdays building over the past 4 years, we target the <a href="http://browserl.ist/?q=last+2+Chrome+versions%252C+last+2+Safari+versions%252C+last+2+Firefox+versions%252C+last+2+Edge+versions">last 2 versions of the major desktop browsers</a> (Chrome, Firefox, Safari, Edge).  At the time of writing that means we target</p>
-<ul>
-<li>Chrome 61 + 62</li>
-<li>Edge 15 + 16</li>
-<li>Firefox 55 + 56</li>
-<li>Safari 10.1 + 11</li>
-</ul>
-<p>I get that for some of you this is a very lax browser support standard, and you’re still supporting IE9 or old Android versions.  For others you don’t care about browser compatibility at all and are just hacking demos on the newest Chrome.  But “last 2 versions” is a real world standard that I know plenty of teams target.  And it certainly is a reasonable target for new devs learning about JavaScript and the web.  So let’s look at what is natively supported in all targeted browsers if you use this standard today. Spoiler Alert: life is pretty good.</p>
-<h3>Available Now</h3>
-<h4>All of ES6 and ES2016, and almost all of ES2017</h4>
-<p>If you’re distrustful of Babel and have been holding off on learning the new features that have transformed JavaScript over the past few years until they were “browser supported”, now is your time.  Other than shared memory and atomics (more on that below), every single feature from the recent updates to the ECMAScript spec is available in the last 2 versions of all 4 major browsers.</p>
-<p>That includes core ES6 stuff like classes, destructuring, and arrow functions.  But also features that were just standardized this summer like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">async functions</a>.</p>
-<h4>Modern CSS</h4>
-<p>Modern CSS specifications like <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a>, <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Grid</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS Variables</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">CSS Feature Queries</a> are all fully supported in these browsers, making creating layouts especially much easier than it had been in the past.</p>
-<h4>Promises and Fetch</h4>
-<p>Promises have been mostly supported for a while, but they didn’t have native support in IE11, so some folks may still be polyfilling them.  With a last 2 versions standard, you not only don’t need to polyfill Promises, but also can drop any polyfills for the promise based fetch api as well (and use them with async-await natively!).</p>
-<h3>Coming Soon</h3>
-<p>So there is a ton of stuff that is available today for people targeting the last 2 versions of browsers.  But there is also a bunch of stuff that is almost there:</p>
-<h4>Web Assembly and low level primitives</h4>
-<p><a href="https://blog.mozilla.org/blog/2017/11/13/webassembly-in-browsers/">WebAssembly is now shipping in the latest version of every major browser</a>.  WebAssembly is a target bytecode for the web that can interop with JavaScript.  Essentially somebody can write C, C++ or Rust code and then compile it to WebAssembly, which runs natively in the browser, potentially much more performantly than equivalent JavaScript code.  The latest version of all browsers also support <a href="http://2ality.com/2017/01/shared-array-buffer.html">SharedArrayBuffer and Atomics</a>, low level APIs for exploring better parallelism support in JavaScript.  In short, it will soon be possible to create much more performant experiences in web browsers than is currently possible.</p>
-<h4>WebRTC</h4>
-<p>The latest versions of all browsers also support WebRTC, an API for peer to peer communication through browsers.  This potentially opens the door for all types of browser-based text/video chat and collaboration applications.</p>
-<h4>Service Workers</h4>
-<p><a href="https://jakearchibald.github.io/isserviceworkerready/">Service workers are getting close</a>.  They’re available in every browser but Safari now, and Safari is working on them.  If we get another big <code>x.1</code> release of Safari like last year, they could be available for early adopters across the board within the next 6 months.  </p>
-<h3>The web is moving forward together</h3>
-<p>It’s fun to see this level of unified activity across the web platform over the past 2 years.  In my 7+ years of front-end development, I’ve never seen a more compatible web than the one we can develop against today.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: November 10th 2017]]></title>
-        <id>https://benmccormick.org/2017/11/10/friday-links/</id>
-        <link href="https://benmccormick.org/2017/11/10/friday-links/">
-        </link>
-        <updated>2017-11-10T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>I started this new thing last week, <em>Friday Links</em>.  There’s a <a href="https://goo.gl/forms/MwEtFrDwFWzXSRv13">feedback form</a> if you’re a regular reader and want to tell me what you think of it.  Otherwise, enjoy the links!</p>
-<h3>JavaScript And The Web</h3>
-<p> <a href="https://medium.com/javascript-inside/slaying-a-ui-antipattern-in-react-64a3b98242c">Slaying a UI Antipattern in React – JavaScript Inside</a> - This is an interesting case study of how to work through an architectural problem using React.  I love seeing posts like this that take real world scenarios (I deal with this case of having data that might be in one of several loading states all the time), and identify re-usable patterns for solving them.</p>
-<p> <a href="https://jakearchibald.com/2017/netflix-and-react/">Netflix functions without client-side React, and it’s a good thing - JakeArchibald.com</a> - A nice look at what Netflix’s experience removing client-side react from their landing page means and doesn’t mean.  I’m going to be really curious to see how the JS community gets better at enabling fast initial experiences while still having full rich interactivity when the users need it.</p>
-<h3>Programming Tools and Practices</h3>
-<p><a href="https://prettier.io/">Prettier</a> - Prettier put out a new release this week and now supports Markdown as well as JavaScript, TypeScript, CSS, and GraphQL.  It has been my favorite new tool of 2017, solving a problem I didn’t know I had: the mental overhead of constantly reformatting my own code.  </p>
-<p><a href="http://amzn.to/2zvm12Z">The Pragmatic Programmer - Andy Hunt &#x26; Dave Thomas</a> - Not a new book at all, but I like to recommend it at every opportunity.  It’s my favorite resource on the practice of Software Engineering and well worth checking out if you’ve never read it.</p>
-<h3>Non-Tech</h3>
-<p><a href="https://www.economist.com/news/briefing/21730870-economy-based-attention-easily-gamed-once-considered-boon-democracy-social-media">Once considered a boon to democracy, social media have started to look like its nemesis - The Economist</a> - This is a wide-ranging take on the downsides of social media with a focus on it’s deleterious effects on our political systems.  If you’re on social media and/or you care about the future of politics in your place of living, it is worth a read.  </p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
