@@ -18,7 +18,7 @@ key: "weekly-links-01-12-18"
 
 [The State of Atom’s Performance | Atom Blog](http://blog.atom.io/2018/01/10/the-state-of-atoms-performance.html) - Atom continues to (slowly) become snappier.  I'm glad to see how organized they are on this.  It's really hard to take something that was built with a slower architecture fast while it's being used by tens of thousands of people every day.  They're making great progress.
 
-[Clean Architecture | Robert C Martin](http://amzn.to/2DqBeSQ) - I'll probably be posting more on this soon, but I've been reading the new book on Architecture by "Uncle Bob" Martin, and it's fantastic.  It breaks down big architecture and program design concepts like the Single Responsibility Principle and Dependency Inversion, and explains them well individually, but also shows how they fit together when designing a large system.  I'll write a full review when I finish the book, but for now just wanted to share that it is worth picking up.
+[Clean Architecture | Robert C Martin](http://amzn.to/2DqBeSQ) - I'll probably be posting more on this soon, but I've been reading the new book on architecture by "Uncle Bob" Martin, and it's fantastic.  It breaks down big architecture and program design concepts like the Single Responsibility Principle and Dependency Inversion, and explains them well individually, but also shows how they fit together when designing a large system.  I'll write a full review when I finish the book, but for now just wanted to share that it is worth picking up.
 
 ### Non-Tech
 
