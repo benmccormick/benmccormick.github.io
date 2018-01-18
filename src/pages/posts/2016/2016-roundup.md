@@ -5,8 +5,10 @@ layout: "post"
 path: "/2016/12/31/2016-roundup"
 category: "meta"
 description: "A look back at benmccormick.org in 2016"
+key: "2016-roundup"
 pageViews: "212"
 last30pageViews: "14"
+readNext: "ten-things-js,favorite-interview,adequate-talk"
 ---
 
 Thanks to all of you who have followed my blog this year! It was a busy year and I didn't get as many posts out as years past, but you all have been as supportive as ever.  I'm excited about the things I've been able to do with the new site this month, and am looking forward to a great 2017.  But first, a look back.
@@ -63,7 +65,7 @@ Rands In Repose, Stratechery, Daring Fireball,  Marco.org, rauchg.com, purposedw
 
 - [NPR Politics](http://www.npr.org/podcasts/510310/npr-politics-podcast) - Approachable and fun while still being informative, one of the best ways to follow this years election.
 
-[How I Built This](http://www.npr.org/podcasts/510313/how-i-built-this) - This has been a great new podcast on entrepreneurship
+- [How I Built This](http://www.npr.org/podcasts/510313/how-i-built-this) - This has been a great new podcast on entrepreneurship
 
 ### Software I started using in 2016
 
