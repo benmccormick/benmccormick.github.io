@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Fri, 19 Jan 2018 01:14:26 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 19 Jan 2018 04:20:26 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,31 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Weekly Links: January 19th]]></title>
+            <link>https://benmccormick.org/2018/01/19/weekly-links-01-19-18/</link>
+            <guid>https://benmccormick.org/2018/01/19/weekly-links-01-19-18/</guid>
+            <pubDate>Fri, 19 Jan 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h3>JavaScript And The Web</h3>
+<p><a href="https://stackoverflow.blog/2018/01/11/brutal-lifecycle-javascript-frameworks/">The Brutal Lifecycle of JavaScript Frameworks | Stack Overflow Blog</a> - This was an interesting analysis on how JavaScript frameworks have risen and fallen.  Among the reasons that it’s interesting is that the data appears to be a bit of a Rorschach test.  The post itself is very negative about the pace of change in the JavaScript framework world.  But I saw a lot of twitter takes like this one:</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This “new framework every 6-months” FUD is comical. The crux is centered on 4 JS frameworks released over the last decade. <br><br>4. In 10 years. <br><br>It’s great for my business, but makes me chuckle. <br><br>It’s not really moving that fast y’all. <a href="https://t.co/BiH7UK0M9V">https://t.co/BiH7UK0M9V</a></p>&mdash; Joel ⛈ (@jhooks) <a href="https://twitter.com/jhooks/status/951924735654244352?ref_src=twsrc%5Etfw">January 12, 2018</a></blockquote>
+<p>Personally I lean more toward the side that there’s nothing wrong here.  The change in frameworks has come during a large change in use cases and technology used on the web.  Think PWAs verse server-side generated sites, and the large amount of new browser APIs and JavaScript language features.  These things have naturally brought new best practices which have been encoded in frameworks.  While it is true that a jQuery based site from 2009 might be difficult to maintain through today, that has less to do with the lack of support for the technology than it does with the fundamental nature of web development.  It would be much more difficult to build and scale a web application like <a href="https://slack.com/">Slack</a> using only jQuery and other 2009 technologies.<br>
+Which is why it was surpassed for <em>web application</em> development first by a wave of frameworks that allowed you to model domain concepts in an object oriented way and tie that to a UI (Backbone, Angular1, Knockout), and then by a second wave that allowed you to do that with more declarative component-based UIs (React, Ember, Angular2+, Vue).  Those evolutions have come to match a real need.</p>
+<p><a href="https://stackoverflow.com/questions/48270127/can-a-1-a-2-a-3-ever-evaluate-to-true/48274520#48274520">Can (a ==1 &#x26;&#x26; a== 2 &#x26;&#x26; a==3) ever evaluate to true? | Stack Overflow</a> - This was a fun little question.  I don’t think I like it as an interview question for JavaScript, since it borders on trivia, and requires in-depth knowledge of the “bad parts” of JavaScript like <code>==</code> and <code>with</code> or global variable behavior that many new developers are just taught to avoid.  But it’s definitely a fun trivia question.  And it may even be a good interview question in Python, where you can do it using more commonly accepted parts of the language.</p>
+<div class="gatsby-highlight">
+      <pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">EqualToEverything</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">__eq__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">True</span>
+a <span class="token operator">=</span> EqualToEverything<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">and</span> a <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">and</span> a <span class="token operator">==</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#prints True</span>
+</code></pre>
+      </div>
+<p><a href="https://hacks.mozilla.org/2018/01/making-webassembly-even-faster-firefoxs-new-streaming-and-tiering-compiler/">Making WebAssembly even faster: Firefox’s new streaming and tiering compiler | Lin Clark</a> - Web Assembly + Rust is quickly moving to the top of my “I’ve got to learn more about that” list.</p>
+<p><a href="https://slack.engineering/keep-webpack-fast-a-field-guide-for-better-build-performance-f56a5995e8f1">Keep webpack Fast: A Field Guide for Better Build Performance | Slack Engineering</a> - This is a super helpful and detailed list of performance tips and tricks for Webpack builds, which unfortunately are easy to make slow and challenging to make fast for large projects.  Even after having my own fights with webpack last year, I learned a few things from this, and look forward to experimenting with them.</p>
+<h3>Tech and Business</h3>
+<p><a href="https://www.joelonsoftware.com/2018/01/12/birdcage-liners/">Birdcage Liners | Joel Spoelsky</a> - Joel’s first post in a while is a great piece on the problems with social media, as well as tech folks’ responsibility to think through the choices they’re making, including the secondary effects.  What type of future are we making?</p>
+<p><a href="https://motherboard.vice.com/en_us/article/9kng57/dogecoin-my-joke-cryptocurrency-hit-2-billion-jackson-palmer-opinion">My Joke Cryptocurrency Hit $2 Billion and Something Is Very Wrong</a> - I promise I snagged this link to post before bitcoin took a dip this week, but I don’t think it’s properly appreciated in many places just how crazy the cryptocurrency fad is becoming.  Meme-based joke currencies are being valued at billions of dollars, and there are many other similar newborn currencies with similar valuations out there.  I’m not going to try to give anyone investment advise, but it seems clear for now that at minimum these “currencies” are completely unusable for their theoretical purpose as currency given the price swings.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: January 12th]]></title>
             <link>https://benmccormick.org/2018/01/12/weekly-links-01-12-18/</link>
@@ -484,26 +509,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ol>
 </div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: Thanksgiving 2017 edition]]></title>
-            <link>https://benmccormick.org/2017/11/26/weekly-links-11-26-17/</link>
-            <guid>https://benmccormick.org/2017/11/26/weekly-links-11-26-17/</guid>
-            <pubDate>Sun, 26 Nov 2017 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>In honor of Thanksgiving this week, instead of a list of writing from around the web, this week I’ll be linking to some of my favorite lesser known software tools, apps and gear.  These are things that let me get things done, and I’m thankful for that.</p>
-<h3>JavaScript Libraries</h3>
-<p><a href="https://www.gatsbyjs.org/">Gatsby</a> - I’ve written and spoken about Gatsby before, but it keeps getting better as a tool for building React-based web sites and applications.  This blog is written using it.</p>
-<p><a href="https://date-fns.org/">date-fns</a> - date-fns is a nice modular lightweight alternative to <a href="https://momentjs.com/">moment.js</a> for date management in JavaScript.  Because JavaScript’s built in dates are weird and hard to work with, and not everybody needs all of the goodness moment provides.</p>
-<p><a href="https://mobx.js.org/">MobX</a> - It’s been overshadowed by Redux, but MobX is a fantastic state management library for JavaScript libraries.  Since its an object oriented model that can be used in a variety of ways, it is easier to pull in incrementally</p>
-<p><a href="https://glamorous.rocks/">glamorous</a> - My favorite CSS-in-JS library for React, it lets you write styles in a few different ways, which allows you to manage things in a very React-y way, without ever getting stuck with things you can’t do.</p>
-<h3>Apps</h3>
-<p><a href="https://flexibits.com/fantastical">Fantastical</a> - The best app I’ve ever used for OSX and iPhone</p>
-<p><a href="https://mailplaneapp.com/">Mailplane</a> - If you like GMail’s web app (obviously not to everyone’s taste) Mailplane is a great way to use it as a native app on OSX.  I like it because it allows me to use both of my Gmail accounts side by side with their own notification settings and no risk of being lost in a sea of browser tabs.</p>
-<h3>Gear</h3>
-<p><a href="http://www.rickshawbags.com/commuter-laptop-bag">Rickshaw Bagworks Commuter Bag</a> - I’ve had the 2.0 version of this bag for the past 4 years, and it has been an amazingly versatile and durable tool for transporting my laptops, notebooks and more.  Highly recommended.</p>
-<p><a href="https://store.google.com/product/chromecast_2015">Chromecast</a> - I have a Chromecast and a Chromecast audio, and they’re an amazing cheap way to turn TVs and speakers into “Smart devices” that you can control from your phone without having to pay for “smart devices” that probably won’t be kept up to date the way you’d want.</p>
-<p><a href="http://amzn.to/2zpBZcm">Backbeat Fit</a> - I’ve now ended up buying 4 pairs of these headphones for myself and others.  They’re fantastic versatile headphones that work great for exercise headphones but are good enough quality to use for other purposes.  I personally have trouble with ear-buds (they don’t stay in my ears), so the over-ear style of the fit is perfect for me.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
