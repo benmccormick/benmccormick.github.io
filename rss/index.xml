@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Fri, 19 Jan 2018 04:20:26 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 04 Feb 2018 03:38:20 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,18 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Weekly Links: February 3rd]]></title>
+            <link>https://benmccormick.org/2018/02/03/weekly-links-02-03-18/</link>
+            <guid>https://benmccormick.org/2018/02/03/weekly-links-02-03-18/</guid>
+            <pubDate>Sat, 03 Feb 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h3>JavaScript And The Web</h3>
+<p><a href="http://2ality.com/2017/02/ecmascript-2018.html">ECMAScript 2018 | 2ality</a> - The spec for the 2018 version of <a href="https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">ECMAScript</a> has been finalized and this is a good roundup of the new features and syntax available.  I’m personally excited for rest/spread properties to be an official part of the language.</p>
+<p><a href="https://medium.com/@firt/pwas-are-coming-to-ios-11-3-cupertino-we-have-a-problem-2ff49fd7d6ea">PWAs are coming to iOS 11.3: Cupertino, we have a problem | Maximiliano Firtman</a> - Interesting look at what is and isn’t available in the newest version of Safari when it comes to PWAs and offline support</p>
+<h3>Tech and Business</h3>
+<p><a href="https://medium.com/99-mph/1-trillion-of-real-estate-is-on-the-move-heres-why-94ee9233e5eb">1 Trillion of Real Estate is on the move | Phil Levin</a> - Almost everybody seems to agree that self driving cars are going to happen.  It’s only a question of when.  But the other question is what the second-level effects of self driving cars will be.  Those who can correctly predict the answer to those two questions are going to have opportunities to make money and create interesting businesses. This is an interesting take on how self-driving cars might affect real estate.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: January 19th]]></title>
             <link>https://benmccormick.org/2018/01/19/weekly-links-01-19-18/</link>
@@ -338,174 +350,6 @@ a <span class="token operator">=</span> EqualToEverything<span class="token punc
 <li id="fn-1">
 <p>See <a href="https://benmccormick.org/2017/07/10/how-to-follow-the-javascript-roadmap/">this post</a> for more info about staying informed about features that are being added to JavaScript.</p>
 <a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Implementing The Sieve Of Eratosthenes in JavaScript]]></title>
-            <link>https://benmccormick.org/2017/11/28/sieveoferatosthenes/</link>
-            <guid>https://benmccormick.org/2017/11/28/sieveoferatosthenes/</guid>
-            <pubDate>Tue, 28 Nov 2017 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>As a way of keeping my math skills sharp, I’ve recently started to work through the <a href="https://projecteuler.net/">Project Euler</a> set of computational math problems.  They ask you not to post your work publicly, so I won’t be posting about any of my specific solutions, but I did think it would be fun to share about a helper method I’ve been using.</p>
-<p>For several of the Project Euler problems I’ve worked on, I needed to be able to generate a list of prime numbers.  To do that, I borrowed a Python implementation of the Sieve Of Erathosthenes from <a href="https://stackoverflow.com/a/568618/1424361">this StackOverflow answer</a>.  Since I haven’t had much reason to use generators in JavaScript yet, I thought it would be fun to translate that algorithm to JavaScript and share that here.</p>
-<h3>Sieve of Eratosthenes</h3>
-<p>The Sieve of Erathosthenes is a very old<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup> simple algorithm for identifying prime numbers.  In its normal implementation it is a useful way of finding small primes up to a certain number.  Beginning at 2, the algorithm iterates upward.  For the current number, if the number has not been marked, we identify it as a prime, and then mark all multiples of that number up to our target number.  So to find all primes up to 12, we would</p>
-<ul>
-<li>start at 2, note <strong>2</strong> as prime, and mark 4, 6, 8, 10 and 12 as non-prime</li>
-<li>move to 3, note <strong>3</strong> as prime, and mark 6, 9, 12 as non-prime</li>
-<li>move to 4, see that it is marked, and skip it</li>
-<li>move to 5, note <strong>5</strong> as prime and mark 10 as non-prime</li>
-<li>move to 6, see that it is marked and skip it</li>
-<li>move to 7 , note <strong>7</strong> as prime</li>
-<li>see that 8-10 are marked and skip them</li>
-<li>move to 11, note <strong>11</strong> as prime</li>
-<li>move to 12, see that it is marked and skip it</li>
-</ul>
-<p>You can see it graphically with this visualization from <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Wikipedia</a>:</p>
-<p><img src="/6420e3488e509dce176a1e957ea07ff5.gif" alt="sieve animation, shows the numbers being marked visually"></p>
-<h3>Python Implementation</h3>
-<p>The Python implementation that I used makes some modifications to the classic version of the algorithm that lets it generate an indefinite number of primes while being memory efficient</p>
-<div class="gatsby-highlight">
-      <pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">gen_primes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">""" Generate an infinite sequence of prime numbers."""</span>
-    marked_not_prime <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-    value_to_check <span class="token operator">=</span> <span class="token number">2</span>
-    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> value_to_check <span class="token operator">not</span> <span class="token keyword">in</span> marked_not_prime<span class="token punctuation">:</span>
-            <span class="token keyword">yield</span> value_to_check
-            marked_not_prime<span class="token punctuation">[</span>value_to_check <span class="token operator">*</span> value_to_check<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>value_to_check<span class="token punctuation">]</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> prime <span class="token keyword">in</span> marked_not_prime<span class="token punctuation">[</span>value_to_check<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                marked_not_prime<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span>prime <span class="token operator">+</span> value_to_check<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>prime<span class="token punctuation">)</span>
-            <span class="token keyword">del</span> marked_not_prime<span class="token punctuation">[</span>value_to_check<span class="token punctuation">]</span>
-        value_to_check <span class="token operator">+=</span> <span class="token number">1</span>
-</code></pre>
-      </div>
-<p>This version of the algorithm keeps a running set of the relevant matches, and keeps only the ones it needs.  We can translate it more or less directly to JavaScript like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">generatePrimes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> markedNotPrime <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token keyword">let</span> valueToCheck <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>valueToCheck <span class="token keyword">in</span> markedNotPrime<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">yield</span> valueToCheck
-            markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            <span class="token keyword">let</span> primes <span class="token operator">=</span>markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            primes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>prime<span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-                <span class="token keyword">let</span> nextMultipleOfPrime <span class="token operator">=</span> prime <span class="token operator">+</span> valueToCheck<span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>nextMultipleOfPrime <span class="token keyword">in</span> markedNotPrime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    markedNotPrime<span class="token punctuation">[</span>nextMultipleOfPrime<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>prime<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                    markedNotPrime<span class="token punctuation">[</span>nextMultipleOfPrime<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>prime<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span>
-            <span class="token keyword">delete</span> markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        valueToCheck <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<p>Let’s break down what this is doing.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">generatePrimes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">//...</span>
-<span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<p><code>generatePrimes</code> is a JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator">generator</a>.  Generators “generate” a series of values in a “just in time” fashion; they only calculate the next value when it is needed, making them an efficient solution for working with large or infinite series.  You specify a generator function by adding the <code>*</code> to the function declaration.  Generators then use the <code>yield</code> keyword rather than <code>return</code> to return their values, and can <code>yield</code> multiple times. After a generator yields, it pauses execution until it is asked for another value.  For our <code>generatePrimes</code> function, we are operating inside an infinite loop and will yield continuously without stopping<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> markedNotPrime <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> valueToCheck <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//...</span>
-    valueToCheck <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
-<span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<p>We’re using a plain object to keep track of our marked numbers, and using <code>valueToCheck</code> to keep track of where we are in iterating through numbers. As noted, we will iterate it forever if the generator continues to be called.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>valueToCheck <span class="token keyword">in</span> markedNotPrime<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">yield</span> valueToCheck
-    markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">//...</span>
-<span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<p>As in the original algorithm, if we get to a number that isn’t marked, we know that it is a prime.  So we <code>yield</code> it, which pauses execution.  If the generator is queried again, when we resume execution we mark the prime squared as not-prime, and we do that by assigning it an array with the current prime value in it.  Using arrays for markers will make more sense in a moment. For now its worth noting that we only need to mark prime-squared as non-prime since every multiple below that is the current prime multiplied by a number less than it, which means it will already be covered, as we will see below.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>valueToCheck <span class="token keyword">in</span> markedNotPrime<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">//...</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> primes <span class="token operator">=</span> markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    primes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>prime <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token keyword">let</span> nextMultipleOfPrime <span class="token operator">=</span> prime <span class="token operator">+</span> valueToCheck<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>nextMultipleOfPrime <span class="token keyword">in</span> markedNotPrime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            markedNotPrime<span class="token punctuation">[</span>nextMultipleOfPrime<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>prime<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            markedNotPrime<span class="token punctuation">[</span>nextMultipleOfPrime<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>prime<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">delete</span> markedNotPrime<span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<p>Here’s the clever part of this implementation.  When we hit a number that is marked as not-prime, instead of just skipping it and moving on, we use some logic to keep our list of marked values small and memory efficient. This is also what allows us to get an infinite list of primes instead of settling for those under a particular value.  What we want to do is keep a list of all the primes that are factors of each marked number.  Then when we hit a number that is marked, we mark the next multiple for each prime (<code>valueToCheck + prime</code>), and remove the current value from the object.  That keeps checks fairly cheap by eliminating the number of marked numbers, and allows us to only add values to the marked list as we need them.</p>
-<p>We can then use this code to get the 1,000,001st prime like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">let</span> gen <span class="token operator">=</span> <span class="token function">generatePrimes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span> <span class="token number">1000000</span><span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-</code></pre>
-      </div>
-<p>That executed on my laptop in ~20seconds, approximately the same as the python implementation in python2, a little slower than running it under python3.  I was curious whether using a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a> for our marked prime list would speed things up:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">generatePrimes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> markedNotPrimeMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">let</span> valueToCheck <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>markedNotPrimeMap<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>valueToCheck<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">yield</span> valueToCheck
-            markedNotPrimeMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>valueToCheck<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>valueToCheck<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            <span class="token keyword">let</span> primes <span class="token operator">=</span>markedNotPrimeMap<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>valueToCheck<span class="token punctuation">)</span>
-            primes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>prime<span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-                <span class="token keyword">let</span> nextMultipleOfPrime <span class="token operator">=</span> prime <span class="token operator">+</span> valueToCheck<span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>markedNotPrimeMap<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>nextMultipleOfPrime<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    markedNotPrimeMap<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>nextMultipleOfPrime<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>prime<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                    markedNotPrimeMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>nextMultipleOfPrime<span class="token punctuation">,</span> <span class="token punctuation">[</span>prime<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span>
-            markedNotPrimeMap<span class="token punctuation">.</span><span class="token keyword">delete</span><span class="token punctuation">(</span>valueToCheck<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        valueToCheck <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<p>This version of the code runs about 25% faster, in 15 seconds on my machine. Not bad.</p>
-<h3>More Resources</h3>
-<ul>
-<li>You can dig in more on the Sieve of Erosthenes on <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Wikipedia</a></li>
-<li>Check out <a href="https://projecteuler.net/">Project Euler</a> for some fun computational math problems.</li>
-</ul>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>There are references as old as ~100 AD</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-<li id="fn-2">
-<p>At least until we hit system boundaries for memory/number size/etc.</p>
-<a href="#fnref-2" class="footnote-backref">↩</a>
 </li>
 </ol>
 </div>]]></content:encoded>
