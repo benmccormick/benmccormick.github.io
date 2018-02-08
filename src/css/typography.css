@@ -32,6 +32,10 @@ h2, h3 {
     color: #57A3E8;
 }
 
+h4 {
+  font-size: 110%;
+}
+
 .explanation {
     padding: 10px;
     background: #eee;
