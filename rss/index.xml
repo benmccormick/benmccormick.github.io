@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Thu, 08 Feb 2018 02:39:29 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 08 Feb 2018 04:15:06 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,143 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[React Architecture Confessions]]></title>
+            <link>https://benmccormick.org/2018/02/07/react-confessions/</link>
+            <guid>https://benmccormick.org/2018/02/07/react-confessions/</guid>
+            <pubDate>Wed, 07 Feb 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>I’ve been reading through <a href="http://amzn.to/2mKoejo">Clean Architecture</a> by Robert “Uncle Bob” Martin this month<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>, and while it is great it has had the unpleasant effect of reminding me of all of the mistakes I’ve made over the past few years while learning and using <a href="https://reactjs.org/">React</a>.  I’ve absolutely loved using React at work, and it has made so many things easier.  But it’s a very unopinionated tool when it comes to structuring applications, and I made a lot of mistakes as I was using it to build some small side projects, and then transitioned a major production app to React from Backbone/Marionette.  These mistakes are all architectural; how I broke out components, communicated between components, and managed data and dependencies within components.</p>
+<p>I thought it would be useful to lay out the architecture mistakes I made as I was learning React, both as a solid reflection exercise for myself, and a warning to those of you who are just starting down the “component based UI” road.  </p>
+<h3>My Mistakes</h3>
+<h4>1. Including API calls directly in components</h4>
+<p><strong>What I did wrong</strong>: This is an embarrassing one, but essentially in several places I had components directly fetching data from the server in their constructors or mount calls, and using that information to determine what to render.</p>
+<p><strong>Why I did it</strong>: This was to some extent a lack of planning.  I had all my core “business objects” modeled in some sort of separate object oriented way (either as Backbone or MobX objects) and was able to coordinate syncing them to the server outside of the component layer.  But some data in the system hadn’t been modeled in that way, and when I encountered a need for those components (such as some types of system configurations) instead of stepping back and coming up with a design for modeling those configurations on the front end, I instead sometimes fell back to an ad-hoc API call.   This was also sometimes a result of lazily copying legacy code that had bad patterns while converting components to React, and other developers copying bad patterns when trying to figure out the new React code.</p>
+<p><strong>What I should have done instead</strong>: This could be a whole series of blog posts in itself, but essentially I should have been observing a few principles that would have set off alarm bells.</p>
+<ol>
+<li>Components in a system of any size shouldn’t know about the server. UI Components are about as “low level detail” as it gets in a UI architecture, and should be passed the data they need from a higher level portion of the system.</li>
+<li>If the front end code needs data from the server, it is worth the time to properly model that data in terms of whatever data layer the front end is using.</li>
+</ol>
+<h4>2. Breaking the “props as the component interface” abstraction</h4>
+<p><strong>What I did wrong</strong>: One of the best things about React is the clear interfaces components provide with their list of props.  If properly documented with PropTypes or a type system like Flow or Typescript, it’s easy to look at any React component and tell what data it expects to receive, and therefore how other code is expected to interact with it.  99% of the time, good React components act as a function of <code>(props, state) => UI</code>.  It is however, possible to get access to a component instance, and call functions on them.  There are  rare situations where this is the right way to do things, for instance <a href="https://stackoverflow.com/questions/28889826/react-set-focus-on-input-after-render">focusing an input</a>.  </p>
+<p>When I first started creating React components though, I overused that pattern, and accessed the interface directly to access or change its internal state.  I’d have components like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">SpecialInput</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      inputValue<span class="token punctuation">:</span> <span class="token string">'abc'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>inputValue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">setValue</span><span class="token punctuation">(</span>inputValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>inputValue<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>input
+      className<span class="token operator">=</span><span class="token string">'fancy-input'</span>
+      defaultValue<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>inputValue<span class="token punctuation">}</span>
+      onChange<span class="token operator">=</span><span class="token punctuation">{</span>inputValue <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>inputValue<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>that I would access from parent container like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">InputUser</span>
+
+  <span class="token function">methodThatGotCalledOnSomeEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">doSomethingWith</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>input<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>div<span class="token operator">></span>
+      <span class="token operator">&lt;</span>SpecialInput ref<span class="token operator">=</span><span class="token punctuation">{</span>el <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span>input <span class="token operator">=</span> el<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p><strong>Why I did it</strong>:  Early on I was using this pattern in a way that copied other frameworks I was familiar with.  A parent component would need the state of it’s child component, so it would maintain a reference to the child and query the child about the state.  When I converted Backbone components to React, sometimes I was basically just copy and pasting existing code, and making it work.  </p>
+<p><strong>What I should have done instead</strong>:  React doesn’t really encourage parents pulling state from their children.  Instead, if there is state that needs to be shared between components, it should be moved up to the parent component and then the state and an updater function should be passed down to the child component.  So my example above would look like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">SpecialInput</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>input
+      className<span class="token operator">=</span><span class="token string">'fancy-input'</span>
+      defaultValue<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>value<span class="token punctuation">}</span>
+      onChange<span class="token operator">=</span><span class="token punctuation">{</span>event <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">updateValue</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>that I would access from parent container like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">InputUser</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      inputValue<span class="token punctuation">:</span> <span class="token string">'abc'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">methodThatGotCalledOnSomeEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">doSomethingWith</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>inputValue<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>SpecialInput
+             value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>inputValue<span class="token punctuation">}</span>
+             updateValue<span class="token operator">=</span><span class="token punctuation">{</span>inputValue <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>inputValue<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+          <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+  <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<h4>3. Interacting with 3rd party components directly</h4>
+<p><strong>What I did wrong</strong>: My first year and a half using React, when I was using 3rd party UI components like <a href="https://github.com/facebookarchive/fixed-data-table">react-fixed-data-table</a> I would always use them directly in my components, and take full advantage of their APIs.</p>
+<p><strong>Why I did it</strong>: Because every React library in the world has documentation showing how to use its components directly in code for a variety of different use cases, and nobody ever tells you to put an abstraction around their code</p>
+<p><strong>What I should have done instead</strong>: I should have wrapped the 3rd party libraries in one or more wrapper components.  This has a few advantages:</p>
+<ol>
+<li>When we’re using a UI component like a table in a new place in our App, if I’ve created a wrapper component that has presets for most common settings, I only need to configure the things that are meaningful to this new use case in my app</li>
+<li>Targeted wrapper components like a <code>SortableTable</code> component or a <code>DropdownWithAutoComplete</code> component are easy to understand to a new reader of the code.  Instead of digging through configuration props, they can read the component name and understand the purpose of that component then focus on the data being passed to it</li>
+<li>When making updates to a library it is much easier to test that the changes are safe if the uses of the library are limited to a few focused components, rather than being spread across a whole application</li>
+<li>Similarly, if we need to switch to a new library, that is much easier with a limited footprint</li>
+<li>It can be easier to create reliable automatic tests using a wrapper component, since you have more control of things like how mocking works and when the component interface changes than you do for 3rd party code</li>
+</ol>
+<h4>4. Importing other parts of the system directly into display components</h4>
+<p><strong>What I did wrong</strong>: The main application I work on uses a messaging system to allow communication between different parts of the system.  It’s a legacy piece from when it existed as a Backbone application, and isn’t a very React-y way of doing things, but that isn’t really a problem.  This situation would be the same for a logging component or a data store.  What isn’t great is that when I need to use the messaging system, I always import it directly into the component file.</p>
+<p><strong>Why I did it</strong>: Direct imports are convenient, the messaging system is a core part of my system, and it seemed like a normal way of accessing it.  I also wasn’t aware of any better way to do it.</p>
+<p><strong>What I should have done instead</strong>:  The disadvantage of direct imports is that they’re harder to test.  If I had passed my messaging system as a prop to whatever component needed it, it would be much easier to test that it was called in the way I expected, without having to mock out the whole messaging system library.  I also could abstract away the whole power of the messaging system, and only provide the specific functionality needed by a component.  When I first began working on this system though, I didn’t know a practical way to do this.  The messenger system was often used by deeply nested components, and it seemed bad to pass it down a whole component tree.</p>
+<p>The answer is to use the <a href="https://www.robinwieruch.de/react-provider-pattern-context/">Provider pattern</a>.  The provider pattern is a way to use React’s context API to provide top level properties from a high level parent component to deeply nested child components.  It is a perfect pattern for providing important high level pieces of your application to low level components without tightly coupling them, while maintaining testability.<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup></p>
+<h4>5. Changing too many things at once</h4>
+<p><strong>What I did wrong</strong>: When my team began converting our application from Backbone to React, it was tempting to try and change many things at once.  All the React examples you see online are using Babel/ES6, Webpack, Redux, React Router and tons of other shiny but complicated things.  Trying to implement it all in an existing project<sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup> can be overwhelming and lead to <a href="http://mikehadlow.blogspot.com/2014/12/the-lava-layer-anti-pattern.html">lava layers</a>.  We actually started out with good discipline and converted files to use ES6 first, then added Webpack, then slowly started to convert UI components to React.  Unfortunately as we continued to convert React, we began replacing our Backbone data models with MobX, and began using CSS Modules in some places.  When our team size was reduced last year, we were left in a situation where the same functions were performed in different ways throughout the codebase.</p>
+<p><strong>Why I did it</strong>: It’s easy to see things that could be better in a web application and immediately want to fix them!  Especially if parts of that change seem easier than other changes you’re working on</p>
+<p><strong>What I should have done instead</strong>: I wrote about this <a href="https://benmccormick.org/2018/01/07/large-improvements-small-team/">at length</a> last month, but there really is no substitute for taking things one at a time.  While it’s tempting to think that it will be easier to convert to React if you’re using other “react-y” tools and libraries, your code will ultimately be more maintainable if it is consistent throughout an application.  The only reliable way to do that is to make changes completely before you start making other changes.  It isn’t sexy, and it will leave you at least a little ways off the bleeding edge, but it’s the way to build large, reliable systems and keep them up to date.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>At the time of writing this, it was super on sale on <a href="http://amzn.to/2mKoejo">Amazon</a></p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>Note that the Context API that the provider pattern is based on is changing, so I’d isolating out any provider code you write into a reusable component so that it is easy to update later</p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
+</li>
+<li id="fn-3">
+<p>Or even a new project for that matter!</p>
+<a href="#fnref-3" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: February 3rd]]></title>
             <link>https://benmccormick.org/2018/02/03/weekly-links-02-03-18/</link>
@@ -328,31 +465,6 @@ a <span class="token operator">=</span> EqualToEverything<span class="token punc
 <p><a href="https://egghead.io/courses/advanced-react-component-patterns">Advanced React Component Patterns | Egghead.io/Kent C. Dobbs</a> - This is a new Egghead course on React Component patterns, and is the best “advanced” React resource I’ve seen.  If you’re a React developer, you should either watch it this weekend while it is still free, or pay up to Egghead (it will be behind their subscriber wall starting Monday).  He also released a <a href="https://egghead.io/courses/the-beginner-s-guide-to-reactjs">beginner level React course</a> this week that will remain free.</p>
 <h3>Non-Tech</h3>
 <p><a href="https://stratechery.com/2017/the-pollyannish-assumption/">The Pollyannish Assumption | Stratechery</a> - Ben Thompson gives a pretty good breakdown here of the problems companies face moderating Internet scale content.  Human beings capable of both greater heights and darker depths than we like to think.  </p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: December 1st 2017]]></title>
-            <link>https://benmccormick.org/2017/12/01/weekly-links-12-01-17/</link>
-            <guid>https://benmccormick.org/2017/12/01/weekly-links-12-01-17/</guid>
-            <pubDate>Fri, 01 Dec 2017 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h3>JavaScript And The Web</h3>
-<p><a href="http://2ality.com/2017/04/flatmap.html">Functional pattern: flatMap | 2ality</a> - This post isn’t new, but <code>flatmap</code> and <code>flatten</code> hit stage 3 in the TC39 process for adding new features to JavaScript this week<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  So this is a great time to read up on them.</p>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Stage 3 for Array.prototype.flatMap and Array.prototype.flatten! Thank you so much <a href="https://twitter.com/jspedant?ref_src=twsrc%5Etfw">@jspedant</a> for driving this!<a href="https://t.co/9kLCKJcZEv">https://t.co/9kLCKJcZEv</a></p>&mdash; Brian Terlson (@bterlson) <a href="https://twitter.com/bterlson/status/935582351999901696?ref_src=twsrc%5Etfw">November 28, 2017</a></blockquote>
-<p><a href="http://bholley.net/blog/2017/stylo.html">Boiling the Ocean, Incrementally - How Stylo Brought Rust and Servo to Firefox | Bobby Holley </a> - This is a great review of the technical achievement that Firefox 57 represents, and also gives some insight into where Mozilla is going from here. I’ve switched back to Firefox over the past 2 weeks and am pretty happy with it so far.</p>
-<h3>Programming Tools and Practices</h3>
-<p><a href="https://aws.amazon.com/blogs/aws/introducing-amazon-appsync/">Introducing AWS AppSync | AWS News Blog</a> - AWS announced a bunch of new services this week, but I wanted to highlight AppSync, an Amazon GraphQL service.  <a href="http://graphql.org/">GraphQL</a> seems to be gaining more and more momentum, and if you don’t know anything about it I’d suggest checking it out.  I’ve gotten to play with it since rewriting my blog to <a href="https://www.gatsbyjs.org/">Gatsby</a> 1.0, and it is a nice way to work with data.</p>
-<h3>Non-Tech</h3>
-<p><a href="https://www.seattletimes.com/business/amazon/this-city-hall-brought-to-you-by-amazon/">This City Hall, brought to you by Amazon | The Seattle Times</a> - I’m amazed by the incentives cities have been willing to offer Amazon to locate a headquarters in their city.  I think the outrage in this column is a bit over the top, but it is a startling insight into the power large tech companies have over the cities where they’re located.</p>
-<p><a href="http://amzn.to/2i78Knm">Doomsday Clock - #1</a> - If you have any interest in comic books DC’s <a href="http://amzn.to/2i78Knm">Watchmen</a> sequel has begun.  It’s a story that crosses over with the mainstream DC Universe, and appears to be a rebuttal of the cynical vantage point of the original work.  This is the first of 12 issues over the next year and it was a strong (but slow start).  If you’re interested in Watchmen but don’t read a lot of comics, this is the continuation of a story that began with <a href="http://amzn.to/2jD0Y5c">a big DC special</a> and continued in a special <a href="http://amzn.to/2i5zSDn">Batman/Flash crossover</a></p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>See <a href="https://benmccormick.org/2017/07/10/how-to-follow-the-javascript-roadmap/">this post</a> for more info about staying informed about features that are being added to JavaScript.</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
