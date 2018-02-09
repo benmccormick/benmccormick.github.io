@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-02-08T04:15:06Z</updated>
+    <updated>2018-02-09T04:16:24Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,25 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Weekly Links: February 9th]]></title>
+        <id>https://benmccormick.org/2018/02/09/weekly-links-02-09-18/</id>
+        <link href="https://benmccormick.org/2018/02/09/weekly-links-02-09-18/">
+        </link>
+        <updated>2018-02-09T00:00:00Z</updated>
+        <content type="html"><![CDATA[<h3>JavaScript And The Web</h3>
+<p><a href="http://codemirror.net/">CodeMirror</a> - CodeMirror is a JavaScript library for building text/code editors in the browser.  It isn’t new, but I’ve had the pleasure of building something moderately complex with it over the past week, and thought it deserved some promotion.  It makes building an online editor that does shiny “text editor” things like linting, find and replace, syntax highlighting and autocomplete a very manageable endeavor.  It’s highly extendable and is a nice example of “easy things should be easy and hard things should be possible”, with simple addons for basic stuff, and less simple extension points for custom work.  If you have need of an online text editor, make sure to check it out!</p>
+<p><a href="http://www.tomanthony.co.uk/blog/googlebot-javascript-random/">Googlebot’s Javascript random() function is deterministic - Tom Anthony</a> - A really interesting peek at a small part of how Googlebot actually functions when rendering and indexing the web.</p>
+<h3>Non-Tech</h3>
+<p><a href="https://medium.com/@pamelafox/sleep-strategies-for-a-racing-mind-d717e1ab890">Sleep strategies for a racing mind – Pamela Fox</a> - I”ve never had the easiest time falling asleep at night, and it’s taken me a long time to figure out the best ways to manage that.  This article lays out a bunch of strategies for coping, many of which are the same things I’ve had to learn the hard way.  If you struggle to sleep, definitely worth a read.</p>
+<p>Finally I’ll leave you with my personal pick for “tweet of the week”</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If at first you don’t succeed... <a href="https://twitter.com/hashtag/science?src=hash&amp;ref_src=twsrc%5Etfw">#science</a> <a href="https://t.co/2TGojKDcr3">pic.twitter.com/2TGojKDcr3</a></p>&mdash; TwistedDoodles (@twisteddoodles) <a href="https://twitter.com/twisteddoodles/status/960801583012380672?ref_src=twsrc%5Etfw">February 6, 2018</a></blockquote>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[React Architecture Confessions]]></title>
         <id>https://benmccormick.org/2018/02/07/react-confessions/</id>
@@ -498,24 +517,6 @@ a <span class="token operator">=</span> EqualToEverything<span class="token punc
 <h3>Programming Tools and Practices</h3>
 <p><a href="http://blog.atom.io/2017/12/12/atom-1-23.html">Atom 1.23</a> and <a href="https://code.visualstudio.com/updates/v1_19">Visual Studio Code 1.19</a> were released this week, making this a big week for Electron based text editors.  If you use either of them, you’ll get to enjoy a nice set of performance improvements when you upgrade.</p>
 <p><a href="https://blog.bear-writer.com/bear-1-4-the-tags-edition-298d6fdc55dd">Bear 1.4</a> - Speaking of software that I love to use getting updates, I’ve been using Bear as my primary notes app for the last year, and it is a delight.  Getting autocomplete on tags this week solved it’s last real annoyance for me, and I would definitely recommend it to anyone interested in a simple notes app.  It’s more powerful than Apple’s notes or text files, but cleaner and more elegant than <a href="https://evernote.com/">Evernote</a>.  And even the paid level is very affordable.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: December 8th 2017]]></title>
-        <id>https://benmccormick.org/2017/12/08/weekly-links-12-08-17/</id>
-        <link href="https://benmccormick.org/2017/12/08/weekly-links-12-08-17/">
-        </link>
-        <updated>2017-12-08T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>JavaScript And The Web</h3>
-<p><a href="https://reactjs.org/blog/2017/12/07/introducing-the-react-rfc-process.html">Introducing the React RFC Process | React Blog</a> - React is now using a public process for proposing and designing new features, starting with a new context API.</p>
-<p><a href="https://blog.neufund.org/why-we-have-banned-default-exports-and-you-should-do-the-same-d51fdc2cf2ad">Why we have banned default exports in Javascript and you should do the same | Krzysztof Kaczor</a> - This lines up pretty well with my own experience when it comes to native JS modules.  The named exports are pretty much always better than the default ones.</p>
-<p><a href="https://egghead.io/courses/advanced-react-component-patterns">Advanced React Component Patterns | Egghead.io/Kent C. Dobbs</a> - This is a new Egghead course on React Component patterns, and is the best “advanced” React resource I’ve seen.  If you’re a React developer, you should either watch it this weekend while it is still free, or pay up to Egghead (it will be behind their subscriber wall starting Monday).  He also released a <a href="https://egghead.io/courses/the-beginner-s-guide-to-reactjs">beginner level React course</a> this week that will remain free.</p>
-<h3>Non-Tech</h3>
-<p><a href="https://stratechery.com/2017/the-pollyannish-assumption/">The Pollyannish Assumption | Stratechery</a> - Ben Thompson gives a pretty good breakdown here of the problems companies face moderating Internet scale content.  Human beings capable of both greater heights and darker depths than we like to think.  </p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
