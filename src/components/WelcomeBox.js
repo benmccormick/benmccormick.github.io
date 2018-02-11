@@ -7,6 +7,7 @@ let Wrapper = glamorous.div({
   display: 'grid',
   gridTemplateColumns: '80% 20%',
   gridColumnGap: '1rem',
+  marginBottom: '0.5rem',
 });
 
 let ImageContainer = glamorous.div({

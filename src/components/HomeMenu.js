@@ -23,6 +23,11 @@ const Section = glamorous.div({
   margin: '1.5rem 0',
 });
 
+const Spacer = glamorous.div({
+  width: '100%',
+  height: '1.5rem',
+});
+
 let LayoutContainer = glamorous.div({
   display: 'grid',
   gridTemplateColumns: '66% 34%',
@@ -85,6 +90,7 @@ export class HomeMenu extends React.Component {
             See Past Weekly Links »
           </Link> */}
         </Section>
+        <Spacer />
         <h1> More From The Blog </h1>
         <Section>
           <div>
