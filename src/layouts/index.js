@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Container } from 'react-responsive-grid';
 import { rhythm } from '../utils/typography';
@@ -24,8 +25,8 @@ class Template extends React.Component {
 }
 
 Template.propTypes = {
-  children: React.PropTypes.any,
-  route: React.PropTypes.object,
+  children: PropTypes.any,
+  route: PropTypes.object,
 };
 
 export default Template;

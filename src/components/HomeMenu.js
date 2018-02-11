@@ -72,9 +72,6 @@ export class HomeMenu extends React.Component {
                 </Bold>
               </span>}
           />
-          {/* <Link className={`${bottomLink}`} to={'/archive/'}>
-            See More Articles »
-          </Link> */}
         </Section>
         <Section>
           <LinkBox
@@ -86,9 +83,6 @@ export class HomeMenu extends React.Component {
                 </Bold>
               </span>}
           />
-          {/* <Link style={{}} className={`${bottomLink}`} to={'/links-archive/'}>
-            See Past Weekly Links »
-          </Link> */}
         </Section>
         <Spacer />
         <h1> More From The Blog </h1>

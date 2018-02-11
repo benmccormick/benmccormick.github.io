@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { HeadContent } from '../components/HeadContent';
 import { getWeeklyLinks } from '../utils/page-helpers';
@@ -29,7 +30,7 @@ class LinksArchive extends React.Component {
 }
 
 LinksArchive.propTypes = {
-  route: React.PropTypes.object,
+  route: PropTypes.object,
 };
 
 export default LinksArchive;

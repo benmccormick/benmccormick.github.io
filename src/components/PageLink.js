@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Link from 'gatsby-link';
 import { rhythm } from '../utils/typography';
@@ -104,13 +105,13 @@ class PageLink extends React.Component {
 }
 
 PageLink.propTypes = {
-  page: React.PropTypes.object.isRequired,
-  showDate: React.PropTypes.bool.isRequired,
-  showCategory: React.PropTypes.bool.isRequired,
-  showDescription: React.PropTypes.bool.isRequired,
-  showPopular: React.PropTypes.bool.isRequired,
-  showTrending: React.PropTypes.bool.isRequired,
-  titleFn: React.PropTypes.func.isRequired,
+  page: PropTypes.object.isRequired,
+  showDate: PropTypes.bool.isRequired,
+  showCategory: PropTypes.bool.isRequired,
+  showDescription: PropTypes.bool.isRequired,
+  showPopular: PropTypes.bool.isRequired,
+  showTrending: PropTypes.bool.isRequired,
+  titleFn: PropTypes.func.isRequired,
 };
 
 PageLink.defaultProps = {

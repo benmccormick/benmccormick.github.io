@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import PageLink from './PageLink';
 import glamorous from 'glamorous';
@@ -55,16 +56,16 @@ class LinkList extends React.Component {
 }
 
 LinkList.propTypes = {
-  pages: React.PropTypes.array.isRequired,
-  title: React.PropTypes.string,
-  description: React.PropTypes.node,
-  showCategory: React.PropTypes.bool.isRequired,
-  showDate: React.PropTypes.bool.isRequired,
-  showPopular: React.PropTypes.bool.isRequired,
-  showTrending: React.PropTypes.bool.isRequired,
-  showDescriptions: React.PropTypes.bool.isRequired,
-  className: React.PropTypes.string.isRequired,
-  titleFn: React.PropTypes.func.isRequired,
+  pages: PropTypes.array.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.node,
+  showCategory: PropTypes.bool.isRequired,
+  showDate: PropTypes.bool.isRequired,
+  showPopular: PropTypes.bool.isRequired,
+  showTrending: PropTypes.bool.isRequired,
+  showDescriptions: PropTypes.bool.isRequired,
+  className: PropTypes.any.isRequired,
+  titleFn: PropTypes.func.isRequired,
 };
 
 LinkList.defaultProps = {

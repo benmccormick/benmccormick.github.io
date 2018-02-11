@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Link from 'gatsby-link';
 import find from 'lodash/find';
@@ -164,7 +165,7 @@ class Subscribe extends React.Component {
 }
 
 Subscribe.propTypes = {
-  post: React.PropTypes.object.isRequired,
+  post: PropTypes.object.isRequired,
 };
 
 export default Subscribe;

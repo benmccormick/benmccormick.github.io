@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Link from 'gatsby-link';
 import '../css/header.css';
@@ -78,5 +79,5 @@ export class Header extends React.Component {
 }
 
 Header.propTypes = {
-  blogTitle: React.PropTypes.string.isRequired,
+  blogTitle: PropTypes.string.isRequired,
 };

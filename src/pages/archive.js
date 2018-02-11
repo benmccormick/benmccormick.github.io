@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { HeadContent } from '../components/HeadContent';
 import { getSortedPosts } from '../utils/page-helpers';
@@ -48,7 +49,7 @@ class CategoryArchive extends React.Component {
 }
 
 CategoryArchive.propTypes = {
-  route: React.PropTypes.object,
+  route: PropTypes.object,
 };
 
 export default CategoryArchive;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import CategoryArchive from '../components/CategoryArchive';
 import { getSortedPosts } from '../utils/page-helpers';
@@ -11,7 +12,7 @@ const CategoryPage = ({ data, pathContext }) => {
 };
 
 CategoryPage.propTypes = {
-  route: React.PropTypes.object,
+  route: PropTypes.object,
 };
 
 export default CategoryPage;

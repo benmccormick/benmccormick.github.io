@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import { HeadContent } from '../components/HeadContent';
@@ -38,7 +39,7 @@ class BlogIndex extends React.Component {
 }
 
 BlogIndex.propTypes = {
-  route: React.PropTypes.object,
+  route: PropTypes.object,
 };
 
 export default BlogIndex;

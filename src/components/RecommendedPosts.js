@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import LinkList from './LinkList';
 
@@ -19,7 +20,7 @@ class RecommendedPosts extends React.Component {
 }
 
 RecommendedPosts.propTypes = {
-  pages: React.PropTypes.array,
+  pages: PropTypes.array,
 };
 
 export default RecommendedPosts;

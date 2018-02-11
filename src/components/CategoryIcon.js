@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import beaker from '../svg/beaker.svgi';
 import book from '../svg/book.svgi';
@@ -52,8 +53,8 @@ class CategoryIcon extends React.Component {
 }
 
 CategoryIcon.propTypes = {
-  category: React.PropTypes.string.isRequired,
-  includeText: React.PropTypes.bool.isRequired,
+  category: PropTypes.string.isRequired,
+  includeText: PropTypes.bool.isRequired,
 };
 
 CategoryIcon.defaultProps = {

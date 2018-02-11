@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Link from 'gatsby-link';
 import get from 'lodash/get';
@@ -87,9 +88,9 @@ class LinkBox extends React.Component {
 }
 
 LinkBox.propTypes = {
-  page: React.PropTypes.object.isRequired,
-  showDate: React.PropTypes.bool.isRequired,
-  titleFn: React.PropTypes.func.isRequired,
+  page: PropTypes.object.isRequired,
+  showDate: PropTypes.bool.isRequired,
+  titleFn: PropTypes.func.isRequired,
 };
 
 LinkBox.defaultProps = {

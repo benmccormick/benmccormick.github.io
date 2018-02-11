@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import InlineSVG from 'svg-inline-react';
 import glamorous from 'glamorous';
@@ -24,8 +25,8 @@ const Icon = ({ icon, color }) => {
   );
 };
 Icon.propTypes = {
-  color: React.PropTypes.string.isRequired,
-  icon: React.PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
 };
 
 export default Icon;

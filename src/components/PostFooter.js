@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import RecommendedPosts from './RecommendedPosts';
 import '../css/subscribe.css';
@@ -11,8 +12,8 @@ class PostFooter extends React.Component {
 }
 
 PostFooter.propTypes = {
-  post: React.PropTypes.object.isRequired,
-  recommendedPosts: React.PropTypes.array,
+  post: PropTypes.object.isRequired,
+  recommendedPosts: PropTypes.array,
 };
 
 export default PostFooter;
