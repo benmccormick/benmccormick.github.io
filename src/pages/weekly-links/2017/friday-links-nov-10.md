@@ -7,6 +7,7 @@ description: "React, Social Media, and Comments"
 keywords: "react social media comments economist"
 category: "opinion"
 key: "friday-links-11-10-17"
+topics: ['React']
 readNext: "friday-links-11-10-17,ten-things-js,adequate-talk"
 ---
 

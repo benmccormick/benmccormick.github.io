@@ -7,6 +7,7 @@ category: "software-productivity"
 key: "stability-decline"
 description: "What is the difference between stable and declining software?"
 readNext: "backbone-eco,backbone-devs-react,bb-radio"
+topics: ['Backbone']
 pageViews: "782"
 last30pageViews: "4"
 ---

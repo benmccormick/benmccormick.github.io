@@ -7,6 +7,7 @@ description: "How plugins fit into a Vim workflow"
 keywords: "vim, plugins, vundle, nerdtree, ack, ctrlp"
 category: "tools"
 readNext: "learning-vim,vim-files,vim-language"
+topics: ['Vim', 'Text Editors']
 pageViews: "84406"
 last30pageViews: "530"
 ---

@@ -7,6 +7,7 @@ category: "platform"
 description: "Explaining Custom Elements and the Web Components spec"
 key: "custom-elements-example"
 readNext: "component-based-dev"
+topics: ['Web Components']
 pageViews: "2961"
 last30pageViews: "103"
 ---

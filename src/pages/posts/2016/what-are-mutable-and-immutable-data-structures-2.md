@@ -7,6 +7,7 @@ description: "A quick look at the difference between mutable and immutable data"
 keywords: "immutable mutable JavaScript Immutable.js"
 category: "software-productivity"
 readNext: "lodash-underscore,backbone-devs-react,orthogonality-css-js"
+topics: []
 pageViews: "1456"
 last30pageViews: "296"
 ---

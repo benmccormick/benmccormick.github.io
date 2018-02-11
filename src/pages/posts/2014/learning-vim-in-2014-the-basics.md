@@ -7,6 +7,7 @@ description: "The basics of learning Vim"
 keywords: "vim, basics, beginner, tutorial"
 category: "tools"
 readNext: "learning-vim,vim-files,vim-language"
+topics: ['Vim', 'Text Editors']
 pageViews: "20805"
 last30pageViews: "211"
 ---

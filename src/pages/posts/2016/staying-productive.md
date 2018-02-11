@@ -6,6 +6,7 @@ path: "/2016/01/25/staying-productive"
 category: "software-productivity"
 description: "Thinking through the environmental factors that lead to productivity"
 key: "staying-productive"
+topics: ['Career Advice']
 pageViews: "1017"
 last30pageViews: "5"
 ---

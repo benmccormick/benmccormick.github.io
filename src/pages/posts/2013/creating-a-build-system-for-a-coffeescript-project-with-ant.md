@@ -4,6 +4,7 @@ date: "2013-03-23T16:23:00+00:00"
 layout: "post"
 path: "/2013/03/23/creating-a-build-system-for-a-coffeescript-project-with-ant"
 description: "Using Ant to build my coffeescript projects"
+topics: ['Command Line', 'Code Quality']
 category: "tools"
 pageViews: "421"
 last30pageViews: "8"

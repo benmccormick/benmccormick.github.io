@@ -7,6 +7,7 @@ description: "How to keep your Views DRY using Behaviors in your Marionette app"
 keywords: "Marionette.js behaviors JavaScript"
 category: "frameworks"
 readNext: "mn-series,backbone-devs-react,bb-radio"
+topics: ['Backbone', 'Marionette']
 pageViews: "9684"
 last30pageViews: "146"
 ---

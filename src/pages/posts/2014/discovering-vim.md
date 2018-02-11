@@ -6,6 +6,7 @@ path: "/2014/06/02/discovering-vim"
 category: "tools"
 description: "The benefits I've found learning Vim"
 readNext: "learning-vim,interesting-atom,vim-files"
+topics: ['Vim', 'Text Editors']
 pageViews: "956"
 last30pageViews: "10"
 ---

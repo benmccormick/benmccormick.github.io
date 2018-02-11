@@ -8,6 +8,7 @@ keywords: "jest matchers"
 category: "javascript"
 key: "jest-matchers-1"
 readNext: "jest-matchers-2,ten-things-js,jest-git"
+topics: ['Jest', 'Testing']
 pageViews: "0"
 last30pageViews: "0"
 ---

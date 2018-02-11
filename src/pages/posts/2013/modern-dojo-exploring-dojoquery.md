@@ -5,6 +5,7 @@ layout: "post"
 path: "/2013/11/13/modern-dojo-exploring-dojoquery"
 description: "A dive into the query module"
 category: "frameworks"
+topics: ['Dojo']
 pageViews: "128"
 last30pageViews: "0"
 ---

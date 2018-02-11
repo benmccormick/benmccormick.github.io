@@ -7,6 +7,7 @@ category: "platform"
 key: "component-based-dev"
 description: "Exploring the Web Components spec, and the future of web architecture"
 readNext: "custom-elements-example"
+topics: ['Web Components']
 pageViews: "8824"
 last30pageViews: "50"
 ---

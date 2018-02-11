@@ -9,6 +9,7 @@ category: "tools"
 key: "vim-language"
 readNext: "learning-vim,vim-files,vim-art"
 pageViews: "36087"
+topics: ['Vim', 'Text Editors']
 last30pageViews: "479"
 ---
 

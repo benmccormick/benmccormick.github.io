@@ -7,6 +7,7 @@ description: "How do you keep improving things with limited resources?"
 keywords: "productivity refactoring efficiency team"
 category: "software-productivity"
 key: "large-improvements-small-team"
+topics: ['Software Teams', 'Code Quality']
 readNext: "ten-things-js,favorite-interview,ll-context"
 ---
 

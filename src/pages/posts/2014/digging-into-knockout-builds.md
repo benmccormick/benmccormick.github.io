@@ -6,6 +6,7 @@ path: "/2014/01/06/digging-into-knockout-builds"
 category: "frameworks"
 description: "An in depth look at how KnockoutJS is organized"
 readNext: "revertible-observables,effective-js,productive-js-dev"
+topics: ['Knockout']
 pageViews: "471"
 last30pageViews: "9"
 ---

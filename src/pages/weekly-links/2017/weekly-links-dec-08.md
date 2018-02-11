@@ -6,6 +6,7 @@ path: "/2017/12/08/weekly-links-12-08-17/"
 description: "React RFCs, Advanced React Componetns, and Moderating Internet scale content"
 keywords: "react stratechery exports"
 category: "opinion"
+topics: ['React']
 key: "weekly-links-12-08-17"
 ---
 

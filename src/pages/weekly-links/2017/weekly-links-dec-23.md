@@ -6,6 +6,7 @@ path: "/2017/12/23/weekly-links-12-23-17/"
 description: "Math in JS, Google vs Apple Maps, and cheating at Settlers"
 keywords: "primes jest gatsby google maps settlers"
 category: "opinion"
+topics: ['Math', 'Jest', 'Gatsby']
 key: "weekly-links-12-23-17"
 ---
 

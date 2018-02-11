@@ -7,6 +7,7 @@ description: "Tips for making your talk both useful and rewarding"
 keywords: "conference talk speaking tech"
 category: "opinion"
 key: "adequate-talk"
+topics: ['Conferences', 'Speaking', 'Career Advice']
 readNext: "ten-things-js,favorite-interview,jest-matchers-1"
 ---
 

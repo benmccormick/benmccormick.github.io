@@ -8,6 +8,7 @@ keywords: "Marionette JavaScript marionette-service services Backbone Radio"
 category: "frameworks"
 readNext: "mn-series,backbone-devs-react,bb-radio"
 pageViews: "1605"
+topics: ['Backbone', 'Marionette', 'JavaScript']
 last30pageViews: "36"
 ---
 

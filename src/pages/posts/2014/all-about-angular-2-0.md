@@ -5,6 +5,7 @@ layout: "post"
 path: "/2014/11/08/all-about-angular-2-0"
 category: "frameworks"
 description: "An early look at the next version of Angular"
+topics: ['Angular']
 pageViews: "765"
 last30pageViews: "2"
 ---

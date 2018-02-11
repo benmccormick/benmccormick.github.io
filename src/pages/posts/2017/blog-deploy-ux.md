@@ -7,6 +7,7 @@ description: "Travis CI and Inquirer.js make my Gatsby deploys easier"
 keywords: "gatsby travis inquirer.js ci cli"
 category: "tools"
 key: "blog-deploy-ux"
+topics: ['Gatsby']
 readNext: "rss-atom-json-feeds,ten-things-js,friday-links-11-03-17"
 pageViews: '0'
 ---

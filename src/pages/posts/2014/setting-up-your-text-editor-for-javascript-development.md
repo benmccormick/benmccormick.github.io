@@ -7,6 +7,7 @@ description: "A look at some tools and plugins that help create a productive Jav
 category: "tools"
 readNext: "learning-vim,interesting-atom,vim-files"
 pageViews: "9831"
+topics: ['Text Editors', 'Vim', 'Atom', 'JavaScript']
 last30pageViews: "152"
 ---
 

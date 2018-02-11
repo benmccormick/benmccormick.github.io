@@ -7,6 +7,7 @@ description: "How to use copy and paste in Vim"
 keywords: "vim, copy, paste, registers, yank, delete"
 category: "tools"
 readNext: "learning-vim,vim-files,vim-language"
+topics: ['Vim', 'Text Editors']
 pageViews: "1675"
 last30pageViews: "83"
 ---

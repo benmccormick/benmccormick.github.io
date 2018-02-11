@@ -7,6 +7,7 @@ description: "A set of tips for using Ack, a command line search tool"
 keywords: "ack, command line, grep, ag"
 category: "tools"
 readNext: "learning-vim,look-at-ack,interesting-atom"
+topics: ['Ack', 'Command Line']
 pageViews: "572"
 last30pageViews: "14"
 ---

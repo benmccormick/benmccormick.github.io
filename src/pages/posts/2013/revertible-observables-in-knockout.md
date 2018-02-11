@@ -6,6 +6,7 @@ path: "/2013/05/07/revertible-observables-in-knockout"
 description: "Building an observable with simple undo functionality"
 category: "frameworks"
 key: "revertible-observables"
+topics: ['Knockout']
 pageViews: "3131"
 last30pageViews: "44"
 ---

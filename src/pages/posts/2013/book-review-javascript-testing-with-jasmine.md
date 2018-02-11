@@ -5,6 +5,7 @@ layout: "post"
 path: "/2013/04/23/book-review-javascript-testing-with-jasmine"
 description: "A book review of JavaScript Testing with Jasmine by Evan Hahn"
 keywords: "JavaScript Book Review JavaScript Testing with Jasmine"
+topics: ['Book Review', 'Jasmine', 'Testing']
 category: "reviews"
 pageViews: "102"
 last30pageViews: "0"

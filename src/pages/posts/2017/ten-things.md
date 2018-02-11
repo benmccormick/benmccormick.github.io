@@ -6,6 +6,7 @@ path: "/2017/07/19/ten-things-javascript/"
 description: "Some of the important things to pick up in the JS world"
 keywords: "javascript reddit"
 category: "javascript"
+topics: ['JavaScript', 'Career Advice']
 key: "ten-things-js"
 readNext: "following-js-roadmap,jest-git,orthogonality-css-js"
 ---

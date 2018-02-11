@@ -1,10 +1,11 @@
 const { buildFeeds } = require('./server-src/feeds');
 const {
   createCategoryArchives,
+  createTopicArchives,
   getPages,
   generateSiteMap,
   addSlugToPage,
-  createBlogPosts
+  createBlogPosts,
 } = require('./server-src/page-processing');
 const { copyCNAME, copyManifest } = require('./server-src/files');
 
@@ -41,5 +42,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
   let blogPostPromise = createBlogPosts(graphql, createPage);
   let categoryArchivePromise = createCategoryArchives(graphql, createPage);
-  return Promise.all([blogPostPromise, categoryArchivePromise]);
+  let topicArchivePromise = createTopicArchives(graphql, createPage);
+  return Promise.all([
+    blogPostPromise,
+    categoryArchivePromise,
+    topicArchivePromise,
+  ]);
 };

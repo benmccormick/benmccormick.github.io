@@ -6,6 +6,7 @@ path: "/2013/11/25/a-look-at-ack"
 category: "tools"
 key: "look-at-ack"
 description: "An introduction to using Ack for file searching"
+topics: ['Ack', 'Command Line']
 pageViews: "5465"
 last30pageViews: "38"
 ---

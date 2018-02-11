@@ -7,6 +7,7 @@ description: "An examination of the various styles for defining React components
 keywords: "JavaScript, React, Component, createClass, class, functional component"
 category: "frameworks"
 key: "react-component-styles"
+topics: ['React', 'JavaScript']
 readNext: "jest-first,backbone-devs-react,callbacks-to-promises"
 pageViews: "1766"
 last30pageViews: "21"

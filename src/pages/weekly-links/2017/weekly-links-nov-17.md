@@ -6,6 +6,7 @@ path: "/2017/11/17/weekly-links-11-17-17/"
 description: "Code collaboration, Currying, and Tech/Politics"
 keywords: ""
 category: "opinion"
+topics: ['Redux']
 key: "weekly-links-11-17-17"
 ---
 

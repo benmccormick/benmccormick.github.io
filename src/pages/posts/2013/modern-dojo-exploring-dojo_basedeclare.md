@@ -5,6 +5,7 @@ layout: "post"
 path: "/2013/11/14/modern-dojo-exploring-dojo_basedeclare"
 description: "A dive into the _base/declare module"
 category: "frameworks"
+topics: ['Dojo']
 pageViews: "557"
 last30pageViews: "8"
 ---

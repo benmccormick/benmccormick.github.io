@@ -82,3 +82,9 @@ export const getWeeklyLinks = (pages, count = Infinity) =>
       .map(p => ({ data: p.node.frontmatter, path: p.node.fields.slug })),
     count
   );
+
+export const getTopicLinks = (topics, count = Infinity) =>
+  take(
+    topics.map(topic => ({ data: { title: topic }, path: `topics/${topic}` })),
+    count
+  );

@@ -8,6 +8,7 @@ description: "A quick tip for clean functional syntax in ES6"
 key: "clean-higher-order-functions"
 readNext: "ecma-explanation,callbacks-to-promises,what-are-hocs"
 pageViews: "4080"
+topics: ['JavaScript', 'ECMAScript', 'Code Quality']
 last30pageViews: "221"
 ---
 

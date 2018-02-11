@@ -6,6 +6,7 @@ path: "/2018/01/19/weekly-links-01-19-18/"
 description: "JavaScript Framework lifecycles, WebAssembly, and Social Media "
 keywords: "webpack webassembly stack overflow dogecoin"
 category: "opinion"
+topics: ['WebAssembly', 'Webpack']
 key: "weekly-links-01-19-18"
 ---
 

@@ -6,6 +6,7 @@ path: "/2015/06/14/mozilla-the-state-of-web-components"
 description: "A look at Mozilla's writeup on the current status of the web components spec"
 category: "platform"
 readNext: "component-based-dev,custom-elements-example"
+topics: ['Web Components']
 pageViews: "290"
 last30pageViews: "4"
 ---

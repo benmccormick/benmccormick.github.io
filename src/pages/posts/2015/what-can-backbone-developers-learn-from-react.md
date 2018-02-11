@@ -8,6 +8,7 @@ keywords: "Backbone React JavaScript frameworks"
 category: "frameworks"
 key: "backbone-devs-react"
 readNext: "mobx-first,mn-series,backbone-eco"
+topics: ['Backbone', 'React', 'Marionette']
 pageViews: "25690"
 last30pageViews: "225"
 ---

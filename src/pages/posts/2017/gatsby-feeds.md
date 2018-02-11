@@ -8,6 +8,7 @@ keywords: "rss atom json feed gatsby"
 category: "meta"
 key: "rss-atom-json-feeds"
 readNext: "new-look-2016,atom-tips,mariana"
+topics: ['Gatsby']
 pageViews: "0"
 last30pageViews: "0"
 ---

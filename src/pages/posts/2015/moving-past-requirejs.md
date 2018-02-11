@@ -7,6 +7,7 @@ category: "frameworks"
 dontfeature: "true"
 description: "A look at the problems with using requireJS in todays JavaScript world"
 pageViews: "38835"
+topics: ['RequireJS', 'Webpack']
 last30pageViews: "1263"
 ---
 

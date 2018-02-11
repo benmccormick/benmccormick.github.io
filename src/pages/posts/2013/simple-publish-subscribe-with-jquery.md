@@ -6,6 +6,7 @@ path: "/2013/02/13/simple-publish-subscribe-with-jquery"
 description: "Building a basic pub-sub wrapper around jQuery"
 category: "frameworks"
 key: "jquery-pub-sub"
+topics: ['jQuery']
 pageViews: "8137"
 last30pageViews: "113"
 ---

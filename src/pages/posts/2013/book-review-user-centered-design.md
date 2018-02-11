@@ -5,6 +5,7 @@ layout: "post"
 path: "/2013/08/12/book-review-user-centered-design"
 description: "A book review of User-Centered Design by Travis Lowdermilk"
 keywords: "Book Review User-Centered Design"
+topics: ['Book Review', 'Design']
 category: "reviews"
 pageViews: "25"
 last30pageViews: "0"

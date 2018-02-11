@@ -6,6 +6,7 @@ path: "/2012/12/30/sublime-text-for-javascript-keyboard-shortcuts"
 category: "tools"
 description: "Helpful keyboard shortcuts for JS developers"
 pageViews: "14295"
+topics: ['Text Editors', 'Sublime Text']
 last30pageViews: "141"
 ---
 

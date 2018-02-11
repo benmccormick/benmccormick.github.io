@@ -7,6 +7,7 @@ description: "A dive into the structure of the jQuery library"
 category: "frameworks"
 readNext: "underscore-lodash,mn-series,jquery-pub-sub"
 pageViews: "18933"
+topics: ['jQuery']
 last30pageViews: "435"
 ---
 

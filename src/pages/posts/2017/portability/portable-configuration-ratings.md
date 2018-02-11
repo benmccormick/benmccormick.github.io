@@ -8,6 +8,7 @@ keywords: "configuration portability atom Sublime Text MacOS Vim"
 category: "tools"
 readNext: "interesting-atom,learning-vim,vim-files"
 key: "config-portability"
+topics: []
 pageViews: "2"
 last30pageViews: "2"
 ---

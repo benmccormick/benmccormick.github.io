@@ -8,6 +8,7 @@ description: "How to convert a callback driven API to a Promise-based one"
 key: "callbacks-to-promises"
 readNext: "ecma-explanation,clean-higher-order-functions,backbone-devs-react"
 pageViews: "24241"
+topics: ['JavaScript', 'ECMAScript', 'Code Quality']
 last30pageViews: "2360"
 ---
 

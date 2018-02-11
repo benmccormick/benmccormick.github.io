@@ -7,6 +7,7 @@ description: "Getting the most out of Atom"
 keywords: "atom tips vim editor fuzzy finder CSS"
 category: "tools"
 key: "atom-tips"
+topics: ['Atom', 'Text Editors']
 readNext: "interesting-atom,mariana,orthogonality-css-js"
 ---
 

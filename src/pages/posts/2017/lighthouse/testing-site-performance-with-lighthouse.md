@@ -7,6 +7,7 @@ description: "Profiling and improving my site with Google's Lighthouse tool"
 keywords: "Lighthouse Performance Progressive Web App"
 category: "tools"
 readNext: "ll-context,jest-first,new-look-2016"
+topics: ['Performance', 'PWA']
 pageViews: "301"
 last30pageViews: "66"
 ---

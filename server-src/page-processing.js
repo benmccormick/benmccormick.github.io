@@ -4,9 +4,75 @@ const path = require('path');
 const groupBy = require('lodash/groupBy');
 const get = require('lodash/get');
 const compact = require('lodash/compact');
-const sortBy = require('lodash/sortBy');
 const pick = require('lodash/pick');
 const take = require('lodash/take');
+
+const createTopicArchives = (graphql, createPage) =>
+  new Promise((resolve, reject) => {
+    const topicPage = path.resolve('src/templates/topic-page.js');
+    // Query for all markdown "nodes" and for the slug we previously created.
+    resolve(
+      graphql(
+        `
+        {
+          allMarkdownRemark {
+            edges {
+              node {
+                frontmatter {
+                  readNext
+                  topics
+                  category
+                  key
+                  title
+                  description
+                  layout
+                  path
+                  date
+                  dontfeature
+                }
+                html
+                fields {
+                  slug
+                }
+              }
+            }
+          }
+        }      `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors);
+          reject(result.errors);
+        }
+        let { edges } = result.data.allMarkdownRemark;
+        const topics = {};
+
+        // Loop through all nodes (our markdown posts) and add the tags to our post object.
+
+        edges.forEach(post => {
+          if (post.node.frontmatter.topics) {
+            post.node.frontmatter.topics.forEach(topic => {
+              if (!topics[topic]) {
+                topics[topic] = [];
+              }
+              topics[topic].push(post);
+            });
+          }
+        });
+        Object.keys(topics).forEach(topicName => {
+          const posts = topics[topicName];
+          createPage({
+            path: `/topics/${topicName}`,
+            component: topicPage,
+            context: {
+              posts,
+              topic: topicName,
+            },
+          });
+        });
+        return;
+      })
+    );
+  });
 
 const createCategoryArchives = (graphql, createPage) =>
   new Promise((resolve, reject) => {
@@ -203,6 +269,7 @@ const addSlugToPage = (node, getNode, createNodeField) => {
 
 module.exports = {
   createCategoryArchives,
+  createTopicArchives,
   getPages,
   addSlugToPage,
   createBlogPosts,

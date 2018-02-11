@@ -7,6 +7,7 @@ description: "Making the case for Marionette.js as a framework for front end dev
 keywords: "JavaScript Marionette.js Backbone"
 category: "frameworks"
 readNext: "mn-series,backbone-devs-react,bb-radio"
+topics: ['Backbone', 'Marionette', 'JavaScript']
 pageViews: "29541"
 last30pageViews: "307"
 ---

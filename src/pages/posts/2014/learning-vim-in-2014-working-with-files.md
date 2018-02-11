@@ -8,6 +8,7 @@ keywords: "vim files file system splits buffers"
 category: "tools"
 readNext: "learning-vim,vim-files,vim-language"
 pageViews: "13474"
+topics: ['Vim', 'Text Editors']
 last30pageViews: "80"
 ---
 

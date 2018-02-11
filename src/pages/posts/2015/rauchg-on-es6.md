@@ -6,6 +6,7 @@ path: "/2015/02/22/rauchg-on-es6"
 category: "javascript"
 description: "A link-log of Guillermo Rauch's look at ES6"
 key: "rauchg-on-es6"
+topics: ['JavaScript', 'ECMAScript']
 pageViews: "335"
 last30pageViews: "8"
 ---

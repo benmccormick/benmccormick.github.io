@@ -6,6 +6,7 @@ path: "/2017/12/30/2017-roundup"
 category: "meta"
 description: "A look back at benmccormick.org in 2017"
 key: "2017-roundup"
+topics: []
 readNext: "ten-things-js,favorite-interview,adequate-talk"
 ---
 

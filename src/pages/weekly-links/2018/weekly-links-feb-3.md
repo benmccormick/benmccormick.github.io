@@ -5,6 +5,7 @@ layout: "weekly-links"
 path: "/2018/02/03/weekly-links-02-03-18/"
 description: "ECMAScript2018, PWAs on iOS, and self driving cars"
 keywords: "ECMAScript2018 PWA self driving"
+topics: ['ECMAScript', 'PWA']
 category: "opinion"
 key: "weekly-links-02-03-18"
 ---

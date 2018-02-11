@@ -7,6 +7,7 @@ description: "A book review of Talking with Tech Leads"
 keywords: "Book Review, Tech Leads"
 category: "reviews"
 pageViews: "1138"
+topics: ['Book Review', 'Software Teams']
 last30pageViews: "3"
 ---
 

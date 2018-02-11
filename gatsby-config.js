@@ -70,6 +70,13 @@ module.exports = {
         subscribeText: 'Web development',
       },
     ],
+    featuredTopics: [
+      'JavaScript',
+      'Text Editors',
+      'React',
+      'Backbone',
+      'Testing',
+    ],
   },
 
   plugins: [

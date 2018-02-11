@@ -7,6 +7,7 @@ description: "A simple setup to run your Jest tests before every commit"
 keywords: "Jest testing git pre-commit JavaScript"
 category: "tools"
 readNext: "jest-first,saving-time-jest,mobx-first"
+topics: ['Jest', 'Code Quality', 'Testing']
 key: "jest-git"
 pageViews: "2721"
 last30pageViews: "516"
