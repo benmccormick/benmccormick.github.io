@@ -23,7 +23,7 @@ const boxClass = css({
   border: '3px dashed #E2777A',
   padding: '15px',
   color: 'initial',
-  transition: 'background 0.75s ease, color 0.75s ease',
+  transition: 'background 0.5s ease, color 0.5s ease',
   ':hover': {
     background: '#E2777A',
     color: 'white',
