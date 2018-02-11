@@ -18,7 +18,7 @@ const typography = new Typography({
     'sans-serif',
   ],
   bodyFontFamily: ['ff-tisa-web-pro', 'serif'],
-  scaleRatio: 1.8,
+  scaleRatio: 2,
   blockMarginTop: 0.75,
   blockMarginBottom: 0.75,
   plugins: [new CodePlugin()],
