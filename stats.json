@@ -5,8 +5,8 @@
       "path---2014-11-04-a-quick-review-of-google-inbox-66ac525e6ceafe3a8d52.js.map"
     ],
     "path---2015-01-22-is-bower-useful": [
-      "path---2015-01-22-is-bower-useful-79f320d757f710e8924e.js",
-      "path---2015-01-22-is-bower-useful-79f320d757f710e8924e.js.map"
+      "path---2015-01-22-is-bower-useful-cc6c830dd92209db78d3.js",
+      "path---2015-01-22-is-bower-useful-cc6c830dd92209db78d3.js.map"
     ],
     "path---2014-12-02-the-case-for-marionette-js": [
       "path---2014-12-02-the-case-for-marionette-js-a4d249de8831a1da4b3c.js",
@@ -29,8 +29,8 @@
       "path---2015-05-25-marionette-service-service-objects-for-marionette-f4a9abf8243a0b4b0cb4.js.map"
     ],
     "path---2012-11-08-shutdown-tiles-for-windows-8-start-screen": [
-      "path---2012-11-08-shutdown-tiles-for-windows-8-start-screen-0f8ababd0f62e25f3c14.js",
-      "path---2012-11-08-shutdown-tiles-for-windows-8-start-screen-0f8ababd0f62e25f3c14.js.map"
+      "path---2012-11-08-shutdown-tiles-for-windows-8-start-screen-99fd50b613a38e74b73a.js",
+      "path---2012-11-08-shutdown-tiles-for-windows-8-start-screen-99fd50b613a38e74b73a.js.map"
     ],
     "path---2016-12-31-2016-roundup": [
       "path---2016-12-31-2016-roundup-c6aaff531199a8496c91.js",
@@ -53,8 +53,8 @@
       "path---2017-02-13-improving-site-performance-with-lighthouse-768286fb30a051f0353c.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-3932ee18247ca8889be0.js",
-      "component---src-pages-index-js-3932ee18247ca8889be0.js.map"
+      "component---src-pages-index-js-cbca29687487d331021d.js",
+      "component---src-pages-index-js-cbca29687487d331021d.js.map"
     ],
     "path---2017-11-26-weekly-links-11-26-17": [
       "path---2017-11-26-weekly-links-11-26-17-4b6c0a32a9adfd01cd70.js",
@@ -85,8 +85,8 @@
       "path---2013-01-15-unexpected-javascript-that-doesnt-do-what-you-think-2f76b950f24b4c3af812.js.map"
     ],
     "path---2013-11-25-a-look-at-ack": [
-      "path---2013-11-25-a-look-at-ack-fb8d2ca7a8213a2b15f7.js",
-      "path---2013-11-25-a-look-at-ack-fb8d2ca7a8213a2b15f7.js.map"
+      "path---2013-11-25-a-look-at-ack-f8aa861c0face9d468ab.js",
+      "path---2013-11-25-a-look-at-ack-f8aa861c0face9d468ab.js.map"
     ],
     "path---readinglist": [
       "path---readinglist-d34ce57a808507716d61.js",
@@ -181,8 +181,8 @@
       "path---2015-04-07-es-6-classes-and-backbone-js-d0594a7d01cc1cb6925f.js.map"
     ],
     "component---src-pages-archive-js": [
-      "component---src-pages-archive-js-c99f99ebcc594e353304.js",
-      "component---src-pages-archive-js-c99f99ebcc594e353304.js.map"
+      "component---src-pages-archive-js-75e55763534d2a2481a9.js",
+      "component---src-pages-archive-js-75e55763534d2a2481a9.js.map"
     ],
     "path---2015-11-30-es-6-patterns-clean-higher-order-functions": [
       "path---2015-11-30-es-6-patterns-clean-higher-order-functions-7035f133706870d84cf3.js",
@@ -213,8 +213,8 @@
       "path---2017-02-18-context-to-best-practices-32b911c5a6d208bd65cb.js.map"
     ],
     "component---src-templates-blog-post-js": [
-      "component---src-templates-blog-post-js-ca7e4af521014d7aa009.js",
-      "component---src-templates-blog-post-js-ca7e4af521014d7aa009.js.map"
+      "component---src-templates-blog-post-js-f31bc6e2192615c7ce64.js",
+      "component---src-templates-blog-post-js-f31bc6e2192615c7ce64.js.map"
     ],
     "path---2015-01-05-marionette-view-life-cycles": [
       "path---2015-01-05-marionette-view-life-cycles-bf64eb9a735796e5369b.js",
@@ -233,8 +233,8 @@
       "path---2017-05-28-mariana-syntax-atom-fb40d264fbd5dc73b04c.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-fc37417d068cc8746542.js",
-      "component---src-layouts-index-js-fc37417d068cc8746542.js.map"
+      "component---src-layouts-index-js-6c5499ecb6f278cae54b.js",
+      "component---src-layouts-index-js-6c5499ecb6f278cae54b.js.map"
     ],
     "path---2013-04-06-a-new-look": [
       "path---2013-04-06-a-new-look-986534d302011c75fc31.js",
@@ -257,8 +257,8 @@
       "path---2015-09-09-what-can-backbone-developers-learn-from-react-0f00dae369e29614fb72.js.map"
     ],
     "component---src-templates-category-page-js": [
-      "component---src-templates-category-page-js-5ffeac40287e44bbbccb.js",
-      "component---src-templates-category-page-js-5ffeac40287e44bbbccb.js.map"
+      "component---src-templates-category-page-js-de4bc7ea8a23e464b310.js",
+      "component---src-templates-category-page-js-de4bc7ea8a23e464b310.js.map"
     ],
     "path---2016-05-02-digging-into-react-choosing-component-styles": [
       "path---2016-05-02-digging-into-react-choosing-component-styles-e80306c426ec872f9e8b.js",
@@ -273,12 +273,12 @@
       "path---2018-01-05-weekly-links-01-05-18-a3d7c7078f5e4292f11f.js.map"
     ],
     "path---2013-01-01-sublime-text-for-javascript-configuration": [
-      "path---2013-01-01-sublime-text-for-javascript-configuration-9f223ebd618ed7370915.js",
-      "path---2013-01-01-sublime-text-for-javascript-configuration-9f223ebd618ed7370915.js.map"
+      "path---2013-01-01-sublime-text-for-javascript-configuration-b0416fd1cf8e3fa90d05.js",
+      "path---2013-01-01-sublime-text-for-javascript-configuration-b0416fd1cf8e3fa90d05.js.map"
     ],
     "component---src-pages-links-archive-js": [
-      "component---src-pages-links-archive-js-90da44d2c491537a438d.js",
-      "component---src-pages-links-archive-js-90da44d2c491537a438d.js.map"
+      "component---src-pages-links-archive-js-4215c43cc2bc3f9489c4.js",
+      "component---src-pages-links-archive-js-4215c43cc2bc3f9489c4.js.map"
     ],
     "path---2014-07-11-new-twitter-feed-and-practical-vim-giveaway": [
       "path---2014-07-11-new-twitter-feed-and-practical-vim-giveaway-0e28094bbf797de9d061.js",
@@ -301,8 +301,8 @@
       "path---2016-03-09-stability-vs-decline-d4ac73da199b2eb6ee37.js.map"
     ],
     "path---index": [
-      "path---index-a623a58a9f7ba763a5b7.js",
-      "path---index-a623a58a9f7ba763a5b7.js.map"
+      "path---index-9a100404fe276493c2b8.js",
+      "path---index-9a100404fe276493c2b8.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-c6b8ae317b4241b27c27.js",
@@ -353,8 +353,8 @@
       "path---2013-11-14-modern-dojo-exploring-dojo-basedeclare-f765bbdc303667a2e1ee.js.map"
     ],
     "path---2013-01-03-sublime-text-for-javascript-plugins": [
-      "path---2013-01-03-sublime-text-for-javascript-plugins-380870fa3ea8356ed935.js",
-      "path---2013-01-03-sublime-text-for-javascript-plugins-380870fa3ea8356ed935.js.map"
+      "path---2013-01-03-sublime-text-for-javascript-plugins-940629c14bb0542d02dc.js",
+      "path---2013-01-03-sublime-text-for-javascript-plugins-940629c14bb0542d02dc.js.map"
     ],
     "path---category-software-productivity": [
       "path---category-software-productivity-039d5c531168906e1c30.js",
@@ -381,8 +381,8 @@
       "path---2014-08-28-custom-elements-by-example-760e914b431ea347f086.js.map"
     ],
     "commons": [
-      "commons-38e4299c24520ab9a70e.js",
-      "commons-38e4299c24520ab9a70e.js.map"
+      "commons-4566958a561f2e331631.js",
+      "commons-4566958a561f2e331631.js.map"
     ],
     "path---2015-12-30-es-6-patterns-converting-callbacks-to-promises": [
       "path---2015-12-30-es-6-patterns-converting-callbacks-to-promises-d3a1e5c632b069b1d794.js",
@@ -445,12 +445,12 @@
       "path---2017-07-10-how-to-follow-the-javascript-roadmap-b629247434fb9bd814ec.js.map"
     ],
     "path---2013-03-23-creating-a-build-system-for-a-coffeescript-project-with-ant": [
-      "path---2013-03-23-creating-a-build-system-for-a-coffeescript-project-with-ant-d6230a407e762d774a7d.js",
-      "path---2013-03-23-creating-a-build-system-for-a-coffeescript-project-with-ant-d6230a407e762d774a7d.js.map"
+      "path---2013-03-23-creating-a-build-system-for-a-coffeescript-project-with-ant-8b9abebc2d732ac71f40.js",
+      "path---2013-03-23-creating-a-build-system-for-a-coffeescript-project-with-ant-8b9abebc2d732ac71f40.js.map"
     ],
     "path---2013-06-11-how-i-use-stack-overflow": [
-      "path---2013-06-11-how-i-use-stack-overflow-24e605440664701d9dde.js",
-      "path---2013-06-11-how-i-use-stack-overflow-24e605440664701d9dde.js.map"
+      "path---2013-06-11-how-i-use-stack-overflow-774dd18b95fddaac8cd4.js",
+      "path---2013-06-11-how-i-use-stack-overflow-774dd18b95fddaac8cd4.js.map"
     ],
     "path---category-tools": [
       "path---category-tools-66d4e002e9f105582ac9.js",
@@ -497,8 +497,8 @@
       "path---2012-09-19-the-iphone-5-conversation-so-far-337fa090dbe85cd0f13a.js.map"
     ],
     "path---2012-12-30-sublime-text-for-javascript-keyboard-shortcuts": [
-      "path---2012-12-30-sublime-text-for-javascript-keyboard-shortcuts-d2ba3ed2e408e042467c.js",
-      "path---2012-12-30-sublime-text-for-javascript-keyboard-shortcuts-d2ba3ed2e408e042467c.js.map"
+      "path---2012-12-30-sublime-text-for-javascript-keyboard-shortcuts-99677dd044f05be1e5f0.js",
+      "path---2012-12-30-sublime-text-for-javascript-keyboard-shortcuts-99677dd044f05be1e5f0.js.map"
     ],
     "path---2013-02-03-how-i-work-refactoring": [
       "path---2013-02-03-how-i-work-refactoring-f52e2f4a847e1639f8e6.js",
@@ -509,12 +509,12 @@
       "path---2014-11-24-alternative-javascript-b5252c33e71eb98e6428.js.map"
     ],
     "app": [
-      "app-00a3c6a1777903ab4eba.js",
-      "app-00a3c6a1777903ab4eba.js.map"
+      "app-5725b8f1100eb471a5a9.js",
+      "app-5725b8f1100eb471a5a9.js.map"
     ],
     "path---archive": [
-      "path---archive-3344ec5c9f1856189a68.js",
-      "path---archive-3344ec5c9f1856189a68.js.map"
+      "path---archive-b171dce517d7e7bff158.js",
+      "path---archive-b171dce517d7e7bff158.js.map"
     ],
     "path---2014-07-24-one-day-left-in-practical-vim-giveaway": [
       "path---2014-07-24-one-day-left-in-practical-vim-giveaway-528c520230e3dc67db41.js",
@@ -609,8 +609,8 @@
       "path---2014-07-07-learning-vim-in-2014-working-with-files-a68657e83cffd28ac243.js.map"
     ],
     "path---2012-11-07-sync-multiple-google-calendars-in-windows-8": [
-      "path---2012-11-07-sync-multiple-google-calendars-in-windows-8-55e7e3dd2a2688fd2756.js",
-      "path---2012-11-07-sync-multiple-google-calendars-in-windows-8-55e7e3dd2a2688fd2756.js.map"
+      "path---2012-11-07-sync-multiple-google-calendars-in-windows-8-6933b427c5621e5a8411.js",
+      "path---2012-11-07-sync-multiple-google-calendars-in-windows-8-6933b427c5621e5a8411.js.map"
     ],
     "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review": [
       "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review-6070fc69389f5765c080.js",
@@ -653,8 +653,8 @@
       "path---2014-12-10-marionette-explained-connecting-your-data-to-your-views-a9b56d7efbff91ff9362.js.map"
     ],
     "path---2017-03-28-the-mystery-of-docker-and-the-disk-eating-cow": [
-      "path---2017-03-28-the-mystery-of-docker-and-the-disk-eating-cow-4743581f03c7b729d983.js",
-      "path---2017-03-28-the-mystery-of-docker-and-the-disk-eating-cow-4743581f03c7b729d983.js.map"
+      "path---2017-03-28-the-mystery-of-docker-and-the-disk-eating-cow-997e41ce72c7e3657bea.js",
+      "path---2017-03-28-the-mystery-of-docker-and-the-disk-eating-cow-997e41ce72c7e3657bea.js.map"
     ]
   }
 }
