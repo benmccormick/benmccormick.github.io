@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { TypographyStyle } from 'react-typography';
 import { GA } from './components/GA';
@@ -95,9 +96,9 @@ class HTML extends React.Component {
 }
 
 HTML.propTypes = {
-  body: React.PropTypes.string,
-  headComponents: React.PropTypes.any,
-  postBodyComponents: React.PropTypes.any,
+  body: PropTypes.string,
+  headComponents: PropTypes.any,
+  postBodyComponents: PropTypes.any,
 };
 
 export default HTML;
