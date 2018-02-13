@@ -19,3 +19,9 @@
   padding:0;
   height: initial;
 }
+
+.inline-img {
+    display: inline-block;
+    float: right;
+    padding: 2rem;
+}
