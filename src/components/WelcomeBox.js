@@ -15,12 +15,14 @@ let ImageContainer = glamorous.div({
   maxHeight: '200px',
   marginRight: '1rem',
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
 });
 
 let Image = glamorous.img({
   borderRadius: '50%',
+  marginBottom: 0,
 });
 
 let WelcomeContainer = glamorous.div({
