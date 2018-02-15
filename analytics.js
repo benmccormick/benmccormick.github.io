@@ -35,7 +35,7 @@ const getAllTimeData = analytics =>
         'end-date': 'today',
         ids: ['ga:67508034'],
         metrics: ['ga:pageviews'],
-        dimensions: ['ga:pagePath']
+        dimensions: ['ga:pagePath'],
       },
       (_err, resp) => {
         // handle err and response
@@ -57,7 +57,7 @@ const getLastMonthData = analytics =>
         'end-date': 'today',
         ids: ['ga:67508034'],
         metrics: ['ga:pageviews'],
-        dimensions: ['ga:pagePath']
+        dimensions: ['ga:pagePath'],
       },
       (_err, resp) => {
         // handle err and response
@@ -100,9 +100,11 @@ const processRows = (allTimeRows, last30Rows) => {
   });
 };
 
-getAuthorizedClient().then(analytics => {
+const main = async () => {
+  let analytics = await getAuthorizedClient();
   let promises = [getAllTimeData(analytics), getLastMonthData(analytics)];
-  Promise.all(promises).then(([allTimeRows, last30Rows]) =>
-    processRows(allTimeRows, last30Rows)
-  );
-});
+  let [allTimeRows, last30Rows] = await Promise.all(promises);
+  processRows(allTimeRows, last30Rows);
+};
+
+main();

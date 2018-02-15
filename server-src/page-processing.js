@@ -7,13 +7,11 @@ const compact = require('lodash/compact');
 const pick = require('lodash/pick');
 const take = require('lodash/take');
 
-const createTopicArchives = (graphql, createPage) =>
-  new Promise((resolve, reject) => {
-    const topicPage = path.resolve('src/templates/topic-page.js');
-    // Query for all markdown "nodes" and for the slug we previously created.
-    resolve(
-      graphql(
-        `
+const createTopicArchives = async (graphql, createPage) => {
+  const topicPage = path.resolve('src/templates/topic-page.js');
+  // Query for all markdown "nodes" and for the slug we previously created.
+  const result = await graphql(
+    `
         {
           allMarkdownRemark {
             edges {
@@ -37,50 +35,46 @@ const createTopicArchives = (graphql, createPage) =>
               }
             }
           }
-        }      `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
+        }`
+  );
+  if (result.errors) {
+    console.log(result.errors);
+    throw result.errors;
+  }
+  let { edges } = result.data.allMarkdownRemark;
+  const topics = {};
+
+  // Loop through all nodes (our markdown posts) and add the tags to our post object.
+
+  edges.forEach(post => {
+    if (post.node.frontmatter.topics) {
+      post.node.frontmatter.topics.forEach(topic => {
+        if (!topics[topic]) {
+          topics[topic] = [];
         }
-        let { edges } = result.data.allMarkdownRemark;
-        const topics = {};
-
-        // Loop through all nodes (our markdown posts) and add the tags to our post object.
-
-        edges.forEach(post => {
-          if (post.node.frontmatter.topics) {
-            post.node.frontmatter.topics.forEach(topic => {
-              if (!topics[topic]) {
-                topics[topic] = [];
-              }
-              topics[topic].push(post);
-            });
-          }
-        });
-        Object.keys(topics).forEach(topicName => {
-          const posts = topics[topicName];
-          createPage({
-            path: `/topics/${topicName}`,
-            component: topicPage,
-            context: {
-              posts,
-              topic: topicName,
-            },
-          });
-        });
-        return;
-      })
-    );
+        topics[topic].push(post);
+      });
+    }
   });
+  Object.keys(topics).forEach(topicName => {
+    const posts = topics[topicName];
+    createPage({
+      path: `/topics/${topicName}`,
+      component: topicPage,
+      context: {
+        posts,
+        topic: topicName,
+      },
+    });
+  });
+  return;
+};
 
-const createCategoryArchives = (graphql, createPage) =>
-  new Promise((resolve, reject) => {
-    const categoryPage = path.resolve('src/templates/category-page.js');
-    // Query for all markdown "nodes" and for the slug we previously created.
-    resolve(
-      graphql(
-        `
+const createCategoryArchives = async (graphql, createPage) => {
+  const categoryPage = path.resolve('src/templates/category-page.js');
+  // Query for all markdown "nodes" and for the slug we previously created.
+  const result = await graphql(
+    `
         {
           site {
             siteMetadata {
@@ -95,30 +89,28 @@ const createCategoryArchives = (graphql, createPage) =>
           }
         }
       `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
-        }
+  );
+  if (result.errors) {
+    console.log(result.errors);
+    throw result.errors;
+  }
 
-        // Create category archives
-        const categories = result.data.site.siteMetadata.categories;
-        categories.forEach(category => {
-          createPage({
-            path: `category/${category.key}`, // required
-            component: categoryPage,
-            context: {
-              category: category.key,
-            },
-          });
-        });
-
-        return;
-      })
-    );
+  // Create category archives
+  const categories = result.data.site.siteMetadata.categories;
+  categories.forEach(category => {
+    createPage({
+      path: `category/${category.key}`, // required
+      component: categoryPage,
+      context: {
+        category: category.key,
+      },
+    });
   });
-const getPages = graphql =>
-  graphql(
+
+  return;
+};
+const getPages = async graphql => {
+  const result = await graphql(
     `
         {
           allMarkdownRemark {
@@ -138,20 +130,19 @@ const getPages = graphql =>
           }
         }
       `
-  ).then(result => {
-    if (result.errors) {
-      console.log(result.errors);
-      return false;
-    }
-    let pages = result.data.allMarkdownRemark.edges.map(edge => ({
-      date: edge.node.frontmatter.date,
-      title: edge.node.frontmatter.title,
-      layout: edge.node.frontmatter.layout,
-      html: edge.node.html,
-      slug: edge.node.fields.slug,
-    }));
-    return pages;
-  });
+  );
+  if (result.errors) {
+    throw result.errors;
+  }
+  let pages = result.data.allMarkdownRemark.edges.map(edge => ({
+    date: edge.node.frontmatter.date,
+    title: edge.node.frontmatter.title,
+    layout: edge.node.frontmatter.layout,
+    html: edge.node.html,
+    slug: edge.node.fields.slug,
+  }));
+  return pages;
+};
 
 const getRelatedPosts = (keyMap, categoryMap) => node => {
   let readNext = node.frontmatter.readNext
@@ -167,13 +158,11 @@ const getRelatedPosts = (keyMap, categoryMap) => node => {
   return take(posts, 3);
 };
 
-const createBlogPosts = (graphql, createPage) =>
-  new Promise((resolve, reject) => {
-    const blogPost = path.resolve('src/templates/blog-post.js');
-    // Query for all markdown "nodes" and for the slug we previously created.
-    resolve(
-      graphql(
-        `
+const createBlogPosts = async (graphql, createPage) => {
+  const blogPost = path.resolve('src/templates/blog-post.js');
+  // Query for all markdown "nodes" and for the slug we previously created.
+  const result = await graphql(
+    `
         {
           allMarkdownRemark {
             edges {
@@ -196,33 +185,31 @@ const createBlogPosts = (graphql, createPage) =>
           }
         }
       `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
-        }
+  );
+  if (result.errors) {
+    console.log(result.errors);
+    throw result.errors;
+  }
 
-        let { edges } = result.data.allMarkdownRemark;
-        let nodes = edges.map(e => e.node);
-        let keyMap = groupBy(nodes, 'frontmatter.key');
-        let categoryMap = groupBy(nodes, 'frontmatter.category');
-        let getRelatedPostsFromList = getRelatedPosts(keyMap, categoryMap);
-        // Create blog posts pages.
-        nodes.forEach(node => {
-          createPage({
-            path: node.fields.slug,
-            component: blogPost,
-            context: {
-              slug: node.fields.slug,
-              relatedPosts: getRelatedPostsFromList(node),
-            },
-          });
-        });
-
-        return;
-      })
-    );
+  let { edges } = result.data.allMarkdownRemark;
+  let nodes = edges.map(e => e.node);
+  let keyMap = groupBy(nodes, 'frontmatter.key');
+  let categoryMap = groupBy(nodes, 'frontmatter.category');
+  let getRelatedPostsFromList = getRelatedPosts(keyMap, categoryMap);
+  // Create blog posts pages.
+  nodes.forEach(node => {
+    createPage({
+      path: node.fields.slug,
+      component: blogPost,
+      context: {
+        slug: node.fields.slug,
+        relatedPosts: getRelatedPostsFromList(node),
+      },
+    });
   });
+
+  return;
+};
 
 function pagesToSitemap(pages) {
   const urls = pages.map(p => {
