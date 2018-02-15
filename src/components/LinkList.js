@@ -1,8 +1,11 @@
-import PropTypes from 'prop-types';
 import React from 'react';
-import PageLink from './PageLink';
-import glamorous from 'glamorous';
 import get from 'lodash/get';
+import glamorous from 'glamorous';
+
+import PropTypes from 'prop-types';
+
+import LinkBox from './LinkBox';
+import PageLink from './PageLink';
 
 const ListTitle = glamorous.h2({
   color: 'inherit',
@@ -26,18 +29,22 @@ class LinkList extends React.Component {
       titleFn,
       showPopular,
       showTrending,
+      useBox,
     } = this.props;
-    let pageLinks = pages.map(page =>
-      <PageLink
-        page={page}
-        showCategory={showCategory}
-        key={page.path}
-        showDate={showDate}
-        showDescription={showDescriptions}
-        showPopular={showPopular}
-        showTrending={showTrending}
-        titleFn={titleFn}
-      />
+    let pageLinks = pages.map(
+      page =>
+        useBox
+          ? <LinkBox page={page} showDate={showDate} titleFn={titleFn} />
+          : <PageLink
+              page={page}
+              showCategory={showCategory}
+              key={page.path}
+              showDate={showDate}
+              showDescription={showDescriptions}
+              showPopular={showPopular}
+              showTrending={showTrending}
+              titleFn={titleFn}
+            />
     );
     return (
       <div className={className}>
@@ -66,6 +73,7 @@ LinkList.propTypes = {
   showDescriptions: PropTypes.bool.isRequired,
   className: PropTypes.any.isRequired,
   titleFn: PropTypes.func.isRequired,
+  useBox: PropTypes.bool.isRequired,
 };
 
 LinkList.defaultProps = {
@@ -75,6 +83,7 @@ LinkList.defaultProps = {
   showPopular: false,
   showTrending: false,
   className: '',
+  useBox: false,
   titleFn: page => get(page, 'data.title') || page.path,
 };
 

@@ -13,6 +13,7 @@ class RecommendedPosts extends React.Component {
           pages={recommendedPosts}
           showCategory={false}
           showDate={true}
+          useBox={true}
         />
       </div>
     );
