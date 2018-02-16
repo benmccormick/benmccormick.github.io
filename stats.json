@@ -21,8 +21,8 @@
       "path---2018-02-09-weekly-links-02-09-18-3c0f444a114e103831a9.js.map"
     ],
     "path---links-archive": [
-      "path---links-archive-f71c888f510b1b4a5995.js",
-      "path---links-archive-f71c888f510b1b4a5995.js.map"
+      "path---links-archive-d84a7def342e63124065.js",
+      "path---links-archive-d84a7def342e63124065.js.map"
     ],
     "path---2015-05-25-marionette-service-service-objects-for-marionette": [
       "path---2015-05-25-marionette-service-service-objects-for-marionette-7cbb0ed58021fef25884.js",
@@ -101,8 +101,8 @@
       "path---2017-09-04-jest-matchers-2-8bb653c5605aa708572e.js.map"
     ],
     "path---category-frameworks": [
-      "path---category-frameworks-3c78f2ea4479d9c8d1d1.js",
-      "path---category-frameworks-3c78f2ea4479d9c8d1d1.js.map"
+      "path---category-frameworks-34470e6f90a86d847075.js",
+      "path---category-frameworks-34470e6f90a86d847075.js.map"
     ],
     "path---2015-09-14-es-5-es-6-es-2016-es-next-whats-going-on-with-javascript-versioning": [
       "path---2015-09-14-es-5-es-6-es-2016-es-next-whats-going-on-with-javascript-versioning-2c95c7ce4e2bbaf73795.js",
@@ -269,8 +269,8 @@
       "path---2016-05-02-digging-into-react-choosing-component-styles-2402b9251e704116cbf5.js.map"
     ],
     "path---category-meta": [
-      "path---category-meta-4a492f37be1ec752c7fc.js",
-      "path---category-meta-4a492f37be1ec752c7fc.js.map"
+      "path---category-meta-e22275dccdc9d8732ef5.js",
+      "path---category-meta-e22275dccdc9d8732ef5.js.map"
     ],
     "path---2018-01-05-weekly-links-01-05-18": [
       "path---2018-01-05-weekly-links-01-05-18-fc6bca96e79f413c0823.js",
@@ -305,8 +305,8 @@
       "path---2016-03-09-stability-vs-decline-d4ac73da199b2eb6ee37.js.map"
     ],
     "path---index": [
-      "path---index-21b4e8df496122d86ff2.js",
-      "path---index-21b4e8df496122d86ff2.js.map"
+      "path---index-2f6c30c1baef1a6f4d62.js",
+      "path---index-2f6c30c1baef1a6f4d62.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-c6b8ae317b4241b27c27.js",
@@ -325,12 +325,12 @@
       "path---2013-05-07-revertible-observables-in-knockout-8ea5020bdd44ab6466e9.js.map"
     ],
     "path---category-platform": [
-      "path---category-platform-53016f82a93f4c754b9e.js",
-      "path---category-platform-53016f82a93f4c754b9e.js.map"
+      "path---category-platform-559fd7877854cdb7e457.js",
+      "path---category-platform-559fd7877854cdb7e457.js.map"
     ],
     "path---category-javascript": [
-      "path---category-javascript-592522b631ce61ff6eea.js",
-      "path---category-javascript-592522b631ce61ff6eea.js.map"
+      "path---category-javascript-b23286bfacc04a40d186.js",
+      "path---category-javascript-b23286bfacc04a40d186.js.map"
     ],
     "path---2013-09-10-blendconf-2013-takeaways-from-a-very-human-tech-conference": [
       "path---2013-09-10-blendconf-2013-takeaways-from-a-very-human-tech-conference-7103fc4d3121debbdcab.js",
@@ -361,8 +361,8 @@
       "path---2013-01-03-sublime-text-for-javascript-plugins-940629c14bb0542d02dc.js.map"
     ],
     "path---category-software-productivity": [
-      "path---category-software-productivity-a375189dd375cfe38e0e.js",
-      "path---category-software-productivity-a375189dd375cfe38e0e.js.map"
+      "path---category-software-productivity-d34d9ea4789d184ee088.js",
+      "path---category-software-productivity-d34d9ea4789d184ee088.js.map"
     ],
     "path---2016-09-19-testing-with-jest-snapshots-first-impressions": [
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-2f29fd035722acb55fd7.js",
@@ -459,8 +459,8 @@
       "path---2013-06-11-how-i-use-stack-overflow-774dd18b95fddaac8cd4.js.map"
     ],
     "path---category-tools": [
-      "path---category-tools-c7a9eb42f94eb69706d9.js",
-      "path---category-tools-c7a9eb42f94eb69706d9.js.map"
+      "path---category-tools-d0c705dd92ef409bd8f7.js",
+      "path---category-tools-d0c705dd92ef409bd8f7.js.map"
     ],
     "path---2017-01-03-orthogonality-and-css-in-js": [
       "path---2017-01-03-orthogonality-and-css-in-js-a58adc32013bf05362ca.js",
@@ -475,8 +475,12 @@
       "path---2016-06-26-quick-tip-take-advantage-of-lodash-collections-2-2f990f47f0d34e88a654.js.map"
     ],
     "path---category-opinion": [
-      "path---category-opinion-13bd75c7e7b3dd83cd2f.js",
-      "path---category-opinion-13bd75c7e7b3dd83cd2f.js.map"
+      "path---category-opinion-f7111005c1d2592e21ac.js",
+      "path---category-opinion-f7111005c1d2592e21ac.js.map"
+    ],
+    "path---2018-02-16-weekly-links-02-16-18": [
+      "path---2018-02-16-weekly-links-02-16-18-3f91593a3bf5bbe32664.js",
+      "path---2018-02-16-weekly-links-02-16-18-3f91593a3bf5bbe32664.js.map"
     ],
     "path---2013-01-25-career-fairs-how-to-not-get-hired-and-how-to-give-yourself-a-chance": [
       "path---2013-01-25-career-fairs-how-to-not-get-hired-and-how-to-give-yourself-a-chance-eaa75ed6422b504ebb34.js",
@@ -515,14 +519,14 @@
       "path---2014-11-24-alternative-javascript-a35391ae4eac0af98e74.js.map"
     ],
     "app": [
-      "app-f8c1950e7bba67dcfac4.js",
+      "app-2c14a0b35b6dc125c729.js",
       "build-js-styles.css",
-      "app-f8c1950e7bba67dcfac4.js.map",
+      "app-2c14a0b35b6dc125c729.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-963f5ee295873909e642.js",
-      "path---archive-963f5ee295873909e642.js.map"
+      "path---archive-b16f7e6ca58f2e55039d.js",
+      "path---archive-b16f7e6ca58f2e55039d.js.map"
     ],
     "path---2014-07-24-one-day-left-in-practical-vim-giveaway": [
       "path---2014-07-24-one-day-left-in-practical-vim-giveaway-41115399b07f8697f838.js",
@@ -593,8 +597,8 @@
       "path---2014-07-02-learning-vim-in-2014-vim-as-language-0956488d354c879814da.js.map"
     ],
     "path---category-reviews": [
-      "path---category-reviews-129ff03e5f849342d305.js",
-      "path---category-reviews-129ff03e5f849342d305.js.map"
+      "path---category-reviews-3827ff212ab0cc332ef3.js",
+      "path---category-reviews-3827ff212ab0cc332ef3.js.map"
     ],
     "path---2015-05-28-moving-past-requirejs": [
       "path---2015-05-28-moving-past-requirejs-02323e36224fa58c877d.js",
