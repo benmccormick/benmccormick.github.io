@@ -21,6 +21,10 @@ export class Ad extends React.Component {
   }
 
   insertScript() {
+    if (!this.container) {
+      // no ad container at this point, bail
+      return false;
+    }
     let existingAd = document.getElementById('carbonads');
     if (existingAd) {
       existingAd.remove();
