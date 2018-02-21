@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Fri, 16 Feb 2018 03:05:54 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 21 Feb 2018 04:17:28 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,96 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Computer Science for Front End Developers?]]></title>
+            <link>https://benmccormick.org/2018/02/20/cs-for-fe/</link>
+            <guid>https://benmccormick.org/2018/02/20/cs-for-fe/</guid>
+            <pubDate>Tue, 20 Feb 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>I am primarily a front end web developer, and I have a Computer Science degree.  In my experience, this is neither rare nor particularly common.  Folks seem to get into front end dev because they’re trying to solve particular problems, and those problems exist whether you have a PhD in high performance computing or you’ve never written a line of code before.  Front End web development is how you make code real to people, and it is the minimal requirement for making something that people can actually interact with in a web browser.  As a result, a dizzying array of folks get into Front End dev, and you’ll find a broader set of experience levels than devs who work further “down the stack”.  All of which means that many front end devs have never had any sort of “formal” Computer Science education.  </p>
+<p>Some folks turn up their nose at this, and it certainly contributes to the reputation in some quarters of JavaScript and web dev not being “real programming”.  Others see themselves as being liberated from the “irrelevant theory” of formal Computer Science and see no need for that type of background for Front End development.  My own experience is that developers can function just fine on the front end without a formal computer science background, but that my own education has helped me, mostly in subtle and indirect ways.</p>
+<p>I’ve been thinking for a while about what Computer Science topics are actually useful for front end developers.  It’s not obvious to me where to draw the lines, because you’ll never directly encounter many of the concepts that are covered in a typical Computer Science curriculum while making web applications. But I still have an intuition that my background in these subjects is helping me in my day to day.  This weekend I decided to ask Twitter about it.</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Pondering what a blog series on “Computer Science for Front End Devs” would look like.  <br><br>Thinking this would be a high level of “what you missed if you don’t have a CS degree”, focusing on a subset relevant to FE devs.<br><br>Would love input.  What would you expect to be covered?</p>&mdash; Ben McCormick (@ben336) <a href="https://twitter.com/ben336/status/965373638697463809?ref_src=twsrc%5Etfw">February 18, 2018</a></blockquote>
+<p>I got a high degree of interest from that tweet, so I decided to keep digging into the idea.  Laying things out the topics a typical Computer Science curriculum seems to look something like the following.  Depending on the school, certain topics may be elevated or diminished, grouped or split, but the general shape tends to look the same for most examples I’ve seen.</p>
+<h3>Intro class</h3>
+<p>Generally there is an intro class or 2 that can be skipped by students with previous experience that covers core programming concepts, usually with an Object-oriented philosophical tilt.</p>
+<ul>
+<li>
+<p><strong>Programming basics</strong></p>
+<ul>
+<li>Variables</li>
+<li>Basic Data Structures</li>
+<li>Control Structures/Recursion/Iteration</li>
+<li>Object Oriented Programming principles</li>
+</ul>
+</li>
+</ul>
+<h3>Core Curriculum</h3>
+<p>There are also often 3-5 other “core” classes that all CS majors must take.  They generally break down something like this:</p>
+<ul>
+<li>
+<p><strong>Data Structures and Algorithms</strong></p>
+<ul>
+<li>Big O analysis</li>
+<li>Common Data Structures - Linked Lists, Stacks, Queues Trees, Heaps, Graphs, etc</li>
+<li>Common Algorithms - Searches, Sorts, Graph algorithms, etc</li>
+</ul>
+</li>
+<li>
+<p><strong>Computer Systems</strong></p>
+<ul>
+<li>Start at the hardware level</li>
+<li>Assembly</li>
+<li>Compilers</li>
+<li>Memory Models</li>
+<li>Concurrency</li>
+<li>Operating Systems</li>
+<li>Processes</li>
+<li>File Systems</li>
+<li>Networking</li>
+</ul>
+</li>
+<li>
+<p><strong>Mathematical Foundations</strong></p>
+<ul>
+<li>Proofs and logic</li>
+<li>Formal lanugages/Context Free Grammars/Turing Machines</li>
+<li>NP-Completeness</li>
+<li>Probability Theory</li>
+<li>Bayes Theorem</li>
+<li>Hashing</li>
+</ul>
+</li>
+<li>
+<p><strong>Software Engineering (not always core)</strong></p>
+<ul>
+<li>Architecture of larger programs</li>
+<li>Balancing risk/quality/cost</li>
+<li>Design Patterns</li>
+<li>Designing for security/robustness/scalability</li>
+</ul>
+</li>
+</ul>
+<h3>Potential Specialties</h3>
+<p>Finally, programs usually have a selection of electives that students can take to dive deeper into different specialty areas.  These electives usually mirror the research interests of the faculty of the school but may include some of the following:</p>
+<ul>
+<li><strong>Systems Design</strong></li>
+<li><strong>Human-Computer Interaction</strong></li>
+<li><strong>Computer Networking</strong></li>
+<li><strong>Artificial Intelligence and Machine Learning</strong></li>
+<li><strong>Databases</strong></li>
+<li><strong>Computer Vision</strong></li>
+</ul>
+<h2>Computer Science for the web</h2>
+<p>So how much of this is relevant to your average front end developer?  Some of it is more tightly tied to web programming than others.  Most of the basics will be picked up through osmosis for a typical front end dev, but a rigorous look at concepts like object-oriented programming and recursion might be beneficial.  While most can usually get by with simple data structures, a background in common “intermediate” data structures like stacks, trees, and graphs can be quite useful in day to day web dev.  Software Engineering principles are as obviously useful when building web sites as they are when you’re building firmware or operating systems. On the other hand, Computer Systems and Mathematical foundation concepts are usually not directly applicable in front end work.  In my own experience, they serve as useful background for understanding the abstractions that my day to day work is built on.  It’s good to have an intuition as to how browsers work, what is happening when we send data to a file, or what “text encoding” means.  And you may end up in a crazy situation where you need to understand the code behind Babel or V8, and knowledge of compilers becomes a real part of your job.</p>
+<p>I’m trying to figure out the best way to teach some of this stuff to somebody who hasn’t and is never going to spend 4 years taking these classes.  So I’d love help from anyone reading:</p>
+<ol>
+<li><strong>If you have a CS degree and write front end code, how has it helped you?</strong></li>
+<li><strong>If you were going to try and share part of that education with somebody with different experiences, which parts would you say are important?  What resources would you recommend?</strong></li>
+<li><strong>If you don’t have a CS degree, do you feel like you’re missing out on anything?  What useful-seeming concepts have you heard about but found it hard to find resources on?</strong></li>
+</ol>
+<p>If you have any answers for those questions I’d love to hear from y’all on <a href="https://twitter.com/ben336">Twitter</a> or <a href="mailto:ben@benmccormick.org">email</a>.  </p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: February 16th]]></title>
             <link>https://benmccormick.org/2018/02/16/weekly-links-02-16-18/</link>
@@ -381,112 +471,6 @@ a <span class="token operator">=</span> EqualToEverything<span class="token punc
 <li id="fn-2">
 <p>If you’d like to read a whole book making that argument, I recommend <a href="http://amzn.to/2F9xdD6"> Culture Making by Andy Crouch</a></p>
 <a href="#fnref-2" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[2017 Roundup]]></title>
-            <link>https://benmccormick.org/2017/12/30/2017-roundup</link>
-            <guid>https://benmccormick.org/2017/12/30/2017-roundup</guid>
-            <pubDate>Sat, 30 Dec 2017 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>2017 was the 5th full year of this blog, and in many ways it was the most productive.  I wrote one of the most popular things I’ve written on here, started the weekly links section (on hiatus for New Years, but will return next week), and wrote 21 full articles and 8 weekly links post, the most I’ve ever posted here in a year.  Here are some of the highlights from my blog and development this year.</p>
-<h3>Most Read Posts Published in 2017</h3>
-<ol>
-<li>
-<p><a href="https://benmccormick.org/2017/07/19/ten-things-javascript/">Ten Things A Serious JavaScript Developer Should Learn</a> - It turns out that making lists of things is a good way to get traffic.  I wonder if anybody else on the internet has figured this out?</p>
-<p>
-  <a
-    class="gatsby-resp-image-link"
-    href="/static/list_analytics-bf4aa20172b0ec0f0d0791d56219f6d6-cb86a.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-  
-  <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block; ; max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 18.202247191011235%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAsUlEQVQY042NwXKDMAxE+f8P67mXnAskKQYnIQbLYAx+EWR66PRSzbzRakdaFTln/k1KpEGIVUssDfFiSc2dqKzOk4GCX5X5U/ntmTESZAYNXfeAumWzPSwJ4gLrduwVUcWUNmZl2TL7vOuffnjKx3XgsxNm9b3+ED3WeILOont+WQlKYceJZggYJ5TmdnTrJ3b/5me+H46vruf8DNS9UCnlfeRUGyrruLpA9ZCDy1N4ATo/NqrBAMsOAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-    >
-      <img
-        class="gatsby-resp-image-image"
-        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
-        alt="An analytics graph with a big spike in July when I posted my list post"
-        title=""
-        src="/static/list_analytics-bf4aa20172b0ec0f0d0791d56219f6d6-d766e.png"
-        srcset="/static/list_analytics-bf4aa20172b0ec0f0d0791d56219f6d6-a6b6e.png 143w,
-/static/list_analytics-bf4aa20172b0ec0f0d0791d56219f6d6-8e488.png 285w,
-/static/list_analytics-bf4aa20172b0ec0f0d0791d56219f6d6-d766e.png 570w,
-/static/list_analytics-bf4aa20172b0ec0f0d0791d56219f6d6-13239.png 855w,
-/static/list_analytics-bf4aa20172b0ec0f0d0791d56219f6d6-cb86a.png 890w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-    </span>
-  </span>
-  
-  </a>
-    </p>
-<p>In all seriousness, I think there’s a hunger out there for clearer roadmaps for folks who are early out in their front end development career.  People are telling them to learn all the frameworks, all the tools and all the compile-to-JS languages, and everyone knows they can’t learn it all.  So even an imperfect list that can serve as a starting point for figuring that out can get some traction.  This article was my attempt to answer “what should a serious mid-level JavaScript developer have learned and be learning?“.  </p>
-</li>
-</ol>
-<ol start="2">
-<li>
-<p><a href="https://benmccormick.org/2017/07/10/how-to-follow-the-javascript-roadmap/">How To Follow The JavaScript Roadmap</a> - This post was aimed at a similar audience to the “Serious JavaScript Developer” post, but aimed to help folks who want to follow changes in the JavaScript language keep up with new developments.</p>
-</li>
-<li>
-<p><a href="https://benmccormick.org/2017/01/03/orthogonality-and-css-in-js/">Orthogonality and CSS in JS</a> - This article was an examination of the architecture tradeoffs of CSS in JS solutions, and also an examination of how people discuss “separations of concerns” in general.  If you liked this one, keep your eyes open.  I’m planning on writing more architecture level posts in 2018.</p>
-</li>
-</ol>
-<h3>Code I wrote in 2017</h3>
-<p>Most of the code I wrote this year was again for my work at Windsor Circle.  But I’ve continued to add new features to this blog, which is based on React and Gatsby, and the source code for that is available <a href="https://github.com/benmccormick/benmccormickorg">on Github</a>.</p>
-<h3>Talks I gave in 2017</h3>
-<p>This was a big speaking year for me.  I gave 3 different talks: <a href="https://www.slideshare.net/BenMcCormick/vim-survival-guide-71763917">The Vim Survival Guide</a> at Open Source 101, <a href="https://www.slideshare.net/BenMcCormick/gatsby-intro">Intro to Gatsby</a> at a local meetup group and <a href="https://www.slideshare.net/BenMcCormick/saving-time-by-testing-with-jest">Saving Time with Jest</a> at All Things Open.  I’d be interested in giving any of those talks again next year, so if you’re looking for a speaker, feel free to reach out.</p>
-<h3>Languages, Libraries, and Technologies I started using in 2017</h3>
-<ul>
-<li>
-<p><a href="https://mobx.js.org/">Mobx</a> is a JavaScript data modeling library that serves as an alternative to Redux or React state for state management.  I wrote about my <a href="https://benmccormick.org/2017/01/09/mobx-first-impressions/">first impressions</a> at the beginning of the year, but I’ve continued to use it and love it since then.</p>
-</li>
-<li>
-<p><a href="https://yarnpkg.com/en/">Yarn</a> was a nice upgrade over npm.  My understanding is that npm has since stepped up and closed the gap here, but I’m continuing to use Yarn for now since it has taken over my projects and muscle memory.</p>
-</li>
-<li>
-<p>When I upgraded this blog to Gatsby 1.0, I had the opportunity to learn about <a href="http://graphql.org/">GraphQL</a>.  I’ve really enjoyed getting to play with it and love the GraphQL community’s dedication to providing a great developer experience.</p>
-</li>
-</ul>
-<h3>Languages and Libraries I used (more or less) every day in 2017</h3>
-<p>JavaScript (ES6), Python, React, PostgreSQL, Backbone (<strong>sigh</strong>), lodash, MobX, Jest</p>
-<h3>Languages and Libraries I want to try in 2018</h3>
-<p><a href="https://github.com/FormidableLabs/victory">Victory</a>, Rust, and Pandas/other python data analysis libraries <sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup></p>
-<h3>Blogs I started following in 2017</h3>
-<p><a href="http://blog.isquaredsoftware.com/">Mark Erikson’s Dev blog</a></p>
-<h3>Blogs I read every post from in 2017</h3>
-<p><a href="http://randsinrepose.com/">Rands In Repose</a>, <a href="https://stratechery.com/">Stratechery</a>, <a href="https://daringfireball.net/">Daring Fireball</a>, <a href="http://purposedworking.org/">purposedworking.org</a>, <a href="https://wynnnetherland.com/">wynnnetherland.com</a></p>
-<h3>Podcasts I started listening to in 2017</h3>
-<ul>
-<li>
-<p><a href="https://www.npr.org/sections/money/">Planet Money</a> - A long running NPR podcast about money, the economy, and the unexpected ways they affect our everyday lives</p>
-</li>
-<li>
-<p><a href="https://www.theallusionist.org/">The Allusionist</a> - A great podcast on the crazy history behind different words in the English language.</p>
-</li>
-</ul>
-<h3>Software I started using in 2017</h3>
-<ul>
-<li><a href="http://www.bear-writer.com/">Bear</a> - I mentioned I was testing this out at the end of last year, but it has become my go-to notes application, and I would recommend it to anyone who wants a stylish notes app in the middle ground between Apple Notes and Evernote (and who uses Apple products).</li>
-</ul>
-<h3>Software I used (nearly) every day in 2017</h3>
-<p>MacOS/iOS, Google Search, Chrome/Safari/Firefox, GMail/MailPlane 3, Twitter/Tweetbot, Feedbin/Reeder, Instapaper, iMessage, Slack, Trello, 1Password, Atom/Vim, iTerm, Fish Shell, Bitbucket, Fantastical, Spotify, Bear, Annotate, Dash</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Yes this is basically the same list as last year.  ¯\_(ツ)_/¯ I mostly learn tech as I have need for it, and it was a very “nose to the grindstone” year focused on improving existing codebases this year</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
 </li>
 </ol>
 </div>]]></content:encoded>
