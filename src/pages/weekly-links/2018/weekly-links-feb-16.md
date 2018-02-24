@@ -6,7 +6,7 @@ path: "/2018/02/16/weekly-links-02-16-18/"
 description: "A few rants, ubiquitous bitcoin, and fancy hover effects"
 keywords: "slack promises bitcoin hover css"
 category: "opinion"
-key: "weekly-links-02-09-18"
+key: "weekly-links-02-16-18"
 ---
 
 
