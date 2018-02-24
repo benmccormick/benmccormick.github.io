@@ -3,8 +3,8 @@ title: "Weekly Links: February 23rd"
 date: "2018/02/23"
 layout: "weekly-links"
 path: "/2018/02/23/weekly-links-02-23-18/"
-description: "A few rants, ubiquitous bitcoin, and fancy hover effects"
-keywords: "slack promises bitcoin hover css"
+description: "3rd party scripts, computer science, and ES2019"
+keywords: "computer science scripts es2019"
 category: "opinion"
 key: "weekly-links-02-23-18"
 ---
@@ -22,4 +22,4 @@ After my [post on Computer Science](https://benmccormick.org/2018/02/20/cs-for-f
 
 [How to think in graphs: an illustrative introduction to Graph Theory and its applications | Vardan Grigoryan](https://medium.freecodecamp.org/i-dont-understand-graph-theory-1c96572a1401) -  This is a nice "plain language" explanation of basic graph theory.  It's a bit long, but it's a nice thing to look at for the folks who told me this week they want to know more about data structures.
 
-[Learning JavaScript Design Patterns | Addy Osmani](http://amzn.to/2BL3YHo) - One of the better "CS for front end" resources I'm aware of is Addy Osmani's book on JavaScript design patterns.  Like a lot of things in JS land, parts of it haven't aged well now that it's a 6 year old book (it's very focused on jQuery and DOM manipulation in many of its examples), but since it's centered around more timeless design patterns, I think it holds up well. 
+[Learning JavaScript Design Patterns | Addy Osmani](http://amzn.to/2BL3YHo) - One of the better "CS for front end" resources I'm aware of is Addy Osmani's book on JavaScript design patterns.  Like a lot of things in JS land, parts of it haven't aged well now that it's a 6 year old book (it's very focused on jQuery and DOM manipulation in many of its examples), but since it's centered around more timeless design patterns, I think it holds up well.
