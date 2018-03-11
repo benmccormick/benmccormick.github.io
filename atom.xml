@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-03-02T04:17:23Z</updated>
+    <updated>2018-03-11T21:53:18Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,32 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Weekly Links: March 11th]]></title>
+        <id>https://benmccormick.org/2018/03/11/weekly-links-03-11-18/</id>
+        <link href="https://benmccormick.org/2018/03/11/weekly-links-03-11-18/">
+        </link>
+        <updated>2018-03-11T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>Rather than posting random stuff that popped up this week like usual, I wanted to instead post a set of “classic” links instead. The theme this week is Learning React.  Here are some of the links that helped me to learn different React concepts as I was first tackling it.  Note that these are links that helped me learn the concepts behind different parts of the React ecosystem.  Some are intro level, while some assume basic familiarity with the concepts they discuss.</p>
+<h3>The Motivation Behind React</h3>
+<p><a href="https://reactjs.org/docs/thinking-in-react.html">Thinking In React</a> - It’s strange, but I never expect the official docs for a project to be the best explanation of their purpose.  Official documentation tends to lean towards the “how” rather than the “why”, and the motivations of the maintainers aren’t always the motivations of the community anyway.  But this article from the React docs remains the best explanations of the problems that React is solving as well as the way that it solves them.</p>
+<p><a href="https://rauchg.com/2015/pure-ui">Pure UI</a> - Even moreso than <em>Thinking in React</em>, this 2015 article nails the paradigm shift that React represented.  The power of UI as a function of data has been the biggest change I’ve experienced in my career building UIs, and this article was like a message in the bottle from the future when it was first written 3 years ago.</p>
+<h3>Flux, MobX and Redux</h3>
+<p><a href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207">A cartoon guide to Flux | Lin Clark</a> - This was a nice early run through of the Flux concepts.  Lin Clark is one of the best “front end explainers” out there, and she does a good job here.</p>
+<p><a href="https://hackernoon.com/the-fundamental-principles-behind-mobx-7a725f71f3e8">The Fundamental Principles Behind MobX | Michael Weststrate</a> - Like most of the other links here, this is a theory link, not a practical introduction.</p>
+<p><a href="https://egghead.io/courses/getting-started-with-redux">Getting Started With Redux | Dan Abramov on Egghead.io </a> - Like <em>Thinking with React</em>, this is a great introduction to a library that starts with the problems to be solved and shows how a new library solves that problem, rather than simply telling you what a tool does.</p>
+<p><a href="https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367">You Might Not Need Redux | Dan Abramov</a> - Another helpful article for understanding what Redux is and isn’t solving for, helpful if you’re trying to decide whether to include it in a project.</p>
+<h3>React Patterns</h3>
+<p><a href="https://egghead.io/courses/advanced-react-component-patterns">Advanced React Component Patterns | Kent C Dobbs on Egghead.io</a> - This is my one paid content link, but its so good that its worth sharing.  This was a fantastic course that covers patterns like Higher Order Components, Render props and more.  It discusses both the implementation concerns and motivation behind each.</p>
+<h3>Future Stuff</h3>
+<p><a href="https://medium.com/dailyjs/reacts-%EF%B8%8F-new-context-api-70c9fe01596b">React’s New Context API | Kent C Dobbs</a> - This is fairly recent, but Kent Dobbs gave a great explanation of React’s new context API</p>
+<p><a href="https://reactjs.org/blog/2018/03/01/sneak-peek-beyond-react-16.html">Sneak Peek: Beyond React 16 | React Blog</a> - I posted this last week as well, but this is a great inspirational talk on where React is going next.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weekly Links: March 2nd]]></title>
         <id>https://benmccormick.org/2018/03/02/weekly-links-03-02-18/</id>
@@ -418,34 +444,6 @@ a <span class="token operator">=</span> EqualToEverything<span class="token punc
 <h3>Tech and Business</h3>
 <p><a href="https://www.joelonsoftware.com/2018/01/12/birdcage-liners/">Birdcage Liners | Joel Spoelsky</a> - Joel’s first post in a while is a great piece on the problems with social media, as well as tech folks’ responsibility to think through the choices they’re making, including the secondary effects.  What type of future are we making?</p>
 <p><a href="https://motherboard.vice.com/en_us/article/9kng57/dogecoin-my-joke-cryptocurrency-hit-2-billion-jackson-palmer-opinion">My Joke Cryptocurrency Hit $2 Billion and Something Is Very Wrong</a> - I promise I snagged this link to post before bitcoin took a dip this week, but I don’t think it’s properly appreciated in many places just how crazy the cryptocurrency fad is becoming.  Meme-based joke currencies are being valued at billions of dollars, and there are many other similar newborn currencies with similar valuations out there.  I’m not going to try to give anyone investment advise, but it seems clear for now that at minimum these “currencies” are completely unusable for their theoretical purpose as currency given the price swings.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: January 12th]]></title>
-        <id>https://benmccormick.org/2018/01/12/weekly-links-01-12-18/</id>
-        <link href="https://benmccormick.org/2018/01/12/weekly-links-01-12-18/">
-        </link>
-        <updated>2018-01-12T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>JavaScript And The Web</h3>
-<p><a href="https://egghead.io/courses/manage-application-state-with-mobx-state-tree">Manage Application State with Mobx-state-tree| Michael Weststrate on Egghead</a>  - Mobx-state-tree is an opinionated state library built on top of the unopinionated Mobx library.  This is a free course explaining why it exists and how to use it.  I <a href="https://benmccormick.org/2017/01/09/mobx-first-impressions/">wrote about Mobx last year</a> and am still enjoying using it a year later.  I’m excited to dive into Mobx-state-tree and hopefully sharpen my Mobx skills in the process.</p>
-<h3>Programming Tools And Practices</h3>
-<p><a href="http://blog.atom.io/2018/01/10/the-state-of-atoms-performance.html">The State of Atom’s Performance | Atom Blog</a> - Atom continues to (slowly) become snappier.  I’m glad to see how organized they are on this.  It’s really hard to take something that was built with a slower architecture fast while it’s being used by tens of thousands of people every day.  They’re making great progress.</p>
-<p><a href="http://amzn.to/2DqBeSQ">Clean Architecture | Robert C Martin</a> - I’ll probably be posting more on this soon, but I’ve been reading the new book on architecture by “Uncle Bob” Martin, and it’s fantastic.  It breaks down big architecture and program design concepts like the Single Responsibility Principle and Dependency Inversion, and explains them well individually, but also shows how they fit together when designing a large system.  I’ll write a full review when I finish the book, but for now just wanted to share that it is worth picking up.</p>
-<h3>Non-Tech</h3>
-<p><a href="https://www.nytimes.com/2018/01/09/us/north-carolina-gerrymander.html">North Carolina Is Ordered To Redraw Its Congressional Map | NY Times</a> - A little bit of local news here <sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>, but it is still important for everyone in the USA.  Redistricting is the type of problem where a simple rules based algorithm could be helpful.  Nothing opaque or deep-learning-y, just have a machine apply a published set of rules and work with the results.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>I’m a proud resident of Durham, North Carolina</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
