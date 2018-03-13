@@ -33,7 +33,7 @@ const boxClass = css({
 });
 
 const PageWrapper = glamorous.div({
-  maxWidth: '50vw',
+  maxWidth: '60vw',
   '@media all and (max-width: 700px)': {
     maxWidth: '100vw',
   },
