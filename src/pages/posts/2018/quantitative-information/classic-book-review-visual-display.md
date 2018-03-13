@@ -1,6 +1,6 @@
 ---
 title: "Classic Book Review: The Visual Display of Quantitative Information"
-date: "2018/03/12"
+date: "2018-03-13T010:00:00+00:00"
 layout: "post"
 path: "/2018/03/12/classic-book-review-visual-display/"
 description: "A data visualization modern classic"
@@ -25,7 +25,7 @@ The book is also beautiful.  Tufte chose to self-publish it so that he could con
 
 ![A typical page](typical_page.jpg)
 
-I was pleased to find that the book didn't back up some of my own pre-conceived notions about Tufte and his work.  When I've seen him referenced in the past, it has been almost solely in terms of minimalism.  He was an expert witness for fewer colors, fewer lines, less ink.  But his takes here are more nuanced.  He definitely tends towards minimalism, and argues for reducing graphs to their bare minimum ink amount over conforming to familiar forms[^2].  But his go to example of great data display throughout the book is hardly minimalist.  Minard's map of Napoleon invading Russia is a complex visualization that tracks the size of an army, time, location and temperature, all in a single image. 
+I was pleased to find that the book didn't back up some of my own pre-conceived notions about Tufte and his work.  When I've seen him referenced in the past, it has been almost solely in terms of minimalism.  He was an expert witness for fewer colors, fewer lines, less ink.  But his takes here are more nuanced.  He definitely tends towards minimalism, and argues for reducing graphs to their bare minimum ink amount over conforming to familiar forms[^2].  But his go to example of great data display throughout the book is hardly minimalist.  Minard's map of Napoleon invading Russia is a complex visualization that tracks the size of an army, time, location and temperature, all in a single image.
 
 ![Minards Map of Napoleon Invading Russia](minards-map.png)
 
