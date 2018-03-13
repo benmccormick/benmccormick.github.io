@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Tue, 13 Mar 2018 00:29:51 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 Mar 2018 23:32:48 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,113 +14,6 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
-        <item>
-            <title><![CDATA[Classic Book Review: The Visual Display of Quantitative Information]]></title>
-            <link>https://benmccormick.org/2018/03/12/classic-book-review-visual-display/</link>
-            <guid>https://benmccormick.org/2018/03/12/classic-book-review-visual-display/</guid>
-            <pubDate>Mon, 12 Mar 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>If you have any interest at all in data visualization, you can’t get very far learning about it without hearing the name Edward Tufte.  His four books on the subjects have had a huge influence on the industry over the last 35 years, a time where data visualization has blossomed as it has moved from a tedious hand drawn task to a computer assisted activity that even middle schoolers can attempt with the software available on most laptops.</p>
-<p>Tufte’s first book, <a href="http://amzn.to/2H6EB2f">The Visual Display of Quantitative Information</a> is also his most well known and acclaimed book<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  It lays out many of the principles that he would go to expand on elsewhere:</p>
-<ul>
-<li>Focus on the data</li>
-<li>“Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space”</li>
-<li>Graphics should have <em>integrity</em>.  They shouldn’t mislead the reader.</li>
-<li>Remove unecessary clutter</li>
-<li><em>and more</em></li>
-</ul>
-<p>The book is also beautiful.  Tufte chose to self-publish it so that he could control the exact layout and typography.  He also mixes in many old hand drawn visualizations to mix with a fewer new computer assisted graphics.  The result is stunning, and makes for a very enjoyable read throughout, as there is always something interesting to look at.  </p>
-<p>
-  <a
-    class="gatsby-resp-image-link"
-    href="/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-bc278.jpg"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-  
-  <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block; ; max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAwX/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAerHtPmoOH//xAAaEAEAAQUAAAAAAAAAAAAAAAAAAQISITND/9oACAEBAAEFAplywtU63//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABsQAAIBBQAAAAAAAAAAAAAAAAABAhAhMTKR/9oACAEBAAY/AhY4aod2Rp//xAAdEAADAAICAwAAAAAAAAAAAAAAAREhkTFRgaHR/9oACAEBAAE/IcDFKJZX2Em51DeQryaf0r6P/9oADAMBAAIAAwAAABBL7//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAQADAQADAAAAAAAAAAAAAAEAESFBMWGB/9oACAEBAAE/EKFto5TLFRS2167DLI3ws8yM9oUIMDv1GT//2Q=='); background-size: cover; display: block;"
-    >
-      <img
-        class="gatsby-resp-image-image"
-        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
-        alt="A typical page"
-        title=""
-        src="/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-6fbc3.jpg"
-        srcset="/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-da4c7.jpg 143w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-1d39e.jpg 285w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-6fbc3.jpg 570w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-9d77e.jpg 855w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-e356a.jpg 1140w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-4208b.jpg 1710w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-bc278.jpg 4032w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-    </span>
-  </span>
-  
-  </a>
-    </p>
-<p>I was pleased to find that the book didn’t back up some of my own pre-conceived notions about Tufte and his work.  When I’ve seen him referenced in the past, it has been almost solely in terms of minimalism.  He was an expert witness for fewer colors, fewer lines, less ink.  But his takes here are more nuanced.  He definitely tends towards minimalism, and argues for reducing graphs to their bare minimum ink amount over conforming to familiar forms<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  But his go to example of great data display throughout the book is hardly minimalist.  Minard’s map of Napoleon invading Russia is a complex visualization that tracks the size of an army, time, location and temperature, all in a single image. </p>
-<p>
-  <a
-    class="gatsby-resp-image-link"
-    href="/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-11c68.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-  
-  <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block; ; max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 48.17708333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAABrklEQVQozyVRXW/TMBT1/xeCd56QoJ2QAGniQxsM7YFVwITUbSWsTdYlaZrUceok/oibpk3CmXMe7GP7nnOtc0nTNBsLxhilNEkS8MSCWoBEURSGYVmWbduh/nAEuv1+T/q+F0KsgTj2fX9p4XleGAYgvh+sViso4ziGymgBXd82m+AeXqRrW1HkWmulNd+yLMs4z3leClXlhQAfnnbNsa1Svvw9/fFZUvfNq5eLhUtqo3m6Rv+95o3ONHsoozsRO4Z5ij327bHDW98Z5l5/fzc+ORmPXo/Go2fPX+R5TqhzsZm+Z87XzDljs0/s75fycRLOLjXzKuami6vg9uLm8u2309Ht3UxICad6t8NvDocDWc9/+n8+Ln99CKbnLHSyNFFKhasoTtJ4ky4fXPffDTKrm+PTB7oOmoEgOVIKoXRlzA4h8kKUpUBOk8nVfH4/2PcWKEWu8K3rGkrEBkKkVMYYKWWWsTSlGFiKjVLUgW+3W6zg2gKVVVUpCxwJNrjCBnMDL4qCc15YDEUIBj1xRAMcsQ5fgAuBQWUBPa4wvafZWAIXKIeGg/sANJMW/wFywCU5mVF/fQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-    >
-      <img
-        class="gatsby-resp-image-image"
-        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
-        alt="Minards Map of Napoleon Invading Russia"
-        title=""
-        src="/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-d766e.png"
-        srcset="/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-a6b6e.png 143w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-8e488.png 285w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-d766e.png 570w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-13239.png 855w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-cab6d.png 1140w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-71f14.png 1710w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-11c68.png 1920w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-    </span>
-  </span>
-  
-  </a>
-    </p>
-<p>Instead Tufte is really arguing for data efficiency.  Simple things should be displayed simply.  If you have a single number, don’t dress it up in a fancy graph.  Just show the number.  If you have a series of numbers, a table or simple scatter will work fine, no need for a fancy piece of chart “art”.  But when you have truly complex data, a complex visualization can make it accessible in ways that a large page of words and numbers never could on its own.</p>
-<p>I found <a href="http://amzn.to/2H6EB2f">The Visual Display of Quantitative Information</a> fun, informative and inspirational.  If you work with data and have never read it, I’d definitely recommend checking it out.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Amazon named it one of the 100 Best Non-Fiction books of the 20th century</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-<li id="fn-2">
-<p>Some of that may be a relic of this book being originally written in the 80s before computers, his own work and the work of other similar thinkers greatly increased public awareness of data visualization standards like line and bar charts.</p>
-<a href="#fnref-2" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
         <item>
             <title><![CDATA[Weekly Links: March 11th]]></title>
             <link>https://benmccormick.org/2018/03/11/weekly-links-03-11-18/</link>
@@ -475,6 +368,31 @@ For this book, that topic is software architecture.  The book tackles it by star
 <p><a href="https://medium.com/@firt/pwas-are-coming-to-ios-11-3-cupertino-we-have-a-problem-2ff49fd7d6ea">PWAs are coming to iOS 11.3: Cupertino, we have a problem | Maximiliano Firtman</a> - Interesting look at what is and isn’t available in the newest version of Safari when it comes to PWAs and offline support</p>
 <h3>Tech and Business</h3>
 <p><a href="https://medium.com/99-mph/1-trillion-of-real-estate-is-on-the-move-heres-why-94ee9233e5eb">1 Trillion of Real Estate is on the move | Phil Levin</a> - Almost everybody seems to agree that self driving cars are going to happen.  It’s only a question of when.  But the other question is what the second-level effects of self driving cars will be.  Those who can correctly predict the answer to those two questions are going to have opportunities to make money and create interesting businesses. This is an interesting take on how self-driving cars might affect real estate.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[Weekly Links: January 19th]]></title>
+            <link>https://benmccormick.org/2018/01/19/weekly-links-01-19-18/</link>
+            <guid>https://benmccormick.org/2018/01/19/weekly-links-01-19-18/</guid>
+            <pubDate>Fri, 19 Jan 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h3>JavaScript And The Web</h3>
+<p><a href="https://stackoverflow.blog/2018/01/11/brutal-lifecycle-javascript-frameworks/">The Brutal Lifecycle of JavaScript Frameworks | Stack Overflow Blog</a> - This was an interesting analysis on how JavaScript frameworks have risen and fallen.  Among the reasons that it’s interesting is that the data appears to be a bit of a Rorschach test.  The post itself is very negative about the pace of change in the JavaScript framework world.  But I saw a lot of twitter takes like this one:</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This “new framework every 6-months” FUD is comical. The crux is centered on 4 JS frameworks released over the last decade. <br><br>4. In 10 years. <br><br>It’s great for my business, but makes me chuckle. <br><br>It’s not really moving that fast y’all. <a href="https://t.co/BiH7UK0M9V">https://t.co/BiH7UK0M9V</a></p>&mdash; Joel ⛈ (@jhooks) <a href="https://twitter.com/jhooks/status/951924735654244352?ref_src=twsrc%5Etfw">January 12, 2018</a></blockquote>
+<p>Personally I lean more toward the side that there’s nothing wrong here.  The change in frameworks has come during a large change in use cases and technology used on the web.  Think PWAs verse server-side generated sites, and the large amount of new browser APIs and JavaScript language features.  These things have naturally brought new best practices which have been encoded in frameworks.  While it is true that a jQuery based site from 2009 might be difficult to maintain through today, that has less to do with the lack of support for the technology than it does with the fundamental nature of web development.  It would be much more difficult to build and scale a web application like <a href="https://slack.com/">Slack</a> using only jQuery and other 2009 technologies.<br>
+Which is why it was surpassed for <em>web application</em> development first by a wave of frameworks that allowed you to model domain concepts in an object oriented way and tie that to a UI (Backbone, Angular1, Knockout), and then by a second wave that allowed you to do that with more declarative component-based UIs (React, Ember, Angular2+, Vue).  Those evolutions have come to match a real need.</p>
+<p><a href="https://stackoverflow.com/questions/48270127/can-a-1-a-2-a-3-ever-evaluate-to-true/48274520#48274520">Can (a ==1 &#x26;&#x26; a== 2 &#x26;&#x26; a==3) ever evaluate to true? | Stack Overflow</a> - This was a fun little question.  I don’t think I like it as an interview question for JavaScript, since it borders on trivia, and requires in-depth knowledge of the “bad parts” of JavaScript like <code>==</code> and <code>with</code> or global variable behavior that many new developers are just taught to avoid.  But it’s definitely a fun trivia question.  And it may even be a good interview question in Python, where you can do it using more commonly accepted parts of the language.</p>
+<div class="gatsby-highlight">
+      <pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">EqualToEverything</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">__eq__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">True</span>
+a <span class="token operator">=</span> EqualToEverything<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">and</span> a <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">and</span> a <span class="token operator">==</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment">#prints True</span>
+</code></pre>
+      </div>
+<p><a href="https://hacks.mozilla.org/2018/01/making-webassembly-even-faster-firefoxs-new-streaming-and-tiering-compiler/">Making WebAssembly even faster: Firefox’s new streaming and tiering compiler | Lin Clark</a> - Web Assembly + Rust is quickly moving to the top of my “I’ve got to learn more about that” list.</p>
+<p><a href="https://slack.engineering/keep-webpack-fast-a-field-guide-for-better-build-performance-f56a5995e8f1">Keep webpack Fast: A Field Guide for Better Build Performance | Slack Engineering</a> - This is a super helpful and detailed list of performance tips and tricks for Webpack builds, which unfortunately are easy to make slow and challenging to make fast for large projects.  Even after having my own fights with webpack last year, I learned a few things from this, and look forward to experimenting with them.</p>
+<h3>Tech and Business</h3>
+<p><a href="https://www.joelonsoftware.com/2018/01/12/birdcage-liners/">Birdcage Liners | Joel Spoelsky</a> - Joel’s first post in a while is a great piece on the problems with social media, as well as tech folks’ responsibility to think through the choices they’re making, including the secondary effects.  What type of future are we making?</p>
+<p><a href="https://motherboard.vice.com/en_us/article/9kng57/dogecoin-my-joke-cryptocurrency-hit-2-billion-jackson-palmer-opinion">My Joke Cryptocurrency Hit $2 Billion and Something Is Very Wrong</a> - I promise I snagged this link to post before bitcoin took a dip this week, but I don’t think it’s properly appreciated in many places just how crazy the cryptocurrency fad is becoming.  Meme-based joke currencies are being valued at billions of dollars, and there are many other similar newborn currencies with similar valuations out there.  I’m not going to try to give anyone investment advise, but it seems clear for now that at minimum these “currencies” are completely unusable for their theoretical purpose as currency given the price swings.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
