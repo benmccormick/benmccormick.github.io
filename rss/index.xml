@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Tue, 13 Mar 2018 23:32:48 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Mar 2018 03:25:07 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,22 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Weekly Links: March 16th]]></title>
+            <link>https://benmccormick.org/2018/03/16/weekly-links-03-11-16/</link>
+            <guid>https://benmccormick.org/2018/03/16/weekly-links-03-11-16/</guid>
+            <pubDate>Fri, 16 Mar 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h3>JavaScript And The Web</h3>
+<p><a href="https://hph.is/coding/bitmasks-react-context">Bitmasks and the new React Context API | Haukur Hallvarðsson</a> - A nice rundown of one aspect of the new React Context API that is likely to be familiar to low-level developers but will probably be a new idea to many front end devs: using bitmasks to test a condition.</p>
+<p><a href="https://medium.com/@mweststrate/mobx-4-better-simpler-faster-smaller-c1fbc08008da">MobX 4: Better, simpler, faster, smaller | Michel Weststrate</a> - MobX continues to be a fantastic state management libary and this update looks like it will make it even better.</p>
+<p><a href="https://engineering.linkedin.com/blog/2018/03/how-we-built-the-same-app-twice-with-preact-and-glimmerjs">Lighter than Lightweight: How We Built the Same App Twice with Preact and Glimmer.js | LinkedIn Engineering</a> - This is a really cool real world comparison of 2 JavaScript frameworks, where they actually built the same app in 2 separate frameworks, with core contributors to each framework involved in the implementation.  To be honest, my main takeaway is that among modern frameworks “framework performance” can be a bit overrated, and not a great reason to choose a specific library or framework, as compared to factors like developer experience, community, and fit with the existing codebase.</p>
+<h3>Rust &#x26;&#x26; WebAssembly</h3>
+<p>I’ve been thinking about taking the time to learn a new language for the first time in a while.  I think WebAssembly and Rust transpiled to WebAssembly in particular are going to become an important part of high performance JavaScript applications and frameworks/libraries.  So I’m starting to check it out.  Here are a few  recent relevant links</p>
+<p><a href="https://hacks.mozilla.org/2018/03/making-webassembly-better-for-rust-for-all-languages/">Making WebAssembly better for Rust &#x26; for all languages – Mozilla Hacks – the Web developer blog</a> - This outlines a plan to improve the developer experience of what I think is the future of WebAssembly in most web apps: interop with JavaScript to improve performance of open source libraries and some core performance sensitive code.</p>
+<p><a href="https://github.com/atom/xray">GitHub - atom/xray: An experimental next-generation Electron-based text editor</a> - A non-webassembly example of using Rust selectively to increase performance of an application built primarily using web technologies.</p>
+<p><a href="https://blog.rust-lang.org/2018/03/12/roadmap.html">Rust’s 2018 Roadmap | Rust Blog</a> - A good rundown of the areas of focus for Rust this year.  I’m particularly interested in their target use cases, since 3 of them (CLI tools, Network Services and WebAssembly/the web) are things that I have built before and will build again.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: March 11th]]></title>
             <link>https://benmccormick.org/2018/03/11/weekly-links-03-11-18/</link>
@@ -368,31 +384,6 @@ For this book, that topic is software architecture.  The book tackles it by star
 <p><a href="https://medium.com/@firt/pwas-are-coming-to-ios-11-3-cupertino-we-have-a-problem-2ff49fd7d6ea">PWAs are coming to iOS 11.3: Cupertino, we have a problem | Maximiliano Firtman</a> - Interesting look at what is and isn’t available in the newest version of Safari when it comes to PWAs and offline support</p>
 <h3>Tech and Business</h3>
 <p><a href="https://medium.com/99-mph/1-trillion-of-real-estate-is-on-the-move-heres-why-94ee9233e5eb">1 Trillion of Real Estate is on the move | Phil Levin</a> - Almost everybody seems to agree that self driving cars are going to happen.  It’s only a question of when.  But the other question is what the second-level effects of self driving cars will be.  Those who can correctly predict the answer to those two questions are going to have opportunities to make money and create interesting businesses. This is an interesting take on how self-driving cars might affect real estate.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: January 19th]]></title>
-            <link>https://benmccormick.org/2018/01/19/weekly-links-01-19-18/</link>
-            <guid>https://benmccormick.org/2018/01/19/weekly-links-01-19-18/</guid>
-            <pubDate>Fri, 19 Jan 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h3>JavaScript And The Web</h3>
-<p><a href="https://stackoverflow.blog/2018/01/11/brutal-lifecycle-javascript-frameworks/">The Brutal Lifecycle of JavaScript Frameworks | Stack Overflow Blog</a> - This was an interesting analysis on how JavaScript frameworks have risen and fallen.  Among the reasons that it’s interesting is that the data appears to be a bit of a Rorschach test.  The post itself is very negative about the pace of change in the JavaScript framework world.  But I saw a lot of twitter takes like this one:</p>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This “new framework every 6-months” FUD is comical. The crux is centered on 4 JS frameworks released over the last decade. <br><br>4. In 10 years. <br><br>It’s great for my business, but makes me chuckle. <br><br>It’s not really moving that fast y’all. <a href="https://t.co/BiH7UK0M9V">https://t.co/BiH7UK0M9V</a></p>&mdash; Joel ⛈ (@jhooks) <a href="https://twitter.com/jhooks/status/951924735654244352?ref_src=twsrc%5Etfw">January 12, 2018</a></blockquote>
-<p>Personally I lean more toward the side that there’s nothing wrong here.  The change in frameworks has come during a large change in use cases and technology used on the web.  Think PWAs verse server-side generated sites, and the large amount of new browser APIs and JavaScript language features.  These things have naturally brought new best practices which have been encoded in frameworks.  While it is true that a jQuery based site from 2009 might be difficult to maintain through today, that has less to do with the lack of support for the technology than it does with the fundamental nature of web development.  It would be much more difficult to build and scale a web application like <a href="https://slack.com/">Slack</a> using only jQuery and other 2009 technologies.<br>
-Which is why it was surpassed for <em>web application</em> development first by a wave of frameworks that allowed you to model domain concepts in an object oriented way and tie that to a UI (Backbone, Angular1, Knockout), and then by a second wave that allowed you to do that with more declarative component-based UIs (React, Ember, Angular2+, Vue).  Those evolutions have come to match a real need.</p>
-<p><a href="https://stackoverflow.com/questions/48270127/can-a-1-a-2-a-3-ever-evaluate-to-true/48274520#48274520">Can (a ==1 &#x26;&#x26; a== 2 &#x26;&#x26; a==3) ever evaluate to true? | Stack Overflow</a> - This was a fun little question.  I don’t think I like it as an interview question for JavaScript, since it borders on trivia, and requires in-depth knowledge of the “bad parts” of JavaScript like <code>==</code> and <code>with</code> or global variable behavior that many new developers are just taught to avoid.  But it’s definitely a fun trivia question.  And it may even be a good interview question in Python, where you can do it using more commonly accepted parts of the language.</p>
-<div class="gatsby-highlight">
-      <pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">EqualToEverything</span><span class="token punctuation">:</span>
-  <span class="token keyword">def</span> <span class="token function">__eq__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">True</span>
-a <span class="token operator">=</span> EqualToEverything<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">and</span> a <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">and</span> a <span class="token operator">==</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment">#prints True</span>
-</code></pre>
-      </div>
-<p><a href="https://hacks.mozilla.org/2018/01/making-webassembly-even-faster-firefoxs-new-streaming-and-tiering-compiler/">Making WebAssembly even faster: Firefox’s new streaming and tiering compiler | Lin Clark</a> - Web Assembly + Rust is quickly moving to the top of my “I’ve got to learn more about that” list.</p>
-<p><a href="https://slack.engineering/keep-webpack-fast-a-field-guide-for-better-build-performance-f56a5995e8f1">Keep webpack Fast: A Field Guide for Better Build Performance | Slack Engineering</a> - This is a super helpful and detailed list of performance tips and tricks for Webpack builds, which unfortunately are easy to make slow and challenging to make fast for large projects.  Even after having my own fights with webpack last year, I learned a few things from this, and look forward to experimenting with them.</p>
-<h3>Tech and Business</h3>
-<p><a href="https://www.joelonsoftware.com/2018/01/12/birdcage-liners/">Birdcage Liners | Joel Spoelsky</a> - Joel’s first post in a while is a great piece on the problems with social media, as well as tech folks’ responsibility to think through the choices they’re making, including the secondary effects.  What type of future are we making?</p>
-<p><a href="https://motherboard.vice.com/en_us/article/9kng57/dogecoin-my-joke-cryptocurrency-hit-2-billion-jackson-palmer-opinion">My Joke Cryptocurrency Hit $2 Billion and Something Is Very Wrong</a> - I promise I snagged this link to post before bitcoin took a dip this week, but I don’t think it’s properly appreciated in many places just how crazy the cryptocurrency fad is becoming.  Meme-based joke currencies are being valued at billions of dollars, and there are many other similar newborn currencies with similar valuations out there.  I’m not going to try to give anyone investment advise, but it seems clear for now that at minimum these “currencies” are completely unusable for their theoretical purpose as currency given the price swings.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>

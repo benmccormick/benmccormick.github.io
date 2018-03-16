@@ -21,8 +21,8 @@
       "path---2018-02-09-weekly-links-02-09-18-3c0f444a114e103831a9.js.map"
     ],
     "path---links-archive": [
-      "path---links-archive-574908b94cc8258f05c4.js",
-      "path---links-archive-574908b94cc8258f05c4.js.map"
+      "path---links-archive-9f04e962388768c0532c.js",
+      "path---links-archive-9f04e962388768c0532c.js.map"
     ],
     "path---2015-05-25-marionette-service-service-objects-for-marionette": [
       "path---2015-05-25-marionette-service-service-objects-for-marionette-7cbb0ed58021fef25884.js",
@@ -84,6 +84,10 @@
       "path---2013-01-15-unexpected-javascript-that-doesnt-do-what-you-think-585d2c3c3ad4b6fc11a8.js",
       "path---2013-01-15-unexpected-javascript-that-doesnt-do-what-you-think-585d2c3c3ad4b6fc11a8.js.map"
     ],
+    "path---2018-03-16-weekly-links-03-11-16": [
+      "path---2018-03-16-weekly-links-03-11-16-2291c80dc163c3f4c301.js",
+      "path---2018-03-16-weekly-links-03-11-16-2291c80dc163c3f4c301.js.map"
+    ],
     "path---2013-11-25-a-look-at-ack": [
       "path---2013-11-25-a-look-at-ack-474bd28f5b86da2f544a.js",
       "path---2013-11-25-a-look-at-ack-474bd28f5b86da2f544a.js.map"
@@ -101,8 +105,8 @@
       "path---2017-09-04-jest-matchers-2-8bb653c5605aa708572e.js.map"
     ],
     "path---category-frameworks": [
-      "path---category-frameworks-990b0582b839c6b1fcf0.js",
-      "path---category-frameworks-990b0582b839c6b1fcf0.js.map"
+      "path---category-frameworks-e3a0a57bc0af820b03f8.js",
+      "path---category-frameworks-e3a0a57bc0af820b03f8.js.map"
     ],
     "path---2015-09-14-es-5-es-6-es-2016-es-next-whats-going-on-with-javascript-versioning": [
       "path---2015-09-14-es-5-es-6-es-2016-es-next-whats-going-on-with-javascript-versioning-2c95c7ce4e2bbaf73795.js",
@@ -269,8 +273,8 @@
       "path---2016-05-02-digging-into-react-choosing-component-styles-2402b9251e704116cbf5.js.map"
     ],
     "path---category-meta": [
-      "path---category-meta-e3715257518c6f368e23.js",
-      "path---category-meta-e3715257518c6f368e23.js.map"
+      "path---category-meta-5b69dea4b5f4589911ee.js",
+      "path---category-meta-5b69dea4b5f4589911ee.js.map"
     ],
     "path---2018-01-05-weekly-links-01-05-18": [
       "path---2018-01-05-weekly-links-01-05-18-fc6bca96e79f413c0823.js",
@@ -305,8 +309,8 @@
       "path---2016-03-09-stability-vs-decline-d4ac73da199b2eb6ee37.js.map"
     ],
     "path---index": [
-      "path---index-08c5cf1595ad4a092c10.js",
-      "path---index-08c5cf1595ad4a092c10.js.map"
+      "path---index-51b7a31aa0d8d33dec13.js",
+      "path---index-51b7a31aa0d8d33dec13.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-c6b8ae317b4241b27c27.js",
@@ -325,12 +329,12 @@
       "path---2013-05-07-revertible-observables-in-knockout-8ea5020bdd44ab6466e9.js.map"
     ],
     "path---category-platform": [
-      "path---category-platform-95d439d7b7ab2fdbb884.js",
-      "path---category-platform-95d439d7b7ab2fdbb884.js.map"
+      "path---category-platform-4e3c4435b9ab42353518.js",
+      "path---category-platform-4e3c4435b9ab42353518.js.map"
     ],
     "path---category-javascript": [
-      "path---category-javascript-5f7bf03d7882dbe6cdbb.js",
-      "path---category-javascript-5f7bf03d7882dbe6cdbb.js.map"
+      "path---category-javascript-2b24a96973f1ce57e5cb.js",
+      "path---category-javascript-2b24a96973f1ce57e5cb.js.map"
     ],
     "path---2013-09-10-blendconf-2013-takeaways-from-a-very-human-tech-conference": [
       "path---2013-09-10-blendconf-2013-takeaways-from-a-very-human-tech-conference-7103fc4d3121debbdcab.js",
@@ -361,8 +365,8 @@
       "path---2013-01-03-sublime-text-for-javascript-plugins-940629c14bb0542d02dc.js.map"
     ],
     "path---category-software-productivity": [
-      "path---category-software-productivity-e11d505c6f613f5fc38d.js",
-      "path---category-software-productivity-e11d505c6f613f5fc38d.js.map"
+      "path---category-software-productivity-75494cba2c39ce591b0f.js",
+      "path---category-software-productivity-75494cba2c39ce591b0f.js.map"
     ],
     "path---2016-09-19-testing-with-jest-snapshots-first-impressions": [
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-2f29fd035722acb55fd7.js",
@@ -463,8 +467,8 @@
       "path---2013-06-11-how-i-use-stack-overflow-774dd18b95fddaac8cd4.js.map"
     ],
     "path---category-tools": [
-      "path---category-tools-3deee219fee69f0452ab.js",
-      "path---category-tools-3deee219fee69f0452ab.js.map"
+      "path---category-tools-c037cac9fa1b7fafd675.js",
+      "path---category-tools-c037cac9fa1b7fafd675.js.map"
     ],
     "path---2018-03-02-weekly-links-03-02-18": [
       "path---2018-03-02-weekly-links-03-02-18-1e44a6408bcc71cc996d.js",
@@ -483,8 +487,8 @@
       "path---2016-06-26-quick-tip-take-advantage-of-lodash-collections-2-2f990f47f0d34e88a654.js.map"
     ],
     "path---category-opinion": [
-      "path---category-opinion-e25bc019e65a479abae5.js",
-      "path---category-opinion-e25bc019e65a479abae5.js.map"
+      "path---category-opinion-47e425716fa4e4df60b3.js",
+      "path---category-opinion-47e425716fa4e4df60b3.js.map"
     ],
     "path---2018-02-16-weekly-links-02-16-18": [
       "path---2018-02-16-weekly-links-02-16-18-3f91593a3bf5bbe32664.js",
@@ -535,14 +539,14 @@
       "path---2018-02-20-cs-for-fe-762577407b3ec5203d2b.js.map"
     ],
     "app": [
-      "app-9928e377dd22b74a2e0b.js",
+      "app-278a54c6cec0890df9ca.js",
       "build-js-styles.css",
-      "app-9928e377dd22b74a2e0b.js.map",
+      "app-278a54c6cec0890df9ca.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-bcc6e67aca393663335d.js",
-      "path---archive-bcc6e67aca393663335d.js.map"
+      "path---archive-a5d31f651d91276f413e.js",
+      "path---archive-a5d31f651d91276f413e.js.map"
     ],
     "path---2014-07-24-one-day-left-in-practical-vim-giveaway": [
       "path---2014-07-24-one-day-left-in-practical-vim-giveaway-41115399b07f8697f838.js",
@@ -617,8 +621,8 @@
       "path---2014-07-02-learning-vim-in-2014-vim-as-language-0956488d354c879814da.js.map"
     ],
     "path---category-reviews": [
-      "path---category-reviews-1e806386b40a35b76fb1.js",
-      "path---category-reviews-1e806386b40a35b76fb1.js.map"
+      "path---category-reviews-169ff402ca468085cacb.js",
+      "path---category-reviews-169ff402ca468085cacb.js.map"
     ],
     "path---2015-05-28-moving-past-requirejs": [
       "path---2015-05-28-moving-past-requirejs-02323e36224fa58c877d.js",
