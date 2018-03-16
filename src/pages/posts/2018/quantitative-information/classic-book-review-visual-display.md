@@ -1,6 +1,6 @@
 ---
 title: "Classic Book Review: The Visual Display of Quantitative Information"
-date: "2018-03-13T010:00:00+00:00"
+date: "2018/03/13"
 layout: "post"
 path: "/2018/03/12/classic-book-review-visual-display/"
 description: "A data visualization modern classic"
