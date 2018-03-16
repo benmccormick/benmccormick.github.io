@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Fri, 16 Mar 2018 13:24:52 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Mar 2018 17:43:18 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -28,6 +28,138 @@
 <p><a href="https://hacks.mozilla.org/2018/03/making-webassembly-better-for-rust-for-all-languages/">Making WebAssembly better for Rust &#x26; for all languages – Mozilla Hacks – the Web developer blog</a> - This outlines a plan to improve the developer experience of what I think is the future of WebAssembly in most web apps: interop with JavaScript to improve performance of open source libraries and some core performance sensitive code.</p>
 <p><a href="https://github.com/atom/xray">GitHub - atom/xray: An experimental next-generation Electron-based text editor</a> - A non-webassembly example of using Rust selectively to increase performance of an application built primarily using web technologies.</p>
 <p><a href="https://blog.rust-lang.org/2018/03/12/roadmap.html">Rust’s 2018 Roadmap | Rust Blog</a> - A good rundown of the areas of focus for Rust this year.  I’m particularly interested in their target use cases, since 3 of them (CLI tools, Network Services and WebAssembly/the web) are things that I have built before and will build again.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[JavaScript Proposals In Production]]></title>
+            <link>https://benmccormick.org/2018/03/16/proposals-in-production/</link>
+            <guid>https://benmccormick.org/2018/03/16/proposals-in-production/</guid>
+            <pubDate>Fri, 16 Mar 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p><em>This post was adopted from a twitter thread that outgrew it’s medium today.  You can see the original thread <a href="https://twitter.com/ben336/status/974670479905705984">here</a>.</em></p>
+<p>This morning I saw the following tweet:</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">*TC39 proposes Array.flatten feature that breaks code that was working fine for 10 years*<br>&quot;IT&#39;S THEIR FAULT FOR DOING NONSTANDARD STUFF&quot;<br><br>*TC39 proposes changing classes feature not yet in standard*<br>&quot;IT&#39;S NOT FAIR I WROTE CODE USING THAT&quot;</p>&mdash; Dave Methvin (@davemethvin) <a href="https://twitter.com/davemethvin/status/974037352384430080?ref_src=twsrc%5Etfw">March 14, 2018</a></blockquote>
+<p>The tweet refers to <a href="https://github.com/allenwb/js-classes-1.1">this proposal</a> for replacing a number of other proposals for augmenting JS’s current class syntax, as well as recent backlash on twitter over <a href="https://github.com/tc39/proposal-flatMap/pull/56">a proposal </a> to not use flatten or flatmap for future JS standard syntax due to their previous use in mootools.  </p>
+<p>Because people have been using Babel or other tools to transpile their code and use the proposed class syntax today, it would be frustrating for many devs if the proposal shifted under them.  I’ve been there.  And thus, story time:</p>
+<p>A few years ago I used a polyfill for a browser API that wasn’t yet fully supported in all browsers.  And I used it in production code.  Browser support didn’t pick up nearly as quickly as I expected, and then the spec changed.  Supporting that code has caused me problems repeatedly since, and there isn’t a lot of support, given that the syntax isn’t standardized.  Because <a href="https://benmccormick.org/2018/01/07/large-improvements-small-team/">I am working with limited resources</a> I  still haven’t been able to get rid of the polyfill code completely.  It’s baked into one of the most critical portions of my production application.  And so I’ve had to live with it and deal with some of it’s non-ideal aspects for a long time.  Since then I’ve avoided putting anything in production that isn’t in a spec.  And I have absolutely no regrets about that.</p>
+<p><strong>The lesson I’ve learned:</strong> Polyfilling a partially supported spec for compatibility is fine.  Playing around with new proposals is fine (and actually a great idea if you want to influence the future of the language).  But I never want to use polyfills/transpiling for a <em>proposed spec</em> in production code. And yes that means no decorators/class properties/pipeline operators in my code for now.  But that’s ok.  JavaScript is a pretty decent language today.  A little patience will help you in the end.  Even libraries like MobX that encourage the use of “future specs” will still work without them if they’re reasonably well maintained.</p>
+<h3>Why Does This Happen?</h3>
+<p>To some folks the lesson of “Don’t use language features that aren’t standardized yet” probably looks obvious.  So why does this happen? I think there’s a community/culture aspect to some of this.  For instance, many of the early adopters of React really wanted to push the language forward to achieve better developer experience, and were more likely to propose and advocate for new syntax.  This was fine for them, because many of these folks were either</p>
+<p>a. Employees at large companies who had the resources to support whatever code extensions they wanted, and dedicate time to a large refactor if they got it wrong (not typical of most devs)
+b. Consultants/teachers who are always trying to stay on the bleeding edge for teaching purposes and who don’t build projects intended to be maintained long term (not typical of most devs)
+c. Involved in the language standards process and experimenting with new syntax for the purpose of influencing the language, rather than writing production code with it (not typical of most devs)</p>
+<p>Because of this, the need to compile JS for JSX purposes anyway and the heavy emphasis in the early React community on rethinking best practices, I’ve seen a lot more of this type of pre-standardization use of features in the React community than elsewhere.  The Ember community for instance doesn’t seem to have the same problems. But it started with early adopters in React, and spread when folks who were less informed about the standards process cargo-culted the code examples.  So here we are.</p>
+<h3>My suggestions</h3>
+<ol>
+<li><strong>Learn about the ECMAScript standards process.</strong>  <a href="https://benmccormick.org/2017/07/10/how-to-follow-the-javascript-roadmap/">This post</a> can get you started.</li>
+<li><strong>Don’t use non-standard code in production.</strong>  It just isn’t worth the headaches you may get later.</li>
+</ol>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[Classic Book Review: The Visual Display of Quantitative Information]]></title>
+            <link>https://benmccormick.org/2018/03/12/classic-book-review-visual-display/</link>
+            <guid>https://benmccormick.org/2018/03/12/classic-book-review-visual-display/</guid>
+            <pubDate>Tue, 13 Mar 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>If you have any interest at all in data visualization, you can’t get very far learning about it without hearing the name Edward Tufte.  His four books on the subjects have had a huge influence on the industry over the last 35 years, a time where data visualization has blossomed as it has moved from a tedious hand drawn task to a computer assisted activity that even middle schoolers can attempt with the software available on most laptops.</p>
+<p>Tufte’s first book, <a href="http://amzn.to/2H6EB2f">The Visual Display of Quantitative Information</a> is also his most well known and acclaimed book<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  It lays out many of the principles that he would go to expand on elsewhere:</p>
+<ul>
+<li>Focus on the data</li>
+<li>“Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space”</li>
+<li>Graphics should have <em>integrity</em>.  They shouldn’t mislead the reader.</li>
+<li>Remove unecessary clutter</li>
+<li><em>and more</em></li>
+</ul>
+<p>The book is also beautiful.  Tufte chose to self-publish it so that he could control the exact layout and typography.  He also mixes in many old hand drawn visualizations to mix with a fewer new computer assisted graphics.  The result is stunning, and makes for a very enjoyable read throughout, as there is always something interesting to look at.  </p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-bc278.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAwX/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAerHtPmoOH//xAAaEAEAAQUAAAAAAAAAAAAAAAAAAQISITND/9oACAEBAAEFAplywtU63//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABsQAAIBBQAAAAAAAAAAAAAAAAABAhAhMTKR/9oACAEBAAY/AhY4aod2Rp//xAAdEAADAAICAwAAAAAAAAAAAAAAAREhkTFRgaHR/9oACAEBAAE/IcDFKJZX2Em51DeQryaf0r6P/9oADAMBAAIAAwAAABBL7//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAQADAQADAAAAAAAAAAAAAAEAESFBMWGB/9oACAEBAAE/EKFto5TLFRS2167DLI3ws8yM9oUIMDv1GT//2Q=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="A typical page"
+        title=""
+        src="/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-6fbc3.jpg"
+        srcset="/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-da4c7.jpg 143w,
+/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-1d39e.jpg 285w,
+/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-6fbc3.jpg 570w,
+/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-9d77e.jpg 855w,
+/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-e356a.jpg 1140w,
+/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-4208b.jpg 1710w,
+/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-bc278.jpg 4032w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>I was pleased to find that the book didn’t back up some of my own pre-conceived notions about Tufte and his work.  When I’ve seen him referenced in the past, it has been almost solely in terms of minimalism.  He was an expert witness for fewer colors, fewer lines, less ink.  But his takes here are more nuanced.  He definitely tends towards minimalism, and argues for reducing graphs to their bare minimum ink amount over conforming to familiar forms<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  But his go to example of great data display throughout the book is hardly minimalist.  Minard’s map of Napoleon invading Russia is a complex visualization that tracks the size of an army, time, location and temperature, all in a single image.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-11c68.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 48.17708333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAABrklEQVQozyVRXW/TMBT1/xeCd56QoJ2QAGniQxsM7YFVwITUbSWsTdYlaZrUceok/oibpk3CmXMe7GP7nnOtc0nTNBsLxhilNEkS8MSCWoBEURSGYVmWbduh/nAEuv1+T/q+F0KsgTj2fX9p4XleGAYgvh+sViso4ziGymgBXd82m+AeXqRrW1HkWmulNd+yLMs4z3leClXlhQAfnnbNsa1Svvw9/fFZUvfNq5eLhUtqo3m6Rv+95o3ONHsoozsRO4Z5ij327bHDW98Z5l5/fzc+ORmPXo/Go2fPX+R5TqhzsZm+Z87XzDljs0/s75fycRLOLjXzKuami6vg9uLm8u2309Ht3UxICad6t8NvDocDWc9/+n8+Ln99CKbnLHSyNFFKhasoTtJ4ky4fXPffDTKrm+PTB7oOmoEgOVIKoXRlzA4h8kKUpUBOk8nVfH4/2PcWKEWu8K3rGkrEBkKkVMYYKWWWsTSlGFiKjVLUgW+3W6zg2gKVVVUpCxwJNrjCBnMDL4qCc15YDEUIBj1xRAMcsQ5fgAuBQWUBPa4wvafZWAIXKIeGg/sANJMW/wFywCU5mVF/fQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Minards Map of Napoleon Invading Russia"
+        title=""
+        src="/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-d766e.png"
+        srcset="/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-a6b6e.png 143w,
+/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-8e488.png 285w,
+/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-d766e.png 570w,
+/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-13239.png 855w,
+/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-cab6d.png 1140w,
+/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-71f14.png 1710w,
+/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-11c68.png 1920w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Instead Tufte is really arguing for data efficiency.  Simple things should be displayed simply.  If you have a single number, don’t dress it up in a fancy graph.  Just show the number.  If you have a series of numbers, a table or simple scatter will work fine, no need for a fancy piece of chart “art”.  But when you have truly complex data, a complex visualization can make it accessible in ways that a large page of words and numbers never could on its own.</p>
+<p>I found <a href="http://amzn.to/2H6EB2f">The Visual Display of Quantitative Information</a> fun, informative and inspirational.  If you work with data and have never read it, I’d definitely recommend checking it out.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>Amazon named it one of the 100 Best Non-Fiction books of the 20th century</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>Some of that may be a relic of this book being originally written in the 80s before computers, his own work and the work of other similar thinkers greatly increased public awareness of data visualization standards like line and bar charts.</p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
@@ -235,155 +367,6 @@ For this book, that topic is software architecture.  The book tackles it by star
 <p><a href="https://medium.com/@pamelafox/sleep-strategies-for-a-racing-mind-d717e1ab890">Sleep strategies for a racing mind – Pamela Fox</a> - I”ve never had the easiest time falling asleep at night, and it’s taken me a long time to figure out the best ways to manage that.  This article lays out a bunch of strategies for coping, many of which are the same things I’ve had to learn the hard way.  If you struggle to sleep, definitely worth a read.</p>
 <p>Finally I’ll leave you with my personal pick for “tweet of the week”</p>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If at first you don’t succeed... <a href="https://twitter.com/hashtag/science?src=hash&amp;ref_src=twsrc%5Etfw">#science</a> <a href="https://t.co/2TGojKDcr3">pic.twitter.com/2TGojKDcr3</a></p>&mdash; TwistedDoodles (@twisteddoodles) <a href="https://twitter.com/twisteddoodles/status/960801583012380672?ref_src=twsrc%5Etfw">February 6, 2018</a></blockquote>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[React Architecture Confessions]]></title>
-            <link>https://benmccormick.org/2018/02/07/react-confessions/</link>
-            <guid>https://benmccormick.org/2018/02/07/react-confessions/</guid>
-            <pubDate>Wed, 07 Feb 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>I’ve been reading through <a href="http://amzn.to/2mKoejo">Clean Architecture</a> by Robert “Uncle Bob” Martin this month<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>, and while it is great it has had the unpleasant effect of reminding me of all of the mistakes I’ve made over the past few years while learning and using <a href="https://reactjs.org/">React</a>.  I’ve absolutely loved using React at work, and it has made so many things easier.  But it’s a very unopinionated tool when it comes to structuring applications, and I made a lot of mistakes as I was using it to build some small side projects, and then transitioned a major production app to React from Backbone/Marionette.  These mistakes are all architectural; how I broke out components, communicated between components, and managed data and dependencies within components.</p>
-<p>I thought it would be useful to lay out the architecture mistakes I made as I was learning React, both as a solid reflection exercise for myself, and a warning to those of you who are just starting down the “component based UI” road.  </p>
-<h3>My Mistakes</h3>
-<h4>1. Including API calls directly in components</h4>
-<p><strong>What I did wrong</strong>: This is an embarrassing one, but essentially in several places I had components directly fetching data from the server in their constructors or mount calls, and using that information to determine what to render.</p>
-<p><strong>Why I did it</strong>: This was to some extent a lack of planning.  I had all my core “business objects” modeled in some sort of separate object oriented way (either as Backbone or MobX objects) and was able to coordinate syncing them to the server outside of the component layer.  But some data in the system hadn’t been modeled in that way, and when I encountered a need for those components (such as some types of system configurations) instead of stepping back and coming up with a design for modeling those configurations on the front end, I instead sometimes fell back to an ad-hoc API call.   This was also sometimes a result of lazily copying legacy code that had bad patterns while converting components to React, and other developers copying bad patterns when trying to figure out the new React code.</p>
-<p><strong>What I should have done instead</strong>: This could be a whole series of blog posts in itself, but essentially I should have been observing a few principles that would have set off alarm bells.</p>
-<ol>
-<li>Components in a system of any size shouldn’t know about the server. UI Components are about as “low level detail” as it gets in a UI architecture, and should be passed the data they need from a higher level portion of the system.</li>
-<li>If the front end code needs data from the server, it is worth the time to properly model that data in terms of whatever data layer the front end is using.</li>
-</ol>
-<h4>2. Breaking the “props as the component interface” abstraction</h4>
-<p><strong>What I did wrong</strong>: One of the best things about React is the clear interfaces components provide with their list of props.  If properly documented with PropTypes or a type system like Flow or Typescript, it’s easy to look at any React component and tell what data it expects to receive, and therefore how other code is expected to interact with it.  99% of the time, good React components act as a function of <code>(props, state) => UI</code>.  It is however, possible to get access to a component instance, and call functions on them.  There are  rare situations where this is the right way to do things, for instance <a href="https://stackoverflow.com/questions/28889826/react-set-focus-on-input-after-render">focusing an input</a>.  </p>
-<p>When I first started creating React components though, I overused that pattern, and accessed the interface directly to access or change its internal state.  I’d have components like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">SpecialInput</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
-      inputValue<span class="token punctuation">:</span> <span class="token string">'abc'</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>inputValue<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token function">setValue</span><span class="token punctuation">(</span>inputValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>inputValue<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>input
-      className<span class="token operator">=</span><span class="token string">'fancy-input'</span>
-      defaultValue<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>inputValue<span class="token punctuation">}</span>
-      onChange<span class="token operator">=</span><span class="token punctuation">{</span>inputValue <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>inputValue<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-    <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<p>that I would access from parent container like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">InputUser</span>
-
-  <span class="token function">methodThatGotCalledOnSomeEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">doSomethingWith</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>input<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>div<span class="token operator">></span>
-      <span class="token operator">&lt;</span>SpecialInput ref<span class="token operator">=</span><span class="token punctuation">{</span>el <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span>input <span class="token operator">=</span> el<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<p><strong>Why I did it</strong>:  Early on I was using this pattern in a way that copied other frameworks I was familiar with.  A parent component would need the state of it’s child component, so it would maintain a reference to the child and query the child about the state.  When I converted Backbone components to React, sometimes I was basically just copy and pasting existing code, and making it work.  </p>
-<p><strong>What I should have done instead</strong>:  React doesn’t really encourage parents pulling state from their children.  Instead, if there is state that needs to be shared between components, it should be moved up to the parent component and then the state and an updater function should be passed down to the child component.  So my example above would look like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">SpecialInput</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>input
-      className<span class="token operator">=</span><span class="token string">'fancy-input'</span>
-      defaultValue<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>value<span class="token punctuation">}</span>
-      onChange<span class="token operator">=</span><span class="token punctuation">{</span>event <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">updateValue</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span>
-    <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<p>that I would access from parent container like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">InputUser</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
-      inputValue<span class="token punctuation">:</span> <span class="token string">'abc'</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token function">methodThatGotCalledOnSomeEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">doSomethingWith</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>inputValue<span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">></span>
-        <span class="token operator">&lt;</span>SpecialInput
-             value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>inputValue<span class="token punctuation">}</span>
-             updateValue<span class="token operator">=</span><span class="token punctuation">{</span>inputValue <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>inputValue<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-          <span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-
-  <span class="token punctuation">}</span>  
-<span class="token punctuation">}</span>
-</code></pre>
-      </div>
-<h4>3. Interacting with 3rd party components directly</h4>
-<p><strong>What I did wrong</strong>: My first year and a half using React, when I was using 3rd party UI components like <a href="https://github.com/facebookarchive/fixed-data-table">react-fixed-data-table</a> I would always use them directly in my components, and take full advantage of their APIs.</p>
-<p><strong>Why I did it</strong>: Because every React library in the world has documentation showing how to use its components directly in code for a variety of different use cases, and nobody ever tells you to put an abstraction around their code</p>
-<p><strong>What I should have done instead</strong>: I should have wrapped the 3rd party libraries in one or more wrapper components.  This has a few advantages:</p>
-<ol>
-<li>When we’re using a UI component like a table in a new place in our App, if I’ve created a wrapper component that has presets for most common settings, I only need to configure the things that are meaningful to this new use case in my app</li>
-<li>Targeted wrapper components like a <code>SortableTable</code> component or a <code>DropdownWithAutoComplete</code> component are easy to understand to a new reader of the code.  Instead of digging through configuration props, they can read the component name and understand the purpose of that component then focus on the data being passed to it</li>
-<li>When making updates to a library it is much easier to test that the changes are safe if the uses of the library are limited to a few focused components, rather than being spread across a whole application</li>
-<li>Similarly, if we need to switch to a new library, that is much easier with a limited footprint</li>
-<li>It can be easier to create reliable automatic tests using a wrapper component, since you have more control of things like how mocking works and when the component interface changes than you do for 3rd party code</li>
-</ol>
-<h4>4. Importing other parts of the system directly into display components</h4>
-<p><strong>What I did wrong</strong>: The main application I work on uses a messaging system to allow communication between different parts of the system.  It’s a legacy piece from when it existed as a Backbone application, and isn’t a very React-y way of doing things, but that isn’t really a problem.  This situation would be the same for a logging component or a data store.  What isn’t great is that when I need to use the messaging system, I always import it directly into the component file.</p>
-<p><strong>Why I did it</strong>: Direct imports are convenient, the messaging system is a core part of my system, and it seemed like a normal way of accessing it.  I also wasn’t aware of any better way to do it.</p>
-<p><strong>What I should have done instead</strong>:  The disadvantage of direct imports is that they’re harder to test.  If I had passed my messaging system as a prop to whatever component needed it, it would be much easier to test that it was called in the way I expected, without having to mock out the whole messaging system library.  I also could abstract away the whole power of the messaging system, and only provide the specific functionality needed by a component.  When I first began working on this system though, I didn’t know a practical way to do this.  The messenger system was often used by deeply nested components, and it seemed bad to pass it down a whole component tree.</p>
-<p>The answer is to use the <a href="https://www.robinwieruch.de/react-provider-pattern-context/">Provider pattern</a>.  The provider pattern is a way to use React’s context API to provide top level properties from a high level parent component to deeply nested child components.  It is a perfect pattern for providing important high level pieces of your application to low level components without tightly coupling them, while maintaining testability.<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup></p>
-<h4>5. Changing too many things at once</h4>
-<p><strong>What I did wrong</strong>: When my team began converting our application from Backbone to React, it was tempting to try and change many things at once.  All the React examples you see online are using Babel/ES6, Webpack, Redux, React Router and tons of other shiny but complicated things.  Trying to implement it all in an existing project<sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup> can be overwhelming and lead to <a href="http://mikehadlow.blogspot.com/2014/12/the-lava-layer-anti-pattern.html">lava layers</a>.  We actually started out with good discipline and converted files to use ES6 first, then added Webpack, then slowly started to convert UI components to React.  Unfortunately as we continued to convert React, we began replacing our Backbone data models with MobX, and began using CSS Modules in some places.  When our team size was reduced last year, we were left in a situation where the same functions were performed in different ways throughout the codebase.</p>
-<p><strong>Why I did it</strong>: It’s easy to see things that could be better in a web application and immediately want to fix them!  Especially if parts of that change seem easier than other changes you’re working on</p>
-<p><strong>What I should have done instead</strong>: I wrote about this <a href="https://benmccormick.org/2018/01/07/large-improvements-small-team/">at length</a> last month, but there really is no substitute for taking things one at a time.  While it’s tempting to think that it will be easier to convert to React if you’re using other “react-y” tools and libraries, your code will ultimately be more maintainable if it is consistent throughout an application.  The only reliable way to do that is to make changes completely before you start making other changes.  It isn’t sexy, and it will leave you at least a little ways off the bleeding edge, but it’s the way to build large, reliable systems and keep them up to date.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>At the time of writing this, it was super on sale on <a href="http://amzn.to/2mKoejo">Amazon</a></p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-<li id="fn-2">
-<p>Note that the Context API that the provider pattern is based on is changing, so I’d isolating out any provider code you write into a reusable component so that it is easy to update later</p>
-<a href="#fnref-2" class="footnote-backref">↩</a>
-</li>
-<li id="fn-3">
-<p>Or even a new project for that matter!</p>
-<a href="#fnref-3" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: February 3rd]]></title>
-            <link>https://benmccormick.org/2018/02/03/weekly-links-02-03-18/</link>
-            <guid>https://benmccormick.org/2018/02/03/weekly-links-02-03-18/</guid>
-            <pubDate>Sat, 03 Feb 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h3>JavaScript And The Web</h3>
-<p><a href="http://2ality.com/2017/02/ecmascript-2018.html">ECMAScript 2018 | 2ality</a> - The spec for the 2018 version of <a href="https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/">ECMAScript</a> has been finalized and this is a good roundup of the new features and syntax available.  I’m personally excited for rest/spread properties to be an official part of the language.</p>
-<p><a href="https://medium.com/@firt/pwas-are-coming-to-ios-11-3-cupertino-we-have-a-problem-2ff49fd7d6ea">PWAs are coming to iOS 11.3: Cupertino, we have a problem | Maximiliano Firtman</a> - Interesting look at what is and isn’t available in the newest version of Safari when it comes to PWAs and offline support</p>
-<h3>Tech and Business</h3>
-<p><a href="https://medium.com/99-mph/1-trillion-of-real-estate-is-on-the-move-heres-why-94ee9233e5eb">1 Trillion of Real Estate is on the move | Phil Levin</a> - Almost everybody seems to agree that self driving cars are going to happen.  It’s only a question of when.  But the other question is what the second-level effects of self driving cars will be.  Those who can correctly predict the answer to those two questions are going to have opportunities to make money and create interesting businesses. This is an interesting take on how self-driving cars might affect real estate.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
