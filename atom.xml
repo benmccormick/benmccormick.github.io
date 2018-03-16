@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-03-16T03:25:07Z</updated>
+    <updated>2018-03-16T13:24:52Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -29,7 +29,7 @@
 <p><a href="https://hph.is/coding/bitmasks-react-context">Bitmasks and the new React Context API | Haukur Hallvarðsson</a> - A nice rundown of one aspect of the new React Context API that is likely to be familiar to low-level developers but will probably be a new idea to many front end devs: using bitmasks to test a condition.</p>
 <p><a href="https://medium.com/@mweststrate/mobx-4-better-simpler-faster-smaller-c1fbc08008da">MobX 4: Better, simpler, faster, smaller | Michel Weststrate</a> - MobX continues to be a fantastic state management libary and this update looks like it will make it even better.</p>
 <p><a href="https://engineering.linkedin.com/blog/2018/03/how-we-built-the-same-app-twice-with-preact-and-glimmerjs">Lighter than Lightweight: How We Built the Same App Twice with Preact and Glimmer.js | LinkedIn Engineering</a> - This is a really cool real world comparison of 2 JavaScript frameworks, where they actually built the same app in 2 separate frameworks, with core contributors to each framework involved in the implementation.  To be honest, my main takeaway is that among modern frameworks “framework performance” can be a bit overrated, and not a great reason to choose a specific library or framework, as compared to factors like developer experience, community, and fit with the existing codebase.</p>
-<h3>Rust &#x26;&#x26; WebAssembly</h3>
+<h3>Rust And WebAssembly</h3>
 <p>I’ve been thinking about taking the time to learn a new language for the first time in a while.  I think WebAssembly and Rust transpiled to WebAssembly in particular are going to become an important part of high performance JavaScript applications and frameworks/libraries.  So I’m starting to check it out.  Here are a few  recent relevant links</p>
 <p><a href="https://hacks.mozilla.org/2018/03/making-webassembly-better-for-rust-for-all-languages/">Making WebAssembly better for Rust &#x26; for all languages – Mozilla Hacks – the Web developer blog</a> - This outlines a plan to improve the developer experience of what I think is the future of WebAssembly in most web apps: interop with JavaScript to improve performance of open source libraries and some core performance sensitive code.</p>
 <p><a href="https://github.com/atom/xray">GitHub - atom/xray: An experimental next-generation Electron-based text editor</a> - A non-webassembly example of using Rust selectively to increase performance of an application built primarily using web technologies.</p>
