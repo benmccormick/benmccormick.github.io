@@ -21,7 +21,7 @@ key: "weekly-links-03-16-18"
 [Lighter than Lightweight: How We Built the Same App Twice with Preact and Glimmer.js | LinkedIn Engineering](https://engineering.linkedin.com/blog/2018/03/how-we-built-the-same-app-twice-with-preact-and-glimmerjs) - This is a really cool real world comparison of 2 JavaScript frameworks, where they actually built the same app in 2 separate frameworks, with core contributors to each framework involved in the implementation.  To be honest, my main takeaway is that among modern frameworks "framework performance" can be a bit overrated, and not a great reason to choose a specific library or framework, as compared to factors like developer experience, community, and fit with the existing codebase.
 
 
-### Rust && WebAssembly
+### Rust And WebAssembly
 
 I've been thinking about taking the time to learn a new language for the first time in a while.  I think WebAssembly and Rust transpiled to WebAssembly in particular are going to become an important part of high performance JavaScript applications and frameworks/libraries.  So I'm starting to check it out.  Here are a few  recent relevant links
 
