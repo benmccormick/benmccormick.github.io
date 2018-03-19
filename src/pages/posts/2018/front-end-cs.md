@@ -5,7 +5,7 @@ layout: "post"
 path: "/2018/02/20/cs-for-fe/"
 description: "What Computer Science concepts are useful for front end devs? "
 keywords: "computer science networking front end"
-category: "software-productivity"
+category: "computer-science"
 topics: ['Computer Science']
 key: "cs-for-fe"
 readNext: "react-confessions,large-improvements-small-team,ten-things-js"

@@ -69,6 +69,14 @@ module.exports = {
         icon: 'megaphone',
         subscribeText: 'Web development',
       },
+      {
+        title: 'Computer Science',
+        description:
+          'These posts cover more academic computer science concepts',
+        key: 'computer-science',
+        icon: 'desktop',
+        subscribeText: 'Computer Science',
+      },
     ],
     featuredTopics: [
       'JavaScript',

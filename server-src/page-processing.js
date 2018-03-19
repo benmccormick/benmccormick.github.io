@@ -27,6 +27,7 @@ const createTopicArchives = async (graphql, createPage) => {
                   path
                   date
                   dontfeature
+                  isDraft
                 }
                 html
                 fields {
@@ -46,7 +47,7 @@ const createTopicArchives = async (graphql, createPage) => {
 
   // Loop through all nodes (our markdown posts) and add the tags to our post object.
 
-  edges.forEach(post => {
+  edges.filter(post => post.node.frontmatter.isDraft).forEach(post => {
     if (post.node.frontmatter.topics) {
       post.node.frontmatter.topics.forEach(topic => {
         if (!topics[topic]) {
@@ -120,6 +121,7 @@ const getPages = async graphql => {
                   date
                   layout
                   title
+                  isDraft
                 }
                 html
                 fields {
@@ -134,13 +136,15 @@ const getPages = async graphql => {
   if (result.errors) {
     throw result.errors;
   }
-  let pages = result.data.allMarkdownRemark.edges.map(edge => ({
-    date: edge.node.frontmatter.date,
-    title: edge.node.frontmatter.title,
-    layout: edge.node.frontmatter.layout,
-    html: edge.node.html,
-    slug: edge.node.fields.slug,
-  }));
+  let pages = result.data.allMarkdownRemark.edges
+    .filter(edge => edge.node.frontmatter.isDraft)
+    .map(edge => ({
+      date: edge.node.frontmatter.date,
+      title: edge.node.frontmatter.title,
+      layout: edge.node.frontmatter.layout,
+      html: edge.node.html,
+      slug: edge.node.fields.slug,
+    }));
   return pages;
 };
 
@@ -176,6 +180,7 @@ const createBlogPosts = async (graphql, createPage) => {
                   path
                   date
                   dontfeature
+                  isDraft
                 }
                 fields {
                   slug

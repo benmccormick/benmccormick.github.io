@@ -5,6 +5,7 @@ import sortBy from 'lodash/sortBy';
 import take from 'lodash/take';
 import findIndex from 'lodash/findIndex';
 
+const isDraft = page => get(page, 'node.frontmatter.isDraft', false);
 const isEligiblePage = page =>
   !includes(page.node.frontmatter.path, '/404') &&
   !page.node.frontmatter.dontfeature &&
@@ -49,6 +50,7 @@ export const getPopularPosts = (pages, count = Infinity) =>
         page =>
           !includes(page.node.frontmatter.path, '/404') &&
           !page.node.frontmatter.dontfeature &&
+          !isDraft(page) &&
           get(page, 'node.frontmatter.layout') === 'post'
       )
       .map(p => ({ data: p.node.frontmatter, path: p.node.fields.slug })),
@@ -68,7 +70,10 @@ export const getSortedPosts = (pages, count = Infinity) => {
   return take(
     sortBy(pages, page => get(page, 'node.frontmatter.date'))
       .reverse()
-      .filter(page => get(page, 'node.frontmatter.layout') === 'post')
+      .filter(
+        page =>
+          get(page, 'node.frontmatter.layout') === 'post' && !isDraft(page)
+      )
       .map(buildPage),
     count
   );

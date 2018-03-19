@@ -10,6 +10,7 @@ import megaphone from '../svg/megaphone.svgi';
 import project from '../svg/project.svgi';
 import tools from '../svg/tools.svgi';
 import question from '../svg/question.svgi';
+import desktop from '../svg/desktop.svgi';
 import categoryList from '../pages/categories.json';
 import Link from 'gatsby-link';
 import get from 'lodash/get';
@@ -27,6 +28,7 @@ let icons = {
   megaphone,
   project,
   tools,
+  desktop,
 };
 
 const iconWrapper = css({

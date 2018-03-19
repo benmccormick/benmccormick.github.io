@@ -34,6 +34,7 @@ export const pageQuery = graphql`
             path
             layout
             key
+            isDraft
           }
           fields {
             slug
