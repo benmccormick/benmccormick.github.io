@@ -21,8 +21,8 @@
       "path---2018-02-09-weekly-links-02-09-18-3c0f444a114e103831a9.js.map"
     ],
     "path---links-archive": [
-      "path---links-archive-9bc9be7374b9a425b742.js",
-      "path---links-archive-9bc9be7374b9a425b742.js.map"
+      "path---links-archive-8bfb436a80880147e2db.js",
+      "path---links-archive-8bfb436a80880147e2db.js.map"
     ],
     "path---2015-05-25-marionette-service-service-objects-for-marionette": [
       "path---2015-05-25-marionette-service-service-objects-for-marionette-7cbb0ed58021fef25884.js",
@@ -51,6 +51,10 @@
     "path---2017-02-13-improving-site-performance-with-lighthouse": [
       "path---2017-02-13-improving-site-performance-with-lighthouse-d31ebe8862111ccaa153.js",
       "path---2017-02-13-improving-site-performance-with-lighthouse-d31ebe8862111ccaa153.js.map"
+    ],
+    "path---2018-03-19-cs-basics-variables": [
+      "path---2018-03-19-cs-basics-variables-a28402a0235f68d68134.js",
+      "path---2018-03-19-cs-basics-variables-a28402a0235f68d68134.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-013806ee297f61ff5ce9.js",
@@ -105,8 +109,8 @@
       "path---2017-09-04-jest-matchers-2-8bb653c5605aa708572e.js.map"
     ],
     "path---category-frameworks": [
-      "path---category-frameworks-ff56f55dd65cbdbaa69f.js",
-      "path---category-frameworks-ff56f55dd65cbdbaa69f.js.map"
+      "path---category-frameworks-ed652aa244cd0089b746.js",
+      "path---category-frameworks-ed652aa244cd0089b746.js.map"
     ],
     "path---2015-09-14-es-5-es-6-es-2016-es-next-whats-going-on-with-javascript-versioning": [
       "path---2015-09-14-es-5-es-6-es-2016-es-next-whats-going-on-with-javascript-versioning-2c95c7ce4e2bbaf73795.js",
@@ -273,8 +277,8 @@
       "path---2016-05-02-digging-into-react-choosing-component-styles-2402b9251e704116cbf5.js.map"
     ],
     "path---category-meta": [
-      "path---category-meta-668271f09befe3f528ca.js",
-      "path---category-meta-668271f09befe3f528ca.js.map"
+      "path---category-meta-fd1788b90879a9f4e516.js",
+      "path---category-meta-fd1788b90879a9f4e516.js.map"
     ],
     "path---2018-01-05-weekly-links-01-05-18": [
       "path---2018-01-05-weekly-links-01-05-18-fc6bca96e79f413c0823.js",
@@ -309,8 +313,8 @@
       "path---2016-03-09-stability-vs-decline-d4ac73da199b2eb6ee37.js.map"
     ],
     "path---index": [
-      "path---index-059592fdb4472e0b2e15.js",
-      "path---index-059592fdb4472e0b2e15.js.map"
+      "path---index-37f770fb4943a3ab517f.js",
+      "path---index-37f770fb4943a3ab517f.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-c6b8ae317b4241b27c27.js",
@@ -329,12 +333,12 @@
       "path---2013-05-07-revertible-observables-in-knockout-8ea5020bdd44ab6466e9.js.map"
     ],
     "path---category-platform": [
-      "path---category-platform-d1577d66d871186dfe09.js",
-      "path---category-platform-d1577d66d871186dfe09.js.map"
+      "path---category-platform-509e4eba029155cf3356.js",
+      "path---category-platform-509e4eba029155cf3356.js.map"
     ],
     "path---category-javascript": [
-      "path---category-javascript-8e4ed14bc270f6df31db.js",
-      "path---category-javascript-8e4ed14bc270f6df31db.js.map"
+      "path---category-javascript-fafcf3695075012e0860.js",
+      "path---category-javascript-fafcf3695075012e0860.js.map"
     ],
     "path---2013-09-10-blendconf-2013-takeaways-from-a-very-human-tech-conference": [
       "path---2013-09-10-blendconf-2013-takeaways-from-a-very-human-tech-conference-7103fc4d3121debbdcab.js",
@@ -365,8 +369,8 @@
       "path---2013-01-03-sublime-text-for-javascript-plugins-940629c14bb0542d02dc.js.map"
     ],
     "path---category-software-productivity": [
-      "path---category-software-productivity-76b8b994d3eac9cc6b98.js",
-      "path---category-software-productivity-76b8b994d3eac9cc6b98.js.map"
+      "path---category-software-productivity-3bfba7b50b744bd3c87a.js",
+      "path---category-software-productivity-3bfba7b50b744bd3c87a.js.map"
     ],
     "path---2016-09-19-testing-with-jest-snapshots-first-impressions": [
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-2f29fd035722acb55fd7.js",
@@ -389,9 +393,9 @@
       "path---2014-08-28-custom-elements-by-example-b524da8b658b12d59025.js.map"
     ],
     "commons": [
-      "commons-24f04a6926ad43818ac3.js",
+      "commons-4ad668772ec79d634a8f.js",
       "build-js-styles.css",
-      "commons-24f04a6926ad43818ac3.js.map",
+      "commons-4ad668772ec79d634a8f.js.map",
       "build-js-styles.css.map"
     ],
     "path---2015-12-30-es-6-patterns-converting-callbacks-to-promises": [
@@ -471,8 +475,8 @@
       "path---2013-06-11-how-i-use-stack-overflow-774dd18b95fddaac8cd4.js.map"
     ],
     "path---category-tools": [
-      "path---category-tools-a0548cd70d40a0b7b035.js",
-      "path---category-tools-a0548cd70d40a0b7b035.js.map"
+      "path---category-tools-f24229c4e02855ac555a.js",
+      "path---category-tools-f24229c4e02855ac555a.js.map"
     ],
     "path---2018-03-02-weekly-links-03-02-18": [
       "path---2018-03-02-weekly-links-03-02-18-1e44a6408bcc71cc996d.js",
@@ -491,8 +495,8 @@
       "path---2016-06-26-quick-tip-take-advantage-of-lodash-collections-2-2f990f47f0d34e88a654.js.map"
     ],
     "path---category-opinion": [
-      "path---category-opinion-b7473cf4349875fd4942.js",
-      "path---category-opinion-b7473cf4349875fd4942.js.map"
+      "path---category-opinion-054bdf33070506497ce0.js",
+      "path---category-opinion-054bdf33070506497ce0.js.map"
     ],
     "path---2018-02-16-weekly-links-02-16-18": [
       "path---2018-02-16-weekly-links-02-16-18-3f91593a3bf5bbe32664.js",
@@ -539,18 +543,18 @@
       "path---2014-11-24-alternative-javascript-a35391ae4eac0af98e74.js.map"
     ],
     "path---2018-02-20-cs-for-fe": [
-      "path---2018-02-20-cs-for-fe-762577407b3ec5203d2b.js",
-      "path---2018-02-20-cs-for-fe-762577407b3ec5203d2b.js.map"
+      "path---2018-02-20-cs-for-fe-bc1afd700a76de1f8103.js",
+      "path---2018-02-20-cs-for-fe-bc1afd700a76de1f8103.js.map"
     ],
     "app": [
-      "app-4cfbda5ee17fcbef9ac4.js",
+      "app-d51fa8820ba40af7a268.js",
       "build-js-styles.css",
-      "app-4cfbda5ee17fcbef9ac4.js.map",
+      "app-d51fa8820ba40af7a268.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-4e001900d89f272d9c1a.js",
-      "path---archive-4e001900d89f272d9c1a.js.map"
+      "path---archive-a96e85db225728d64f7b.js",
+      "path---archive-a96e85db225728d64f7b.js.map"
     ],
     "path---2014-07-24-one-day-left-in-practical-vim-giveaway": [
       "path---2014-07-24-one-day-left-in-practical-vim-giveaway-41115399b07f8697f838.js",
@@ -559,6 +563,10 @@
     "path---2012-11-09-bayesian-witch-hunt": [
       "path---2012-11-09-bayesian-witch-hunt-345df5f558188d78c5d6.js",
       "path---2012-11-09-bayesian-witch-hunt-345df5f558188d78c5d6.js.map"
+    ],
+    "path---category-computer-science": [
+      "path---category-computer-science-712c2b16342b97cd6863.js",
+      "path---category-computer-science-712c2b16342b97cd6863.js.map"
     ],
     "path---2017-12-15-weekly-links-12-15-17": [
       "path---2017-12-15-weekly-links-12-15-17-5d0f04a1a2ff52230756.js",
@@ -589,8 +597,8 @@
       "path---2015-03-23-staying-dry-with-marionette-behaviors-c72aa64b0ad0bc1fe59b.js.map"
     ],
     "path---2016-06-04-what-are-mutable-and-immutable-data-structures-2": [
-      "path---2016-06-04-what-are-mutable-and-immutable-data-structures-2-65ace90ae5b996ecf55e.js",
-      "path---2016-06-04-what-are-mutable-and-immutable-data-structures-2-65ace90ae5b996ecf55e.js.map"
+      "path---2016-06-04-what-are-mutable-and-immutable-data-structures-2-537c359585f773d14f51.js",
+      "path---2016-06-04-what-are-mutable-and-immutable-data-structures-2-537c359585f773d14f51.js.map"
     ],
     "path---2017-08-15-jest-matchers-1": [
       "path---2017-08-15-jest-matchers-1-bd4f61283d3f3552fb23.js",
@@ -625,8 +633,8 @@
       "path---2014-07-02-learning-vim-in-2014-vim-as-language-0956488d354c879814da.js.map"
     ],
     "path---category-reviews": [
-      "path---category-reviews-8cda688faeedcb14d492.js",
-      "path---category-reviews-8cda688faeedcb14d492.js.map"
+      "path---category-reviews-c8c453366da9a3a723cf.js",
+      "path---category-reviews-c8c453366da9a3a723cf.js.map"
     ],
     "path---2015-05-28-moving-past-requirejs": [
       "path---2015-05-28-moving-past-requirejs-02323e36224fa58c877d.js",
