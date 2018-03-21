@@ -1,12 +1,12 @@
 {
   "assetsByChunkName": {
     "path---2014-11-04-a-quick-review-of-google-inbox": [
-      "path---2014-11-04-a-quick-review-of-google-inbox-500e0e4fca3b8ac0c78b.js",
-      "path---2014-11-04-a-quick-review-of-google-inbox-500e0e4fca3b8ac0c78b.js.map"
+      "path---2014-11-04-a-quick-review-of-google-inbox-4531d717f9c91344cb0d.js",
+      "path---2014-11-04-a-quick-review-of-google-inbox-4531d717f9c91344cb0d.js.map"
     ],
     "path---2015-01-22-is-bower-useful": [
-      "path---2015-01-22-is-bower-useful-4b81d66d7370573edaf8.js",
-      "path---2015-01-22-is-bower-useful-4b81d66d7370573edaf8.js.map"
+      "path---2015-01-22-is-bower-useful-f71300ada3a644e3d526.js",
+      "path---2015-01-22-is-bower-useful-f71300ada3a644e3d526.js.map"
     ],
     "path---2014-12-02-the-case-for-marionette-js": [
       "path---2014-12-02-the-case-for-marionette-js-b7c965e9863095a4ab41.js",
@@ -21,16 +21,16 @@
       "path---2018-02-09-weekly-links-02-09-18-3c0f444a114e103831a9.js.map"
     ],
     "path---links-archive": [
-      "path---links-archive-1f787cffe465a2954da4.js",
-      "path---links-archive-1f787cffe465a2954da4.js.map"
+      "path---links-archive-76c608aa9052d314e9b7.js",
+      "path---links-archive-76c608aa9052d314e9b7.js.map"
     ],
     "path---2015-05-25-marionette-service-service-objects-for-marionette": [
       "path---2015-05-25-marionette-service-service-objects-for-marionette-7cbb0ed58021fef25884.js",
       "path---2015-05-25-marionette-service-service-objects-for-marionette-7cbb0ed58021fef25884.js.map"
     ],
     "path---2012-11-08-shutdown-tiles-for-windows-8-start-screen": [
-      "path---2012-11-08-shutdown-tiles-for-windows-8-start-screen-a73a128ee88b9f192bc4.js",
-      "path---2012-11-08-shutdown-tiles-for-windows-8-start-screen-a73a128ee88b9f192bc4.js.map"
+      "path---2012-11-08-shutdown-tiles-for-windows-8-start-screen-99fd50b613a38e74b73a.js",
+      "path---2012-11-08-shutdown-tiles-for-windows-8-start-screen-99fd50b613a38e74b73a.js.map"
     ],
     "path---2018-03-21-cs-basics-variables": [
       "path---2018-03-21-cs-basics-variables-fd80c3149b55429af8ab.js",
@@ -57,8 +57,8 @@
       "path---2017-02-13-improving-site-performance-with-lighthouse-d31ebe8862111ccaa153.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-013806ee297f61ff5ce9.js",
-      "component---src-pages-index-js-013806ee297f61ff5ce9.js.map"
+      "component---src-pages-index-js-68a0701a07ee80ab8bbe.js",
+      "component---src-pages-index-js-68a0701a07ee80ab8bbe.js.map"
     ],
     "path---2017-11-26-weekly-links-11-26-17": [
       "path---2017-11-26-weekly-links-11-26-17-4b6c0a32a9adfd01cd70.js",
@@ -93,12 +93,12 @@
       "path---2018-03-16-weekly-links-03-11-16-8db19cc55358f519a22d.js.map"
     ],
     "path---2013-11-25-a-look-at-ack": [
-      "path---2013-11-25-a-look-at-ack-79a68ab17b7e178a6530.js",
-      "path---2013-11-25-a-look-at-ack-79a68ab17b7e178a6530.js.map"
+      "path---2013-11-25-a-look-at-ack-474bd28f5b86da2f544a.js",
+      "path---2013-11-25-a-look-at-ack-474bd28f5b86da2f544a.js.map"
     ],
     "path---readinglist": [
-      "path---readinglist-a894cdb6890bd03b4c37.js",
-      "path---readinglist-a894cdb6890bd03b4c37.js.map"
+      "path---readinglist-fe102a9ea1614c7de2b4.js",
+      "path---readinglist-fe102a9ea1614c7de2b4.js.map"
     ],
     "path---2015-12-31-2015-roundup-2": [
       "path---2015-12-31-2015-roundup-2-7e771ad7491b1973ceca.js",
@@ -109,8 +109,8 @@
       "path---2017-09-04-jest-matchers-2-8bb653c5605aa708572e.js.map"
     ],
     "path---category-frameworks": [
-      "path---category-frameworks-9de435cecbfa82001c69.js",
-      "path---category-frameworks-9de435cecbfa82001c69.js.map"
+      "path---category-frameworks-aee2a2391af0bb63c92e.js",
+      "path---category-frameworks-aee2a2391af0bb63c92e.js.map"
     ],
     "path---2015-09-14-es-5-es-6-es-2016-es-next-whats-going-on-with-javascript-versioning": [
       "path---2015-09-14-es-5-es-6-es-2016-es-next-whats-going-on-with-javascript-versioning-2c95c7ce4e2bbaf73795.js",
@@ -129,8 +129,8 @@
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---2013-08-12-book-review-user-centered-design": [
-      "path---2013-08-12-book-review-user-centered-design-a18511a090f31fa8361c.js",
-      "path---2013-08-12-book-review-user-centered-design-a18511a090f31fa8361c.js.map"
+      "path---2013-08-12-book-review-user-centered-design-409a2425b6fc83294b01.js",
+      "path---2013-08-12-book-review-user-centered-design-409a2425b6fc83294b01.js.map"
     ],
     "path---2014-06-02-discovering-vim": [
       "path---2014-06-02-discovering-vim-0563be4547e216d571ae.js",
@@ -173,8 +173,8 @@
       "path---2016-04-30-ack-tips-fe02734bcd9a8952208d.js.map"
     ],
     "path---2013-06-29-rss-roundup": [
-      "path---2013-06-29-rss-roundup-23d5af0b133aaf4ee420.js",
-      "path---2013-06-29-rss-roundup-23d5af0b133aaf4ee420.js.map"
+      "path---2013-06-29-rss-roundup-5fd754c868900dea92bc.js",
+      "path---2013-06-29-rss-roundup-5fd754c868900dea92bc.js.map"
     ],
     "path---2012-12-29-cleaning-my-digital-house": [
       "path---2012-12-29-cleaning-my-digital-house-9773bf9ed294cc86368e.js",
@@ -185,8 +185,8 @@
       "path---2017-06-03-rss-atom-json-gatsby-67d04a38263ba4e08896.js.map"
     ],
     "path---a-note-to-recruiters": [
-      "path---a-note-to-recruiters-841bba77b4b494554bbf.js",
-      "path---a-note-to-recruiters-841bba77b4b494554bbf.js.map"
+      "path---a-note-to-recruiters-436be960b1a7f6c2cb04.js",
+      "path---a-note-to-recruiters-436be960b1a7f6c2cb04.js.map"
     ],
     "path---2015-04-07-es-6-classes-and-backbone-js": [
       "path---2015-04-07-es-6-classes-and-backbone-js-c0c8a07f3f1d88d7cb4d.js",
@@ -277,16 +277,16 @@
       "path---2016-05-02-digging-into-react-choosing-component-styles-2402b9251e704116cbf5.js.map"
     ],
     "path---category-meta": [
-      "path---category-meta-a466a38ac6f0d20b144c.js",
-      "path---category-meta-a466a38ac6f0d20b144c.js.map"
+      "path---category-meta-9df498de273a338c1ab3.js",
+      "path---category-meta-9df498de273a338c1ab3.js.map"
     ],
     "path---2018-01-05-weekly-links-01-05-18": [
       "path---2018-01-05-weekly-links-01-05-18-fc6bca96e79f413c0823.js",
       "path---2018-01-05-weekly-links-01-05-18-fc6bca96e79f413c0823.js.map"
     ],
     "path---2013-01-01-sublime-text-for-javascript-configuration": [
-      "path---2013-01-01-sublime-text-for-javascript-configuration-c685432f4aafdcedef7f.js",
-      "path---2013-01-01-sublime-text-for-javascript-configuration-c685432f4aafdcedef7f.js.map"
+      "path---2013-01-01-sublime-text-for-javascript-configuration-b0416fd1cf8e3fa90d05.js",
+      "path---2013-01-01-sublime-text-for-javascript-configuration-b0416fd1cf8e3fa90d05.js.map"
     ],
     "component---src-pages-links-archive-js": [
       "component---src-pages-links-archive-js-c5106f5bf99ee6ca8318.js",
@@ -301,8 +301,8 @@
       "path---2014-12-22-building-complex-layouts-with-marionette-js-c019a3dd532ae728b920.js.map"
     ],
     "path---2013-04-23-book-review-javascript-testing-with-jasmine": [
-      "path---2013-04-23-book-review-javascript-testing-with-jasmine-0fda0d1a943d7e1409ec.js",
-      "path---2013-04-23-book-review-javascript-testing-with-jasmine-0fda0d1a943d7e1409ec.js.map"
+      "path---2013-04-23-book-review-javascript-testing-with-jasmine-0921764bcc1da9d9d3e2.js",
+      "path---2013-04-23-book-review-javascript-testing-with-jasmine-0921764bcc1da9d9d3e2.js.map"
     ],
     "path---2015-06-10-is-safari-being-left-behind": [
       "path---2015-06-10-is-safari-being-left-behind-9fc469cdb4904d2b6e5f.js",
@@ -313,32 +313,32 @@
       "path---2016-03-09-stability-vs-decline-d4ac73da199b2eb6ee37.js.map"
     ],
     "path---index": [
-      "path---index-bf7483176782d8428cb2.js",
-      "path---index-bf7483176782d8428cb2.js.map"
+      "path---index-28717f606fb7ac8001af.js",
+      "path---index-28717f606fb7ac8001af.js.map"
     ],
     "path---subscribe": [
-      "path---subscribe-765dd54abbc79c893949.js",
-      "path---subscribe-765dd54abbc79c893949.js.map"
+      "path---subscribe-c6b8ae317b4241b27c27.js",
+      "path---subscribe-c6b8ae317b4241b27c27.js.map"
     ],
     "path---speaking": [
-      "path---speaking-ed181bb92a0811c323bb.js",
-      "path---speaking-ed181bb92a0811c323bb.js.map"
+      "path---speaking-669f476a89217d284e14.js",
+      "path---speaking-669f476a89217d284e14.js.map"
     ],
     "path---2013-01-06-book-review-effective-javascript": [
-      "path---2013-01-06-book-review-effective-javascript-77641b38973016901c48.js",
-      "path---2013-01-06-book-review-effective-javascript-77641b38973016901c48.js.map"
+      "path---2013-01-06-book-review-effective-javascript-7d46af4680c2b2ce3ec0.js",
+      "path---2013-01-06-book-review-effective-javascript-7d46af4680c2b2ce3ec0.js.map"
     ],
     "path---2013-05-07-revertible-observables-in-knockout": [
       "path---2013-05-07-revertible-observables-in-knockout-8ea5020bdd44ab6466e9.js",
       "path---2013-05-07-revertible-observables-in-knockout-8ea5020bdd44ab6466e9.js.map"
     ],
     "path---category-platform": [
-      "path---category-platform-dc746cf99524b4443448.js",
-      "path---category-platform-dc746cf99524b4443448.js.map"
+      "path---category-platform-f11a5d5d459b3a7076ab.js",
+      "path---category-platform-f11a5d5d459b3a7076ab.js.map"
     ],
     "path---category-javascript": [
-      "path---category-javascript-98231c198d0de740ebcd.js",
-      "path---category-javascript-98231c198d0de740ebcd.js.map"
+      "path---category-javascript-3cb79ed6c825cc23d87c.js",
+      "path---category-javascript-3cb79ed6c825cc23d87c.js.map"
     ],
     "path---2013-09-10-blendconf-2013-takeaways-from-a-very-human-tech-conference": [
       "path---2013-09-10-blendconf-2013-takeaways-from-a-very-human-tech-conference-7103fc4d3121debbdcab.js",
@@ -365,12 +365,12 @@
       "path---2013-11-14-modern-dojo-exploring-dojo-basedeclare-1f3eff53908b2f1c671d.js.map"
     ],
     "path---2013-01-03-sublime-text-for-javascript-plugins": [
-      "path---2013-01-03-sublime-text-for-javascript-plugins-2c832143d33e1e2ad53e.js",
-      "path---2013-01-03-sublime-text-for-javascript-plugins-2c832143d33e1e2ad53e.js.map"
+      "path---2013-01-03-sublime-text-for-javascript-plugins-940629c14bb0542d02dc.js",
+      "path---2013-01-03-sublime-text-for-javascript-plugins-940629c14bb0542d02dc.js.map"
     ],
     "path---category-software-productivity": [
-      "path---category-software-productivity-4f399557ef0a69c815cf.js",
-      "path---category-software-productivity-4f399557ef0a69c815cf.js.map"
+      "path---category-software-productivity-d62098bc407d2d4ab65a.js",
+      "path---category-software-productivity-d62098bc407d2d4ab65a.js.map"
     ],
     "path---2016-09-19-testing-with-jest-snapshots-first-impressions": [
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-2f29fd035722acb55fd7.js",
@@ -415,8 +415,8 @@
       "path---2018-02-23-weekly-links-02-23-18-86313fb9f904403e12ce.js.map"
     ],
     "path---learning-vim-in-2014": [
-      "path---learning-vim-in-2014-add9e0a30f675e216014.js",
-      "path---learning-vim-in-2014-add9e0a30f675e216014.js.map"
+      "path---learning-vim-in-2014-ad0337a7c5582a8ddce6.js",
+      "path---learning-vim-in-2014-ad0337a7c5582a8ddce6.js.map"
     ],
     "path---2015-02-22-rauchg-on-es-6": [
       "path---2015-02-22-rauchg-on-es-6-5fa29766bd0bf7ad3735.js",
@@ -427,8 +427,8 @@
       "path---2014-01-06-digging-into-knockout-builds-f7ff1bb71485fb9ec754.js.map"
     ],
     "path---404-html": [
-      "path---404-html-70d080d32ebf18b5a213.js",
-      "path---404-html-70d080d32ebf18b5a213.js.map"
+      "path---404-html-72c9399eb2fee5ef06f4.js",
+      "path---404-html-72c9399eb2fee5ef06f4.js.map"
     ],
     "path---2017-11-07-blog-deploy-ux": [
       "path---2017-11-07-blog-deploy-ux-cef749fecda2a4049b53.js",
@@ -467,16 +467,16 @@
       "path---2017-07-10-how-to-follow-the-javascript-roadmap-819f843a90edc8d293fc.js.map"
     ],
     "path---2013-03-23-creating-a-build-system-for-a-coffeescript-project-with-ant": [
-      "path---2013-03-23-creating-a-build-system-for-a-coffeescript-project-with-ant-465ed2ede75820765823.js",
-      "path---2013-03-23-creating-a-build-system-for-a-coffeescript-project-with-ant-465ed2ede75820765823.js.map"
+      "path---2013-03-23-creating-a-build-system-for-a-coffeescript-project-with-ant-0a5ac78044fa2229974d.js",
+      "path---2013-03-23-creating-a-build-system-for-a-coffeescript-project-with-ant-0a5ac78044fa2229974d.js.map"
     ],
     "path---2013-06-11-how-i-use-stack-overflow": [
-      "path---2013-06-11-how-i-use-stack-overflow-e406fde10dff91c002d1.js",
-      "path---2013-06-11-how-i-use-stack-overflow-e406fde10dff91c002d1.js.map"
+      "path---2013-06-11-how-i-use-stack-overflow-774dd18b95fddaac8cd4.js",
+      "path---2013-06-11-how-i-use-stack-overflow-774dd18b95fddaac8cd4.js.map"
     ],
     "path---category-tools": [
-      "path---category-tools-98478dbf1a3a90aec8a8.js",
-      "path---category-tools-98478dbf1a3a90aec8a8.js.map"
+      "path---category-tools-f0879699dc675f8161bc.js",
+      "path---category-tools-f0879699dc675f8161bc.js.map"
     ],
     "path---2018-03-02-weekly-links-03-02-18": [
       "path---2018-03-02-weekly-links-03-02-18-1e44a6408bcc71cc996d.js",
@@ -495,8 +495,8 @@
       "path---2016-06-26-quick-tip-take-advantage-of-lodash-collections-2-2f990f47f0d34e88a654.js.map"
     ],
     "path---category-opinion": [
-      "path---category-opinion-b68b074c2e996db2844a.js",
-      "path---category-opinion-b68b074c2e996db2844a.js.map"
+      "path---category-opinion-5c57d83c7824ec5c757d.js",
+      "path---category-opinion-5c57d83c7824ec5c757d.js.map"
     ],
     "path---2018-02-16-weekly-links-02-16-18": [
       "path---2018-02-16-weekly-links-02-16-18-3f91593a3bf5bbe32664.js",
@@ -515,8 +515,8 @@
       "path---2017-07-19-ten-things-javascript-7697ec62c322b7149479.js.map"
     ],
     "path---marionette-explained": [
-      "path---marionette-explained-3ae7cde22f42ff5a1e03.js",
-      "path---marionette-explained-3ae7cde22f42ff5a1e03.js.map"
+      "path---marionette-explained-5339d048763384d750c6.js",
+      "path---marionette-explained-5339d048763384d750c6.js.map"
     ],
     "path---2018-03-11-weekly-links-03-11-18": [
       "path---2018-03-11-weekly-links-03-11-18-90ed349d16b447479597.js",
@@ -531,8 +531,8 @@
       "path---2012-09-19-the-iphone-5-conversation-so-far-337fa090dbe85cd0f13a.js.map"
     ],
     "path---2012-12-30-sublime-text-for-javascript-keyboard-shortcuts": [
-      "path---2012-12-30-sublime-text-for-javascript-keyboard-shortcuts-ada8dda16a3171b4a609.js",
-      "path---2012-12-30-sublime-text-for-javascript-keyboard-shortcuts-ada8dda16a3171b4a609.js.map"
+      "path---2012-12-30-sublime-text-for-javascript-keyboard-shortcuts-b15c56a13b99a363bff2.js",
+      "path---2012-12-30-sublime-text-for-javascript-keyboard-shortcuts-b15c56a13b99a363bff2.js.map"
     ],
     "path---2013-02-03-how-i-work-refactoring": [
       "path---2013-02-03-how-i-work-refactoring-d0c9606d3e88236987fc.js",
@@ -547,14 +547,14 @@
       "path---2018-02-20-cs-for-fe-bc1afd700a76de1f8103.js.map"
     ],
     "app": [
-      "app-1280246a8be0da7737fc.js",
+      "app-fe417bf7a83e8c1e14f5.js",
       "build-js-styles.css",
-      "app-1280246a8be0da7737fc.js.map",
+      "app-fe417bf7a83e8c1e14f5.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-4a0c0865a9c123901f37.js",
-      "path---archive-4a0c0865a9c123901f37.js.map"
+      "path---archive-f753885ce9ce0f984440.js",
+      "path---archive-f753885ce9ce0f984440.js.map"
     ],
     "path---2014-07-24-one-day-left-in-practical-vim-giveaway": [
       "path---2014-07-24-one-day-left-in-practical-vim-giveaway-41115399b07f8697f838.js",
@@ -565,8 +565,8 @@
       "path---2012-11-09-bayesian-witch-hunt-345df5f558188d78c5d6.js.map"
     ],
     "path---category-computer-science": [
-      "path---category-computer-science-057a6f714de0d5cf9fc3.js",
-      "path---category-computer-science-057a6f714de0d5cf9fc3.js.map"
+      "path---category-computer-science-1a73ee5a36c1b4171b14.js",
+      "path---category-computer-science-1a73ee5a36c1b4171b14.js.map"
     ],
     "path---2017-12-15-weekly-links-12-15-17": [
       "path---2017-12-15-weekly-links-12-15-17-5d0f04a1a2ff52230756.js",
@@ -581,8 +581,8 @@
       "path---2018-01-19-weekly-links-01-19-18-09cec07f7ed1901fac9e.js.map"
     ],
     "path---2012-12-20-sample-draft": [
-      "path---2012-12-20-sample-draft-75f26176670b72e5bf74.js",
-      "path---2012-12-20-sample-draft-75f26176670b72e5bf74.js.map"
+      "path---2012-12-20-sample-draft-ee92c7ad92c8d3e61d59.js",
+      "path---2012-12-20-sample-draft-ee92c7ad92c8d3e61d59.js.map"
     ],
     "path---2014-07-27-learning-vim-in-2014-copy-and-paste-the-vim-way": [
       "path---2014-07-27-learning-vim-in-2014-copy-and-paste-the-vim-way-a60499994a931822ac88.js",
@@ -637,8 +637,8 @@
       "path---2014-07-02-learning-vim-in-2014-vim-as-language-0956488d354c879814da.js.map"
     ],
     "path---category-reviews": [
-      "path---category-reviews-2860e18ba5d636f07004.js",
-      "path---category-reviews-2860e18ba5d636f07004.js.map"
+      "path---category-reviews-f498a0a691053109e354.js",
+      "path---category-reviews-f498a0a691053109e354.js.map"
     ],
     "path---2015-05-28-moving-past-requirejs": [
       "path---2015-05-28-moving-past-requirejs-02323e36224fa58c877d.js",
@@ -661,16 +661,16 @@
       "path---2014-07-07-learning-vim-in-2014-working-with-files-ff3b84ec22dfb1257e71.js.map"
     ],
     "path---2012-11-07-sync-multiple-google-calendars-in-windows-8": [
-      "path---2012-11-07-sync-multiple-google-calendars-in-windows-8-17095d14a9ffa62de4ba.js",
-      "path---2012-11-07-sync-multiple-google-calendars-in-windows-8-17095d14a9ffa62de4ba.js.map"
+      "path---2012-11-07-sync-multiple-google-calendars-in-windows-8-6933b427c5621e5a8411.js",
+      "path---2012-11-07-sync-multiple-google-calendars-in-windows-8-6933b427c5621e5a8411.js.map"
     ],
     "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review": [
-      "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review-9b0b86af56da6e5a72b0.js",
-      "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review-9b0b86af56da6e5a72b0.js.map"
+      "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review-be990d2f1fad25fe6c25.js",
+      "path---2013-08-16-searching-for-the-perfect-reading-device-my-nexus-7-2013-review-be990d2f1fad25fe6c25.js.map"
     ],
     "path---2015-06-15-book-review-talking-with-tech-leads": [
-      "path---2015-06-15-book-review-talking-with-tech-leads-838038d179a1a89edbe7.js",
-      "path---2015-06-15-book-review-talking-with-tech-leads-838038d179a1a89edbe7.js.map"
+      "path---2015-06-15-book-review-talking-with-tech-leads-e88392fa227729587d29.js",
+      "path---2015-06-15-book-review-talking-with-tech-leads-e88392fa227729587d29.js.map"
     ],
     "path---2016-12-02-whole-new-site": [
       "path---2016-12-02-whole-new-site-782acb8dde31bea24a98.js",
@@ -685,16 +685,16 @@
       "path---2016-12-11-readable-code-audience-be8c9432b5d767be1c91.js.map"
     ],
     "path---2012-12-20-awesome-software-trello": [
-      "path---2012-12-20-awesome-software-trello-6a674d3a9acde740a92c.js",
-      "path---2012-12-20-awesome-software-trello-6a674d3a9acde740a92c.js.map"
+      "path---2012-12-20-awesome-software-trello-c70e91afc04b36b1cbc0.js",
+      "path---2012-12-20-awesome-software-trello-c70e91afc04b36b1cbc0.js.map"
     ],
     "path---2017-05-29-atom-tips": [
       "path---2017-05-29-atom-tips-17f95f432686358f16a6.js",
       "path---2017-05-29-atom-tips-17f95f432686358f16a6.js.map"
     ],
     "path---about": [
-      "path---about-7c8a8f6abad3cc872fec.js",
-      "path---about-7c8a8f6abad3cc872fec.js.map"
+      "path---about-edf591b506c3a6c8b2cd.js",
+      "path---about-edf591b506c3a6c8b2cd.js.map"
     ],
     "path---2014-10-13-setting-up-your-text-editor-for-javascript-development": [
       "path---2014-10-13-setting-up-your-text-editor-for-javascript-development-dae25ebff30a83d45933.js",
@@ -705,8 +705,8 @@
       "path---2014-12-10-marionette-explained-connecting-your-data-to-your-views-ed33e297197d07951deb.js.map"
     ],
     "path---2017-03-28-the-mystery-of-docker-and-the-disk-eating-cow": [
-      "path---2017-03-28-the-mystery-of-docker-and-the-disk-eating-cow-2bcd6b341ca3909a9d03.js",
-      "path---2017-03-28-the-mystery-of-docker-and-the-disk-eating-cow-2bcd6b341ca3909a9d03.js.map"
+      "path---2017-03-28-the-mystery-of-docker-and-the-disk-eating-cow-d06112228a7fa5545c5c.js",
+      "path---2017-03-28-the-mystery-of-docker-and-the-disk-eating-cow-d06112228a7fa5545c5c.js.map"
     ]
   }
 }
