@@ -3,6 +3,11 @@
   display: block;
   background: #343D46;
   color: #D8DEE9;
+  padding: 0.8rem;
+}
+
+.markdown pre code::after {
+  content: unset;
 }
 
 .token.comment,
