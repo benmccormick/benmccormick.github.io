@@ -8,6 +8,9 @@ let Wrapper = glamorous.div({
   gridTemplateColumns: '80% 20%',
   gridColumnGap: '1rem',
   marginBottom: '0.5rem',
+  '@media all and (max-width: 700px)': {
+    display: 'block',
+  },
 });
 
 let ImageContainer = glamorous.div({
@@ -18,6 +21,9 @@ let ImageContainer = glamorous.div({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  '@media all and (max-width: 700px)': {
+    display: 'none',
+  },
 });
 
 let Image = glamorous.img({
@@ -41,9 +47,10 @@ export class WelcomeBox extends React.Component {
         <WelcomeContainer>
           <h1> Hi! I'm Ben. </h1>
           <p>
-            {' '}I'm a software developer from Durham, North Carolina. I write
-            and speak about JavaScript, software development, and developer
-            tools. If you're interested in my writings here, feel free to{' '}
+            {' '}
+            I'm a software developer from Durham, North Carolina. I write and
+            speak about JavaScript, software development, and developer tools.
+            If you're interested in my writings here, feel free to{' '}
             <Link to="/subscribe">subscribe</Link> or message me on{' '}
             <a href="http://twitter.com/ben336" target="_blank">
               Twitter
@@ -51,7 +58,7 @@ export class WelcomeBox extends React.Component {
             or <a href="mailto:ben@benmccormick.org">email</a>.
           </p>
         </WelcomeContainer>
-        <ImageContainer className="no-mobile">
+        <ImageContainer>
           <Image src="/headshot.jpeg" />
         </ImageContainer>
       </Wrapper>

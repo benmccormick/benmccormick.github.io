@@ -69,19 +69,15 @@ class LinkBox extends React.Component {
       <Link className={boxClass} to={page.path}>
         <PageWrapper>
           <div>
-            <TitleRow>
-              {_title}
-            </TitleRow>
-            <PageDescription>
-              {page.data.description}
-            </PageDescription>
+            <TitleRow>{_title}</TitleRow>
+            <PageDescription>{page.data.description}</PageDescription>
           </div>
         </PageWrapper>
-        {showDate
-          ? <DateContainer className="no-mobile">
-              {format(parse(page.data.date), 'MMM Do YYYY')}
-            </DateContainer>
-          : null}
+        {showDate ? (
+          <DateContainer className="no-mobile">
+            {format(parse(page.data.date), 'MMM Do YYYY')}
+          </DateContainer>
+        ) : null}
       </Link>
     );
   }
