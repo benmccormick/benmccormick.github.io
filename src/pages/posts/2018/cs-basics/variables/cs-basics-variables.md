@@ -9,7 +9,6 @@ category: "computer-science"
 topics: ['Computer Science', 'JavaScript']
 key: "cs-basics-variables"
 readNext: "cs-for-fe,large-improvements-small-team,ten-things-js"
-isDraft: false
 ---
 
 A few weeks ago, I asked for input on the idea of [resources on Computer Science for front end developers](https://benmccormick.org/2018/02/20/cs-for-fe/).  Because there was a decent amount of interest, I'm planning on fleshing out the idea a bit with a small series of posts on CS basics.  These posts will cover some concepts that would usually be covered in an intro level CS course.  If folks find them helpful I may move on to more advanced topics like Data Structures & Algorithms, the software abstractions that modern web development is built on top of, and other math/theory topics.
