@@ -41,19 +41,19 @@ Knowing generally that a variable points to a value is a great start.  But a pro
 
 Here's the most important sentence for gaining a proper understanding of how variables work: "A variable points to a location in memory."  Explaining how memory is organized and allocated is outside the scope of this post, but for now it's sufficient to just understand memory as a long list of blocks, each of which has it's own address.  
 
-![memory as a series of boxes](memory1.png)
+![memory as a series of boxes](./memory1.png)
 
 When a variable is assigned to, it points to the address of whatever value is on the right hand side of the assignment expression (if newly created, the value is assigned an open address in memory first).
 
-![assignment of a variable](memory2.png)
+![assignment of a variable](./memory2.png)
 
 If another variable is assigned to the first variable, it too will point to that same address in memory
 
-![assignment of a variable to the value of another variable](memory3.png)
+![assignment of a variable to the value of another variable](./memory3.png)
 
 Finally if we reassign the original variable, it will point to a new location in memory, and the second variable will continue to point to the same location.
 
-![reassigning the original variable](memory4.png)
+![reassigning the original variable](./memory4.png)
 
 Function arguments are based on these same concepts.  When a function is called, the argument variables are assigned to point at the memory address of the value passed into the function.
 

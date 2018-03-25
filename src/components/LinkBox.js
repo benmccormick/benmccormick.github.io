@@ -17,7 +17,8 @@ export const FavoriteIcon = () => <Icon color="#D7AF70" icon={star} />;
 const boxClass = css({
   fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
   fontSize: '120%',
-  marginBottom: rhythm(1 / 2),
+  // 1px margin on the size in order to fix border on Safari
+  margin: `0 1px ${rhythm(1 / 2)} 1px`,
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -69,15 +70,19 @@ class LinkBox extends React.Component {
       <Link className={boxClass} to={page.path}>
         <PageWrapper>
           <div>
-            <TitleRow>{_title}</TitleRow>
-            <PageDescription>{page.data.description}</PageDescription>
+            <TitleRow>
+              {_title}
+            </TitleRow>
+            <PageDescription>
+              {page.data.description}
+            </PageDescription>
           </div>
         </PageWrapper>
-        {showDate ? (
-          <DateContainer className="no-mobile">
-            {format(parse(page.data.date), 'MMM Do YYYY')}
-          </DateContainer>
-        ) : null}
+        {showDate
+          ? <DateContainer className="no-mobile">
+              {format(parse(page.data.date), 'MMM Do YYYY')}
+            </DateContainer>
+          : null}
       </Link>
     );
   }
