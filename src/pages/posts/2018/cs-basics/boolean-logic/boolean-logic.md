@@ -9,7 +9,7 @@ category: "computer-science"
 topics: ['Computer Science', 'JavaScript']
 key: "cs-basics-boolean"
 readNext: "cs-basics-variables,cs-for-fe,ten-things-js"
-isDraft: true
+isDraft: false
 ---
 
 *This is the second post in a series of posts on Computer Science basics for front end developers.  The goal is a practical focus on the practical implications of basic CS theory for JavaScript development.*
@@ -18,9 +18,9 @@ Modern programmers owe a lot to the efforts of many head in the sky theoretical 
 
 Boolean algebra is a study of operations on logical values. Or in more understandable language, it is studying the rules of logic when we're limited to dealing with only 2 types of values, true or false.  The basic building blocks of boolean algebra are incredibly simple: in addition to the true and false values, usually encoded as 0 for false and 1 for true, boolean algebra considers 3 basic operations:
 
-- the "AND" operator `∧` - `a∧b` is true if and only if `a` and `b` are both true.
-- the "OR" operator `∨` - `a∨b` is true if at least one of `a` or `b` are true and false otherwise.
-- the "NOT" operator `¬` - `¬` is a unary operator, it only affects a single value.  `¬a` is true if a is false, and false if a is true.
+- **The "AND" operator (`∧`)** - `a∧b` is true if and only if `a` and `b` are both true.
+- **The "OR" operator (`∨`)** - `a∨b` is true if at least one of `a` or `b` are true and false otherwise.
+- **The "NOT" operator (`¬`)** - `¬` is a unary operator. It only affects a single value.  `¬a` is true if `a` is false, and false if `a` is true.
 
 Of course this is a whole field of mathematics, so the interesting part comes as you start combining these pieces.  Mathematicians have discovered many "laws" that apply to boolean logic.  Some of these will probably look familiar to those of you who took high school algebra.  Here's a sample of the laws from [Wikipedia](https://en.wikipedia.org/wiki/Boolean_algebra).
 
@@ -142,7 +142,9 @@ So far we've gone through some theory, as well as JavaScript's own quirks.  But 
     }
     ```
 
-    Do you see the bug?  If there are no users, it will be treated the same as if the number had failed to load at all.  This is a pretty common bug in situations where a value might be undefined or null, but could also be a number.  Strings have a similar issue.  It's important to understand that if 0 or empty strings are a valid value for a variable, you can't rely on a general falsiness check to see if the value is defined.  Instead it's better to either define the exact falsy value you expect for "no value" (null in this case) or to check based on type.  For instance in this case, you could rewrite the code to look for a number:
+    Do you see the bug?  It's subtle.  With code written like this, if there are no users it will be treated the same as if the number had failed to load at all.  This is a pretty common bug in situations where a value might be undefined or null, but could also be a number.  Strings have a similar issue.  
+
+    It's important to understand that if 0 or empty strings are a valid value for a variable, you can't rely on a general falsiness check to see if the value is defined.  Instead it's better to either define the exact falsy value you expect for "no value" (null in this case) or to check based on type.  For instance in this case, you could rewrite the code to look for a number:
 
     ```javascript
     let userCount = await getUserCountFromServer();
