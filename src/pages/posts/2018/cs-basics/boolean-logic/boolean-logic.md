@@ -9,7 +9,6 @@ category: "computer-science"
 topics: ['Computer Science', 'JavaScript']
 key: "cs-basics-boolean"
 readNext: "cs-basics-variables,cs-for-fe,ten-things-js"
-isDraft: false
 ---
 
 *This is the second post in a series of posts on Computer Science basics for front end developers.  The goal is a practical focus on the practical implications of basic CS theory for JavaScript development.*
