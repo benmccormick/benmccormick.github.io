@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Tue, 27 Mar 2018 13:00:22 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 30 Mar 2018 02:04:44 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,40 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Weekly Links: March 30th]]></title>
+            <link>https://benmccormick.org/2018/03/24/weekly-links-03-11-30/</link>
+            <guid>https://benmccormick.org/2018/03/24/weekly-links-03-11-30/</guid>
+            <pubDate>Fri, 30 Mar 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>A big pile of links for Easter weekend.  Happy Easter everybody!</p>
+<h3>JavaScript and the Web</h3>
+<p><a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">ES modules: A cartoon deep-dive | Lin Clark</a> - As usual, Lin Clark offers a great approachable explanation of a complex topic.  Here she gets into the weeds of how ES modules are implemented in browsers, and how the module syntax differs from CommonJS.</p>
+<p><a href="http://blog.isquaredsoftware.com/2018/03/redux-not-dead-yet/">Redux - Not Dead Yet! | Mark Erickson</a> - A good explainer of where Redux fits into the React landscape today.</p>
+<p><a href="https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html">Update on Async Rendering | Brian Vaughn</a> - Important read for React devs.  There are changes coming to the core lifecycle methods.</p>
+<p><a href="https://furbo.org/2018/03/28/system-fonts-in-css/">System Fonts in CSS | Craig Hockenberry</a> - I’m always happy to see improvements to the default font situation on the web<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.   I don’t love relying on custom loaded fonts for this blog and I wish there were more high quality fonts that were reliably available without resorting to loading your own.  This particular feature doesn’t pass the “caniuse test” for now though; Chrome and Safari support it, but there’s nothing from Edge or Firefox yet.</p>
+<h3>Command Line Tips</h3>
+<p><a href="https://zwischenzugs.com/2018/03/26/git-log-the-good-parts/">git log – the Good Parts | Ian Miell</a> - A good rundown of some of the things you can do with git log.  It misses that you can use <code>--author</code> to filter by the committer though, which is a flag I use all the time when I know who did a specific piece of work but am vague on what actually changed.</p>
+<p><a href="https://rachelbythebay.com/w/2018/03/26/w/">Why I usually run ‘w’ first when troubleshooting unknown machines</a> - Here’s a useful command line command I didn’t know about.  <code>w</code> shows you a list of users currently on a machine and what they’re doing.</p>
+<h3>Code Style, Documentation and Code Reviews</h3>
+<p><a href="http://bradfrost.com/blog/post/just/">“Just” | Brad Frost</a> - A good reminder to not assume everybody has our accumulated knowledge.  I’ve found a good cure for this is to spend some time working with programming tools I have no experience in.  Trying to install gems in Ruby for instance always reminds me how confusing npm was when I started using it.</p>
+<p><a href="http://blog.timoxley.com/post/47041269194/avoid-else-return-early">Avoid Else, Return Early | Tim Oxley</a> - I’ve found this pattern of short-circuiting functions to produce very readable code.  I’ve also seen these referred to as <em>guard statements</em>.</p>
+<p><a href="https://blog.janestreet.com/putting-the-i-back-in-ide-towards-a-github-explorer/">Putting the I back in IDE: Towards a Github Explorer| Jane Street Tech Blog </a> - This is an interesting idea, although I was a bit weirded out by the idea of commenting in the source files to leave code review comments.  The idea of deeper editor integration is excellent though, and I’d love to see Github evolve further in this direction with their Atom plugin.</p>
+<h3>Privacy in the news</h3>
+<p><a href="https://arstechnica.com/information-technology/2018/03/facebook-scraped-call-text-message-data-for-years-from-android-phones/">Facebook scraped call, text message data for years from Android phones | Ars Technica</a> - It’s been a bad few weeks for Facebook.  You can maybe get away with trying to get everyone’s data, and you can maybe get away with being careless with user data, but when you’re as big as Facebook is, you absolutely can’t do both.</p>
+<p><a href="https://www.theverge.com/2018/3/28/17172548/gdpr-compliance-requirements-privacy-notice">How Europe’s new privacy rule is reshaping the internet | The Verge</a> - GDPR is a big deal.  If you’re involved in web products that store user information, you should understand this.  I’m excited to see meaningful regulation on privacy issues that seems to be reasonably well written.</p>
+<h3>Humor</h3>
+<p><a href="https://www.johndcook.com/blog/2018/03/28/cow-astrology/">Cow Astrology | John Cook</a> - When a mathematician examines the implications of astrology’s claims.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>Or I would always be happy if there was ever anything to be happy about.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Front End Computer Science Basics: Boolean Logic]]></title>
             <link>https://benmccormick.org/2018/03/27/cs-basics-boolean/</link>
@@ -680,96 +714,6 @@ c. Involved in the language standards process and experimenting with new syntax 
 <p>After my <a href="https://benmccormick.org/2018/02/20/cs-for-fe/">post on Computer Science</a> this week, I thought I’d share 2 CS-y links I came across this week.</p>
 <p><a href="https://medium.freecodecamp.org/i-dont-understand-graph-theory-1c96572a1401">How to think in graphs: an illustrative introduction to Graph Theory and its applications | Vardan Grigoryan</a> -  This is a nice “plain language” explanation of basic graph theory.  It’s a bit long, but it’s a nice thing to look at for the folks who told me this week they want to know more about data structures.</p>
 <p><a href="http://amzn.to/2BL3YHo">Learning JavaScript Design Patterns | Addy Osmani</a> - One of the better “CS for front end” resources I’m aware of is Addy Osmani’s book on JavaScript design patterns.  Like a lot of things in JS land, parts of it haven’t aged well now that it’s a 6 year old book (it’s very focused on jQuery and DOM manipulation in many of its examples), but since it’s centered around more timeless design patterns, I think it holds up well.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Computer Science for Front End Developers?]]></title>
-            <link>https://benmccormick.org/2018/02/20/cs-for-fe/</link>
-            <guid>https://benmccormick.org/2018/02/20/cs-for-fe/</guid>
-            <pubDate>Tue, 20 Feb 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>I am primarily a front end web developer, and I have a Computer Science degree.  In my experience, this is neither rare nor particularly common.  Folks seem to get into front end dev because they’re trying to solve particular problems, and those problems exist whether you have a PhD in high performance computing or you’ve never written a line of code before.  Front end web development is how you make code real to people, and it is the minimal requirement for making something that people can actually interact with in a web browser.  As a result, a dizzying array of folks get into Front end dev, and you’ll find a broader set of experience levels than devs who work further “down the stack”.  All of which means that many front end devs have never had any sort of “formal” Computer Science education.  </p>
-<p>Some CS degree holders turn up their nose at this, and it contributes to the reputation in some quarters of JavaScript and web dev not being “real programming”.  Some self-taught devs see themselves as being liberated from the “irrelevant theory” of formal Computer Science and see no need for that type of background for Front End development.  We all have the capacity to turn any sort of credential into a tribal mark.  My own experience is that developers can function just fine on the front end without a formal computer science background, but that my own education has helped me in my day to day work, mostly in subtle and indirect ways.</p>
-<p>I’ve been thinking for a while about what Computer Science topics are actually useful for front end developers.  It’s not obvious to me where to draw the lines, because you’ll never directly encounter many of the concepts that are covered in a typical Computer Science curriculum while making web applications. But I still have an intuition that my background in these subjects is helping me in my day to day.  This weekend I decided to ask Twitter about it.</p>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Pondering what a blog series on “Computer Science for Front End Devs” would look like.  <br><br>Thinking this would be a high level of “what you missed if you don’t have a CS degree”, focusing on a subset relevant to FE devs.<br><br>Would love input.  What would you expect to be covered?</p>&mdash; Ben McCormick (@ben336) <a href="https://twitter.com/ben336/status/965373638697463809?ref_src=twsrc%5Etfw">February 18, 2018</a></blockquote>
-<p>I got a high degree of interest from that tweet, and so decided to keep digging into the idea.  I did some research into the typical structure of a modern Computer Science curriculum, and came up with the lists below. Depending on the school, certain topics may be elevated or diminished, grouped or split, but the general shape tends to look the same for most schools I’ve looked at.</p>
-<h3>Intro class</h3>
-<p>Generally there is an intro class or 2 that can be skipped by students with previous experience that covers core programming concepts, usually with an Object-oriented philosophical tilt.</p>
-<ul>
-<li>
-<p><strong>Programming basics</strong></p>
-<ul>
-<li>Variables</li>
-<li>Basic Data Structures</li>
-<li>Control Structures/Recursion/Iteration</li>
-<li>Object Oriented Programming principles</li>
-</ul>
-</li>
-</ul>
-<h3>Core Curriculum</h3>
-<p>There are also often 3-5 other “core” classes that all CS majors must take.  They generally break down something like this:</p>
-<ul>
-<li>
-<p><strong>Data Structures and Algorithms</strong></p>
-<ul>
-<li>Big O analysis</li>
-<li>Common Data Structures - Linked Lists, Stacks, Queues Trees, Heaps, Graphs, etc</li>
-<li>Common Algorithms - Searches, Sorts, Graph algorithms, etc</li>
-</ul>
-</li>
-<li>
-<p><strong>Computer Systems</strong></p>
-<ul>
-<li>Start at the hardware level</li>
-<li>Assembly</li>
-<li>Compilers</li>
-<li>Memory Models</li>
-<li>Concurrency</li>
-<li>Operating Systems</li>
-<li>Processes</li>
-<li>File Systems</li>
-<li>Networking</li>
-</ul>
-</li>
-<li>
-<p><strong>Mathematical Foundations</strong></p>
-<ul>
-<li>Proofs and logic</li>
-<li>Formal lanugages/Context Free Grammars/Turing Machines</li>
-<li>NP-Completeness</li>
-<li>Probability Theory</li>
-<li>Bayes Theorem</li>
-<li>Hashing</li>
-</ul>
-</li>
-<li>
-<p><strong>Software Engineering (not always core)</strong></p>
-<ul>
-<li>Architecture of larger programs</li>
-<li>Balancing risk/quality/cost</li>
-<li>Design Patterns</li>
-<li>Designing for security/robustness/scalability</li>
-</ul>
-</li>
-</ul>
-<h3>Potential Specialties</h3>
-<p>Finally, programs usually have a selection of electives that students can take to dive deeper into different specialty areas.  These electives usually mirror the research interests of the faculty of the school but may include some of the following:</p>
-<ul>
-<li><strong>Systems Design</strong></li>
-<li><strong>Human-Computer Interaction</strong></li>
-<li><strong>Computer Networking</strong></li>
-<li><strong>Artificial Intelligence and Machine Learning</strong></li>
-<li><strong>Databases</strong></li>
-<li><strong>Computer Vision</strong></li>
-</ul>
-<h2>Computer Science for the web</h2>
-<p>So how much of this is relevant to your average front end developer?  Some of it is more tightly tied to web programming than others.  Most of the basics will be picked up through osmosis for a typical front end dev, but a rigorous look at concepts like object-oriented programming and recursion might be beneficial.  While most can usually get by with simple data structures, a background in common “intermediate” data structures like stacks, trees, and graphs can be quite useful in day to day web dev.  Software Engineering principles are as obviously useful when building web sites as they are when you’re building firmware or operating systems. On the other hand, Computer Systems and Mathematical foundation concepts are usually not directly applicable in front end work.  In my own experience, they serve as useful background for understanding the abstractions that my day to day work is built on.  It’s good to have an intuition as to how browsers work, what is happening when we send data to a file, or what “text encoding” means.  And you may end up in a crazy situation where you need to understand the code behind Babel or V8, and knowledge of compilers becomes a real part of your job.</p>
-<p>I’m trying to figure out the best way to teach some of this stuff to somebody who hasn’t and is never going to spend 4 years taking these classes.  So I’d love help from anyone reading:</p>
-<ol>
-<li><strong>If you have a CS degree and write front end code, how has it helped you?</strong></li>
-<li><strong>If you were going to try and share part of that education with somebody with different experiences, which parts would you say are important?  What resources would you recommend?</strong></li>
-<li><strong>If you don’t have a CS degree, do you feel like you’re missing out on anything?  What useful-seeming concepts have you heard about but found it hard to find resources on?</strong></li>
-</ol>
-<p>If you have any answers for those questions I’d love to hear from y’all on <a href="https://twitter.com/ben336">Twitter</a> or <a href="mailto:ben@benmccormick.org">email</a>.  </p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
