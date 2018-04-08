@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-03-30T02:04:44Z</updated>
+    <updated>2018-04-08T01:03:16Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,33 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Weekly Links: April 7th]]></title>
+        <id>https://benmccormick.org/2018/04/07/weekly-links-04-07-18/</id>
+        <link href="https://benmccormick.org/2018/04/07/weekly-links-04-07-18/">
+        </link>
+        <updated>2018-04-07T00:00:00Z</updated>
+        <content type="html"><![CDATA[<h3>JavaScript and the Web</h3>
+<p><a href="https://twitter.com/dan_abramov/status/981712092611989509">React Lifecycle Diagram | Dan Abramov</a></p>
+<p>Dan shared a really great illustration of the React lifecycle methods on twitter that can help you internalize how they work if you’re unfamiliar.</p>
+<p><a href="https://martinfowler.com/articles/201803-refactoring-2nd-ed.html">Announcing the Second Edition of “Refactoring”</a></p>
+<p>The upcoming second edition of <a href="https://amzn.to/2IzhmhS">Refactoring</a> will have it’s code examples written in JavaScript.  I’d love to see more architecture-level books written for JavaScript developers.  I don’t think we have great definitive resources for those questions yet, and rewriting a classic with JS examples is a great first step.</p>
+<p><a href="https://developers.google.com/web/updates/2018/04/present-web-pages-to-secondary-attached-displays">Present web pages to secondary attached displays | Google Developers</a></p>
+<p>This is a small thing, but I thought Chrome’s experimental support for external display controls was cool, and may eventually lead to me actually using one of the many JS based presentation tools instead of Keynote.</p>
+<h3>Tech</h3>
+<p><a href="https://www.citylab.com/transportation/2018/03/former-uber-backup-driver-we-saw-this-coming/556427/">Former Uber Backup Driver: We Saw This Coming | Citylab</a></p>
+<p>May be some sour grapes here, but the piece raises some interesting questions about the transition from our current state to a self-driving car future, and whether a <a href="https://www.caranddriver.com/features/path-to-autonomy-self-driving-car-levels-0-to-5-explained-feature">Level 3</a> self driving car is even a feasible goal.</p>
+<p><a href="https://www.joelonsoftware.com/2018/04/06/the-stack-overflow-age/">The Stack Overflow Age | Joel Spolsky</a></p>
+<p>Stack Overflow had a huge influence on my early days learning JavaScript.  I love seeing the history here from one of the founders.</p>
+<h3>Humor</h3>
+<p><a href="https://www.facebook.com/photo.php?fbid=10156523301334739&#x26;set=a.10150885243919739.471335.523144738&#x26;type=3&#x26;theater">Returning To The Empress Hotel | Nick Burchill (Facebook)</a></p>
+<p>One of the funnier stories I’ve read on the internet in a while.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weekly Links: March 30th]]></title>
         <id>https://benmccormick.org/2018/03/24/weekly-links-03-11-30/</id>
@@ -746,25 +773,6 @@ c. Involved in the language standards process and experimenting with new syntax 
 <p><a href="https://medium.freecodecamp.org/how-to-model-the-behavior-of-redux-apps-using-statecharts-5e342aad8f66">How to model the behavior of Redux apps using statecharts | Luca Matteis</a> - I hadn’t heard of statecharts before reading this, but they look like a really interesting tool for talking about large systems.  I’d be really curious to play with the redux middleware for automatically generating them and see if the artifacts it produces are useful.</p>
 <h3>Non-Tech</h3>
 <p><a href="https://mobile.nytimes.com/2018/02/23/opinion/eyesight-going-blind.html">Am I Going Blind? | Frank Bruni</a> - This is absurdly well written, and it hit me personally since the idea of going blind has always been a personal fear of mine.  I think everybody has their one bad thing that they irrationally fear will happen to them and this is mine.  The article was good perspective in mutliple ways, reminding me how blessed I am and how resilient humans (and our bodies) are.  (Via <a href="https://daringfireball.net/linked/2018/02/23/bruni-going-blind">Daring Fireball</a>)</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: February 23rd]]></title>
-        <id>https://benmccormick.org/2018/02/23/weekly-links-02-23-18/</id>
-        <link href="https://benmccormick.org/2018/02/23/weekly-links-02-23-18/">
-        </link>
-        <updated>2018-02-23T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>JavaScript And The Web</h3>
-<p><a href="http://2ality.com/2018/02/ecmascript-2019.html">Feature watch: ECMAScript 2019 | 2ality</a> - Not a lot to see here yet, but Axel Rauschmayer has set up a page for tracking the status of the next version of ECMAScript as features advance to stage 4 and become confirmed for the next version of the spec.  No features have been confirmed yet, but worth a bookmark.  He also has links to his detailed articles about the various candidate features if you’re interested in seeing where JavaScript is headed next.</p>
-<p><a href="https://www.troyhunt.com/the-javascript-supply-chain-paradox-sri-csp-and-trust-in-third-party-libraries/">The JavaScript Supply Chain Paradox: SRI, CSP and Trust in Third Party Libraries | Troy Hunt</a> - This is a great reminder on why including scripts from 3rd party domains is a risky business, and how to do it securely.</p>
-<h4>Computer Science</h4>
-<p>After my <a href="https://benmccormick.org/2018/02/20/cs-for-fe/">post on Computer Science</a> this week, I thought I’d share 2 CS-y links I came across this week.</p>
-<p><a href="https://medium.freecodecamp.org/i-dont-understand-graph-theory-1c96572a1401">How to think in graphs: an illustrative introduction to Graph Theory and its applications | Vardan Grigoryan</a> -  This is a nice “plain language” explanation of basic graph theory.  It’s a bit long, but it’s a nice thing to look at for the folks who told me this week they want to know more about data structures.</p>
-<p><a href="http://amzn.to/2BL3YHo">Learning JavaScript Design Patterns | Addy Osmani</a> - One of the better “CS for front end” resources I’m aware of is Addy Osmani’s book on JavaScript design patterns.  Like a lot of things in JS land, parts of it haven’t aged well now that it’s a 6 year old book (it’s very focused on jQuery and DOM manipulation in many of its examples), but since it’s centered around more timeless design patterns, I think it holds up well.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
