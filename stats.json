@@ -61,8 +61,8 @@
       "path---2017-02-13-improving-site-performance-with-lighthouse-d31ebe8862111ccaa153.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-68a0701a07ee80ab8bbe.js",
-      "component---src-pages-index-js-68a0701a07ee80ab8bbe.js.map"
+      "component---src-pages-index-js-726bf03dea12534eb853.js",
+      "component---src-pages-index-js-726bf03dea12534eb853.js.map"
     ],
     "path---2017-11-26-weekly-links-11-26-17": [
       "path---2017-11-26-weekly-links-11-26-17-4b6c0a32a9adfd01cd70.js",
@@ -233,8 +233,8 @@
       "path---2017-02-18-context-to-best-practices-32b911c5a6d208bd65cb.js.map"
     ],
     "component---src-templates-blog-post-js": [
-      "component---src-templates-blog-post-js-7798e29eac1b8aef4415.js",
-      "component---src-templates-blog-post-js-7798e29eac1b8aef4415.js.map"
+      "component---src-templates-blog-post-js-ecd6e08f0703f7a23b50.js",
+      "component---src-templates-blog-post-js-ecd6e08f0703f7a23b50.js.map"
     ],
     "path---2015-01-05-marionette-view-life-cycles": [
       "path---2015-01-05-marionette-view-life-cycles-f023d37c35d1af24c6e4.js",
@@ -253,8 +253,8 @@
       "path---2017-05-28-mariana-syntax-atom-bacc7438fd492656fb2f.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-0fc8ca05b3b02eff999c.js",
-      "component---src-layouts-index-js-0fc8ca05b3b02eff999c.js.map"
+      "component---src-layouts-index-js-1d969a0b8a1fb5ba789d.js",
+      "component---src-layouts-index-js-1d969a0b8a1fb5ba789d.js.map"
     ],
     "path---2013-04-06-a-new-look": [
       "path---2013-04-06-a-new-look-986534d302011c75fc31.js",
@@ -321,12 +321,12 @@
       "path---2016-03-09-stability-vs-decline-d4ac73da199b2eb6ee37.js.map"
     ],
     "path---index": [
-      "path---index-162800fbc6fe3bd73c0f.js",
-      "path---index-162800fbc6fe3bd73c0f.js.map"
+      "path---index-1df892c2733fc9782790.js",
+      "path---index-1df892c2733fc9782790.js.map"
     ],
     "path---subscribe": [
-      "path---subscribe-c6b8ae317b4241b27c27.js",
-      "path---subscribe-c6b8ae317b4241b27c27.js.map"
+      "path---subscribe-339209f32496fde77d95.js",
+      "path---subscribe-339209f32496fde77d95.js.map"
     ],
     "path---speaking": [
       "path---speaking-669f476a89217d284e14.js",
@@ -409,9 +409,9 @@
       "path---2014-08-28-custom-elements-by-example-b524da8b658b12d59025.js.map"
     ],
     "commons": [
-      "commons-3fe9a4c9b1e7ad30e326.js",
+      "commons-5227bce7833b419c1c2f.js",
       "build-js-styles.css",
-      "commons-3fe9a4c9b1e7ad30e326.js.map",
+      "commons-5227bce7833b419c1c2f.js.map",
       "build-js-styles.css.map"
     ],
     "path---2015-12-30-es-6-patterns-converting-callbacks-to-promises": [
@@ -567,14 +567,14 @@
       "path---2018-02-20-cs-for-fe-bc1afd700a76de1f8103.js.map"
     ],
     "app": [
-      "app-39ca549ae7a52dcafe39.js",
+      "app-72d3582415a04ebfaedb.js",
       "build-js-styles.css",
-      "app-39ca549ae7a52dcafe39.js.map",
+      "app-72d3582415a04ebfaedb.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-62eea02ef549346446f6.js",
-      "path---archive-62eea02ef549346446f6.js.map"
+      "path---archive-4c6d2bc5ed01c32cc434.js",
+      "path---archive-4c6d2bc5ed01c32cc434.js.map"
     ],
     "path---2014-07-24-one-day-left-in-practical-vim-giveaway": [
       "path---2014-07-24-one-day-left-in-practical-vim-giveaway-41115399b07f8697f838.js",
