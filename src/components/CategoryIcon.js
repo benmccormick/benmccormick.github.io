@@ -17,6 +17,7 @@ import get from 'lodash/get';
 import find from 'lodash/find';
 import { css } from 'glamor';
 import Icon from './Icon.js';
+import { sansFontStack } from '../utils/typography';
 
 let icons = {
   beaker,
@@ -32,8 +33,8 @@ let icons = {
 };
 
 const iconWrapper = css({
-  fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
-  fontSize: '18px',
+  fontFamily: sansFontStack,
+  fontSize: '14px',
   color: 'rgba(87, 163, 232, 0.5)',
 });
 

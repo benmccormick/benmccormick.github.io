@@ -8,10 +8,11 @@ import parse from 'date-fns/parse';
 import PropTypes from 'prop-types';
 import LinkBox from './LinkBox';
 import LinkList from './LinkList';
+import { sansFontStack } from '../utils/typography';
 
 let bottomLink = css({
   boxShadow: 'none',
-  fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
+  fontFamily: sansFontStack,
   textDecoration: 'none',
 });
 
@@ -61,31 +62,31 @@ export class HomeMenu extends React.Component {
     let firstLinkPost = weeklyLinks[0];
     return (
       <div>
-        <h1> The Latest </h1>
+        <h2> The Latest </h2>
         <Section>
           <LinkBox
             page={firstPost}
-            titleFn={page =>
+            titleFn={page => (
               <span>
-                <Bold>
-                  {get(page, 'data.title') || page.path}
-                </Bold>
-              </span>}
+                <Bold>{get(page, 'data.title') || page.path}</Bold>
+              </span>
+            )}
           />
         </Section>
         <Section>
           <LinkBox
             page={firstLinkPost}
-            titleFn={page =>
+            titleFn={page => (
               <span>
                 <Bold>
                   Weekly Links: {format(parse(page.data.date), 'MMMM Do')}{' '}
                 </Bold>
-              </span>}
+              </span>
+            )}
           />
         </Section>
         <Spacer />
-        <h1> More From The Blog </h1>
+        <h2> More From The Blog </h2>
         <Section>
           <div>
             <LayoutContainer>

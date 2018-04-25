@@ -11,21 +11,27 @@ import { Ad } from '../components/Ad';
 import { EmailSubscribe } from '../components/EmailSubscribe';
 import { BlogPostHeadContent } from '../components/BlogPostHeadContent';
 import { fadeIn } from '../utils/react-helpers';
-import { rhythm } from '../utils/typography';
+import typography from '../utils/typography';
 import PostFooter from '../components/PostFooter';
 import glamorous from 'glamorous';
+import { serifFontStack } from '../utils/typography';
 
 const PostedDateContainer = glamorous.h5({
   display: 'block',
-  fontFamily: 'ff-tisa-web-pro, serif',
-  fontSize: '14px',
-  color: 'rgba(100,100,100, 0.7)',
-  marginTop: rhythm(0.5),
-  marginBottom: rhythm(0.5),
+  fontFamily: serifFontStack,
+  fontSize: '16px',
+  color: 'rgba(100,100,100, 0.8)',
+  marginTop: typography.rhythm(0.5),
+  marginBottom: typography.rhythm(0.5),
+});
+
+const Title = glamorous.h1({
+  display: 'block',
+  maxWidth: '100%',
 });
 
 const ArticleBody = glamorous.div({
-  maxWidth: '600px',
+  maxWidth: '100%',
   '& li': {
     paddingLeft: '10px',
   },
@@ -66,9 +72,7 @@ class BlogPostTemplate extends React.Component {
       <div className="markdown" ref={el => (this.markdownContainer = el)}>
         <BlogPostHeadContent post={post} slug={slug} body={body} />
         <div className="post-title-area">
-          <h1>
-            {post.title}
-          </h1>
+          <Title>{post.title}</Title>
           {showForPostsOnly(
             <PostedDateContainer>
               Originally Posted {format(new Date(post.date), 'MMMM Do YYYY')}

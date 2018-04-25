@@ -4,10 +4,11 @@ import Link from 'gatsby-link';
 import '../css/header.css';
 import glamorous from 'glamorous';
 import { css } from 'glamor';
+import { sansFontStack } from '../utils/typography';
 
 const HeaderWrapper = glamorous.div({
   display: 'flex',
-  paddingBottom: '1rem',
+  paddingBottom: '2rem',
   flexDirection: 'row',
   justifyContent: 'space-between',
   flexWrap: 'wrap',
@@ -27,6 +28,9 @@ const Logo = glamorous.h3({
     boxShadow: 'none',
     textDecoration: 'none',
     color: 'inherit',
+    ':hover': {
+      textDecoration: 'none',
+    },
   },
 });
 
@@ -36,7 +40,8 @@ const LinksWrapper = glamorous.div({
 
 const headerLink = css({
   color: 'rgba(100,100,100, 0.7)',
-  fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
+  fontSize: '16px',
+  fontFamily: sansFontStack,
   ':hover': {
     color: '#E2777A',
   },

@@ -2,23 +2,40 @@ import Typography from 'typography';
 import CodePlugin from 'typography-plugin-code';
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants';
 
+export const sansFontStack =
+  '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+
+export const serifFontStack =
+  'Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+
 const typography = new Typography({
   baseFontSize: '18px',
   //baseLineHeight: 1.666,
   baseLineHeight: 1.6,
   headerFontFamily: [
-    'brandon-grotesque',
-    'Brandon Grotesque',
-    'Helvetica Neue',
+    '-apple-system',
+    'system-ui',
+    'BlinkMacSystemFont',
+    'Segoe UI',
     'Helvetica',
     'Arial',
-    'Lucida Sans',
-    'Geneva',
-    'Verdana',
     'sans-serif',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
   ],
-  bodyFontFamily: ['ff-tisa-web-pro', 'serif'],
-  scaleRatio: 2,
+  bodyFontFamily: [
+    'Garamond',
+    'Baskerville',
+    'Baskerville Old Face',
+    'Hoefler Text',
+    'Times New Roman',
+    'serif',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+  ],
+  scaleRatio: 1.6,
   blockMarginTop: 0.75,
   blockMarginBottom: 0.75,
   plugins: [new CodePlugin()],

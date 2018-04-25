@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Link from 'gatsby-link';
-import { rhythm } from '../utils/typography';
+import typography from '../utils/typography';
 import CategoryIcon from './CategoryIcon';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
@@ -10,12 +10,13 @@ import star from '../svg/star.svgi';
 import flame from '../svg/flame.svgi';
 import Icon from './Icon';
 import { css } from 'glamor';
+import { sansFontStack, serifFontStack } from '../utils/typography';
 
 export const TrendingIcon = () => <Icon color="#E55934" icon={flame} />;
 export const FavoriteIcon = () => <Icon color="#D7AF70" icon={star} />;
 
 const ListItem = glamorous.li({
-  marginBottom: rhythm(1 / 2),
+  marginBottom: typography.rhythm(1 / 2),
   listStyle: 'none',
   display: 'flex',
   justifyContent: 'space-between',
@@ -33,13 +34,13 @@ const PageWrapper = glamorous.div({
 
 const linkClass = css({
   boxShadow: 'none',
-  fontSize: '20px',
-  fontFamily: 'brandon-grotesque, Helvetica, sans-serif',
+  fontSize: '16px',
+  fontFamily: sansFontStack,
   textDecoration: 'none',
 });
 
 const PageDescription = glamorous.p({
-  fontFamily: 'ff-tisa-web-pro, serif',
+  fontFamily: serifFontStack,
   // fontStyle: 'italic',
   fontSize: '16px',
   margin: 0,
@@ -47,7 +48,7 @@ const PageDescription = glamorous.p({
 });
 
 const DateContainer = glamorous.span({
-  fontFamily: 'ff-tisa-web-pro, serif',
+  fontFamily: serifFontStack,
   whiteSpace: 'nowrap',
   fontSize: '18px',
   color: 'rgba(100,100,100, 0.7)',
@@ -84,21 +85,19 @@ class PageLink extends React.Component {
               {showTrending && page.data.isTrending ? <TrendingIcon /> : null}
               {showPopular && page.data.isPopular ? <FavoriteIcon /> : null}
             </TitleRow>
-            {showDescription
-              ? <PageDescription>
-                  {page.data.description}
-                </PageDescription>
-              : null}
-            {showCategory
-              ? <CategoryIcon category={page.data.category} />
-              : null}
+            {showDescription ? (
+              <PageDescription>{page.data.description}</PageDescription>
+            ) : null}
+            {showCategory ? (
+              <CategoryIcon category={page.data.category} />
+            ) : null}
           </div>
         </PageWrapper>
-        {showDate
-          ? <DateContainer className="no-mobile">
-              {format(parse(page.data.date), 'MMM Do YYYY')}
-            </DateContainer>
-          : null}
+        {showDate ? (
+          <DateContainer className="no-mobile">
+            {format(parse(page.data.date), 'MMM Do YYYY')}
+          </DateContainer>
+        ) : null}
       </ListItem>
     );
   }

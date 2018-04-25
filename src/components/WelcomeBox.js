@@ -3,7 +3,6 @@ import Link from 'gatsby-link';
 import glamorous from 'glamorous';
 
 let Wrapper = glamorous.div({
-  marginTop: '2rem',
   display: 'grid',
   gridTemplateColumns: '80% 20%',
   gridColumnGap: '1rem',
