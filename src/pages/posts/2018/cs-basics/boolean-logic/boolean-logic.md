@@ -11,7 +11,7 @@ key: "cs-basics-boolean"
 readNext: "cs-basics-variables,cs-for-fe,ten-things-js"
 ---
 
-*This is the second post in a series of posts on Computer Science basics for front end developers.  The goal is a practical focus on the practical implications of basic CS theory for JavaScript development.*
+*This is the second post in a series of posts on Computer Science basics for front end developers.  The goal is to focus on the practical implications of basic CS theory for JavaScript development.*
 
 Modern programmers owe a lot to the efforts of many head in the sky theoretical mathematicians from the 1800s and early 1900s who were searching for mathematical truths and ended up making discoveries that serve as the basis of many modern computing inventions.  Boolean Algebra is one of a few branches of mathematics that was developed for purely theoretical reasons that has ended up shaping the computer revolution.  It fortunately has the virtue of being a relatively approachable to mathematical newbies.
 
