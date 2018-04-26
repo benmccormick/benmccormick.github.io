@@ -25,8 +25,8 @@
       "path---2018-02-09-weekly-links-02-09-18-3c0f444a114e103831a9.js.map"
     ],
     "path---links-archive": [
-      "path---links-archive-6d06ab2b27547787b89e.js",
-      "path---links-archive-6d06ab2b27547787b89e.js.map"
+      "path---links-archive-9e60885bf23997748c02.js",
+      "path---links-archive-9e60885bf23997748c02.js.map"
     ],
     "path---2015-05-25-marionette-service-service-objects-for-marionette": [
       "path---2015-05-25-marionette-service-service-objects-for-marionette-7cbb0ed58021fef25884.js",
@@ -113,8 +113,8 @@
       "path---2017-09-04-jest-matchers-2-8bb653c5605aa708572e.js.map"
     ],
     "path---category-frameworks": [
-      "path---category-frameworks-c3d8670438b646459517.js",
-      "path---category-frameworks-c3d8670438b646459517.js.map"
+      "path---category-frameworks-1342979f16ba6df34b3d.js",
+      "path---category-frameworks-1342979f16ba6df34b3d.js.map"
     ],
     "path---2018-04-22-weekly-links-04-22-18": [
       "path---2018-04-22-weekly-links-04-22-18-e2335b9c9799b5663f45.js",
@@ -285,8 +285,8 @@
       "path---2016-05-02-digging-into-react-choosing-component-styles-2402b9251e704116cbf5.js.map"
     ],
     "path---category-meta": [
-      "path---category-meta-f40766ed73975d0324f9.js",
-      "path---category-meta-f40766ed73975d0324f9.js.map"
+      "path---category-meta-5682698678619e252c5f.js",
+      "path---category-meta-5682698678619e252c5f.js.map"
     ],
     "path---2018-01-05-weekly-links-01-05-18": [
       "path---2018-01-05-weekly-links-01-05-18-fc6bca96e79f413c0823.js",
@@ -321,8 +321,8 @@
       "path---2016-03-09-stability-vs-decline-d4ac73da199b2eb6ee37.js.map"
     ],
     "path---index": [
-      "path---index-61a2bcabe40f97994455.js",
-      "path---index-61a2bcabe40f97994455.js.map"
+      "path---index-65f3e36761115141a95b.js",
+      "path---index-65f3e36761115141a95b.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-339209f32496fde77d95.js",
@@ -345,12 +345,12 @@
       "path---2013-05-07-revertible-observables-in-knockout-8ea5020bdd44ab6466e9.js.map"
     ],
     "path---category-platform": [
-      "path---category-platform-cf191b9862b8e8d56924.js",
-      "path---category-platform-cf191b9862b8e8d56924.js.map"
+      "path---category-platform-8110bf7c4dfa018a4f20.js",
+      "path---category-platform-8110bf7c4dfa018a4f20.js.map"
     ],
     "path---category-javascript": [
-      "path---category-javascript-1fff92882843a57db110.js",
-      "path---category-javascript-1fff92882843a57db110.js.map"
+      "path---category-javascript-90f76d7ed8564f228296.js",
+      "path---category-javascript-90f76d7ed8564f228296.js.map"
     ],
     "path---2018-03-24-weekly-links-03-11-24": [
       "path---2018-03-24-weekly-links-03-11-24-787e6cb130d226dc234e.js",
@@ -385,8 +385,8 @@
       "path---2013-01-03-sublime-text-for-javascript-plugins-940629c14bb0542d02dc.js.map"
     ],
     "path---category-software-productivity": [
-      "path---category-software-productivity-17b7d8788f9ca656355e.js",
-      "path---category-software-productivity-17b7d8788f9ca656355e.js.map"
+      "path---category-software-productivity-d701a9ac0909777a76ab.js",
+      "path---category-software-productivity-d701a9ac0909777a76ab.js.map"
     ],
     "path---2016-09-19-testing-with-jest-snapshots-first-impressions": [
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-2f29fd035722acb55fd7.js",
@@ -495,8 +495,8 @@
       "path---2013-06-11-how-i-use-stack-overflow-774dd18b95fddaac8cd4.js.map"
     ],
     "path---category-tools": [
-      "path---category-tools-ec54921b60c6abb34fe1.js",
-      "path---category-tools-ec54921b60c6abb34fe1.js.map"
+      "path---category-tools-c8bf5b5591a50524c35a.js",
+      "path---category-tools-c8bf5b5591a50524c35a.js.map"
     ],
     "path---2018-03-02-weekly-links-03-02-18": [
       "path---2018-03-02-weekly-links-03-02-18-1e44a6408bcc71cc996d.js",
@@ -515,8 +515,8 @@
       "path---2016-06-26-quick-tip-take-advantage-of-lodash-collections-2-2f990f47f0d34e88a654.js.map"
     ],
     "path---category-opinion": [
-      "path---category-opinion-189791df0769d382dbe7.js",
-      "path---category-opinion-189791df0769d382dbe7.js.map"
+      "path---category-opinion-a032ea7f9c385311495d.js",
+      "path---category-opinion-a032ea7f9c385311495d.js.map"
     ],
     "path---2018-02-16-weekly-links-02-16-18": [
       "path---2018-02-16-weekly-links-02-16-18-3f91593a3bf5bbe32664.js",
@@ -567,14 +567,14 @@
       "path---2018-02-20-cs-for-fe-bc1afd700a76de1f8103.js.map"
     ],
     "app": [
-      "app-3348891a1f30dbf61e27.js",
+      "app-2ac3097cd8bcf04123c4.js",
       "build-js-styles.css",
-      "app-3348891a1f30dbf61e27.js.map",
+      "app-2ac3097cd8bcf04123c4.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-5e1107d7c827c50e4348.js",
-      "path---archive-5e1107d7c827c50e4348.js.map"
+      "path---archive-46e1b1f8065526657d09.js",
+      "path---archive-46e1b1f8065526657d09.js.map"
     ],
     "path---2014-07-24-one-day-left-in-practical-vim-giveaway": [
       "path---2014-07-24-one-day-left-in-practical-vim-giveaway-41115399b07f8697f838.js",
@@ -585,8 +585,8 @@
       "path---2012-11-09-bayesian-witch-hunt-345df5f558188d78c5d6.js.map"
     ],
     "path---category-computer-science": [
-      "path---category-computer-science-d7a6365efb20497b04b6.js",
-      "path---category-computer-science-d7a6365efb20497b04b6.js.map"
+      "path---category-computer-science-f56491ce444991662ff4.js",
+      "path---category-computer-science-f56491ce444991662ff4.js.map"
     ],
     "path---2017-12-15-weekly-links-12-15-17": [
       "path---2017-12-15-weekly-links-12-15-17-5d0f04a1a2ff52230756.js",
@@ -624,6 +624,10 @@
       "path---2016-06-04-what-are-mutable-and-immutable-data-structures-2-537c359585f773d14f51.js",
       "path---2016-06-04-what-are-mutable-and-immutable-data-structures-2-537c359585f773d14f51.js.map"
     ],
+    "path---2018-04-25-the-new-hello-world": [
+      "path---2018-04-25-the-new-hello-world-7f9ce88de1e38557732a.js",
+      "path---2018-04-25-the-new-hello-world-7f9ce88de1e38557732a.js.map"
+    ],
     "path---2017-08-15-jest-matchers-1": [
       "path---2017-08-15-jest-matchers-1-bd4f61283d3f3552fb23.js",
       "path---2017-08-15-jest-matchers-1-bd4f61283d3f3552fb23.js.map"
@@ -657,8 +661,8 @@
       "path---2014-07-02-learning-vim-in-2014-vim-as-language-0956488d354c879814da.js.map"
     ],
     "path---category-reviews": [
-      "path---category-reviews-00a074fc0962fd64e65c.js",
-      "path---category-reviews-00a074fc0962fd64e65c.js.map"
+      "path---category-reviews-22fde112446c1b3f3cab.js",
+      "path---category-reviews-22fde112446c1b3f3cab.js.map"
     ],
     "path---2015-05-28-moving-past-requirejs": [
       "path---2015-05-28-moving-past-requirejs-02323e36224fa58c877d.js",

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-04-26T00:02:58Z</updated>
+    <updated>2018-04-26T03:53:26Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,162 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[The New Hello World]]></title>
+        <id>https://benmccormick.org/2018/04/25/the-new-hello-world/</id>
+        <link href="https://benmccormick.org/2018/04/25/the-new-hello-world/">
+        </link>
+        <updated>2018-04-25T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>JavaScript has had a weird reputation inversion over the past decade.  For years it was the stripped down toy language that could.  It didn’t have the features people wanted, and it did have the features they didn’t want, but it ran everywhere and it was easy to just start building things.  The last decade has shown that you can actually build some serious applications in JavaScript.  But it has also eaten away at the ability to start simple and try new things.  State of the art for JavaScript apps now involves compile steps, a long tooling chain, and a million choices for developers to make.  So the folks who are helping new developers get started have a few options for teaching JavaScript:</p>
+<ol>
+<li><strong>Embrace The Complexity</strong> - Want to learn to write Web Apps?  Let’s just toss you into a boilerplate that’s using node, webpack, react, redux, redux-saga, react router, glamorous, eslint, prettier, npm scripts, lodash, and babel.  This is what production apps look like, so you might as well start learning in a realistic environment.</li>
+<li><strong>Hide The Complexity</strong> - This is where we maybe use something like <a href="https://codepen.io/">Codepen</a> to provide a sandboxed area where we may be using Babel/React/etc, but the user doesn’t have to configure or think about them too much.  My understanding is that <a href="https://glitch.com/">Glitch</a> tries to go down this route to some extent as well.</li>
+<li><strong>Discard The Complexity</strong> - Teach coding like it’s 2010 all over again!  This approach is to focus more on the JavaScript language as it’s implemented in the browser, using script tags without a build step, and maybe even an older/simpler library like jQuery to explain DOM concepts and CSS.  This approach can eventually evolve towards introducing more complexity.</li>
+</ol>
+<p>For the past few years I’ve seen a blend of all of these approaches when I’ve looked at other folks’ beginner level resources.  It’s been hard to determine the best way to prepare new developers for the complexities of the development process. But good news, I think that era is finally coming to an end.</p>
+<h3>The Ideal Intro</h3>
+<p>In an ideal world, we’d be able to introduce new developers to the concepts that undergird modern web apps, and teach them syntax that is as up to date as possible without having to entangle them in the implementation details and distractions of production grade tools like Babel and Webpack.  So we want them to start out writing JavaScript code that is:</p>
+<ol>
+<li>Modular</li>
+<li>Cross-environment</li>
+<li>Modern (ES6+ syntax as appropriate)</li>
+<li>Simple to start with</li>
+</ol>
+<p>The last 10 years of tool build up have been primarily focused on making it easy to achieve the first 3 goals in production (along with prioritizing other needs of large scale applications).  But production tooling is by nature less concerned with #4.  Fortunately native environments are starting to catch up on the first 3, and that means we can do better.  </p>
+<h3>The New Hello World</h3>
+<p>Let’s say we want to frame an intro through the classic “hello world” program.  Our goals are to create a JavaScript function that can print “Hello World”, and then expand on that a bit.  And we want to teach this in a way that will still look familiar when our learners get themselves into a production JavaScript code base.  </p>
+<h4>Bare Bones</h4>
+<p>We might start with something super simple like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-html"><code><span class="token comment">&lt;!-- index.html --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>name-display<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+      <span class="token keyword">let</span> displayArea <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'name-display'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      displayArea<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'Hello World'</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre>
+      </div>
+<p>That’s about as simple as a JavaScript hello world gets.  You can access it by opening the file directly from the file system in your browser, and it’s easy enough to edit the text and see changes on refresh.</p>
+<p>But in 2018, we can do something cool next.  We want to be modular and separate concerns, so lets create a hello world module.  This is an opportunity to introduce functions and modules.  It introduces our only small tooling step: adding a simple web server.</p>
+<h4>Hello Modules</h4>
+<p>On OSX, it’s easy enough to set up a simple web server with <code>python -m SimpleHTTPServer 8080</code>.  We can do that with our existing index.html and verify that we can now see it at <code>localhost:8080</code> in our browsers<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.</p>
+<p>After that, we can start doing cool stuff, starting with creating a new module:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token comment">//hello.js</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> sayHello <span class="token operator">=</span> <span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'World'</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`Hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>This is our first function.  Depending on your audience, you may want to strip this down a bit and remove the default parameter, or spend some time explaining the different concepts in play here. But the focus can be on the concept of functions, as well as the ability to export them from a module.</p>
+<p>Now we can update our index.js file to use the new function.  Assuming both files are in the same directory, that will look like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-html"><code><span class="token comment">&lt;!-- index.html --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>name-display<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
+      <span class="token keyword">import</span> <span class="token punctuation">{</span>sayHello<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./hello.js'</span><span class="token punctuation">;</span>
+      <span class="token keyword">let</span> displayArea <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'name-display'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      displayArea<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre>
+      </div>
+<p>Now we have a hello world built on a foundation that can scale towards modern JavaScript environments.  We have modules and modern syntax, and the only difficult setup step has been a lightweight web server so far.  The rest is just script tags.  </p>
+<h3>Interactive</h3>
+<p>It’s easy enough now to take our module and turn it into something interactive:</p>
+<div class="gatsby-highlight">
+      <pre class="language-html"><code><span class="token comment">&lt;!-- index.html --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>container<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span> Enter a Name and Hit The Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>name<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>change-name<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>Say Hello<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>name-display<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>module<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
+      <span class="token keyword">import</span> <span class="token punctuation">{</span>sayHello<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./hello.mjs'</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> displayArea <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'name-display'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">let</span> input <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">let</span> button <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'change-name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      button<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        displayArea<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token function">sayHello</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre>
+      </div>
+<p>This example introduces DOM events and let’s the user decide who to say hello to.  It also is a good jumping off point for further experimentation for a new dev.</p>
+<h3>Crossing Environments</h3>
+<p>Going from the browser to node, even though it is simpler in some ways, is always going to be a bigger jump for newcomers because of most people’s unfamiliarity with the command line, and the base hurdle of installing node itself.  But once we’re ready to move past browsers, our new hello world can be easily translated to node land.  The biggest hurdle is in the file names.  We will have to rename or copy <code>hello.js</code> to be named <code>hello.mjs</code> (Node’s way of differentiating between files using ES6 syntax).  After that, we can write a simple script to start out:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token comment">//node.mjs</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>sayHello<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./hello.mjs'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>And then, as long as we’re on an up to date version of Node, we can run it with <code>node --experimental-modules node.mjs</code>.  And we will see our Hello World.</p>
+<p>There are some annoyances for beginners here.  Node only recently added module support, and beginners must</p>
+<ol>
+<li>Rename their modules to the currently non-standard mjs ending</li>
+<li>Have a recent version of Node (v8.5+)</li>
+<li>add the experimental-modules flag and learn to ignore the warning it gives</li>
+</ol>
+<p>But overall it isn’t meaningfully harder than learning to use node has been in the past.</p>
+<h3>Interactive Again</h3>
+<p>We can make our node.js version accept a command line arg easily enough, along with more opportunities to learn about functions, arrays and conditionals.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token comment">//node.mjs</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>sayHello<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./hello.mjs'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">getLast</span> <span class="token operator">=</span> list <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>list<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> list<span class="token punctuation">[</span>list<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token function">getLast</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>argv<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<h3>The Future</h3>
+<p>I’m excited to see the new dev experience moving back closer to alignment with the production web app experience.  I think that can only be a positive things.  Some steps that will help even more if/when they happen:</p>
+<ol>
+<li><strong>Module file format standardization</strong> - The .mjs extension seems to still be controversial, but it also seems a bit inevitable.  So the question will be whether it becomes more standard to use across all modular JS on the browser and node.  The current split and experimental support makes for a confusing distraction for new learners</li>
+<li><strong>De-flagging</strong> - Right now Firefox and Node still require flags for using modules.  That reduces beginner friendliness.</li>
+<li><strong>Where is the jQuery of 2018</strong> - This is more speculative, but I think the next step to a beginner friendly hello world is a “beginner friendly framework” that is based on the “one way data flow/declarative translation of state to UI” paradigm that has swept across pretty much all modern JS frameworks.  That’s an important concept to understand, and there isn’t anything I’m aware of out there right now that let’s you build with those concepts but is as approachable to newcomers as jQuery is.  jQuery was a gateway to DOM manipulation, AJAX, and functional array manipulation for a generation of developers.  React and create-react-app is probably the closest to that concept today, but it isn’t nearly as simple.  </li>
+</ol>
+<p>That’s all for now.  Code samples for this are <a href="https://github.com/benmccormick/hello-new">on github</a>.  Goodbye World.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>This should work in the latest Chrome, Safari and Edge out of the box.  I encountered a bit of slowness and flakiness on Chrome, but it worked like a charm in Safari.  Firefox still has this stuff behind a flag.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weekly Links: April 22nd]]></title>
         <id>https://benmccormick.org/2018/04/22/weekly-links-04-22-18/</id>
@@ -657,118 +813,6 @@ c. Involved in the language standards process and experimenting with new syntax 
 <li><strong>Learn about the ECMAScript standards process.</strong>  <a href="https://benmccormick.org/2017/07/10/how-to-follow-the-javascript-roadmap/">This post</a> can get you started.</li>
 <li><strong>Don’t use non-standard code in production.</strong>  It just isn’t worth the headaches you may get later.</li>
 </ol>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Classic Book Review: The Visual Display of Quantitative Information]]></title>
-        <id>https://benmccormick.org/2018/03/12/classic-book-review-visual-display/</id>
-        <link href="https://benmccormick.org/2018/03/12/classic-book-review-visual-display/">
-        </link>
-        <updated>2018-03-13T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>If you have any interest at all in data visualization, you can’t get very far learning about it without hearing the name Edward Tufte.  His four books on the subjects have had a huge influence on the industry over the last 35 years, a time where data visualization has blossomed as it has moved from a tedious hand drawn task to a computer assisted activity that even middle schoolers can attempt with the software available on most laptops.</p>
-<p>Tufte’s first book, <a href="http://amzn.to/2H6EB2f">The Visual Display of Quantitative Information</a> is also his most well known and acclaimed book<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  It lays out many of the principles that he would go to expand on elsewhere:</p>
-<ul>
-<li>Focus on the data</li>
-<li>“Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space”</li>
-<li>Graphics should have <em>integrity</em>.  They shouldn’t mislead the reader.</li>
-<li>Remove unecessary clutter</li>
-<li><em>and more</em></li>
-</ul>
-<p>The book is also beautiful.  Tufte chose to self-publish it so that he could control the exact layout and typography.  He also mixes in many old hand drawn visualizations to mix with a fewer new computer assisted graphics.  The result is stunning, and makes for a very enjoyable read throughout, as there is always something interesting to look at.  </p>
-<p>
-  <a
-    class="gatsby-resp-image-link"
-    href="/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-bc278.jpg"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-  
-  <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block; ; max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAwX/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAerHtPmoOH//xAAaEAEAAQUAAAAAAAAAAAAAAAAAAQISITND/9oACAEBAAEFAplywtU63//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABsQAAIBBQAAAAAAAAAAAAAAAAABAhAhMTKR/9oACAEBAAY/AhY4aod2Rp//xAAdEAADAAICAwAAAAAAAAAAAAAAAREhkTFRgaHR/9oACAEBAAE/IcDFKJZX2Em51DeQryaf0r6P/9oADAMBAAIAAwAAABBL7//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAQADAQADAAAAAAAAAAAAAAEAESFBMWGB/9oACAEBAAE/EKFto5TLFRS2167DLI3ws8yM9oUIMDv1GT//2Q=='); background-size: cover; display: block;"
-    >
-      <img
-        class="gatsby-resp-image-image"
-        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
-        alt="A typical page"
-        title=""
-        src="/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-6fbc3.jpg"
-        srcset="/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-da4c7.jpg 143w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-1d39e.jpg 285w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-6fbc3.jpg 570w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-9d77e.jpg 855w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-e356a.jpg 1140w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-4208b.jpg 1710w,
-/static/typical_page-837a29b8f105a7a5fc6997272618c5f6-bc278.jpg 4032w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-    </span>
-  </span>
-  
-  </a>
-    </p>
-<p>I was pleased to find that the book didn’t back up some of my own pre-conceived notions about Tufte and his work.  When I’ve seen him referenced in the past, it has been almost solely in terms of minimalism.  He was an expert witness for fewer colors, fewer lines, less ink.  But his takes here are more nuanced.  He definitely tends towards minimalism, and argues for reducing graphs to their bare minimum ink amount over conforming to familiar forms<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  But his go to example of great data display throughout the book is hardly minimalist.  Minard’s map of Napoleon invading Russia is a complex visualization that tracks the size of an army, time, location and temperature, all in a single image.</p>
-<p>
-  <a
-    class="gatsby-resp-image-link"
-    href="/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-11c68.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-  
-  <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block; ; max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 48.17708333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAABrklEQVQozyVRXW/TMBT1/xeCd56QoJ2QAGniQxsM7YFVwITUbSWsTdYlaZrUceok/oibpk3CmXMe7GP7nnOtc0nTNBsLxhilNEkS8MSCWoBEURSGYVmWbduh/nAEuv1+T/q+F0KsgTj2fX9p4XleGAYgvh+sViso4ziGymgBXd82m+AeXqRrW1HkWmulNd+yLMs4z3leClXlhQAfnnbNsa1Svvw9/fFZUvfNq5eLhUtqo3m6Rv+95o3ONHsoozsRO4Z5ij327bHDW98Z5l5/fzc+ORmPXo/Go2fPX+R5TqhzsZm+Z87XzDljs0/s75fycRLOLjXzKuami6vg9uLm8u2309Ht3UxICad6t8NvDocDWc9/+n8+Ln99CKbnLHSyNFFKhasoTtJ4ky4fXPffDTKrm+PTB7oOmoEgOVIKoXRlzA4h8kKUpUBOk8nVfH4/2PcWKEWu8K3rGkrEBkKkVMYYKWWWsTSlGFiKjVLUgW+3W6zg2gKVVVUpCxwJNrjCBnMDL4qCc15YDEUIBj1xRAMcsQ5fgAuBQWUBPa4wvafZWAIXKIeGg/sANJMW/wFywCU5mVF/fQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-    >
-      <img
-        class="gatsby-resp-image-image"
-        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
-        alt="Minards Map of Napoleon Invading Russia"
-        title=""
-        src="/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-d766e.png"
-        srcset="/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-a6b6e.png 143w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-8e488.png 285w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-d766e.png 570w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-13239.png 855w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-cab6d.png 1140w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-71f14.png 1710w,
-/static/minards-map-a9f2089f64e1e722501e3dd99a14b48e-11c68.png 1920w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-    </span>
-  </span>
-  
-  </a>
-    </p>
-<p>Instead Tufte is really arguing for data efficiency.  Simple things should be displayed simply.  If you have a single number, don’t dress it up in a fancy graph.  Just show the number.  If you have a series of numbers, a table or simple scatter will work fine, no need for a fancy piece of chart “art”.  But when you have truly complex data, a complex visualization can make it accessible in ways that a large page of words and numbers never could on its own.</p>
-<p>I found <a href="http://amzn.to/2H6EB2f">The Visual Display of Quantitative Information</a> fun, informative and inspirational.  If you work with data and have never read it, I’d definitely recommend checking it out.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Amazon named it one of the 100 Best Non-Fiction books of the 20th century</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-<li id="fn-2">
-<p>Some of that may be a relic of this book being originally written in the 80s before computers, his own work and the work of other similar thinkers greatly increased public awareness of data visualization standards like line and bar charts.</p>
-<a href="#fnref-2" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
