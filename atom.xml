@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-04-25T23:56:17Z</updated>
+    <updated>2018-04-26T00:02:58Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -134,7 +134,7 @@
         <link href="https://benmccormick.org/2018/03/27/cs-basics-boolean/">
         </link>
         <updated>2018-03-27T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p><em>This is the second post in a series of posts on Computer Science basics for front end developers.  The goal is a practical focus on the practical implications of basic CS theory for JavaScript development.</em></p>
+        <content type="html"><![CDATA[<p><em>This is the second post in a series of posts on Computer Science basics for front end developers.  The goal is to focus on the practical implications of basic CS theory for JavaScript development.</em></p>
 <p>Modern programmers owe a lot to the efforts of many head in the sky theoretical mathematicians from the 1800s and early 1900s who were searching for mathematical truths and ended up making discoveries that serve as the basis of many modern computing inventions.  Boolean Algebra is one of a few branches of mathematics that was developed for purely theoretical reasons that has ended up shaping the computer revolution.  It fortunately has the virtue of being a relatively approachable to mathematical newbies.</p>
 <p>Boolean algebra is a study of operations on logical values. Or in more understandable language, it is studying the rules of logic when we’re limited to dealing with only 2 types of values, true or false.  The basic building blocks of boolean algebra are incredibly simple: in addition to the true and false values, usually encoded as 0 for false and 1 for true, boolean algebra considers 3 basic operations:</p>
 <ul>
