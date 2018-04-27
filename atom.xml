@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-04-26T03:53:26Z</updated>
+    <updated>2018-04-27T12:44:09Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,42 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Weekly Links: April 27th]]></title>
+        <id>https://benmccormick.org/2018/04/27/weekly-links-04-22-18/</id>
+        <link href="https://benmccormick.org/2018/04/27/weekly-links-04-22-18/">
+        </link>
+        <updated>2018-04-27T00:00:00Z</updated>
+        <content type="html"><![CDATA[<h3>JavaScript &#x26; The Web</h3>
+<p><a href="https://engineering.linkedin.com/blog/2018/04/css-at-scale--linkedins-new-open-source-projects-take-on-stylesh">CSS at Scale: LinkedIn’s New Open Source Projects Take on Stylesheet Performance | LinkedIn Engineering</a></p>
+<p>This is a cool new set of CSS tools from LinkedIn.  This looks most similar to CSS Modules/PostCSS to my eyes, with a focus on optimizing bundle size for both CSS and templates/components.  I’d be very interested in playing with it.</p>
+<h3>Programming Tools</h3>
+<p><a href="https://www.joelonsoftware.com/2018/04/23/strange-and-maddening-rules/">Strange and maddening rules | Joel Spoelsky</a></p>
+<p>I’m continuing to enjoy Joel’s series on StackOverflow.  I’ve always been more sympathetic to their moderation strategy than some, so I’ll leave it as an exercise to the reader whether the explanations presented here hold water, but definitely worth reading if you’ve ever tried contributing to StackOverflow and been frustrated.</p>
+<p><a href="https://medium.com/@felixrieseberg/defeating-electron-e1464d075528">Defeating Electron | Felix Rieseberg</a></p>
+<p><a href="https://electronjs.org/">Electron</a> doesn’t have the best reputation.  Any time an electron based app makes news on Hacker News, three quarters of the comments are bashing Electron and the companies that use it.  It’s been criticized recently and prominently on <a href="https://daringfireball.net/2018/02/non_native_apps_threat_to_mac">Daring Fireball</a> and seems to generally be looked down on by “real” MacOS developers.  So I think this is a helpful response.  An Electron community member knocks down some straw-men (Electron doesn’t only exist because web developers don’t want to learn new things) and then lays out what would be needed to replace it.  </p>
+<p>I think there’s an interesting tension here:  This post describes what would be needed to create a more compelling cross-platform solution from the point of view of companies and developers.  But the criticism has mostly been focused on the requirements of users, not companies.  Specifically that Electron apps tend to be slower/less-memory-efficient/less accessible/less attuned to platform specific conventions.  So companies are making the decisions that let them serve the most number of people, while evolving to meet their needs as quickly as possible, with as small cost as possible.  But they’re possibly limiting the top level quality they can achieve, and there is a possible social good being missed by the people excluded (those with lower performance machines or accessibility needs<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>).</p>
+<h3>Tech and Ethics</h3>
+<p><a href="http://nymag.com/selectall/2018/04/dan-mccomas-reddit-product-svp-and-imzy-founder-interview.html">‘I Fundamentally Believe That My Time at Reddit Made the World a Worse Place’ | Noah Kulwin &#x26; Dan McComas</a></p>
+<p>A great interview on the massive potential for good or evil today’s tech products can have.  This does suggest that the problem is deeper than simply “engineers and designers behaving ethically” though.  You can get at Reddit’s issues by following the money.</p>
+<p><a href="https://twitter.com/leinweber/status/989267343002951680?ref_src=twsrc%5Etfw">A Very Good Program</a></p>
+<p>On a lighter note, here’s the real case for engineers and designers needing to behave ethically.</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I made a VGP (very good program) that makes it so it looks like I’m typing on slack whenever anyone else is typing, and stops when they stop.<br><br>Everyone loves it so far and doesn’t find it annoying at all!<a href="https://t.co/W8e2EKuVXX">https://t.co/W8e2EKuVXX</a> <a href="https://t.co/ZZd01GxYqg">pic.twitter.com/ZZd01GxYqg</a></p>&mdash; will leinweber (@leinweber) <a href="https://twitter.com/leinweber/status/989267343002951680?ref_src=twsrc%5Etfw">April 25, 2018</a></blockquote>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>I am not an accessibility expert, but I’m aware that it is a criticism of Electron.  I can’t evaluate the actual difficulty of making a native vs electron application accessible.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The New Hello World]]></title>
         <id>https://benmccormick.org/2018/04/25/the-new-hello-world/</id>
@@ -783,36 +819,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p><a href="https://hacks.mozilla.org/2018/03/making-webassembly-better-for-rust-for-all-languages/">Making WebAssembly better for Rust &#x26; for all languages – Mozilla Hacks – the Web developer blog</a> - This outlines a plan to improve the developer experience of what I think is the future of WebAssembly in most web apps: interop with JavaScript to improve performance of open source libraries and some core performance sensitive code.</p>
 <p><a href="https://github.com/atom/xray">GitHub - atom/xray: An experimental next-generation Electron-based text editor</a> - A non-webassembly example of using Rust selectively to increase performance of an application built primarily using web technologies.</p>
 <p><a href="https://blog.rust-lang.org/2018/03/12/roadmap.html">Rust’s 2018 Roadmap | Rust Blog</a> - A good rundown of the areas of focus for Rust this year.  I’m particularly interested in their target use cases, since 3 of them (CLI tools, Network Services and WebAssembly/the web) are things that I have built before and will build again.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JavaScript Proposals In Production]]></title>
-        <id>https://benmccormick.org/2018/03/16/proposals-in-production/</id>
-        <link href="https://benmccormick.org/2018/03/16/proposals-in-production/">
-        </link>
-        <updated>2018-03-16T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p><em>This post was adopted from a twitter thread that outgrew it’s medium today.  You can see the original thread <a href="https://twitter.com/ben336/status/974670479905705984">here</a>.</em></p>
-<p>This morning I saw the following tweet:</p>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">*TC39 proposes Array.flatten feature that breaks code that was working fine for 10 years*<br>&quot;IT&#39;S THEIR FAULT FOR DOING NONSTANDARD STUFF&quot;<br><br>*TC39 proposes changing classes feature not yet in standard*<br>&quot;IT&#39;S NOT FAIR I WROTE CODE USING THAT&quot;</p>&mdash; Dave Methvin (@davemethvin) <a href="https://twitter.com/davemethvin/status/974037352384430080?ref_src=twsrc%5Etfw">March 14, 2018</a></blockquote>
-<p>The tweet refers to <a href="https://github.com/allenwb/js-classes-1.1">this proposal</a> for replacing a number of other proposals for augmenting JS’s current class syntax, as well as recent backlash on twitter over <a href="https://github.com/tc39/proposal-flatMap/pull/56">a proposal </a> to not use flatten or flatmap for future JS standard syntax due to their previous use in mootools.  </p>
-<p>Because people have been using Babel or other tools to transpile their code and use the proposed class syntax today, it would be frustrating for many devs if the proposal shifted under them.  I’ve been there.  And thus, story time:</p>
-<p>A few years ago I used a polyfill for a browser API that wasn’t yet fully supported in all browsers.  And I used it in production code.  Browser support didn’t pick up nearly as quickly as I expected, and then the spec changed.  Supporting that code has caused me problems repeatedly since, and there isn’t a lot of support, given that the syntax isn’t standardized.  Because <a href="https://benmccormick.org/2018/01/07/large-improvements-small-team/">I am working with limited resources</a> I  still haven’t been able to get rid of the polyfill code completely.  It’s baked into one of the most critical portions of my production application.  And so I’ve had to live with it and deal with some of it’s non-ideal aspects for a long time.  Since then I’ve avoided putting anything in production that isn’t in a spec.  And I have absolutely no regrets about that.</p>
-<p><strong>The lesson I’ve learned:</strong> Polyfilling a partially supported spec for compatibility is fine.  Playing around with new proposals is fine (and actually a great idea if you want to influence the future of the language).  But I never want to use polyfills/transpiling for a <em>proposed spec</em> in production code. And yes that means no decorators/class properties/pipeline operators in my code for now.  But that’s ok.  JavaScript is a pretty decent language today.  A little patience will help you in the end.  Even libraries like MobX that encourage the use of “future specs” will still work without them if they’re reasonably well maintained.</p>
-<h3>Why Does This Happen?</h3>
-<p>To some folks the lesson of “Don’t use language features that aren’t standardized yet” probably looks obvious.  So why does this happen? I think there’s a community/culture aspect to some of this.  For instance, many of the early adopters of React really wanted to push the language forward to achieve better developer experience, and were more likely to propose and advocate for new syntax.  This was fine for them, because many of these folks were either</p>
-<p>a. Employees at large companies who had the resources to support whatever code extensions they wanted, and dedicate time to a large refactor if they got it wrong (not typical of most devs)
-b. Consultants/teachers who are always trying to stay on the bleeding edge for teaching purposes and who don’t build projects intended to be maintained long term (not typical of most devs)
-c. Involved in the language standards process and experimenting with new syntax for the purpose of influencing the language, rather than writing production code with it (not typical of most devs)</p>
-<p>Because of this, the need to compile JS for JSX purposes anyway and the heavy emphasis in the early React community on rethinking best practices, I’ve seen a lot more of this type of pre-standardization use of features in the React community than elsewhere.  The Ember community for instance doesn’t seem to have the same problems. But it started with early adopters in React, and spread when folks who were less informed about the standards process cargo-culted the code examples.  So here we are.</p>
-<h3>My suggestions</h3>
-<ol>
-<li><strong>Learn about the ECMAScript standards process.</strong>  <a href="https://benmccormick.org/2017/07/10/how-to-follow-the-javascript-roadmap/">This post</a> can get you started.</li>
-<li><strong>Don’t use non-standard code in production.</strong>  It just isn’t worth the headaches you may get later.</li>
-</ol>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
