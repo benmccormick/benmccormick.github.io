@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-05-06T02:49:27Z</updated>
+    <updated>2018-05-06T12:42:38Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -24,7 +24,7 @@
         <id>https://benmccormick.org/2018/05/05/weekly-links-05-05-18/</id>
         <link href="https://benmccormick.org/2018/05/05/weekly-links-05-05-18/">
         </link>
-        <updated>2018-05-05T04:00:00Z</updated>
+        <updated>2018-05-05T00:00:00Z</updated>
         <content type="html"><![CDATA[<h3>Intriguing Github Projects</h3>
 <p><a href="https://github.com/mdx-js/mdx">MDX</a></p>
 <p>Ever since I started using Gatsby to power this blog, I’ve wanted the ability to write markdown with React elements intermingled in it.  This looks like the first working version of that I’ve seen.  I’m excited to play with it.</p>
@@ -57,7 +57,7 @@
         <id>https://benmccormick.org/2018/04/27/weekly-links-04-22-18/</id>
         <link href="https://benmccormick.org/2018/04/27/weekly-links-04-22-18/">
         </link>
-        <updated>2018-04-27T04:00:00Z</updated>
+        <updated>2018-04-27T00:00:00Z</updated>
         <content type="html"><![CDATA[<h3>JavaScript &#x26; The Web</h3>
 <p><a href="https://engineering.linkedin.com/blog/2018/04/css-at-scale--linkedins-new-open-source-projects-take-on-stylesh">CSS at Scale: LinkedIn’s New Open Source Projects Take on Stylesheet Performance | LinkedIn Engineering</a></p>
 <p>This is a cool new set of CSS tools from LinkedIn.  This looks most similar to CSS Modules/PostCSS to my eyes, with a focus on optimizing bundle size for both CSS and templates/components.  I’d be very interested in playing with it.</p>
@@ -93,7 +93,7 @@
         <id>https://benmccormick.org/2018/04/25/the-new-hello-world/</id>
         <link href="https://benmccormick.org/2018/04/25/the-new-hello-world/">
         </link>
-        <updated>2018-04-25T04:00:00Z</updated>
+        <updated>2018-04-25T00:00:00Z</updated>
         <content type="html"><![CDATA[<p>JavaScript has had a weird reputation inversion over the past decade.  For years it was the stripped down toy language that could.  It didn’t have the features people wanted, and it did have the features they didn’t want, but it ran everywhere and it was easy to just start building things.  The last decade has shown that you can actually build some serious applications in JavaScript.  But it has also eaten away at the ability to start simple and try new things.  State of the art for JavaScript apps now involves compile steps, a long tooling chain, and a million choices for developers to make.  So the folks who are helping new developers get started have a few options for teaching JavaScript:</p>
 <ol>
 <li><strong>Embrace The Complexity</strong> - Want to learn to write Web Apps?  Let’s just toss you into a boilerplate that’s using node, webpack, react, redux, redux-saga, react router, glamorous, eslint, prettier, npm scripts, lodash, and babel.  This is what production apps look like, so you might as well start learning in a realistic environment.</li>
@@ -249,7 +249,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <id>https://benmccormick.org/2018/04/22/weekly-links-04-22-18/</id>
         <link href="https://benmccormick.org/2018/04/22/weekly-links-04-22-18/">
         </link>
-        <updated>2018-04-22T04:00:00Z</updated>
+        <updated>2018-04-22T00:00:00Z</updated>
         <content type="html"><![CDATA[<h3>JavaScript &#x26; The Web</h3>
 <p><a href="https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3">Designing Very Large (JavaScript) Applications - Malte Ubl</a></p>
 <p>This is a great talk, both because of the concepts it delivers, and because it serves as sort of a funhouse mirror look at a JavaScript framework that will probably never be public.</p>
@@ -270,7 +270,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <id>https://benmccormick.org/2018/04/11/book-review-inmates-are-running-the-asylum/</id>
         <link href="https://benmccormick.org/2018/04/11/book-review-inmates-are-running-the-asylum/">
         </link>
-        <updated>2018-04-11T04:00:00Z</updated>
+        <updated>2018-04-11T00:00:00Z</updated>
         <content type="html"><![CDATA[<p>For the past few months I’ve been working through a goal of reading 30 books in a year.  I made a list sourced from books that I’d wanted to read in a while, and books that friends recommended, and I’ve been working through it.  For the most part I’ve gotten through books pretty quickly as they’ve been generally fascinating.  Last month was the first time I hit a book that I struggled to get through a bit.  Fortunately I stuck with it, and it was worth it in the end.</p>
 <p><a href="https://amzn.to/2qeSTYz">The Inmates Are Running The Asylum</a> by Alan Cooper is a book that I’d seen recommended all over the place by design-savvy developers and product folk.  Cooper is the creator of Visual Basic, a highly regarded programmer who became an even more high regarded designer, pioneering the field of interaction design (laid out in his other book <a href="https://amzn.to/2IItvkP">About Face</a>) and the use of personas in software design.  While <em>About Face</em> is his explanation of the techniques behind interaction design, <em>The Inmates Are Running The Asylum</em> is his case for why interaction design is necessary as part of the software development process.  As somebody who has been working in a partial design role for the past year, it seemed like a great fit.</p>
 <p>Unfortunately, the first few chapters were a struggle.  The first 4 chapters of the book are devoted to laying out the poor “current situation” for technology when the book was written in the late 90s.  Cooper goes through a long list of poor experiences in devices and software like TVs, email clients, car remotes, alarm clocks and more.  The problem is that almost universally his examples are out of date.  People certainly still write software with bad UX, and struggle especially with software that is replacing hardware.  But they struggle in different ways now than they did 15 years ago.  Possibly due to the influence of the author, and partially due to some maturation in the field and changes in technology, the particular examples listed in these chapters fail to land. It’s possible to extrapolate some things to present day, but it makes for choppy reading.  At minimum the book would benefit greatly from a second edition.</p>
@@ -292,7 +292,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <id>https://benmccormick.org/2018/04/07/weekly-links-04-07-18/</id>
         <link href="https://benmccormick.org/2018/04/07/weekly-links-04-07-18/">
         </link>
-        <updated>2018-04-07T04:00:00Z</updated>
+        <updated>2018-04-07T00:00:00Z</updated>
         <content type="html"><![CDATA[<h3>JavaScript and the Web</h3>
 <p><a href="https://twitter.com/dan_abramov/status/981712092611989509">React Lifecycle Diagram | Dan Abramov</a></p>
 <p>Dan shared a really great illustration of the React lifecycle methods on twitter that can help you internalize how they work if you’re unfamiliar.</p>
@@ -319,7 +319,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <id>https://benmccormick.org/2018/03/24/weekly-links-03-11-30/</id>
         <link href="https://benmccormick.org/2018/03/24/weekly-links-03-11-30/">
         </link>
-        <updated>2018-03-30T04:00:00Z</updated>
+        <updated>2018-03-30T00:00:00Z</updated>
         <content type="html"><![CDATA[<p>A big pile of links for Easter weekend.  Happy Easter everybody!</p>
 <h3>JavaScript and the Web</h3>
 <p><a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">ES modules: A cartoon deep-dive | Lin Clark</a> - As usual, Lin Clark offers a great approachable explanation of a complex topic.  Here she gets into the weeds of how ES modules are implemented in browsers, and how the module syntax differs from CommonJS.</p>
@@ -358,7 +358,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <id>https://benmccormick.org/2018/03/27/cs-basics-boolean/</id>
         <link href="https://benmccormick.org/2018/03/27/cs-basics-boolean/">
         </link>
-        <updated>2018-03-27T04:00:00Z</updated>
+        <updated>2018-03-27T00:00:00Z</updated>
         <content type="html"><![CDATA[<p><em>This is the second post in a series of posts on Computer Science basics for front end developers.  The goal is to focus on the practical implications of basic CS theory for JavaScript development.</em></p>
 <p>Modern programmers owe a lot to the efforts of many head in the sky theoretical mathematicians from the 1800s and early 1900s who were searching for mathematical truths and ended up making discoveries that serve as the basis of many modern computing inventions.  Boolean Algebra is one of a few branches of mathematics that was developed for purely theoretical reasons that has ended up shaping the computer revolution.  It fortunately has the virtue of being a relatively approachable to mathematical newbies.</p>
 <p>Boolean algebra is a study of operations on logical values. Or in more understandable language, it is studying the rules of logic when we’re limited to dealing with only 2 types of values, true or false.  The basic building blocks of boolean algebra are incredibly simple: in addition to the true and false values, usually encoded as 0 for false and 1 for true, boolean algebra considers 3 basic operations:</p>
@@ -569,7 +569,7 @@ document<span class="token punctuation">.</span>all <span class="token comment">
         <id>https://benmccormick.org/2018/03/24/weekly-links-03-11-24/</id>
         <link href="https://benmccormick.org/2018/03/24/weekly-links-03-11-24/">
         </link>
-        <updated>2018-03-24T04:00:00Z</updated>
+        <updated>2018-03-24T00:00:00Z</updated>
         <content type="html"><![CDATA[<h3>TC39 and the future of JavaScript/ECMAScript</h3>
 <p><a href="https://developers.google.com/web/updates/2018/03/smooshgate">#SmooshGate FAQ  |  Mathias Bynens</a> - A great explanation both of the background behind the recent twitter controversy over <code>Array.prototype.smoosh</code> as well as the TC39 process generally.</p>
 <p><a href="https://github.com/zenparsing/js-classes-1.1">js-classes-1.1 | Allen Wirfs-Brock</a> - This is the new proposal for expanding JS classes I mentioned in my <a href="https://benmccormick.org/2018/03/16/proposals-in-production/">post</a> last Friday.  It aims to be a more minimalist take on expanding class capabilities (primarily adding private state syntax) than other proposals that have come along over the last few years.</p>
@@ -592,7 +592,7 @@ document<span class="token punctuation">.</span>all <span class="token comment">
         <id>https://benmccormick.org/2018/03/21/cs-basics-variables/</id>
         <link href="https://benmccormick.org/2018/03/21/cs-basics-variables/">
         </link>
-        <updated>2018-03-21T04:00:00Z</updated>
+        <updated>2018-03-21T00:00:00Z</updated>
         <content type="html"><![CDATA[<p>A few weeks ago, I asked for input on the idea of <a href="https://benmccormick.org/2018/02/20/cs-for-fe/">resources on Computer Science for front end developers</a>.  Because there was a decent amount of interest, I’m planning on fleshing out the idea a bit with a small series of posts on CS basics.  These posts will cover some concepts that would usually be covered in an intro level CS course.  If folks find them helpful I may move on to more advanced topics like Data Structures &#x26; Algorithms, the software abstractions that modern web development is built on top of, and other math/theory topics.</p>
 <p>With these posts I’m not trying to replicate a CS intro course and won’t cover everything.  I’m not trying to teach anyone how to program.  Instead I’m covering the ideas and details behind concepts that FE devs may have learned by doing but never been exposed to from an theory point of view.  I am not an academic, so the goal will be to keep a casual tone focused on the practical implications of theory to a Front End developer.  If I’m successful, these posts will give you a better set of mental models when working to understand the code you’re reading and writing every day.  That’s plenty of throat-clearing, so now I’m going to jump into one of the most fundamental building blocks of any programming language: variables.</p>
 <h3>What are Variables? (Not as obvious as it sounds)</h3>
