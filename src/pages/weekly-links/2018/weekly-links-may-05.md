@@ -6,6 +6,7 @@ path: "/2018/05/05/weekly-links-05-05-18/"
 description: "MDX, Amazon, and what the customer really wanted"
 keywords: "mdx cat bat amazon bezos"
 category: "opinion"
+topics: []
 key: "weekly-links-05-05-18"
 ---
 
