@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import LinkBox from './LinkBox';
 import PageLink from './PageLink';
 
-const ListTitle = glamorous.h2({
+const ListTitle = glamorous.h3({
   color: 'inherit',
 });
 
@@ -33,30 +33,26 @@ class LinkList extends React.Component {
     } = this.props;
     let pageLinks = pages.map(
       page =>
-        useBox
-          ? <LinkBox page={page} showDate={showDate} titleFn={titleFn} />
-          : <PageLink
-              page={page}
-              showCategory={showCategory}
-              key={page.path}
-              showDate={showDate}
-              showDescription={showDescriptions}
-              showPopular={showPopular}
-              showTrending={showTrending}
-              titleFn={titleFn}
-            />
+        useBox ? (
+          <LinkBox page={page} showDate={showDate} titleFn={titleFn} />
+        ) : (
+          <PageLink
+            page={page}
+            showCategory={showCategory}
+            key={page.path}
+            showDate={showDate}
+            showDescription={showDescriptions}
+            showPopular={showPopular}
+            showTrending={showTrending}
+            titleFn={titleFn}
+          />
+        )
     );
     return (
       <div className={className}>
-        {title
-          ? <ListTitle>
-              {title}
-            </ListTitle>
-          : null}
+        {title ? <ListTitle>{title}</ListTitle> : null}
         {description || null}
-        <List>
-          {pageLinks}
-        </List>
+        <List>{pageLinks}</List>
       </div>
     );
   }

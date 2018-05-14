@@ -1,12 +1,12 @@
 import React from 'react';
-import { scale } from '../utils/typography';
+import typography from '../utils/typography';
 import { SubscribeBlock } from './SubscribeBlock';
 import glamorous from 'glamorous';
 
 const SubscribeHeader = glamorous.h6({
   margin: 0,
-  fontSize: scale(-0.5).fontSize,
-  lineHeight: scale(-0.5).lineHeight,
+  fontSize: typography.scale(-0.5).fontSize,
+  lineHeight: typography.scale(-0.5).lineHeight,
   letterSpacing: -0.25,
 });
 

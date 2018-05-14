@@ -62,13 +62,6 @@ class HTML extends React.Component {
 
           <link rel="shortcut icon" href="/favicon.ico?v=yyxgnp97qG" />
           <meta name="theme-color" content="#ffffff" />
-          <script type="text/javascript" src="//use.typekit.net/msd6bqv.js" />
-          <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: 'try{Typekit.load();}catch(e){}',
-            }}
-          />
           {head.title.toComponent()}
           {head.meta.toComponent()}
           {head.script.toComponent()}

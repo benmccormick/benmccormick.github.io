@@ -14,7 +14,7 @@ hideFooter: true
 
 <div class="mc-field-group subscribe-page-group">
 	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address"
-  style="font-family:Helvetica,sans-serif; font-size: 14px; padding: 10px">
+  style="font-family:-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; padding: 10px">
   <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="subscribe-button-large button">
 </div>
 	<div id="mce-responses" class="clear">

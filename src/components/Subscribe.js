@@ -3,11 +3,13 @@ import React from 'react';
 import Link from 'gatsby-link';
 import find from 'lodash/find';
 import get from 'lodash/get';
-import { rhythm, scale } from '../utils/typography';
+import typography from '../utils/typography';
 import categoryHash from '../pages/categories.json';
 import InlineSVG from 'svg-inline-react';
 import rss from '../pages/rss.svgi';
 import { SubscribeBlock } from './SubscribeBlock';
+
+let { rhythm, scale } = typography;
 
 class Subscribe extends React.Component {
   render() {

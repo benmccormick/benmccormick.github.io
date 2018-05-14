@@ -78,24 +78,31 @@ const getPageViewCounts = (path, rows) => {
 
 const processRows = (allTimeRows, last30Rows) => {
   recursive('./src/pages/posts/', (err, files) => {
-    _(files).filter(file => _.includes(file, '.md')).forEach(file => {
-      let fileName = `./${file}`;
-      let contents = fs.readFileSync(fileName, 'utf-8');
-      let { attributes, body } = frontmatter(contents);
-      let analyticsCount = getPageViewCounts(attributes.path, allTimeRows);
-      let analyticsCountLastMonth = getPageViewCounts(
-        attributes.path,
-        last30Rows
-      );
-      attributes.pageViews = analyticsCount;
-      attributes.last30pageViews = analyticsCountLastMonth;
-      let printedAttributes = _.map(
-        attributes,
-        (value, key) => `${key}: "${value}"`
-      ).join('\n');
-      let newContents = `---\n${printedAttributes}\n---\n${body}`;
-      fs.writeFileSync(fileName, newContents);
-    });
+    _(files)
+      .filter(file => _.includes(file, '.md'))
+      .forEach(file => {
+        let fileName = `./${file}`;
+        let contents = fs.readFileSync(fileName, 'utf-8');
+        let { attributes, body } = frontmatter(contents);
+        let analyticsCount = getPageViewCounts(attributes.path, allTimeRows);
+        let analyticsCountLastMonth = getPageViewCounts(
+          attributes.path,
+          last30Rows
+        );
+        attributes.pageViews = analyticsCount;
+        attributes.last30pageViews = analyticsCountLastMonth;
+        let printedAttributes = _.map(attributes, (value, key) => {
+          if (_.isArray(value)) {
+            return `${key}: [${value.map(v => `"${v}"`).join(',')}]`;
+          }
+          if (_.isBoolean(value)) {
+            return `${key}: ${value}`;
+          }
+          return `${key}: "${value}"`;
+        }).join('\n');
+        let newContents = `---\n${printedAttributes}\n---\n${body}`;
+        fs.writeFileSync(fileName, newContents);
+      });
     console.log('Updated analytics for all posts');
   });
 };

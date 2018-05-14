@@ -3,7 +3,6 @@ import Link from 'gatsby-link';
 import glamorous from 'glamorous';
 
 let Wrapper = glamorous.div({
-  marginTop: '2rem',
   display: 'grid',
   gridTemplateColumns: '80% 20%',
   gridColumnGap: '1rem',
@@ -29,6 +28,11 @@ let ImageContainer = glamorous.div({
 let Image = glamorous.img({
   borderRadius: '50%',
   marginBottom: 0,
+  opacity: 1,
+  '&.loading': {
+    opacity: 0,
+  },
+  transition: 'opacity 1s',
 });
 
 let WelcomeContainer = glamorous.div({
@@ -41,6 +45,13 @@ let WelcomeContainer = glamorous.div({
 });
 
 export class WelcomeBox extends React.Component {
+  componentDidMount() {
+    // react was being annoying about applying animations
+    // when I did this through a state change because we need the image to be
+    // loaded so old school it is ¯\_(ツ)_/¯
+    this.img.src = this.img.dataset.src;
+    this.img.onload = () => this.img.classList.remove('loading');
+  }
   render() {
     return (
       <Wrapper>
@@ -59,7 +70,12 @@ export class WelcomeBox extends React.Component {
           </p>
         </WelcomeContainer>
         <ImageContainer>
-          <Image src="/headshot.jpeg" />
+          <Image
+            key="avatar-image"
+            innerRef={el => (this.img = el)}
+            className="loading"
+            data-src={'/headshot.webp'}
+          />
         </ImageContainer>
       </Wrapper>
     );
