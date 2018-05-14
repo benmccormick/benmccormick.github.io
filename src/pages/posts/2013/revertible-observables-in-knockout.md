@@ -19,7 +19,7 @@ After some searching I found [Ryan Niemeyer's Protected Observable example][guar
 
 ```javascript
 //knockout-protected.js
-//https://gist.github.com/ben336/5537138#file-knockout-protected-js
+//https://gist.github.com/benmccormick/5537138
 
 //wrapper to an observable that requires accept/cancel
 ko.protectedObservable = function(initialValue) {
@@ -59,7 +59,7 @@ ko.protectedObservable = function(initialValue) {
 
 There was a problem with this approach though.  Ryan's model saves the update to a temporary value and then moves it into an observable if the result is committed.  That works great for simple models and mostly behaves well if the user cancels out of the edit screen without committing or resetting. But it breaks down if you have another computed observable that depends on the value of the protected observable.  In my case I had an output that I wanted to show dynamically changing based on the input allowing experimentation.  Here's a simplified example using a protected observable:
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/tc299/4/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="https://jsfiddle.net/tc299/4/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 As you can see, the tables field doesn't update until you confirm the entry. Ideally though we'd like it to update as the user changes their guest number, so they can see the effect on cost and space used before they confirm a change in guests.  We want to do this while still preserving the users abilities to cancel changes if they don't like the results though.  So how to we do this?  We make a small change to the default value returned by the protected observable.  Here's what I'm calling a Revertible Observable:
 
@@ -68,7 +68,7 @@ As you can see, the tables field doesn't update until you confirm the entry. Ide
 ```javascript
 /*
 knockout-revertible.js
-https://gist.github.com/ben336/5537115#file-knockout-revertible-js
+https://gist.github.com/benmccormick/5537115
 */
 
  //wrapper to an observable that requires accept/cancel
@@ -109,7 +109,7 @@ ko.revertibleObservable = function(initialValue) {
 
 This preserves the ability to see the results of your changes in realtime, while also allowing you to easily revert with a simple cancel button and no explicit data tracking.  Now our example can work as we'd like, with the customer getting immediate feedback on how their guest changes effect the total cost.
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/QQYrL/4/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="https://jsfiddle.net/QQYrL/8/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 Note that this isn't a silver bullet.  An explicit confirmation is no longer required for the changes to be passed through, so its important to make sure that the user either confirms or resets the values after entering them.  But it allows for instant feedback on changes while still supporting the ability to dump the changes if the user decides they don't like the result.  I think its a useful pattern for any situation where the user is entering data and you want to show them a preview of the outcome.  I hope others will find it as useful as I have.
 
@@ -117,11 +117,11 @@ Note that this isn't a silver bullet.  An explicit confirmation is no longer req
 
 I showed this to Ryan and he replied with a nice simplification of the concept.
 
-<blockquote class="twitter-tweet"><p>@<a href="https://twitter.com/ben336">ben336</a> nice Ben. I have had to do something similar in the past. Here is a simplified version that I have used: <a href="http://t.co/IiqFe90kwi" title="http://jsfiddle.net/rniemeyer/SFCgr/">jsfiddle.net/rniemeyer/SFCg…</a></p>&mdash; Ryan Niemeyer (@RPNiemeyer) <a href="https://twitter.com/RPNiemeyer/status/331954950009663488">May 8, 2013</a></blockquote>
+<blockquote class="twitter-tweet"><p>@<a href="https://twitter.com/ben336">ben336</a> nice Ben. I have had to do something similar in the past. Here is a simplified version that I have used: <a href="http://t.co/IiqFe90kwi" title="https://jsfiddle.net/rniemeyer/SFCgr/">jsfiddle.net/rniemeyer/SFCg…</a></p>&mdash; Ryan Niemeyer (@RPNiemeyer) <a href="https://twitter.com/RPNiemeyer/status/331954950009663488">May 8, 2013</a></blockquote>
 
 ```javascript
 //Ryan Niemeyer's simplified knockout-revertible.js
-//http://jsfiddle.net/rniemeyer/SFCgr/ Fiddle
+//https://jsfiddle.net/rniemeyer/SFCgr/ Fiddle
  ko.revertibleObservable = function(initialValue) {
     //private variables
     var result = ko.observable(initialValue);
