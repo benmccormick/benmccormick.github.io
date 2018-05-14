@@ -77,8 +77,8 @@
       "path---2017-02-13-improving-site-performance-with-lighthouse-d31ebe8862111ccaa153.js.map"
     ],
     "path---topics-text-editors": [
-      "path---topics-text-editors-d0a8a70f82bc55f36d70.js",
-      "path---topics-text-editors-d0a8a70f82bc55f36d70.js.map"
+      "path---topics-text-editors-635690e2523c9e4c1c62.js",
+      "path---topics-text-editors-635690e2523c9e4c1c62.js.map"
     ],
     "path---topics-ack": [
       "path---topics-ack-993df6d2bc3b93709032.js",
@@ -161,8 +161,8 @@
       "path---topics-gatsby-bcb432689b25d1ed7245.js.map"
     ],
     "path---2013-06-11-evergreen-browsers": [
-      "path---2013-06-11-evergreen-browsers-c56ae9b4db505d341b83.js",
-      "path---2013-06-11-evergreen-browsers-c56ae9b4db505d341b83.js.map"
+      "path---2013-06-11-evergreen-browsers-b2cda33de86fcd4a3ac6.js",
+      "path---2013-06-11-evergreen-browsers-b2cda33de86fcd4a3ac6.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
@@ -173,16 +173,16 @@
       "path---2013-08-12-book-review-user-centered-design-409a2425b6fc83294b01.js.map"
     ],
     "path---topics-career-advice": [
-      "path---topics-career-advice-5dbf72d98e5cf0462d06.js",
-      "path---topics-career-advice-5dbf72d98e5cf0462d06.js.map"
+      "path---topics-career-advice-91ce8cf22b5a4b0ce2ea.js",
+      "path---topics-career-advice-91ce8cf22b5a4b0ce2ea.js.map"
     ],
     "path---2014-06-02-discovering-vim": [
       "path---2014-06-02-discovering-vim-0563be4547e216d571ae.js",
       "path---2014-06-02-discovering-vim-0563be4547e216d571ae.js.map"
     ],
     "path---topics-testing": [
-      "path---topics-testing-f873eb0c6788b1366d8d.js",
-      "path---topics-testing-f873eb0c6788b1366d8d.js.map"
+      "path---topics-testing-bda48dad0cf0872317fb.js",
+      "path---topics-testing-bda48dad0cf0872317fb.js.map"
     ],
     "path---topics-math": [
       "path---topics-math-68a565b6fd92b2abb64a.js",
@@ -209,8 +209,8 @@
       "path---2014-11-08-all-about-angular-2-0-ece2de548fedc47715b6.js.map"
     ],
     "path---topics-command-line": [
-      "path---topics-command-line-29529230b0d4226abbf8.js",
-      "path---topics-command-line-29529230b0d4226abbf8.js.map"
+      "path---topics-command-line-b18ab1e5c9d790575d82.js",
+      "path---topics-command-line-b18ab1e5c9d790575d82.js.map"
     ],
     "path---2014-12-18-come-build-with-me": [
       "path---2014-12-18-come-build-with-me-2c91769440a8cb529b8b.js",
@@ -385,8 +385,8 @@
       "path---2013-04-23-book-review-javascript-testing-with-jasmine-0921764bcc1da9d9d3e2.js.map"
     ],
     "path---2015-06-10-is-safari-being-left-behind": [
-      "path---2015-06-10-is-safari-being-left-behind-841ac2ceb92235440bca.js",
-      "path---2015-06-10-is-safari-being-left-behind-841ac2ceb92235440bca.js.map"
+      "path---2015-06-10-is-safari-being-left-behind-9fc469cdb4904d2b6e5f.js",
+      "path---2015-06-10-is-safari-being-left-behind-9fc469cdb4904d2b6e5f.js.map"
     ],
     "path---topics-browsers": [
       "path---topics-browsers-7acc261e2692d2342e8b.js",
@@ -397,12 +397,12 @@
       "path---2016-03-09-stability-vs-decline-d4ac73da199b2eb6ee37.js.map"
     ],
     "path---topics-marionette": [
-      "path---topics-marionette-998e424f28d5ceeeea9d.js",
-      "path---topics-marionette-998e424f28d5ceeeea9d.js.map"
+      "path---topics-marionette-85bfd3e06741c8c9834f.js",
+      "path---topics-marionette-85bfd3e06741c8c9834f.js.map"
     ],
     "path---index": [
-      "path---index-c876ec2341d9f886d05e.js",
-      "path---index-c876ec2341d9f886d05e.js.map"
+      "path---index-1a28a6fe34efbd39adf9.js",
+      "path---index-1a28a6fe34efbd39adf9.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-339209f32496fde77d95.js",
@@ -425,8 +425,8 @@
       "path---2018-05-05-weekly-links-05-05-18-593c828d071ccffbc4a2.js.map"
     ],
     "path---2013-05-07-revertible-observables-in-knockout": [
-      "path---2013-05-07-revertible-observables-in-knockout-d400763a8bb63449b507.js",
-      "path---2013-05-07-revertible-observables-in-knockout-d400763a8bb63449b507.js.map"
+      "path---2013-05-07-revertible-observables-in-knockout-6d552de3ddc6ac331900.js",
+      "path---2013-05-07-revertible-observables-in-knockout-6d552de3ddc6ac331900.js.map"
     ],
     "path---category-platform": [
       "path---category-platform-2d7db0f61387156f681e.js",
@@ -485,16 +485,16 @@
       "path---category-software-productivity-27b255e11e019684c32e.js.map"
     ],
     "path---topics-jest": [
-      "path---topics-jest-ca6e30554c575ed363ff.js",
-      "path---topics-jest-ca6e30554c575ed363ff.js.map"
+      "path---topics-jest-78381ba29d07b8df99ee.js",
+      "path---topics-jest-78381ba29d07b8df99ee.js.map"
     ],
     "path---2016-09-19-testing-with-jest-snapshots-first-impressions": [
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-2f29fd035722acb55fd7.js",
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-2f29fd035722acb55fd7.js.map"
     ],
     "path---topics-react": [
-      "path---topics-react-0d0abefcea701b49b470.js",
-      "path---topics-react-0d0abefcea701b49b470.js.map"
+      "path---topics-react-afe1ac059064a90e8951.js",
+      "path---topics-react-afe1ac059064a90e8951.js.map"
     ],
     "path---topics-lodash": [
       "path---topics-lodash-369f268bdf9e8d87e46f.js",
@@ -509,8 +509,8 @@
       "path---topics-architecture-69a7d04f1832036a5f94.js.map"
     ],
     "path---topics-java-script": [
-      "path---topics-java-script-5b3bb0a6f4a9606e5147.js",
-      "path---topics-java-script-5b3bb0a6f4a9606e5147.js.map"
+      "path---topics-java-script-b0d643bc9bf834501da8.js",
+      "path---topics-java-script-b0d643bc9bf834501da8.js.map"
     ],
     "path---2016-12-14-what-are-higher-order-components": [
       "path---2016-12-14-what-are-higher-order-components-a15fab26e343711ca0da.js",
@@ -547,8 +547,8 @@
       "path---2014-11-12-underscore-vs-lodash-272d4409467da70e61e8.js.map"
     ],
     "path---topics-web-components": [
-      "path---topics-web-components-7875db3ff0fdd3e38e02.js",
-      "path---topics-web-components-7875db3ff0fdd3e38e02.js.map"
+      "path---topics-web-components-7865686fab324929210e.js",
+      "path---topics-web-components-7865686fab324929210e.js.map"
     ],
     "path---2018-02-23-weekly-links-02-23-18": [
       "path---2018-02-23-weekly-links-02-23-18-86313fb9f904403e12ce.js",
@@ -615,8 +615,8 @@
       "path---2017-12-01-weekly-links-12-01-17-21d7bb97a22b2f07df48.js.map"
     ],
     "path---topics-atom": [
-      "path---topics-atom-622d423c82abb401b1fb.js",
-      "path---topics-atom-622d423c82abb401b1fb.js.map"
+      "path---topics-atom-14ff3243ee004c560356.js",
+      "path---topics-atom-14ff3243ee004c560356.js.map"
     ],
     "path---2017-07-10-how-to-follow-the-javascript-roadmap": [
       "path---2017-07-10-how-to-follow-the-javascript-roadmap-819f843a90edc8d293fc.js",
@@ -719,14 +719,14 @@
       "path---2018-02-20-cs-for-fe-bc1afd700a76de1f8103.js.map"
     ],
     "app": [
-      "app-3aedc494ad969f0b7312.js",
+      "app-36acfe6f76cf81fd7ef7.js",
       "build-js-styles.css",
-      "app-3aedc494ad969f0b7312.js.map",
+      "app-36acfe6f76cf81fd7ef7.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-4a50769c161847f4a810.js",
-      "path---archive-4a50769c161847f4a810.js.map"
+      "path---archive-6b5dd891cc6acf5c5152.js",
+      "path---archive-6b5dd891cc6acf5c5152.js.map"
     ],
     "path---topics-book-review": [
       "path---topics-book-review-db588ecc1f4f7db43d8d.js",
@@ -813,8 +813,8 @@
       "path---2012-10-06-it-took-a-month-to-get-sick-of-php-c5684b0648b5256cc1aa.js.map"
     ],
     "path---topics-knockout": [
-      "path---topics-knockout-0790065be4b30d18c6c4.js",
-      "path---topics-knockout-0790065be4b30d18c6c4.js.map"
+      "path---topics-knockout-35a4325dd4cbe306261a.js",
+      "path---topics-knockout-35a4325dd4cbe306261a.js.map"
     ],
     "path---2018-03-12-classic-book-review-visual-display": [
       "path---2018-03-12-classic-book-review-visual-display-c55a9deeb017093f3a63.js",
@@ -829,12 +829,12 @@
       "path---category-reviews-31d60671e97f8bbd5fc9.js.map"
     ],
     "path---topics-code-quality": [
-      "path---topics-code-quality-2a49d8bbab1b7635cd71.js",
-      "path---topics-code-quality-2a49d8bbab1b7635cd71.js.map"
+      "path---topics-code-quality-77b33a038ae458fd3bf3.js",
+      "path---topics-code-quality-77b33a038ae458fd3bf3.js.map"
     ],
     "path---topics-backbone": [
-      "path---topics-backbone-88324266014412d9c8cc.js",
-      "path---topics-backbone-88324266014412d9c8cc.js.map"
+      "path---topics-backbone-2a082a3d6db8064b02c5.js",
+      "path---topics-backbone-2a082a3d6db8064b02c5.js.map"
     ],
     "path---2015-05-28-moving-past-requirejs": [
       "path---2015-05-28-moving-past-requirejs-2f338e9146652f438dbe.js",
@@ -901,8 +901,8 @@
       "path---2014-10-13-setting-up-your-text-editor-for-javascript-development-dae25ebff30a83d45933.js.map"
     ],
     "path---topics-vim": [
-      "path---topics-vim-50a3d5395e82860a6a78.js",
-      "path---topics-vim-50a3d5395e82860a6a78.js.map"
+      "path---topics-vim-a254bcc0ca0fdd55860c.js",
+      "path---topics-vim-a254bcc0ca0fdd55860c.js.map"
     ],
     "path---2014-12-10-marionette-explained-connecting-your-data-to-your-views": [
       "path---2014-12-10-marionette-explained-connecting-your-data-to-your-views-ed33e297197d07951deb.js",
