@@ -77,8 +77,8 @@
       "path---2017-02-13-improving-site-performance-with-lighthouse-d31ebe8862111ccaa153.js.map"
     ],
     "path---topics-text-editors": [
-      "path---topics-text-editors-d251f82c2fba80a13cff.js",
-      "path---topics-text-editors-d251f82c2fba80a13cff.js.map"
+      "path---topics-text-editors-d0a8a70f82bc55f36d70.js",
+      "path---topics-text-editors-d0a8a70f82bc55f36d70.js.map"
     ],
     "path---topics-ack": [
       "path---topics-ack-993df6d2bc3b93709032.js",
@@ -89,8 +89,8 @@
       "path---topics-require-js-84c5ab6408222633100c.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-8162733152662186bad9.js",
-      "component---src-pages-index-js-8162733152662186bad9.js.map"
+      "component---src-pages-index-js-726bf03dea12534eb853.js",
+      "component---src-pages-index-js-726bf03dea12534eb853.js.map"
     ],
     "path---2017-11-26-weekly-links-11-26-17": [
       "path---2017-11-26-weekly-links-11-26-17-4b6c0a32a9adfd01cd70.js",
@@ -401,8 +401,8 @@
       "path---topics-marionette-998e424f28d5ceeeea9d.js.map"
     ],
     "path---index": [
-      "path---index-9a0a1b3b649a41295c83.js",
-      "path---index-9a0a1b3b649a41295c83.js.map"
+      "path---index-9c2ac1ba09275bc418b7.js",
+      "path---index-9c2ac1ba09275bc418b7.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-339209f32496fde77d95.js",
@@ -615,8 +615,8 @@
       "path---2017-12-01-weekly-links-12-01-17-21d7bb97a22b2f07df48.js.map"
     ],
     "path---topics-atom": [
-      "path---topics-atom-40401d51906fbe934fab.js",
-      "path---topics-atom-40401d51906fbe934fab.js.map"
+      "path---topics-atom-622d423c82abb401b1fb.js",
+      "path---topics-atom-622d423c82abb401b1fb.js.map"
     ],
     "path---2017-07-10-how-to-follow-the-javascript-roadmap": [
       "path---2017-07-10-how-to-follow-the-javascript-roadmap-819f843a90edc8d293fc.js",
@@ -719,14 +719,14 @@
       "path---2018-02-20-cs-for-fe-bc1afd700a76de1f8103.js.map"
     ],
     "app": [
-      "app-5f3214a36c437798f3e7.js",
+      "app-5f33a02fdc5bb6dbee5e.js",
       "build-js-styles.css",
-      "app-5f3214a36c437798f3e7.js.map",
+      "app-5f33a02fdc5bb6dbee5e.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-236d8cc49c9435c733b9.js",
-      "path---archive-236d8cc49c9435c733b9.js.map"
+      "path---archive-291bd0fed90aebf8a648.js",
+      "path---archive-291bd0fed90aebf8a648.js.map"
     ],
     "path---topics-book-review": [
       "path---topics-book-review-db588ecc1f4f7db43d8d.js",
