@@ -74,7 +74,7 @@ export class WelcomeBox extends React.Component {
             key="avatar-image"
             innerRef={el => (this.img = el)}
             className="loading"
-            data-src={'/headshot.webp'}
+            data-src={'/headshot.jpeg'}
           />
         </ImageContainer>
       </Wrapper>
