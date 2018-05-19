@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sat, 19 May 2018 17:02:43 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 19 May 2018 17:42:58 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,34 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Weekly Links: May 19th]]></title>
+            <link>https://benmccormick.org/2018/05/19/weekly-links-05-19-18/</link>
+            <guid>https://benmccormick.org/2018/05/19/weekly-links-05-19-18/</guid>
+            <pubDate>Sat, 19 May 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h3>JavaScript and the Web</h3>
+<p><a href="https://changelog.com/reactpodcast">The React Podcast | Michael Jackson</a></p>
+<p>I listen to a decent amount of podcasts, but I’ve usually found it tough to get into programming podcasts.  Without visually being able to see code, they’re usually either ultra high level, or get hard to follow when going into the details.  The changelog family of podcasts has generally been my favorite though, and the new<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup> React podcast has been consistently excellent over it’s first 9 episodes.  Worth a listen.</p>
+<p><a href="https://blog.mgechev.com/2018/05/09/introducing-guess-js-data-driven-user-experiences-web/?utm_source=ponyfoo+weekly&#x26;utm_medium=email&#x26;utm_campaign=115">Guess.js | Minko Gechev</a></p>
+<p>This is a crazy look at what I suspect will be the next step in static site performance stuff.  This blog does some of the cool stuff mentioned here (we prefetch links on the page thanks to Gatsby, and I use google analytics at build time to determine popular pages and populate the Most Read Articles list on the main page) but this is next level, using analytics to efficiently prefetch.  Excited to try it on the site.</p>
+<h3>Non-Tech</h3>
+<p><a href="https://amzn.to/2LdnoXK">The Vision | Tom King</a></p>
+<p>Ok so I’m pretty late on this one<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>, but Tom King’s <em>The Vision</em> is the best comic book I’ve read in years.  He’s got a <a href="https://amzn.to/2IwlMq1">pretty</a> <a href="https://amzn.to/2LcYQ0U">good</a> <a href="https://amzn.to/2Lh3ZFd">run</a> going on Batman now as well, but this is a brilliant self-contained story that holds up as well as anything I’ve seen. Great art as well.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>Newly relauched? I’m not totally sure of the history</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>The single edition Vision comics were originally released in 2015, though the hardcover that I purchased was just released this year.</p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[MobX Patterns: State Machines & Flags]]></title>
             <link>https://benmccormick.org/2018/05/14/mobx-state-machines-and-flags/</link>
@@ -675,24 +703,6 @@ document<span class="token punctuation">.</span>all <span class="token comment">
 </li>
 </ol>
 </div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: March 24th]]></title>
-            <link>https://benmccormick.org/2018/03/24/weekly-links-03-11-24/</link>
-            <guid>https://benmccormick.org/2018/03/24/weekly-links-03-11-24/</guid>
-            <pubDate>Sat, 24 Mar 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h3>TC39 and the future of JavaScript/ECMAScript</h3>
-<p><a href="https://developers.google.com/web/updates/2018/03/smooshgate">#SmooshGate FAQ  |  Mathias Bynens</a> - A great explanation both of the background behind the recent twitter controversy over <code>Array.prototype.smoosh</code> as well as the TC39 process generally.</p>
-<p><a href="https://github.com/zenparsing/js-classes-1.1">js-classes-1.1 | Allen Wirfs-Brock</a> - This is the new proposal for expanding JS classes I mentioned in my <a href="https://benmccormick.org/2018/03/16/proposals-in-production/">post</a> last Friday.  It aims to be a more minimalist take on expanding class capabilities (primarily adding private state syntax) than other proposals that have come along over the last few years.</p>
-<p><a href="https://gist.github.com/wycats/b1c96c67074396a239abd60f55087adc">thoughts.md | Yehuda Katz</a> - This was a response to the JS Classes 1.1 proposal from Yehuda Katz, the lead proponent of adding decorator syntax for JavaScript classes.  He compares the new proposal to existing proposals, with specific concerns for how it would interop with decorators.</p>
-<h3>Computer Science and Software Engineering</h3>
-<p><a href="https://medium.com/basecs">basecs | Vaidehi Joshi</a> - While I’ve been starting to consider how to explain CS concepts for front end developers without a CS background, I found this excellent beginner set of CS articles written by Vaidehi Joshi on Medium over the past year.  Worth diving into, especially if you like fun visuals.</p>
-<p><a href="https://blog.nrwl.io/the-3-skills-that-helped-me-become-a-better-software-engineer-8b06a37becf3">The 3 Skills That Helped Me Become a Better Software Engineer | Victor Savkin</a> - This is worth sharing solely for the advice about mental models.  In my experience the ability to think in abstractions (and understand when you need to dig deeper) is one of the biggest hurdles in programming when trying to grow from a beginner to a more advanced software engineer.</p>
-<h3>Books</h3>
-<p>I’ve been working through a goal to read 30 books in a year, and have worked through a few more books recently.  Here are two good ones.</p>
-<p><a href="https://amzn.to/2Gbh9R2">The Martian | Andy Weir</a> - Yes I know I’m 3 years late on this one.  But I’m sure there are other lost souls like me who entered 2018 without reading this book.  If you love tech and science (and I’m guessing you do if you’re reading this), you should find a way to read The Martian.  My first thought when I started reading it was “This is great”.  My second thought was “How in the world did this end up becoming a Hollywood Blockbuster starring Matt Damon?“.  The Martian is unapologetically geeky, and it is “real science” fiction, with a very human core. I loved it.</p>
-<p><a href="https://amzn.to/2G1h9ah">Death By Meeting | Patrick Lencioni</a> - This was a recommendation from my manager, and is a great read for anyone who wants to improve the meetings they’re in at work.  It’s written in a “business fable” style, with a story serving to illustrate the principles it is trying to teach.  One thing I love is that it tells the story of the principles being implemented from a lower rung employee, rather than a top-down executive driven approach, so hopefully it can be inspirational to you even if you feel like you wouldn’t be able to change your meeting culture even if you knew what to do.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
