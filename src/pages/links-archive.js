@@ -2,13 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { HeadContent } from '../components/HeadContent';
 import { getWeeklyLinks } from '../utils/page-helpers';
-import { fadeIn } from '../utils/react-helpers';
 import LinkList from '../components/LinkList';
 
 class LinksArchive extends React.Component {
-  componentDidMount() {
-    fadeIn(this.archiveContainer);
-  }
   render() {
     // Sort pages.
     const posts = this.props.data.allMarkdownRemark.edges;

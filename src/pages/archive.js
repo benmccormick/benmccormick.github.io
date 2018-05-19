@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { HeadContent } from '../components/HeadContent';
 import { getSortedPosts } from '../utils/page-helpers';
-import { fadeIn } from '../utils/react-helpers';
 import LinkList from '../components/LinkList';
 import { TrendingIcon, FavoriteIcon } from '../components/PageLink';
 import glamorous from 'glamorous';
@@ -21,9 +20,6 @@ const Legend = glamorous.div({
 });
 
 class CategoryArchive extends React.Component {
-  componentDidMount() {
-    fadeIn(this.archiveContainer);
-  }
   render() {
     // Sort pages.
     const posts = this.props.data.allMarkdownRemark.edges;

@@ -3,7 +3,6 @@ import React from 'react';
 
 import { HeadContent } from '../components/HeadContent';
 import { WelcomeBox } from '../components/WelcomeBox';
-import { fadeIn } from '../utils/react-helpers';
 import {
   getSortedPosts,
   getPopularPosts,
@@ -13,9 +12,6 @@ import {
 import { HomeMenu } from '../components/HomeMenu';
 
 class BlogIndex extends React.Component {
-  componentDidMount() {
-    fadeIn(this.indexContainer);
-  }
   render() {
     const pages = this.props.data.allMarkdownRemark.edges;
     const featuredTopics = this.props.data.site.siteMetadata.featuredTopics;

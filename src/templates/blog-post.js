@@ -10,7 +10,6 @@ import format from 'date-fns/format';
 import { Ad } from '../components/Ad';
 import { EmailSubscribe } from '../components/EmailSubscribe';
 import { BlogPostHeadContent } from '../components/BlogPostHeadContent';
-import { fadeIn } from '../utils/react-helpers';
 import typography from '../utils/typography';
 import PostFooter from '../components/PostFooter';
 import glamorous from 'glamorous';
@@ -54,9 +53,6 @@ const Sidebar = glamorous.div({
 });
 
 class BlogPostTemplate extends React.Component {
-  componentDidMount() {
-    fadeIn(this.markdownContainer);
-  }
   render() {
     const { data, pathContext, history } = this.props;
     const post = data.markdownRemark.frontmatter;
