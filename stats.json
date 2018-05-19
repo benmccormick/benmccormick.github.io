@@ -77,8 +77,8 @@
       "path---2017-02-13-improving-site-performance-with-lighthouse-d31ebe8862111ccaa153.js.map"
     ],
     "path---topics-text-editors": [
-      "path---topics-text-editors-810a104416a745b05eb9.js",
-      "path---topics-text-editors-810a104416a745b05eb9.js.map"
+      "path---topics-text-editors-d0a8a70f82bc55f36d70.js",
+      "path---topics-text-editors-d0a8a70f82bc55f36d70.js.map"
     ],
     "path---topics-ack": [
       "path---topics-ack-993df6d2bc3b93709032.js",
@@ -89,8 +89,8 @@
       "path---topics-require-js-84c5ab6408222633100c.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-726bf03dea12534eb853.js",
-      "component---src-pages-index-js-726bf03dea12534eb853.js.map"
+      "component---src-pages-index-js-c9203e2fe97545f009b6.js",
+      "component---src-pages-index-js-c9203e2fe97545f009b6.js.map"
     ],
     "path---2017-11-26-weekly-links-11-26-17": [
       "path---2017-11-26-weekly-links-11-26-17-4b6c0a32a9adfd01cd70.js",
@@ -181,8 +181,8 @@
       "path---2014-06-02-discovering-vim-0563be4547e216d571ae.js.map"
     ],
     "path---topics-testing": [
-      "path---topics-testing-f4fb9201e7c5fdc07f43.js",
-      "path---topics-testing-f4fb9201e7c5fdc07f43.js.map"
+      "path---topics-testing-bda48dad0cf0872317fb.js",
+      "path---topics-testing-bda48dad0cf0872317fb.js.map"
     ],
     "path---topics-math": [
       "path---topics-math-68a565b6fd92b2abb64a.js",
@@ -265,8 +265,8 @@
       "path---2015-04-07-es-6-classes-and-backbone-js-c0c8a07f3f1d88d7cb4d.js.map"
     ],
     "component---src-pages-archive-js": [
-      "component---src-pages-archive-js-8532e8efeea51814b944.js",
-      "component---src-pages-archive-js-8532e8efeea51814b944.js.map"
+      "component---src-pages-archive-js-d875fff46e60593c2713.js",
+      "component---src-pages-archive-js-d875fff46e60593c2713.js.map"
     ],
     "path---2015-11-30-es-6-patterns-clean-higher-order-functions": [
       "path---2015-11-30-es-6-patterns-clean-higher-order-functions-648d9bbca5fef940b99b.js",
@@ -305,8 +305,8 @@
       "path---topics-interviewing-8cddc8889c46ed7c25be.js.map"
     ],
     "component---src-templates-blog-post-js": [
-      "component---src-templates-blog-post-js-ecd6e08f0703f7a23b50.js",
-      "component---src-templates-blog-post-js-ecd6e08f0703f7a23b50.js.map"
+      "component---src-templates-blog-post-js-a2363881342025beb1e2.js",
+      "component---src-templates-blog-post-js-a2363881342025beb1e2.js.map"
     ],
     "path---2015-01-05-marionette-view-life-cycles": [
       "path---2015-01-05-marionette-view-life-cycles-f023d37c35d1af24c6e4.js",
@@ -369,8 +369,8 @@
       "path---2013-01-01-sublime-text-for-javascript-configuration-529ff409c21000df8dc8.js.map"
     ],
     "component---src-pages-links-archive-js": [
-      "component---src-pages-links-archive-js-c5106f5bf99ee6ca8318.js",
-      "component---src-pages-links-archive-js-c5106f5bf99ee6ca8318.js.map"
+      "component---src-pages-links-archive-js-bc9ff6dafd3e9a5505cb.js",
+      "component---src-pages-links-archive-js-bc9ff6dafd3e9a5505cb.js.map"
     ],
     "path---topics-css": [
       "path---topics-css-f19efca2ac6756a51e4c.js",
@@ -405,8 +405,8 @@
       "path---topics-marionette-998e424f28d5ceeeea9d.js.map"
     ],
     "path---index": [
-      "path---index-0a50f7541a4ea4df0b76.js",
-      "path---index-0a50f7541a4ea4df0b76.js.map"
+      "path---index-9e074d1696fdd6d1ef7a.js",
+      "path---index-9e074d1696fdd6d1ef7a.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-339209f32496fde77d95.js",
@@ -489,8 +489,8 @@
       "path---category-software-productivity-ab8831886bfc743dee61.js.map"
     ],
     "path---topics-jest": [
-      "path---topics-jest-20af168c2947a55bb0f1.js",
-      "path---topics-jest-20af168c2947a55bb0f1.js.map"
+      "path---topics-jest-78381ba29d07b8df99ee.js",
+      "path---topics-jest-78381ba29d07b8df99ee.js.map"
     ],
     "path---2016-09-19-testing-with-jest-snapshots-first-impressions": [
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-2f29fd035722acb55fd7.js",
@@ -513,8 +513,8 @@
       "path---topics-architecture-69a7d04f1832036a5f94.js.map"
     ],
     "path---topics-java-script": [
-      "path---topics-java-script-72b6226b70363b5a7c81.js",
-      "path---topics-java-script-72b6226b70363b5a7c81.js.map"
+      "path---topics-java-script-66bc08b3aca0c653eae7.js",
+      "path---topics-java-script-66bc08b3aca0c653eae7.js.map"
     ],
     "path---2016-12-14-what-are-higher-order-components": [
       "path---2016-12-14-what-are-higher-order-components-a15fab26e343711ca0da.js",
@@ -529,9 +529,9 @@
       "path---2014-08-28-custom-elements-by-example-b524da8b658b12d59025.js.map"
     ],
     "commons": [
-      "commons-5ac03ad22f3bac5fbbaa.js",
+      "commons-ffdba9b2384f2ddde564.js",
       "build-js-styles.css",
-      "commons-5ac03ad22f3bac5fbbaa.js.map",
+      "commons-ffdba9b2384f2ddde564.js.map",
       "build-js-styles.css.map"
     ],
     "path---2015-12-30-es-6-patterns-converting-callbacks-to-promises": [
@@ -619,8 +619,8 @@
       "path---2017-12-01-weekly-links-12-01-17-21d7bb97a22b2f07df48.js.map"
     ],
     "path---topics-atom": [
-      "path---topics-atom-0e2cb6bdc494667f04cb.js",
-      "path---topics-atom-0e2cb6bdc494667f04cb.js.map"
+      "path---topics-atom-622d423c82abb401b1fb.js",
+      "path---topics-atom-622d423c82abb401b1fb.js.map"
     ],
     "path---2017-07-10-how-to-follow-the-javascript-roadmap": [
       "path---2017-07-10-how-to-follow-the-javascript-roadmap-819f843a90edc8d293fc.js",
@@ -723,14 +723,14 @@
       "path---2018-02-20-cs-for-fe-bc1afd700a76de1f8103.js.map"
     ],
     "app": [
-      "app-c457393f96981c361257.js",
+      "app-f5aafc2a2ce7111c3ef0.js",
       "build-js-styles.css",
-      "app-c457393f96981c361257.js.map",
+      "app-f5aafc2a2ce7111c3ef0.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-5d0ced05d024b7dbb772.js",
-      "path---archive-5d0ced05d024b7dbb772.js.map"
+      "path---archive-27365ad1f63c9aab6672.js",
+      "path---archive-27365ad1f63c9aab6672.js.map"
     ],
     "path---topics-book-review": [
       "path---topics-book-review-db588ecc1f4f7db43d8d.js",
@@ -833,8 +833,8 @@
       "path---category-reviews-5f7c89673016863da4ee.js.map"
     ],
     "path---topics-code-quality": [
-      "path---topics-code-quality-30957e208017cda58d2b.js",
-      "path---topics-code-quality-30957e208017cda58d2b.js.map"
+      "path---topics-code-quality-2a49d8bbab1b7635cd71.js",
+      "path---topics-code-quality-2a49d8bbab1b7635cd71.js.map"
     ],
     "path---topics-backbone": [
       "path---topics-backbone-88324266014412d9c8cc.js",
