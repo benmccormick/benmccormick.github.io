@@ -12,31 +12,32 @@ const createTopicArchives = async (graphql, createPage) => {
   // Query for all markdown "nodes" and for the slug we previously created.
   const result = await graphql(
     `
-        {
-          allMarkdownRemark {
-            edges {
-              node {
-                frontmatter {
-                  readNext
-                  topics
-                  category
-                  key
-                  title
-                  description
-                  layout
-                  path
-                  date
-                  dontfeature
-                  isDraft
-                }
-                html
-                fields {
-                  slug
-                }
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                readNext
+                topics
+                category
+                key
+                title
+                description
+                layout
+                path
+                date
+                dontfeature
+                isDraft
+              }
+              html
+              fields {
+                slug
               }
             }
           }
-        }`
+        }
+      }
+    `
   );
   if (result.errors) {
     console.log(result.errors);
@@ -76,20 +77,20 @@ const createCategoryArchives = async (graphql, createPage) => {
   // Query for all markdown "nodes" and for the slug we previously created.
   const result = await graphql(
     `
-        {
-          site {
-            siteMetadata {
-              categories {
-                title
-                description
-                key
-                icon
-                subscribeText
-              }
+      {
+        site {
+          siteMetadata {
+            categories {
+              title
+              description
+              key
+              icon
+              subscribeText
             }
           }
         }
-      `
+      }
+    `
   );
   if (result.errors) {
     console.log(result.errors);
@@ -113,25 +114,25 @@ const createCategoryArchives = async (graphql, createPage) => {
 const getPages = async graphql => {
   const result = await graphql(
     `
-        {
-          allMarkdownRemark {
-            edges {
-              node {
-                frontmatter {
-                  date
-                  layout
-                  title
-                  isDraft
-                }
-                html
-                fields {
-                  slug
-                }
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                date
+                layout
+                title
+                isDraft
+              }
+              html
+              fields {
+                slug
               }
             }
           }
         }
-      `
+      }
+    `
   );
   if (result.errors) {
     throw result.errors;
@@ -167,29 +168,29 @@ const createBlogPosts = async (graphql, createPage) => {
   // Query for all markdown "nodes" and for the slug we previously created.
   const result = await graphql(
     `
-        {
-          allMarkdownRemark {
-            edges {
-              node {
-                frontmatter {
-                  readNext
-                  category
-                  key
-                  title
-                  description
-                  path
-                  date
-                  dontfeature
-                  isDraft
-                }
-                fields {
-                  slug
-                }
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                readNext
+                category
+                key
+                title
+                description
+                path
+                date
+                dontfeature
+                isDraft
+              }
+              fields {
+                slug
               }
             }
           }
         }
-      `
+      }
+    `
   );
   if (result.errors) {
     console.log(result.errors);
