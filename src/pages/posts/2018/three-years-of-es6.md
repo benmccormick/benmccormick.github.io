@@ -11,12 +11,14 @@ key: "three-years-es6"
 readNext: "ten-things-js,following-js-roadmap,proposals-in-production"
 ---
 
-Next month will mark the 3 year anniversary of the ES2015 spec, [better known as ES6](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning).  It was a huge moment in the evolution of JavaScript, a spec update that brought a ton of high level features to the JavaScript language, and the start of a new process of improving the language that so far has resulted in far more transparency and cross-environment compatibility.  It was also the last "big bang" release of JavaScript, as TC39 has now moved to a pattern of annual small releases rather than making large multi-year language releases.  There's been a ton of hype around ES6 over the last 4 years, and I've been writing all of my code using the modern spec during that time[^1] so this seems like a good time to step back and evaluate the features that were added.  What made a big impact on my code, what didn't.  Were there any big mistakes?  So here's one developer's feature by feature look at ES6 after a few years of practice.
+Next month will mark the 3 year anniversary of the ES2015 spec, [better known as ES6](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning).  It was a huge moment in the evolution of JavaScript, a spec update that brought a ton of high level features to the JavaScript language, and the start of a new process of improving the language that so far has resulted in far more transparency and cross-environment compatibility.  It was also the last "big bang" release of JavaScript, as TC39 has now moved to a pattern of annual small releases rather than making large multi-year language releases.  There's been a ton of hype around ES6 over the last 4 years, and I've been writing all of my code using the modern spec during that time[^1] so this seems like a good time to step back and evaluate the features that were added.  What made a big impact on my code, what didn't.  Were there any big mistakes?  So here's one developer's feature by feature look at ES6 after a few years of practice. This isn't an explanation of the features, if you want a refresher, check out [Babel's roundup here](https://babeljs.io/learn-es2015/).
 
 
 ### The features I use every day
 
 #### Arrow functions
+
+Arrow functions
 
 #### Classes
 
@@ -29,7 +31,7 @@ Next month will mark the 3 year anniversary of the ES2015 spec, [better known as
 #### Promises
 
 
-#### Default + Rest + Spread  
+#### Default + Rest + Spread
 
 
 #### Let
@@ -59,13 +61,13 @@ Next month will mark the 3 year anniversary of the ES2015 spec, [better known as
 
 #### Reflect
 
-#### Safe Tail calls
 
 
 ### The features I didn't notice... and that's ok
 
 #### Unicode updates
 
+#### Safe Tail calls
 
 ### The features that maybe could have used some more thought
 
