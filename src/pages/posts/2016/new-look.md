@@ -8,6 +8,7 @@ keywords: "Gatsby blog ghost benmccormick.org"
 key: "new-look-2016"
 category: "meta"
 pageViews: "229"
+topics: ['Gatsby']
 last30pageViews: "14"
 ---
 
@@ -29,7 +30,7 @@ About a year after that I re-introduced some color to the blog after a prolonged
 
 <img src="oldsite4.png" class="full-width">
 
-Ghost was a great blogging platform, but this fall I decided it was time to move off of it.  I was interested in trying some things that didn't fit into the platform's more structured approach, and wanted to move the blog to a place where it was no longer losing me money to run.  So I decided to take another look at the static site generator landscape. I looked through the top 12 or so options on [StaticGen](https://www.staticgen.com/) and [Gatsby](https://github.com/gatsbyjs/gatsby) quickly stood out.  It uses concepts I'm extremely comfortable with (built with React and Webpack!), produces fast server-rendered SPA style sites, and dictates almost nothing about how the site is built.  
+Ghost was a great blogging platform, but this fall I decided it was time to move off of it.  I was interested in trying some things that didn't fit into the platform's more structured approach, and wanted to move the blog to a place where it was no longer losing me money to run.  So I decided to take another look at the static site generator landscape. I looked through the top 12 or so options on [StaticGen](https://www.staticgen.com/) and [Gatsby](https://github.com/gatsbyjs/gatsby) quickly stood out.  It uses concepts I'm extremely comfortable with (built with React and Webpack!), produces fast server-rendered SPA style sites, and dictates almost nothing about how the site is built.
 
 The site is now built with Gatsby and hosted on Github pages.  I've ditched the noisy green sidebar in favor of a simpler text-focused experience and added a small ad at the top of the page to offset some of the costs associated with the blog.  I'm planning on iterating on the design (better organizing and exposing older content, making it simpler to subscribe to the blog, and making it easier for me to add rich content/code examples to posts without relying on 3rd party services), but for right now I'm excited to get back to focusing on writing.
 
