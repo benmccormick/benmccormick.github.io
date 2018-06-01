@@ -11,7 +11,7 @@ key: "three-years-es6"
 readNext: "ten-things-js,following-js-roadmap,proposals-in-production"
 ---
 
-Next month will mark the 3 year anniversary of the ES2015 spec, [better known as ES6](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning).  It was a huge moment in the evolution of JavaScript, a spec update that brought a ton of high level features to the JavaScript language, and the start of a new process of improving the language that so far has resulted in far more transparency and cross-environment compatibility.  It was also the last "big bang" release of JavaScript, as TC39 has now moved to a pattern of annual small releases rather than making large multi-year language releases.  There's been a ton of hype around ES6 over the last 4 years, and I've been writing all of my code using the modern spec during that time[^1] so this seems like a good time to step back and evaluate the features that were added.  Specifically there are some features that I tried out or used for a whiel that I've since stopped using, because I think they made my code worse.
+This month marks the 3 year anniversary of the ES2015 spec, [better known as ES6](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning).  It was a huge moment in the evolution of JavaScript, a spec update that brought a ton of high level features to the JavaScript language, and the start of a new process of improving the language that so far has resulted in far more transparency and cross-environment compatibility.  It was also the last "big bang" release of JavaScript, as TC39 has now moved to a pattern of annual small releases rather than making large multi-year language releases.  There's been a ton of hype around ES6 over the last 4 years, and I've been writing all of my code using the modern spec during that time[^1] so this seems like a good time to step back and evaluate the features that were added.  Specifically there are some features that I tried out or used for a whiel that I've since stopped using, because I think they made my code worse.
 
 In his great 2008 book [JavaScript: The Good Parts](https://amzn.to/2LJBY9z) Douglas Crockford dedicated a chapter to the *Bad Parts* of JavaScript.  The bad parts are the features of JavaScript that he felt were [code smells](https://en.wikipedia.org/wiki/Code_smell).  Their usage was either a sign that the code was doing something strange and could probably be improved, or a potential pitfall for less experienced devs who didn't know all the intricacies of a complex feature.  Fortunately there is nothing as bad in ES6 as some of the old JavaScript stinkers like coercive equality, eval or the `with` statement.  ES6 was generally a fantastic well-designed release. But there are definitely some features and patterns that I've cut out of my own code over the past 3 years. In that spirit, here are my "bad parts" of ES6.
 
@@ -121,5 +121,39 @@ I don't have a clear line for when destructuring has gone too far, but anytime I
 
 #### Default Exports
 
+One of the nice things about ES6 was the way it standardized so many things that had previously been accomplished using competing often incompatible libraries.  Classes, Promises and most of all modules all benefited from being folded into the spec after the community had had time to absorb the lessons learned from competitive user-land implementations.  ES6 modules for the most part are a great replacement for the AMD/CommonJS format wars, and provide a nice clean syntax for imports that are much better than the ugly mess of AMD and more obvious than the require syntax of common.js.
+
+ES6 modules provide 2 main ways of exporting values: named exports, and default exports.
+
+```javascript
+const mainValue = 'This is the default export
+export default mainValue
+
+export const secondaryValue = 'This is a secondary value;
+export const secondaryValue2 = 'This is another secondary value;
+```
+
+A file can define multiple named exports, but only a single default export.  WHen importing default exports, the importing file can name the default export however the importing developer chooses, there isn't any lookup on name.  Named exports are imported by using the name of the variable in the exporting file, though renaming is possible.
+
+```javascript
+// default import
+import renamedMainValue from './the-above-example';
+// named import
+import {secondaryValue} from './the-above-example';
+// named import with a rename
+import {secondaryValue as otherValue} from './the-above-example';
+```
+
+Default exports [were the preferred syntax of the folks designing ES6](https://esdiscuss.org/topic/moduleimport#content-0) and they intentionally gave it the cleanest syntax.  But in practice I've found named exports to be much better.
+
+1. Named exports match the names of the imported variable by default, making searching easier for those not in a position to use intelligent tooling.
+2. Named exports can be intelligently matched to variables in other values prior to an import statement being written, allowing niceties like [auto-import](https://code.visualstudio.com/updates/v1_18#_auto-import-for-javascript-and-typescript) for those in a position to use intelligent tooling.
+3. It's possible to use named imports consistently for everything, but that's only possible with default imports if you never want to export multiple values from a file.[^3] Using only named modules keep things simpler.
+
+### None of it is that bad
+
+The great news about ES6 is that it makes the list of JavaScript "Good Parts" much bigger, and my collection of bad parts has mostly been filled with the nitpicks and strong opinions held above.  The language is larger and more complex than it was a few years ago, but in return it has gained power and cleaner syntax for common operations.
+
 [^1]: Thanks <a href="https://babeljs.io/learn-es2015/">Babel</a>!
 [^2]: Or global scope, or a property on an object, or a function declaration
+[^3]: Exporting objects with multiple values as properties seems like a workaround here, but that loses the tree-shaking value that ES6 Modules provide for bundlers like webpack.
