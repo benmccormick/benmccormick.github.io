@@ -28,8 +28,10 @@ const Logo = glamorous.h3({
     boxShadow: 'none',
     textDecoration: 'none',
     color: 'inherit',
+    borderBottom: 0,
     ':hover': {
       textDecoration: 'none',
+      borderBottom: 0,
     },
   },
 });
@@ -42,8 +44,10 @@ const headerLink = css({
   color: 'rgba(100,100,100, 0.7)',
   fontSize: '16px',
   fontFamily: sansFontStack,
+  borderBottom: 0,
   ':hover': {
     color: '#E2777A',
+    borderBottom: 0,
   },
 });
 

@@ -1,11 +1,14 @@
 a {
-    color: #E2777A;
+    color: inherit;
     text-decoration: none;
     cursor: pointer;
+    border-bottom: 2px solid #E2777A;
+    transition: border-bottom 500ms ease-in, color 500ms ease-in;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #E2777A;
+  border-bottom: 2px solid rgba(200, 200, 200, 0);
 }
 
 
