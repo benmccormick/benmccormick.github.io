@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sun, 27 May 2018 23:02:19 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 03 Jun 2018 23:12:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,33 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Weekly Links: June 3rd]]></title>
+            <link>https://benmccormick.org/2018/06/03/weekly-links-06-03-18/</link>
+            <guid>https://benmccormick.org/2018/06/03/weekly-links-06-03-18/</guid>
+            <pubDate>Sun, 03 Jun 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h3>JavaScript &#x26; The Web</h3>
+<p><a href="https://developers.google.com/web/updates/2018/05/nic67#desktop-pwas">New in Chrome 67  - Desktop PWAs | Google Developers</a></p>
+<p>Google has a new process for bundling web apps as installable applications, this time based on the emerging Progressive Web App semi-standard<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  An interesting alternative approach for smaller applications that don’t need the full electron runtime, or education apps targeting Chromebooks</p>
+<h3>Programming Tools</h3>
+<p><a href="https://github.com/ambv/black">black: The uncompromising Python code formatter | Github</a></p>
+<p>This looks like a Python version of <a href="https://prettier.io/">Prettier</a>, and something I’d be interested in playing with.</p>
+<p><a href="https://facebook.github.io/jest/blog/2018/05/29/jest-23-blazing-fast-delightful-testing.html">Jest 23 | Jest</a></p>
+<p>Jest just keeps getting better.  This release brings interactive snapshot updating, so that you can approve some changes and not others.  That’s a big UX improvement and reason enough to upgrade, but looks like there are some improved matchers and new customizability options for power users as well.  A solid release.</p>
+<h3>Tech &#x26; Business</h3>
+<p><a href="https://www.theverge.com/2018/6/3/17422752/microsoft-github-acquisition-rumors">Microsoft has reportedly acquired Github | The Verge</a></p>
+<p>Microsoft seems to be doing everything it can to earn back love and trust from developers.  Some of that has been by investing in new stuff like Visual Studio Code, some of it has been attitude, and then things like this are just buying somebody elses love.  But I think they’ve earned back enough good will at this point that most developers will be willing to give them a chance and not assume that this will automatically be a bad thing.  Which is a big change from 5 years ago.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>It’s a little vague still to really be considered a standard, but Microsoft and Google at least are providing broad support for similar sounding things that they both call PWAs, and Mozilla and Apple have been supporting the underlying technology if not the branding as much.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: May 27th]]></title>
             <link>https://benmccormick.org/2018/05/27/weekly-links-05-27-18/</link>
@@ -479,40 +506,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3>Humor</h3>
 <p><a href="https://www.facebook.com/photo.php?fbid=10156523301334739&#x26;set=a.10150885243919739.471335.523144738&#x26;type=3&#x26;theater">Returning To The Empress Hotel | Nick Burchill (Facebook)</a></p>
 <p>One of the funnier stories I’ve read on the internet in a while.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: March 30th]]></title>
-            <link>https://benmccormick.org/2018/03/24/weekly-links-03-11-30/</link>
-            <guid>https://benmccormick.org/2018/03/24/weekly-links-03-11-30/</guid>
-            <pubDate>Fri, 30 Mar 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>A big pile of links for Easter weekend.  Happy Easter everybody!</p>
-<h3>JavaScript and the Web</h3>
-<p><a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">ES modules: A cartoon deep-dive | Lin Clark</a> - As usual, Lin Clark offers a great approachable explanation of a complex topic.  Here she gets into the weeds of how ES modules are implemented in browsers, and how the module syntax differs from CommonJS.</p>
-<p><a href="http://blog.isquaredsoftware.com/2018/03/redux-not-dead-yet/">Redux - Not Dead Yet! | Mark Erickson</a> - A good explainer of where Redux fits into the React landscape today.</p>
-<p><a href="https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html">Update on Async Rendering | Brian Vaughn</a> - Important read for React devs.  There are changes coming to the core lifecycle methods.</p>
-<p><a href="https://furbo.org/2018/03/28/system-fonts-in-css/">System Fonts in CSS | Craig Hockenberry</a> - I’m always happy to see improvements to the default font situation on the web<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.   I don’t love relying on custom loaded fonts for this blog and I wish there were more high quality fonts that were reliably available without resorting to loading your own.  This particular feature doesn’t pass the “caniuse test” for now though; Chrome and Safari support it, but there’s nothing from Edge or Firefox yet.</p>
-<h3>Command Line Tips</h3>
-<p><a href="https://zwischenzugs.com/2018/03/26/git-log-the-good-parts/">git log – the Good Parts | Ian Miell</a> - A good rundown of some of the things you can do with git log.  It misses that you can use <code>--author</code> to filter by the committer though, which is a flag I use all the time when I know who did a specific piece of work but am vague on what actually changed.</p>
-<p><a href="https://rachelbythebay.com/w/2018/03/26/w/">Why I usually run ‘w’ first when troubleshooting unknown machines</a> - Here’s a useful command line command I didn’t know about.  <code>w</code> shows you a list of users currently on a machine and what they’re doing.</p>
-<h3>Code Style, Documentation and Code Reviews</h3>
-<p><a href="http://bradfrost.com/blog/post/just/">“Just” | Brad Frost</a> - A good reminder to not assume everybody has our accumulated knowledge.  I’ve found a good cure for this is to spend some time working with programming tools I have no experience in.  Trying to install gems in Ruby for instance always reminds me how confusing npm was when I started using it.</p>
-<p><a href="http://blog.timoxley.com/post/47041269194/avoid-else-return-early">Avoid Else, Return Early | Tim Oxley</a> - I’ve found this pattern of short-circuiting functions to produce very readable code.  I’ve also seen these referred to as <em>guard statements</em>.</p>
-<p><a href="https://blog.janestreet.com/putting-the-i-back-in-ide-towards-a-github-explorer/">Putting the I back in IDE: Towards a Github Explorer| Jane Street Tech Blog </a> - This is an interesting idea, although I was a bit weirded out by the idea of commenting in the source files to leave code review comments.  The idea of deeper editor integration is excellent though, and I’d love to see Github evolve further in this direction with their Atom plugin.</p>
-<h3>Privacy in the news</h3>
-<p><a href="https://arstechnica.com/information-technology/2018/03/facebook-scraped-call-text-message-data-for-years-from-android-phones/">Facebook scraped call, text message data for years from Android phones | Ars Technica</a> - It’s been a bad few weeks for Facebook.  You can maybe get away with trying to get everyone’s data, and you can maybe get away with being careless with user data, but when you’re as big as Facebook is, you absolutely can’t do both.</p>
-<p><a href="https://www.theverge.com/2018/3/28/17172548/gdpr-compliance-requirements-privacy-notice">How Europe’s new privacy rule is reshaping the internet | The Verge</a> - GDPR is a big deal.  If you’re involved in web products that store user information, you should understand this.  I’m excited to see meaningful regulation on privacy issues that seems to be reasonably well written.</p>
-<h3>Humor</h3>
-<p><a href="https://www.johndcook.com/blog/2018/03/28/cow-astrology/">Cow Astrology | John Cook</a> - When a mathematician examines the implications of astrology’s claims.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Or I would always be happy if there was ever anything to be happy about.</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
