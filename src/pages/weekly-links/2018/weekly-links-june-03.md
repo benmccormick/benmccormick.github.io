@@ -23,7 +23,7 @@ Google has a new process for bundling web apps as installable applications, this
 This looks like a Python version of [Prettier](https://prettier.io/), and something I'd be interested in playing with.
 
 
-[Jest 23 | Jest](https://facebook.github.io/jest/blog/2018/05/29/jest-23-blazing-fast-delightful-testing.html)
+[Jest 23 | Jest Blog](https://facebook.github.io/jest/blog/2018/05/29/jest-23-blazing-fast-delightful-testing.html)
 
 Jest just keeps getting better.  This release brings interactive snapshot updating, so that you can approve some changes and not others.  That's a big UX improvement and reason enough to upgrade, but looks like there are some improved matchers and new customizability options for power users as well.  A solid release.
 
