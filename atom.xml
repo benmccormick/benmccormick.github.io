@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-06-03T23:12:00Z</updated>
+    <updated>2018-06-03T23:15:40Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -31,7 +31,7 @@
 <h3>Programming Tools</h3>
 <p><a href="https://github.com/ambv/black">black: The uncompromising Python code formatter | Github</a></p>
 <p>This looks like a Python version of <a href="https://prettier.io/">Prettier</a>, and something I’d be interested in playing with.</p>
-<p><a href="https://facebook.github.io/jest/blog/2018/05/29/jest-23-blazing-fast-delightful-testing.html">Jest 23 | Jest</a></p>
+<p><a href="https://facebook.github.io/jest/blog/2018/05/29/jest-23-blazing-fast-delightful-testing.html">Jest 23 | Jest Blog</a></p>
 <p>Jest just keeps getting better.  This release brings interactive snapshot updating, so that you can approve some changes and not others.  That’s a big UX improvement and reason enough to upgrade, but looks like there are some improved matchers and new customizability options for power users as well.  A solid release.</p>
 <h3>Tech &#x26; Business</h3>
 <p><a href="https://www.theverge.com/2018/6/3/17422752/microsoft-github-acquisition-rumors">Microsoft has reportedly acquired Github | The Verge</a></p>
