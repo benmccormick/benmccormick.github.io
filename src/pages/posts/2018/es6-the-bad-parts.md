@@ -1,8 +1,8 @@
 ---
 title: "ES6: The Bad Parts"
-date: "2018/06/04"
+date: "2018/06/05"
 layout: "post"
-path: "/2018/06/04/es6-the-bad-parts/"
+path: "/2018/06/05/es6-the-bad-parts/"
 description: "Three years later, what parts of ES6 have I stopped using?"
 keywords: "es6 destructuring const"
 category: "javascript"
