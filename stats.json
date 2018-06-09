@@ -77,8 +77,8 @@
       "path---2017-02-13-improving-site-performance-with-lighthouse-d31ebe8862111ccaa153.js.map"
     ],
     "path---topics-text-editors": [
-      "path---topics-text-editors-369edec86bb34b8a4ed9.js",
-      "path---topics-text-editors-369edec86bb34b8a4ed9.js.map"
+      "path---topics-text-editors-ba25f5a52eada06da3d5.js",
+      "path---topics-text-editors-ba25f5a52eada06da3d5.js.map"
     ],
     "path---topics-ack": [
       "path---topics-ack-993df6d2bc3b93709032.js",
@@ -181,8 +181,8 @@
       "path---2014-06-02-discovering-vim-0563be4547e216d571ae.js.map"
     ],
     "path---topics-testing": [
-      "path---topics-testing-19a01e9fb02cbcdd5f7e.js",
-      "path---topics-testing-19a01e9fb02cbcdd5f7e.js.map"
+      "path---topics-testing-caa2bc0fb45cc90f821c.js",
+      "path---topics-testing-caa2bc0fb45cc90f821c.js.map"
     ],
     "path---topics-math": [
       "path---topics-math-68a565b6fd92b2abb64a.js",
@@ -305,8 +305,8 @@
       "path---topics-interviewing-8cddc8889c46ed7c25be.js.map"
     ],
     "component---src-templates-blog-post-js": [
-      "component---src-templates-blog-post-js-a2363881342025beb1e2.js",
-      "component---src-templates-blog-post-js-a2363881342025beb1e2.js.map"
+      "component---src-templates-blog-post-js-11b39c1fc7a4663becc9.js",
+      "component---src-templates-blog-post-js-11b39c1fc7a4663becc9.js.map"
     ],
     "path---2015-01-05-marionette-view-life-cycles": [
       "path---2015-01-05-marionette-view-life-cycles-f023d37c35d1af24c6e4.js",
@@ -409,8 +409,8 @@
       "path---topics-marionette-998e424f28d5ceeeea9d.js.map"
     ],
     "path---index": [
-      "path---index-d61a9f3795b7ea44df69.js",
-      "path---index-d61a9f3795b7ea44df69.js.map"
+      "path---index-80f385b6aaf449ce1117.js",
+      "path---index-80f385b6aaf449ce1117.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-339209f32496fde77d95.js",
@@ -485,16 +485,16 @@
       "path---2018-04-27-weekly-links-04-22-18-531c278615c69a00c07a.js.map"
     ],
     "path---topics-ecma-script": [
-      "path---topics-ecma-script-224c0710ed156a733f0f.js",
-      "path---topics-ecma-script-224c0710ed156a733f0f.js.map"
+      "path---topics-ecma-script-beeb290d780e2cba81c0.js",
+      "path---topics-ecma-script-beeb290d780e2cba81c0.js.map"
     ],
     "path---category-software-productivity": [
       "path---category-software-productivity-3246139c774703c21d5b.js",
       "path---category-software-productivity-3246139c774703c21d5b.js.map"
     ],
     "path---topics-jest": [
-      "path---topics-jest-f9376c0d2b470e44ba4b.js",
-      "path---topics-jest-f9376c0d2b470e44ba4b.js.map"
+      "path---topics-jest-05fd182a165627358ced.js",
+      "path---topics-jest-05fd182a165627358ced.js.map"
     ],
     "path---2016-09-19-testing-with-jest-snapshots-first-impressions": [
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-2f29fd035722acb55fd7.js",
@@ -521,8 +521,8 @@
       "path---topics-architecture-69a7d04f1832036a5f94.js.map"
     ],
     "path---topics-java-script": [
-      "path---topics-java-script-c175f23b7b6abf97e70b.js",
-      "path---topics-java-script-c175f23b7b6abf97e70b.js.map"
+      "path---topics-java-script-bed424709f384c23907e.js",
+      "path---topics-java-script-bed424709f384c23907e.js.map"
     ],
     "path---2016-12-14-what-are-higher-order-components": [
       "path---2016-12-14-what-are-higher-order-components-a15fab26e343711ca0da.js",
@@ -627,8 +627,8 @@
       "path---2017-12-01-weekly-links-12-01-17-21d7bb97a22b2f07df48.js.map"
     ],
     "path---topics-atom": [
-      "path---topics-atom-799c2953758b0b2789a7.js",
-      "path---topics-atom-799c2953758b0b2789a7.js.map"
+      "path---topics-atom-3fe7bd8ffc41da2a0342.js",
+      "path---topics-atom-3fe7bd8ffc41da2a0342.js.map"
     ],
     "path---2017-07-10-how-to-follow-the-javascript-roadmap": [
       "path---2017-07-10-how-to-follow-the-javascript-roadmap-819f843a90edc8d293fc.js",
@@ -731,14 +731,14 @@
       "path---2018-02-20-cs-for-fe-bc1afd700a76de1f8103.js.map"
     ],
     "app": [
-      "app-42a9c029097e036b252b.js",
+      "app-8ea9e7f2144e5bf2370b.js",
       "build-js-styles.css",
-      "app-42a9c029097e036b252b.js.map",
+      "app-8ea9e7f2144e5bf2370b.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-74b4981fd1b727a67408.js",
-      "path---archive-74b4981fd1b727a67408.js.map"
+      "path---archive-f3d1e4a6386dfd64b3c9.js",
+      "path---archive-f3d1e4a6386dfd64b3c9.js.map"
     ],
     "path---topics-book-review": [
       "path---topics-book-review-db588ecc1f4f7db43d8d.js",
@@ -841,12 +841,12 @@
       "path---category-reviews-7a07c3d5903dfcb69263.js.map"
     ],
     "path---topics-code-quality": [
-      "path---topics-code-quality-30957e208017cda58d2b.js",
-      "path---topics-code-quality-30957e208017cda58d2b.js.map"
+      "path---topics-code-quality-2a49d8bbab1b7635cd71.js",
+      "path---topics-code-quality-2a49d8bbab1b7635cd71.js.map"
     ],
     "path---topics-backbone": [
-      "path---topics-backbone-2197919749e2c2f58cba.js",
-      "path---topics-backbone-2197919749e2c2f58cba.js.map"
+      "path---topics-backbone-88324266014412d9c8cc.js",
+      "path---topics-backbone-88324266014412d9c8cc.js.map"
     ],
     "path---2015-05-28-moving-past-requirejs": [
       "path---2015-05-28-moving-past-requirejs-2f338e9146652f438dbe.js",
