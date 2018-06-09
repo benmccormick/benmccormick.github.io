@@ -32,7 +32,7 @@ export class Ad extends React.Component {
     //build script
     const script = document.createElement('script');
     script.src =
-      '//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=benmccormickorg';
+      '//cdn.carbonads.com/carbon.js?serve=CKYIK53M&placement=benmccormickorg';
     script.type = 'text/javascript';
     script.id = '_carbonads_js';
     script.async = true;
