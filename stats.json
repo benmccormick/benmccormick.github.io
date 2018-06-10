@@ -33,8 +33,8 @@
       "path---2018-02-09-weekly-links-02-09-18-3c0f444a114e103831a9.js.map"
     ],
     "path---links-archive": [
-      "path---links-archive-2954070f1528f0cdea84.js",
-      "path---links-archive-2954070f1528f0cdea84.js.map"
+      "path---links-archive-a65f8876b35de5d178df.js",
+      "path---links-archive-a65f8876b35de5d178df.js.map"
     ],
     "path---topics-mobx": [
       "path---topics-mobx-5566fb4a4737ed123ead.js",
@@ -77,8 +77,8 @@
       "path---2017-02-13-improving-site-performance-with-lighthouse-d31ebe8862111ccaa153.js.map"
     ],
     "path---topics-text-editors": [
-      "path---topics-text-editors-ba25f5a52eada06da3d5.js",
-      "path---topics-text-editors-ba25f5a52eada06da3d5.js.map"
+      "path---topics-text-editors-e35711ee7cbcce6b4842.js",
+      "path---topics-text-editors-e35711ee7cbcce6b4842.js.map"
     ],
     "path---topics-ack": [
       "path---topics-ack-993df6d2bc3b93709032.js",
@@ -141,8 +141,8 @@
       "path---2017-09-04-jest-matchers-2-8bb653c5605aa708572e.js.map"
     ],
     "path---category-frameworks": [
-      "path---category-frameworks-0408637f20ce6f46827c.js",
-      "path---category-frameworks-0408637f20ce6f46827c.js.map"
+      "path---category-frameworks-7c6ec643f24f59e62b3a.js",
+      "path---category-frameworks-7c6ec643f24f59e62b3a.js.map"
     ],
     "path---2018-04-22-weekly-links-04-22-18": [
       "path---2018-04-22-weekly-links-04-22-18-e2335b9c9799b5663f45.js",
@@ -357,8 +357,8 @@
       "path---2016-05-02-digging-into-react-choosing-component-styles-2402b9251e704116cbf5.js.map"
     ],
     "path---category-meta": [
-      "path---category-meta-cbcbfec829ff2b442d23.js",
-      "path---category-meta-cbcbfec829ff2b442d23.js.map"
+      "path---category-meta-1b1bc5047c4c82ed0089.js",
+      "path---category-meta-1b1bc5047c4c82ed0089.js.map"
     ],
     "path---2018-01-05-weekly-links-01-05-18": [
       "path---2018-01-05-weekly-links-01-05-18-fc6bca96e79f413c0823.js",
@@ -409,8 +409,8 @@
       "path---topics-marionette-998e424f28d5ceeeea9d.js.map"
     ],
     "path---index": [
-      "path---index-80f385b6aaf449ce1117.js",
-      "path---index-80f385b6aaf449ce1117.js.map"
+      "path---index-4960611f00b11fe521ab.js",
+      "path---index-4960611f00b11fe521ab.js.map"
     ],
     "path---subscribe": [
       "path---subscribe-339209f32496fde77d95.js",
@@ -437,12 +437,12 @@
       "path---2013-05-07-revertible-observables-in-knockout-6d552de3ddc6ac331900.js.map"
     ],
     "path---category-platform": [
-      "path---category-platform-af90681ed44cab5a977e.js",
-      "path---category-platform-af90681ed44cab5a977e.js.map"
+      "path---category-platform-660ae41a8993ceced736.js",
+      "path---category-platform-660ae41a8993ceced736.js.map"
     ],
     "path---category-javascript": [
-      "path---category-javascript-621ae7b47b732edc94ca.js",
-      "path---category-javascript-621ae7b47b732edc94ca.js.map"
+      "path---category-javascript-4ff2b8ab3fe108e36414.js",
+      "path---category-javascript-4ff2b8ab3fe108e36414.js.map"
     ],
     "path---2018-03-24-weekly-links-03-11-24": [
       "path---2018-03-24-weekly-links-03-11-24-787e6cb130d226dc234e.js",
@@ -489,8 +489,8 @@
       "path---topics-ecma-script-beeb290d780e2cba81c0.js.map"
     ],
     "path---category-software-productivity": [
-      "path---category-software-productivity-3246139c774703c21d5b.js",
-      "path---category-software-productivity-3246139c774703c21d5b.js.map"
+      "path---category-software-productivity-8607885691fa389e4fb6.js",
+      "path---category-software-productivity-8607885691fa389e4fb6.js.map"
     ],
     "path---topics-jest": [
       "path---topics-jest-05fd182a165627358ced.js",
@@ -501,8 +501,8 @@
       "path---2016-09-19-testing-with-jest-snapshots-first-impressions-2f29fd035722acb55fd7.js.map"
     ],
     "path---topics-react": [
-      "path---topics-react-3e8967bcba2b5b55d53b.js",
-      "path---topics-react-3e8967bcba2b5b55d53b.js.map"
+      "path---topics-react-d4b8a07d3a404d1d2a40.js",
+      "path---topics-react-d4b8a07d3a404d1d2a40.js.map"
     ],
     "path---topics-lodash": [
       "path---topics-lodash-369f268bdf9e8d87e46f.js",
@@ -521,8 +521,8 @@
       "path---topics-architecture-69a7d04f1832036a5f94.js.map"
     ],
     "path---topics-java-script": [
-      "path---topics-java-script-bed424709f384c23907e.js",
-      "path---topics-java-script-bed424709f384c23907e.js.map"
+      "path---topics-java-script-a515ec5324b6cbcb1768.js",
+      "path---topics-java-script-a515ec5324b6cbcb1768.js.map"
     ],
     "path---2016-12-14-what-are-higher-order-components": [
       "path---2016-12-14-what-are-higher-order-components-a15fab26e343711ca0da.js",
@@ -627,8 +627,8 @@
       "path---2017-12-01-weekly-links-12-01-17-21d7bb97a22b2f07df48.js.map"
     ],
     "path---topics-atom": [
-      "path---topics-atom-3fe7bd8ffc41da2a0342.js",
-      "path---topics-atom-3fe7bd8ffc41da2a0342.js.map"
+      "path---topics-atom-857884565237d7afbfe3.js",
+      "path---topics-atom-857884565237d7afbfe3.js.map"
     ],
     "path---2017-07-10-how-to-follow-the-javascript-roadmap": [
       "path---2017-07-10-how-to-follow-the-javascript-roadmap-819f843a90edc8d293fc.js",
@@ -643,8 +643,8 @@
       "path---2013-06-11-how-i-use-stack-overflow-1ffe7b48fc101855a110.js.map"
     ],
     "path---category-tools": [
-      "path---category-tools-4aaa7b6ef9397117e14b.js",
-      "path---category-tools-4aaa7b6ef9397117e14b.js.map"
+      "path---category-tools-593a05f804aa2ecc4cbf.js",
+      "path---category-tools-593a05f804aa2ecc4cbf.js.map"
     ],
     "path---2018-03-02-weekly-links-03-02-18": [
       "path---2018-03-02-weekly-links-03-02-18-1e44a6408bcc71cc996d.js",
@@ -663,8 +663,8 @@
       "path---2016-06-26-quick-tip-take-advantage-of-lodash-collections-2-d03de36361b0a8c3597f.js.map"
     ],
     "path---category-opinion": [
-      "path---category-opinion-e357d52098718c53aec9.js",
-      "path---category-opinion-e357d52098718c53aec9.js.map"
+      "path---category-opinion-4ca9f63be9af0c29bb5d.js",
+      "path---category-opinion-4ca9f63be9af0c29bb5d.js.map"
     ],
     "path---topics-angular": [
       "path---topics-angular-c4e3015628f479c24b1d.js",
@@ -673,6 +673,10 @@
     "path---2018-02-16-weekly-links-02-16-18": [
       "path---2018-02-16-weekly-links-02-16-18-3f91593a3bf5bbe32664.js",
       "path---2018-02-16-weekly-links-02-16-18-3f91593a3bf5bbe32664.js.map"
+    ],
+    "path---2018-06-10-weekly-links-06-10-18": [
+      "path---2018-06-10-weekly-links-06-10-18-d73a33737f03ecbb5e97.js",
+      "path---2018-06-10-weekly-links-06-10-18-d73a33737f03ecbb5e97.js.map"
     ],
     "path---2013-01-25-career-fairs-how-to-not-get-hired-and-how-to-give-yourself-a-chance": [
       "path---2013-01-25-career-fairs-how-to-not-get-hired-and-how-to-give-yourself-a-chance-eaa75ed6422b504ebb34.js",
@@ -731,14 +735,14 @@
       "path---2018-02-20-cs-for-fe-bc1afd700a76de1f8103.js.map"
     ],
     "app": [
-      "app-8ea9e7f2144e5bf2370b.js",
+      "app-0d7db8ee6ac42937d342.js",
       "build-js-styles.css",
-      "app-8ea9e7f2144e5bf2370b.js.map",
+      "app-0d7db8ee6ac42937d342.js.map",
       "build-js-styles.css.map"
     ],
     "path---archive": [
-      "path---archive-f3d1e4a6386dfd64b3c9.js",
-      "path---archive-f3d1e4a6386dfd64b3c9.js.map"
+      "path---archive-9f3c155b7b3fa4ac7c37.js",
+      "path---archive-9f3c155b7b3fa4ac7c37.js.map"
     ],
     "path---topics-book-review": [
       "path---topics-book-review-db588ecc1f4f7db43d8d.js",
@@ -753,8 +757,8 @@
       "path---2012-11-09-bayesian-witch-hunt-345df5f558188d78c5d6.js.map"
     ],
     "path---category-computer-science": [
-      "path---category-computer-science-cc5d45a547639ff51b64.js",
-      "path---category-computer-science-cc5d45a547639ff51b64.js.map"
+      "path---category-computer-science-f83e130d691562cdb012.js",
+      "path---category-computer-science-f83e130d691562cdb012.js.map"
     ],
     "path---2017-12-15-weekly-links-12-15-17": [
       "path---2017-12-15-weekly-links-12-15-17-5d0f04a1a2ff52230756.js",
@@ -837,8 +841,8 @@
       "path---2014-07-02-learning-vim-in-2014-vim-as-language-0956488d354c879814da.js.map"
     ],
     "path---category-reviews": [
-      "path---category-reviews-7a07c3d5903dfcb69263.js",
-      "path---category-reviews-7a07c3d5903dfcb69263.js.map"
+      "path---category-reviews-95b1b4092c9640c63127.js",
+      "path---category-reviews-95b1b4092c9640c63127.js.map"
     ],
     "path---topics-code-quality": [
       "path---topics-code-quality-2a49d8bbab1b7635cd71.js",
