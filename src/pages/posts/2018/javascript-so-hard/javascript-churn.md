@@ -3,7 +3,7 @@ title: "Why Is JavaScript So Hard?"
 date: "2018/06/11"
 layout: "post"
 path: "/2018/06/11/why-is-javascript-hard/"
-description: "Thinking through people's JavaScript Concerns"
+description: "Thinking through people's JavaScript concerns"
 keywords: "JavaScript learning "
 category: "javascript"
 topics: ['JavaScript']
