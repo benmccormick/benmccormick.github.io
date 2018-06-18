@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-06-15T02:33:01Z</updated>
+    <updated>2018-06-18T12:16:28Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,361 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[A Codemod Survival Guide]]></title>
+        <id>https://benmccormick.org/2018/06/18/codemod-survival/</id>
+        <link href="https://benmccormick.org/2018/06/18/codemod-survival/">
+        </link>
+        <updated>2018-06-18T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>Do you like making repetitive syntax updates across many files?  Enjoy the thrill of painstakingly combing through 1000 line diffs that all look the same to see if you made any typos?  Relish that feeling of doubt in the back of your head as you wonder whether you actually caught all instances of the syntax you needed to update when you switched to the next major version of a library?  If so, you should probably stop reading now, because you won’t like codemods at all.  For the rest of us, codemods are a tool for assisting in large refactoring; they save you time and reduce typos.</p>
+<p>Codemods originated at Facebook, first with a tool named <a href="https://github.com/facebook/codemod">codemod</a> that served as a helper for regex or python based refactoring, allowing you to make iterative changes with pretty diffs, then with <a href="https://github.com/facebook/jscodeshift">jscodeshift</a> a tool for doing more advanced JavaScript refactors that work directly against a data model representation of the code, rather than relying on regex or direct programmatic changes to text.  jscodeshift is extremely powerful, but I found it intimidating to approach.  Once I took the plunge though, it wasn’t that hard to start writing codemods.  So here are a few quick tips for anyone else who might be interested.</p>
+<h4>1. Start with a goal in mind</h4>
+<p>It’s always helpful to dive into a new technology by trying to solve a concrete problem.  That’s especially useful for codemods, because the ideas behind them can seem abstract and poorly documented until you begin focusing on a specific issue.  In my case I was originally motivated to look at codemods when updating an application from using MobX version 3 to MobX version 5.  In MobX3, when you write code without using decorators, a typical model class will look something like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> extendObservable<span class="token punctuation">,</span> computed<span class="token punctuation">,</span> action<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Example</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">extendObservable</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            foo<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            bar<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            currentData<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> foo <span class="token operator">||</span> bar<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            otherData<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> foo <span class="token operator">&amp;&amp;</span> bar<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            setFoo<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">'Set Foo'</span><span class="token punctuation">,</span> val <span class="token operator">=></span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>foo <span class="token operator">=</span> val<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            setBar<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">'Set Bar'</span><span class="token punctuation">,</span> val <span class="token operator">=></span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>bar <span class="token operator">=</span> val<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">unrelatedMethod</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> key<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>I was updating an app with dozens of these model classes.  Unfortunately, in Mobx5, the syntax for these classes has changed, and it now needs to be rewritten like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> extendObservable<span class="token punctuation">,</span> action<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Example</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">extendObservable</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            foo<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            bar<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token keyword">get</span> <span class="token function">currentData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> foo <span class="token operator">||</span> bar<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token keyword">get</span> <span class="token function">otherData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> foo <span class="token operator">&amp;&amp;</span> bar<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            setFoo<span class="token punctuation">:</span> val <span class="token operator">=></span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>foo <span class="token operator">=</span> val<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            setBar<span class="token punctuation">:</span> val <span class="token operator">=></span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>bar <span class="token operator">=</span> val<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            setFoo<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">'Set Foo'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            setBar<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">'Set Bar'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">unrelatedMethod</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> key<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>Computeds must be shifted to gets, action functions have to be pulled out of their wrapper function calls, but the wrapper and action names have to be moved down to a new second object.  This is really finicky to do by hand or with a text editor macro, because it’s a lot more complicated than just find and replace.  I’d usually be converting from arrow functions that might or might not have blocks and return statements currently, and I’d have to move the actions down to the new object correctly even though some of the models had 10+ action functions.   Facing several hours worth of finicky manual or script assisted refactoring work was enough to convince me it was time to learn about codemods.</p>
+<h4>2. Create a small example and learn about its AST</h4>
+<p>My first productive step towards creating a Mobx3to5 codemod for my codebase was creating the example code above.  I iterated on it a bit as I found new things I cared about; I didn’t realize at first that computeds needed to be changed as well as actions, and I eventually realized I needed to handle 2 types of arrow function syntax. But the initial version I wrote got me going.  Having a stripped down example of the code I cared about without the baggage of my real codebase was valuable, and being able to update it to include all the cases I cared about during testing was even better.</p>
+<p>Once I created the example, I was able to understand better what I was trying to do by examining its AST.  An AST (Abstract Syntax Tree) is a representation of a JavaScript file’s source code as a tree data structure.  For instance here’s a portion of the AST for a basic Hello World program:</p>
+<div class="gatsby-highlight">
+      <pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Program"</span><span class="token punctuation">,</span>
+  <span class="token property">"sourceType"</span><span class="token operator">:</span> <span class="token string">"module"</span><span class="token punctuation">,</span>
+  <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"ExpressionStatement"</span><span class="token punctuation">,</span>
+      <span class="token property">"expression"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"CallExpression"</span><span class="token punctuation">,</span>
+        <span class="token property">"callee"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"MemberExpression"</span><span class="token punctuation">,</span>
+          <span class="token property">"object"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Identifier"</span><span class="token punctuation">,</span>
+            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"console"</span><span class="token punctuation">,</span>
+            <span class="token property">"_babelType"</span><span class="token operator">:</span> <span class="token string">"Identifier"</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token property">"property"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Identifier"</span><span class="token punctuation">,</span>
+            <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"log"</span><span class="token punctuation">,</span>
+            <span class="token property">"_babelType"</span><span class="token operator">:</span> <span class="token string">"Identifier"</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token property">"computed"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token property">"_babelType"</span><span class="token operator">:</span> <span class="token string">"MemberExpression"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">"arguments"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Literal"</span><span class="token punctuation">,</span>
+            <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span>
+            <span class="token property">"rawValue"</span><span class="token operator">:</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span>
+            <span class="token property">"raw"</span><span class="token operator">:</span> <span class="token string">"'Hello World'"</span><span class="token punctuation">,</span>
+            <span class="token property">"_babelType"</span><span class="token operator">:</span> <span class="token string">"Literal"</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"_babelType"</span><span class="token operator">:</span> <span class="token string">"CallExpression"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">"_babelType"</span><span class="token operator">:</span> <span class="token string">"ExpressionStatement"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>This is a simplified example that looks only at the semantic structure of the syntax.  The full version also contains information about the indenting and exact text of the code, and comes out to about 600 lines when represented as formatted JSON.   All of this from <code>console.log('Hello World');</code>.  Fortunately there’s a nice tool for exploring ASTs.</p>
+<p><a href="http://astexplorer.net/">AST Explorer</a> is a site that lets you enter some JavaScript code, and then visualize the AST that represents the code.  When I put my example code above, in, I was able to see that the computed expressions in my original code showed as a <code>CallExpression</code> with an <code>ArrowFunctionExpression</code> as an argument.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-d5dfd.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 52.06143896523848%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABj0lEQVQoz32Sy47TMBRA8/8LVkjzFbBgx0gsGXXJBhhVQ1HiOG/bafNumh5uMpkhI0EtXdm6j+P78ipb47KaIBwwbqKqoWpg6CdUoPn6sONx/4Tv+0RRhFKKOI4JgoBIh6hQobXGWkue53h931KdDL+e9kRhyNClXKeK+XT9gHUOI85FUSwyBxljyBKBaZ+fSqOShNJZnPh6bRNJ6A/S6Bvq93dC/4HSHmiamrqqlp9nx7dSYouEQCsOiSUpZt1x8fXaVupjosgNaWIo8yN9PdK0Z2bbC3C+X8WdcMWBTH9AxV8wxT0ntxPbnGHbLuWdh4G+6xiGnulyWXSzbZvh8l6BR7enjN+h4ztO5j2N+yj2Eq+ua+lhJX1xtN3I9vwfeMQZnyL5RJzek+WfpU27tYcSNF0mye7MZZq4Xq+L/Av4Cl1vX4UEUSZly9CMfCKD8cbxbVa3gH8zlMmbXCBm0T1P+Lm/3nkFbkE3gesdRDFa1mVeo5dVWkoeN8BtlreAxhr2QYwSaJKmi+Syo7PtD7qx9vy8Vq9QAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="AST explorer screenshot showing the CallExpression syntax"
+        title=""
+        src="/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-d766e.png"
+        srcset="/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-a6b6e.png 143w,
+/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-8e488.png 285w,
+/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-d766e.png 570w,
+/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-13239.png 855w,
+/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-cab6d.png 1140w,
+/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-d5dfd.png 1237w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>When I put the result code I wanted in, I could see that I would need to switch the property that contained the callexpression to have a type <code>get</code> and would need to replace the call expression with a function expression.</p>
+<h4>3. Start with a small edit</h4>
+<p>As a starting point, I decided I wanted to write a script that could find MobX classes and just add the second object argument to extendObservable, with a dummy property.  So this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token function">extendObservable</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    foo<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    bar<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    currentData<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> foo <span class="token operator">||</span> bar<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    otherData<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> foo <span class="token operator">&amp;&amp;</span> bar<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    setFoo<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">'Set Foo'</span><span class="token punctuation">,</span> val <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>foo <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    setBar<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">'Set Bar'</span><span class="token punctuation">,</span> val <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>bar <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>would become this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token function">extendObservable</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    foo<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    bar<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    currentData<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> foo <span class="token operator">||</span> bar<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    otherData<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> foo <span class="token operator">&amp;&amp;</span> bar<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    setFoo<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">'Set Foo'</span><span class="token punctuation">,</span> val <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>foo <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    setBar<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token string">'Set Bar'</span><span class="token punctuation">,</span> val <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>bar <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> foo<span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>To do this, I took an existing script that I found in <a href="https://github.com/jhgg/js-transforms">this repo of small codemod examples</a> and modified it to lookup <code>extendObservable</code> calls and add a second argument.  I filtered it to only include calls with 2 arguments, in case I ran the code a second time<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>file<span class="token punctuation">,</span> api<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> j <span class="token operator">=</span> api<span class="token punctuation">.</span>jscodeshift<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token function">j</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span>source<span class="token punctuation">)</span>
+        <span class="token comment">// We're looking for a CallExpression for extend observable</span>
+        <span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>j<span class="token punctuation">.</span>CallExpression<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            callee<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                name<span class="token punctuation">:</span> <span class="token string">'extendObservable'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token comment">// Verify that it's only using 2 arguments so far, and that the second one is an Object Expression</span>
+        <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>p <span class="token operator">=></span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>type <span class="token operator">==</span> <span class="token string">"ObjectExpression"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>p <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token comment">// Now we want to</span>
+            <span class="token comment">// 1. Add a 3rd argument object</span>
+            <span class="token keyword">let</span> args <span class="token operator">=</span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">;</span>
+            args<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>j<span class="token punctuation">.</span><span class="token function">objectExpression</span><span class="token punctuation">(</span><span class="token punctuation">[</span>j<span class="token punctuation">.</span><span class="token function">property</span><span class="token punctuation">(</span><span class="token string">'init'</span><span class="token punctuation">,</span>j<span class="token punctuation">.</span><span class="token function">identifier</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> j<span class="token punctuation">.</span><span class="token function">literal</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// TODO: 2. Move action declarations to that argument</span>
+            <span class="token comment">// TODO: 3. Convert action statements to plain functions</span>
+            <span class="token comment">// TODO: 4. Convert computeds to get statements</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>This is a working script to achieve my simple goal.  To break it down:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token function">j</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span>source<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>j<span class="token punctuation">.</span>CallExpression<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            callee<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                name<span class="token punctuation">:</span> <span class="token string">'extendObservable'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>jscodeshift provides a jQuery style api for traversing a tree.  Here we’re looking for <code>CallExpression</code>s that have the name <code>extendObservable</code>.  We now have a collection of these expressions, and we can filter it down to only the expressions that have 2 arguments.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>p <span class="token operator">=></span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>type <span class="token operator">==</span> <span class="token string">"ObjectExpression"</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>Next we want to go through each callExpression and transform it.  In this case by finding it’s arguments list and pushing a new one, using the jsCodeshift API to simply generate the AST objects neededed to represent <code>{foo: bar}</code>.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>p <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token comment">// Now we want to</span>
+            <span class="token comment">// 1. Add a 3rd argument object</span>
+            <span class="token keyword">let</span> args <span class="token operator">=</span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">;</span>
+            args<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>j<span class="token punctuation">.</span><span class="token function">objectExpression</span><span class="token punctuation">(</span><span class="token punctuation">[</span>j<span class="token punctuation">.</span><span class="token function">property</span><span class="token punctuation">(</span><span class="token string">'init'</span><span class="token punctuation">,</span>j<span class="token punctuation">.</span><span class="token function">identifier</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> j<span class="token punctuation">.</span><span class="token function">literal</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// TODO: 2. Move action declarations to that argument</span>
+            <span class="token comment">// TODO: 3. Convert action statements to plain functions</span>
+            <span class="token comment">// TODO: 4. Convert computeds to get statements</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+      </div>
+<p>Finally, we call <code>.toSource()</code> to write the tranformed AST back to the file.</p>
+<h4>4. Test your edit</h4>
+<p>Because this type of coding lends itself to experimentation, it’s important to develop a good feedback loop while working on your codemod.  If you have a simple example you’re off to a good start.  The next step is to find a good way to run your script and see the output.  Simply running your test is a bit frustrating, because jscodeshift is destructive.  It overwrites your file in place, and doesn’t save a copy.  You can get around this though by adding <code>--dry --print</code> flags to your command line call</p>
+<p><code>jscodeshift -t my-codemod.js example.js</code></p>
+<p>will run the transform defined in <code>my-codemod.js</code> against <code>example.js</code> and modify it in place.</p>
+<p><code>jscodeshift --dry --print -t my-codemod.js example.js</code></p>
+<p>will print the transformed file to the console and not update example.js.</p>
+<p>For simple codemods and small example files, this is a nice way to iterate quickly.  For more extensive codemods with multiple test cases, I’m excited to try out jscodeshift’s Jest support<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  It has helper methods for working with transforms, and a workflow of Jest watch checking the output of several inputs against several expected outputs would be lovely.</p>
+<h4>5. Iterate</h4>
+<p>After I got that first edit working, it was simply a matter of working through my list.  I needed to remove the experimental <code>foo:bar</code> and then</p>
+<ol>
+<li>Move action declarations to the new argument object</li>
+<li>Convert action declarations to plain functions in the existing object</li>
+<li>Convert computeds to get statements</li>
+</ol>
+<p>I was able to take those one at a time, and my final script looked something like this:</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>file<span class="token punctuation">,</span> api<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> j <span class="token operator">=</span> api<span class="token punctuation">.</span>jscodeshift<span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> <span class="token function-variable function">buildDecoratorPropertiesFromCurrentObject</span> <span class="token operator">=</span> currentObj <span class="token operator">=></span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">let</span> decoratorProps <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        currentObj<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>prop <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>prop<span class="token punctuation">.</span>value<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'CallExpression'</span> <span class="token operator">&amp;&amp;</span> prop<span class="token punctuation">.</span>value<span class="token punctuation">.</span>callee<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">'computed'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                prop<span class="token punctuation">.</span>kind <span class="token operator">=</span> <span class="token string">'get'</span><span class="token punctuation">;</span>
+                <span class="token keyword">let</span> fnBody <span class="token operator">=</span> prop<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>fnBody<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'ArrowFunctionExpression'</span> <span class="token operator">&amp;&amp;</span> fnBody<span class="token punctuation">.</span>body<span class="token punctuation">.</span>type <span class="token operator">!==</span> <span class="token string">'BlockStatement'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    prop<span class="token punctuation">.</span>value <span class="token operator">=</span> j<span class="token punctuation">.</span><span class="token function">functionExpression</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> fnBody<span class="token punctuation">.</span>params<span class="token punctuation">,</span>
+                        j<span class="token punctuation">.</span><span class="token function">blockStatement</span><span class="token punctuation">(</span><span class="token punctuation">[</span>j<span class="token punctuation">.</span><span class="token function">returnStatement</span><span class="token punctuation">(</span>fnBody<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    prop<span class="token punctuation">.</span>value <span class="token operator">=</span> j<span class="token punctuation">.</span><span class="token function">functionExpression</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> fnBody<span class="token punctuation">.</span>params<span class="token punctuation">,</span> fnBody<span class="token punctuation">.</span>body<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> dataProps <span class="token operator">=</span> currentObj<span class="token punctuation">.</span>properties<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>prop <span class="token operator">=></span> <span class="token operator">!</span><span class="token punctuation">(</span>prop<span class="token punctuation">.</span>value<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'CallExpression'</span> <span class="token operator">&amp;&amp;</span> prop<span class="token punctuation">.</span>value<span class="token punctuation">.</span>callee<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">'computed'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dataProps<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>prop <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>prop<span class="token punctuation">.</span>value<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'CallExpression'</span> <span class="token operator">&amp;&amp;</span> prop<span class="token punctuation">.</span>value<span class="token punctuation">.</span>callee<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">'action'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// copy action to the decorator area first...</span>
+                <span class="token keyword">let</span> args <span class="token operator">=</span> prop<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">;</span>
+                <span class="token keyword">let</span> dupProp <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> prop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                dupProp<span class="token punctuation">.</span>value <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> dupProp<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                dupProp<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments <span class="token operator">=</span> <span class="token punctuation">(</span>args<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">?</span> args<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                decoratorProps<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>dupProp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token comment">// then flatten things out</span>
+                prop<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token punctuation">(</span>args<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">?</span> args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">:</span> args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>dataProps<span class="token punctuation">,</span> decoratorProps<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">j</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span>source<span class="token punctuation">)</span>
+        <span class="token comment">// We're looking for a CallExpression for extend observable</span>
+        <span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>j<span class="token punctuation">.</span>CallExpression<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            callee<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                name<span class="token punctuation">:</span> <span class="token string">'extendObservable'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token comment">// Verify that it's only using 2 arguments so far, and that the second one is an Object Expression</span>
+        <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>p <span class="token operator">=></span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>type <span class="token operator">==</span> <span class="token string">"ObjectExpression"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>p <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token comment">// Now we want to</span>
+            <span class="token comment">// 1. Add a 3rd argument</span>
+            <span class="token comment">// 2. Move action declarations to that argument</span>
+            <span class="token comment">// 3. Convert action statements to plain functions</span>
+            <span class="token comment">// 4. Convert computeds to get statements, or just move them down to the second object?</span>
+            <span class="token keyword">let</span> args <span class="token operator">=</span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">;</span>
+            <span class="token keyword">let</span> <span class="token punctuation">[</span>dataProps<span class="token punctuation">,</span> decoratorProps<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">buildDecoratorPropertiesFromCurrentObject</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>properties <span class="token operator">=</span> dataProps<span class="token punctuation">;</span>
+            args<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>j<span class="token punctuation">.</span><span class="token function">objectExpression</span><span class="token punctuation">(</span>decoratorProps<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>That looks rather crazy, but the <code>buildDecoratorPropertiesFromCurrentObject</code> is mostly straightforward data manipulation, looking for some patterns in the data, and replacing them with a different pattern.  Everything else is just the same base code from our initial example.</p>
+<h4>6. Use version control and code reviews!</h4>
+<p>Actually running a finished transform against a codebase is crazy easy.  Just give it a base folder, and <code>jscodeshift</code> will run your script against all JavaScript files in the directory.  This is definitely a “With great power comes great responsibility” tool though.  Before running jscodeshift across a large code base, make sure you are using version control and that you’ve checked in any other changes.  Because the script will update many files at once, you want to be able to isolate the change and review it carefully afterwards, to make sure that you see what is different, and that those changes look right.  In my case, I got to be <em>done</em> with my script twice, because the first time I thought it was ready to execute across all of the app files, things still went wrong.  It was easy to fix though, since I was able to just checkout my changes and try again.</p>
+<h3>Resources</h3>
+<p>If you have a change that you want to make to your codebase, but have been holding off because you think it would take forever, I definitely encourage you to check codemods out.  They’re not as scary as you think!  Here are some more resources to get started:</p>
+<ul>
+<li><a href="https://github.com/facebook/jscodeshift">facebook/jscodeshift</a></li>
+<li><a href="http://astexplorer.net/">AST Explorer</a></li>
+<li><a href="https://medium.com/@andrew_levine/writing-your-very-first-codemod-with-jscodeshift-7a24c4ede31b">Writing Your First codemod with jscodeshift</a></li>
+<li><a href="https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb">Effective JavaScript Codemods</a></li>
+</ul>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>This is one of many assumptions I made that won’t be true for MobX classes generally.  I was writing a script to convert my app to MobX5 compatible syntax, not write a general case update tool.  In the end there were a few examples that violated my assumptions in the codebase, and I had to update 2 files by hand.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>jscodeshift was created by Christoph Pojer who is also one of the primary maintainers of Jest.</p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weekly Links: June 15th]]></title>
         <id>https://benmccormick.org/2018/06/15/weekly-links-06-15-18/</id>
@@ -551,162 +906,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ol>
 <li id="fn-1">
 <p>I am not an accessibility expert, but I’m aware that it is a criticism of Electron.  I can’t evaluate the actual difficulty of making a native vs electron application accessible.</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The New Hello World]]></title>
-        <id>https://benmccormick.org/2018/04/25/the-new-hello-world/</id>
-        <link href="https://benmccormick.org/2018/04/25/the-new-hello-world/">
-        </link>
-        <updated>2018-04-25T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>JavaScript has had a weird reputation inversion over the past decade.  For years it was the stripped down toy language that could.  It didn’t have the features people wanted, and it did have the features they didn’t want, but it ran everywhere and it was easy to just start building things.  The last decade has shown that you can actually build some serious applications in JavaScript.  But it has also eaten away at the ability to start simple and try new things.  State of the art for JavaScript apps now involves compile steps, a long tooling chain, and a million choices for developers to make.  So the folks who are helping new developers get started have a few options for teaching JavaScript:</p>
-<ol>
-<li><strong>Embrace The Complexity</strong> - Want to learn to write Web Apps?  Let’s just toss you into a boilerplate that’s using node, webpack, react, redux, redux-saga, react router, glamorous, eslint, prettier, npm scripts, lodash, and babel.  This is what production apps look like, so you might as well start learning in a realistic environment.</li>
-<li><strong>Hide The Complexity</strong> - This is where we maybe use something like <a href="https://codepen.io/">Codepen</a> to provide a sandboxed area where we may be using Babel/React/etc, but the user doesn’t have to configure or think about them too much.  My understanding is that <a href="https://glitch.com/">Glitch</a> tries to go down this route to some extent as well.</li>
-<li><strong>Discard The Complexity</strong> - Teach coding like it’s 2010 all over again!  This approach is to focus more on the JavaScript language as it’s implemented in the browser, using script tags without a build step, and maybe even an older/simpler library like jQuery to explain DOM concepts and CSS.  This approach can eventually evolve towards introducing more complexity.</li>
-</ol>
-<p>For the past few years I’ve seen a blend of all of these approaches when I’ve looked at other folks’ beginner level resources.  It’s been hard to determine the best way to prepare new developers for the complexities of the development process. But good news, I think that era is finally coming to an end.</p>
-<h3>The Ideal Intro</h3>
-<p>In an ideal world, we’d be able to introduce new developers to the concepts that undergird modern web apps, and teach them syntax that is as up to date as possible without having to entangle them in the implementation details and distractions of production grade tools like Babel and Webpack.  So we want them to start out writing JavaScript code that is:</p>
-<ol>
-<li>Modular</li>
-<li>Cross-environment</li>
-<li>Modern (ES6+ syntax as appropriate)</li>
-<li>Simple to start with</li>
-</ol>
-<p>The last 10 years of tool build up have been primarily focused on making it easy to achieve the first 3 goals in production (along with prioritizing other needs of large scale applications).  But production tooling is by nature less concerned with #4.  Fortunately native environments are starting to catch up on the first 3, and that means we can do better.  </p>
-<h3>The New Hello World</h3>
-<p>Let’s say we want to frame an intro through the classic “hello world” program.  Our goals are to create a JavaScript function that can print “Hello World”, and then expand on that a bit.  And we want to teach this in a way that will still look familiar when our learners get themselves into a production JavaScript code base.  </p>
-<h4>Bare Bones</h4>
-<p>We might start with something super simple like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-html"><code><span class="token comment">&lt;!-- index.html --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>name-display<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-      <span class="token keyword">let</span> displayArea <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'name-display'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      displayArea<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'Hello World'</span><span class="token punctuation">;</span>
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-</code></pre>
-      </div>
-<p>That’s about as simple as a JavaScript hello world gets.  You can access it by opening the file directly from the file system in your browser, and it’s easy enough to edit the text and see changes on refresh.</p>
-<p>But in 2018, we can do something cool next.  We want to be modular and separate concerns, so lets create a hello world module.  This is an opportunity to introduce functions and modules.  It introduces our only small tooling step: adding a simple web server.</p>
-<h4>Hello Modules</h4>
-<p>On OSX, it’s easy enough to set up a simple web server with <code>python -m SimpleHTTPServer 8080</code>.  We can do that with our existing index.html and verify that we can now see it at <code>localhost:8080</code> in our browsers<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.</p>
-<p>After that, we can start doing cool stuff, starting with creating a new module:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token comment">//hello.js</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> sayHello <span class="token operator">=</span> <span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'World'</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`Hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-      </div>
-<p>This is our first function.  Depending on your audience, you may want to strip this down a bit and remove the default parameter, or spend some time explaining the different concepts in play here. But the focus can be on the concept of functions, as well as the ability to export them from a module.</p>
-<p>Now we can update our index.js file to use the new function.  Assuming both files are in the same directory, that will look like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-html"><code><span class="token comment">&lt;!-- index.html --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>name-display<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
-      <span class="token keyword">import</span> <span class="token punctuation">{</span>sayHello<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./hello.js'</span><span class="token punctuation">;</span>
-      <span class="token keyword">let</span> displayArea <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'name-display'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      displayArea<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-</code></pre>
-      </div>
-<p>Now we have a hello world built on a foundation that can scale towards modern JavaScript environments.  We have modules and modern syntax, and the only difficult setup step has been a lightweight web server so far.  The rest is just script tags.  </p>
-<h3>Interactive</h3>
-<p>It’s easy enough now to take our module and turn it into something interactive:</p>
-<div class="gatsby-highlight">
-      <pre class="language-html"><code><span class="token comment">&lt;!-- index.html --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>container<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span> Enter a Name and Hit The Button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>name<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>change-name<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>Say Hello<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>name-display<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>module<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
-      <span class="token keyword">import</span> <span class="token punctuation">{</span>sayHello<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./hello.mjs'</span><span class="token punctuation">;</span>
-
-      <span class="token keyword">let</span> displayArea <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'name-display'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">let</span> input <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">let</span> button <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'change-name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-      button<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-        displayArea<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token function">sayHello</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-</code></pre>
-      </div>
-<p>This example introduces DOM events and let’s the user decide who to say hello to.  It also is a good jumping off point for further experimentation for a new dev.</p>
-<h3>Crossing Environments</h3>
-<p>Going from the browser to node, even though it is simpler in some ways, is always going to be a bigger jump for newcomers because of most people’s unfamiliarity with the command line, and the base hurdle of installing node itself.  But once we’re ready to move past browsers, our new hello world can be easily translated to node land.  The biggest hurdle is in the file names.  We will have to rename or copy <code>hello.js</code> to be named <code>hello.mjs</code> (Node’s way of differentiating between files using ES6 syntax).  After that, we can write a simple script to start out:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token comment">//node.mjs</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span>sayHello<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./hello.mjs'</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      </div>
-<p>And then, as long as we’re on an up to date version of Node, we can run it with <code>node --experimental-modules node.mjs</code>.  And we will see our Hello World.</p>
-<p>There are some annoyances for beginners here.  Node only recently added module support, and beginners must</p>
-<ol>
-<li>Rename their modules to the currently non-standard mjs ending</li>
-<li>Have a recent version of Node (v8.5+)</li>
-<li>add the experimental-modules flag and learn to ignore the warning it gives</li>
-</ol>
-<p>But overall it isn’t meaningfully harder than learning to use node has been in the past.</p>
-<h3>Interactive Again</h3>
-<p>We can make our node.js version accept a command line arg easily enough, along with more opportunities to learn about functions, arrays and conditionals.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token comment">//node.mjs</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span>sayHello<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./hello.mjs'</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> <span class="token function-variable function">getLast</span> <span class="token operator">=</span> list <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span><span class="token punctuation">(</span>list<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> list<span class="token punctuation">[</span>list<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token function">getLast</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>argv<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-      </div>
-<h3>The Future</h3>
-<p>I’m excited to see the new dev experience moving back closer to alignment with the production web app experience.  I think that can only be a positive things.  Some steps that will help even more if/when they happen:</p>
-<ol>
-<li><strong>Module file format standardization</strong> - The .mjs extension seems to still be controversial, but it also seems a bit inevitable.  So the question will be whether it becomes more standard to use across all modular JS on the browser and node.  The current split and experimental support makes for a confusing distraction for new learners</li>
-<li><strong>De-flagging</strong> - Right now Firefox and Node still require flags for using modules.  That reduces beginner friendliness.</li>
-<li><strong>Where is the jQuery of 2018</strong> - This is more speculative, but I think the next step to a beginner friendly hello world is a “beginner friendly framework” that is based on the “one way data flow/declarative translation of state to UI” paradigm that has swept across pretty much all modern JS frameworks.  That’s an important concept to understand, and there isn’t anything I’m aware of out there right now that let’s you build with those concepts but is as approachable to newcomers as jQuery is.  jQuery was a gateway to DOM manipulation, AJAX, and functional array manipulation for a generation of developers.  React and create-react-app is probably the closest to that concept today, but it isn’t nearly as simple.  </li>
-</ol>
-<p>That’s all for now.  Code samples for this are <a href="https://github.com/benmccormick/hello-new">on github</a>.  Goodbye World.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>This should work in the latest Chrome, Safari and Edge out of the box.  I encountered a bit of slowness and flakiness on Chrome, but it worked like a charm in Safari.  Firefox still has this stuff behind a flag.</p>
 <a href="#fnref-1" class="footnote-backref">↩</a>
 </li>
 </ol>
