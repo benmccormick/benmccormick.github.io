@@ -34,7 +34,7 @@ This is different from `let arr = [1, undefined, 2]`, because the index keys are
 
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">// Does someArray have holes?<br><br>someArray.findIndex((x,i,arr) =&gt; x === undefined &amp;&amp; !(i in arr)) &gt;= 0<br>Object.keys(someArray).length &lt; someArray.length<br>someArray.filter(_ =&gt; true).length &lt; someArray.length</p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/status/1009056501095428096?ref_src=twsrc%5Etfw">June 19, 2018</a></blockquote>
 
-I'm going to standardize these into a function syntax for the purpose of comparison.  I'm only going to consider one liners, so arrow functions work well
+I'm going to standardize these into a function syntax for the purpose of comparison.  I'm only going to consider one liners, so we'll define a simple arrow function `isSparse`, and compare the length of the function bodies.
 
 ```javascript
 // Solution 1
