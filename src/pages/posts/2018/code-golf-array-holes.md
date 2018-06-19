@@ -15,7 +15,7 @@ Today on Twitter, [Axel Rauschmayer](http://2ality.com/index.html) posted a fun 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Code golf: check if an Array has holes. I’ll reply with two ideas of mine in a few minutes.</p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/status/1009053456123027463?ref_src=twsrc%5Etfw">June 19, 2018</a></blockquote>
 
-For context, Code golf is a type of challenge where participants attempt to find the shortest possible way to express a program.  Arrays that have holes, or sparse arrays, refer to arrays that don't have values at every index between their maximum and minimum values.  You could define a sparse array like this:
+For context, *code golf* is a type of challenge where participants attempt to find the shortest possible way to express a program.  Arrays that have holes, or sparse arrays, refer to arrays that don't have values at every index between their maximum and minimum values.  You can define a sparse array like this:
 
 ```javascript
 let arr = [1];
@@ -61,7 +61,7 @@ let isSparse = a => Object.keys(a).length<a.length
 //But we can use reduce to do this instead (28 characters)
 let isSparse = a => a.reduce(x=>x-1,a.length)==0
 ```
-So our first step is to use `reduce` to save 3 characters.  If you haven't seen `reduce` before, I recommend checking out [this great explainer](https://css-tricks.com/understanding-the-almighty-reducer/) by Sarah Drasner that I linked to in my [Weekly Links post](https://benmccormick.org/2018/06/15/weekly-links-06-15-18/) last week.  Essentially though, reduce is a generic method for iterating through an array to produce a new value.  It takes a function and an initial value, and uses the items of the array to iteratively transform the initial value.  In this case, I'm just decrementing the value for each defined item in the array, starting at length and seeing if it equals 0.  Which ends up being shorter than taking the length of the keys array.  But we can still do better!
+So our first step is to use `reduce` to save 2 characters.  If you haven't seen `reduce` before, I recommend checking out [this great explainer](https://css-tricks.com/understanding-the-almighty-reducer/) by Sarah Drasner that I linked to in my [Weekly Links post](https://benmccormick.org/2018/06/15/weekly-links-06-15-18/) last week.  Essentially though, reduce is a generic method for iterating through an array to produce a new value.  It takes a function and an initial value, and uses the items of the array to iteratively transform the initial value.  In this case, I'm just decrementing the value for each defined item in the array, starting at length and seeing if it equals 0.  Which ends up being shorter than taking the length of the keys array.  But we can still do better!
 
 Our next step will take advantage of a property of numbers in JavaScript.  When converting numbers to booleans, `0` is considered *falsy*, while every other number is considered *truthy*.  Since we want our function to produce a boolean, we can take advantage of this property, and write our function like this.
 
