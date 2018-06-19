@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Mon, 18 Jun 2018 12:16:28 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 19 Jun 2018 03:23:54 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -23,8 +23,8 @@
 <p>Codemods originated at Facebook, first with a tool named <a href="https://github.com/facebook/codemod">codemod</a> that served as a helper for regex or python based refactoring, allowing you to make iterative changes with pretty diffs, then with <a href="https://github.com/facebook/jscodeshift">jscodeshift</a> a tool for doing more advanced JavaScript refactors that work directly against a data model representation of the code, rather than relying on regex or direct programmatic changes to text.  jscodeshift is extremely powerful, but I found it intimidating to approach.  Once I took the plunge though, it wasn’t that hard to start writing codemods.  So here are a few quick tips for anyone else who might be interested.</p>
 <h4>1. Start with a goal in mind</h4>
 <p>It’s always helpful to dive into a new technology by trying to solve a concrete problem.  That’s especially useful for codemods, because the ideas behind them can seem abstract and poorly documented until you begin focusing on a specific issue.  In my case I was originally motivated to look at codemods when updating an application from using MobX version 3 to MobX version 5.  In MobX3, when you write code without using decorators, a typical model class will look something like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> extendObservable<span class="token punctuation">,</span> computed<span class="token punctuation">,</span> action<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx'</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> extendObservable<span class="token punctuation">,</span> computed<span class="token punctuation">,</span> action<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Example</span> <span class="token punctuation">{</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -48,12 +48,11 @@
     <span class="token function">unrelatedMethod</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> key<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
       </div>
 <p>I was updating an app with dozens of these model classes.  Unfortunately, in Mobx5, the syntax for these classes has changed, and it now needs to be rewritten like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> extendObservable<span class="token punctuation">,</span> action<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx'</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> extendObservable<span class="token punctuation">,</span> action<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Example</span> <span class="token punctuation">{</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -82,15 +81,14 @@
     <span class="token function">unrelatedMethod</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> key<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
       </div>
 <p>Computeds must be shifted to gets, action functions have to be pulled out of their wrapper function calls, but the wrapper and action names have to be moved down to a new second object.  This is really finicky to do by hand or with a text editor macro, because it’s a lot more complicated than just find and replace.  I’d usually be converting from arrow functions that might or might not have blocks and return statements currently, and I’d have to move the actions down to the new object correctly even though some of the models had 10+ action functions.   Facing several hours worth of finicky manual or script assisted refactoring work was enough to convince me it was time to learn about codemods.</p>
 <h4>2. Create a small example and learn about its AST</h4>
 <p>My first productive step towards creating a Mobx3to5 codemod for my codebase was creating the example code above.  I iterated on it a bit as I found new things I cared about; I didn’t realize at first that computeds needed to be changed as well as actions, and I eventually realized I needed to handle 2 types of arrow function syntax. But the initial version I wrote got me going.  Having a stripped down example of the code I cared about without the baggage of my real codebase was valuable, and being able to update it to include all the cases I cared about during testing was even better.</p>
 <p>Once I created the example, I was able to understand better what I was trying to do by examining its AST.  An AST (Abstract Syntax Tree) is a representation of a JavaScript file’s source code as a tree data structure.  For instance here’s a portion of the AST for a basic Hello World program:</p>
-<div class="gatsby-highlight">
-      <pre class="language-json"><code><span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="json">
+      <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"Program"</span><span class="token punctuation">,</span>
   <span class="token property">"sourceType"</span><span class="token operator">:</span> <span class="token string">"module"</span><span class="token punctuation">,</span>
   <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
@@ -127,11 +125,10 @@
       <span class="token property">"_babelType"</span><span class="token operator">:</span> <span class="token string">"ExpressionStatement"</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
       </div>
-<p>This is a simplified example that looks only at the semantic structure of the syntax.  The full version also contains information about the indenting and exact text of the code, and comes out to about 600 lines when represented as formatted JSON.   All of this from <code>console.log('Hello World');</code>.  Fortunately there’s a nice tool for exploring ASTs.</p>
-<p><a href="http://astexplorer.net/">AST Explorer</a> is a site that lets you enter some JavaScript code, and then visualize the AST that represents the code.  When I put my example code above, in, I was able to see that the computed expressions in my original code showed as a <code>CallExpression</code> with an <code>ArrowFunctionExpression</code> as an argument.</p>
+<p>This is a simplified example that looks only at the semantic structure of the syntax.  The full version also contains information about the indenting and exact text of the code, and comes out to about 600 lines when represented as formatted JSON.   All of this from <code class="language-text">console.log(&#39;Hello World&#39;);</code>.  Fortunately there’s a nice tool for exploring ASTs.</p>
+<p><a href="http://astexplorer.net/">AST Explorer</a> is a site that lets you enter some JavaScript code, and then visualize the AST that represents the code.  When I put my example code above, in, I was able to see that the computed expressions in my original code showed as a <code class="language-text">CallExpression</code> with an <code class="language-text">ArrowFunctionExpression</code> as an argument.</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -168,11 +165,11 @@
   
   </a>
     </p>
-<p>When I put the result code I wanted in, I could see that I would need to switch the property that contained the callexpression to have a type <code>get</code> and would need to replace the call expression with a function expression.</p>
+<p>When I put the result code I wanted in, I could see that I would need to switch the property that contained the callexpression to have a type <code class="language-text">get</code> and would need to replace the call expression with a function expression.</p>
 <h4>3. Start with a small edit</h4>
 <p>As a starting point, I decided I wanted to write a script that could find MobX classes and just add the second object argument to extendObservable, with a dummy property.  So this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token function">extendObservable</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token function">extendObservable</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
     foo<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
     bar<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
     currentData<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
@@ -186,12 +183,11 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span>bar <span class="token operator">=</span> val<span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
       </div>
 <p>would become this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token function">extendObservable</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token function">extendObservable</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
     foo<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
     bar<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
     currentData<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
@@ -205,12 +201,11 @@
         <span class="token keyword">this</span><span class="token punctuation">.</span>bar <span class="token operator">=</span> val<span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 
-<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> foo<span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> foo<span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
       </div>
-<p>To do this, I took an existing script that I found in <a href="https://github.com/jhgg/js-transforms">this repo of small codemod examples</a> and modified it to lookup <code>extendObservable</code> calls and add a second argument.  I filtered it to only include calls with 2 arguments, in case I ran the code a second time<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>file<span class="token punctuation">,</span> api<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<p>To do this, I took an existing script that I found in <a href="https://github.com/jhgg/js-transforms">this repo of small codemod examples</a> and modified it to lookup <code class="language-text">extendObservable</code> calls and add a second argument.  I filtered it to only include calls with 2 arguments, in case I ran the code a second time<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>file<span class="token punctuation">,</span> api<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> j <span class="token operator">=</span> api<span class="token punctuation">.</span>jscodeshift<span class="token punctuation">;</span>
 
     <span class="token keyword">return</span> <span class="token function">j</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span>source<span class="token punctuation">)</span>
@@ -232,26 +227,23 @@
             <span class="token comment">// TODO: 4. Convert computeds to get statements</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
       </div>
 <p>This is a working script to achieve my simple goal.  To break it down:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token function">j</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span>source<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>j<span class="token punctuation">.</span>CallExpression<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token function">j</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span>source<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>j<span class="token punctuation">.</span>CallExpression<span class="token punctuation">,</span> <span class="token punctuation">{</span>
             callee<span class="token punctuation">:</span> <span class="token punctuation">{</span>
                 name<span class="token punctuation">:</span> <span class="token string">'extendObservable'</span>
             <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
       </div>
-<p>jscodeshift provides a jQuery style api for traversing a tree.  Here we’re looking for <code>CallExpression</code>s that have the name <code>extendObservable</code>.  We now have a collection of these expressions, and we can filter it down to only the expressions that have 2 arguments.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>p <span class="token operator">=></span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>type <span class="token operator">==</span> <span class="token string">"ObjectExpression"</span><span class="token punctuation">)</span>
-</code></pre>
+<p>jscodeshift provides a jQuery style api for traversing a tree.  Here we’re looking for <code class="language-text">CallExpression</code>s that have the name <code class="language-text">extendObservable</code>.  We now have a collection of these expressions, and we can filter it down to only the expressions that have 2 arguments.</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>p <span class="token operator">=></span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>type <span class="token operator">==</span> <span class="token string">"ObjectExpression"</span><span class="token punctuation">)</span></code></pre>
       </div>
-<p>Next we want to go through each callExpression and transform it.  In this case by finding it’s arguments list and pushing a new one, using the jsCodeshift API to simply generate the AST objects neededed to represent <code>{foo: bar}</code>.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>p <span class="token operator">=></span> <span class="token punctuation">{</span>
+<p>Next we want to go through each callExpression and transform it.  In this case by finding it’s arguments list and pushing a new one, using the jsCodeshift API to simply generate the AST objects neededed to represent <code class="language-text">{foo: bar}</code>.</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>p <span class="token operator">=></span> <span class="token punctuation">{</span>
             <span class="token comment">// Now we want to</span>
             <span class="token comment">// 1. Add a 3rd argument object</span>
             <span class="token keyword">let</span> args <span class="token operator">=</span> p<span class="token punctuation">.</span>value<span class="token punctuation">.</span>arguments<span class="token punctuation">;</span>
@@ -259,27 +251,26 @@
             <span class="token comment">// TODO: 2. Move action declarations to that argument</span>
             <span class="token comment">// TODO: 3. Convert action statements to plain functions</span>
             <span class="token comment">// TODO: 4. Convert computeds to get statements</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
       </div>
-<p>Finally, we call <code>.toSource()</code> to write the tranformed AST back to the file.</p>
+<p>Finally, we call <code class="language-text">.toSource()</code> to write the tranformed AST back to the file.</p>
 <h4>4. Test your edit</h4>
-<p>Because this type of coding lends itself to experimentation, it’s important to develop a good feedback loop while working on your codemod.  If you have a simple example you’re off to a good start.  The next step is to find a good way to run your script and see the output.  Simply running your test is a bit frustrating, because jscodeshift is destructive.  It overwrites your file in place, and doesn’t save a copy.  You can get around this though by adding <code>--dry --print</code> flags to your command line call</p>
-<p><code>jscodeshift -t my-codemod.js example.js</code></p>
-<p>will run the transform defined in <code>my-codemod.js</code> against <code>example.js</code> and modify it in place.</p>
-<p><code>jscodeshift --dry --print -t my-codemod.js example.js</code></p>
+<p>Because this type of coding lends itself to experimentation, it’s important to develop a good feedback loop while working on your codemod.  If you have a simple example you’re off to a good start.  The next step is to find a good way to run your script and see the output.  Simply running your test is a bit frustrating, because jscodeshift is destructive.  It overwrites your file in place, and doesn’t save a copy.  You can get around this though by adding <code class="language-text">--dry --print</code> flags to your command line call</p>
+<p><code class="language-text">jscodeshift -t my-codemod.js example.js</code></p>
+<p>will run the transform defined in <code class="language-text">my-codemod.js</code> against <code class="language-text">example.js</code> and modify it in place.</p>
+<p><code class="language-text">jscodeshift --dry --print -t my-codemod.js example.js</code></p>
 <p>will print the transformed file to the console and not update example.js.</p>
 <p>For simple codemods and small example files, this is a nice way to iterate quickly.  For more extensive codemods with multiple test cases, I’m excited to try out jscodeshift’s Jest support<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  It has helper methods for working with transforms, and a workflow of Jest watch checking the output of several inputs against several expected outputs would be lovely.</p>
 <h4>5. Iterate</h4>
-<p>After I got that first edit working, it was simply a matter of working through my list.  I needed to remove the experimental <code>foo:bar</code> and then</p>
+<p>After I got that first edit working, it was simply a matter of working through my list.  I needed to remove the experimental <code class="language-text">foo:bar</code> and then</p>
 <ol>
 <li>Move action declarations to the new argument object</li>
 <li>Convert action declarations to plain functions in the existing object</li>
 <li>Convert computeds to get statements</li>
 </ol>
 <p>I was able to take those one at a time, and my final script looked something like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>file<span class="token punctuation">,</span> api<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>file<span class="token punctuation">,</span> api<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> j <span class="token operator">=</span> api<span class="token punctuation">.</span>jscodeshift<span class="token punctuation">;</span>
 
     <span class="token keyword">const</span> <span class="token function-variable function">buildDecoratorPropertiesFromCurrentObject</span> <span class="token operator">=</span> currentObj <span class="token operator">=></span> <span class="token punctuation">{</span>
@@ -335,12 +326,11 @@
             args<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>j<span class="token punctuation">.</span><span class="token function">objectExpression</span><span class="token punctuation">(</span>decoratorProps<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">toSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
       </div>
-<p>That looks rather crazy, but the <code>buildDecoratorPropertiesFromCurrentObject</code> is mostly straightforward data manipulation, looking for some patterns in the data, and replacing them with a different pattern.  Everything else is just the same base code from our initial example.</p>
+<p>That looks rather crazy, but the <code class="language-text">buildDecoratorPropertiesFromCurrentObject</code> is mostly straightforward data manipulation, looking for some patterns in the data, and replacing them with a different pattern.  Everything else is just the same base code from our initial example.</p>
 <h4>6. Use version control and code reviews!</h4>
-<p>Actually running a finished transform against a codebase is crazy easy.  Just give it a base folder, and <code>jscodeshift</code> will run your script against all JavaScript files in the directory.  This is definitely a “With great power comes great responsibility” tool though.  Before running jscodeshift across a large code base, make sure you are using version control and that you’ve checked in any other changes.  Because the script will update many files at once, you want to be able to isolate the change and review it carefully afterwards, to make sure that you see what is different, and that those changes look right.  In my case, I got to be <em>done</em> with my script twice, because the first time I thought it was ready to execute across all of the app files, things still went wrong.  It was easy to fix though, since I was able to just checkout my changes and try again.</p>
+<p>Actually running a finished transform against a codebase is crazy easy.  Just give it a base folder, and <code class="language-text">jscodeshift</code> will run your script against all JavaScript files in the directory.  This is definitely a “With great power comes great responsibility” tool though.  Before running jscodeshift across a large code base, make sure you are using version control and that you’ve checked in any other changes.  Because the script will update many files at once, you want to be able to isolate the change and review it carefully afterwards, to make sure that you see what is different, and that those changes look right.  In my case, I got to be <em>done</em> with my script twice, because the first time I thought it was ready to execute across all of the app files, things still went wrong.  It was easy to fix though, since I was able to just checkout my changes and try again.</p>
 <h3>Resources</h3>
 <p>If you have a change that you want to make to your codebase, but have been holding off because you think it would take forever, I definitely encourage you to check codemods out.  They’re not as scary as you think!  Here are some more resources to get started:</p>
 <ul>
@@ -420,31 +410,30 @@
             <pubDate>Tue, 05 Jun 2018 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>This month is the 3 year anniversary of the ECMAScript2015 spec, <a href="https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning">better known as ES6</a>.  It was a spec update that brought a ton of features to the JavaScript language, and the start of a new era of improving the language.  It was also the last “big bang” release of JavaScript, as TC39 has now moved to a pattern of annual small releases rather than making large multi-year language releases.</p>
 <p>There has been a boatload of justified hype around ES6 over the last 4 years.  I’ve been writing all of my code using the modern spec during that time<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>. So this is a good time to step back and evaluate the features that were added.  Specifically there are some features that I used for a while that I’ve stopped using, because they made my code worse.</p>
-<p>In his book <a href="https://amzn.to/2LJBY9z">JavaScript: The Good Parts</a> Douglas Crockford dedicated a chapter to the <em>Bad Parts</em> of JavaScript.  <em>The Bad Parts</em> are the features of JavaScript that he felt shouldn’t be used.  Fortunately there is nothing as bad in ES6 as some of the old JavaScript stinkers like coercive equality, eval or the <code>with</code> statement.  ES6 was a well-designed release. But there are some features and patterns that I avoid. A JavaScript feature makes my <em>Bad Parts</em> list because:</p>
+<p>In his book <a href="https://amzn.to/2LJBY9z">JavaScript: The Good Parts</a> Douglas Crockford dedicated a chapter to the <em>Bad Parts</em> of JavaScript.  <em>The Bad Parts</em> are the features of JavaScript that he felt shouldn’t be used.  Fortunately there is nothing as bad in ES6 as some of the old JavaScript stinkers like coercive equality, eval or the <code class="language-text">with</code> statement.  ES6 was a well-designed release. But there are some features and patterns that I avoid. A JavaScript feature makes my <em>Bad Parts</em> list because:</p>
 <ol>
 <li><strong>It’s a trap.</strong>  The feature looks like it does one thing, but has unexpected behavior in some cases that can easily lead to bugs</li>
 <li><strong>It increases the scope of the language for little benefit.</strong> The feature provides some small advantage, but requires the readers of my code to know about obscure features.  This is doubly true for <em>API features</em> where using the feature means that other code that interacts with my code must know about the feature.</li>
 </ol>
 <p>In that spirit, here are my <em>Bad Parts</em> of ES6.</p>
 <h4>const</h4>
-<p>In older versions of JavaScript, we declared variables with the var keyword<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  This was mostly fine, but <code>var</code> has peculiarities.  It creates variables that are added to the global object, or scoped to a function, but don’t respect other block boundaries.  It is also possible to reference a <code>var</code> declared variable before it is declared. These oddities occasionally come back to bite developers.  In response ES6 introduced 2 new keywords for declaring variables: <code>let</code> and <code>const</code>.  These solve the primary quirks of <code>var</code>; they are block-scoped, so a variable declared inside of a loop is not referencable outside of that loop, and trying to access the variable before it is declared in code results in a reference error. This was a big step forward.  It was also confusing, because we were given 2 solutions.</p>
-<p>A <code>const</code> variable cannot be re-assigned after it has been declared. This is the only difference between <code>const</code> and <code>let</code>. This seems useful, and it can be.  The problem is the name. What it guarantees doesn’t match what most people expect from a <em>constant</em>.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> CONSTANT <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+<p>In older versions of JavaScript, we declared variables with the var keyword<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  This was mostly fine, but <code class="language-text">var</code> has peculiarities.  It creates variables that are added to the global object, or scoped to a function, but don’t respect other block boundaries.  It is also possible to reference a <code class="language-text">var</code> declared variable before it is declared. These oddities occasionally come back to bite developers.  In response ES6 introduced 2 new keywords for declaring variables: <code class="language-text">let</code> and <code class="language-text">const</code>.  These solve the primary quirks of <code class="language-text">var</code>; they are block-scoped, so a variable declared inside of a loop is not referencable outside of that loop, and trying to access the variable before it is declared in code results in a reference error. This was a big step forward.  It was also confusing, because we were given 2 solutions.</p>
+<p>A <code class="language-text">const</code> variable cannot be re-assigned after it has been declared. This is the only difference between <code class="language-text">const</code> and <code class="language-text">let</code>. This seems useful, and it can be.  The problem is the name. What it guarantees doesn’t match what most people expect from a <em>constant</em>.</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token constant">CONSTANT</span> <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
 <span class="token comment">// this will cause "TypeError: invalid assignment to const `CONSTANT`"</span>
-CONSTANT <span class="token operator">=</span> <span class="token number">345</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> CONSTANT_ARR <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-CONSTANT_ARR<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token constant">CONSTANT</span> <span class="token operator">=</span> <span class="token number">345</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">CONSTANT_ARR</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token constant">CONSTANT_ARR</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 <span class="token comment">// this will print [1] without an error</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>CONSTANT_ARR<span class="token punctuation">)</span>
-</code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">CONSTANT_ARR</span><span class="token punctuation">)</span></code></pre>
       </div>
-<p><code>const</code> prevents reassignment, but it doesn’t make objects immutable.  This is a fairly weak guarantee for most value types.  Because this feature invites confusion, and <code>const</code> is otherwise redundant with <code>let</code>, I choose to always use <code>let</code>.</p>
+<p><code class="language-text">const</code> prevents reassignment, but it doesn’t make objects immutable.  This is a fairly weak guarantee for most value types.  Because this feature invites confusion, and <code class="language-text">const</code> is otherwise redundant with <code class="language-text">let</code>, I choose to always use <code class="language-text">let</code>.</p>
 <h4>Template Literal Tags</h4>
-<p><code>const</code> is an example of the spec creating too many solutions to too few problems. Template literals are the inverse.  The template literal syntax was TC39’s way of tackling string interpolation and multi-line strings.  Then they decided to give it a string macro feature as well.</p>
+<p><code class="language-text">const</code> is an example of the spec creating too many solutions to too few problems. Template literals are the inverse.  The template literal syntax was TC39’s way of tackling string interpolation and multi-line strings.  Then they decided to give it a string macro feature as well.</p>
 <p>If you’ve never seen a template literal tag, they’re a little like <a href="https://github.com/tc39/proposal-decorators">decorators</a> for strings.  Here’s an example from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">MDN</a>:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token string">'Mike'</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token string">'Mike'</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">28</span><span class="token punctuation">;</span>
 
 <span class="token keyword">function</span> <span class="token function">myTag</span><span class="token punctuation">(</span>strings<span class="token punctuation">,</span> personExp<span class="token punctuation">,</span> ageExp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -471,34 +460,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">var</span> output <span class="token operator">=</span> myTag<span class="token template-string"><span class="token string">`that </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> person <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is a </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> age <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// that Mike is a youngster</span>
-</code></pre>
+<span class="token comment">// that Mike is a youngster</span></code></pre>
       </div>
 <p>This isn’t totally useless. <a href="https://codeburst.io/javascript-es6-tagged-template-literals-a45c26e54761">Here’s a roundup of some use cases</a>.  HTML sanitization is a useful trait.  And this is the currently the cleanest way to do things when you’re having to perform the same operation on all inputs to an arbitrary string template.  But that’s a relatively rare scenario, and you can also accomplish the same use cases with a (more verbose) function API rather than using tagged literals.  And for most things, the function API won’t even be worse.  This feature is not adding new capabilities, but is adding new concepts that future readers of my code have to be familiar with.  So I plan on staying clear as much as possible.</p>
 <h4>Overly crazy destructuring expressions</h4>
 <p>Some features are fine when used simply, but can spiral out of controls.  For instance, I am happy to write ternary statements like</p>
-<p><code>let conferenceCost = isStudent ? 50 : 200</code></p>
+<p><code class="language-text">let conferenceCost = isStudent ? 50 : 200</code></p>
 <p>but they become tough to follow if you start nesting them:</p>
-<p><code>let conferenceCost = isStudent ? hasDiscountCode ? 25 : 50 : hasDiscountCode ? 100 : 200</code>;</p>
+<p><code class="language-text">let conferenceCost = isStudent ? hasDiscountCode ? 25 : 50 : hasDiscountCode ? 100 : 200</code>;</p>
 <p>This is how I feel about destructuring.  Destructuring lets you pull variables out of objects or arrays</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">let</span> <span class="token punctuation">{</span>a<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token punctuation">{</span>a<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> <span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token comment">// 2, 4</span>
-</code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token comment">// 2, 4</span></code></pre>
       </div>
 <p>and also lets you rename variables, get nested values, and set defaults.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">let</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> val1<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> val1<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>b<span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>a<span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">}</span> <span class="token punctuation">,</span> <span class="token punctuation">{</span>c<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> d<span class="token punctuation">:</span> <span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> <span class="token punctuation">{</span>c<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> c<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> <span class="token punctuation">{</span>d<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> c<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>val1<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token comment">// 2, 4, 5, 6</span>
-</code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>val1<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token comment">// 2, 4, 5, 6</span></code></pre>
       </div>
-<p>All of which is great, until you start combining those features.  For instance, this expression declares 4 variables, userName, eventType, eventDate, and eventId pulled out of different spots in the object structure of <code>eventRecord</code>.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">let</span> eventRecord <span class="token operator">=</span> <span class="token punctuation">{</span>
+<p>All of which is great, until you start combining those features.  For instance, this expression declares 4 variables, userName, eventType, eventDate, and eventId pulled out of different spots in the object structure of <code class="language-text">eventRecord</code>.</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> eventRecord <span class="token operator">=</span> <span class="token punctuation">{</span>
   user<span class="token punctuation">:</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Ben M"</span><span class="token punctuation">,</span> email<span class="token punctuation">:</span> <span class="token string">"ben@m.com"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
   event<span class="token punctuation">:</span> <span class="token string">"logged in"</span><span class="token punctuation">,</span>
   metadata<span class="token punctuation">:</span> <span class="token punctuation">{</span> date<span class="token punctuation">:</span> <span class="token string">"10-10-2017"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -509,12 +495,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
   event<span class="token punctuation">:</span> eventType <span class="token operator">=</span> <span class="token string">"Unknown Event"</span><span class="token punctuation">,</span>
   metadata<span class="token punctuation">:</span> <span class="token punctuation">[</span>date<span class="token punctuation">:</span> eventDate<span class="token punctuation">]</span><span class="token punctuation">,</span>
   id<span class="token punctuation">:</span> eventId
-<span class="token punctuation">}</span> <span class="token operator">=</span> obj<span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">}</span> <span class="token operator">=</span> obj<span class="token punctuation">;</span></code></pre>
       </div>
 <p>It’s pretty much impossible to follow.  Code like this is much easier to read with the destructuring split into parts or eliminated.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">let</span> eventRecord <span class="token operator">=</span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> eventRecord <span class="token operator">=</span> <span class="token punctuation">{</span>
   user<span class="token punctuation">:</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Ben M"</span><span class="token punctuation">,</span> email<span class="token punctuation">:</span> <span class="token string">"ben@m.com"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
   event<span class="token punctuation">:</span> <span class="token string">"logged in"</span><span class="token punctuation">,</span>
   metadata<span class="token punctuation">:</span> <span class="token punctuation">{</span> date<span class="token punctuation">:</span> <span class="token string">"10-10-2017"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -522,30 +507,27 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> userName <span class="token operator">=</span> eventRecord<span class="token punctuation">.</span>user<span class="token punctuation">.</span>userName <span class="token operator">||</span> <span class="token string">'Unknown'</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> eventDate <span class="token operator">=</span> eventRecord<span class="token punctuation">.</span>metadata<span class="token punctuation">.</span>date<span class="token punctuation">;</span>
-<span class="token keyword">let</span> <span class="token punctuation">{</span>event<span class="token punctuation">:</span>eventType<span class="token operator">=</span><span class="token string">'UnknownEvent'</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span>eventId<span class="token punctuation">}</span> <span class="token operator">=</span> eventRecord<span class="token punctuation">;</span>
-</code></pre>
+<span class="token keyword">let</span> <span class="token punctuation">{</span>event<span class="token punctuation">:</span>eventType<span class="token operator">=</span><span class="token string">'UnknownEvent'</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span>eventId<span class="token punctuation">}</span> <span class="token operator">=</span> eventRecord<span class="token punctuation">;</span></code></pre>
       </div>
 <p>I don’t have a clear line for when destructuring has gone too far, but anytime I can’t look at it and instantly know what variables are being declared, I know it’s time to break things down for readability.</p>
 <h4>Default Exports</h4>
 <p>One nice thing about ES6 was the way it standardized things that had been accomplished using competing libraries.  Classes, Promises and modules all benefited from being folded into the spec after the community had time to absorb lessons learned from competitive user-land implementations.  ES6 modules are a great replacement for the AMD/CommonJS format wars, and provide a nice clean syntax for imports.</p>
 <p>ES6 modules provide 2 main ways of exporting values: <em>named exports</em>, and <em>default exports</em>.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> mainValue <span class="token operator">=</span> 'This is the <span class="token keyword">default</span> <span class="token keyword">export</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> mainValue <span class="token operator">=</span> 'This is the <span class="token keyword">default</span> <span class="token keyword">export</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> mainValue
 
 <span class="token keyword">export</span> <span class="token keyword">const</span> secondaryValue <span class="token operator">=</span> 'This is a secondary value<span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> secondaryValue2 <span class="token operator">=</span> 'This is another secondary value<span class="token punctuation">;</span>
-</code></pre>
+<span class="token keyword">export</span> <span class="token keyword">const</span> secondaryValue2 <span class="token operator">=</span> 'This is another secondary value<span class="token punctuation">;</span></code></pre>
       </div>
 <p>A module can define multiple named exports, but only a single default export.  When importing default exports, the importing file can give the default export any name as there isn’t any lookup on name.  Named exports are imported by using the name of the variable in the exporting file, though renaming is possible.</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token comment">// default import</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// default import</span>
 <span class="token keyword">import</span> renamedMainValue <span class="token keyword">from</span> <span class="token string">'./the-above-example'</span><span class="token punctuation">;</span>
 <span class="token comment">// named import</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span>secondaryValue<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./the-above-example'</span><span class="token punctuation">;</span>
 <span class="token comment">// named import with a rename</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span>secondaryValue <span class="token keyword">as</span> otherValue<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./the-above-example'</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>secondaryValue <span class="token keyword">as</span> otherValue<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./the-above-example'</span><span class="token punctuation">;</span></code></pre>
       </div>
 <p>Default exports <a href="https://esdiscuss.org/topic/moduleimport#content-0">were the preferred syntax of the folks designing ES6</a> and they intentionally gave it the cleanest syntax.  But in practice I’ve found named exports to be better.</p>
 <ol>
@@ -652,8 +634,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <content:encoded><![CDATA[<p>A few weeks ago, I was listening to the <a href="https://changelog.com/reactpodcast">React Podcast</a>, specifically their <a href="https://changelog.com/reactpodcast/5">episode on State Machines</a> with <a href="https://twitter.com/davidkpiano">David Khourshid</a>.  About 20 minutes into the podcast, there was a discussion on the benefits of using enums over flags to model the state of objects that can change across multiple dimensions.  It reminded me of one of the nice patterns that <a href="https://mobx.js.org/">MobX</a> makes possible, and I thought I’d share it here.</p>
 <h3>Background</h3>
 <p>To set the stage here, the podcast discussion centered around modeling an async process like a promise. One possible way given was to use a mix of flags and if statements like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token comment">// loading object</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// loading object</span>
 <span class="token keyword">class</span> <span class="token class-name">ExampleLoader</span> <span class="token punctuation">{</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">this</span><span class="token punctuation">.</span>isLoading <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
@@ -675,33 +657,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <span class="token keyword">this</span><span class="token punctuation">.</span>isLoading <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
       </div>
 <p>using one of these objects might look like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">if</span> <span class="token punctuation">(</span>loader<span class="token punctuation">.</span>hasError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>loader<span class="token punctuation">.</span>hasError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// show error state</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>loader<span class="token punctuation">.</span>isLoading<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// show loading state</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
   <span class="token comment">// show data State</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
       </div>
-<p>In the podcast David Khourshid criticized this as a haphazard way to manage state, that doesn’t show the whole picture.  Because we can’t easily see how the various flags combine, it’s tough to keep track of all possible states.  For instance, in the above example, did we really want to show the error state if we had an error, but have called <code>load()</code> again and both <code>hasError</code> and <code>isLoading</code> are now true?  Maybe that was the intention, but maybe that was just a state that was missed during the original construction of the program.  It’s hard to tell.  </p>
+<p>In the podcast David Khourshid criticized this as a haphazard way to manage state, that doesn’t show the whole picture.  Because we can’t easily see how the various flags combine, it’s tough to keep track of all possible states.  For instance, in the above example, did we really want to show the error state if we had an error, but have called <code class="language-text">load()</code> again and both <code class="language-text">hasError</code> and <code class="language-text">isLoading</code> are now true?  Maybe that was the intention, but maybe that was just a state that was missed during the original construction of the program.  It’s hard to tell.  </p>
 <p>As an alternative to full blown state machine modeling, David advocated for an easy first step of swapping out flags for enums.  In that case the code above might look like:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">const</span> STATES <span class="token operator">=</span> <span class="token punctuation">{</span>
-  INITIAL<span class="token punctuation">:</span> <span class="token string">'initial'</span><span class="token punctuation">,</span>
-  LOADING<span class="token punctuation">:</span> <span class="token string">'loading'</span><span class="token punctuation">,</span>
-  ERROR<span class="token punctuation">:</span> <span class="token string">'error'</span><span class="token punctuation">,</span>
-  LOADED<span class="token punctuation">:</span> <span class="token string">'loaded'</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token constant">STATES</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token constant">INITIAL</span><span class="token punctuation">:</span> <span class="token string">'initial'</span><span class="token punctuation">,</span>
+  <span class="token constant">LOADING</span><span class="token punctuation">:</span> <span class="token string">'loading'</span><span class="token punctuation">,</span>
+  <span class="token constant">ERROR</span><span class="token punctuation">:</span> <span class="token string">'error'</span><span class="token punctuation">,</span>
+  <span class="token constant">LOADED</span><span class="token punctuation">:</span> <span class="token string">'loaded'</span>
 <span class="token punctuation">}</span>
 <span class="token comment">// loading object</span>
 <span class="token keyword">class</span> <span class="token class-name">ExampleLoader</span> <span class="token punctuation">{</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> STATES<span class="token punctuation">.</span>INITIAL<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">STATES</span><span class="token punctuation">.</span><span class="token constant">INITIAL</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -709,52 +689,50 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span>
 
     <span class="token keyword">async</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">let</span> <span class="token punctuation">{</span>LOADING<span class="token punctuation">,</span> ERROR<span class="token punctuation">,</span> LOADED<span class="token punctuation">}</span> <span class="token operator">=</span> STATES<span class="token punctuation">;</span>
+      <span class="token keyword">let</span> <span class="token punctuation">{</span><span class="token constant">LOADING</span><span class="token punctuation">,</span> <span class="token constant">ERROR</span><span class="token punctuation">,</span> <span class="token constant">LOADED</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token constant">STATES</span><span class="token punctuation">;</span>
       <span class="token keyword">try</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> LOADING
+        <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">LOADING</span>
         <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> LOADED<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">LOADED</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> ERROR<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">ERROR</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
       </div>
 <p>with usage like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">switch</span><span class="token punctuation">(</span>loader<span class="token punctuation">.</span>state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">case</span> STATES<span class="token punctuation">.</span>ERROR<span class="token punctuation">:</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">switch</span><span class="token punctuation">(</span>loader<span class="token punctuation">.</span>state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> <span class="token constant">STATES</span><span class="token punctuation">.</span><span class="token constant">ERROR</span><span class="token punctuation">:</span>
   <span class="token comment">// show error state</span>
-  <span class="token keyword">case</span> STATES<span class="token punctuation">.</span>LOADING<span class="token punctuation">:</span>
+  <span class="token keyword">case</span> <span class="token constant">STATES</span><span class="token punctuation">.</span><span class="token constant">LOADING</span><span class="token punctuation">:</span>
   <span class="token comment">// show loading state</span>
-  <span class="token keyword">case</span> STATES<span class="token punctuation">.</span>LOADED<span class="token punctuation">:</span>
+  <span class="token keyword">case</span> <span class="token constant">STATES</span><span class="token punctuation">.</span><span class="token constant">LOADED</span><span class="token punctuation">:</span>
   <span class="token comment">// show data State</span>
-  <span class="token keyword">case</span> STATES<span class="token punctuation">.</span>INITIAL<span class="token punctuation">:</span>
+  <span class="token keyword">case</span> <span class="token constant">STATES</span><span class="token punctuation">.</span><span class="token constant">INITIAL</span><span class="token punctuation">:</span>
   <span class="token keyword">default</span><span class="token punctuation">:</span>
   <span class="token comment">// show blank state</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
       </div>
-<p>We can see just from using an enum, we’ve cleared some ambiguity: now it is clear that we should be showing a loading state when we’re loading data, even if a previous load resulted in an error.  And we’ve also been forced to remember another state distinction that was missed originally, the difference between a successful load and the initial state before load is called.  This type of Enum-based approach is really helpful for modeling complex systems and especially async process state. But it’s not perfect.  While ENUMs are great for listing out every possible state, sometimes we just need to know if an object is in a particular state.  For instance, we might have a special help-prompt component that should only show if our data is in an error state, but is otherwise divorced from the details of the data.  In that case <code>loader.hasError</code> is simpler and  cleaner than <code>loader.state === STATES.ERROR</code>.  It’s a straight forward named expression that doesn’t require importing a constant from another file or matching up to a string value.  Enums add some verbosity and ceremony to code that can otherwise be very simple.  Fortunately MobX allows us to have our cake and eat it too.</p>
+<p>We can see just from using an enum, we’ve cleared some ambiguity: now it is clear that we should be showing a loading state when we’re loading data, even if a previous load resulted in an error.  And we’ve also been forced to remember another state distinction that was missed originally, the difference between a successful load and the initial state before load is called.  This type of Enum-based approach is really helpful for modeling complex systems and especially async process state. But it’s not perfect.  While ENUMs are great for listing out every possible state, sometimes we just need to know if an object is in a particular state.  For instance, we might have a special help-prompt component that should only show if our data is in an error state, but is otherwise divorced from the details of the data.  In that case <code class="language-text">loader.hasError</code> is simpler and  cleaner than <code class="language-text">loader.state === STATES.ERROR</code>.  It’s a straight forward named expression that doesn’t require importing a constant from another file or matching up to a string value.  Enums add some verbosity and ceremony to code that can otherwise be very simple.  Fortunately MobX allows us to have our cake and eat it too.</p>
 <h3>MobX</h3>
 <p>MobX is a state management solution created by <a href="https://twitter.com/mweststrate">Michael Weststrate</a>.  It grew out of the React community but can be used with other frameworks or on it’s own.  One of its nicest features are its intelligently updated <a href="https://mobx.js.org/refguide/computed-decorator.html">computed properties</a>.  With MobX we can write our loader object like this:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>extendObservable<span class="token punctuation">,</span> computed<span class="token punctuation">,</span> action <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx'</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> STATES <span class="token operator">=</span> <span class="token punctuation">{</span>
-  INITIAL<span class="token punctuation">:</span> <span class="token string">'initial'</span><span class="token punctuation">,</span>
-  LOADING<span class="token punctuation">:</span> <span class="token string">'loading'</span><span class="token punctuation">,</span>
-  ERROR<span class="token punctuation">:</span> <span class="token string">'error'</span><span class="token punctuation">,</span>
-  LOADED<span class="token punctuation">:</span> <span class="token string">'loaded'</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span>extendObservable<span class="token punctuation">,</span> computed<span class="token punctuation">,</span> action <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'mobx'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">STATES</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token constant">INITIAL</span><span class="token punctuation">:</span> <span class="token string">'initial'</span><span class="token punctuation">,</span>
+  <span class="token constant">LOADING</span><span class="token punctuation">:</span> <span class="token string">'loading'</span><span class="token punctuation">,</span>
+  <span class="token constant">ERROR</span><span class="token punctuation">:</span> <span class="token string">'error'</span><span class="token punctuation">,</span>
+  <span class="token constant">LOADED</span><span class="token punctuation">:</span> <span class="token string">'loaded'</span>
 <span class="token punctuation">}</span>
 <span class="token comment">// loading object</span>
 <span class="token keyword">class</span> <span class="token class-name">ExampleLoader</span> <span class="token punctuation">{</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">let</span> <span class="token punctuation">{</span>INITIAL<span class="token punctuation">,</span> LOADING<span class="token punctuation">,</span> ERROR <span class="token punctuation">}</span> <span class="token operator">=</span> STATES<span class="token punctuation">;</span>
+      <span class="token keyword">let</span> <span class="token punctuation">{</span><span class="token constant">INITIAL</span><span class="token punctuation">,</span> <span class="token constant">LOADING</span><span class="token punctuation">,</span> <span class="token constant">ERROR</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token constant">STATES</span><span class="token punctuation">;</span>
       <span class="token function">extendObservable</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-          state<span class="token punctuation">:</span> INITIAL<span class="token punctuation">,</span>
-          isLoading<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> LOADING<span class="token punctuation">)</span><span class="token punctuation">,</span>
-          hasError<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> ERROR<span class="token punctuation">)</span><span class="token punctuation">,</span>
+          state<span class="token punctuation">:</span> <span class="token constant">INITIAL</span><span class="token punctuation">,</span>
+          isLoading<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token constant">LOADING</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          hasError<span class="token punctuation">:</span> <span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token constant">ERROR</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
           updateState<span class="token punctuation">:</span> <span class="token function">action</span><span class="token punctuation">(</span>state <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> state<span class="token punctuation">)</span><span class="token punctuation">,</span>
       <span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
@@ -764,40 +742,37 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span>
 
     <span class="token keyword">async</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">let</span> <span class="token punctuation">{</span>LOADING<span class="token punctuation">,</span> ERROR<span class="token punctuation">,</span> LOADED<span class="token punctuation">}</span> <span class="token operator">=</span> STATES<span class="token punctuation">;</span>
+      <span class="token keyword">let</span> <span class="token punctuation">{</span><span class="token constant">LOADING</span><span class="token punctuation">,</span> <span class="token constant">ERROR</span><span class="token punctuation">,</span> <span class="token constant">LOADED</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token constant">STATES</span><span class="token punctuation">;</span>
       <span class="token keyword">try</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateState</span><span class="token punctuation">(</span>LOADING<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateState</span><span class="token punctuation">(</span><span class="token constant">LOADING</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateState</span><span class="token punctuation">(</span>LOADED<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateState</span><span class="token punctuation">(</span><span class="token constant">LOADED</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateState</span><span class="token punctuation">(</span>ERROR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateState</span><span class="token punctuation">(</span><span class="token constant">ERROR</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
       </div>
 <p>Now we have both our state enum, and we can check specific properties.  So both of the below examples work:</p>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token comment">// ENUM example</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// ENUM example</span>
 <span class="token keyword">switch</span><span class="token punctuation">(</span>loader<span class="token punctuation">.</span>state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">case</span> STATES<span class="token punctuation">.</span>ERROR<span class="token punctuation">:</span>
+  <span class="token keyword">case</span> <span class="token constant">STATES</span><span class="token punctuation">.</span><span class="token constant">ERROR</span><span class="token punctuation">:</span>
   <span class="token comment">// show error state</span>
-  <span class="token keyword">case</span> STATES<span class="token punctuation">.</span>LOADING<span class="token punctuation">:</span>
+  <span class="token keyword">case</span> <span class="token constant">STATES</span><span class="token punctuation">.</span><span class="token constant">LOADING</span><span class="token punctuation">:</span>
   <span class="token comment">// show loading state</span>
-  <span class="token keyword">case</span> STATES<span class="token punctuation">.</span>LOADED<span class="token punctuation">:</span>
+  <span class="token keyword">case</span> <span class="token constant">STATES</span><span class="token punctuation">.</span><span class="token constant">LOADED</span><span class="token punctuation">:</span>
   <span class="token comment">// show data State</span>
-  <span class="token keyword">case</span> STATES<span class="token punctuation">.</span>INITIAL<span class="token punctuation">:</span>
+  <span class="token keyword">case</span> <span class="token constant">STATES</span><span class="token punctuation">.</span><span class="token constant">INITIAL</span><span class="token punctuation">:</span>
   <span class="token keyword">default</span><span class="token punctuation">:</span>
   <span class="token comment">// show blank state</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
       </div>
-<div class="gatsby-highlight">
-      <pre class="language-javascript"><code><span class="token comment">//Flags example</span>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">//Flags example</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>loader<span class="token punctuation">.</span>hasError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// show help component</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
       </div>
 <p>And because MobX takes care of the details of efficiently updating our flags based on state, we know everything will stay in sync and remain performant, without a bunch of ugly code to make sure of that.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>

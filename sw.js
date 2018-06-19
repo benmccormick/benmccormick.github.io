@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/app-5dcae087fa85da8d11be.js","26be73457fe668ef6bceee9b44b181a4"],["/commons-ffdba9b2384f2ddde564.js","f7ea302d7eb521592e95a0176f81c905"],["/index.html","00583815f5335c933e819a5d941469b7"],["/offline-plugin-app-shell-fallback/index.html","4405fff6c3ca9e1476e4c6dd31d2ca35"]];
+var precacheConfig = [["/app-a122d914cf5d49401320.js","173a81334367857563537f99a60d7ab7"],["/component---node-modules-gatsby-plugin-offline-app-shell-js-5769c33bc9a74573d9e0.js","2bc7c7389767064d2ae2f1e745964a05"],["/index.html","2beb34af505399413fc3ca0ddbbe46ba"],["/offline-plugin-app-shell-fallback/index.html","25b8fe545854221b407a4a679bb710d7"],["/webpack-runtime-1aa3eee3caeb56f28d87.js","6fc016057405ccc60b3594ba20c909eb"]];
 var cacheName = 'sw-precache-v3-gatsby-plugin-offline-' + (self.registration ? self.registration.scope : '');
 
 
@@ -135,7 +135,7 @@ var urlsToCacheKeys = new Map(
     var relativeUrl = item[0];
     var hash = item[1];
     var absoluteUrl = new URL(relativeUrl, self.location);
-    var cacheKey = createCacheKey(absoluteUrl, hashParamName, hash, /(.\w{8}.woff2)/);
+    var cacheKey = createCacheKey(absoluteUrl, hashParamName, hash, /(.*js$|\/static\/)/);
     return [absoluteUrl.toString(), cacheKey];
   })
 );
