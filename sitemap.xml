@@ -57,8 +57,8 @@
 <url> <loc>https://benmccormick.org/2016/06/26/quick-tip-take-advantage-of-lodash-collections-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2016/12/11/readable-code-audience</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2016/03/09/stability-vs-decline</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2016/12/14/what-are-higher-order-components</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2016/01/25/staying-productive</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2016/12/14/what-are-higher-order-components</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/11/07/blog-deploy-ux/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/11/15/browser-compatibility-checkup/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -122,8 +122,8 @@
 <url> <loc>https://benmccormick.org/2014/08/07/component-based-development</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/08/28/custom-elements-by-example</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/01/06/digging-into-knockout-builds</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2014/06/02/discovering-vim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/07/14/learning-vim-in-2014-configuring-vim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2014/06/02/discovering-vim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/07/27/learning-vim-in-2014-copy-and-paste-the-vim-way</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/08/04/learning-vim-in-2014-search</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/06/30/learning-vim-in-2014-the-basics</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -159,8 +159,10 @@
 <url> <loc>https://benmccormick.org/2016/12/10/saving-time-with-jest</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/08/15/jest-matchers-1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/09/04/jest-matchers-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/11/28/sieveoferatosthenes/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/03/27/cs-basics-boolean/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2018/03/21/cs-basics-variables/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/11/24/alternative-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/07/21/learning-vim-in-2014-getting-more-from-vim-with-plugins</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2015/07/06/backbone-and-es6-classes-revisited</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -168,6 +170,4 @@
 <url> <loc>https://benmccormick.org/2015/09/09/what-can-backbone-developers-learn-from-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/07/19/ten-things-javascript/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/06/18/codemod-survival/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2018/03/21/cs-basics-variables/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2017/05/11/building-normal-curves-highcharts/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
