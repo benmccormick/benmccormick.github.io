@@ -12,7 +12,7 @@ import tools from '../svg/tools.svgi';
 import question from '../svg/question.svgi';
 import desktop from '../svg/desktop.svgi';
 import categoryList from '../pages/categories.json';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import get from 'lodash/get';
 import find from 'lodash/find';
 import { css } from 'glamor';
