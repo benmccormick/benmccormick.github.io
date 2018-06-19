@@ -71,7 +71,7 @@ export const getSortedPosts = (pages, count = Infinity) => {
     return { data, path };
   };
   return take(
-    sortBy(pages, page => get(page, 'node.frontmatter.date'))
+    sortBy(pages, page => new Date(get(page, 'node.frontmatter.date')))
       .reverse()
       .filter(
         page =>
