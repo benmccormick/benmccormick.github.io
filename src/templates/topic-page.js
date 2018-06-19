@@ -1,12 +1,17 @@
 import React from 'react';
 import TopicArchive from '../components/TopicArchive';
+import Layout from '../components/Layout';
 import { getSortedPosts } from '../utils/page-helpers';
 
-const TopicPage = ({ data, pathContext }) => {
-  const { posts, topic } = pathContext;
+const TopicPage = ({ data, pageContext, history }) => {
+  const { posts, topic } = pageContext;
   const sortedPosts = getSortedPosts(posts);
 
-  return <TopicArchive pages={sortedPosts} topic={topic} />;
+  return (
+    <Layout history={history}>
+      <TopicArchive pages={sortedPosts} topic={topic} />
+    </Layout>
+  );
 };
 
 export default TopicPage;

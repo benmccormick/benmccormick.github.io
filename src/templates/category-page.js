@@ -2,12 +2,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CategoryArchive from '../components/CategoryArchive';
 import { getSortedPosts } from '../utils/page-helpers';
+import Layout from '../components/Layout';
 
-const CategoryPage = ({ data, pathContext }) => {
+const CategoryPage = ({ data, pageContext, history }) => {
   const posts = data.allMarkdownRemark.edges;
   const sortedPosts = getSortedPosts(posts);
   return (
-    <CategoryArchive pages={sortedPosts} categoryKey={pathContext.category} />
+    <Layout history={history}>
+      <CategoryArchive pages={sortedPosts} categoryKey={pageContext.category} />
+    </Layout>
   );
 };
 

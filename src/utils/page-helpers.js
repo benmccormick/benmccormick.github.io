@@ -19,7 +19,10 @@ const getPageViews = page =>
 // this gets a list of slugs for most popular all time posts
 export const getSlugsForMostPopularPosts = (pages, count) =>
   take(
-    sortBy(pages, getPageViews).reverse().filter(isEligiblePage).map(getSlug),
+    sortBy(pages, getPageViews)
+      .reverse()
+      .filter(isEligiblePage)
+      .map(getSlug),
     count
   );
 

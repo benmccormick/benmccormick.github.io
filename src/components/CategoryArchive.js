@@ -32,11 +32,7 @@ class CategoryArchive extends React.Component {
         <LinkList
           pages={sortedPages}
           title={titleText}
-          description={
-            <p>
-              {description}
-            </p>
-          }
+          description={<p>{description}</p>}
           showCategory={false}
         />
       </div>

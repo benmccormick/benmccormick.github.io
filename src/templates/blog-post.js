@@ -10,6 +10,7 @@ import format from 'date-fns/format';
 import { Ad } from '../components/Ad';
 import { EmailSubscribe } from '../components/EmailSubscribe';
 import { BlogPostHeadContent } from '../components/BlogPostHeadContent';
+import Layout from '../components/Layout';
 import typography from '../utils/typography';
 import PostFooter from '../components/PostFooter';
 import glamorous from 'glamorous';
@@ -54,7 +55,7 @@ const Sidebar = glamorous.div({
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const { data, pathContext, history } = this.props;
+    const { data, pageContext, history } = this.props;
     const post = data.markdownRemark.frontmatter;
     const body = data.markdownRemark.html;
     const slug = data.markdownRemark.fields.slug;
@@ -65,29 +66,34 @@ class BlogPostTemplate extends React.Component {
     let showForPostsAndWeeklyLinksOnly = content =>
       isPostOrWeeklyLinks ? content : null;
     return (
-      <div className="markdown" ref={el => (this.markdownContainer = el)}>
-        <BlogPostHeadContent post={post} slug={slug} body={body} />
-        <div className="post-title-area">
-          <Title>{post.title}</Title>
+      <Layout history={history}>
+        <div className="markdown" ref={el => (this.markdownContainer = el)}>
+          <BlogPostHeadContent post={post} slug={slug} body={body} />
+          <div className="post-title-area">
+            <Title>{post.title}</Title>
+            {showForPostsOnly(
+              <PostedDateContainer>
+                Originally Posted {format(new Date(post.date), 'MMMM Do YYYY')}
+              </PostedDateContainer>
+            )}
+          </div>
+          <div className="columns">
+            <ArticleBody dangerouslySetInnerHTML={{ __html: body }} />
+            {showForPostsAndWeeklyLinksOnly(
+              <Sidebar className="no-mobile">
+                <Ad history={history} />
+                <EmailSubscribe />
+              </Sidebar>
+            )}
+          </div>
           {showForPostsOnly(
-            <PostedDateContainer>
-              Originally Posted {format(new Date(post.date), 'MMMM Do YYYY')}
-            </PostedDateContainer>
+            <PostFooter
+              post={post}
+              recommendedPosts={pageContext.relatedPosts}
+            />
           )}
         </div>
-        <div className="columns">
-          <ArticleBody dangerouslySetInnerHTML={{ __html: body }} />
-          {showForPostsAndWeeklyLinksOnly(
-            <Sidebar className="no-mobile">
-              <Ad history={history} />
-              <EmailSubscribe />
-            </Sidebar>
-          )}
-        </div>
-        {showForPostsOnly(
-          <PostFooter post={post} recommendedPosts={pathContext.relatedPosts} />
-        )}
-      </div>
+      </Layout>
     );
   }
 }

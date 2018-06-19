@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import typography from '../utils/typography';
 import CategoryIcon from './CategoryIcon';
 import format from 'date-fns/format';

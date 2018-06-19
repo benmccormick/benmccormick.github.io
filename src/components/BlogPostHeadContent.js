@@ -37,9 +37,11 @@ export class BlogPostHeadContent extends React.Component {
                   "url": "${url}",
                   "image": "${'http://benmccormick.org/logo.png'}",
                   "datePublished": "${format(parse(post.date), 'YYYY-MM-D')}",
-                  ${post.description
-                    ? `"description": "${post.description}",`
-                    : ''}
+                  ${
+                    post.description
+                      ? `"description": "${post.description}",`
+                      : ''
+                  }
                   "articleBody": "${body.replace(/\"/g, '\\"')}",
                     "author": {
                       "@type": "Person",

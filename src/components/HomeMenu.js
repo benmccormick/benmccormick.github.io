@@ -1,5 +1,5 @@
 import { css } from 'glamor';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import React from 'react';
 import format from 'date-fns/format';
 import get from 'lodash/get';

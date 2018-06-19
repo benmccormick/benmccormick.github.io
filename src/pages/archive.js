@@ -3,6 +3,7 @@ import React from 'react';
 import { HeadContent } from '../components/HeadContent';
 import { getSortedPosts } from '../utils/page-helpers';
 import LinkList from '../components/LinkList';
+import Layout from '../components/Layout';
 import { TrendingIcon, FavoriteIcon } from '../components/PageLink';
 import glamorous from 'glamorous';
 
@@ -21,25 +22,28 @@ const Legend = glamorous.div({
 
 class CategoryArchive extends React.Component {
   render() {
+    let { history } = this.props;
     // Sort pages.
     const posts = this.props.data.allMarkdownRemark.edges;
     const sortedPosts = getSortedPosts(posts);
     return (
-      <div ref={el => (this.archiveContainer = el)}>
-        <HeadContent keywords="blog,articles,posts,javascript,software tools,web development" />
-        <LinkList
-          pages={sortedPosts}
-          title="Articles"
-          description={
-            <Legend>
-              <TrendingIcon /> Trending <FavoriteIcon /> Popular
-            </Legend>
-          }
-          showCategory={true}
-          showPopular={true}
-          showTrending={true}
-        />
-      </div>
+      <Layout history={history}>
+        <div ref={el => (this.archiveContainer = el)}>
+          <HeadContent keywords="blog,articles,posts,javascript,software tools,web development" />
+          <LinkList
+            pages={sortedPosts}
+            title="Articles"
+            description={
+              <Legend>
+                <TrendingIcon /> Trending <FavoriteIcon /> Popular
+              </Legend>
+            }
+            showCategory={true}
+            showPopular={true}
+            showTrending={true}
+          />
+        </div>
+      </Layout>
     );
   }
 }

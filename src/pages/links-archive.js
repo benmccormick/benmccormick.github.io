@@ -1,26 +1,30 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { HeadContent } from '../components/HeadContent';
+import Layout from '../components/Layout';
 import { getWeeklyLinks } from '../utils/page-helpers';
 import LinkList from '../components/LinkList';
 
 class LinksArchive extends React.Component {
   render() {
     // Sort pages.
+    let { history } = this.props;
     const posts = this.props.data.allMarkdownRemark.edges;
     const weeklyLinks = getWeeklyLinks(posts);
     return (
-      <div ref={el => (this.archiveContainer = el)}>
-        <HeadContent keywords="blog,articles,posts,javascript,software tools,web development" />
-        <LinkList
-          pages={weeklyLinks}
-          title="Past Weekly Links"
-          showCategory={false}
-          showPopular={false}
-          showTrending={false}
-          showDescriptions={true}
-        />
-      </div>
+      <Layout history={history}>
+        <div ref={el => (this.archiveContainer = el)}>
+          <HeadContent keywords="blog,articles,posts,javascript,software tools,web development" />
+          <LinkList
+            pages={weeklyLinks}
+            title="Past Weekly Links"
+            showCategory={false}
+            showPopular={false}
+            showTrending={false}
+            showDescriptions={true}
+          />
+        </div>
+      </Layout>
     );
   }
 }

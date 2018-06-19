@@ -9,7 +9,7 @@ const {
 } = require('./server-src/page-processing');
 const { copyCNAME, copyManifest } = require('./server-src/files');
 
-exports.onPostBuild = ({ graphql, boundActionCreators }) => {
+exports.onPostBuild = ({ graphql, actions }) => {
   return getPages(graphql)
     .then(pages => {
       if (!pages) {
@@ -22,23 +22,26 @@ exports.onPostBuild = ({ graphql, boundActionCreators }) => {
     .then(copyManifest, () => 'Failed before we could copy over the manifest');
 };
 
-exports.modifyWebpackConfig = function(config, stage) {
-  config.config.removeLoader('svg');
-  config.config.loader('svg', function(cfg) {
-    cfg.test = /\.svgi$/;
-    cfg.loader = 'svg-inline';
-    return cfg;
+exports.onCreateWebpackConfig = function({ actions }) {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.svgi$/,
+          use: 'svg-inline-loader',
+        },
+      ],
+    },
   });
-  return config;
 };
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
   addSlugToPage(node, getNode, createNodeField);
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   let blogPostPromise = createBlogPosts(graphql, createPage);
   let categoryArchivePromise = createCategoryArchives(graphql, createPage);

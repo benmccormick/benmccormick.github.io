@@ -15,11 +15,11 @@ window.___loader = { enqueue: () => null };
 
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
-storiesOf('Header Bar', module).add('normal state', () =>
+storiesOf('Header Bar', module).add('normal state', () => (
   <Router>
     <div>
       <HeaderBar blogTitle={'benmccormick.org'} />
       <div style={{ width: '100%', height: '2000px', background: 'red' }} />
     </div>
   </Router>
-);
+));
