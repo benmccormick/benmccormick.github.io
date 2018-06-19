@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-06-19T19:26:45Z</updated>
+    <updated>2018-06-19T21:30:43Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,75 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Code Golf: Sparse Arrays]]></title>
+        <id>https://benmccormick.org/2018/06/19/code-golf-sparse-arrays/</id>
+        <link href="https://benmccormick.org/2018/06/19/code-golf-sparse-arrays/">
+        </link>
+        <updated>2018-06-19T06:00:00Z</updated>
+        <content type="html"><![CDATA[<p>Today on Twitter, <a href="http://2ality.com/index.html">Axel Rauschmayer</a> posted a fun little coding challenge:</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Code golf: check if an Array has holes. I’ll reply with two ideas of mine in a few minutes.</p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/status/1009053456123027463?ref_src=twsrc%5Etfw">June 19, 2018</a></blockquote>
+<p>For context, <em>code golf</em> is a type of challenge where participants attempt to find the shortest possible way to express a program.  Arrays that have holes, or sparse arrays, refer to arrays that don’t have values at every index between their maximum and minimum values.  You can define a sparse array like this:</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token comment">// arr.length is 100</span></code></pre>
+      </div>
+<p>or like this</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// arr.length is 3</span></code></pre>
+      </div>
+<p>This is different from <code class="language-text">let arr = [1, undefined, 2]</code>, because the index keys are not defined.  If this is difficult to understand, you can picture arrays as simple objects, with access to the <code class="language-text">Array.Prototype</code> methods and a special <code class="language-text">length</code> property that is aware of numeric keys.  The important thing is not whether a value is defined for a specific index, but whether a key was ever explicitly set.  Axel’s suggested solutions take advantage of that distinction:</p>
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">// Does someArray have holes?<br><br>someArray.findIndex((x,i,arr) =&gt; x === undefined &amp;&amp; !(i in arr)) &gt;= 0<br>Object.keys(someArray).length &lt; someArray.length<br>someArray.filter(_ =&gt; true).length &lt; someArray.length</p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/status/1009056501095428096?ref_src=twsrc%5Etfw">June 19, 2018</a></blockquote>
+<p>I’m going to standardize these into a function syntax for the purpose of comparison.  I’m only going to consider one liners, so we’ll define a simple arrow function <code class="language-text">isSparse</code>, and compare the length of the function bodies.</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Solution 1</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> someArray <span class="token operator">=></span> someArray<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>i<span class="token punctuation">,</span>arr<span class="token punctuation">)</span> <span class="token operator">=></span> x <span class="token operator">===</span> undefined <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token punctuation">(</span>i <span class="token keyword">in</span> arr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">0</span>
+<span class="token comment">// Solution 1 condensed (49 characters)</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> a<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>i<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">=></span>x<span class="token operator">===</span>undefined<span class="token operator">&amp;&amp;</span><span class="token operator">!</span><span class="token punctuation">(</span>i <span class="token keyword">in</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">>=</span><span class="token number">0</span>
+<span class="token comment">// Solution 2</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> someArray <span class="token operator">=></span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>someArray<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">&lt;</span> someArray<span class="token punctuation">.</span>length
+<span class="token comment">// Solution 2 condensed (30 characters)</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length
+<span class="token comment">// Solution 3</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> someArray <span class="token operator">=></span> someArray<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>_ <span class="token operator">=></span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">&lt;</span> someArray<span class="token punctuation">.</span>length
+<span class="token comment">// Solution 3 condensed (33 characters)</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> a<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>_<span class="token operator">=></span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length</code></pre>
+      </div>
+<p>Axel’s solutions all rely on the fact that sparse items don’t have keys, and that Object.keys and Array.prototype methods therefore don’t iterate over them.  That’s a good insight and a good foundation for getting even more concise.  We can use a few tricks to do that.</p>
+<p>Let’s start with his second solution, which was the shortest and clearest in practice and modify it a bit</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// We're comparing the length of the list of keys to the array length</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length
+<span class="token comment">//But we can use reduce to do this instead (28 characters)</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> a<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>x<span class="token operator">=></span>x<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>a<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span></code></pre>
+      </div>
+<p>So our first step is to use <code class="language-text">reduce</code> to save 2 characters.  If you haven’t seen <code class="language-text">reduce</code> before, I recommend checking out <a href="https://css-tricks.com/understanding-the-almighty-reducer/">this great explainer</a> by Sarah Drasner that I linked to in my <a href="https://benmccormick.org/2018/06/15/weekly-links-06-15-18/">Weekly Links post</a> last week.  Essentially though, reduce is a generic method for iterating through an array to produce a new value.  It takes a function and an initial value, and uses the items of the array to iteratively transform the initial value.  In this case, I’m just decrementing the value for each defined item in the array, starting at length and seeing if it equals 0.  Which ends up being shorter than taking the length of the keys array.  But we can still do better!</p>
+<p>Our next step will take advantage of a property of numbers in JavaScript.  When converting numbers to booleans, <code class="language-text">0</code> is considered <em>falsy</em>, while every other number is considered <em>truthy</em>.  Since we want our function to produce a boolean, we can take advantage of this property, and write our function like this.</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Boolean version (27 characters)</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> <span class="token operator">!</span><span class="token operator">!</span>a<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>x<span class="token operator">=></span>x<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>a<span class="token punctuation">.</span>length<span class="token punctuation">)</span></code></pre>
+      </div>
+<p>That seems like a bit of a local maximum.  But getting to this point made me realize that we weren’t actually saving anything by using the boolean version over a comparison, since we can increment instead and end up at the same length.</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Counting up to length (27 characters)</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> a<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>x<span class="token operator">=></span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length</code></pre>
+      </div>
+<p><del>Doing it this way though, we can actually save 2 more characters, because if reduce doesn’t have an initial value, it just uses the unmodified first element in an array as its initial value, and goes from there:</del></p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Final (broken) Version (25 characters)</span>
+<span class="token comment">// UPDATE: This doesn't work</span>
+<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> a<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>x<span class="token operator">=></span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length</code></pre>
+      </div>
+<p><strong>Update: This last solution only works in situations where the array starts with <code class="language-text">1</code>.  So 27 is the best generic solution I can find at this point.  Thanks to <a href="https://twitter.com/rauschma/status/1009149034622275585">Axel</a> for correcting me. Code golf is hard 😔.</strong></p>
+<p>So there you have it.  27 characters to identify sparse arrays.  I’d love to hear from you if you can do better.  Hit me up on <a href="https://twitter.com/ben336">Twitter</a> or by <a href="ben@benmccormick.org">email</a>.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[A Codemod Survival Guide]]></title>
         <id>https://benmccormick.org/2018/06/18/codemod-survival/</id>
@@ -845,42 +914,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ol>
 <li id="fn-1">
 <p>If anyone knows where the original version of this joke is from let me know and I’ll credit it.</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: April 27th]]></title>
-        <id>https://benmccormick.org/2018/04/27/weekly-links-04-22-18/</id>
-        <link href="https://benmccormick.org/2018/04/27/weekly-links-04-22-18/">
-        </link>
-        <updated>2018-04-27T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>JavaScript &#x26; The Web</h3>
-<p><a href="https://engineering.linkedin.com/blog/2018/04/css-at-scale--linkedins-new-open-source-projects-take-on-stylesh">CSS at Scale: LinkedIn’s New Open Source Projects Take on Stylesheet Performance | LinkedIn Engineering</a></p>
-<p>This is a cool new set of CSS tools from LinkedIn.  This looks most similar to CSS Modules/PostCSS to my eyes, with a focus on optimizing bundle size for both CSS and templates/components.  I’d be very interested in playing with it.</p>
-<h3>Programming Tools</h3>
-<p><a href="https://www.joelonsoftware.com/2018/04/23/strange-and-maddening-rules/">Strange and maddening rules | Joel Spoelsky</a></p>
-<p>I’m continuing to enjoy Joel’s series on StackOverflow.  I’ve always been more sympathetic to their moderation strategy than some, so I’ll leave it as an exercise to the reader whether the explanations presented here hold water, but definitely worth reading if you’ve ever tried contributing to StackOverflow and been frustrated.</p>
-<p><a href="https://medium.com/@felixrieseberg/defeating-electron-e1464d075528">Defeating Electron | Felix Rieseberg</a></p>
-<p><a href="https://electronjs.org/">Electron</a> doesn’t have the best reputation.  Any time an electron based app makes news on Hacker News, three quarters of the comments are bashing Electron and the companies that use it.  It’s been criticized recently and prominently on <a href="https://daringfireball.net/2018/02/non_native_apps_threat_to_mac">Daring Fireball</a> and seems to generally be looked down on by “real” MacOS developers.  So I think this is a helpful response.  An Electron community member knocks down some straw-men (Electron doesn’t only exist because web developers don’t want to learn new things) and then lays out what would be needed to replace it.  </p>
-<p>I think there’s an interesting tension here:  This post describes what would be needed to create a more compelling cross-platform solution from the point of view of companies and developers.  But the criticism has mostly been focused on the requirements of users, not companies.  Specifically that Electron apps tend to be slower/less-memory-efficient/less accessible/less attuned to platform specific conventions.  So companies are making the decisions that let them serve the most number of people, while evolving to meet their needs as quickly as possible, with as small cost as possible.  But they’re possibly limiting the top level quality they can achieve, and there is a possible social good being missed by the people excluded (those with lower performance machines or accessibility needs<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>).</p>
-<h3>Tech and Ethics</h3>
-<p><a href="http://nymag.com/selectall/2018/04/dan-mccomas-reddit-product-svp-and-imzy-founder-interview.html">‘I Fundamentally Believe That My Time at Reddit Made the World a Worse Place’ | Noah Kulwin &#x26; Dan McComas</a></p>
-<p>A great interview on the massive potential for good or evil today’s tech products can have.  This does suggest that the problem is deeper than simply “engineers and designers behaving ethically” though.  You can get at Reddit’s issues by following the money.</p>
-<p><a href="https://twitter.com/leinweber/status/989267343002951680?ref_src=twsrc%5Etfw">A Very Good Program</a></p>
-<p>On a lighter note, here’s the real case for engineers and designers needing to behave ethically.</p>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I made a VGP (very good program) that makes it so it looks like I’m typing on slack whenever anyone else is typing, and stops when they stop.<br><br>Everyone loves it so far and doesn’t find it annoying at all!<a href="https://t.co/W8e2EKuVXX">https://t.co/W8e2EKuVXX</a> <a href="https://t.co/ZZd01GxYqg">pic.twitter.com/ZZd01GxYqg</a></p>&mdash; will leinweber (@leinweber) <a href="https://twitter.com/leinweber/status/989267343002951680?ref_src=twsrc%5Etfw">April 25, 2018</a></blockquote>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>I am not an accessibility expert, but I’m aware that it is a criticism of Electron.  I can’t evaluate the actual difficulty of making a native vs electron application accessible.</p>
 <a href="#fnref-1" class="footnote-backref">↩</a>
 </li>
 </ol>
