@@ -25,7 +25,7 @@ let buildFeed = pages => {
       email: 'ben@benmccormick.org',
     },
   });
-  pages = sortBy(pages, page => get(page, 'date'));
+  pages = sortBy(pages, page => new Date(get(page, 'date')));
   pages = pages.reverse();
   pages = filter(pages, p =>
     includes(['post', 'weekly-links'], get(p, 'layout'))
