@@ -77,11 +77,14 @@ That seems like a bit of a local maximum.  But getting to this point made me rea
 let isSparse = a => a.reduce(x=>x+1,0)<a.length
 ```
 
-Doing it this way though, we can actually save 2 more characters, because if reduce doesn't have an initial value, it just uses the unmodified first element in an array as its initial value, and goes from there:
+~~Doing it this way though, we can actually save 2 more characters, because if reduce doesn't have an initial value, it just uses the unmodified first element in an array as its initial value, and goes from there:~~
 
 ```javascript
-// Final Version (25 characters)
+// Final (broken) Version (25 characters)
+// UPDATE: This doesn't work
 let isSparse = a => a.reduce(x=>x+1)<a.length
 ```
 
-So there you have it.  25 characters to identify sparse arrays.  I'd love to hear from you if you can do better.  Hit me up on [Twitter](https://twitter.com/ben336) or by [email](ben@benmccormick.org).
+**Update: This last solution only works in situations where the array starts with `1`. Clearly I needed more diverse test cases :/ . So 27 is the best generic solution I can find at this point.  Thanks to [Axel](https://twitter.com/rauschma/status/1009149034622275585) for correcting me.**
+
+So there you have it.  27 characters to identify sparse arrays.  I'd love to hear from you if you can do better.  Hit me up on [Twitter](https://twitter.com/ben336) or by [email](ben@benmccormick.org).
