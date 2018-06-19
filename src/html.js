@@ -10,17 +10,6 @@ class HTML extends React.Component {
     const { body } = this.props;
     const head = Helmet.rewind();
 
-    let css;
-    if (process.env.NODE_ENV === 'production') {
-      css = (
-        <style
-          dangerouslySetInnerHTML={{
-            __html: require('!raw!../public/styles.css'),
-          }}
-        />
-      );
-    }
-
     return (
       <html lang="en">
         <head>
@@ -66,7 +55,6 @@ class HTML extends React.Component {
           {head.meta.toComponent()}
           {head.script.toComponent()}
           <TypographyStyle typography={typography} />
-          {css}
           {this.props.headComponents}
         </head>
         <body
