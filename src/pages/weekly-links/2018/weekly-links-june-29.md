@@ -5,7 +5,7 @@ layout: "weekly-links"
 path: "/2018/06/30/weekly-links-06-30-18/"
 description: "Headless UIs, Performance Monitoring, and Carpool Karaoke"
 keywords: "react headless ui sparse arrays airbnb nintendo"
-topics: ['React]
+topics: ['React']
 category: "opinion"
 key: "weekly-links-06-30-18"
 ---
