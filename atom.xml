@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-06-26T03:21:32Z</updated>
+    <updated>2018-06-30T14:10:40Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,33 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Weekly Links: June 30th]]></title>
+        <id>https://benmccormick.org/2018/06/30/weekly-links-06-30-18/</id>
+        <link href="https://benmccormick.org/2018/06/30/weekly-links-06-30-18/">
+        </link>
+        <updated>2018-06-30T00:00:00Z</updated>
+        <content type="html"><![CDATA[<h3>JavaScript &#x26; The Web</h3>
+<p><a href="https://www.merrickchristensen.com/articles/headless-user-interface-components/">Headless User Interface | Merrick Christensen</a></p>
+<p>UI mixins are one of the hardest problems to solve.  Sharing “behavior” across multiple UI components is difficult to do right.  Merrick has documented an emerging pattern for doing this with React.</p>
+<p><a href="https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c">React Native at Airbnb | Airbnb Engineering</a></p>
+<p>This has gotten plenty of attention around the internet, but Airbnb is moving away from React Native after years of heavy use and contributions to the community.  Worth reading as an explanation of the pluses and minuses of React Native, probably not worth reading too much into the move beyond that.</p>
+<p><a href="https://remysharp.com/2018/06/26/an-adventure-in-sparse-arrays">An Adventure in Sparse Arrays | Remy Sharp</a></p>
+<p>For anyone who read my <a href="https://benmccormick.org/2018/06/19/code-golf-sparse-arrays/">“sparse array code golf” post</a> the other day, this is a better holistic look at sparse arrays in JavaScript.  I learned several new things here.</p>
+<h3>Programming Practices</h3>
+<p><a href="https://medium.com/@ricomariani/understanding-performance-regions-e4b6e09a94da">Understanding Performance Regions | Rico Mariani</a></p>
+<p>This is a nice high level post about a different way to think about performance monitoring and improvement.</p>
+<h3>Fun</h3>
+<p><a href="https://www.youtube.com/watch?v=QjvzCTqkBDQ&#x26;feature=youtu.be">Paul McCartney Carpool Karaoke</a></p>
+<p>An incredibly fun video.  Paul McCartney showing James Corden around Liverpool.</p>
+<p><a href="https://www.bloomberg.com/news/features/2018-06-21/how-nintendo-s-switch-helped-the-japanese-gaming-giant-win-again">The Legend of Nintendo | Bloomberg</a></p>
+<p>A great writeup on Nintendo’s last few years and where they stand now.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JavaScript “Stale Practices”]]></title>
         <id>https://benmccormick.org/2018/06/26/javascript-stale-practices/</id>
@@ -907,39 +934,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3>Books</h3>
 <p><a href="https://amzn.to/2sgXJoo">Unbroken | Laura Hillenbrand</a></p>
 <p>I’ve fallen behind on my quest to read 30 books in a year, but this month I was able to read a fantastic book that multiple friends had recommended: Unbroken.  With the <a href="https://www.imdb.com/title/tt7339792/">second movie</a> based on the book coming out this fall, you’ll probably start to hear about this book again.  It’s been around since 2010, but I didn’t read it when it was first popular, and now I wish I had.  It is an amazing story of human perseverence, surviving trauma, and ultimately grace.  It doesn’t oversimplify the human beings whose lives it chronicles, but still manages to shine on a light on the best and worst of the human condition.  Highly recommended.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: May 19th]]></title>
-        <id>https://benmccormick.org/2018/05/19/weekly-links-05-19-18/</id>
-        <link href="https://benmccormick.org/2018/05/19/weekly-links-05-19-18/">
-        </link>
-        <updated>2018-05-19T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>JavaScript and the Web</h3>
-<p><a href="https://changelog.com/reactpodcast">The React Podcast | Michael Jackson</a></p>
-<p>I listen to a decent amount of podcasts, but I’ve usually found it tough to get into programming podcasts.  Without visually being able to see code, they’re usually either ultra high level, or get hard to follow when going into the details.  The changelog family of podcasts has generally been my favorite though, and the new<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup> React podcast has been consistently excellent over it’s first 9 episodes.  Worth a listen.</p>
-<p><a href="https://blog.mgechev.com/2018/05/09/introducing-guess-js-data-driven-user-experiences-web/?utm_source=ponyfoo+weekly&#x26;utm_medium=email&#x26;utm_campaign=115">Guess.js | Minko Gechev</a></p>
-<p>This is a crazy look at what I suspect will be the next step in static site performance stuff.  This blog does some of the cool stuff mentioned here (we prefetch links on the page thanks to Gatsby, and I use google analytics at build time to determine popular pages and populate the Most Read Articles list on the main page) but this is next level, using analytics to efficiently prefetch.  Excited to try it on the site.</p>
-<h3>Non-Tech</h3>
-<p><a href="https://amzn.to/2LdnoXK">The Vision | Tom King</a></p>
-<p>Ok so I’m pretty late on this one<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>, but Tom King’s <em>The Vision</em> is the best comic book I’ve read in years.  He’s got a <a href="https://amzn.to/2IwlMq1">pretty</a> <a href="https://amzn.to/2LcYQ0U">good</a> <a href="https://amzn.to/2Lh3ZFd">run</a> going on Batman now as well, but this is a brilliant self-contained story that holds up as well as anything I’ve seen. Great art as well.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Newly relauched? I’m not totally sure of the history</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-<li id="fn-2">
-<p>The single edition Vision comics were originally released in 2015, though the hardcover that I purchased was just released this year.</p>
-<a href="#fnref-2" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
