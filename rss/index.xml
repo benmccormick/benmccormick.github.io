@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Mon, 02 Jul 2018 02:29:48 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Jul 2018 02:31:39 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -23,24 +23,25 @@
 <p><a href="http://atomicdesign.bradfrost.com/">Atomic Design</a> by Brad Frost is a book that does one thing really well: it explains what a design system is, and how you can implement one in your organization.  It doesn’t try to be a book about CSS, design styles or any of the other myriad topics that touch against design systems.  That focus serves it well, and I found it to be well worth my time.</p>
 <p><a href="http://bradfrost.com/blog/link/design-systems/">Design Systems</a>  are an organized toolkit for creating digital products.  They’re a set of elements, widgets, patterns, and layouts (atoms, molecules, organisms and templates in the language of the book) that can be combined to build complex sites and applications.  The idea is pretty simple.  But there are some real challenges in implementing one.</p>
 <ol>
-<li>What content belongs in a design system?  Where do we draw the boundary as to what belongs and what doesn’t?</li>
-<li>How do you build a tool for your design system so that patterns are easily findable, usable, and understandable?</li>
-<li>How do you keep a design system relevant over time as the product(s) change?</li>
-<li>How do you convince budget-conscious organizations that maintaining a design system is a good use of time and money?</li>
+<li><em>What content belongs in a design system?  Where do we draw the boundary as to what belongs and what doesn’t?</em></li>
+<li><em>How do you build a tool for your design system so that patterns are easily findable, usable, and understandable?</em></li>
+<li><em>How do you keep a design system relevant over time as the product(s) change?</em></li>
+<li><em>How do you convince budget-conscious organizations that maintaining a design system is a good use of time and money?</em></li>
 </ol>
-<p>After a brief introduction to the ideas behind design systems and pattern libraries, these are the challenges that Atomic design tackles.  So this book will be helpful for you if you are</p>
+<p>After a brief introduction to the ideas behind design systems and pattern libraries, these are the challenges that Atomic design tackles.  It discusses a hierarchy for patterns, and methods for pulling them out of existing applications, then moves on to talking about tools for implementing a pattern library, and techniques for navigating organizational politics when starting and maintaining a design system.</p>
+<p>So this book <strong>will be helpful</strong> for you if you are</p>
 <ol>
 <li>Struggling to deal with inconsistencies in your interfaces, or constantly doing custom UI work for each new feature</li>
 <li>Considering implementing a design system/pattern library for your organization</li>
 <li>Hoping to learn more about design systems because somebody else in your organization is pushing for one</li>
 <li>Having trouble maintaining an existing pattern library</li>
 </ol>
-<p>It won’t be helpful for you if you’re looking for</p>
+<p>It <strong>won’t be helpful</strong> for you if you are</p>
 <ol>
-<li>Tips on how to make your interface beautiful</li>
-<li>Hands on information about specific design, CSS or JavaScript techniques</li>
+<li>Looking for tips on how to make your interface beautiful</li>
+<li>Seeking hands on information about specific design, CSS or JavaScript techniques</li>
 </ol>
-<p>I enjoyed Atomic Design a lot, and hope that I’ll get to use what I’ve learned in the near future.  As far as I can tell, Atomic design is only available on <a href="http://atomicdesign.bradfrost.com/">Brad Frost’s site</a>.  You can read the book online there, or buy the paperback version.</p>]]></content:encoded>
+<p>I enjoyed Atomic Design a lot, and hope that I’ll get to use what I’ve learned in the near future.  As far as I can tell, Atomic design is only available on <a href="http://atomicdesign.bradfrost.com/">Brad Frost’s site</a>.  You can read the book online there, or buy the paperback version.  If you fall into one of the 4 categories I listed above, I’d highly recommend checking it out.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
         <item>
