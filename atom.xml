@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-06-30T14:10:40Z</updated>
+    <updated>2018-07-02T02:29:48Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,40 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Book Review: Atomic Design]]></title>
+        <id>https://benmccormick.org/2018/07/02/book-review-atomic-design/</id>
+        <link href="https://benmccormick.org/2018/07/02/book-review-atomic-design/">
+        </link>
+        <updated>2018-07-02T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>The Unix philosophy for designing software, “Make each program do one thing well”, is a piece of wisdom that goes beyond just programming.  For instance, it also applies to non-fiction writing.  When learning, I find that I gravitate towards small focused resources, rather than monolithic books or websites that aim to teach everything about a specific topic.</p>
+<p><a href="http://atomicdesign.bradfrost.com/">Atomic Design</a> by Brad Frost is a book that does one thing really well: it explains what a design system is, and how you can implement one in your organization.  It doesn’t try to be a book about CSS, design styles or any of the other myriad topics that touch against design systems.  That focus serves it well, and I found it to be well worth my time.</p>
+<p><a href="http://bradfrost.com/blog/link/design-systems/">Design Systems</a>  are an organized toolkit for creating digital products.  They’re a set of elements, widgets, patterns, and layouts (atoms, molecules, organisms and templates in the language of the book) that can be combined to build complex sites and applications.  The idea is pretty simple.  But there are some real challenges in implementing one.</p>
+<ol>
+<li>What content belongs in a design system?  Where do we draw the boundary as to what belongs and what doesn’t?</li>
+<li>How do you build a tool for your design system so that patterns are easily findable, usable, and understandable?</li>
+<li>How do you keep a design system relevant over time as the product(s) change?</li>
+<li>How do you convince budget-conscious organizations that maintaining a design system is a good use of time and money?</li>
+</ol>
+<p>After a brief introduction to the ideas behind design systems and pattern libraries, these are the challenges that Atomic design tackles.  So this book will be helpful for you if you are</p>
+<ol>
+<li>Struggling to deal with inconsistencies in your interfaces, or constantly doing custom UI work for each new feature</li>
+<li>Considering implementing a design system/pattern library for your organization</li>
+<li>Hoping to learn more about design systems because somebody else in your organization is pushing for one</li>
+<li>Having trouble maintaining an existing pattern library</li>
+</ol>
+<p>It won’t be helpful for you if you’re looking for</p>
+<ol>
+<li>Tips on how to make your interface beautiful</li>
+<li>Hands on information about specific design, CSS or JavaScript techniques</li>
+</ol>
+<p>I enjoyed Atomic Design a lot, and hope that I’ll get to use what I’ve learned in the near future.  As far as I can tell, Atomic design is only available on <a href="http://atomicdesign.bradfrost.com/">Brad Frost’s site</a>.  You can read the book online there, or buy the paperback version.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weekly Links: June 30th]]></title>
         <id>https://benmccormick.org/2018/06/30/weekly-links-06-30-18/</id>
@@ -913,27 +947,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ol>
 </div>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: May 27th]]></title>
-        <id>https://benmccormick.org/2018/05/27/weekly-links-05-27-18/</id>
-        <link href="https://benmccormick.org/2018/05/27/weekly-links-05-27-18/">
-        </link>
-        <updated>2018-05-27T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>Business &#x26; Technology</h3>
-<p><a href="https://www.gatsbyjs.org/blog/2018-05-24-launching-new-gatsby-company/">Gatsby contributors form Gatsby Inc. | Gatsby Blog</a></p>
-<p>This blog is built on <a href="https://www.gatsbyjs.org/">Gatsby</a>, and I’ve <a href="https://benmccormick.org/topics/gatsby">written</a> and <a href="https://www.slideshare.net/BenMcCormick/gatsby-intro">spoken</a> on it a few times in the past.  So I’m really excited to see what happens with the tech as it becomes a company, while continuing to be open source.  It will be really exciting to see where they take it from here, and I think they have a real chance to be successful, especially if they can get a foothold into the ecommerce world.</p>
-<h3>Problem Solving</h3>
-<p><a href="http://reinertsenassociates.com/the-cult-of-the-root-cause/">The Cult of the Root Cause | Donald Reinertsen</a></p>
-<p>A really nice short post on problem solving, and how the quest to find the root cause for an issue can sometimes be a distraction.</p>
-<h3>Books</h3>
-<p><a href="https://amzn.to/2sgXJoo">Unbroken | Laura Hillenbrand</a></p>
-<p>I’ve fallen behind on my quest to read 30 books in a year, but this month I was able to read a fantastic book that multiple friends had recommended: Unbroken.  With the <a href="https://www.imdb.com/title/tt7339792/">second movie</a> based on the book coming out this fall, you’ll probably start to hear about this book again.  It’s been around since 2010, but I didn’t read it when it was first popular, and now I wish I had.  It is an amazing story of human perseverence, surviving trauma, and ultimately grace.  It doesn’t oversimplify the human beings whose lives it chronicles, but still manages to shine on a light on the best and worst of the human condition.  Highly recommended.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
