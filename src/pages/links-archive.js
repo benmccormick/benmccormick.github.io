@@ -8,11 +8,12 @@ import LinkList from '../components/LinkList';
 class LinksArchive extends React.Component {
   render() {
     // Sort pages.
-    let { history } = this.props;
+    let { history, data } = this.props;
     const posts = this.props.data.allMarkdownRemark.edges;
     const weeklyLinks = getWeeklyLinks(posts);
+    const topics = data.site.siteMetadata.featuredTopics;
     return (
-      <Layout history={history}>
+      <Layout history={history} topics={topics}>
         <div ref={el => (this.archiveContainer = el)}>
           <HeadContent keywords="blog,articles,posts,javascript,software tools,web development" />
           <LinkList
@@ -37,6 +38,11 @@ export default LinksArchive;
 
 export const pageQuery = graphql`
   query LinksArchiveQuery {
+    site {
+      siteMetadata {
+        featuredTopics
+      }
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

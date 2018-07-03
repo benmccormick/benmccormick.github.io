@@ -14,15 +14,15 @@ import { HomeMenu } from '../components/HomeMenu';
 
 class BlogIndex extends React.Component {
   render() {
-    let { history } = this.props;
-    const pages = this.props.data.allMarkdownRemark.edges;
-    const featuredTopics = this.props.data.site.siteMetadata.featuredTopics;
+    let { history, data } = this.props;
+    const pages = data.allMarkdownRemark.edges;
+    const featuredTopics = data.site.siteMetadata.featuredTopics;
     const sortedPosts = getSortedPosts(pages, 5);
     const popularPosts = getPopularPosts(pages, 5);
     const weeklyLinks = getWeeklyLinks(pages, 5);
     const topicLinks = getTopicLinks(featuredTopics, 5);
     return (
-      <Layout history={history}>
+      <Layout history={history} topics={featuredTopics}>
         <div ref={el => (this.indexContainer = el)}>
           <HeadContent />
           <WelcomeBox />

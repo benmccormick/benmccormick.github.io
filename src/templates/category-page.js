@@ -7,8 +7,9 @@ import Layout from '../components/Layout';
 const CategoryPage = ({ data, pageContext, history }) => {
   const posts = data.allMarkdownRemark.edges;
   const sortedPosts = getSortedPosts(posts);
+  const topics = data.site.siteMetadata.featuredTopics;
   return (
-    <Layout history={history}>
+    <Layout history={history} topics={topics}>
       <CategoryArchive pages={sortedPosts} categoryKey={pageContext.category} />
     </Layout>
   );
@@ -22,6 +23,11 @@ export default CategoryPage;
 
 export const pageQuery = graphql`
   query PostsByCategory {
+    site {
+      siteMetadata {
+        featuredTopics
+      }
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

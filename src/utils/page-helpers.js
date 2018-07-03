@@ -93,6 +93,6 @@ export const getWeeklyLinks = (pages, count = Infinity) =>
 
 export const getTopicLinks = (topics, count = Infinity) =>
   take(
-    topics.map(topic => ({ data: { title: topic }, path: `topics/${topic}` })),
+    topics.map(topic => ({ data: { title: topic }, path: `/topics/${topic}` })),
     count
   );

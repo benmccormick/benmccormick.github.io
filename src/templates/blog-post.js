@@ -65,8 +65,9 @@ class BlogPostTemplate extends React.Component {
     let showForPostsOnly = content => (isPost ? content : null);
     let showForPostsAndWeeklyLinksOnly = content =>
       isPostOrWeeklyLinks ? content : null;
+    const topics = data.site.siteMetadata.featuredTopics;
     return (
-      <Layout history={history}>
+      <Layout history={history} topics={topics}>
         <div className="markdown" ref={el => (this.markdownContainer = el)}>
           <BlogPostHeadContent post={post} slug={slug} body={body} />
           <div className="post-title-area">
@@ -102,6 +103,11 @@ export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        featuredTopics
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

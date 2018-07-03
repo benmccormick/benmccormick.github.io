@@ -22,12 +22,13 @@ const Legend = glamorous.div({
 
 class CategoryArchive extends React.Component {
   render() {
-    let { history } = this.props;
+    let { history, data } = this.props;
     // Sort pages.
-    const posts = this.props.data.allMarkdownRemark.edges;
+    const posts = data.allMarkdownRemark.edges;
+    const topics = data.site.siteMetadata.featuredTopics;
     const sortedPosts = getSortedPosts(posts);
     return (
-      <Layout history={history}>
+      <Layout history={history} topics={topics}>
         <div ref={el => (this.archiveContainer = el)}>
           <HeadContent keywords="blog,articles,posts,javascript,software tools,web development" />
           <LinkList
@@ -56,6 +57,11 @@ export default CategoryArchive;
 
 export const pageQuery = graphql`
   query ArchiveQuery {
+    site {
+      siteMetadata {
+        featuredTopics
+      }
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
