@@ -83,7 +83,8 @@ module.exports = {
       'Text Editors',
       'React',
       'Backbone',
-      'Testing',
+      // 'Testing',
+      'Teams',
     ],
   },
 

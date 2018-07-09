@@ -7,7 +7,7 @@ description: "How does the Internet work anyway?"
 keywords: "hiring interview internet"
 category: "software-productivity"
 key: "favorite-interview"
-topics: ['Interviewing', 'Software Teams']
+topics: ['Interviewing', 'Teams']
 readNext: "ten-things-js,jest-git,orthogonality-css-js"
 ---
 
@@ -19,28 +19,28 @@ Usually I get one of a few responses:
 
 #### 1. The clueless shrug
 
-> Uh….  ¯\\\_(ツ)\_/¯  
+> Uh….  ¯\\\_(ツ)\_/¯
 
 Some people have no idea what to do with the question.  Things get awkward. This is mostly for junior positions but still isn't the best sign.  Sometimes a few prods will get things back on track.
 
 #### 2. The bare minimum
 
-> It is asking a server for the site and the server sends you the site.    
+> It is asking a server for the site and the server sends you the site.
 
 Some people can give a very basic response, but don't give a lot of details.  This again mostly corresponds to less experienced devs and can be fine as a starting spot with some follow-up questions.
 
 #### 3. The CliffNotes
 
-> Your browser sends an HTTP request which gets routed through a local modem/router and gets sent to a name server for its url extension.  That name server routes the request to the correct IP address, which will resolve to some sort of web server.  That server will serve up either some static files, or run some backend code in order to generate a resource (probably an html page).  When the HTML page is returned, your browser will parse it, which will likely generate more requests, and the cycle will repeat.  
+> Your browser sends an HTTP request which gets routed through a local modem/router and gets sent to a name server for its url extension.  That name server routes the request to the correct IP address, which will resolve to some sort of web server.  That server will serve up either some static files, or run some backend code in order to generate a resource (probably an html page).  When the HTML page is returned, your browser will parse it, which will likely generate more requests, and the cycle will repeat.
 
 Some people know how some of this works, maybe with a few hazy areas and can explain it in a reasonably straightforward way.  An explanation like this is a great start.
 
 #### 4. The Geek-out
 
 
-> <Some variation on the previous answer... followed by:> Let me tell you all about my in depth knowledge of <HTTP_network routing_JavaScript parsing/TCP/other related topic>  
+> <Some variation on the previous answer... followed by:> Let me tell you all about my in depth knowledge of <HTTP_network routing_JavaScript parsing/TCP/other related topic>
 
-Some people dive in and explode with information.  
+Some people dive in and explode with information.
 
 ### So why is this a good interview question again?
 
@@ -48,13 +48,13 @@ So which answer is best?  The geek-out right?  Well... its great when somebody g
 
 It's pretty easy to make the case that this is a pretty bad interview question.  It's not clear what the expected answer is.  When I ask it in junior dev interviews, they often don't have much of a clue how to answer it.  And it's not strictly answerable in full detail by pretty much anyone.  But I'd argue that those things actually end up being strengths.  I like this question for 5 reasons.
 
-1. **It tests the candidate's ability to deal with ambiguity.**  The question is intentionally vague and open ended.  Am I just looking for a perfunctory response like "it gets a resource from a server"?  Do I want a deep dive into how DNS works?  It's ambiguous.  Candidates can respond to that ambiguity in one of a few ways.  
+1. **It tests the candidate's ability to deal with ambiguity.**  The question is intentionally vague and open ended.  Am I just looking for a perfunctory response like "it gets a resource from a server"?  Do I want a deep dive into how DNS works?  It's ambiguous.  Candidates can respond to that ambiguity in one of a few ways.
 
-    They can freeze because they're afraid of saying the wrong thing.  
+    They can freeze because they're afraid of saying the wrong thing.
 
-    They can ask a clarifying question.  
+    They can ask a clarifying question.
 
-    They can make a guess at what I want and start going down that road, while reading my reaction to see if they're still on track.  
+    They can make a guess at what I want and start going down that road, while reading my reaction to see if they're still on track.
 
     Or they can decide they know what I want (or what they want to tell me) and shoot off like a rocket (potentially for a very long time).
 
@@ -75,4 +75,4 @@ To be clear, I don't think every interview question should be like this one.  Mo
 Feel free to hit me up on Twitter at [@ben336](https://twitter.com/ben336) to tell me your favorite interview question.  I'll retweet them.
 
 
-[^1]: There is of course a limit to how much any interview is going to teach you about how somebody will behave in a future job situation.  We're all chasing breadcrumbs here.  
+[^1]: There is of course a limit to how much any interview is going to teach you about how somebody will behave in a future job situation.  We're all chasing breadcrumbs here.

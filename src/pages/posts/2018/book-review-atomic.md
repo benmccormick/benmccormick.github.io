@@ -6,7 +6,7 @@ path: "/2018/07/02/book-review-atomic-design/"
 description: "A great read on implementing design systems"
 keywords: "atomic design systems pattern libraries brad frost"
 category: "reviews"
-topics: ['Book Review']
+topics: ['Book Review', 'Design']
 key: "atomic-design-book"
 readNext: "clean-architecture-book,es6-the-bad-parts,react-confessions"
 ---

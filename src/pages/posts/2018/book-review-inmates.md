@@ -6,7 +6,7 @@ path: "/2018/04/11/book-review-inmates-are-running-the-asylum/"
 description: "Don't judge a book by its first few chapters"
 keywords: "design cooper inmates asylumn"
 category: "reviews"
-topics: ['Book Review']
+topics: ['Book Review', 'Design']
 key: "inmates-book"
 readNext: "clean-architecture-book,large-improvements-small-team,react-confessions"
 ---

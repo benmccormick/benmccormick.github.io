@@ -6,7 +6,7 @@ path: "/2018/07/09/book-review-five-dysfunctions/"
 description: "A book on how teams fall apart, and how to keep them together"
 keywords: ""
 category: "reviews"
-topics: ['Book Review']
+topics: ['Book Review', 'Leadership', 'Teams']
 key: "book-review-five-dysfunctions"
 readNext: "atomic-design-book,clean-architecture-book,evil-js"
 ---
