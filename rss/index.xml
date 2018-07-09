@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sun, 08 Jul 2018 13:19:30 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 09 Jul 2018 03:02:11 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,16 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Book Review: The Five Dysfunctions of a Team]]></title>
+            <link>https://benmccormick.org/2018/07/09/book-review-five-dysfunctions/</link>
+            <guid>https://benmccormick.org/2018/07/09/book-review-five-dysfunctions/</guid>
+            <pubDate>Mon, 09 Jul 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>The nice thing about team books is that they’re talking about a subject that almost everybody can relate to.  <a href="https://amzn.to/2u2aPrm">The Five Dysfunctions of a Team</a> is a book for leaders, but it’s also a book for anyone who wants to better understand why they problems they see in their teams occur, and what needs to change to make them better.</p>
+<p>The Five Dysfunctions is a leadership fable, a story told to illustrate the principals of a business model.  I’ve found that I enjoy this teaching style, I also loved <a href="https://amzn.to/2KHf3Ps">Death By Meeting</a> and <a href="https://amzn.to/2KXOkxh">The Goal</a>, which employee the same style.  The beauty of fables is the way they allow you to soak into a scenario, and connect it to your own experiences and relationships.  Then as the principles the author wants to teach unfold, they take advantage of those connections to spark ideas for application.  At least that’s the theory.</p>
+<p>The Five Dysfunctions is of course, about how teams go wrong.  I won’t spoil the contents too much, but ultimately, team failures aren’t about technique or distinct decisions, but human beings and how we relate to each other.  This book both clearly defines a set of those problems, and then gives concrete suggestions for improving a team when they’re present.  It’s a classic, and I found it as thought provoking as I expected.  I definitely recommend it.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: July 8th]]></title>
             <link>https://benmccormick.org/2018/07/08/weekly-links-07-08-18/</link>
@@ -866,35 +876,6 @@ arr<span class="token punctuation">[</span><span class="token number">100</span>
 <p>This seems really promising.</p>
 <p><a href="https://weblog.rogueamoeba.com/2018/06/14/on-the-sad-state-of-macintosh-hardware/">On The Sad State of Macintosh Hardware | Rogue Amoeba</a></p>
 <p>I’m lucky enough to have access to 2 2015 era Macbook Pros (1 for home, 1 for work) and they’re amazing machines.  I’m hoping that they both have long lifespans. But I’m increasingly not sure what my next laptop will be whenever I next have a choice.  It seems like the laptops since then have lost some things I appreciate about my current laptops (Magsafe charger, HDMI port) and made the keyboard significantly worse, with minimum benefits.  I hope that Apple can right this ship.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: June 10th]]></title>
-            <link>https://benmccormick.org/2018/06/10/weekly-links-06-10-18/</link>
-            <guid>https://benmccormick.org/2018/06/10/weekly-links-06-10-18/</guid>
-            <pubDate>Sun, 10 Jun 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h3>JavaScript &#x26; The Web</h3>
-<p><a href="https://daverupert.com/2018/06/the-react-is-just-javascript-myth/">The React is “just” JavaScript Myth | Dave Rupert</a></p>
-<p>I’ve been thinking a lot about the reasons that JavaScript development is perceived as intimidating and over-complicated the past few weeks.  Might have a full post on that soon, but for now, there’s a good point here.</p>
-<p>React is relatively simple at it’s core, but it’s difficult to find examples of using it in the wild, that don’t require you to learn Webpack/Babel/npm at minimum, and many “starting points” will also toss in Redux/React Router/Jest/etc as well.</p>
-<p><a href="https://medium.com/@mweststrate/mobx-5-the-saga-continues-4852bce05572">MobX 5: the saga continues… | Michael Weststrate</a></p>
-<p>MobX is the first major library I’ve seen to take advantage of proxies to give normal looking JavaScript objects/arrays magic powers<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  This sort of “just make it work in the prettiest way possible” API is the type of thing that tends to produce really cool results as long as it works correctly 100% of the time, but becomes a huge pain as soon as it’s flaky.  I’ve never had any problems with MobX after using it for 2 years, so I’m hopeful seeing them as an early adapter here.  Will be interested to see if they start getting used more widely going forward.  If so, I hope that browser start thinking about how they can expose these types of patterns well in developer tools.  How do you drop into a side effect caused by a proxy in a debugger?  It’s an interesting problem</p>
-<p><a href="http://2ality.com/2014/12/es6-proxies.html">Meta programming with ECMAScript 6 proxies | 2ality</a></p>
-<p>In case I lost anybody with my discussion of the last link, here’s an old but good walkthrough of what Proxies are and how you can use them to create some pretty magical APIs.</p>
-<h3>Microsoft Buying Github</h3>
-<p><a href="https://changelog.com/spotlight/14">🔥 Our reactions to Microsoft buying GitHub |Adam Stacoviak &#x26; Jerod Santo</a></p>
-<p>A <a href="https://changelog.com/">Changelog</a> podcast that summarizes the reaction of the 2 primary Changelog hosts to the annoucement as well as collecting reactions from around the internet.</p>
-<p><a href="https://github.com/martenbjork/github-xp">github-xp | Mårten Björk</a></p>
-<p>This is just fun.  A Chrome extension to render Github in the style of Windows XP.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Even if they chose to announce that in the silliest way possible</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
