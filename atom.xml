@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-07-09T03:02:11Z</updated>
+    <updated>2018-07-09T12:51:46Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -25,9 +25,9 @@
         <link href="https://benmccormick.org/2018/07/09/book-review-five-dysfunctions/">
         </link>
         <updated>2018-07-09T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>The nice thing about team books is that they’re talking about a subject that almost everybody can relate to.  <a href="https://amzn.to/2u2aPrm">The Five Dysfunctions of a Team</a> is a book for leaders, but it’s also a book for anyone who wants to better understand why they problems they see in their teams occur, and what needs to change to make them better.</p>
+        <content type="html"><![CDATA[<p>The nice thing about team books is that they’re talking about a subject that almost everybody can relate to.  <a href="https://amzn.to/2u2aPrm">The Five Dysfunctions of a Team</a> by Patrick Lencioni is a book for leaders, but it’s also a book for anyone who wants to better understand why they problems they see in their teams occur, and what needs to change to make them better.</p>
 <p>The Five Dysfunctions is a leadership fable, a story told to illustrate the principals of a business model.  I’ve found that I enjoy this teaching style, I also loved <a href="https://amzn.to/2KHf3Ps">Death By Meeting</a> and <a href="https://amzn.to/2KXOkxh">The Goal</a>, which employee the same style.  The beauty of fables is the way they allow you to soak into a scenario, and connect it to your own experiences and relationships.  Then as the principles the author wants to teach unfold, they take advantage of those connections to spark ideas for application.  At least that’s the theory.</p>
-<p>The Five Dysfunctions is of course, about how teams go wrong.  I won’t spoil the contents too much, but ultimately, team failures aren’t about technique or distinct decisions, but human beings and how we relate to each other.  This book both clearly defines a set of those problems, and then gives concrete suggestions for improving a team when they’re present.  It’s a classic, and I found it as thought provoking as I expected.  I definitely recommend it.</p>]]></content>
+<p>The Five Dysfunctions is of course, about how teams go wrong.  I won’t spoil the contents too much, but ultimately, team failures aren’t about technique or distinct decisions, but human beings and how we relate to each other.  This book both clearly defines a set of those problems, and then gives concrete suggestions for improving a team when they’re present.  It’s a classic, and I found it as thought provoking as I expected.  I definitely recommend it for anyone who wants to better understand how teams work, and how they fail.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
