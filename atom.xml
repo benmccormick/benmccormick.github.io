@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-07-09T13:50:15Z</updated>
+    <updated>2018-07-11T23:15:08Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -679,42 +679,7 @@ arr<span class="token punctuation">[</span><span class="token number">100</span>
       </div>
 <p>This is a simplified example that looks only at the semantic structure of the syntax.  The full version also contains information about the indenting and exact text of the code, and comes out to about 600 lines when represented as formatted JSON.   All of this from <code class="language-text">console.log(&#39;Hello World&#39;);</code>.  Fortunately there’s a nice tool for exploring ASTs.</p>
 <p><a href="http://astexplorer.net/">AST Explorer</a> is a site that lets you enter some JavaScript code, and then visualize the AST that represents the code.  When I put my example code above, in, I was able to see that the computed expressions in my original code showed as a <code class="language-text">CallExpression</code> with an <code class="language-text">ArrowFunctionExpression</code> as an argument.</p>
-<p>
-  <a
-    class="gatsby-resp-image-link"
-    href="/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-d5dfd.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-  
-  <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block; ; max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 52.06143896523848%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABj0lEQVQoz32Sy47TMBRA8/8LVkjzFbBgx0gsGXXJBhhVQ1HiOG/bafNumh5uMpkhI0EtXdm6j+P78ipb47KaIBwwbqKqoWpg6CdUoPn6sONx/4Tv+0RRhFKKOI4JgoBIh6hQobXGWkue53h931KdDL+e9kRhyNClXKeK+XT9gHUOI85FUSwyBxljyBKBaZ+fSqOShNJZnPh6bRNJ6A/S6Bvq93dC/4HSHmiamrqqlp9nx7dSYouEQCsOiSUpZt1x8fXaVupjosgNaWIo8yN9PdK0Z2bbC3C+X8WdcMWBTH9AxV8wxT0ntxPbnGHbLuWdh4G+6xiGnulyWXSzbZvh8l6BR7enjN+h4ztO5j2N+yj2Eq+ua+lhJX1xtN3I9vwfeMQZnyL5RJzek+WfpU27tYcSNF0mye7MZZq4Xq+L/Av4Cl1vX4UEUSZly9CMfCKD8cbxbVa3gH8zlMmbXCBm0T1P+Lm/3nkFbkE3gesdRDFa1mVeo5dVWkoeN8BtlreAxhr2QYwSaJKmi+Syo7PtD7qx9vy8Vq9QAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-    >
-      <img
-        class="gatsby-resp-image-image"
-        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
-        alt="AST explorer screenshot showing the CallExpression syntax"
-        title=""
-        src="/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-d766e.png"
-        srcset="/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-a6b6e.png 143w,
-/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-8e488.png 285w,
-/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-d766e.png 570w,
-/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-13239.png 855w,
-/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-cab6d.png 1140w,
-/static/computed-ast-566c7da27d68ddf6d09c7859481c3a91-d5dfd.png 1237w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-    </span>
-  </span>
-  
-  </a>
-    </p>
+<p><img src="computed-ast.png" alt="AST explorer screenshot showing the CallExpression syntax"></p>
 <p>When I put the result code I wanted in, I could see that I would need to switch the property that contained the callexpression to have a type <code class="language-text">get</code> and would need to replace the call expression with a function expression.</p>
 <h4>3. Start with a small edit</h4>
 <p>As a starting point, I decided I wanted to write a script that could find MobX classes and just add the second object argument to extendObservable, with a dummy property.  So this:</p>
