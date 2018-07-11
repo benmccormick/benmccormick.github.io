@@ -5,54 +5,63 @@
       "description": "These posts cover development using JavaScript frameworks and libraries, including React, jQuery, Knockout, and Backbone",
       "key": "frameworks",
       "icon": "beaker",
-      "subscribeText": "JavaScript development"
+      "subscribeText": "JavaScript development",
+      "color": "rgb(42, 194, 240)"
     }, {
       "title": "JavaScript Language",
       "description": "These posts cover the JavaScript language, its evolution over time, and practical usage examples.",
       "key": "javascript",
       "icon": "code",
+      "color": "rgba(240, 219, 79, 1.00)",
       "subscribeText": "JavaScript"
     }, {
       "title": "Productivity and Software Engineering",
       "description": "These posts cover techniques and ideas around improving productivity and writing better software.",
       "key": "software-productivity",
       "icon": "project",
+      "color": "#F1684E",
       "subscribeText": "Software engineering"
     }, {
       "title": "Meta",
       "key": "meta",
       "description": "These posts are updates about the site, messages to the readers or news from me",
       "icon": "info",
+      "color": "#999",
       "subscribeText": "Web development"
     }, {
       "title": "Software Tools",
       "description": "These posts cover tools and applications I use in software development",
       "key": "tools",
       "icon": "tools",
+      "color": "#A0522D",
       "subscribeText": "Software tooling"
     }, {
       "title": "Book and Product Reviews",
       "description": "These posts are reviews of books I've read and products I've used",
       "key": "reviews",
       "icon": "book",
+      "color": "rgba(99, 159, 110, 1.00)",
       "subscribeText": "Web development"
     }, {
       "title": "Web Platform",
       "description": "These posts cover the technologies and standards behind the web, especially how they relate to software development",
       "key": "platform",
       "icon": "globe",
+      "color": "#5F9EA0",
       "subscribeText": "The web platform"
     }, {
       "title": "Opinion",
       "description": "These posts cover my thoughts on a variety of technology related subjects",
       "key": "opinion",
       "icon": "megaphone",
+      "color": "rgba(154, 116, 170, 1.00)",
       "subscribeText": "Web development"
     }, {
       "title": "Computer Science",
       "description": "These posts cover more academic computer science concepts",
       "key": "computer-science",
       "icon": "desktop",
+      "color": "#F08080",
       "subscribeText": "Computer Science"
     }
   ]

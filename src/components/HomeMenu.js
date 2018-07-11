@@ -62,7 +62,7 @@ export class HomeMenu extends React.Component {
     let firstLinkPost = weeklyLinks[0];
     return (
       <div>
-        <h2> The Latest </h2>
+        <h1> The Latest </h1>
         <Section>
           <LinkBox
             page={firstPost}
@@ -86,7 +86,7 @@ export class HomeMenu extends React.Component {
           />
         </Section>
         <Spacer />
-        <h2> More From The Blog </h2>
+        <h1> More From The Blog </h1>
         <Section>
           <div>
             <LayoutContainer>

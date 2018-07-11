@@ -5,21 +5,6 @@ import { HeadContent } from '../components/HeadContent';
 import { getSortedPosts } from '../utils/page-helpers';
 import LinkList from '../components/LinkList';
 import Layout from '../components/Layout';
-import { TrendingIcon, FavoriteIcon } from '../components/PageLink';
-import glamorous from 'glamorous';
-
-const Legend = glamorous.div({
-  display: 'flex',
-  justifyContent: 'flex-end',
-  alignItems: 'center',
-  //slightly dirty hack to get the Legend
-  // aligned with the title
-  marginTop: '-50px',
-  paddingBottom: '30px',
-  '> * ': {
-    marginLeft: '10px',
-  },
-});
 
 class CategoryArchive extends React.Component {
   render() {
@@ -34,14 +19,10 @@ class CategoryArchive extends React.Component {
           <LinkList
             pages={sortedPosts}
             title="Articles"
-            description={
-              <Legend>
-                <TrendingIcon /> Trending <FavoriteIcon /> Popular
-              </Legend>
-            }
             showCategory={true}
             showPopular={true}
             showTrending={true}
+            useBox={true}
           />
         </div>
       </Layout>

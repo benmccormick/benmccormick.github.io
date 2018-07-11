@@ -18,6 +18,7 @@ import find from 'lodash/find';
 import { css } from 'glamor';
 import Icon from './Icon.js';
 import { sansFontStack } from '../utils/typography';
+import glamorous from '../../node_modules/glamorous';
 
 let icons = {
   beaker,
@@ -32,25 +33,31 @@ let icons = {
   desktop,
 };
 
-const iconWrapper = css({
-  fontFamily: sansFontStack,
-  fontSize: '14px',
-  color: 'rgb(42, 194, 240)',
-});
+const iconWrapperBuilder = color =>
+  glamorous.div({
+    background: color,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+  });
 
 class CategoryIcon extends React.Component {
   render() {
-    let { category, includeText } = this.props;
+    let { category } = this.props;
     let categories = get(categoryList, 'categories', []);
     let selectedCategory = find(categories, { key: category });
 
     let icon = selectedCategory ? icons[selectedCategory.icon] : question;
-    let text = selectedCategory ? selectedCategory.title : 'Uncategorized';
+    let IconWrapper = iconWrapperBuilder(
+      selectedCategory ? selectedCategory.color : 'red'
+    );
     return (
-      <Link to={`/category/${category}/`} className={iconWrapper}>
-        <Icon icon={icon} color={'rgb(42, 194, 240)'} />
-        {includeText ? text : null}
-      </Link>
+      <IconWrapper>
+        <Icon icon={icon} color={'rgba(256,256,256,1)'} />
+      </IconWrapper>
     );
   }
 }

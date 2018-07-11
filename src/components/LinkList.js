@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import LinkBox from './LinkBox';
 import PageLink from './PageLink';
 
-const ListTitle = glamorous.h3({
+const ListTitle = glamorous.h2({
   color: 'inherit',
 });
 

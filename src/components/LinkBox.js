@@ -9,6 +9,7 @@ import glamorous from 'glamorous';
 import star from '../svg/star.svgi';
 import flame from '../svg/flame.svgi';
 import Icon from './Icon';
+import CategoryIcon from './CategoryIcon';
 import { css } from 'glamor';
 import { sansFontStack, serifFontStack } from '../utils/typography';
 
@@ -20,17 +21,21 @@ const boxClass = css({
   fontSize: '120%',
   // 1px margin on the size in order to fix border on Safari
   margin: `0 1px ${typography.rhythm(1 / 2)} 1px`,
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  border: '3px dashed #F1684E',
-  padding: '15px',
   color: 'initial',
-  transition: 'background 0.5s ease, color 0.5s ease',
+  background: '#FFFFFF',
+  transition: 'all 0.5s ease',
+  display: 'grid',
+  gridTemplateColumns: '5rem 1fr 6rem',
+  gridTemplateRows: '1fr',
+  boxShadow: '0 1px 2px 0 rgba(43, 59, 93, 0.29)',
   ':hover': {
-    background: '#F1684E',
-    color: 'white',
+    // background: '#F1684E',
+    // color: 'white',
     textDecoration: 'none',
+    boxShadow: '0 10px 30px 0 rgba(0, 0, 0, 0.29)',
+  },
+  '@media all and (max-width: 700px)': {
+    gridTemplateColumns: '5rem 1fr 0px',
   },
 });
 
@@ -40,7 +45,9 @@ const PageWrapper = glamorous.div({
     maxWidth: '100vw',
   },
   display: 'flex',
-  alignItems: 'centglamor.er',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '1rem',
 });
 
 const PageDescription = glamorous.p({
@@ -48,18 +55,28 @@ const PageDescription = glamorous.p({
   // fontStyle: 'italic',
   fontSize: '18px',
   margin: 0,
+  '@media all and (max-width: 700px)': {
+    fontSize: '70%',
+  },
 });
 
 const DateContainer = glamorous.span({
   whiteSpace: 'nowrap',
+  display: 'flex',
   fontSize: '18px',
+  justifyContent: 'space-between',
+  alignItems: 'center',
 });
 
 const TitleRow = glamorous.div({
   display: 'flex',
+  justifyContent: 'space-between',
   alignItems: 'center',
   '> *': {
     marginRight: '10px',
+  },
+  '@media all and (max-width: 700px)': {
+    fontSize: '80%',
   },
 });
 
@@ -69,6 +86,7 @@ class LinkBox extends React.Component {
     const _title = titleFn(page);
     return (
       <Link className={boxClass} to={page.path}>
+        <CategoryIcon category={page.data.category} />
         <PageWrapper>
           <div>
             <TitleRow>{_title}</TitleRow>

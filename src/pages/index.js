@@ -66,6 +66,7 @@ export const pageQuery = graphql`
             last30pageViews
             description
             isDraft
+            category
           }
           fields {
             slug

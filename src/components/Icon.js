@@ -5,8 +5,9 @@ import glamorous from 'glamorous';
 
 const iconContainerFactory = color =>
   glamorous.span({
-    display: 'inline-block',
-    width: '0.75em',
+    display: 'block',
+    width: '2em',
+    height: '2em',
     marginRight: '0.5em',
     '& *': {
       fill: color,

@@ -158,7 +158,13 @@ const getRelatedPosts = (keyMap, categoryMap) => node => {
     : categoryMap[node.frontmatter.category];
   let posts = nodes.map(n => ({
     path: n.fields.slug,
-    data: pick(n.frontmatter, ['title', 'path', 'description', 'date']),
+    data: pick(n.frontmatter, [
+      'title',
+      'path',
+      'description',
+      'date',
+      'category',
+    ]),
   }));
   return take(posts, 3);
 };
