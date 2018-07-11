@@ -28,7 +28,7 @@
   color: white;
   margin: 0;
   cursor: pointer;
-  background: #57A3E8;
+  background: #rgb(42, 194, 240);
   border-radius: 4px;
   font-size: 1rem;
   line-height: 1rem;
@@ -60,7 +60,7 @@
 }
 
 .rss-icon * {
-  fill: #E2777A;
+  fill: #F1684E;
 }
 
 .twitter-item {

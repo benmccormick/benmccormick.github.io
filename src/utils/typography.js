@@ -3,33 +3,24 @@ import CodePlugin from 'typography-plugin-code';
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants';
 
 export const sansFontStack =
-  '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+  '"mr-eaves-xl-modern", "Helvetica Neue", Arial, sans-serif';
 
-export const serifFontStack =
-  'Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+export const serifFontStack = '"minion-3", Garamond, serif';
 
 const typography = new Typography({
   baseFontSize: '18px',
   //baseLineHeight: 1.666,
   baseLineHeight: 1.6,
   headerFontFamily: [
-    '-apple-system',
-    'system-ui',
-    'BlinkMacSystemFont',
-    'Segoe UI',
-    'Helvetica',
-    'Arial',
+    'mr-eaves-xl-modern',
     'sans-serif',
     'Apple Color Emoji',
     'Segoe UI Emoji',
     'Segoe UI Symbol',
   ],
   bodyFontFamily: [
+    'minion-3',
     'Garamond',
-    'Baskerville',
-    'Baskerville Old Face',
-    'Hoefler Text',
-    'Times New Roman',
     'serif',
     'Apple Color Emoji',
     'Segoe UI Emoji',
@@ -54,7 +45,7 @@ const typography = new Typography({
     },
     [MOBILE_MEDIA_QUERY]: {
       // Make font-size 17px on mobile.
-      html: { fontSize: 18 / 16 * 100 + '%' },
+      html: { fontSize: (18 / 16) * 100 + '%' },
     },
   }),
 });

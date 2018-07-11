@@ -35,15 +35,15 @@ const Logo = glamorous.h3({
 });
 
 const LinksWrapper = glamorous.div({
-  color: 'rgba(100,100,100, 0.7)',
+  color: '#999999',
 });
 
 const headerLink = css({
-  color: 'rgba(100,100,100, 0.7)',
+  color: '#999999',
   fontSize: '16px',
   fontFamily: sansFontStack,
   ':hover': {
-    color: '#E2777A',
+    color: '#F1684E',
   },
 });
 

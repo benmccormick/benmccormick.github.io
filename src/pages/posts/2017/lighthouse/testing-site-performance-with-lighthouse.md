@@ -37,7 +37,7 @@ Native app support isn't a huge priority for me, and the assets issue seemed sma
 
 ### Offline
 
-I based my service worker implementation off of [Simple Offline Site](https://github.com/chriscoyier/Simple-Offline-Site) a demo Service Worker repo created by Chris Coyier for an article on [CSS Tricks](https://css-tricks.com/serviceworker-for-offline/).  This was perfect since it's default behavior was what I wanted: cache everything, and check for updates from the server everytime we return from cache so we're never out of date for long.  You can see what I did specifically in my [github repo for this site](https://github.com/benmccormick/benmccormickorg/blob/master/pages/sw.es6). After adding the service worker, my score moved up to 63/100.  
+I based my service worker implementation off of [Simple Offline Site](https://github.com/chriscoyier/Simple-Offline-Site) a demo Service Worker repo created by Chris Coyier for an article on [CSS Tricks](https://css-tricks.com/serviceworker-for-offline/).  This was perfect since it's default behavior was what I wanted: cache everything, and check for updates from the server everytime we return from cache so we're never out of date for long.  You can see what I did specifically in my [github repo for this site](https://github.com/benmccormick/benmccormickorg/blob/master/pages/sw.es6). After adding the service worker, my score moved up to 63/100.
 
 Finally, Service Workers only work on HTTPS connections, but most links to my site are not https currently. So to take full advantage (and to address another metric I was flagged on), I used a [CloudFlare page rule](https://support.cloudflare.com/hc/en-us/articles/200170536-How-do-I-redirect-all-visitors-to-HTTPS-SSL-) to redirect all visting traffic to use https.  That bumped me up to 69/100.
 
@@ -67,7 +67,7 @@ My manifest file now looks like this:
 		}
 	],
 	"theme_color": "#ffffff",
-	"background_color": "#57a3e8",
+	"background_color": "#57A3E8",
 	"display": "browser"
 }
 ```
@@ -76,7 +76,7 @@ After correctly deploying that manifest file, my score moved all the way up to 1
 
 <img alt="asset issues" src="third_report_native.png" class="full-width bordered-img">
 
-I clearly benefited from starting in a good spot.  [Gatsby](https://github.com/gatsbyjs/gatsby) is "fast by default" as a platform for building blogs, and I've done my best to avoid making it slow.  But it was fun seeing what I could do to make the site a better experience for users with bad connectivity, and to learn more about what Google is trying to do with PWAs.  
+I clearly benefited from starting in a good spot.  [Gatsby](https://github.com/gatsbyjs/gatsby) is "fast by default" as a platform for building blogs, and I've done my best to avoid making it slow.  But it was fun seeing what I could do to make the site a better experience for users with bad connectivity, and to learn more about what Google is trying to do with PWAs.
 
 
 ### More Resources

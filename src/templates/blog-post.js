@@ -6,6 +6,7 @@ import '../css/typography.css';
 
 import React from 'react';
 import format from 'date-fns/format';
+import { graphql } from 'gatsby';
 
 import { Ad } from '../components/Ad';
 import { EmailSubscribe } from '../components/EmailSubscribe';
@@ -67,15 +68,15 @@ class BlogPostTemplate extends React.Component {
       isPostOrWeeklyLinks ? content : null;
     return (
       <Layout history={history}>
-        <div className="markdown" ref={el => (this.markdownContainer = el)}>
+        <article className="markdown" ref={el => (this.markdownContainer = el)}>
           <BlogPostHeadContent post={post} slug={slug} body={body} />
           <div className="post-title-area">
-            <Title>{post.title}</Title>
             {showForPostsOnly(
               <PostedDateContainer>
-                Originally Posted {format(new Date(post.date), 'MMMM Do YYYY')}
+                {format(new Date(post.date), 'MMMM Do YYYY')}
               </PostedDateContainer>
             )}
+            <Title>{post.title}</Title>
           </div>
           <div className="columns">
             <ArticleBody dangerouslySetInnerHTML={{ __html: body }} />
@@ -92,7 +93,7 @@ class BlogPostTemplate extends React.Component {
               recommendedPosts={pageContext.relatedPosts}
             />
           )}
-        </div>
+        </article>
       </Layout>
     );
   }

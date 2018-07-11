@@ -1,5 +1,5 @@
 a {
-    color: #E2777A;
+    color: #F1684E;
     text-decoration: none;
     cursor: pointer;
 }
@@ -15,7 +15,7 @@ a:hover {
 }
 
 blockquote {
-    border-left: 5px solid #57A3E8;
+    border-left: 5px solid rgb(42, 194, 240);
     /*font-style: italic;*/
     background: #EEE;
     font-weight: 400;
@@ -29,7 +29,7 @@ blockquote p {
 }
 
 h3 {
-    color: #57A3E8;
+    color: rgb(42, 194, 240);
 }
 
 h4 {
@@ -51,4 +51,13 @@ h4 {
 .footnotes li > * {
     display: inline;
     margin-bottom: 0;
+}
+
+
+.markdown strong {
+  color: rgba(99, 159, 110, 1.00);
+}
+
+.markdown em {
+  color: rgba(154, 116, 170, 1.00);
 }

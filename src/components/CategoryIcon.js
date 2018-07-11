@@ -35,7 +35,7 @@ let icons = {
 const iconWrapper = css({
   fontFamily: sansFontStack,
   fontSize: '14px',
-  color: 'rgba(87, 163, 232, 0.5)',
+  color: 'rgb(42, 194, 240)',
 });
 
 class CategoryIcon extends React.Component {
@@ -48,7 +48,7 @@ class CategoryIcon extends React.Component {
     let text = selectedCategory ? selectedCategory.title : 'Uncategorized';
     return (
       <Link to={`/category/${category}/`} className={iconWrapper}>
-        <Icon icon={icon} color={'rgba(87, 163, 232, 0.5)'} />
+        <Icon icon={icon} color={'rgb(42, 194, 240)'} />
         {includeText ? text : null}
       </Link>
     );

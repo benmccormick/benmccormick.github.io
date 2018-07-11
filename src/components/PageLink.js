@@ -29,7 +29,7 @@ const PageWrapper = glamorous.div({
     maxWidth: '100vw',
   },
   display: 'flex',
-  alignItems: 'centglamor.er',
+  alignItems: 'center',
 });
 
 const linkClass = css({
@@ -44,14 +44,14 @@ const PageDescription = glamorous.p({
   // fontStyle: 'italic',
   fontSize: '16px',
   margin: 0,
-  color: 'rgba(100,100,100, 0.7)',
+  color: '#999999',
 });
 
 const DateContainer = glamorous.span({
   fontFamily: serifFontStack,
   whiteSpace: 'nowrap',
   fontSize: '18px',
-  color: 'rgba(100,100,100, 0.7)',
+  color: '#999999',
 });
 
 const TitleRow = glamorous.div({

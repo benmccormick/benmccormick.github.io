@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { TypographyStyle } from 'react-typography';
 import { GA } from './components/GA';
 import typography from './utils/typography';
+import { Typekit } from './components/TypeKit';
 
 class HTML extends React.Component {
   render() {
@@ -40,7 +41,7 @@ class HTML extends React.Component {
           <link
             rel="mask-icon"
             href="/safari-pinned-tab.svg?v=yyxgnp97qG"
-            color="#57a3e8"
+            color="#rgb(42, 194, 240)"
           />
           <link
             rel="alternate"
@@ -54,6 +55,7 @@ class HTML extends React.Component {
           {head.title.toComponent()}
           {head.meta.toComponent()}
           {head.script.toComponent()}
+
           <TypographyStyle typography={typography} />
           {this.props.headComponents}
         </head>
@@ -69,6 +71,7 @@ class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           <GA />
+          <Typekit />
           {this.props.postBodyComponents}
         </body>
       </html>

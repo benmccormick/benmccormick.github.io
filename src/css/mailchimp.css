@@ -24,7 +24,7 @@
 .subscribe-button-large {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: white;
-  background: #57A3E8;
+  background: #rgb(42, 194, 240);
   border-radius: 4px;
   border: 0px;
   padding: 0px 10px;

@@ -24,12 +24,8 @@
 }
 
 .carbon-poweredby {
-  color: rgba(100,100,100, 0.7);
+  color: #999999;
   position: absolute;
   right: 5px;
   bottom: 0;
-}
-
-.post-title-area {
-  padding: 1em 0 1em 0;
 }
