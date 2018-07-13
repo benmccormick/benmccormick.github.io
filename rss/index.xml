@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Thu, 12 Jul 2018 02:06:49 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 Jul 2018 15:59:10 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,34 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Weekly Links: July 13th]]></title>
+            <link>https://benmccormick.org/2018/07/13/weekly-links-07-13-18/</link>
+            <guid>https://benmccormick.org/2018/07/13/weekly-links-07-13-18/</guid>
+            <pubDate>Fri, 13 Jul 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h3>JavaScript and the Web</h3>
+<p><a href="https://medium.com/p/what-is-jsx-310ab98c463e">What is JSX? | Kent C Dodds</a></p>
+<p>If you were introduced to React “all at once” and didn’t learn it from the basics up, JSX may feel a little bit like magic syntax.  This is a solid explanation of what JSX syntax actually compiles to under the covers.  It demystifies the process and shows that it is all “just JavaScript” in the end.</p>
+<p><a href="http://jxnblk.com/writing/posts/defining-component-apis-in-react/">Defining Component APIs in React | Brent Jackson</a></p>
+<p>Setting up good interface boundaries between your React components is one of the most important steps you can take to make a React application more maintainable.  This is good solid advice, that I wish I’d had when I started building React apps.</p>
+<h3>Business and Leadership</h3>
+<p><a href="http://larahogan.github.io/blog/leadership-style-colors/">Leadership Style Colors | Lara Hogan</a></p>
+<p>Lara has put together a thoughtful article about the different ways that leaders need to be able to relate to others.</p>
+<p><a href="https://m.signalvnoise.com/the-open-plan-office-is-a-terrible-horrible-no-good-very-bad-idea-42bd9cd294e3">The open-plan office is a terrible, horrible, no good, very bad idea | DHH</a></p>
+<p>I appear to be in a weird middle ground where I neither love nor hate open offices.  I don’t think they’re good for my productivity, but I enjoy the people I work with and build more connections with coworkers in an open office than I did when I worked in cubicles. I also find that articles like this tend not to fully grapple with the alternatives.  Most companies aren’t mostly remote like Basecamp, and budgeting private offices for all developers is not realistic (especially for the startups called out in this piece due to unknown scaling needs).  So it’s remote, open office or cubicle farms, and all three have their detractors.</p>
+<h3>Design</h3>
+<p><a href="https://uxdesign.cc/designing-for-accessibility-is-not-that-hard-c04cc4779d94">Designing for accessibility is not that hard | Pablo Stanley</a></p>
+<p>I’m embarrassingly ignorant about accessibility concerns, so this was a helpful article for me.  I’m going to try and walk through some of these steps on this site to help improve my knowledge here.</p>
+<p><a href="https://9to5mac.com/2018/07/10/app-store-10-years-design-evolution/">10 years of the App Store: The design evolution of the earliest apps | 9to5Mac</a></p>
+<p>This was a really fascinating look at how iPhone app designs have shifted over the years.  9to5Mac took 10 popular apps that were there when the App Store first launched 10 years ago (I’ve used 8/10 of these at some point or another) and showed how their UIs and logos had evolved over time.  Interestingly it looks like early 2013, right before the new iOS7 look and feel launched, was the peak point for interface diversity and distinctiveness, as each of these apps had evolved along their own paths.  iOS7 imposed a level of standardization and sameness, and I think apps are just now re-evolving to the point of having truly distinct brand identities on top of that new base.</p>
+<h3>Books</h3>
+<p>I’ve been on vacation this week, so here are 2 quicky non-tech book reviews:</p>
+<p><a href="https://amzn.to/2L4uGQp">Golden Days: West’s Lakers, Steph’s Warriors, and the California Dreamers Who Reinvented Basketball</a></p>
+<p>This was a fun book for basketball lovers.  The sections on Jerry West and the Lakers of the 60s and 70s are more detailed and colorful than the alternating chapters on the modern Warriors, but both are fun, and those interested in how modern Silicon Valley has interacted with the rise of the most popular basketball team in the world will find some interesting tidbits in the modern chapters as well.</p>
+<p><a href="https://amzn.to/2Jj6vJ2">American Gods</a></p>
+<p>A fantasy novel set in modern America.  This one was too crude for me to recommend unreservedly, but it contains a huge number of cool images and ideas, and I don’t regret reading it.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Book Review: The Five Dysfunctions of a Team]]></title>
             <link>https://benmccormick.org/2018/07/09/book-review-five-dysfunctions/</link>
@@ -821,26 +849,6 @@ arr<span class="token punctuation">[</span><span class="token number">100</span>
 </li>
 </ol>
 </div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: June 15th]]></title>
-            <link>https://benmccormick.org/2018/06/15/weekly-links-06-15-18/</link>
-            <guid>https://benmccormick.org/2018/06/15/weekly-links-06-15-18/</guid>
-            <pubDate>Fri, 15 Jun 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h3>JavaScript &#x26; The Web</h3>
-<p><a href="https://www.graphqlstack.com">GraphQL Stack</a></p>
-<p>This is a nice overview of the technologies involved with GraphQL, for anyone who has heard of the technology but isn’t quite sure how it all fits together.</p>
-<p><a href="https://css-tricks.com/understanding-the-almighty-reducer/">Understanding The Almighty Reducer | Sarah Drasner</a></p>
-<p>Moving from a loop mindset to making proper use of forEach/map/filter/reduce was one of the biggest shifts I made when moving from Java development to JavaScript.  Reduce especially can be hard to learn initially, and it never becomes simple.  This is a great introduction for those who are unfamiliar or haven’t gotten comfortable with writing reducers yet.</p>
-<h3>Software + Business</h3>
-<p><a href="https://seths.blog/2018/06/on-paying-for-software/">On paying for software | Seth Godin</a></p>
-<p>This mirrors my opinions on paying for software pretty well.  There’s a place in the world for free apps, and I definitely have passed on apps because of price before.  But the apps I’ve used that have had real value to me have almost always been paid, usually these days as an ongoing subscription.  The exceptions, like Twitter, tend to come with frustrating downsides that are difficult to disentangle from the free-to-play model.</p>
-<h3>Tech World</h3>
-<p><a href="https://www.theatlantic.com/science/archive/2018/06/its-possible-to-reverse-climate-change-suggests-major-new-study/562289/">Climate Change Can Be Reversed by Turning Air Into Gasoline | The Atlantic</a></p>
-<p>This seems really promising.</p>
-<p><a href="https://weblog.rogueamoeba.com/2018/06/14/on-the-sad-state-of-macintosh-hardware/">On The Sad State of Macintosh Hardware | Rogue Amoeba</a></p>
-<p>I’m lucky enough to have access to 2 2015 era Macbook Pros (1 for home, 1 for work) and they’re amazing machines.  I’m hoping that they both have long lifespans. But I’m increasingly not sure what my next laptop will be whenever I next have a choice.  It seems like the laptops since then have lost some things I appreciate about my current laptops (Magsafe charger, HDMI port) and made the keyboard significantly worse, with minimum benefits.  I hope that Apple can right this ship.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
