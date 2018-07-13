@@ -46,11 +46,11 @@ This was a really fascinating look at how iPhone app designs have shifted over t
 
 I've been on vacation this week, so here are 2 quicky non-tech book reviews:
 
-[Golden Days: West's Lakers, Steph's Warriors, and the California Dreamers Who Reinvented Basketball](https://amzn.to/2L4uGQp)
+[Golden Days: West's Lakers, Steph's Warriors, and the California Dreamers Who Reinvented Basketball | Jack McCallum](https://amzn.to/2L4uGQp)
 
 This was a fun book for basketball lovers.  The sections on Jerry West and the Lakers of the 60s and 70s are more detailed and colorful than the alternating chapters on the modern Warriors, but both are fun, and those interested in how modern Silicon Valley has interacted with the rise of the most popular basketball team in the world will find some interesting tidbits in the modern chapters as well.
 
 
-[American Gods](https://amzn.to/2Jj6vJ2)
+[American Gods | Neil Gaiman](https://amzn.to/2Jj6vJ2)
 
 A fantasy novel set in modern America.  This one was too crude for me to recommend unreservedly, but it contains a huge number of cool images and ideas, and I don't regret reading it.
