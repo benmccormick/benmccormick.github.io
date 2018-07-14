@@ -66,6 +66,9 @@ const DateContainer = glamorous.span({
   fontSize: '18px',
   justifyContent: 'space-between',
   alignItems: 'center',
+  '@media all and (max-width: 700px)': {
+    display: 'none',
+  },
 });
 
 const TitleRow = glamorous.div({
