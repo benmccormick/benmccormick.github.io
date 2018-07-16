@@ -3,7 +3,7 @@ title: "Weekly Links: July 13th"
 date: "2018/07/13"
 layout: "weekly-links"
 path: "/2018/07/13/weekly-links-07-13-18/"
-description: ""
+description: "React insights, leadership colors, app evolution, and book reviews"
 keywords: ""
 topics: []
 category: "opinion"
