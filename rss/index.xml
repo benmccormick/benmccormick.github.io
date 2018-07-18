@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Mon, 16 Jul 2018 03:27:50 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 18 Jul 2018 02:34:19 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,33 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Quick Tip: Logging In Breakpoints]]></title>
+            <link>https://benmccormick.org/2018/07/17/quick-tip-logging-breakpoints/</link>
+            <guid>https://benmccormick.org/2018/07/17/quick-tip-logging-breakpoints/</guid>
+            <pubDate>Tue, 17 Jul 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>Stop me if this sounds familiar: you see a bug on your site.  You want to know what’s going on.  You fire up the developer tools, put a breakpoint in the area you think is a problem, and… the error doesn’t occur while it’s being debugged.  Probably it’s a timing issue, but I’ve also seen situations where pausing on certain breakpoints will actually cause a browser tab to freeze up.  Whatever weirdness you’re dealing with, you can’t get a breakpoint running in the right spot to see the error.  These are known colloquially as <a href="https://en.wikipedia.org/wiki/Heisenbug">Heisenbugs</a>, bugs that disappear when measured.  Ideally at this point you would add some logging, but if the issue is on production, and you don’t know exactly what needs to be logged, that could delay a fix by an unacceptable amount.</p>
+<p>I actually ran into this last night, and decided to test out a tactic I’d heard about in a <a href="https://changelog.com/jsparty/30">recent JS Party episode</a>.  Did you know that you can use conditional break points to add temporary logging to a live application?</p>
+<p>Conditional breakpoints are a browser debugger feature where you set a breakpoint, and specify a condition.  The breakpoint only stops the program execution when that condition is truthy.  Here’s a video describing the feature in Firefox:</p>
+<div>
+          <div
+            class="gatsby-resp-iframe-wrapper"
+            style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden;"
+          >
+            <iframe src="https://www.youtube.com/embed/pVPlMhfrMwM" frameborder="0" encrypted-media"="" allowfullscreen style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          "></iframe>
+          </div>
+          </div>
+<p>Conditional breakpoints are useful when you’re running through a code path many times during program execution, but you want to stop during a specific run.  But they can also be used to solve our heisenbug problem.  Because the conditional breakpoint executes the code inside of it in the context of the line we’re trying to break on, we can actually put logging inside the breakpoint.</p>
+<p><a href="log-example.png">An example of a console.log inside a breakpoint</a></p>
+<p>That <code class="language-text">console.log</code> will execute, and because <code class="language-text">console.log</code> returns false, the breakpoint will never actually stop.  It’s a heisenbug-safe version of watching variables when you’re at a breakpoint, and there’s no redeploys required.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Prime Generation Revisited]]></title>
             <link>https://benmccormick.org/2018/07/15/prime-generation-revisited/</link>
@@ -580,70 +607,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ol>
 </div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Code Golf: Sparse Arrays]]></title>
-            <link>https://benmccormick.org/2018/06/19/code-golf-sparse-arrays/</link>
-            <guid>https://benmccormick.org/2018/06/19/code-golf-sparse-arrays/</guid>
-            <pubDate>Tue, 19 Jun 2018 06:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>Today on Twitter, <a href="http://2ality.com/index.html">Axel Rauschmayer</a> posted a fun little coding challenge:</p>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Code golf: check if an Array has holes. I’ll reply with two ideas of mine in a few minutes.</p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/status/1009053456123027463?ref_src=twsrc%5Etfw">June 19, 2018</a></blockquote>
-<p>For context, <em>code golf</em> is a type of challenge where participants attempt to find the shortest possible way to express a program.  Arrays that have holes, or sparse arrays, refer to arrays that don’t have values at every index between their maximum and minimum values.  You can define a sparse array like this:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-arr<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span>
-<span class="token comment">// arr.length is 100</span></code></pre>
-      </div>
-<p>or like this</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token comment">// arr.length is 3</span></code></pre>
-      </div>
-<p>This is different from <code class="language-text">let arr = [1, undefined, 2]</code>, because the index keys are not defined.  If this is difficult to understand, you can picture arrays as simple objects, with access to the <code class="language-text">Array.Prototype</code> methods and a special <code class="language-text">length</code> property that is aware of numeric keys.  The important thing is not whether a value is defined for a specific index, but whether a key was ever explicitly set.  Axel’s suggested solutions take advantage of that distinction:</p>
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">// Does someArray have holes?<br><br>someArray.findIndex((x,i,arr) =&gt; x === undefined &amp;&amp; !(i in arr)) &gt;= 0<br>Object.keys(someArray).length &lt; someArray.length<br>someArray.filter(_ =&gt; true).length &lt; someArray.length</p>&mdash; Axel Rauschmayer (@rauschma) <a href="https://twitter.com/rauschma/status/1009056501095428096?ref_src=twsrc%5Etfw">June 19, 2018</a></blockquote>
-<p>I’m going to standardize these into a function syntax for the purpose of comparison.  I’m only going to consider one liners, so we’ll define a simple arrow function <code class="language-text">isSparse</code>, and compare the length of the function bodies.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Solution 1</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> someArray <span class="token operator">=></span> someArray<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>i<span class="token punctuation">,</span>arr<span class="token punctuation">)</span> <span class="token operator">=></span> x <span class="token operator">===</span> undefined <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token punctuation">(</span>i <span class="token keyword">in</span> arr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">0</span>
-<span class="token comment">// Solution 1 condensed (49 characters)</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> a<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>i<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">=></span>x<span class="token operator">===</span>undefined<span class="token operator">&amp;&amp;</span><span class="token operator">!</span><span class="token punctuation">(</span>i <span class="token keyword">in</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">>=</span><span class="token number">0</span>
-<span class="token comment">// Solution 2</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> someArray <span class="token operator">=></span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>someArray<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">&lt;</span> someArray<span class="token punctuation">.</span>length
-<span class="token comment">// Solution 2 condensed (30 characters)</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length
-<span class="token comment">// Solution 3</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> someArray <span class="token operator">=></span> someArray<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>_ <span class="token operator">=></span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">&lt;</span> someArray<span class="token punctuation">.</span>length
-<span class="token comment">// Solution 3 condensed (33 characters)</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> a<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>_<span class="token operator">=></span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length</code></pre>
-      </div>
-<p>Axel’s solutions all rely on the fact that sparse items don’t have keys, and that Object.keys and Array.prototype methods therefore don’t iterate over them.  That’s a good insight and a good foundation for getting even more concise.  We can use a few tricks to do that.</p>
-<p>Let’s start with his second solution, which was the shortest and clearest in practice and modify it a bit</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// We're comparing the length of the list of keys to the array length</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length
-<span class="token comment">//But we can use reduce to do this instead (28 characters)</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> a<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>x<span class="token operator">=></span>x<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>a<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span></code></pre>
-      </div>
-<p>So our first step is to use <code class="language-text">reduce</code> to save 2 characters.  If you haven’t seen <code class="language-text">reduce</code> before, I recommend checking out <a href="https://css-tricks.com/understanding-the-almighty-reducer/">this great explainer</a> by Sarah Drasner that I linked to in my <a href="https://benmccormick.org/2018/06/15/weekly-links-06-15-18/">Weekly Links post</a> last week.  Essentially though, reduce is a generic method for iterating through an array to produce a new value.  It takes a function and an initial value, and uses the items of the array to iteratively transform the initial value.  In this case, I’m just decrementing the value for each defined item in the array, starting at length and seeing if it equals 0.  Which ends up being shorter than taking the length of the keys array.  But we can still do better!</p>
-<p>Our next step will take advantage of a property of numbers in JavaScript.  When converting numbers to booleans, <code class="language-text">0</code> is considered <em>falsy</em>, while every other number is considered <em>truthy</em>.  Since we want our function to produce a boolean, we can take advantage of this property, and write our function like this.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Boolean version (27 characters)</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> <span class="token operator">!</span><span class="token operator">!</span>a<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>x<span class="token operator">=></span>x<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>a<span class="token punctuation">.</span>length<span class="token punctuation">)</span></code></pre>
-      </div>
-<p>That seems like a bit of a local maximum.  But getting to this point made me realize that we weren’t actually saving anything by using the boolean version over a comparison, since we can increment instead and end up at the same length.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Counting up to length (27 characters)</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> a<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>x<span class="token operator">=></span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length</code></pre>
-      </div>
-<p><del>Doing it this way though, we can actually save 2 more characters, because if reduce doesn’t have an initial value, it just uses the unmodified first element in an array as its initial value, and goes from there:</del></p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Final (broken) Version (25 characters)</span>
-<span class="token comment">// UPDATE: This doesn't work</span>
-<span class="token keyword">let</span> <span class="token function-variable function">isSparse</span> <span class="token operator">=</span> a <span class="token operator">=></span> a<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>x<span class="token operator">=></span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&lt;</span>a<span class="token punctuation">.</span>length</code></pre>
-      </div>
-<p><strong>Update: This last solution only works in situations where the array starts with <code class="language-text">1</code>.  So 27 is the best generic solution I can find at this point.  Thanks to <a href="https://twitter.com/rauschma/status/1009149034622275585">Axel</a> for correcting me. Code golf is hard 😔.</strong></p>
-<p>So there you have it.  27 characters to identify sparse arrays.  I’d love to hear from you if you can do better.  Hit me up on <a href="https://twitter.com/ben336">Twitter</a> or by <a href="ben@benmccormick.org">email</a>.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
