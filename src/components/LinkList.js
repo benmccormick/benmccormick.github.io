@@ -34,7 +34,12 @@ class LinkList extends React.Component {
     let pageLinks = pages.map(
       page =>
         useBox ? (
-          <LinkBox page={page} showDate={showDate} titleFn={titleFn} />
+          <LinkBox
+            key={page.path}
+            page={page}
+            showDate={showDate}
+            titleFn={titleFn}
+          />
         ) : (
           <PageLink
             page={page}

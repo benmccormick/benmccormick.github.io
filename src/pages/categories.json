@@ -47,7 +47,7 @@
       "description": "These posts cover the technologies and standards behind the web, especially how they relate to software development",
       "key": "platform",
       "icon": "globe",
-      "color": "#A0522D",
+      "color": "rgba(29, 100, 158, 1.00)",
       "subscribeText": "The web platform"
     }, {
       "title": "Opinion",

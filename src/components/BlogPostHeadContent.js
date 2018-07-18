@@ -17,14 +17,16 @@ export class BlogPostHeadContent extends React.Component {
         }
         description={post.description}
         keywords={post.keywords}
-        meta={{
-          'twitter:card': 'summary',
-          'twitter:site': '@benmccormickorg',
-          'twitter:creator': '@ben336',
-          'twitter:title': post.title,
-          'twitter:description': post.description || '',
-          'twitter:image': post.image || 'http://benmccormick.org/logo.png',
-        }}
+        meta={[
+          {
+            'twitter:card': 'summary',
+            'twitter:site': '@benmccormickorg',
+            'twitter:creator': '@ben336',
+            'twitter:title': post.title,
+            'twitter:description': post.description || '',
+            'twitter:image': post.image || 'http://benmccormick.org/logo.png',
+          },
+        ]}
         script={[
           {
             type: 'application/ld+json',
