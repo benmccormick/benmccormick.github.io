@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Fri, 20 Jul 2018 22:44:44 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 Jul 2018 03:17:47 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,30 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Weekly Links: July 28th]]></title>
+            <link>https://benmccormick.org/2018/07/28/weekly-links-07-28-18/</link>
+            <guid>https://benmccormick.org/2018/07/28/weekly-links-07-28-18/</guid>
+            <pubDate>Sat, 28 Jul 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h3>JavaScript and the Web</h3>
+<p><a href="https://csswizardry.com/2018/07/getting-to-know-a-legacy-codebase/">Getting to Know a Legacy Codebase Harry Roberts</a></p>
+<p>I like this advice on approaching a new codebase.  Some of it is CSS specific but the general ideas of tackling the important bits, experimenting with changes, and using tools as much as possible to catch regressions apply across the board.</p>
+<p><a href="https://medium.com/@Pinterest_Engineering/a-one-year-pwa-retrospective-f4a2f4129e05">A one year PWA retrospective | Zach Argyle</a></p>
+<p>TL;DR: Pinterest saw great results from supplementing their mobile apps with a PWA web app.</p>
+<p><a href="https://medium.com/ben-and-dion/mission-improve-the-web-ecosystem-for-developers-3a8b55f46411">Mission: Improve the Web Ecosystem for Developers | Dion Almaer</a></p>
+<p>I don’t know Dion, but this was a wonderful list of challenges that people looking to improve the web platform might want to tackle.  I’m excited to see people tackling this stuff.  I’m especially interested in what better tools for creating performant sites would look like.</p>
+<h3>Technical Deep Dives</h3>
+<p>These are long technical articles, and more back end focused then I usually write about on this blog but both touch on things I’m interested in and I found them fascinating.</p>
+<p><a href="https://segment.com/blog/introducing-centrifuge/">Centrifuge: a reliable system for delivering billions of events per day || Calvin French-Owen</a></p>
+<p>I had to build an event handling system like this a few years ago, and it’s fun to see how the optimal solution changed for Segment as they scaled.  On the backend designs that make no sense for small projects start becoming very real options as a project scales.  That’s why it’s always worth having some skepticism over the idea that because AppAmaGooFaceSoft are using a technology it must be “best in class” and we should use it in our small 20 person development team that is facing problems of a completely different scale.</p>
+<p><a href="https://blog.burntsushi.net/ripgrep/">ripgrep is faster than {grep, ag, git grep, ucg, pt, sift} | Andrew Gallant</a></p>
+<p>This piece is structured as a comparison of performance between cli file search tools, but the cool part is the deep insight into text search algorithms and performance tricks littered throughout the benchmark discussions.  It’s fascinating to see how heavily optimized for speed these tools are.  Also, I’ve been using Ack for 5 years even though I know it’s not the fastest tool for searching, because for me it was always “fast enough” to avoid searching.  But ripgrep appears to be dramatically enough faster in the relatively rare circumstances where I’m searching truly large directories of files, that I may finally be up for converting to a new tool.</p>
+<h3>Book Review</h3>
+<p><a href="https://amzn.to/2mPr3zV">Front-End Reactive Architectures | Luca Mezzalira</a></p>
+<p>I’ve been very excited to check out this book since I first saw the title pre-release.  I finally had a chance to purchase and read it last month, and I’m sad to report that I had fallen prey to the classic mistake of judging a book by it’s cover.  I had hoped that this would be a deep dive into architecture and how we structure front end applications, and how reactive programming concepts can impact that.  There’s a real dearth of quality high level UI architecture resources out there, so I was genuinely excited about this.</p>
+<p>Unfortunately the book is structured more like a series of loosely related blog posts, first with an overview of older architectural models like MVC, MVP and MVVM, followed by sections looking at several different libraries that use reactive principles: RxJS, Cycle, and MobX.  The latter sections focused more on the nuts and bolts of using the libraries to create simple example apps and less on the impact that using them would have on a large application.  So this is a good book if you want to see some simple code examples of how these libraries work in practice.  But I’m still waiting for a great high level front-end architecture book.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: July 20th]]></title>
             <link>https://benmccormick.org/2018/07/20/weekly-links-07-20-18/</link>
@@ -429,173 +453,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>An incredibly fun video.  Paul McCartney showing James Corden around Liverpool.</p>
 <p><a href="https://www.bloomberg.com/news/features/2018-06-21/how-nintendo-s-switch-helped-the-japanese-gaming-giant-win-again">The Legend of Nintendo | Bloomberg</a></p>
 <p>A great writeup on Nintendo’s last few years and where they stand now.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[JavaScript “Stale Practices”]]></title>
-            <link>https://benmccormick.org/2018/06/26/javascript-stale-practices/</link>
-            <guid>https://benmccormick.org/2018/06/26/javascript-stale-practices/</guid>
-            <pubDate>Tue, 26 Jun 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>Best practices don’t last forever. This is especially true when a field is changing fast, and JavaScript development has changed a lot over the past 10 years.  The old best practices go stale, and new ones take their place.  Here are 5 JavaScript best practices that have gone stale recently.</p>
-<h4>Using the strict mode pragma to opt in to a sane JavaScript subset</h4>
-<p>When <a href="https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning">ECMAScript 5</a> was released, it introduced a special <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">strict mode</a> that tweaks the behavior of some obscure features of the language.  Now, when a function or script file starts with the string <code class="language-text">&#39;use strict&#39;</code>, code in that scope works differently than the same code without the <code class="language-text">&#39;use strict&#39;</code> string.  Expressions that look like a mistake are flagged as an error instead of being ignored, code is restricted in ways that make it easier to optimize performance, and terms that may be used in future JavaScript versions are reserved as keywords and you can’t use them as names for variables.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> objWithDuplicates <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> x<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// Fine normally, an error in strict mode</span>
-<span class="token keyword">with</span><span class="token punctuation">(</span>objWithDuplicates<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// with expressions are syntax errors in strict mode</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">var</span> <span class="token keyword">private</span> <span class="token operator">=</span> <span class="token string">'top secret'</span><span class="token punctuation">;</span> <span class="token comment">// this is a ReferenceError in strict mode</span></code></pre>
-      </div>
-<p>Strict mode was a nice small improvement in JavaScript, and a good way to move past some of the mistakes of the past like <code class="language-text">with</code> expressions.  But even though it was a good idea to use, and I was adding the silly <code class="language-text">&#39;use strict&#39;</code> string to the start of all my functions for a few years, this is no longer necessary for many people.</p>
-<p>The <code class="language-text">use strict</code> string was necessary because the language designers wanted to maintain backwards compatibility, and they needed a way for developers to signal that they were writing new code that they were comfortable holding to a higher standard.  ECMAScript 2015 (<a href="https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning">ES6</a>) provided a better way of doing that.  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export">JavaScript Modules</a> are a new type of script, and browsers can be confident that scripts loaded that way have been edited in a ES2015+ world.  Because of that confidence, JavaScript modules are strict mode by default.  So if you are using <code class="language-text">import</code> and <code class="language-text">export</code> in your code, you can stop adding <code class="language-text">&#39;use strict&#39;</code> everywhere and just rely on the browser to do the right thing.  If you’re compiling through <a href="https://babeljs.io/">Babel</a> or other tools you’ll still be ok, as they add the strict mode pragma for you when they compile your classes down to ES5 code.</p>
-<h4>Using anonymous functions when dealing with async code in loops</h4>
-<p>For many years, JavaScript’s many async use cases combined with the way <code class="language-text">var</code> works to create a classic programmer trap.  Here’s some jQuery code to put a listener on a series of buttons and alert a different number for each one of them.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> buttons<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">$</span><span class="token punctuation">(</span>buttons<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">alert</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
-<p>The idea is that if we have a list of 10 buttons, after we run this code clicking the first one will alert <code class="language-text">1</code>, the next one <code class="language-text">2</code>, and so on.  The problem is… it doesn’t work.  If there is a list of 10 buttons, all of them will alert <code class="language-text">10</code> when clicked.  But why?   The problem is that <code class="language-text">var</code> doesn’t create a new variable for each run of the loop.  The technical term here is that <code class="language-text">var</code> isn’t <em>block-scoped</em>.  It isn’t limited by a set of curly braces, when <code class="language-text">var</code> is called, it creates a variable that is accessible anywhere inside the function that contains it, or it creates a property on the global object if there is no containing function.  So when we run our loop, we aren’t creating 10 separate <code class="language-text">i</code> values, we’re creating 1 <code class="language-text">i</code> value and updating it 9 times.  Since the click handlers don’t run until the user has clicked the button, <code class="language-text">i</code> has been updated all the way to 9, and every button references it and alerts <code class="language-text">10</code>.</p>
-<p>For years, the recommended way of working around issues like this was to create an inner function.  Because JavaScript variables are function scoped, we can create a new function, pass it the current i value, and execute the function immediately.  When the click handler executes, it will have a reference to the arguments from the inner function, and will receive the correct variable value.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> buttons<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>innerI<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">$</span><span class="token punctuation">(</span>buttons<span class="token punctuation">[</span>innerI<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token function">alert</span><span class="token punctuation">(</span>innerI <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
-<p>This example works, but it’s obviously a bit convoluted, and would not look straightforward to a new JavaScript programmer who came across it.  It gives off some unmistakable “magic function” vibe.  Fortunately we can do better nowadays.</p>
-<p>ECMAScript 2015 introduced the block scoped variable types <code class="language-text">let</code> and <code class="language-text">const</code>.  Now we can create loop iterators that stay scoped to the loop portion that they were assigned in.  This allows us to re-simplify our code, but have it actually work.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> buttons<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">$</span><span class="token punctuation">(</span>buttons<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">alert</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
-<h4>Using closures for all of our private variables</h4>
-<p>JavaScript has never had a first class method for creating objects with private state.  Any normal object you create will have all its properties available for reading and editing by any code that has access to it.  But there has always been a workaround.  We can once again take advantage of JavaScript’s function scope.  This time we can write a function that creates an object.  The methods of that object will have access to any other variables inside that function.  This is called a closure.  A closure is a function that returns another function that maintains access to the outer function state.  In this case the returned function will be a method on an object.  Here’s an example with a user, where the id is only readable and the name can only be updated with explicit get and set commands, which won’t accept a falsy value:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">createUser</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> id <span class="token operator">=</span> <span class="token function">uuid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span>
-        <span class="token function">getID</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> id <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> name <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token function">setName</span><span class="token punctuation">(</span>_name<span class="token punctuation">)</span> <span class="token punctuation">{</span> name <span class="token operator">=</span> _name <span class="token operator">||</span> <span class="token string">'Unknown'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
-<p>This object factory pattern is still useful today, but sometimes we want something a bit more object oriented.  Fortunately there are now more ways of doing these things. ES2015 introduced the <code class="language-text">Symbol</code> keyword.  Symbols are unique values that can only be accessed by code that has a reference to the symbol.  So we can use a symbol as a more advanced version of our factory code above, creating a class that accesses it’s private state via a symbol.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token constant">ID</span> <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> <span class="token constant">NAME</span> <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
-    <span class="token function">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">[</span><span class="token constant">ID</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">uuid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">[</span><span class="token constant">NAME</span><span class="token punctuation">]</span> <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">get</span> <span class="token function">id</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">[</span><span class="token constant">ID</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
-    <span class="token keyword">get</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">[</span><span class="token constant">NAME</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
-    <span class="token keyword">set</span> <span class="token function">name</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">[</span><span class="token constant">NAME</span><span class="token punctuation">]</span> <span class="token operator">=</span> name <span class="token operator">||</span> <span class="token string">'Unkown'</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
-<p>This allows us to keep all of our private state local to the object rather than in a separate closure, and our objects with private state can be created with class constructor syntax when that is preferred or required.</p>
-<p>I want to note that this new best practice will likely become stale itself soon.  TC39 is considering a proposal to add explicit private state to classes.  It is currently in <a href="https://ponyfoo.com/articles/tc39-ecmascript-proposals-future-of-javascript#stage-3">stage 3</a> with TC39 and is likely to become a part of the language.  In the proposal, private state would look like this:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
-    #id <span class="token operator">=</span> <span class="token function">uuid</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    #name <span class="token operator">=</span> <span class="token string">'Unknown'</span>
-
-    <span class="token function">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span>#name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">get</span> <span class="token function">id</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#id<span class="token punctuation">}</span>
-    <span class="token keyword">get</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#name<span class="token punctuation">}</span>
-    <span class="token keyword">set</span> <span class="token function">name</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>#name <span class="token operator">=</span> name <span class="token operator">||</span> <span class="token string">'Unkown'</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
-<h4>Reading <code class="language-text">arguments</code> to create variadic functions</h4>
-<p>Variadic functions are functions that may contain  different numbers of arguments when called.  For instance, a sum function that takes multiple arguments and adds them all together.  Prior to ES6, this was accomplished by using the special <code class="language-text">arguments</code> variable.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> len <span class="token operator">=</span> arguments<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>len <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">throw</span> <span class="token string">'Sum requires at least 2 arguments'</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment">// convert arguments to a "real array"</span>
-    <span class="token keyword">let</span> args <span class="token operator">=</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> args<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment">// sum(1,2) === 3</span>
-<span class="token comment">// sum(1, 10, 20) === 31</span></code></pre>
-      </div>
-<p>Using arguments is a bit messy.  First, it’s a magic variable like <code class="language-text">this</code> that is automatically available in the scope of any function.  This isn’t obvious to people who don’t know about it.  Second, it’s not a “real array”, it’s an “array-like object”, and thus it doesn’t have useful methods like <code class="language-text">map</code>, <code class="language-text">filter</code>, <code class="language-text">reduce</code> available on its prototype.  You always have to deal with the whole object, even if you have some named arguments and some unnamed ones.   But ES6 provided a better solution with rest parameters.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token operator">...</span>nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span>
-        <span class="token keyword">throw</span> <span class="token string">'Sum requires at least 2 arguments'</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> nums<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
-<p>Rest parameters allow us to capture a varying-length group of arguments and read them as a real array with a meaningful name we choose. Because it captures a varying-length list of arguments, rest parameters must be the final parameter defined for a function, but they don’t have to be the first.  You can define a few static parameters and leave a rest parameter to capture the remainder.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token function-variable function">createBlogPost</span> <span class="token operator">=</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> date<span class="token punctuation">,</span> <span class="token operator">...</span>tags<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
-    id<span class="token punctuation">:</span> <span class="token function">uuid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    name<span class="token punctuation">,</span>
-    metadata<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        date<span class="token punctuation">,</span>
-        tags<span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-      </div>
-<p>Rest parameters can do everything arguments do<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>, but they do it in a less magic way, without the confusion of managing a fake array.  At this point arguments should be considered an anti-pattern.</p>
-<h4>Using slice to convert something to an array</h4>
-<p>The previous snippet contained an extra outdated practice.  Did you notice this line?</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> args <span class="token operator">=</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-      </div>
-<p>That was previously the best way to handle fake arrays like <code class="language-text">arguments</code>, NodeLists, or just <code class="language-text">{3: 1, length: 4}</code>. <code class="language-text">slice</code> makes a copy of an array, optionally adding or deleting elements.  Here we’re only passing <code class="language-text">arguments</code> as the <code class="language-text">this</code> value of the function, so it works the same as <code class="language-text">arr.slice()</code>.  When called without arguments, <code class="language-text">slice</code> is essentially a clone function.  But this code looks pretty bizarre if you haven’t seen it before.  It also slides into the “wait did I mean slice or splice?” vortex of array method confusion. So it isn’t a particularly readable solution.</p>
-<p>ES6 introduced the <code class="language-text">Array.from</code> method to improve this situation.  <code class="language-text">Array.from</code> takes an array-like object and creates a real array copy of it.  So it can be a clone method for existing arrays, or a conversion method for fakes like <code class="language-text">arguments</code>.  <code class="language-text">Array.from(arguments)</code> certainly reads a lot cleaner than the slice method.  It should be noted that they aren’t completely equivalent.  <code class="language-text">slice</code> will leave missing indices as holes, while <code class="language-text">Array.from</code> will add those indices and set them to undefined.  So you can see the following difference</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> fakeArray <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> length<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment">// convert object to a real array</span>
-<span class="token keyword">let</span> slicedArray <span class="token operator">=</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>fakeArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> frommedArray <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>fakeArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// filter Out 5s</span>
-<span class="token keyword">let</span> slicedArrayNoFives <span class="token operator">=</span> slicedArray<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=></span> x <span class="token operator">!==</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> frommedArrayNoFives <span class="token operator">=</span> frommedArray<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>x <span class="token operator">=></span> x <span class="token operator">!==</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>slicedArrayNoFives<span class="token punctuation">)</span> <span class="token comment">// [3]</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>frommedArrayNoFives<span class="token punctuation">)</span> <span class="token comment">// [undefined, 3, undefined]</span></code></pre>
-      </div>
-<p>You can see my <a href="https://benmccormick.org/2018/06/19/code-golf-sparse-arrays/">last post</a> for more on holes in arrays.</p>
-<h3>Moving Forward</h3>
-<p>The fun of this industry is that everything is always changing.  The frustration of this industry is that everything is always changing.  I’m sure ES2020 or whatever they call it by then will give us plenty of new “best practices”.  In the meantime, no need to throw away all your code right away.  But if you’re setting an example for others, it would be a great time to update some visible examples of stale practices to point to the newer, more friendly solutions.  Even if you don’t have your own blog posts or documentation to change, you can update public documentation.  Did you know that anyone can update the MDN JavaScript documentation?  I was able to add information about module strict mode to the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">MDN article</a> while working on this post.  And you can upvote modern answers to popular old questions on StackOverflow.</p>
-<ul>
-<li><a href="https://stackoverflow.com/a/960870/1424361">Using <code class="language-text">Array.from</code> to convert <code class="language-text">arguments</code></a></li>
-<li><a href="https://stackoverflow.com/a/16661498/1424361">let instead of closures in loops</a> <sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup></li>
-</ul>
-<p>Or just do some refactoring of high traffic code in your own code bases, so that older code isn’t copy and pasted, and you have good examples of the better way to do things.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Ok technically arguments has an <code class="language-text">arguments.callee</code> property that gives you a reference to the calling function, but you can recreate this by giving your function a name, and using <code class="language-text">arguments.callee</code> is an error in strict mode.</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-<li id="fn-2">
-<p>Yeah… that one is my answer.  I promise I’m not just trolling for upvotes :)</p>
-<a href="#fnref-2" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
