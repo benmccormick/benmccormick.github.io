@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-07-29T03:17:47Z</updated>
+    <updated>2018-08-02T23:30:18Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,39 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Feedback Loops]]></title>
+        <id>https://benmccormick.org/2018/08/02/feedback-loops/</id>
+        <link href="https://benmccormick.org/2018/08/02/feedback-loops/">
+        </link>
+        <updated>2018-08-02T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p><em>How do we get better faster?</em>  It’s amazing to consider the amount of money, thought and effort that has gone into solving that one simple problem in software development over the past 2 decades.  Here’s a small sample of buzzwords, trends and methodology that are concerned with reducing the time between making a change to software and seeing the results:</p>
+<p><strong>Agile -</strong> Agile is all about delivering working software sooner, so that you produce value faster and learn lessons quickly.</p>
+<p><strong>Test Driven Development (TDD) -</strong> Test driven development is a process designed to let you know as soon as possible when a change has had the desired effect during development, and also sets up the conditions under which you know as soon as possible when a change has had an undesirable side effect.</p>
+<p><strong>Devops -</strong> Devops has been a push over the past decade to automate and control all parts of the software creation, deployment and maintenance life cycle.  Automation like continuous integration servers that run your test after every commit, chat bots that alert you based on site performance metrics, and servers that automatically build a copy of every branch for testing in a virtual machine are all examples of Devops being used to speed up the point when you know that a change worked or didn’t work.</p>
+<p><strong>Developer Experience -</strong> This is a more recent buzzword that I’ve seen thrown around a lot in the JavaScript community, talking about improving developer tools.  Developer tool features like hot reloading, nicer error messages, specialized debugging and profiling tools, and fast build times all fight this same problem of getting a result as fast as possible.</p>
+<h3>Feedback Loops</h3>
+<p>All of these tools are concerned with <em>feedback loops</em>, the process by which developers, designers and product managers make changes, learn about the effect of those changes, and then iterate.  Teams with slow feedback loops spend a lot of time planning and thinking about every change, making sure to get everything right. They feel the cost distinctly each time they make a mistake, and it generally leads to a more cautious mindset.  Teams with fast feedback loops can plan too.  But they also have the option of taking a more experimental attitude and learning from their attempts. This can happen at multiple scales:</p>
+<ul>
+<li>A <strong>developer</strong> can try out 5 different CSS rules in the UI in a few seconds if his UI is hot reloading and he doesn’t have to wait for a whole SCSS bundle to recompile</li>
+<li>A <strong>QA team</strong> can immediately know if somebody pushes a change that would breaks tests if they have a CI server set up to run tests against every new commit to each branch.</li>
+<li>A <strong>product team</strong> can see quickly that a new feature is problematic if he’s able to see detailed analytics on usage, instead of waiting to do enough user interviews to get a full picture</li>
+<li>A <strong>company</strong> can change direction if they ship an MVP early instead of attempting to wait and release the perfect product</li>
+</ul>
+<h3>Closing Your Loops</h3>
+<p>As a developer who wants to make your product better, one of your best power moves is finding ways to speed up feedback loops.  Here are 4 suggestions for how to do that:</p>
+<ol>
+<li><strong>Ask Questions Early:</strong> One of the most important feedback loops for a developer is between yourself and the individual in charge of defining what you’re building.  If you simply take requirements from your PM/Manager/Lead/Designer/CEO/Client and go off and build your giant amazing piece of beautiful software, without any clarification, there’s a pretty good chance you’re going to get to build it again, this time twice as fast without the budget.  Asking clarifying questions early prevents you wasting your time and exposes understanding gaps and technical barriers while there’s still a chance to deal with them.</li>
+<li><strong>Get Feedback as you go:</strong> Similarly, anytime you have a chance to get feedback on work while it is still in process from somebody who might object in the end, do it.  This means instead of building everything at once, work on smaller chunks.  This often takes time and thought, but the earlier you create <em>complete</em> chunks of code that can be evaluated and ideally shipped on their own, the more likely you are to ship something great in the end.</li>
+<li><strong>Optimize your environment:</strong> Have you spent time figuring out how to work as efficiently as possible?  Have you done it recently?  If not it might be worth re-evaluating your setup on a quarterly basis or so, figuring out what tools you can use to get quicker feedback, and also learning the shortcuts, tricks and new features for the tools that you do use.</li>
+<li><strong>Ship Code:</strong> Ultimately the best feedback comes when people are using what you’ve written.  Whether that’s compliments, bug reports, feature requests, anger or viral adoption, shipping will tell you things that you would never have been certain of while iterating on your own.  If you’re struggling to get code out, always fix that first.</li>
+</ol>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weekly Links: July 28th]]></title>
         <id>https://benmccormick.org/2018/07/28/weekly-links-07-28-18/</id>
@@ -477,33 +510,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>Seeking hands on information about specific design, CSS or JavaScript techniques</li>
 </ol>
 <p>I enjoyed Atomic Design a lot, and hope that I’ll get to use what I’ve learned in the near future.  As far as I can tell, Atomic design is only available on <a href="http://atomicdesign.bradfrost.com/">Brad Frost’s site</a>.  You can read the book online there, or buy the paperback version.  If you fall into one of the 4 categories I listed above, I’d highly recommend checking it out.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: June 30th]]></title>
-        <id>https://benmccormick.org/2018/06/30/weekly-links-06-30-18/</id>
-        <link href="https://benmccormick.org/2018/06/30/weekly-links-06-30-18/">
-        </link>
-        <updated>2018-06-30T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>JavaScript &#x26; The Web</h3>
-<p><a href="https://www.merrickchristensen.com/articles/headless-user-interface-components/">Headless User Interface | Merrick Christensen</a></p>
-<p>UI mixins are one of the hardest problems to solve.  Sharing “behavior” across multiple UI components is difficult to do right.  Merrick has documented an emerging pattern for doing this with React.</p>
-<p><a href="https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c">React Native at Airbnb | Airbnb Engineering</a></p>
-<p>This has gotten plenty of attention around the internet, but Airbnb is moving away from React Native after years of heavy use and contributions to the community.  Worth reading as an explanation of the pluses and minuses of React Native, probably not worth reading too much into the move beyond that.</p>
-<p><a href="https://remysharp.com/2018/06/26/an-adventure-in-sparse-arrays">An Adventure in Sparse Arrays | Remy Sharp</a></p>
-<p>For anyone who read my <a href="https://benmccormick.org/2018/06/19/code-golf-sparse-arrays/">“sparse array code golf” post</a> the other day, this is a better holistic look at sparse arrays in JavaScript.  I learned several new things here.</p>
-<h3>Programming Practices</h3>
-<p><a href="https://medium.com/@ricomariani/understanding-performance-regions-e4b6e09a94da">Understanding Performance Regions | Rico Mariani</a></p>
-<p>This is a nice high level post about a different way to think about performance monitoring and improvement.</p>
-<h3>Fun</h3>
-<p><a href="https://www.youtube.com/watch?v=QjvzCTqkBDQ&#x26;feature=youtu.be">Paul McCartney Carpool Karaoke</a></p>
-<p>An incredibly fun video.  Paul McCartney showing James Corden around Liverpool.</p>
-<p><a href="https://www.bloomberg.com/news/features/2018-06-21/how-nintendo-s-switch-helped-the-japanese-gaming-giant-win-again">The Legend of Nintendo | Bloomberg</a></p>
-<p>A great writeup on Nintendo’s last few years and where they stand now.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
