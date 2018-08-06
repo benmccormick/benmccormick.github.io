@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Thu, 02 Aug 2018 23:30:18 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 06 Aug 2018 01:54:45 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,30 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Weekly Links: August 5th]]></title>
+            <link>https://benmccormick.org/2018/08/05/weekly-links-08-05-18/</link>
+            <guid>https://benmccormick.org/2018/08/05/weekly-links-08-05-18/</guid>
+            <pubDate>Sun, 05 Aug 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h3>JavaScript and the Web</h3>
+<p><a href="https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4">The Cost Of JavaScript in 2018 | Addy Osmani</a></p>
+<p>This was a great breakdown of how exactly large JavaScript bundles cause sites to be slow and how that impacts business needs.  These type of advocacy pieces have a tendency to clump all businesses together a bit too much<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>, but Addy is pretty reasonable about that and it’s important for every front end dev to understand these tradeoffs and problems, even if they don’t need to make them top priority for every project.</p>
+<h3>Programming Tools</h3>
+<p><a href="https://css-tricks.com/on-switching-code-editors/">On Switching Code Editors | Chris Coyier</a></p>
+<p>I’m in the middle of possibly switching to VSCode from Atom, which I switched to from Vim, which I switched to from Sublime Text, which originally introduced me to a world beyond overweight IDEs like Eclipse.  So I can relate to this article, and it’s a great framework for thinking through switches.  I will say, I don’t necessarily think I’ve made the best choices here.  I’m not sure that since I’ve learned Vim keybindings, any of my switches have actually increased my productivity.  There’s a cost to learning new tools, even when they have shiny new stuff. <em>grumbles a bit and then goes back to chasing the shiny</em>.</p>
+<p><a href="https://blog.prototypr.io/people-are-going-crazy-over-framer-x-9576448daa18">People Are Going Crazy Over Framer X | Aaron Adler</a></p>
+<p>My twitter feed was blowing up with people talking about Framer X this week, a tool for designers to build interactive designs/prototypes based on React.  This post is a little old but was the best summary of the concept I could find.  Framer X is still in a private beta, so it will be interesting to see what happens when it goes public.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>Even in 2018, not everyone is serving 3rd world businesses or gets a large chunk of their traffic from mobile.  And performance always needs to be traded off against other business goals.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Feedback Loops]]></title>
             <link>https://benmccormick.org/2018/08/02/feedback-loops/</link>
@@ -429,36 +453,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ol>
 </div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Book Review: Atomic Design]]></title>
-            <link>https://benmccormick.org/2018/07/02/book-review-atomic-design/</link>
-            <guid>https://benmccormick.org/2018/07/02/book-review-atomic-design/</guid>
-            <pubDate>Mon, 02 Jul 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>The Unix philosophy for designing software, “Make each program do one thing well”, is a piece of wisdom that goes beyond just programming.  For instance, it also applies to non-fiction writing.  When learning, I find that I gravitate towards small focused resources, rather than monolithic books or websites that aim to teach everything about a specific topic.</p>
-<p><a href="http://atomicdesign.bradfrost.com/">Atomic Design</a> by Brad Frost is a book that does one thing really well: it explains what a design system is, and how you can implement one in your organization.  It doesn’t try to be a book about CSS, design styles or any of the other myriad topics that touch against design systems.  That focus serves it well, and I found it to be well worth my time.</p>
-<p><a href="http://bradfrost.com/blog/link/design-systems/">Design Systems</a>  are an organized toolkit for creating digital products.  They’re a set of elements, widgets, patterns, and layouts (atoms, molecules, organisms and templates in the language of the book) that can be combined to build complex sites and applications.  The idea is pretty simple.  But there are some real challenges in implementing one.</p>
-<ol>
-<li><em>What content belongs in a design system?  Where do we draw the boundary as to what belongs and what doesn’t?</em></li>
-<li><em>How do you build a tool for your design system so that patterns are easily findable, usable, and understandable?</em></li>
-<li><em>How do you keep a design system relevant over time as the product(s) change?</em></li>
-<li><em>How do you convince budget-conscious organizations that maintaining a design system is a good use of time and money?</em></li>
-</ol>
-<p>After a brief introduction to the ideas behind design systems and pattern libraries, these are the challenges that Atomic design tackles.  It discusses a hierarchy for patterns, and methods for pulling them out of existing applications, then moves on to talking about tools for implementing a pattern library, and techniques for navigating organizational politics when starting and maintaining a design system.</p>
-<p>So this book <strong>will be helpful</strong> for you if you are</p>
-<ol>
-<li>Struggling to deal with inconsistencies in your interfaces, or constantly doing custom UI work for each new feature</li>
-<li>Considering implementing a design system/pattern library for your organization</li>
-<li>Hoping to learn more about design systems because somebody else in your organization is pushing for one</li>
-<li>Having trouble maintaining an existing pattern library</li>
-</ol>
-<p>It <strong>won’t be helpful</strong> for you if you are</p>
-<ol>
-<li>Looking for tips on how to make your interface beautiful</li>
-<li>Seeking hands on information about specific design, CSS or JavaScript techniques</li>
-</ol>
-<p>I enjoyed Atomic Design a lot, and hope that I’ll get to use what I’ve learned in the near future.  As far as I can tell, Atomic design is only available on <a href="http://atomicdesign.bradfrost.com/">Brad Frost’s site</a>.  You can read the book online there, or buy the paperback version.  If you fall into one of the 4 categories I listed above, I’d highly recommend checking it out.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
