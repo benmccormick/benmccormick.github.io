@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-08-18T19:04:46Z</updated>
+    <updated>2018-09-02T00:47:55Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,26 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Weekly Links: September 1]]></title>
+        <id>https://benmccormick.org/2018/09/01/weekly-links-09-01-18/</id>
+        <link href="https://benmccormick.org/2018/09/01/weekly-links-09-01-18/">
+        </link>
+        <updated>2018-09-01T00:00:00Z</updated>
+        <content type="html"><![CDATA[<h3>JavaScript And The Web</h3>
+<p><a href="https://blog.angularindepth.com/practical-application-of-reverse-engineering-guidelines-and-principles-784c004bb657">Reverse Engineering React | Angular In Depth</a></p>
+<p>A really cool look at how you can approach a new code base and start learning how it works quickly</p>
+<h3>Programming Tools</h3>
+<p><a href="https://pybowler.io">Bowler | Facebook Open Source</a></p>
+<p>This looks like “JSCOdeshift for Python” to me: a way to quickly update codebases to use new patterns and practices.  I love it. You can <a href="https://benmccormick.org/2018/06/18/codemod-survival/">check out my experience using JavaScript Codemods here</a></p>
+<p><a href="https://github.com/sharkdp/bat">bat</a></p>
+<p>bat is a prettier <a href="https://en.wikipedia.org/wiki/Cat_(Unix)">cat</a>:  dump a file into the terminal, but use syntax highlighting and line numbers.  Good stuff for anyone who lives on the command line.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weekly Links: August 18th]]></title>
         <id>https://benmccormick.org/2018/08/18/weekly-links-08-18-18/</id>
@@ -337,31 +357,6 @@
         <content type="html"><![CDATA[<p>The nice thing about team books is that they’re talking about a subject that almost everybody can relate to.  <a href="https://amzn.to/2u2aPrm">The Five Dysfunctions of a Team</a> by Patrick Lencioni is a book for leaders, but it’s also a book for anyone who wants to better understand why they problems they see in their teams occur, and what needs to change to make them better.</p>
 <p>The Five Dysfunctions is a leadership fable, a story told to illustrate the principals of a business model.  I’ve found that I enjoy this teaching style, I also loved <a href="https://amzn.to/2KHf3Ps">Death By Meeting</a> and <a href="https://amzn.to/2KXOkxh">The Goal</a>, which employee the same style.  The beauty of fables is the way they allow you to soak into a scenario, and connect it to your own experiences and relationships.  Then as the principles the author wants to teach unfold, they take advantage of those connections to spark ideas for application.  At least that’s the theory.</p>
 <p>The Five Dysfunctions is of course, about how teams go wrong.  I won’t spoil the contents too much, but ultimately, team failures aren’t about technique or distinct decisions, but human beings and how we relate to each other.  This book both clearly defines a set of those problems, and then gives concrete suggestions for improving a team when they’re present.  It’s a classic, and I found it as thought provoking as I expected.  I definitely recommend it for anyone who wants to better understand how teams work, and how they fail.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: July 8th]]></title>
-        <id>https://benmccormick.org/2018/07/08/weekly-links-07-08-18/</id>
-        <link href="https://benmccormick.org/2018/07/08/weekly-links-07-08-18/">
-        </link>
-        <updated>2018-07-08T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>A small list this week as it’s a holiday in the states.  So fewer articles out there, and I’m sure I missed some of them.</p>
-<h3>Programmer Life</h3>
-<p><a href="http://firstround.com/review/my-lessons-from-interviewing-400-engineers-over-three-startups/">My Lessons from Interviewing 400+ Engineers | First Round Review</a></p>
-<p>I’m nowhere near Marco’s experience level interviewing, but his advice in this “interview on interviewing” resonates with my experience.  Things that stood out to me:</p>
-<ul>
-<li>Don’t overoptimize on a specific skillset as a startup, since you don’t know what skills you need yet.</li>
-<li>It’s incredibly important (but also quite difficult) to be consistent in your standards across all interviewees</li>
-<li>Team interviewing works better than 1 on 1 interviews for evaluating technical skills and team fit.</li>
-</ul>
-<p><a href="https://lethain.com/digg-v4/">Digg’s v4 launch: an optimism born of necessity | Will Larson</a></p>
-<p>An engineering horror story.</p>
-<p><a href="http://randsinrepose.com/archives/anti-flow/">Anti-Flow | Rands in Repose</a></p>
-<p>Rands remains my favorite software blog because of his ability to capture truths about the engineer condition with beautiful words.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
