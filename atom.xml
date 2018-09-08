@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-09-02T00:47:55Z</updated>
+    <updated>2018-09-08T02:45:03Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,30 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Weekly Links: September 7]]></title>
+        <id>https://benmccormick.org/2018/09/07/weekly-links-09-07-18/</id>
+        <link href="https://benmccormick.org/2018/09/07/weekly-links-09-07-18/">
+        </link>
+        <updated>2018-09-07T00:00:00Z</updated>
+        <content type="html"><![CDATA[<h3>JavaScript And The Web</h3>
+<p><a href="https://stateofjs.com/">State of JS Survey | Raphaël Benitte, Sacha Greif &#x26; Michael Rambeau</a></p>
+<p>This survey is always a great look into the JavaScript community, and it just opened for this year.  If you’re reading this, please fill it out.  I’ll look forward to seeing what they’ve learned in a few months.</p>
+<h3>Books For Programmers</h3>
+<p>It’s a bit of a slow week links wise, so this week I want to share some of my favorite “timeless” programming books.  These are books that will still be relevant in 10 years.</p>
+<p><a href="https://amzn.to/2wVjXyi">The Pragmatic Programmer | Andy Hunt &#x26; David Thomas</a></p>
+<p>My favorite book on general programming “tactics”.  Lots of code level tips and tricks here, as well as some higher level architecture thinking.  Some of the specific examples have aged out, but the general concepts discussed in this book are timeless.</p>
+<p><a href="http://amzn.to/2mKoejo">Clean Architecture | Robert Martin</a></p>
+<p>I reviewed this one <a href="https://benmccormick.org/2018/02/14/book-review-clean-architecture/">earlier this year</a>, and it’s a relatively new book, but I’m confident that it is built to last.  This is a great book on programming “strategy”, the high level construction of maintainable programs.</p>
+<p><a href="https://amzn.to/2NpJyK7">How To Win Friends And Influence People | Dale Carnegie</a></p>
+<p>Not a programming book, but for most programmers who have achieved a minimal level of technical proficiency, the best thing they can do to get better in their career is not more technical growth, but instead growth on their “soft” skills.  Communicating complex topics, helping teams work well together, working through interpersonal issues, negotiation and persuasion are all huge skills for professional software developers.</p>
+<p>There are lots of “business” books out there that are worthwhile, but this is the best book I’ve ever read on the simple yet endlessly deep topic of relating to our fellow human beings.  It has been relevant and helpful for 82 years, and I wouldn’t expect that to change soon.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weekly Links: September 1]]></title>
         <id>https://benmccormick.org/2018/09/01/weekly-links-09-01-18/</id>
@@ -342,21 +366,6 @@
 <p>This was a fun book for basketball lovers.  The sections on Jerry West and the Lakers of the 60s and 70s are more detailed and colorful than the alternating chapters on the modern Warriors, but both are fun, and those interested in how modern Silicon Valley has interacted with the rise of the most popular basketball team in the world will find some interesting tidbits in the modern chapters as well.</p>
 <p><a href="https://amzn.to/2Jj6vJ2">American Gods | Neil Gaiman</a></p>
 <p>A fantasy novel set in modern America.  This one was too crude for me to recommend unreservedly, but it contains a huge number of cool images and ideas, and I don’t regret reading it.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Book Review: The Five Dysfunctions of a Team]]></title>
-        <id>https://benmccormick.org/2018/07/09/book-review-five-dysfunctions/</id>
-        <link href="https://benmccormick.org/2018/07/09/book-review-five-dysfunctions/">
-        </link>
-        <updated>2018-07-09T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>The nice thing about team books is that they’re talking about a subject that almost everybody can relate to.  <a href="https://amzn.to/2u2aPrm">The Five Dysfunctions of a Team</a> by Patrick Lencioni is a book for leaders, but it’s also a book for anyone who wants to better understand why they problems they see in their teams occur, and what needs to change to make them better.</p>
-<p>The Five Dysfunctions is a leadership fable, a story told to illustrate the principals of a business model.  I’ve found that I enjoy this teaching style, I also loved <a href="https://amzn.to/2KHf3Ps">Death By Meeting</a> and <a href="https://amzn.to/2KXOkxh">The Goal</a>, which employee the same style.  The beauty of fables is the way they allow you to soak into a scenario, and connect it to your own experiences and relationships.  Then as the principles the author wants to teach unfold, they take advantage of those connections to spark ideas for application.  At least that’s the theory.</p>
-<p>The Five Dysfunctions is of course, about how teams go wrong.  I won’t spoil the contents too much, but ultimately, team failures aren’t about technique or distinct decisions, but human beings and how we relate to each other.  This book both clearly defines a set of those problems, and then gives concrete suggestions for improving a team when they’re present.  It’s a classic, and I found it as thought provoking as I expected.  I definitely recommend it for anyone who wants to better understand how teams work, and how they fail.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
