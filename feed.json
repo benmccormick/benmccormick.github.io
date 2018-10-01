@@ -10,6 +10,17 @@
     },
     "items": [
         {
+            "id": "https://benmccormick.org/2018/09/23/weekly-links-09-23-30/",
+            "html_content": "<h3>Javascript &#x26; the Web</h3>\n<p><a href=\"https://hackernoon.com/principles-of-component-api-prop-design-bb20cd58da54\">Principles of Component API Design | Chris Schmitz</a></p>\n<p>Good advice for designing React components</p>\n<h3>Programming Tools</h3>\n<p><a href=\"https://www.sublimemerge.com/\">Sublime Merge</a></p>\n<p>A new Git tool from the makers of Sublime Text.  Looks lightning fast, good looking and usable.  Exactly what you’d expect.  I’m not a big UI guy for Git, but I’ll be playing with this, and it might be my new go-to recommendation.</p>\n<h3>Book Review</h3>\n<p><a href=\"https://amzn.to/2OqjY8u\">The Everything Store | Brad Stone</a></p>\n<p>Still finishing this one up, but can already recommend it.  A great look into the creation of one of the most important companies in the world.  I was pretty interested to read about how intense Jeff Bezos is, and how hard he ran the early employees of Amazon.  I hadn’t realized that he fell into the Steve Job’s school of CEO-hood.</p>",
+            "url": "https://benmccormick.org/2018/09/23/weekly-links-09-23-30/",
+            "title": "Weekly Links: September 30",
+            "date_modified": "2018-09-30T00:00:00Z",
+            "author": {
+                "name": "Ben McCormick",
+                "url": "http://benmccormick.org"
+            }
+        },
+        {
             "id": "https://benmccormick.org/2018/09/23/weekly-links-09-23-18/",
             "html_content": "<h3>Javascript &#x26; the Web</h3>\n<p><a href=\"https://www.netlify.com/blog/2018/09/12/the-rise-of-immer-in-react/\">The Rise of Immer | Shawn Wang</a></p>\n<p>I’m a few weeks late on this one, but it is worth your time.  Shawn breaks down a new trend in React state management: the increasing popularity of Immer as a base for improving state management APIs.  I’m particularly interested in <a href=\"https://github.com/aweary/react-copy-write\">react-copy-write</a> as a new simpler paradigm for React state management.  Right now Redux has “won” that space, and MobX is the clear second option, but it still feels like there’s room for improvement and new options.  Will be cool to see what people build on top of immer.</p>\n<h3>Leadership</h3>\n<p><a href=\"https://blog.usejournal.com/how-to-fail-as-a-new-engineering-manager-30b5fb617a\">How to fail as a new engineering manager | Brad Armstrong</a></p>\n<p>As a new engineering manager, I found this list super helpful.  I can already feel the temptation to fall into many of these traps, and it’s encouraging to hear about them from somebody who has gone ahead of me.</p>\n<h3>Book Review</h3>\n<p><a href=\"https://amzn.to/2xzyhho\">Every Good Endeavor | Tim Keller</a></p>\n<p>This is a “Christian book”, but I think it would be interesting to anyone who is interested in thinking about why we work, and how we find meaning in our work.  If you are a Christian, there’s lots of insight here connecting the truths of our faith to the rhythms of our work lives.  If you’re not, there is plenty to provoke thought, because the questions this book raises; why do we work? why is work often so unfulfilling? How do we find our purpose?; are universal questions regardless of whether you agree with Keller’s answers or foundational beliefs.  Highly recommended.</p>",
             "url": "https://benmccormick.org/2018/09/23/weekly-links-09-23-18/",
@@ -103,17 +114,6 @@
             "url": "https://benmccormick.org/2018/07/20/weekly-links-07-20-18/",
             "title": "Weekly Links: July 20th",
             "date_modified": "2018-07-20T00:00:00Z",
-            "author": {
-                "name": "Ben McCormick",
-                "url": "http://benmccormick.org"
-            }
-        },
-        {
-            "id": "https://benmccormick.org/2018/07/17/quick-tip-logging-breakpoints/",
-            "html_content": "<p>Stop me if this sounds familiar: you see a bug on your site.  You want to know what’s going on.  You fire up the developer tools, put a breakpoint in the area you think is a problem, and… the error doesn’t occur while it’s being debugged.  Probably it’s a timing issue, but I’ve also seen situations where pausing on certain breakpoints will actually cause a browser tab to freeze up.  Whatever weirdness you’re dealing with, you can’t get a breakpoint running in the right spot to see the error.  These are known colloquially as <a href=\"https://en.wikipedia.org/wiki/Heisenbug\">Heisenbugs</a>, bugs that disappear when measured.  Ideally at this point you would add some logging, but if the issue is on production, and you don’t know exactly what needs to be logged, that could delay a fix by an unacceptable amount.</p>\n<p>I actually ran into this last night, and decided to test out a tactic I’d heard about in a <a href=\"https://changelog.com/jsparty/30\">recent JS Party episode</a>.  Did you know that you can use conditional break points to add temporary logging to a live application?</p>\n<p>Conditional breakpoints are a browser debugger feature where you set a breakpoint, and specify a condition.  The breakpoint only stops the program execution when that condition is truthy.  Here’s a video describing the feature in Firefox:</p>\n<div>\n          <div\n            class=\"gatsby-resp-iframe-wrapper\"\n            style=\"padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden;\"\n          >\n            <iframe src=\"https://www.youtube.com/embed/pVPlMhfrMwM\" frameborder=\"0\" encrypted-media\"=\"\" allowfullscreen style=\"\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            height: 100%;\n          \"></iframe>\n          </div>\n          </div>\n<p>Conditional breakpoints are useful when you’re running through a code path many times during program execution, but you want to stop during a specific run.  But they can also be used to solve our heisenbug problem.  Because the conditional breakpoint executes the code inside of it in the context of the line we’re trying to break on, we can actually put logging inside the breakpoint.</p>\n<p><a href=\"log-example.png\">An example of a console.log inside a breakpoint</a></p>\n<p>That <code class=\"language-text\">console.log</code> will execute, and because <code class=\"language-text\">console.log</code> returns false, the breakpoint will never actually stop.  It’s a heisenbug-safe version of watching variables when you’re at a breakpoint, and there’s no redeploys required.</p>",
-            "url": "https://benmccormick.org/2018/07/17/quick-tip-logging-breakpoints/",
-            "title": "Quick Tip: Logging In Breakpoints",
-            "date_modified": "2018-07-17T00:00:00Z",
             "author": {
                 "name": "Ben McCormick",
                 "url": "http://benmccormick.org"
