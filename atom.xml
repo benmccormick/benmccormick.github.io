@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-10-01T00:32:26Z</updated>
+    <updated>2018-10-07T21:26:53Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,39 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Weekly Links: October 7th]]></title>
+        <id>https://benmccormick.org/2018/09/23/weekly-links-09-23-30/</id>
+        <link href="https://benmccormick.org/2018/09/23/weekly-links-09-23-30/">
+        </link>
+        <updated>2018-10-07T00:00:00Z</updated>
+        <content type="html"><![CDATA[<h3>Javascript &#x26; the Web</h3>
+<p><a href="https://medium.com/blackrock-engineering/5-common-mistakes-with-keys-in-react-b86e82020052">Common Mistakes with Keys in React | Li He</a></p>
+<p>This was a nice summary of a topic that lots of people likely breeze over in React until it burns them.  Short and informative; good stuff.</p>
+<p><a href="https://humanwhocodes.com/blog/2018/10/extracting-command-line-arguments-nodejs/">Extracting command line arguments from Node.js using destructuring |  Nicholas C. Zakas</a></p>
+<p>Destructuring is one of those JavaScript featurs that it’s easy to go a little crazy with.  You go from not knowing it exists to writing expressions like this in a day<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>:</p>
+<div class="gatsby-highlight" data-language="javascript">
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span>user<span class="token punctuation">:</span><span class="token punctuation">{</span>fname<span class="token punctuation">:</span>userFirstName <span class="token operator">=</span> <span class="token string">'Jon'</span><span class="token punctuation">,</span> lname<span class="token punctuation">:</span>userLastName<span class="token operator">=</span> 'Smith<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">=</span> data<span class="token punctuation">;</span></code></pre>
+      </div>
+<p>That type of thing will drive the people reading your programs crazy eventually.  This article provides a nice example of where destructuring shines.</p>
+<h3>Leadership</h3>
+<p><a href="https://www.attack-gecko.net/2018/09/04/followership/">Followership | Jason Wong</a></p>
+<p>This is a really interesting breakdown of “follower styles”.  I’ll admit I’m a sucker for 2x2 grid frameworks, but I love em because they’re powerful communication tools.  I’ll be thinking about how I can use this with my team, as well as thinking about how I relate to those in authority over me.<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup></p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>That sets 2 variables, <code class="language-text">userFirstName</code> and <code class="language-text">userLastName</code> pulling them from <code class="language-text">data.user.fname</code> and <code class="language-text">data.user.lname</code> respectively, and defaulting them to John and Smith if they’re not defined. …obviously?</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Weekly Links: September 30]]></title>
         <id>https://benmccormick.org/2018/09/23/weekly-links-09-23-30/</id>
@@ -231,34 +264,6 @@
 <p><a href="https://amzn.to/2mPr3zV">Front-End Reactive Architectures | Luca Mezzalira</a></p>
 <p>I’ve been very excited to check out this book since I first saw the title pre-release.  I finally had a chance to purchase and read it last month, and I’m sad to report that I had fallen prey to the classic mistake of judging a book by it’s cover.  I had hoped that this would be a deep dive into architecture and how we structure front end applications, and how reactive programming concepts can impact that.  There’s a real dearth of quality high level UI architecture resources out there, so I was genuinely excited about this.</p>
 <p>Unfortunately the book is structured more like a series of loosely related blog posts, first with an overview of older architectural models like MVC, MVP and MVVM, followed by sections looking at several different libraries that use reactive principles: RxJS, Cycle, and MobX.  The latter sections focused more on the nuts and bolts of using the libraries to create simple example apps and less on the impact that using them would have on a large application.  So this is a good book if you want to see some simple code examples of how these libraries work in practice.  But I’m still waiting for a great high level front-end architecture book.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: July 20th]]></title>
-        <id>https://benmccormick.org/2018/07/20/weekly-links-07-20-18/</id>
-        <link href="https://benmccormick.org/2018/07/20/weekly-links-07-20-18/">
-        </link>
-        <updated>2018-07-20T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>JavaScript and the Web</h3>
-<p><a href="https://medium.com/google-design/google-photos-45b714dfbed1">Building the Google Photos Web UI | Antin Harasymiv</a></p>
-<p>An amazing detail-laden look at the design and engineering decisions that go into a top of the line web photo experience.  One of the best front end reads I’ve seen this year.</p>
-<p><a href="https://babeljs.io/blog/2018/07/19/whats-happening-with-the-pipeline-proposal">What’s Happening With the Pipeline (|>) Proposal? | James DiGioia</a></p>
-<p>An update on the proposal to add a pipeline operator to JavaScript.  I am not the target audience of this proposal, as I don’t regularly write in the nested miniature function style that is aided by this proposal, but I would really love to see some real world code (not fabricated examples) that would have their readability improved by this proposal. The smart pipelines proposal in particular seems like it’s adding a bunch of new syntax for developers to learn and tooling to support.  Since this is a “sugar” feature and doesn’t add new capabilities, I really wonder whether it’s worth it.</p>
-<h3>Leadership and Teams</h3>
-<p><a href="http://boz.com/articles/p-rules.html">The P Rules | Andrew Bosworth</a></p>
-<p>Design Reviews are one of my favorite parts of my job, and this is a great set of rules for having good ones.</p>
-<p><a href="https://larahogan.me/blog/feedback-equation/">Feedback Equation | Lara Hogan</a></p>
-<p>So this is back to back weeks with links from Lara, and there’s a good reason for it.  This is a great framework for speaking the truth to somebody with humility.</p>
-<h3>Startups</h3>
-<p><a href="https://www.atrium.co/blog/b2b-vs-b2c/">Why I love B2B over B2C | Justin Kan</a></p>
-<p>I’ve worked at B2B companies my whole career, so I’m biased I guess, but unless you just like playing the lottery, its tough to see why you’d prefer B2C from a pure financial perspective.</p>
-<h3>Random</h3>
-<p><a href="https://www.youtube.com/watch?v=1-vcErOPofQ">Grace Hopper on Letterman in 1986 | YouTube</a></p>
-<p>This clip is just wonderful.  A little slice of history, touching the computer industry, the greatest generation, and the roots of our current late night comedy scene.  “There was a time when everyone in this country did one thing together” is an amazing statement in our current political environment.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
