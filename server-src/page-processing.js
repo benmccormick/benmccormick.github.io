@@ -6,6 +6,9 @@ const get = require('lodash/get');
 const compact = require('lodash/compact');
 const pick = require('lodash/pick');
 const take = require('lodash/take');
+const sortBy = require('lodash/sortBy');
+const reduce = require('lodash/reduce');
+const last = require('lodash/last');
 
 const createTopicArchives = async (graphql, createPage) => {
   const topicPage = path.resolve('src/templates/topic-page.js');
@@ -223,6 +226,74 @@ const createBlogPosts = async (graphql, createPage) => {
   return;
 };
 
+const createNewsletters = async (graphql, createPage) => {
+  const newsletter = path.resolve('src/templates/newsletter.js');
+  // Query for all markdown "nodes" and for the slug we previously created.
+  const result = await graphql(
+    `
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                readNext
+                category
+                key
+                title
+                description
+                path
+                date
+                layout
+                dontfeature
+                isDraft
+              }
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+  if (result.errors) {
+    console.log(result.errors);
+    throw result.errors;
+  }
+
+  let { edges } = result.data.allMarkdownRemark;
+  let nodes = edges.map(e => e.node);
+  nodes = sortBy(nodes, 'frontmatter.date');
+  nodes = reduce(
+    nodes,
+    (newsletters, node) => {
+      if (node.frontmatter.layout === 'weekly-links') {
+        node.fields.recentArticles = [];
+        newsletters.push(node);
+      } else if (last(newsletters) && node.frontmatter.layout === 'post') {
+        last(newsletters).fields.recentArticles.push(node);
+      }
+      return newsletters;
+    },
+    []
+  );
+  // Create blog posts pages.
+  nodes.forEach((node, idx) => {
+    let newsletterNum = idx + 1;
+    createPage({
+      path: `newsletter/${newsletterNum}`,
+      component: newsletter,
+      context: {
+        slug: node.fields.slug,
+        recentArticles: node.fields.recentArticles,
+        newsletterNum,
+      },
+    });
+  });
+
+  return;
+};
+
 function pagesToSitemap(pages) {
   const urls = pages.map(p => {
     if (p.slug !== undefined) {
@@ -270,6 +341,7 @@ module.exports = {
   createCategoryArchives,
   createTopicArchives,
   getPages,
+  createNewsletters,
   addSlugToPage,
   createBlogPosts,
   generateSiteMap,

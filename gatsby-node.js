@@ -6,6 +6,7 @@ const {
   generateSiteMap,
   addSlugToPage,
   createBlogPosts,
+  createNewsletters,
 } = require('./server-src/page-processing');
 const { copyCNAME, copyManifest } = require('./server-src/files');
 
@@ -46,9 +47,11 @@ exports.createPages = ({ graphql, actions }) => {
   let blogPostPromise = createBlogPosts(graphql, createPage);
   let categoryArchivePromise = createCategoryArchives(graphql, createPage);
   let topicArchivePromise = createTopicArchives(graphql, createPage);
+  let newsletterPromise = createNewsletters(graphql, createPage);
   return Promise.all([
     blogPostPromise,
     categoryArchivePromise,
     topicArchivePromise,
+    newsletterPromise,
   ]);
 };
