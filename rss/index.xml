@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sun, 07 Oct 2018 21:26:53 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 14 Oct 2018 00:21:35 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,14 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Pressing Pause]]></title>
+            <link>https://benmccormick.org/2018/10/13/pressing-pause/</link>
+            <guid>https://benmccormick.org/2018/10/13/pressing-pause/</guid>
+            <pubDate>Sat, 13 Oct 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>Due to a plethora of life events happening this year, I’m going to be putting the blog on pause for a while.  So no more updates through the end of the year.  Will re-evaluate then and hopefully start things back up.  I have plans to take the weekly links stuff I’ve been doing the past year and turn it into a real email newsletter with a better template, and some exciting ideas for a new blog series.  But I lack the capacity to follow up on them for now.  So Happy Holidays in advance everybody, I hope to be back early next year.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Weekly Links: October 7th]]></title>
             <link>https://benmccormick.org/2018/09/23/weekly-links-09-23-30/</link>
@@ -189,30 +197,6 @@
 <li><strong>Optimize your environment:</strong> Have you spent time figuring out how to work as efficiently as possible?  Have you done it recently?  If not it might be worth re-evaluating your setup on a quarterly basis or so, figuring out what tools you can use to get quicker feedback, and also learning the shortcuts, tricks and new features for the tools that you do use.</li>
 <li><strong>Ship Code:</strong> Ultimately the best feedback comes when people are using what you’ve written.  Whether that’s compliments, bug reports, feature requests, anger or viral adoption, shipping will tell you things that you would never have been certain of while iterating on your own.  If you’re struggling to get code out, always fix that first.</li>
 </ol>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: July 28th]]></title>
-            <link>https://benmccormick.org/2018/07/28/weekly-links-07-28-18/</link>
-            <guid>https://benmccormick.org/2018/07/28/weekly-links-07-28-18/</guid>
-            <pubDate>Sat, 28 Jul 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h3>JavaScript and the Web</h3>
-<p><a href="https://csswizardry.com/2018/07/getting-to-know-a-legacy-codebase/">Getting to Know a Legacy Codebase Harry Roberts</a></p>
-<p>I like this advice on approaching a new codebase.  Some of it is CSS specific but the general ideas of tackling the important bits, experimenting with changes, and using tools as much as possible to catch regressions apply across the board.</p>
-<p><a href="https://medium.com/@Pinterest_Engineering/a-one-year-pwa-retrospective-f4a2f4129e05">A one year PWA retrospective | Zach Argyle</a></p>
-<p>TL;DR: Pinterest saw great results from supplementing their mobile apps with a PWA web app.</p>
-<p><a href="https://medium.com/ben-and-dion/mission-improve-the-web-ecosystem-for-developers-3a8b55f46411">Mission: Improve the Web Ecosystem for Developers | Dion Almaer</a></p>
-<p>I don’t know Dion, but this was a wonderful list of challenges that people looking to improve the web platform might want to tackle.  I’m excited to see people tackling this stuff.  I’m especially interested in what better tools for creating performant sites would look like.</p>
-<h3>Technical Deep Dives</h3>
-<p>These are long technical articles, and more back end focused then I usually write about on this blog but both touch on things I’m interested in and I found them fascinating.</p>
-<p><a href="https://segment.com/blog/introducing-centrifuge/">Centrifuge: a reliable system for delivering billions of events per day || Calvin French-Owen</a></p>
-<p>I had to build an event handling system like this a few years ago, and it’s fun to see how the optimal solution changed for Segment as they scaled.  On the backend designs that make no sense for small projects start becoming very real options as a project scales.  That’s why it’s always worth having some skepticism over the idea that because AppAmaGooFaceSoft are using a technology it must be “best in class” and we should use it in our small 20 person development team that is facing problems of a completely different scale.</p>
-<p><a href="https://blog.burntsushi.net/ripgrep/">ripgrep is faster than {grep, ag, git grep, ucg, pt, sift} | Andrew Gallant</a></p>
-<p>This piece is structured as a comparison of performance between cli file search tools, but the cool part is the deep insight into text search algorithms and performance tricks littered throughout the benchmark discussions.  It’s fascinating to see how heavily optimized for speed these tools are.  Also, I’ve been using Ack for 5 years even though I know it’s not the fastest tool for searching, because for me it was always “fast enough” to avoid searching.  But ripgrep appears to be dramatically enough faster in the relatively rare circumstances where I’m searching truly large directories of files, that I may finally be up for converting to a new tool.</p>
-<h3>Book Review</h3>
-<p><a href="https://amzn.to/2mPr3zV">Front-End Reactive Architectures | Luca Mezzalira</a></p>
-<p>I’ve been very excited to check out this book since I first saw the title pre-release.  I finally had a chance to purchase and read it last month, and I’m sad to report that I had fallen prey to the classic mistake of judging a book by it’s cover.  I had hoped that this would be a deep dive into architecture and how we structure front end applications, and how reactive programming concepts can impact that.  There’s a real dearth of quality high level UI architecture resources out there, so I was genuinely excited about this.</p>
-<p>Unfortunately the book is structured more like a series of loosely related blog posts, first with an overview of older architectural models like MVC, MVP and MVVM, followed by sections looking at several different libraries that use reactive principles: RxJS, Cycle, and MobX.  The latter sections focused more on the nuts and bolts of using the libraries to create simple example apps and less on the impact that using them would have on a large application.  So this is a good book if you want to see some simple code examples of how these libraries work in practice.  But I’m still waiting for a great high level front-end architecture book.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
