@@ -8,6 +8,7 @@ const {
   createBlogPosts,
   createNewsletters,
 } = require('./server-src/page-processing');
+const { createNewsletterNodes } = require('./server-src/newsletters');
 const { copyCNAME, copyManifest } = require('./server-src/files');
 
 exports.onPostBuild = ({ graphql, actions }) => {
@@ -54,4 +55,14 @@ exports.createPages = ({ graphql, actions }) => {
     topicArchivePromise,
     newsletterPromise,
   ]);
+};
+
+exports.sourceNodes = ({
+  graphql,
+  actions,
+  createNodeId,
+  createContentDigest,
+}) => {
+  const { createNode } = actions;
+  createNewsletterNodes(graphql, createNode, createNodeId, createContentDigest);
 };

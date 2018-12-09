@@ -65,7 +65,30 @@ class NewsletterTemplate extends React.Component {
             <Title>Newsletter #{newsletterNum}</Title>
           </div>
           <div className="columns">
-            <ArticleBody dangerouslySetInnerHTML={{ __html: body }} />
+            <div>
+              {recentArticles.length ? (
+                <div>
+                  <h3>Recent Articles</h3>
+                  <ul>
+                    {recentArticles.map(article => {
+                      return (
+                        <li>
+                          <div>
+                            <a href={article.frontmatter.path}>
+                              {article.frontmatter.title}
+                            </a>
+                          </div>
+                          <div>
+                            <p>{article.frontmatter.description}</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ) : null}
+              <ArticleBody dangerouslySetInnerHTML={{ __html: body }} />
+            </div>
           </div>
         </article>
       </Layout>
