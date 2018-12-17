@@ -5,7 +5,7 @@ layout: "post"
 path: "/2018/01/07/large-improvements-small-team/"
 description: "How do you keep improving things with limited resources?"
 keywords: "productivity refactoring efficiency team"
-category: "software-productivity"
+category: "fe-architecture"
 key: "large-improvements-small-team"
 topics: ['Teams', 'Code Quality', 'Leadership']
 readNext: "ten-things-js,favorite-interview,ll-context"

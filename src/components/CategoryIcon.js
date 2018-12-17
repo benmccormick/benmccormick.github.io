@@ -5,6 +5,7 @@ import book from '../svg/book.svgi';
 import browser from '../svg/browser.svgi';
 import code from '../svg/code.svgi';
 import globe from '../svg/globe.svgi';
+import organization from '../svg/organization.svgi';
 import info from '../svg/info.svgi';
 import megaphone from '../svg/megaphone.svgi';
 import project from '../svg/project.svgi';
@@ -12,12 +13,9 @@ import tools from '../svg/tools.svgi';
 import question from '../svg/question.svgi';
 import desktop from '../svg/desktop.svgi';
 import categoryList from '../pages/categories.json';
-import { Link } from 'gatsby';
 import get from 'lodash/get';
 import find from 'lodash/find';
-import { css } from 'glamor';
 import Icon from './Icon.js';
-import { sansFontStack } from '../utils/typography';
 import glamorous from '../../node_modules/glamorous';
 
 let icons = {
@@ -31,6 +29,7 @@ let icons = {
   project,
   tools,
   desktop,
+  organization,
 };
 
 const iconWrapperBuilder = color =>

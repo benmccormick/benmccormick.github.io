@@ -5,7 +5,7 @@ layout: "post"
 path: "/2018/02/07/react-confessions/"
 description: "The mistakes I made while learning React and why I made them"
 keywords: "react architecture mistakes confessions"
-category: "software-productivity"
+category: "fe-architecture"
 topics: ['React', 'Architecture', 'JavaScript']
 key: "react-confessions"
 readNext: "large-improvements-small-team,ten-things-js,ll-context"
@@ -14,7 +14,7 @@ readNext: "large-improvements-small-team,ten-things-js,ll-context"
 
 I've been reading through [Clean Architecture](http://amzn.to/2mKoejo) by Robert "Uncle Bob" Martin this month[^1], and while it is great it has had the unpleasant effect of reminding me of all of the mistakes I've made over the past few years while learning and using [React](https://reactjs.org/).  I've absolutely loved using React at work, and it has made so many things easier.  But it's a very unopinionated tool when it comes to structuring applications, and I made a lot of mistakes as I was using it to build some small side projects, and then transitioned a major production app to React from Backbone/Marionette.  These mistakes are all architectural; how I broke out components, communicated between components, and managed data and dependencies within components.
 
-I thought it would be useful to lay out the architecture mistakes I made as I was learning React, both as a solid reflection exercise for myself, and a warning to those of you who are just starting down the "component based UI" road.  
+I thought it would be useful to lay out the architecture mistakes I made as I was learning React, both as a solid reflection exercise for myself, and a warning to those of you who are just starting down the "component based UI" road.
 
 ### My Mistakes
 
@@ -31,7 +31,7 @@ I thought it would be useful to lay out the architecture mistakes I made as I wa
 
 #### 2. Breaking the "props as the component interface" abstraction
 
-**What I did wrong**: One of the best things about React is the clear interfaces components provide with their list of props.  If properly documented with PropTypes or a type system like Flow or Typescript, it's easy to look at any React component and tell what data it expects to receive, and therefore how other code is expected to interact with it.  99% of the time, good React components act as a function of `(props, state) => UI`.  It is however, possible to get access to a component instance, and call functions on them.  There are  rare situations where this is the right way to do things, for instance [focusing an input](https://stackoverflow.com/questions/28889826/react-set-focus-on-input-after-render).  
+**What I did wrong**: One of the best things about React is the clear interfaces components provide with their list of props.  If properly documented with PropTypes or a type system like Flow or Typescript, it's easy to look at any React component and tell what data it expects to receive, and therefore how other code is expected to interact with it.  99% of the time, good React components act as a function of `(props, state) => UI`.  It is however, possible to get access to a component instance, and call functions on them.  There are  rare situations where this is the right way to do things, for instance [focusing an input](https://stackoverflow.com/questions/28889826/react-set-focus-on-input-after-render).
 
 When I first started creating React components though, I overused that pattern, and accessed the interface directly to access or change its internal state.  I'd have components like this:
 
@@ -76,7 +76,7 @@ class InputUser
   }
 ```
 
-**Why I did it**:  Early on I was using this pattern in a way that copied other frameworks I was familiar with.  A parent component would need the state of it's child component, so it would maintain a reference to the child and query the child about the state.  When I converted Backbone components to React, sometimes I was basically just copy and pasting existing code, and making it work.  
+**Why I did it**:  Early on I was using this pattern in a way that copied other frameworks I was familiar with.  A parent component would need the state of it's child component, so it would maintain a reference to the child and query the child about the state.  When I converted Backbone components to React, sometimes I was basically just copy and pasting existing code, and making it work.
 
 **What I should have done instead**:  React doesn't really encourage parents pulling state from their children.  Instead, if there is state that needs to be shared between components, it should be moved up to the parent component and then the state and an updater function should be passed down to the child component.  So my example above would look like this:
 
@@ -116,7 +116,7 @@ class InputUser extends React.Component {
           />
     </div>
 
-  }  
+  }
 }
 ```
 
