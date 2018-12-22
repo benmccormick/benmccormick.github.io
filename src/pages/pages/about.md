@@ -8,7 +8,7 @@ hideFooter: true
 
 Hi, I'm Ben McCormick.  I'm a web developer, writer, occasional athlete, and a Christian. This is my blog about JavaScript, the Web and development tools.
 
-I live in Durham NC with my wife Claire and our dog Samoa, and prior to that I grew up in Pittsburgh.  I have plenty of pride in both of my homes.  When I'm not writing code or text, you can find me playing basketball, ultimate frisbee, and board games, relaxing with my wife, or volunteering at my church.  I currently work at [Windsor Circle](http://www.windsorcircle.com), and spend my days there writing a lot of JavaScript.
+I live in Durham NC with my wife Claire, daughter Elena and our dog Samoa. Prior to that I grew up in Pittsburgh.  I have plenty of pride in both of my homes.  When I'm not writing code or text, you can find me playing basketball, ultimate frisbee, and board games, relaxing with my wife, or volunteering at my church.  I currently work at [Whatcounts](http://www.whatcounts.com), and spend my days there leading a team of JavaScript developers.
 
 If you have thoughts about the blog or want to contact me about related opportunities by email at ben AT benmccormick.org.
 
