@@ -1,13 +1,12 @@
 import React from 'react';
-import typography from '../utils/typography';
 import { SubscribeBlock } from './SubscribeBlock';
 import glamorous from 'glamorous';
 
 const SubscribeRow = glamorous.div({
   display: 'grid',
-  gridTemplateColumns: '60% 30%',
+  gridTemplateColumns: '60% 35%',
+  gridColumnGap: '5%',
   gridTemplateRows: '1fr',
-  gridColumnGap: '10%',
 });
 
 export class EmailSubscribe extends React.Component {
