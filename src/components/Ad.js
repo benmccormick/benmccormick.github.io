@@ -13,13 +13,6 @@ const AdWrapper = glamorous.div({
 });
 
 export class Ad extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      url: null,
-    };
-  }
-
   insertScript() {
     if (!this.container) {
       // no ad container at this point, bail
@@ -44,17 +37,14 @@ export class Ad extends React.Component {
     this.container.appendChild(script);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.url !== this.props.url) {
+      this.insertScript();
+    }
+  }
+
   componentDidMount() {
     defer(() => this.insertScript());
-    this.props.history.listen(location => {
-      let url = location.pathname;
-      if (url !== this.state.url) {
-        this.insertScript();
-      }
-      this.setState({
-        url,
-      });
-    });
   }
 
   render() {

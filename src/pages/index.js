@@ -15,7 +15,6 @@ import { HomeMenu } from '../components/HomeMenu';
 
 class BlogIndex extends React.Component {
   render() {
-    let { history } = this.props;
     const pages = this.props.data.allMarkdownRemark.edges;
     const featuredTopics = this.props.data.site.siteMetadata.featuredTopics;
     const sortedPosts = getSortedPosts(pages, 5);
@@ -23,7 +22,7 @@ class BlogIndex extends React.Component {
     const weeklyLinks = getWeeklyLinks(pages, 5);
     const topicLinks = getTopicLinks(featuredTopics, 5);
     return (
-      <Layout history={history}>
+      <Layout>
         <div ref={el => (this.indexContainer = el)}>
           <HeadContent />
           <WelcomeBox />

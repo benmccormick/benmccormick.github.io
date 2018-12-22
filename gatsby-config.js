@@ -2,8 +2,7 @@ module.exports = {
   siteMetadata: {
     rootPath: __dirname,
     author: 'Ben McCormick',
-    foo: 'bar',
-    blogTitle: 'benmccormick.org',
+    blogTitle: 'Ben McCormick',
     categories: [
       {
         title: 'JavaScript Frameworks and Libraries',

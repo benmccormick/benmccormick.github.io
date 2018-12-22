@@ -39,7 +39,7 @@ HeadContent.propTypes = {
 };
 
 HeadContent.defaultProps = {
-  title: 'benmccormick.org',
+  title: 'Ben McCormick',
   description: "Ben McCormick's blog on JavaScript and Web Development",
   keywords: 'blog javascript development code react vim',
   script: [],

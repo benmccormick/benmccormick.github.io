@@ -56,7 +56,8 @@ const Sidebar = glamorous.div({
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const { data, pageContext, history } = this.props;
+    const { data, pageContext, location } = this.props;
+
     const post = data.markdownRemark.frontmatter;
     const body = data.markdownRemark.html;
     const slug = data.markdownRemark.fields.slug;
@@ -67,7 +68,7 @@ class BlogPostTemplate extends React.Component {
     let showForPostsAndWeeklyLinksOnly = content =>
       isPostOrWeeklyLinks ? content : null;
     return (
-      <Layout history={history}>
+      <Layout>
         <article className="markdown" ref={el => (this.markdownContainer = el)}>
           <BlogPostHeadContent post={post} slug={slug} body={body} />
           <div className="post-title-area">
@@ -82,7 +83,7 @@ class BlogPostTemplate extends React.Component {
             <ArticleBody dangerouslySetInnerHTML={{ __html: body }} />
             {showForPostsAndWeeklyLinksOnly(
               <Sidebar className="no-mobile">
-                <Ad history={history} />
+                <Ad url={location.pathname} />
                 <EmailSubscribe />
               </Sidebar>
             )}

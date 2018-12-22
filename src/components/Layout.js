@@ -16,10 +16,10 @@ const Container = glamorous.div({
 
 class Layout extends React.Component {
   render() {
-    const { children, history } = this.props;
+    const { children } = this.props;
     return (
       <Container>
-        <Header blogTitle={'benmccormick.org'} history={history} />
+        <Header blogTitle={'Ben McCormick'} />
         {children}
       </Container>
     );
@@ -28,7 +28,6 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.any,
-  history: PropTypes.object,
 };
 
 export default Layout;

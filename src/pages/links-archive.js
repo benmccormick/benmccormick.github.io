@@ -9,11 +9,10 @@ import LinkList from '../components/LinkList';
 class LinksArchive extends React.Component {
   render() {
     // Sort pages.
-    let { history } = this.props;
     const posts = this.props.data.allMarkdownRemark.edges;
     const weeklyLinks = getWeeklyLinks(posts);
     return (
-      <Layout history={history}>
+      <Layout>
         <div ref={el => (this.archiveContainer = el)}>
           <HeadContent keywords="blog,articles,posts,javascript,software tools,web development" />
           <LinkList
