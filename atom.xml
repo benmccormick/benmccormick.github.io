@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2018-12-22T19:21:02Z</updated>
+    <updated>2018-12-22T19:41:58Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,103 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[New Newsletter and The 2018 Roundup]]></title>
+        <id>https://benmccormick.org/2018/12/22/2018-roundup</id>
+        <link href="https://benmccormick.org/2018/12/22/2018-roundup">
+        </link>
+        <updated>2018-12-22T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>2018 was the 5th full year of this blog, and I chose to experiment a bit.  For the first 9 months of the year, I posted a Weekly Links post every week, and also published 24 normal articles, before taking a break the last 3 months to deal with some changes in work and home life.  My employer went through an acquisition this year and I started working with a new team. Then Claire and I welcomed our first daughter, Elena, to the world earlier this month.  It’s been a busy but rewarding year.</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/fe510b6a1de4cfb4ef847faf534c9811/b1526/family-pic.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEz0lEQVQ4ywHEBDv7ABoaDRgWDjcwIrqZa7ONXKaFW7SXcufGmdardtWpd8+ldMieb72VZrKMX6yHW6V9UredftTTx9PQxOXm3QAgHxcbGBAsJhq1mGy4kmKkhl2pkG/pzKTarnzYrn3Tq3zOpnjCm262kGOwil+ogla9ponV1MzS0cbl5+AAJiIYHhsTJCAXrZJrroxgnH1lpId5zrKW2bCA2LCD1bCD0Kx/xqF1upVqtI9krIZdwK2T1dXN0tLH5+jiAEpBMzMsIiUhGKKKZ5J3V8+ejv/GuNKpncemfuO9j9m0itKvhselfbuZcLaVbq6LZcKynNPWztLRx+fp4gBdUUE/NysrJBuQfV+igmKwgnDPk4O9i36sj3SqkHHIqofTsozFp4K7m3a3mXWwkG/FuKXV18/U1Mra3NMAZFRAUkUzKSEXemxVxJ98zpuG05KJypKGkm5gvpOGs5WBwaeGwaeGt517tJt6rpR1xryt19jT0s/Gz8u/AF1KNl9NOCofFGpfR7KXeZR6cb6TiKGCeWREN+uunsyZjLaafcyzkbOdfrGbfq2WfMjAtNfY1dPPxdPPxAAqIRc7Lx8fGA5sWlqegI9xVWZ7X1xwWE9AJx3FiXzdoJKSeGOYina8poewnYKum4TJxbvX2NTX1czf4NsABQUEEQ4LeGBxqIqpoIGgi2uBdFJcXT9ALxsQg1xMzJN+XEc6EBUekYNzuaeOr6CLx8fC09XT2NfP4OLeAAAAAE8/SqaFoJt+lqCAmqeIpJd3kHdaZVA7K0YzJ49kS2dOPRUbI6OMiM2snKugjcHExMzP0tjZ1N/j4QA7NzmPcIOYepGae5SggJqigZygfpuUdYdZSD4aGR0+MzI5MzQeICe/ioXao561qZm4w8nDztfV2drh6+4AjX6Ak3SIlHOJmXmRellqkm+GqYilm3qUNicyCA0YFRklChMgWUNQgkBds3KFwaugl5KcoWt5o1pkoH+AAGVPUZNyhpd4jodoelEzOHpYYpVxhpt5kko4QwUHDhQZJB0VJWolRGsgQ21DVopPVHEkL4IjNGAlLFEsKgB9bG2PbX+JaXp3WGZqT1mFZ3eKaHmFZHxeUFoHCQsMEh4kHS1OHjgpGiwpGilZIC5PKCiSKzuPMD2GLTgAjHp7imd5kHGEaVBfXUFOgF9xim2Di26MYlJZRE1fDA4aBwoTCA4YJygoYSkwcCEyTBofrC1ARiEnqzFFAJJ+gIlnen5idldCUWBGV4Vmf5Fuh35heENFW0JehSU4Uh8wRyk4Tzc+UBYdNSMjPTAcL2ouPUsmKo8lNACLd3mSc4qKcIpuWnNzYn9gWHVTUnE2P10WMVcoS3g8YI5Lb6BSdqVjjsRMcqEiQmkuUHpRU3eWNEmRLzwAh31ulHKEnX6adGSCNlB1R3CdS3WlRWyZM1R9LU14Iz5lHjdYLkhrPVl/WnyoNVN6Q2OMMVF1VkZUTVI/AIWBZIxwdph1jqCJqUpZfztbgUxtlVZ8qF6HtGCKvGSOwztagRIiOCxBYENegytDYy1EYRw0UFpIVW9YTgCDfmFoXFF0ZXesiKR9bYMlPFc9V3ZAXYBHZ41Pc55lj8J6qeEpO1QbLUQ6VHg1TnEmOlcaL0hBPEx8W08WcSkrymMeAgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Christmas picture with Claire, Elena and myself"
+        title=""
+        src="/static/fe510b6a1de4cfb4ef847faf534c9811/d766e/family-pic.png"
+        srcset="/static/fe510b6a1de4cfb4ef847faf534c9811/a6b6e/family-pic.png 143w,
+/static/fe510b6a1de4cfb4ef847faf534c9811/8e488/family-pic.png 285w,
+/static/fe510b6a1de4cfb4ef847faf534c9811/d766e/family-pic.png 570w,
+/static/fe510b6a1de4cfb4ef847faf534c9811/b1526/family-pic.png 640w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+  </span>
+  </a></p>
+<p>I’m excited to get back to the blog in 2019, and take what I’ve learned the last few years and make some improvements I’ve been considering for a while.  The biggest one is shifting to a newsletter format for initially publishing my posts.</p>
+<h2>Newsletter</h2>
+<p>Over the last year, email newsletters have become my favorite ways to stay up to date in my professional world.  High quality newsletters from people like <a href="https://buttondown.email/kentcdodds">Kent</a>, <a href="https://larahogan.me/sign-up/">Lara</a>, and <a href="https://ponyfoo.com/weekly">Ponyfoo</a> are some of the best ways to both keep up with what’s going on tech and trends, but also learn new ideas in a blog post, way.  It’s a better forum for thoughtful content than social media, allows for communication between the writer and their audience.</p>
+<p>I’ve always allowed people to subscribe to this blog through email, but to be honest, the experience has been kind of crappy.  I’ve meant to improve my email template forever, and articles sometimes got jumbled into a single email.  Going forward, they’re going to be a first class citizen, and the best way to follow the blog.  I’ll publish articles there first, and include extra “weekly link” like content in the emails only.  I’m switching emails over to <a href="https://buttondown.email/">Buttondown</a> and they should be much cleaner and content focused going forward.  If you follow this blog through email, you’re probably reading this post in that format now.  If not, please go ahead and <a href="https://benmccormick.org/subscribe/">subscribe</a>.  I’ll be starting the year with a series of posts about front end architecture.</p>
+<h2>2018 Roundup</h2>
+<h3>Most Read Posts Published in 2018</h3>
+<ul>
+<li><a href="https://benmccormick.org/2018/02/07/react-confessions/">React Architecture Confessions</a> React unquestioningly has a learning curve.  I decided to talk through the various mistakes I’d made as I learned React on the fly while building a large web application.</li>
+</ul>
+<ul>
+<li>
+<p><a href="https://benmccormick.org/2018/07/04/evil-javascript/">Evil JavaScript</a> This was something different for me, a tongue-in-cheek look at the ways you can use and abuse some of JavaScript’s more powerful features</p>
+</li>
+<li>
+<p><a href="https://benmccormick.org/2018/06/05/es6-the-bad-parts/">ES6: The Bad Parts</a>
+My take on which parts of ES6 should be avoided after 3 years of use.</p>
+</li>
+</ul>
+<h3>Languages, Libraries, and Technologies I started using in 2018</h3>
+<p>With all the changes, it hasn’t been a big year for experimentation, but Immer is fantastic.</p>
+<ul>
+<li>
+<p><a href="https://github.com/mweststrate/immer">Immer</a> This probably deserves a full post at some point, but I’ve been experimenting with using only Immer and React’s built in state features for state management on a new project, and it’s been fairly nice so far.  It’s a lovely little library that makes working with immutable data pleasant.</p>
+</li>
+<li>
+<p><a href="https://storybook.js.org/">Storybook</a> My other big experiment on the new project has been using Storybook as a collaboration tool for our UI components.  It’s still early days, but I’m liking it.</p>
+</li>
+</ul>
+<h3>Languages and Libraries I used (more or less) every day in 2018</h3>
+<p>JavaScript (ES6), Python, React, PostgreSQL, lodash, MobX, Jest, Immer, CSS Modules</p>
+<h3>Languages and Libraries I want to try in 2019</h3>
+<p>I want to try building some small hardware projects and automating them this year.  Something completely different.</p>
+<h3>Blogs I started following in 2018</h3>
+<ul>
+<li><a href="https://larahogan.me/">Lara Hogan’s Engineering Leadership blog and newsletter</a></li>
+<li><a href="https://overreacted.io/">Overreacted by Dan Abramov</a></li>
+</ul>
+<h3>Blogs I read every post from in 2018</h3>
+<p><a href="https://overreacted.io/">Overreacted by Dan Abramov</a>, <a href="https://larahogan.me/">Lara Hogan’s Engineering Leadership blog and newsletter</a>, <a href="http://randsinrepose.com/">Rands In Repose</a>, <a href="https://stratechery.com/">Stratechery</a>, <a href="https://daringfireball.net/">Daring Fireball</a></p>
+<h3>Software I used (nearly) every day in 2018</h3>
+<p>MacOS/iOS, Google Search, Chrome/Safari/Firefox, GMail/MailPlane 3, Twitter/Tweetbot, Feedbin/Reeder, iMessage, Slack, Jira, 1Password, VS Code/Vim, iTerm, Fish Shell, Bitbucket, Fantastical, Spotify, Bear, Annotate, Dash</p>
+<h3>Best Technical Books I read in 2018</h3>
+<ul>
+<li><a href="https://amzn.to/2LsAJMk">Clean Architecture</a></li>
+<li><a href="http://atomicdesign.bradfrost.com/">Atomic Design</a></li>
+<li><a href="https://amzn.to/2EFXcVI">A Philosophy Of Software Design</a></li>
+</ul>
+<h3>Best Non-Technical Books I read in 2018</h3>
+<ul>
+<li><a href="https://amzn.to/2SfcnYP">Radical Candor</a></li>
+<li><a href="https://amzn.to/2Lscqy0">The Tech-Wise Family</a></li>
+<li><a href="https://amzn.to/2GHNX90">Between The World And Me</a></li>
+<li><a href="https://amzn.to/2V7vDJU">Vision</a></li>
+<li><a href="https://amzn.to/2Bts7QM">The Innovators</a></li>
+</ul>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Want to work with me?]]></title>
         <id>https://benmccormick.org/2018/11/03/hiring/</id>
@@ -214,35 +311,6 @@
 <h3>Books</h3>
 <p><a href="https://amzn.to/2vX6yGo">Radical Candor | Kim Scott</a></p>
 <p>I may write this up as a full review later, but Radical Candor was the best book I’ve read this year.  It’s a book for managers, but it really was just one of the best books I’ve ever read on communication and relationships.  If you want to work better with others, Radical Candor is worth buying.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: August 5th]]></title>
-        <id>https://benmccormick.org/2018/08/05/weekly-links-08-05-18/</id>
-        <link href="https://benmccormick.org/2018/08/05/weekly-links-08-05-18/">
-        </link>
-        <updated>2018-08-05T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>JavaScript and the Web</h3>
-<p><a href="https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4">The Cost Of JavaScript in 2018 | Addy Osmani</a></p>
-<p>This was a great breakdown of how exactly large JavaScript bundles cause sites to be slow and how that impacts business needs.  These type of advocacy pieces have a tendency to clump all businesses together a bit too much<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>, but Addy is pretty reasonable about that and it’s important for every front end dev to understand these tradeoffs and problems, even if they don’t need to make them top priority for every project.</p>
-<h3>Programming Tools</h3>
-<p><a href="https://css-tricks.com/on-switching-code-editors/">On Switching Code Editors | Chris Coyier</a></p>
-<p>I’m in the middle of possibly switching to VSCode from Atom, which I switched to from Vim, which I switched to from Sublime Text, which originally introduced me to a world beyond overweight IDEs like Eclipse.  So I can relate to this article, and it’s a great framework for thinking through switches.  I will say, I don’t necessarily think I’ve made the best choices here.  I’m not sure that since I’ve learned Vim keybindings, any of my switches have actually increased my productivity.  There’s a cost to learning new tools, even when they have shiny new stuff. <em>grumbles a bit and then goes back to chasing the shiny</em>.</p>
-<p><a href="https://blog.prototypr.io/people-are-going-crazy-over-framer-x-9576448daa18">People Are Going Crazy Over Framer X | Aaron Adler</a></p>
-<p>My twitter feed was blowing up with people talking about Framer X this week, a tool for designers to build interactive designs/prototypes based on React.  This post is a little old but was the best summary of the concept I could find.  Framer X is still in a private beta, so it will be interesting to see what happens when it goes public.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Even in 2018, not everyone is serving 3rd world businesses or gets a large chunk of their traffic from mobile.  And performance always needs to be traded off against other business goals.</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
