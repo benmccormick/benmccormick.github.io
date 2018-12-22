@@ -1,12 +1,11 @@
 ---
 title: "New Newsletter and The 2018 Roundup"
-date: "2018/12/24"
+date: "2018/12/22"
 layout: "post"
-path: "/2018/12/24/2018-roundup"
+path: "/2018/12/22/2018-roundup"
 category: "meta"
 description: "A look back at benmccormick.org in 2018"
 key: "2018-roundup"
-isDraft: true
 topics: []
 readNext: "react-confessions,evil-js,es6-the-bad-parts"
 ---
@@ -28,16 +27,12 @@ I've always allowed people to subscribe to this blog through email, but to be ho
 
 ### Most Read Posts Published in 2018
 
-####  [React Architecture Confessions](https://benmccormick.org/2018/02/07/react-confessions/)
-
-React unquestioningly has a learning curve.  I decided to talk through the various mistakes I'd made as I learned React on the fly while building a large web application.
+- [React Architecture Confessions](https://benmccormick.org/2018/02/07/react-confessions/) React unquestioningly has a learning curve.  I decided to talk through the various mistakes I'd made as I learned React on the fly while building a large web application.
 
 
-#### [Evil JavaScript](https://benmccormick.org/2018/07/04/evil-javascript/)
+- [Evil JavaScript](https://benmccormick.org/2018/07/04/evil-javascript/) This was something different for me, a tongue-in-cheek look at the ways you can use and abuse some of JavaScript's more powerful features
 
-This was something different for me, a tongue-in-cheek look at the ways you can use and abuse some of JavaScript's more powerful features
-
-#### [ES6: The Bad Parts](https://benmccormick.org/2018/06/05/es6-the-bad-parts/)
+- [ES6: The Bad Parts](https://benmccormick.org/2018/06/05/es6-the-bad-parts/)
 My take on which parts of ES6 should be avoided after 3 years of use.
 
 
@@ -59,8 +54,8 @@ I want to try building some small hardware projects and automating them this yea
 
 ### Blogs I started following in 2018
 
-[Lara Hogan's Engineering Leadership blog and newsletter](https://larahogan.me/)
-[Overreacted by Dan Abramov](https://overreacted.io/)
+- [Lara Hogan's Engineering Leadership blog and newsletter](https://larahogan.me/)
+- [Overreacted by Dan Abramov](https://overreacted.io/)
 
 
 ### Blogs I read every post from in 2018
@@ -74,9 +69,15 @@ MacOS/iOS, Google Search, Chrome/Safari/Firefox, GMail/MailPlane 3, Twitter/Twee
 
 ### Best Technical Books I read in 2018
 
-[Clean Architecture](https://amzn.to/2LsAJMk), [Atomic Design](http://atomicdesign.bradfrost.com/), [A Philosophy Of Software Design](https://amzn.to/2EFXcVI)
+- [Clean Architecture](https://amzn.to/2LsAJMk)
+- [Atomic Design](http://atomicdesign.bradfrost.com/)
+- [A Philosophy Of Software Design](https://amzn.to/2EFXcVI)
 
 
 ### Best Non-Technical Books I read in 2018
 
-[Radical Candor](https://amzn.to/2SfcnYP), [The Tech-Wise Family](https://amzn.to/2Lscqy0), [Between The World And Me](https://amzn.to/2GHNX90), [Vision](https://amzn.to/2V7vDJU), [The Innovators](https://amzn.to/2Bts7QM)
+- [Radical Candor](https://amzn.to/2SfcnYP)
+- [The Tech-Wise Family](https://amzn.to/2Lscqy0)
+- [Between The World And Me](https://amzn.to/2GHNX90)
+- [Vision](https://amzn.to/2V7vDJU)
+- [The Innovators](https://amzn.to/2Bts7QM)
