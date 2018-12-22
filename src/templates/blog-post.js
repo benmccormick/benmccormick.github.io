@@ -1,6 +1,6 @@
 import '../css/codeformat.css';
 import '../css/images.css';
-import '../css/mailchimp.css';
+import '../css/email.css';
 import '../css/twitter.css';
 import '../css/typography.css';
 
@@ -52,6 +52,7 @@ const ArticleBody = glamorous.div({
 
 const Sidebar = glamorous.div({
   paddingLeft: '2rem',
+  overflow: 'hidden',
 });
 
 class BlogPostTemplate extends React.Component {
@@ -83,8 +84,8 @@ class BlogPostTemplate extends React.Component {
             <ArticleBody dangerouslySetInnerHTML={{ __html: body }} />
             {showForPostsAndWeeklyLinksOnly(
               <Sidebar className="no-mobile">
-                <Ad url={location.pathname} />
                 <EmailSubscribe />
+                <Ad url={location.pathname} />
               </Sidebar>
             )}
           </div>

@@ -1,0 +1,22 @@
+#bd-label {
+  font-family: "mr-eaves-xl-modern", "Helvetica Neue", Arial, sans-serif;
+}
+#bd-email {
+  font-family: "mr-eaves-xl-modern", "Helvetica Neue", Arial, sans-serif;
+
+  font-size: 14px;
+}
+
+#bd-submit {
+  background: #F1684E;
+
+  color: white;
+
+  border-radius: 4px;
+
+  border: none;
+
+  font-size: 14px;
+
+  font-family: "mr-eaves-xl-modern", "Helvetica Neue", Arial, sans-serif;
+}

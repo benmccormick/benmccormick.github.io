@@ -55,7 +55,7 @@ JavaScript (ES6), Python, React, PostgreSQL, lodash, MobX, Jest, Immer, CSS Modu
 
 ### Languages and Libraries I want to try in 2019
 
-GoLang or Rust, IoT hacking and Pandas/other python data analysis libraries
+I want to try building some small hardware projects and automating them this year.  Something completely different.
 
 ### Blogs I started following in 2018
 
@@ -65,7 +65,7 @@ GoLang or Rust, IoT hacking and Pandas/other python data analysis libraries
 
 ### Blogs I read every post from in 2018
 
-[Overreacted by Dan Abramov](https://overreacted.io/), [Lara Hogan's Engineering Leadership blog and newsletter](https://larahogan.me/), [Rands In Repose](http://randsinrepose.com/), [Stratechery](https://stratechery.com/), [Daring Fireball](https://daringfireball.net/), , [wynnnetherland.com](https://wynnnetherland.com/)
+[Overreacted by Dan Abramov](https://overreacted.io/), [Lara Hogan's Engineering Leadership blog and newsletter](https://larahogan.me/), [Rands In Repose](http://randsinrepose.com/), [Stratechery](https://stratechery.com/), [Daring Fireball](https://daringfireball.net/)
 
 
 ### Software I used (nearly) every day in 2018
