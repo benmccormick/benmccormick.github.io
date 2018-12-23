@@ -75,7 +75,9 @@ export const getSortedPosts = (pages, count = Infinity) => {
       .reverse()
       .filter(
         page =>
-          get(page, 'node.frontmatter.layout') === 'post' && !isDraft(page)
+          get(page, 'node.frontmatter.layout') === 'post' &&
+          !isDraft(page) &&
+          !get(page, 'node.frontmatter.dontfeature')
       )
       .map(buildPage),
     count

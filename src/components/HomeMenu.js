@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import format from 'date-fns/format';
 import get from 'lodash/get';
+import take from 'lodash/take';
 import glamorous from 'glamorous';
 import parse from 'date-fns/parse';
 import PropTypes from 'prop-types';
@@ -58,58 +59,25 @@ let rightSide = css({
 export class HomeMenu extends React.Component {
   render() {
     let { sortedPosts, weeklyLinks, popularPosts, topicLinks } = this.props;
-    let firstPost = sortedPosts[0];
+    let firstPosts = take(sortedPosts, 3);
     let firstLinkPost = weeklyLinks[0];
     return (
       <div>
         <h1> The Latest </h1>
-        <Section>
-          <LinkBox
-            page={firstPost}
-            titleFn={page => (
-              <span>
-                <Bold>{get(page, 'data.title') || page.path}</Bold>
-              </span>
-            )}
-          />
-        </Section>
-        <Section>
-          <LinkBox
-            page={firstLinkPost}
-            titleFn={page => (
-              <span>
-                <Bold>
-                  Weekly Links: {format(parse(page.data.date), 'MMMM Do')}{' '}
-                </Bold>
-              </span>
-            )}
-          />
-        </Section>
+        {firstPosts.map(post => (
+          <Section>
+            <LinkBox
+              page={post}
+              titleFn={page => (
+                <span>
+                  <Bold>{get(page, 'data.title') || page.path}</Bold>
+                </span>
+              )}
+            />
+          </Section>
+        ))}
         <Spacer />
         <h1> More From The Blog </h1>
-        <Section>
-          <div>
-            <LayoutContainer>
-              <LinkList
-                title="Recent Articles"
-                pages={sortedPosts.slice(1)}
-                showCategory={false}
-                showDate={false}
-                showDescriptions={false}
-                className={leftSide}
-              />
-              <LinkList
-                title="Weekly Links"
-                pages={weeklyLinks.slice(1)}
-                showCategory={false}
-                showDate={false}
-                showDescriptions={false}
-                className={rightSide}
-                titleFn={post => format(parse(post.data.date), 'MMMM Do')}
-              />
-            </LayoutContainer>
-          </div>
-        </Section>
         <Section>
           <LayoutContainer>
             <LinkList
@@ -134,13 +102,6 @@ export class HomeMenu extends React.Component {
             <LayoutContainer>
               <Link className={`${leftSide} ${bottomLink}`} to={'/archive/'}>
                 See More Articles »
-              </Link>
-              <Link
-                style={{}}
-                className={`${rightSide} ${bottomLink}`}
-                to={'/links-archive/'}
-              >
-                See Past Weekly Links »
               </Link>
             </LayoutContainer>
           </div>

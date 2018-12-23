@@ -8,6 +8,7 @@ keywords: ""
 category: "meta"
 topics: []
 key: "hiring-2018"
+dontfeature: "true"
 readNext: "large-improvements-small-team,ten-things-js,react-confessions"
 ---
 

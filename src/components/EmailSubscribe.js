@@ -22,11 +22,16 @@ export class EmailSubscribe extends React.Component {
           className="embeddable-buttondown-form"
         >
           <label htmlFor="bd-email" id="bd-label">
-            Subscribe to The Newsletter
+            Subscribe to the Newsletter
           </label>
           <input type="hidden" value="1" name="embed" />
           <SubscribeRow>
-            <input type="email" name="email" id="bd-email" />
+            <input
+              type="email"
+              name="email"
+              id="bd-email"
+              placeholder="Your Email"
+            />
             <input type="submit" value="Subscribe" id="bd-submit" />
           </SubscribeRow>
         </form>
