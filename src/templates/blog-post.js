@@ -75,11 +75,11 @@ class BlogPostTemplate extends React.Component {
                 {format(new Date(post.date), 'MMMM Do YYYY')}
               </PostedDateContainer>
             ) : (
-                ''
-              )}
+              ''
+            )}
             <Title>{post.title}</Title>
           </div>
-          <div className={showWithSidebarSupport ? '' : 'columns'}>
+          <div className={showWithSidebarSupport('columns')}>
             <ArticleBody dangerouslySetInnerHTML={{ __html: body }} />
             {showWithSidebarSupport(
               <Sidebar className="no-mobile">
