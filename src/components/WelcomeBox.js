@@ -42,6 +42,10 @@ let WelcomeContainer = glamorous.div({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'flex-start',
+  fontSize: '120%',
+  '@media all and (max-width: 700px)': {
+    fontSize: '100%',
+  },
 });
 
 export class WelcomeBox extends React.Component {
@@ -59,14 +63,13 @@ export class WelcomeBox extends React.Component {
           <h1> Hi! I'm Ben. </h1>
           <p>
             {' '}
-            I'm a software developer from Durham, North Carolina. I write and
-            speak about JavaScript, software development, and developer tools.
-            If you're interested in my writings here, feel free to{' '}
-            <Link to="/subscribe">subscribe</Link> or message me on{' '}
+            I make software in Durham, North Carolina. Here on the site I write
+            about <strong>shipping web software</strong>. If you're interested
+            seeing more, feel free to <Link to="/subscribe">subscribe</Link> or
+            message me on <a href="mailto:ben@benmccormick.org">email</a> or{' '}
             <a href="http://twitter.com/ben336" target="_blank">
               Twitter
-            </a>{' '}
-            or <a href="mailto:ben@benmccormick.org">email</a>.
+            </a>.
           </p>
         </WelcomeContainer>
         <ImageContainer>

@@ -1,11 +1,9 @@
 import { css } from 'glamor';
 import { Link } from 'gatsby';
 import React from 'react';
-import format from 'date-fns/format';
 import get from 'lodash/get';
 import take from 'lodash/take';
 import glamorous from 'glamorous';
-import parse from 'date-fns/parse';
 import PropTypes from 'prop-types';
 import LinkBox from './LinkBox';
 import LinkList from './LinkList';
@@ -58,12 +56,11 @@ let rightSide = css({
 
 export class HomeMenu extends React.Component {
   render() {
-    let { sortedPosts, weeklyLinks, popularPosts, topicLinks } = this.props;
+    let { sortedPosts, popularPosts, topicLinks } = this.props;
     let firstPosts = take(sortedPosts, 3);
-    let firstLinkPost = weeklyLinks[0];
     return (
       <div>
-        <h1> The Latest </h1>
+        <h1> The Latest Posts </h1>
         {firstPosts.map(post => (
           <Section>
             <LinkBox

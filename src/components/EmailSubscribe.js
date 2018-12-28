@@ -1,13 +1,5 @@
 import React from 'react';
 import { SubscribeBlock } from './SubscribeBlock';
-import glamorous from 'glamorous';
-
-const SubscribeRow = glamorous.div({
-  display: 'grid',
-  gridTemplateColumns: '60% 35%',
-  gridColumnGap: '5%',
-  gridTemplateRows: '1fr',
-});
 
 export class EmailSubscribe extends React.Component {
   render() {
@@ -25,7 +17,7 @@ export class EmailSubscribe extends React.Component {
             Subscribe to the Newsletter
           </label>
           <input type="hidden" value="1" name="embed" />
-          <SubscribeRow>
+          <div className="bd-subscribe-row">
             <input
               type="email"
               name="email"
@@ -33,7 +25,7 @@ export class EmailSubscribe extends React.Component {
               placeholder="Your Email"
             />
             <input type="submit" value="Subscribe" id="bd-submit" />
-          </SubscribeRow>
+          </div>
         </form>
       </SubscribeBlock>
     );

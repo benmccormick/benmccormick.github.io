@@ -1,9 +1,14 @@
 #bd-label {
   font-family: "mr-eaves-xl-modern", "Helvetica Neue", Arial, sans-serif;
 }
+
+#bd-label.large-label {
+  font-size: 20px;
+}
+
 #bd-email {
   font-family: "mr-eaves-xl-modern", "Helvetica Neue", Arial, sans-serif;
-
+  padding-left: 5px;
   font-size: 14px;
 }
 
@@ -19,4 +24,23 @@
   font-size: 14px;
 
   font-family: "mr-eaves-xl-modern", "Helvetica Neue", Arial, sans-serif;
+}
+
+.large-row #bd-submit,
+.large-row #bd-email {
+  font-size: 30px;
+}
+
+
+.bd-subscribe-form {
+  margin: 30px 0 50px 0;
+  display: block;
+}
+
+.bd-subscribe-row {
+  display: grid;
+  grid-template-columns: 60% 35%;
+  grid-column-gap: 5%;
+  grid-template-rows: 1fr;
+  margin-top: 10px;
 }

@@ -63,26 +63,21 @@ class BlogPostTemplate extends React.Component {
     const body = data.markdownRemark.html;
     const slug = data.markdownRemark.fields.slug;
     let isPost = post.layout === 'post';
-    let isWeeklyLinks = post.layout === 'weekly-links';
-    let isPostOrWeeklyLinks = isPost || isWeeklyLinks;
     let showForPostsOnly = content => (isPost ? content : null);
-    let showForPostsAndWeeklyLinksOnly = content =>
-      isPostOrWeeklyLinks ? content : null;
+    let showWithSidebarSupport = content => (post.hideSidebar ? null : content);
     return (
       <Layout>
         <article className="markdown" ref={el => (this.markdownContainer = el)}>
           <BlogPostHeadContent post={post} slug={slug} body={body} />
           <div className="post-title-area">
-            {showForPostsOnly(
-              <PostedDateContainer>
-                {format(new Date(post.date), 'MMMM Do YYYY')}
-              </PostedDateContainer>
-            )}
+            <PostedDateContainer>
+              {format(new Date(post.date), 'MMMM Do YYYY')}
+            </PostedDateContainer>
             <Title>{post.title}</Title>
           </div>
-          <div className="columns">
+          <div className={showWithSidebarSupport ? '' : 'columns'}>
             <ArticleBody dangerouslySetInnerHTML={{ __html: body }} />
-            {showForPostsAndWeeklyLinksOnly(
+            {showWithSidebarSupport(
               <Sidebar className="no-mobile">
                 <EmailSubscribe />
                 <Ad url={location.pathname} />
@@ -115,6 +110,7 @@ export const pageQuery = graphql`
         path
         layout
         hideFooter
+        hideSidebar
       }
       fields {
         slug
