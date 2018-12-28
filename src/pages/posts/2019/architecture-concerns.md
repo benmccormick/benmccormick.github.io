@@ -7,7 +7,7 @@ description: "6 areas of interest in front end software design discussions"
 keywords: "architecture software performance security accessibility"
 category: "fe-architecture"
 topics: ['Architecture', 'JavaScript']
-isDraft:true
+isDraft: true
 key: "fe-concerns"
 readNext: "feedback-loops,react-confessions,orthogonality-css-js"
 ---

@@ -8,7 +8,7 @@ keywords: "software engineering "
 category: "reviews"
 topics: ['Architecture', 'Book Review']
 key: "philosophy-of-software-design-book"
-isDraft:true
+isDraft: true
 readNext: "clean-architecture-book,react-confessions,large-improvements-small-team"
 ---
 
