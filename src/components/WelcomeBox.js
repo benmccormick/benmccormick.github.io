@@ -65,11 +65,7 @@ export class WelcomeBox extends React.Component {
             {' '}
             I make software in Durham, North Carolina. Here on the site I write
             about <strong>shipping web software</strong>. If you're interested
-            seeing more, feel free to <Link to="/subscribe">subscribe</Link> or
-            message me on <a href="mailto:ben@benmccormick.org">email</a> or{' '}
-            <a href="http://twitter.com/ben336" target="_blank">
-              Twitter
-            </a>.
+            seeing more, feel free to <Link to="/subscribe">subscribe</Link>.
           </p>
         </WelcomeContainer>
         <ImageContainer>

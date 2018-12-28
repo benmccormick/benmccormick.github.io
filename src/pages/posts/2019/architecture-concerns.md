@@ -77,5 +77,5 @@ I'm hoping to look at each of these areas more in depth in the coming weeks, as 
 **TL;DR**
 
 - **Architecture is about decisions that are important and hard to change, with a goal of improving the efficiency of a project**
-- **Front End architecture is concerned with the areas of Ease of Change, Security, Accessibility, Reliability, Performance and Capability**
+- **Front End architecture is often concerned with the areas of Ease of Change, Security, Accessibility, Reliability, Performance and Capability**
 

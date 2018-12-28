@@ -3,8 +3,7 @@ import defer from 'lodash/defer';
 import glamorous from 'glamorous';
 
 const AdWrapper = glamorous.div({
-  height: '300px',
-  width: '150px',
+  width: '100%',
   overflow: 'hidden',
   margin: '0 0 1rem 0',
   '@media all and (max-width: 700px)': {

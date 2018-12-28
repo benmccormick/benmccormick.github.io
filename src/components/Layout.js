@@ -9,6 +9,7 @@ import '../css/typography.css';
 let { rhythm } = typography;
 
 const Container = glamorous.div({
+  width: '100%',
   maxWidth: '960px',
   margin: '0 auto',
   padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,

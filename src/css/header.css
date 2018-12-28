@@ -1,23 +1,38 @@
 
 #carbonads {
-  height: 300px;
   font-size: 14px;
-  width: 150px;
   position: relative;
+  font-family: "mr-eaves-xl-modern", "Helvetica Neue", Arial, sans-serif;
   /*background: #f0f0f0;*/
-  border: 3px solid #f0f0f0;
-  padding: 7px;
+  background: rgba(99, 159, 110, 0.25);
+  border: 1px solid #f0f0f0;
+  padding: 2px;
 }
 
 .carbon-wrap {
-  width: 130px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-template-rows: 1fr;
+  margin-bottom: 30px;
+  align-items: center;
+  padding-left: 5px;
+}
+@media all and (max-width: 960px) {
+  .carbon-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: 110px 1fr;
+    grid-row-gap: 10px;
+    justify-items: center;
+  }
+}
+
+.carbon-wrap img {
+  margin-bottom: 0;
 }
 
 .carbon-text {
-  padding: 5px 10px;
-  max-height: 120px;
+  padding: 5px 5px 5px 0;
   display: inline-block;
   overflow: hidden;
   line-height: 1.3;
