@@ -8,7 +8,6 @@ keywords: "atomic design systems pattern libraries brad frost"
 category: "reviews"
 topics: ['Book Review', 'Design']
 key: "atomic-design-book"
-image: http://atomicdesign.bradfrost.com/images/book-cover.svg
 readNext: "clean-architecture-book,es6-the-bad-parts,react-confessions"
 ---
 
