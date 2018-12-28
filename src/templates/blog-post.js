@@ -70,9 +70,13 @@ class BlogPostTemplate extends React.Component {
         <article className="markdown" ref={el => (this.markdownContainer = el)}>
           <BlogPostHeadContent post={post} slug={slug} body={body} />
           <div className="post-title-area">
-            <PostedDateContainer>
-              {format(new Date(post.date), 'MMMM Do YYYY')}
-            </PostedDateContainer>
+            {post.date ? (
+              <PostedDateContainer>
+                {format(new Date(post.date), 'MMMM Do YYYY')}
+              </PostedDateContainer>
+            ) : (
+                ''
+              )}
             <Title>{post.title}</Title>
           </div>
           <div className={showWithSidebarSupport ? '' : 'columns'}>
