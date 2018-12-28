@@ -25,17 +25,15 @@ const boxClass = css({
   background: '#FFFFFF',
   transition: 'all 0.5s ease',
   display: 'grid',
-  gridTemplateColumns: '5rem 1fr 6rem',
-  gridTemplateRows: '1fr',
+  gridTemplateColumns: '1fr',
+  gridTemplateRows: '200px 1fr',
+  justifyItems: 'center',
   boxShadow: '0 1px 2px 0 rgba(43, 59, 93, 0.29)',
   ':hover': {
     // background: '#F1684E',
     // color: 'white',
     textDecoration: 'none',
     boxShadow: '0 10px 30px 0 rgba(0, 0, 0, 0.29)',
-  },
-  '@media all and (max-width: 700px)': {
-    gridTemplateColumns: '5rem 1fr 0px',
   },
 });
 
@@ -60,17 +58,6 @@ const PageDescription = glamorous.p({
   },
 });
 
-const DateContainer = glamorous.span({
-  whiteSpace: 'nowrap',
-  display: 'flex',
-  fontSize: '18px',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  '@media all and (max-width: 700px)': {
-    display: 'none',
-  },
-});
-
 const TitleRow = glamorous.div({
   display: 'flex',
   justifyContent: 'space-between',
@@ -83,45 +70,50 @@ const TitleRow = glamorous.div({
   },
 });
 
-class LinkBox extends React.Component {
+const Image = glamorous.img({
+  height: '90%',
+  margin: '5%',
+});
+
+const IconWrapper = glamorous.div({
+  padding: '10% 20%',
+  width: '100%',
+});
+
+class ReviewBox extends React.Component {
   render() {
-    let { page, showDate, titleFn, showCategory } = this.props;
+    let { page, titleFn } = this.props;
     const _title = titleFn(page);
     return (
       <Link className={boxClass} to={page.path}>
-        {showCategory ? (
-          <CategoryIcon category={page.data.category} />
+        {page.data.image ? (
+          <Image src={page.data.image} />
         ) : (
-            <div />
-          )}
+          <IconWrapper>
+            <CategoryIcon category="reviews" />
+          </IconWrapper>
+        )}
         <PageWrapper>
           <div>
             <TitleRow>{_title}</TitleRow>
             <PageDescription>{page.data.description}</PageDescription>
           </div>
         </PageWrapper>
-        {showDate ? (
-          <DateContainer className="no-mobile">
-            {format(parse(page.data.date), 'MMM Do YYYY')}
-          </DateContainer>
-        ) : null}
       </Link>
     );
   }
 }
 
-LinkBox.propTypes = {
+ReviewBox.propTypes = {
   page: PropTypes.object.isRequired,
   showDate: PropTypes.bool.isRequired,
-  showCategory: PropTypes.bool.isRequired,
   titleFn: PropTypes.func.isRequired,
 };
 
-LinkBox.defaultProps = {
+ReviewBox.defaultProps = {
   showDate: true,
   showDescription: true,
-  showCategory: true,
   titleFn: page => get(page, 'data.title') || page.path,
 };
 
-export default LinkBox;
+export default ReviewBox;

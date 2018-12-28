@@ -1,13 +1,15 @@
 ---
 title: "Book Review: Talking with Tech Leads"
 date: "2015-06-15T11:30:44+00:00"
-layout: "post"
+layout: "review"
 path: "/2015/06/15/book-review-talking-with-tech-leads"
 description: "A book review of Talking with Tech Leads"
 keywords: "Book Review, Tech Leads"
 category: "reviews"
 pageViews: "1138"
 topics: ['Book Review', 'Teams']
+image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=150581748X&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
+amazonlink: https://amzn.to/2SkvMrs
 last30pageViews: "3"
 ---
 

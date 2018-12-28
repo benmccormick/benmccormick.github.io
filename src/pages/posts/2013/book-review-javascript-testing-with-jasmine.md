@@ -1,7 +1,7 @@
 ---
 title: "Book Review: Javascript Testing with Jasmine"
 date: "2013-04-23T20:30:00+00:00"
-layout: "post"
+layout: "review"
 path: "/2013/04/23/book-review-javascript-testing-with-jasmine"
 description: "A book review of JavaScript Testing with Jasmine by Evan Hahn"
 keywords: "JavaScript Book Review JavaScript Testing with Jasmine"

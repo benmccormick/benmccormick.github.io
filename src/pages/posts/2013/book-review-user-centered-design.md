@@ -1,7 +1,7 @@
 ---
 title: "Book Review: User-Centered Design"
 date: "2013-08-12T15:15:00+00:00"
-layout: "post"
+layout: "review"
 path: "/2013/08/12/book-review-user-centered-design"
 description: "A book review of User-Centered Design by Travis Lowdermilk"
 keywords: "Book Review User-Centered Design"

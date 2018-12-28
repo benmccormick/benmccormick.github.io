@@ -1,13 +1,15 @@
 ---
 title: "Book Review: The Inmates Are Running The Asylum"
 date: "2018/04/11"
-layout: "post"
+layout: "review"
 path: "/2018/04/11/book-review-inmates-are-running-the-asylum/"
 description: "Don't judge a book by its first few chapters"
 keywords: "design cooper inmates asylumn"
 category: "reviews"
 topics: ['Book Review', 'Design']
 key: "inmates-book"
+image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0672326140&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
+amazon-link: https://amzn.to/2VgABE8
 readNext: "clean-architecture-book,large-improvements-small-team,react-confessions"
 ---
 

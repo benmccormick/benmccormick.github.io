@@ -1,13 +1,14 @@
 ---
 title: "Book Review: Effective Javascript"
 date: "2013-01-06T22:00:00+00:00"
-layout: "post"
+layout: "review"
 path: "/2013/01/06/book-review-effective-javascript"
 description: "A book review of Effective Javascript by David Herman"
 keywords: "JavaScript, David Herman, Book Review, Effective JavaScript"
 key: "effective-js"
 topics: ['Book Review', 'JavaScript']
 category: "reviews"
+amazonlink: https://amzn.to/2rZTyh6
 pageViews: "1622"
 last30pageViews: "2"
 ---

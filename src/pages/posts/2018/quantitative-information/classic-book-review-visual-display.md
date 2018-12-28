@@ -1,13 +1,15 @@
 ---
 title: "Classic Book Review: The Visual Display of Quantitative Information"
 date: "2018/03/13"
-layout: "post"
+layout: "review"
 path: "/2018/03/12/classic-book-review-visual-display/"
 description: "A data visualization modern classic"
 keywords: "data tufte book review"
 category: "reviews"
 topics: ['Book Review']
 key: "visual-display-review"
+image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0961392142&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
+amazonlink: https://amzn.to/2LFYLDr
 readNext: "react-confessions,clean-architecture-book,ll-context"
 ---
 
@@ -21,7 +23,7 @@ Tufte's first book, [The Visual Display of Quantitative Information](http://amzn
 - Remove unecessary clutter
 - *and more*
 
-The book is also beautiful.  Tufte chose to self-publish it so that he could control the exact layout and typography.  He also mixes in many old hand drawn visualizations to mix with a fewer new computer assisted graphics.  The result is stunning, and makes for a very enjoyable read throughout, as there is always something interesting to look at.  
+The book is also beautiful.  Tufte chose to self-publish it so that he could control the exact layout and typography.  He also mixes in many old hand drawn visualizations to mix with a fewer new computer assisted graphics.  The result is stunning, and makes for a very enjoyable read throughout, as there is always something interesting to look at.
 
 ![A typical page](typical_page.jpg)
 

@@ -8,7 +8,7 @@ import { WelcomeBox } from '../components/WelcomeBox';
 import {
   getSortedPosts,
   getPopularPosts,
-  getWeeklyLinks,
+  getSortedReviews,
   getTopicLinks,
 } from '../utils/page-helpers';
 import { HomeMenu } from '../components/HomeMenu';
@@ -18,9 +18,10 @@ class BlogIndex extends React.Component {
     const pages = this.props.data.allMarkdownRemark.edges;
     const featuredTopics = this.props.data.site.siteMetadata.featuredTopics;
     const sortedPosts = getSortedPosts(pages, 5);
+    const sortedReviews = getSortedReviews(pages, 5);
     const popularPosts = getPopularPosts(pages, 5);
-    const weeklyLinks = getWeeklyLinks(pages, 5);
     const topicLinks = getTopicLinks(featuredTopics, 5);
+
     return (
       <Layout>
         <div ref={el => (this.indexContainer = el)}>
@@ -28,8 +29,8 @@ class BlogIndex extends React.Component {
           <WelcomeBox />
           <HomeMenu
             sortedPosts={sortedPosts}
+            sortedReviews={sortedReviews}
             popularPosts={popularPosts}
-            weeklyLinks={weeklyLinks}
             topicLinks={topicLinks}
           />
         </div>
@@ -66,6 +67,8 @@ export const pageQuery = graphql`
             description
             isDraft
             category
+            image
+            amazonlink
           }
           fields {
             slug

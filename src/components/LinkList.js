@@ -38,6 +38,7 @@ class LinkList extends React.Component {
             key={page.path}
             page={page}
             showDate={showDate}
+            showCategory={showCategory}
             titleFn={titleFn}
           />
         ) : (

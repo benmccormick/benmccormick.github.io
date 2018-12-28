@@ -60,7 +60,11 @@ export const getPopularPosts = (pages, count = Infinity) =>
     count
   );
 
-export const getSortedPosts = (pages, count = Infinity) => {
+export const getSortedPosts = (
+  pages,
+  count = Infinity,
+  includeReviews = false
+) => {
   let mostPopular = getSlugsForMostPopularPosts(pages, 10);
   let trending = getSlugsForTrendingPosts(pages, 10);
   const buildPage = rawPage => {
@@ -70,12 +74,16 @@ export const getSortedPosts = (pages, count = Infinity) => {
     data.isPopular = includes(mostPopular, path);
     return { data, path };
   };
+  let pageTypes = ['post'];
+  if (includeReviews) {
+    pageTypes.push('review');
+  }
   return take(
     sortBy(pages, page => new Date(get(page, 'node.frontmatter.date')))
       .reverse()
       .filter(
         page =>
-          get(page, 'node.frontmatter.layout') === 'post' &&
+          includes(pageTypes, get(page, 'node.frontmatter.layout')) &&
           !isDraft(page) &&
           !get(page, 'node.frontmatter.dontfeature')
       )
@@ -89,6 +97,19 @@ export const getWeeklyLinks = (pages, count = Infinity) =>
     sortBy(pages, page => get(page, 'node.frontmatter.date'))
       .reverse()
       .filter(page => get(page, 'node.frontmatter.layout') === 'weekly-links')
+      .map(p => ({ data: p.node.frontmatter, path: p.node.fields.slug })),
+    count
+  );
+
+export const getSortedReviews = (pages, count = Infinity) =>
+  take(
+    sortBy(pages, page => get(page, 'node.frontmatter.date'))
+      .reverse()
+      .filter(
+        page =>
+          get(page, 'node.frontmatter.layout') === 'review' && !isDraft(page)
+      )
+
       .map(p => ({ data: p.node.frontmatter, path: p.node.fields.slug })),
     count
   );

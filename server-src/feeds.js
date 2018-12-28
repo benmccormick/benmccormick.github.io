@@ -28,7 +28,7 @@ let buildFeed = pages => {
   pages = sortBy(pages, page => new Date(get(page, 'date')));
   pages = pages.reverse();
   pages = filter(pages, p =>
-    includes(['post', 'weekly-links'], get(p, 'layout'))
+    includes(['post', 'weekly-links', 'review'], get(p, 'layout'))
   );
   pages = pages.slice(0, 10);
 
