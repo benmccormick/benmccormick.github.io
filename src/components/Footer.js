@@ -103,7 +103,7 @@ export class Footer extends React.Component {
             </LinksWrapper>
           </div>
           <CopyRightContainer>
-            Copyright © 2014-2019 · Ben McCormick
+            Copyright © 2012-2019 · Ben McCormick
           </CopyRightContainer>
         </InnerFooter>
       </FooterContainer>
