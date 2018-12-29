@@ -2,19 +2,22 @@
 title: "About Me"
 layout: page
 path: '/about'
-hideFooter: true
 ---
 
+
+<div class="inline-img">
+    <img alt="Ben, his wife Claire, daughter Elena and dog Samoa" src="family.png"/>
+</div>
 
 Hi, I'm Ben McCormick.  I'm a web developer, writer, occasional athlete, and a Christian. This is my blog about JavaScript, the Web and development tools.
 
 I live in Durham NC with my wife Claire, daughter Elena and our dog Samoa. Prior to that I grew up in Pittsburgh.  I have plenty of pride in both of my homes.  When I'm not writing code or text, you can find me playing basketball, ultimate frisbee, and board games, relaxing with my wife, or volunteering at my church.  I currently work at [Whatcounts](http://www.whatcounts.com), and spend my days there leading a team of JavaScript developers.
 
-If you have thoughts about the blog or want to contact me about related opportunities by email at ben AT benmccormick.org.
+If you have thoughts about the blog or want to contact me about related opportunities you can reach me [by email](mailto:ben@benmccormick.org).
 
-### Blog Bookkeeping
+### Disclaimers and Such
 
-benmccormick.org is run on top of the [Github Pages][ghp] using [Gatsby][gatsby].  I occasionally link to various books and services when I blog.  These links are often affiliate links, for which I receive a small commission on sales.  When this is the case I do my best to disclose that fact.  I only link to products that I have used and can endorse honestly. These links are there to support the cost of hosting the blog.
+I occasionally link to various books and services when I blog.  These links are sometimes affiliate links, for which I receive a small commission on sales.
 
 All content on the blog was written by me, and I maintain copyright over it.  If you want to reuse or reprint it somewhere else, please contact me.
 

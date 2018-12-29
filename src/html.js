@@ -63,7 +63,6 @@ class HTML extends React.Component {
           className="landing-page"
           style={{
             background: '#FCFCFC',
-            padding: '0 10px',
           }}
         >
           <div

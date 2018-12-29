@@ -10,6 +10,8 @@
 }
 
 
+
+
 .img-group {
   display: flex;
   justify-content: space-between;
@@ -21,6 +23,7 @@
 }
 
 .inline-img {
+    width: 45%;
     display: inline-block;
     float: right;
     padding: 2rem;

@@ -3,6 +3,7 @@ import React from 'react';
 import typography from '../utils/typography';
 import glamorous from 'glamorous';
 import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import '../css/mobile.css';
 import '../css/typography.css';
 
@@ -19,10 +20,13 @@ class Layout extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <Container>
-        <Header blogTitle={'Ben McCormick'} />
-        {children}
-      </Container>
+      <React.Fragment>
+        <Container>
+          <Header blogTitle={'Ben McCormick'} />
+          {children}
+        </Container>
+        <Footer />
+      </React.Fragment>
     );
   }
 }
