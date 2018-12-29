@@ -35,7 +35,7 @@ Robert Martin (Uncle Bob) uses the following definition in [Clean Architecture](
 
 > The goal of software architecture is to minimize the human resources required to build and maintain the required system.
 
-Martin Fowler gave his definition in a talk [Making architecture matter](https://www.youtube.com/watch?v=DngAZyWMGR0) that is worth watching in full:
+Martin Fowler gave his definition in a talk titled [Making Architecture Matter](https://www.youtube.com/watch?v=DngAZyWMGR0). It is worth watching in full, but paraphrased, his definition is:
 
 > Software architecture is those decisions which are both important and hard to change
 
