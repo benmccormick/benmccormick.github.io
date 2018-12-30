@@ -9,7 +9,7 @@ category: "fe-architecture"
 topics: ['Architecture', 'JavaScript']
 key: "strategies-tactics-moves"
 isDraft: true
-readNext: "fe-concerns,react-confessions,feedback-loops"
+readNext: "philosophy-of-software-design-book,fe-concerns,feedback-loops"
 ---
 
 I recently read [A Philosophy Of Software Design](https://amzn.to/2Elk5g8) by John Ousterhout.  In an early chapter he paints a picture of a "tactical tornado" programmer, a programmer who is always focused on solving the current problem by the most expedient method possible, with no thought to the long term implications.  I suspect anyone with even a few years in the programming has seen programmers like this, and has also from time to time written "tactical" code like this themselves.  Ousterhout's recommendation is instead to write code strategically rather than tactically, taking more up front time to plan the structure for the benefit of longer term productivity.

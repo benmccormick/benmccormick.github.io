@@ -4,14 +4,11 @@ import '../css/header.css';
 import glamorous from 'glamorous';
 import { css } from 'glamor';
 import { sansFontStack } from '../utils/typography';
-import typography from '../utils/typography';
-
-let { rhythm } = typography;
 
 const FooterContainer = glamorous.div({
   width: '100%',
   display: 'flex',
-  paddingBottom: '2rem',
+  padding: '3em 0 2em 0',
   flexDirection: 'column',
   justifyContent: 'center',
   backgroundColor: 'RGBA(191, 237, 253, 0.5)',
@@ -22,7 +19,7 @@ const InnerFooter = glamorous.div({
   minHeight: '200px',
   maxWidth: '960px',
   margin: '0 auto',
-  padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+  padding: `0`,
   display: 'grid',
   gridTemplateColumns: '45% 45%',
   gridColumnGap: '10%',
