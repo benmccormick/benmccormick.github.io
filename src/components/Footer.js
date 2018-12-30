@@ -4,11 +4,14 @@ import '../css/header.css';
 import glamorous from 'glamorous';
 import { css } from 'glamor';
 import { sansFontStack } from '../utils/typography';
+import typography from '../utils/typography';
+
+let { rhythm } = typography;
 
 const FooterContainer = glamorous.div({
   width: '100%',
   display: 'flex',
-  padding: '3em 0 2em 0',
+  padding: '3em 0 1em 0',
   flexDirection: 'column',
   justifyContent: 'center',
   backgroundColor: 'RGBA(191, 237, 253, 0.5)',
@@ -19,7 +22,7 @@ const InnerFooter = glamorous.div({
   minHeight: '200px',
   maxWidth: '960px',
   margin: '0 auto',
-  padding: `0`,
+  padding: `0 ${rhythm(3 / 4)}`,
   display: 'grid',
   gridTemplateColumns: '45% 45%',
   gridColumnGap: '10%',
@@ -46,6 +49,7 @@ const footerLink = css({
 });
 
 const CopyRightContainer = glamorous.div({
+  fontFamily: sansFontStack,
   fontSize: '14px',
   overflow: 'visible',
   whiteSpace: 'nowrap',

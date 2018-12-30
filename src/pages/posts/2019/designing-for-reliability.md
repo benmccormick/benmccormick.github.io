@@ -26,6 +26,25 @@ Let's break that down a bit:
 
 **Over Time** - In the real world, no application is ever completely reliable.  Things break down, there are bugs, and new edge cases are discovered.  What we can aspire to though, is an application where things that are working consistently stay working consistently, and as bugs, regressions and edge cases are discovered they get fixed in permanent ways.
 
+
+### Things Break Down
+
+So why are applications often unreliable?  There are a fairly predictable set of issues that most applications run into that degrade reliability.
+
+#### Unanticipated Usage Patterns
+
+Users are agents of chaos.  Oftentimes front end applications perform unreliably because they're used in ways that nobody expected.  Maybe a developer didn't expect that anyone would ever try to navigate to a new page in the middle of a file download.  Maybe they didn't realize that when a button was slow to respond, users would click it repeatedly and eventually spawn enough requests to overload the backend system. Or maybe they didn't expect anybody to be using an ad blocker when using their site.  Some of these things can be planned for, many will be learned with experience, but there are pretty much always going to be surprises.  Chaos can't be denied forever.
+
+#### External Failures
+
+Google never has bugs right?  So if you're connecting to a Google API, you can probably count on it always working as expected?  Ah, the naiveté of youth.  All systems break down sometimes.  If you want your system to be robust, it needs to handle failures in any system that it interacts with, whether that's a Google API, your own backend servers, or a 3rd party script that you're loading onto the site alongside your app code.  You also need to be prepared for the various capability levels of the different browsers that will run your application, and recognize that not every user will be running the browser you're developing in.  Or you can trust in Google and await your eventual disappointment.
+
+#### Bugs
+
+#### Scaling Problems
+
+### Keeping Things Running
+
 1. Consider all states (state machine?)
 2. Don’t trust the network
 3. Consider variations in data
