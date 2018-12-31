@@ -10,7 +10,6 @@ topics: ['Architecture', 'Book Review']
 key: "philosophy-of-software-design-book"
 amazonlink: https://amzn.to/2RgZhxd
 image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1732102201&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
-isDraft: true
 readNext: "clean-architecture-book,react-confessions,large-improvements-small-team"
 ---
 

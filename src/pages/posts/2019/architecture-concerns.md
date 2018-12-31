@@ -1,5 +1,5 @@
 ---
-title: "What is Front End Architecture?"
+title: "What's involved in Front End Architecture?"
 date: "2019/01/07"
 layout: "post"
 path: "2019/01/07/the-concerns-of-fe-architecture/"
