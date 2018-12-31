@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sun, 30 Dec 2018 04:18:20 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 31 Dec 2018 04:59:39 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,20 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Book Review: A Philosophy of Software Design]]></title>
+            <link>https://benmccormick.org/2018/12/31/book-review-philosophy-of-software-design/</link>
+            <guid>https://benmccormick.org/2018/12/31/book-review-philosophy-of-software-design/</guid>
+            <pubDate>Mon, 31 Dec 2018 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>A lot of the software books out there these days are marching towards their expiration dates the day they’re written.  When I see titles like “Angular 2 Development”, “Learning JavaScript with React”, “Writing Native Apps with Ionic 2 and Lodash 4” I know that the book will soon have out of date code examples and will not contain the latest ways a community is using the libraries they’re discussing.  There is value in these types of books and they often represent a monumental amount of thought and time from their authors, but 5 years from now they will no longer be relevant.  I love reading books that I know will last.</p>
+<p><a href="https://amzn.to/2Rpu6zX">A Philosophy Of Software Design</a> by <a href="https://en.wikipedia.org/wiki/John_Ousterhout">John Ousterhout</a> is a book that will last.  It’s full of timeless software writing advice that isn’t tied to a particular language, library or point of time.  Although not formally organized this way, it seems to be divided into ~4 parts: 2 chapters on the idea of complexity, a concept which Ousterhout uses as the unifying theme of the book, 8 chapters on what I’d describe as the structural design of software systems, 7 chapters on more “code level concerns” like naming conventions, comments and making code obvious, and then a final 2 chapters that feel a bit more like appendixes which discuss some common software trends and designing for performance.</p>
+<p>The best part of the book is those first few chapters where Ousterhout eloquently describes the problems that complexity can cause in a software project and lays out the distinction between a tactical and strategic approach to coding.  This is the heart of the titular <strong>philosophy</strong> of Software Design: the idea that software engineering is ultimately a fight against complexity.  It’s a strong vision clearly articulated.</p>
+<p>The “structural” sections of the book are all sound in an opinionated way.  The book makes an argument for larger implementations hidden behind smaller abstractions, which Ousterhout calls “deep modules”, and much of the structural section is through that lens.  This isn’t as open-minded as architecture advice I’ve seen elsewhere, but the benefit is that it’s prescriptiveness makes it much easier to use as a guide or code review tool than more situational or caveated advice.  That practical aspect is clearly a goal of the book, and the approach therefore makes sense.</p>
+<p>After chapter 11, the book takes a sudden detour from higher level concepts into much more concrete realms.  There is an extensive treatment of commenting style, naming conventions and other ways to make code readable and obvious.  There is a coherent through-line of building maintainable systems throughout, but the transition felt strange.  The content is still good though.</p>
+<p>The book ends on a chapter addressing modern software trends through the lens of the concepts considered in the book, which felt like a good place to wrap up, and then a chapter on designing for performance.  Given the books focus on complexity and the size of the performance topic, this chapter is content to argue that simple designs are friendly to performance, without trying to unpack many performance related topics.  It felt a bit tacked on to me, but it makes sense as a piece of objection handling for those who feel that they can’t simplify their architecture for performance reasons.</p>
+<p><em>A Philosophy of Software Design</em> is going to be my new go to recommendation for developers who are able to write code that runs but want to start thinking about how to write better code.  It doesn’t have the depth of something like <a href="https://benmccormick.org/2018/02/14/book-review-clean-architecture/">Clean Architecture</a>, but it is extremely readable and approachable, and I’ve never seen an architecture-level book that was so focused on actionable advice.  If you take the advice in the first chapter and consult the book during code reviews, every chapter in the book has something to consider when looking at a piece of non-trivial code.  That makes it a perfect introduction to higher-level software design thinking.  If you think that would be a fit for you, <a href="https://amzn.to/2Rpu6zX">go ahead and check it out</a>.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[New Newsletter and The 2018 Roundup]]></title>
             <link>https://benmccormick.org/2018/12/22/2018-roundup</link>
@@ -245,21 +259,6 @@ My take on which parts of ES6 should be avoided after 3 years of use.</p>
 <p>This looks like “JSCOdeshift for Python” to me: a way to quickly update codebases to use new patterns and practices.  I love it. You can <a href="https://benmccormick.org/2018/06/18/codemod-survival/">check out my experience using JavaScript Codemods here</a></p>
 <p><a href="https://github.com/sharkdp/bat">bat</a></p>
 <p>bat is a prettier <a href="https://en.wikipedia.org/wiki/Cat_(Unix)">cat</a>:  dump a file into the terminal, but use syntax highlighting and line numbers.  Good stuff for anyone who lives on the command line.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: August 18th]]></title>
-            <link>https://benmccormick.org/2018/08/18/weekly-links-08-18-18/</link>
-            <guid>https://benmccormick.org/2018/08/18/weekly-links-08-18-18/</guid>
-            <pubDate>Sat, 18 Aug 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h3>JavaScript and the Web</h3>
-<p><a href="https://ethanmarcotte.com/wrote/bits/">Bits | Ethan Marcotte</a></p>
-<p>I’ll pretty much always link performance posts that do a good job laying out the challenges in a way that respects both the technical and business POV.  Ethan advocates here for a more structural view to performance problems on the web and wonders how we can find more performant ways to solve businesses revenue problems.</p>
-<p><a href="https://egghead.io/browse/frameworks/react">React Community Resources | Egghead</a></p>
-<p>Egghead has accumulated a pretty amazing set of beginner React resources that are free for non-members.  If you’re trying to get into React, this is a pretty good place to start.</p>
-<h3>Books</h3>
-<p><a href="https://amzn.to/2vX6yGo">Radical Candor | Kim Scott</a></p>
-<p>I may write this up as a full review later, but Radical Candor was the best book I’ve read this year.  It’s a book for managers, but it really was just one of the best books I’ve ever read on communication and relationships.  If you want to work better with others, Radical Candor is worth buying.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
