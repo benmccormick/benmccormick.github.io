@@ -28,6 +28,7 @@ const boxClass = css({
   gridTemplateColumns: '1fr',
   gridTemplateRows: '200px 1fr',
   justifyItems: 'center',
+  alignItems: 'baseline',
   boxShadow: '0 1px 2px 0 rgba(43, 59, 93, 0.29)',
   ':hover': {
     // background: '#F1684E',
@@ -35,6 +36,7 @@ const boxClass = css({
     textDecoration: 'none',
     boxShadow: '0 10px 30px 0 rgba(0, 0, 0, 0.29)',
   },
+  height: '100%',
 });
 
 const PageWrapper = glamorous.div({
@@ -78,6 +80,7 @@ const Image = glamorous.img({
 const IconWrapper = glamorous.div({
   padding: '10% 20%',
   width: '100%',
+  height: '100%',
 });
 
 class ReviewBox extends React.Component {
