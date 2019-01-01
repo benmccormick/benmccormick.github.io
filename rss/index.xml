@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Tue, 01 Jan 2019 04:18:38 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 01 Jan 2019 17:10:36 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,39 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Book Review: Radical Candor]]></title>
+            <link>https://benmccormick.org/2019/01/01/book-review-radical-candor</link>
+            <guid>https://benmccormick.org/2019/01/01/book-review-radical-candor</guid>
+            <pubDate>Tue, 01 Jan 2019 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>Have you ever read a non-fiction book that you just couldn’t put down because you kept hitting paragraph after paragraph of useful, practical wisdom?  That was me reading <a href="https://amzn.to/2SABeXz">Radical Candor</a> by Kim Scott this summer.  It’s a ~200 page masterpiece on communication, leadership and being real at work.  The ideas in Radical Candor have already been a huge help to me as I’ve transitioned into a manager role over the past few months, and I fully expect to refer back to them a lot in the years to come.  It was the best thing I read in 2018, so I wanted to write a quick review to start the new year.</p>
+<p>Radical Candor is split into 2 parts: part 1 is philosophical, and builds out a philosophy of working with and managing people that’s based on honest guidance and feedback backed by genuine care.  The second half of the book is tactical and focused on techniques that managers can use to implement the philosophical ideas.  Overall it is a book for managers, but is also relevant and useful for anyone who has a manager or who wants to work better with others in a professional setting.</p>
+<div class="inline-img">
+    <a class="gatsby-resp-image-link" href="/static/99fcbb54afd2343a252ea238c5f977e3/12735/candor-diagram.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-wrapper" style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 90.35211267605634%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsSAAALEgHS3X78AAADp0lEQVQ4yz1Uy3LiVhDVp2Uzm1kli1QWU9klm2xTlayTWbhSediu8Zixx/Py2GMbP7BhMDYPgzFPCYQASSAEQoCn8hknp68giy7V7dv39OnT3dIWiwCzxQSzeYD5YorZLMDicc5zCNM0MRi69IfqHM54P49ssZhF9hjSpksLoM0FcD5hsFiAkMG266DTtXB8eoH4+SX6jo1xMEYwnUQWLmOXJiTmihABFRgDpmEULGzqehPxi0sUSiWk0hnsHxzDJdMpkwUqdgkkIPTNyV6qUwwjMGanTaZj+BNfPfry7wJniSQq9Zo6j8Ye70Zk6qs4IRAKcBgBz1YM5WIFJI+GIw+eL98hnn79PTZe7ipwdziAx/sRQaOkEeh0GlU4WzLWgqn/f1ax0XiEgTekliFirz+gXK3ycUC/r3SUryRexSu2K1ABnBDMn3hothrUroZasw693ULAjm6/fs+SG7DsLhpGE4bZYsNssvRV4hWRYGnCWPOZzR3auMndIH2bRjxxiuvcLcbM+mLnLR4IWG3WcJlO8j6DtmUuWY4iTQm+MiGnCbsJy9ZbOssrI1csoFAuYcRLASxVqjB7lvLf3Rdh9brL0qOyZ+zu/DFU0/H4ZQZt4LlIZ245d101f1a/D8PqwPWH2NjeQ/6+DNsbwGFThv4ILpvVMHTF0Gi31Wjdle5RqdVRq9ehxXbf4asn32Ir9hbrm6/w50YMf6zHsLXzHj/89Ct+X9vE5vYb/PNiF+tbu9h58xHffPcjnq+twyGBV3x/8OkE7/YPET+7gNZlOVefqU3HhNntoNFqodJoos1NWft7C6lMFrrZwQN9VV1n4wx8OIijUCwrLa8+XyN1ncEJt6oqDKXkWqOCYrmoLE+d0rksgXXFLHVzS18JxcoD9XzgBBjUbgKfYLI9anOWKyiNUYCZbAZHp8c4PDnCYfwEex/3VWM2Xu7h6Owc+/QfJy7w6ewUiVQSLVbTo9aO6yrdB9TYo7bSdW0wdDhfOvJ3OWQLWdzkc0hm0orhX9Q0kUrhPHmJDP3XZJ69Kyh5ev0ebMeBM3DVVsl2jQXQdnro2RYDuuhyJCS7YbZhdNpsxA7y7GCHfgERXU1Og5jVk3d9ghLQi1bWZ+e1vmPB6rbR5ha0aHW9wa3RlXZPnj7DNrsozao06qhzXJotg+AdNWYC2rdtVbqs64gstZ7dUYCmAHYMBSZrJiv48y+/4Sqdpr+lfmnSEGHftiJAqUjKHsiMsmyZzf8AI9K97oDI4JEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;"></span>
+    <img class="gatsby-resp-image-image" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;" alt="Radical Candor diagram" title="" src="/static/99fcbb54afd2343a252ea238c5f977e3/d766e/candor-diagram.png" srcset="/static/99fcbb54afd2343a252ea238c5f977e3/a6b6e/candor-diagram.png 143w,
+/static/99fcbb54afd2343a252ea238c5f977e3/8e488/candor-diagram.png 285w,
+/static/99fcbb54afd2343a252ea238c5f977e3/d766e/candor-diagram.png 570w,
+/static/99fcbb54afd2343a252ea238c5f977e3/13239/candor-diagram.png 855w,
+/static/99fcbb54afd2343a252ea238c5f977e3/cab6d/candor-diagram.png 1140w,
+/static/99fcbb54afd2343a252ea238c5f977e3/71f14/candor-diagram.png 1710w,
+/static/99fcbb54afd2343a252ea238c5f977e3/12735/candor-diagram.png 2840w" sizes="(max-width: 570px) 100vw, 570px">
+  </span>
+  </a>
+</div>
+<p>The heart of the book is the 2x2 grid diagram that Scott sprinkles throughout the chapters, showing the 4 quadrants that can characterize an interaction, relationship or communication style.  People who don’t care about those they work with and also don’t challenge them fall into manipulative insincerity and should be avoided at all costs.  The Steve Jobsian category of Obnoxious Aggression is when somebody is willing to challenge directly but doesn’t care about the people they’re challengin. To Scott’s mind, Obnoxious Aggression is preferred over Ruinous Empathy; when people who hate the idea of hurting somebody so much that they fail to tell them important truths.  But the target quadrant is Radical Candor, a state where you deal with people in a way that is backed by real humanity while still being willing to be exceptionally honest and challenging.</p>
+<p>This core idea wasn’t super new to me, I had seen it formulated in Church contexts as <code class="language-text">Grace + Truth = Growth</code> in the past.  But Scott puts in the work to show how these ideas play out in a wide variety of professional situations and relationships, and her examples left me teeming with new ideas on how to interact better with my coworkers.  The theme is good, but the implementation ideas and little nuggets of wisdom and experience sprinkled throughout are better.  As a result, Radical Candor is one of the best books on relationship and communication I have ever read.</p>
+<p>I would recommend it for anyone who</p>
+<ol>
+<li>Manages people</li>
+<li>Wants to manage people</li>
+<li>Has a manager</li>
+<li>Has to deal with people</li>
+</ol>
+<p>Do yourself a favor and check it out.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Book Review: A Philosophy of Software Design]]></title>
             <link>https://benmccormick.org/2018/12/31/book-review-philosophy-of-software-design/</link>
@@ -244,21 +277,6 @@ My take on which parts of ES6 should be avoided after 3 years of use.</p>
 <p><a href="https://amzn.to/2NpJyK7">How To Win Friends And Influence People | Dale Carnegie</a></p>
 <p>Not a programming book, but for most programmers who have achieved a minimal level of technical proficiency, the best thing they can do to get better in their career is not more technical growth, but instead growth on their “soft” skills.  Communicating complex topics, helping teams work well together, working through interpersonal issues, negotiation and persuasion are all huge skills for professional software developers.</p>
 <p>There are lots of “business” books out there that are worthwhile, but this is the best book I’ve ever read on the simple yet endlessly deep topic of relating to our fellow human beings.  It has been relevant and helpful for 82 years, and I wouldn’t expect that to change soon.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: September 1]]></title>
-            <link>https://benmccormick.org/2018/09/01/weekly-links-09-01-18/</link>
-            <guid>https://benmccormick.org/2018/09/01/weekly-links-09-01-18/</guid>
-            <pubDate>Sat, 01 Sep 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h3>JavaScript And The Web</h3>
-<p><a href="https://blog.angularindepth.com/practical-application-of-reverse-engineering-guidelines-and-principles-784c004bb657">Reverse Engineering React | Angular In Depth</a></p>
-<p>A really cool look at how you can approach a new code base and start learning how it works quickly</p>
-<h3>Programming Tools</h3>
-<p><a href="https://pybowler.io">Bowler | Facebook Open Source</a></p>
-<p>This looks like “JSCOdeshift for Python” to me: a way to quickly update codebases to use new patterns and practices.  I love it. You can <a href="https://benmccormick.org/2018/06/18/codemod-survival/">check out my experience using JavaScript Codemods here</a></p>
-<p><a href="https://github.com/sharkdp/bat">bat</a></p>
-<p>bat is a prettier <a href="https://en.wikipedia.org/wiki/Cat_(Unix)">cat</a>:  dump a file into the terminal, but use syntax highlighting and line numbers.  Good stuff for anyone who lives on the command line.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
