@@ -10,6 +10,7 @@ pageViews: "1138"
 topics: ['Book Review', 'Teams']
 image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=150581748X&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
 amazonlink: https://amzn.to/2SkvMrs
+key: 'tech-leads-book'
 last30pageViews: "3"
 ---
 
