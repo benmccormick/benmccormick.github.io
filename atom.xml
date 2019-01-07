@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-01-07T04:07:41Z</updated>
+    <updated>2019-01-07T04:09:08Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,62 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[What's involved in Front End Architecture?]]></title>
+        <id>https://benmccormick.org2019/01/07/the-concerns-of-fe-architecture/</id>
+        <link href="https://benmccormick.org2019/01/07/the-concerns-of-fe-architecture/">
+        </link>
+        <updated>2019-01-07T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>The word “architecture” gets thrown around a lot in software discussions.  But we don’t seem to always use it the same way.  Some example usages:</p>
+<blockquote>
+<p>Our app uses Redux for our architecture.</p>
+</blockquote>
+<p>Sometimes we assume that because we are using a framework or data management library, that must be our architecture.</p>
+<blockquote>
+<p>I created a diagram of our dependency graph, showing all the imports in the code, as a way of seeing our architecture.</p>
+</blockquote>
+<p>We could also say the way your program is structured (which files depend on which other files) represents your architecture.  If we’re fancy, then maybe we have <a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language">UML diagrams</a> representing this structure.</p>
+<blockquote>
+<p> Bob is our architecture guy: he decides what dependencies we can bring in, is always asking us to refactor code to make it “cleaner”, and runs a design meeting before each feature to decide how to structure the code</p>
+</blockquote>
+<p>This final quote sounds like architecture is more about the decisions you’re making as you go through a project.</p>
+<h3>Appealing to authority?</h3>
+<p>So if the community isn’t using the term consistently, let’s ask the experts.  Here are 2 definitions from folks who have written popular books on software architecture.</p>
+<p>Robert Martin (Uncle Bob) uses the following definition in <a href="https://amzn.to/2rROcEA">Clean Architecture</a>:</p>
+<blockquote>
+<p>The goal of software architecture is to minimize the human resources required to build and maintain the required system.</p>
+</blockquote>
+<p>Martin Fowler gave his definition in a talk titled <a href="https://www.youtube.com/watch?v=DngAZyWMGR0">Making Architecture Matter</a>. It is worth watching in full, but paraphrased, his definition is:</p>
+<blockquote>
+<p>Software architecture is those decisions which are both important and hard to change</p>
+</blockquote>
+<p>These 2 definitions turn out to be complementary.  Uncle Bob motivates architecture: we’re focused on minimizing the work put into the system.  Martin Fowler’s definition shows what parts of the system architecture is concerned with: the parts that are “important” and hard to change.</p>
+<p>The next question of course is… what is important?  The unsatisfactory answer is that it depends.  It will change between projects, and will change within a project over time.  But when we scope the question to the domain of front end development, common themes emerge.  Specifically there are 6 areas of concern that I see coming up again and again in public and private front end architecture discussions.  They’re not exclusive to the front end, but they’re a good starting point for anyone thinking about building web applications.</p>
+<h4>Ease of Change</h4>
+<p>When new requirements arrive, how quickly are developers able to make changes and release new code to production?  When there are bugs, how easy is it to find the problem and fix it?  Are developers able to consistently deliver correct code?  Or are multiple iterations often required?</p>
+<h4>Security</h4>
+<p>Can a malicious user inject code into your site?  Are you unnecessarily exposing information about your users or code structure? And you are working with your API developers to use secure authentication and authorization practices right?</p>
+<h4>Accessibility</h4>
+<p>This concern is broader than the way the word is often used in web dev circles.  Is the full audience of this site or application able to use it with as few limitations as possible?  Users with disabilities?  Users with older but supported browsers?  How about international users or those with slow connections?  Does your site work on mobile?  Offline?  On Apple Watch?  Do you support AMP? And do your pages appear nicely on social media?  Do you even care about any of these audiences? Maybe you’re optimizing for people who aren’t your users?</p>
+<h4>Reliability</h4>
+<p>Is a site or  application consistently available to users?  Does it often fail, and if so how does it recover?  If things are breaking, are the developers aware of it quickly?  Do different users in different scenarios receive a consistent experience?</p>
+<h4>Performance</h4>
+<p>Is a site or application consistently quick to load and interact with?  If there are animations or highly interactive elements, are they responsive and usable, or do they freeze/jank? Is the user disrupted in their tasks by strange loading behavior?</p>
+<h4>Capability</h4>
+<p>Is your site limited in fulfilling its purpose because of foundational decisions or tradeoffs with the other concerns?  Have you made decisions that let you serve your audience in unique ways because of your tech stack or development processes?  Do your technical decisions even make sense in the context of your site or application’s purpose?</p>
+<h3>Coming Soon</h3>
+<p>I’m hoping to look at each of these areas more in depth in the coming weeks, as well as exploring how we make decisions that impact multiple areas simultaneously.  In the meantime, as you’re looking at decisions and tools that will impact the long term structure of your front end application, consider how they’ll impact each of these areas.</p>
+<p><strong>TL;DR</strong></p>
+<ul>
+<li><strong>Architecture is about decisions that are important and hard to change, with a goal of improving the efficiency of a project</strong></li>
+<li><strong>Front End architecture is often concerned with the areas of Ease of Change, Security, Accessibility, Reliability, Performance and Capability</strong></li>
+</ul>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Book Review: Radical Candor]]></title>
         <id>https://benmccormick.org/2019/01/01/book-review-radical-candor</id>
@@ -304,30 +360,6 @@ My take on which parts of ES6 should be avoided after 3 years of use.</p>
 <h3>Book Review</h3>
 <p><a href="https://amzn.to/2xfflEi">Ready Player One | Ernest Cline</a></p>
 <p>I’m about 7 years late on this (and even 6 months late for the movie hype), but Ready Player one was a great little sci-fi novel that uses 80’s pop culture as a background for a bunch of insightful commentary about our modern tech culture and where it may be heading.  A lot of fun, and worth reading if you’ve missed it for this long like me.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: September 7]]></title>
-        <id>https://benmccormick.org/2018/09/07/weekly-links-09-07-18/</id>
-        <link href="https://benmccormick.org/2018/09/07/weekly-links-09-07-18/">
-        </link>
-        <updated>2018-09-07T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>JavaScript And The Web</h3>
-<p><a href="https://stateofjs.com/">State of JS Survey | Raphaël Benitte, Sacha Greif &#x26; Michael Rambeau</a></p>
-<p>This survey is always a great look into the JavaScript community, and it just opened for this year.  If you’re reading this, please fill it out.  I’ll look forward to seeing what they’ve learned in a few months.</p>
-<h3>Books For Programmers</h3>
-<p>It’s a bit of a slow week links wise, so this week I want to share some of my favorite “timeless” programming books.  These are books that will still be relevant in 10 years.</p>
-<p><a href="https://amzn.to/2wVjXyi">The Pragmatic Programmer | Andy Hunt &#x26; David Thomas</a></p>
-<p>My favorite book on general programming “tactics”.  Lots of code level tips and tricks here, as well as some higher level architecture thinking.  Some of the specific examples have aged out, but the general concepts discussed in this book are timeless.</p>
-<p><a href="http://amzn.to/2mKoejo">Clean Architecture | Robert Martin</a></p>
-<p>I reviewed this one <a href="https://benmccormick.org/2018/02/14/book-review-clean-architecture/">earlier this year</a>, and it’s a relatively new book, but I’m confident that it is built to last.  This is a great book on programming “strategy”, the high level construction of maintainable programs.</p>
-<p><a href="https://amzn.to/2NpJyK7">How To Win Friends And Influence People | Dale Carnegie</a></p>
-<p>Not a programming book, but for most programmers who have achieved a minimal level of technical proficiency, the best thing they can do to get better in their career is not more technical growth, but instead growth on their “soft” skills.  Communicating complex topics, helping teams work well together, working through interpersonal issues, negotiation and persuasion are all huge skills for professional software developers.</p>
-<p>There are lots of “business” books out there that are worthwhile, but this is the best book I’ve ever read on the simple yet endlessly deep topic of relating to our fellow human beings.  It has been relevant and helpful for 82 years, and I wouldn’t expect that to change soon.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
