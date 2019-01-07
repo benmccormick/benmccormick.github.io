@@ -2,7 +2,7 @@
 title: "6 Keys To Valuable Code Reviews"
 date: "2019/01/14"
 layout: "post"
-path: "2019/01/14/value-from-code-reviews"
+path: "/2019/01/14/value-from-code-reviews"
 description: "Getting the most out of your code review process"
 keywords: "code reviews"
 category: "fe-architecture"

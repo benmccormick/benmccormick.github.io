@@ -2,7 +2,7 @@
 title: "On Strategic Coding"
 date: "2019/01/14"
 layout: "post"
-path: "2019/01/14/strategic-coding"
+path: "/2019/01/14/strategic-coding"
 description: "Thinking about architectural concerns is a full time occupation"
 keywords: ""
 category: "fe-architecture"

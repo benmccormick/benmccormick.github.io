@@ -2,7 +2,7 @@
 title: "What's involved in Front End Architecture?"
 date: "2019/01/07"
 layout: "post"
-path: "2019/01/07/the-concerns-of-fe-architecture/"
+path: "/2019/01/07/the-concerns-of-fe-architecture/"
 description: "6 areas of interest in front end software design discussions"
 keywords: "architecture software performance security accessibility"
 category: "fe-architecture"
