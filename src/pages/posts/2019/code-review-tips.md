@@ -20,7 +20,7 @@ When you start doing code reviews, it can be tempting to only have senior develo
 
 - **Senior Reviewing Junior** - This is the first thing most folks think about.  This is an opportunity for a more experienced developer to catch bugs in a less experienced developer's code and also give suggestions for improving architecture-level structure, introducing new ways of doing things, or catching when there are opportunities for code consolidation that the original author might not have known about.
 - **Junior Reviewing Senior** - When a less experienced developer reviews the code of a more experienced developer, its an opportunity for them to see new ways of doing things, and also get "cheap" exposure to new areas of a codebase.  It's also a great opportunity for them to ask questions about things they don't understand.  But it shouldn't be a one way street.  Often times a fresh pair of eyes are great at catching bugs, and if a code review is particularly confusing to a less experienced dev, it's a sign that the code may need to be rewritten or better documented so that it can be maintained in the future.
-- **Peer Reviewing Peer** - When 2 developers have roughly equal skill and experience with the codebase, code reviews are still an opportunity for a second pair of eyes, but they also have the benefits of building team collective knowledge about the codebase and also exposing when there are differences in approach across the team.  Conversations at this level are a great place to standardize on best practices and team conventions.
+- **Peer Reviewing Peer** - When 2 developers have roughly equal skill and experience with the codebase, code reviews are still an opportunity for a second pair of eyes, but they also have the benefits of building team collective knowledge about the codebase and exposing times when there are differences in approach across the team.  Conversations at this level are a great place to standardize on best practices and team conventions.
 
 #### 2. Hold reviewers responsible for the code they review
 
@@ -34,11 +34,11 @@ The teams I've worked on that didn't have real code review processes also didn't
 
 In moderation, I've found checklists a useful tool for code reviews.  If your team has specific areas of focus that you want to improve compliance on, it can be helpful to give reviewers a list of items to sign off on.  For instance:
 
-- Change supports internationalization
-- Change doesn't add any new code with legacy framework
-- If change is user-facing, it includes documentation updates
+- Verify change supports internationalization
+- Verify change doesn't add any new code with legacy framework
+- If change is user-facing, verify it includes documentation updates
 
-You can take this too far, you don't want to reduce the review process to repetitive box-ticking.  But these can be great as guides for implementing new initiatives or addressing problem areas in code.
+You can take this too far, the review process shouldn't be reduced to repetitive box-ticking.  But these can be great as guides for implementing new initiatives or addressing problem areas in code.
 
 
 #### 5. Make code reviews as atomic as possible

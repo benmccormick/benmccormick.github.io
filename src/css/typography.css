@@ -61,3 +61,8 @@ strong {
 em {
   color: rgba(154, 116, 170, 1.00);
 }
+
+
+.markdown iframe {
+  margin: 0 auto;
+}

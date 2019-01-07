@@ -1,84 +1,61 @@
 ---
-title: "Recommended Reading For Developers"
+title: "Recommended Reading"
 layout: page
 path: '/readinglist'
 hideFooter: true
 ---
 
-
-These are the books that have helped me grow most as a developer.  I highly recommend them all.  Please note that the links are affiliate links and a small portion of any purchases you make will go towards the costs of maintaining this site.
-
----
-
-## JavaScript
+These are books that have helped me grow, or that I loved reading.  I highly recommend them all.  Buying these books through the amazon links below is also a great way to support this site, as I get a small commission on Amazon purchases.
 
 
-#### JavaScript: The Good Parts, By Douglas Crockford
+### Web Development
 
-<span class="reading-img">
-<img alt="JavaScript the Good Parts" src="goodparts.jpg">
-</span>
+Books on front end development and creating experiences on the web.
 
-This is the first book I'd recommend for anyone interested in getting started with Front End development and JavaScript.  It's getting a bit dated now, 6 years after it was published, but I haven't found anything else that explains as well the basics of the language and how to use it.
-
-Buy: <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0596517742&linkCode=as2&tag=benmccormicko-20&linkId=XZEWUV7PCEO7DNTY">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=0596517742" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+- [Effective JavaScript by David Herman](https://amzn.to/2LSJPSM): Came out in 2012 and is getting a bit long in the tooth, but the best intermediate level book on JavaScript development I've seen.
 
 
+- [Atomic Design by Brad Frost](http://atomicdesign.bradfrost.com/): The best book on design systems and pattern libraries I've seen.  Excellent for anyone thinking about how to systemize their organization's UI code.  (Not available on Amazon).
 
-#### Effective JavaScript by David Herman
+### Software Engineering
 
-<span class="reading-img">
-<img alt="Effective JS" src="effjs.jpg">
-</span>
+Books on the craft of software development, how we raise the bar above programs that merely work for the moment.
 
-You can find my full review [here][effectivejs], but Effective JavaScript is a great read for developers with a good comfort level with the language who want to dig a bit deeper.  It's presented as a series of imperative tips (do this, don't do that), and each one is backed up with a tremendous depth of knowledge and insight.  A must read for any JavaScript dev.
-
-Buy: <a href="http://www.amazon.com/gp/product/0321812182/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0321812182&linkCode=as2&tag=benmccormicko-20&linkId=HOPC6ZNKSVMH3NZ7">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=0321812182" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-
----
-
-## Tools
+- [The Pragmatic Programmer by Andrew Hunt and Dave Thomas](https://amzn.to/2SAvYmy): A classic.  My top recommendation for people who want to get better at the craft of building software systems.
+- [Clean Architecture by Robert C Martin](https://amzn.to/2LXXUOY): A great book on structuring software systems.
+- [A Philosophy Of Software Design By John Ousterhout](https://amzn.to/2VAF9oR): This is the perfect book for programmers who have gotten to the point where they can write programs that work, and want to start writing better ones.  Intro-intermediate level.
 
 
+### Leadership, Management, and Communication
 
-#### Practical Vim by Drew Neil
+Books on dealing with people, because people are at the heart of creating great software products
 
-<span class="reading-img">
-<img alt="Practical Vim" src="vim.jpg">
-</span>
+- [Radical Candor by Kim Scott](https://amzn.to/2SAWNHj): The best book I've read on management so far, and one of the best books I've ever read on communication as well.
+- [How To Win Friends & Influence People by Dale Carnegie](https://amzn.to/2LUMHyu):  This is an old one, but it's so focused on the basics of human relationships that even with dated examples it still rings true today.  If you read it as a guide on how to manipulate people you're missing out.  This is one of the best things I've read on the "how" of treating other humans humanely.
+- [Death By Meeting by Patrick Lencioni](https://amzn.to/2LUdLxP): What makes meetings bad?  How do you make them good.  This is pretty important stuff.
 
-Practical Vim is a must have book for anyone who wants to be efficient while editing text.  While it's a book about Vim, it will challenge you to use your editor more efficiently and powerfully no matter what you use (and maybe convince you to switch to Vim).  Highly recommended for anyone who deals with code or text for a living.
+### Off-topic Non-Fiction
 
-Buy: <a href="http://www.amazon.com/gp/product/1934356980/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1934356980&linkCode=as2&tag=benmccormicko-20&linkId=FE3JFKHYVRYCUOVS">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=1934356980" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+These books don't relate directly to the software dev and leadership aspects of this blog, but I highly recommend them.
 
+- [The Innovators by Walter Isaacson](https://amzn.to/2LRGCCM): If you're involved in web development today, this is the history of our industry.  An easy read, and I learned a lot.
+- [The Tech Wise Family](https://amzn.to/2AxcHvt): This is ostensibly a book for parents, but it's really a book for anyone who is trying to figure out how to find a healthy place for tech and devices as our world is increasingly saturated with addictive software.
+- [Mere Christianity by CS Lewis](https://amzn.to/2AxcYyv): If you're interested in my personal beliefs on God and life, this book is probably as good a summary as anything.
 
+### Fiction
 
-#### Tmux: Mouse Free Productivity By Brian Hogan
+The fun section!
 
-<span class="reading-img">
-<img alt="Tmux" src="tmux.jpg">
-</span>
-
-Tmux is a terminal multiplexer, a program that allows you to split and organize your terminal windows.  With an unfriendly [project page][tmuxpage] and a dearth of great tutorials out there, it can be a bit difficult to get started with.  Tmux: Mouse Free Productivity is a short (88 pages) little guide to using Tmux effectively.  It helped me get up and running with what is now an indispensable tool in my workflow.
-
-Buy: <a href="http://www.amazon.com/gp/product/1934356964/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1934356964&linkCode=as2&tag=benmccormicko-20&linkId=ITHR5LSXMGMXCPS7">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=1934356964" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-
----
-
-## General Programming
+- [The 7 ½ Deaths of Evelyn Hardcastle by Stuart Turton](https://amzn.to/2SGZs24): An amazingly fun mystery story, somehow written as a debut novel by the author.
+- [The Martian by Andy Weir](https://amzn.to/2AwM89G): Speaking of debut novels, this is some fun "hard sci-fi".  I still can't believe that this turned into a Matt Damon movie, it's incredibly "geek-friendly".
+- [A Tale of Two Cities by Charles Dickens](https://amzn.to/2Axm4uQ): If you want to read "a classic" to broaden your horizons, impress some snobs or whatnot, this would be my recommendation.  An exciting, fast moving story that weaves bigger questions of grace, redemption, vengeance and class into a family and political drama set in the middle of the French Revolution.
 
 
+### Comic Books
 
-#### The Pragmatic Programmer by Andrew Hunt and David Thomas
+The even more fun section.  Comic books are a guilty pleasure.  I stick to the mainstream Marvel/DC super hero comics.  Here are my recommendations for jumping in if you're interested. (Note that none of these are particularly kid friendly)
 
-<span class="reading-img">
-<img alt="The Pragmatic Programmer" src="pp.jpg">
-</span>
+- [Batman: Hush by Jeff Loeb](https://amzn.to/2RDEB2o): A 1 year run on Batman by one of the best Batman writers and one of the greatest comic book artists ever (Jim Lee) that showcases a wide array of characters in an entertaining story.
+- [Identity Crisis by Brad Meltzer](https://amzn.to/2senGoY): This book is the human side of comic books at its best.  Somebody is murdering and threatening the spouses of prominent heroes, and the mystery that ensues is full of real humanity that takes full advantage of the medium.
+- [The Vision by Tom King](https://amzn.to/2RysnYR): What happens when a super hero android just wants to live a normal life?  It sounds like a setup for a lame comedy, but this was one of the deepest and most human comics I've ever read.  Full of philosophy, literature, and even a bit of computer science (there's a whole issue out of the 12 issue series framed around the P vs NP problem).
 
-This is a classic in the programming field, easily the most well known book on this list.  But it also is an indispensible explanation of the process of making great software.  There's not a lot of code in this book, and thats a feature, not a bug.  This is a book about the techniques of building a software project, not the nitty gritty details.  As such, it's relevance has lasted a lot longer than instructional books which have come and gone.
-
-Buy: <a href="http://www.amazon.com/gp/product/020161622X/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=020161622X&linkCode=as2&tag=benmccormicko-20&linkId=OGOUQY6XAPDGUA4T">Amazon</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=benmccormicko-20&l=as2&o=1&a=020161622X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-
-
-[effectivejs]:http://benmccormick.org/2013/01/06/book-review-effective-javascript/
-[tmuxpage]: http://tmux.sourceforge.net/
