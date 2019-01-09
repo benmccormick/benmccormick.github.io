@@ -11,7 +11,7 @@ class RecommendedPosts extends React.Component {
         <LinkList
           title="You Might Also Like These Articles"
           pages={recommendedPosts}
-          showCategory={false}
+          showCategory={true}
           showDate={true}
           useBox={true}
         />

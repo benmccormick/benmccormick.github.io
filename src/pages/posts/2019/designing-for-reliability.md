@@ -2,7 +2,7 @@
 title: "Designing Front End Apps For Reliability"
 date: "2019/01/21"
 layout: "post"
-path: "/2019/01/21/strategic-coding"
+path: "/2019/01/21/designing-for-reliability"
 description: "Principles for creating more robust applications"
 keywords: ""
 category: "fe-architecture"
