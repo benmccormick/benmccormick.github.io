@@ -85,7 +85,7 @@ export class Ad extends React.Component {
         return;
       }
       this.setState({ failedToShowAd: true });
-    }, 2000);
+    }, 3000);
   }
 
   componentDidUpdate(prevProps) {
