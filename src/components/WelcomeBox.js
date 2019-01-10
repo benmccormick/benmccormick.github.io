@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 
-let Wrapper = glamorous.div({
+let Wrapper = styled("div")({
   display: 'grid',
   gridTemplateColumns: '80% 20%',
   gridColumnGap: '1rem',
@@ -12,7 +12,7 @@ let Wrapper = glamorous.div({
   },
 });
 
-let ImageContainer = glamorous.div({
+let ImageContainer = styled("div")({
   maxWidth: '200px',
   maxHeight: '200px',
   marginRight: '1rem',
@@ -25,7 +25,7 @@ let ImageContainer = glamorous.div({
   },
 });
 
-let Image = glamorous.img({
+let Image = styled("img")({
   borderRadius: '50%',
   marginBottom: 0,
   opacity: 1,
@@ -35,7 +35,7 @@ let Image = glamorous.img({
   transition: 'opacity 1s',
 });
 
-let WelcomeContainer = glamorous.div({
+let WelcomeContainer = styled("div")({
   maxWidth: '1000px',
   margin: '1rem 0',
   display: 'flex',

@@ -1,24 +1,25 @@
 import React from 'react';
 import get from 'lodash/get';
-import glamorous, { Blockquote } from 'glamorous';
+import styled from '@emotion/styled';
 
 import PropTypes from 'prop-types';
 
 import ReviewBox from './ReviewBox';
 
-const ListTitle = glamorous.h2({
+const ListTitle = styled('h2')({
   color: 'inherit',
 });
 
-const ListItem = glamorous.li({
+const ListItem = styled('li')({
   listStyle: 'none',
   display: 'block',
 });
 
-const List = glamorous.ul({
+const List = styled('ul')({
   display: 'grid',
   gridTemplateColumns: '30% 30% 30%',
   gridColumnGap: '5%',
+  marginLeft: 0,
   gridRowGap: '30px',
   gridAutoRows: '1fr',
 

@@ -1,17 +1,17 @@
 import React from 'react';
 import get from 'lodash/get';
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 
 import PropTypes from 'prop-types';
 
 import LinkBox from './LinkBox';
 import PageLink from './PageLink';
 
-const ListTitle = glamorous.h2({
+const ListTitle = styled("h2")({
   color: 'inherit',
 });
 
-const List = glamorous.ul({
+const List = styled("ul")({
   marginLeft: 0,
   paddingLeft: 0,
 });

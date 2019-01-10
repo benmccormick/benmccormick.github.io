@@ -1,9 +1,9 @@
 import React from 'react';
 import defer from 'lodash/defer';
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 import { sansFontStack } from '../utils/typography';
 
-const AdWrapper = glamorous.div({
+const AdWrapper = styled("div")({
   width: '100%',
   overflow: 'hidden',
   margin: '0 0 1rem 0',

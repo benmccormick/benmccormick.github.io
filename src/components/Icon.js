@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import InlineSVG from 'svg-inline-react';
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 
 const iconContainerFactory = color =>
-  glamorous.span({
+  styled("span")({
     display: 'block',
     width: '2em',
     height: '2em',

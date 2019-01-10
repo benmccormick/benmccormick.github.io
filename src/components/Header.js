@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'gatsby';
 import '../css/header.css';
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 import { css } from 'glamor';
 import { sansFontStack } from '../utils/typography';
 
-const HeaderWrapper = glamorous.div({
+const HeaderWrapper = styled("div")({
   display: 'flex',
   paddingBottom: '2rem',
   flexDirection: 'row',
@@ -14,14 +14,14 @@ const HeaderWrapper = glamorous.div({
   flexWrap: 'wrap',
 });
 
-const Padding = glamorous.span({
+const Padding = styled("span")({
   padding: '0 0.5rem',
   '@media all and (max-width: 400px)': {
     padding: '0 0.25rem',
   },
 });
 
-const Logo = glamorous.h3({
+const Logo = styled("h3")({
   margin: '0 20px 0 0',
   paddingBottom: 0,
   '& a': {
@@ -34,7 +34,7 @@ const Logo = glamorous.h3({
   },
 });
 
-const LinksWrapper = glamorous.div({
+const LinksWrapper = styled("div")({
   color: '#999999',
 });
 

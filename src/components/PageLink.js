@@ -5,7 +5,7 @@ import typography from '../utils/typography';
 import CategoryIcon from './CategoryIcon';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 import star from '../svg/star.svgi';
 import flame from '../svg/flame.svgi';
 import Icon from './Icon';
@@ -15,7 +15,7 @@ import { sansFontStack, serifFontStack } from '../utils/typography';
 export const TrendingIcon = () => <Icon color="#E55934" icon={flame} />;
 export const FavoriteIcon = () => <Icon color="#D7AF70" icon={star} />;
 
-const ListItem = glamorous.li({
+const ListItem = styled("li")({
   marginBottom: typography.rhythm(1 / 2),
   listStyle: 'none',
   display: 'flex',
@@ -23,7 +23,7 @@ const ListItem = glamorous.li({
   alignItems: 'center',
 });
 
-const PageWrapper = glamorous.div({
+const PageWrapper = styled("div")({
   maxWidth: '50vw',
   '@media all and (max-width: 700px)': {
     maxWidth: '100vw',
@@ -39,7 +39,7 @@ const linkClass = css({
   textDecoration: 'none',
 });
 
-const PageDescription = glamorous.p({
+const PageDescription = styled("p")({
   fontFamily: serifFontStack,
   // fontStyle: 'italic',
   fontSize: '16px',
@@ -47,14 +47,14 @@ const PageDescription = glamorous.p({
   color: '#999999',
 });
 
-const DateContainer = glamorous.span({
+const DateContainer = styled("span")({
   fontFamily: serifFontStack,
   whiteSpace: 'nowrap',
   fontSize: '18px',
   color: '#999999',
 });
 
-const TitleRow = glamorous.div({
+const TitleRow = styled("div")({
   display: 'flex',
   alignItems: 'center',
   '> *': {

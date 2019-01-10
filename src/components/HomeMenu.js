@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import get from 'lodash/get';
 import take from 'lodash/take';
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 import PropTypes from 'prop-types';
 import LinkBox from './LinkBox';
 import ReviewList from './ReviewList';
@@ -16,15 +16,15 @@ let bottomLink = css({
   textDecoration: 'none',
 });
 
-const Bold = glamorous.span({
+const Bold = styled("span")({
   fontWeight: '700',
 });
 
-const Section = glamorous.div({
+const Section = styled("div")({
   margin: '1.5rem 0',
 });
 
-const TriColumnSection = glamorous.div({
+const TriColumnSection = styled("div")({
   margin: '1.5rem 0',
   display: 'grid',
   gridTemplateColumns: '30% 30% 30%',
@@ -32,12 +32,12 @@ const TriColumnSection = glamorous.div({
   gridColumnGap: '5%',
 });
 
-const Spacer = glamorous.div({
+const Spacer = styled("div")({
   width: '100%',
   height: '1.5rem',
 });
 
-let LayoutContainer = glamorous.div({
+let LayoutContainer = styled("div")({
   display: 'grid',
   gridTemplateColumns: '66% 34%',
   gridTemplateRows: 'auto',

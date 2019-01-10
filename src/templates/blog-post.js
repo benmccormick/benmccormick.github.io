@@ -14,10 +14,10 @@ import { BlogPostHeadContent } from '../components/BlogPostHeadContent';
 import Layout from '../components/Layout';
 import typography from '../utils/typography';
 import PostFooter from '../components/PostFooter';
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 import { serifFontStack } from '../utils/typography';
 
-const PostedDateContainer = glamorous.h5({
+const PostedDateContainer = styled("h5")({
   display: 'block',
   fontFamily: serifFontStack,
   fontSize: '16px',
@@ -26,12 +26,12 @@ const PostedDateContainer = glamorous.h5({
   marginBottom: typography.rhythm(0.5),
 });
 
-const Title = glamorous.h1({
+const Title = styled("h1")({
   display: 'block',
   maxWidth: '100%',
 });
 
-const ArticleBody = glamorous.div({
+const ArticleBody = styled("div")({
   maxWidth: '100%',
   '& li': {
     paddingLeft: '10px',
@@ -50,7 +50,7 @@ const ArticleBody = glamorous.div({
   },
 });
 
-const Sidebar = glamorous.div({
+const Sidebar = styled("div")({
   paddingLeft: '2rem',
   overflow: 'hidden',
 });

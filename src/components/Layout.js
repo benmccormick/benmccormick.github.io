@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import typography from '../utils/typography';
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import '../css/mobile.css';
@@ -9,7 +9,7 @@ import '../css/typography.css';
 
 let { rhythm } = typography;
 
-const Container = glamorous.div({
+const Container = styled("div")({
   width: '100%',
   maxWidth: '960px',
   margin: '0 auto',

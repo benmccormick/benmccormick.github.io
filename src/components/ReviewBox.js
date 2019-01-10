@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import get from 'lodash/get';
 import typography from '../utils/typography';
-import glamorous from 'glamorous';
+import styled from '@emotion/styled';
 import star from '../svg/star.svgi';
 import flame from '../svg/flame.svgi';
 import Icon from './Icon';
@@ -28,7 +28,7 @@ const boxClass = css({
   position: 'relative',
   justifyItems: 'center',
   alignItems: 'baseline',
-  boxShadow: '0 1px 2px 0 rgba(43, 59, 93, 0.29)',
+  boxShadow: '0 2px 4px 0 rgba(43, 59, 93, 0.29)',
   ':hover': {
     textDecoration: 'none',
     boxShadow: '0 10px 30px 0 rgba(0, 0, 0, 0.29)',
@@ -36,7 +36,7 @@ const boxClass = css({
   height: '100%',
 });
 
-const BookInfoWrapper = glamorous.div({
+const BookInfoWrapper = styled('div')({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -54,7 +54,7 @@ const BookInfoWrapper = glamorous.div({
   },
 });
 
-const BookDescription = glamorous.p({
+const BookDescription = styled('p')({
   fontFamily: serifFontStack,
   // fontStyle: 'italic',
   fontSize: '18px',
@@ -64,7 +64,7 @@ const BookDescription = glamorous.p({
   },
 });
 
-const TitleRow = glamorous.div({
+const TitleRow = styled('div')({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -76,12 +76,12 @@ const TitleRow = glamorous.div({
   },
 });
 
-const Image = glamorous.img({
+const Image = styled('img')({
   height: '100%',
   //margin: '5%',
 });
 
-const IconWrapper = glamorous.div({
+const IconWrapper = styled('div')({
   width: '100%',
   height: '100%',
   display: 'flex',

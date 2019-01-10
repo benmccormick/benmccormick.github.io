@@ -5,7 +5,7 @@ import get from 'lodash/get';
 import typography from '../utils/typography';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 import star from '../svg/star.svgi';
 import flame from '../svg/flame.svgi';
 import Icon from './Icon';
@@ -39,7 +39,7 @@ const boxClass = css({
   },
 });
 
-const PageWrapper = glamorous.div({
+const PageWrapper = styled("div")({
   maxWidth: '60vw',
   '@media all and (max-width: 700px)': {
     maxWidth: '100vw',
@@ -50,7 +50,7 @@ const PageWrapper = glamorous.div({
   padding: '1rem',
 });
 
-const PageDescription = glamorous.p({
+const PageDescription = styled("p")({
   fontFamily: serifFontStack,
   // fontStyle: 'italic',
   fontSize: '18px',
@@ -60,7 +60,7 @@ const PageDescription = glamorous.p({
   },
 });
 
-const DateContainer = glamorous.span({
+const DateContainer = styled("span")({
   whiteSpace: 'nowrap',
   display: 'flex',
   fontSize: '18px',
@@ -71,7 +71,7 @@ const DateContainer = glamorous.span({
   },
 });
 
-const TitleRow = glamorous.div({
+const TitleRow = styled("div")({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',

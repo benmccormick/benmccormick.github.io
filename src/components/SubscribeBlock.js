@@ -1,6 +1,6 @@
-import glamorous from 'glamorous';
+import styled from "@emotion/styled";
 
-export const SubscribeBlock = glamorous.div({
+export const SubscribeBlock = styled("div")({
   overflow: 'hidden',
   margin: 0,
   '& #mc_embed_signup form': {
