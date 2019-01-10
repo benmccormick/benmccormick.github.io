@@ -16,7 +16,7 @@ import categoryList from '../pages/categories.json';
 import get from 'lodash/get';
 import find from 'lodash/find';
 import Icon from './Icon.js';
-import glamorous from '../../node_modules/glamorous';
+import styled from '@emotion/styled';
 
 let icons = {
   beaker,
@@ -33,7 +33,7 @@ let icons = {
 };
 
 const iconWrapperBuilder = color =>
-  glamorous.div({
+  styled.div({
     background: color,
     display: 'flex',
     flexDirection: 'column',

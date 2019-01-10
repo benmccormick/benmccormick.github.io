@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import '../css/header.css';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import { css } from 'glamor';
 import { sansFontStack } from '../utils/typography';
 import typography from '../utils/typography';
 
 let { rhythm } = typography;
 
-const FooterContainer = styled("div")({
+const FooterContainer = styled('div')({
   width: '100%',
   display: 'flex',
   padding: '3em 0 1em 0',
@@ -17,7 +17,7 @@ const FooterContainer = styled("div")({
   backgroundColor: 'RGBA(191, 237, 253, 0.5)',
   borderTop: '1px solid #68d4fa',
 });
-const InnerFooter = styled("div")({
+const InnerFooter = styled('div')({
   width: '100%',
   minHeight: '200px',
   maxWidth: '960px',
@@ -32,14 +32,14 @@ const InnerFooter = styled("div")({
   },
 });
 
-const LinksWrapper = styled("div")({
+const LinksWrapper = styled('div')({
   display: 'grid',
   gridTemplateColumns: '1fr',
   gridAutoRows: '1fr',
   gridRowGap: '20px',
 });
 
-const FooterHeader = styled("h2")({
+const FooterHeader = styled('h2')({
   // color: 'white',
 });
 
@@ -48,7 +48,7 @@ const footerLink = css({
   fontFamily: sansFontStack,
 });
 
-const CopyRightContainer = styled("div")({
+const CopyRightContainer = styled('div')({
   fontFamily: sansFontStack,
   fontSize: '14px',
   overflow: 'visible',
