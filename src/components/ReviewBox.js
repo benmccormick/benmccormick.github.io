@@ -51,7 +51,7 @@ const BookInfoWrapper = styled('div')({
   background: 'rgba(255, 255, 255, 1)',
   opacity: 0,
   ':hover': {
-    opacity: 0.9,
+    opacity: 0.95,
   },
 });
 
