@@ -3,8 +3,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import get from 'lodash/get';
 import typography from '../utils/typography';
-import format from 'date-fns/format';
-import parse from 'date-fns/parse';
 import glamorous from 'glamorous';
 import star from '../svg/star.svgi';
 import flame from '../svg/flame.svgi';
@@ -26,31 +24,37 @@ const boxClass = css({
   transition: 'all 0.5s ease',
   display: 'grid',
   gridTemplateColumns: '1fr',
-  gridTemplateRows: '200px 1fr',
+  gridTemplateRows: '1fr',
+  position: 'relative',
   justifyItems: 'center',
   alignItems: 'baseline',
   boxShadow: '0 1px 2px 0 rgba(43, 59, 93, 0.29)',
   ':hover': {
-    // background: '#F1684E',
-    // color: 'white',
     textDecoration: 'none',
     boxShadow: '0 10px 30px 0 rgba(0, 0, 0, 0.29)',
   },
   height: '100%',
 });
 
-const PageWrapper = glamorous.div({
-  maxWidth: '60vw',
-  '@media all and (max-width: 700px)': {
-    maxWidth: '100vw',
-  },
+const BookInfoWrapper = glamorous.div({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '1rem',
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  top: 0,
+  width: '100%',
+  background: 'rgba(255, 255, 255, 1)',
+  opacity: 0,
+  ':hover': {
+    opacity: 0.9,
+  },
 });
 
-const PageDescription = glamorous.p({
+const BookDescription = glamorous.p({
   fontFamily: serifFontStack,
   // fontStyle: 'italic',
   fontSize: '18px',
@@ -73,14 +77,16 @@ const TitleRow = glamorous.div({
 });
 
 const Image = glamorous.img({
-  height: '90%',
-  margin: '5%',
+  height: '100%',
+  //margin: '5%',
 });
 
 const IconWrapper = glamorous.div({
-  padding: '10% 20%',
   width: '100%',
   height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 });
 
 class ReviewBox extends React.Component {
@@ -94,14 +100,15 @@ class ReviewBox extends React.Component {
         ) : (
           <IconWrapper>
             <CategoryIcon category="reviews" />
+            <div>{_title}</div>
           </IconWrapper>
         )}
-        <PageWrapper>
+        <BookInfoWrapper>
           <div>
             <TitleRow>{_title}</TitleRow>
-            <PageDescription>{page.data.description}</PageDescription>
+            <BookDescription>{page.data.description}</BookDescription>
           </div>
-        </PageWrapper>
+        </BookInfoWrapper>
       </Link>
     );
   }

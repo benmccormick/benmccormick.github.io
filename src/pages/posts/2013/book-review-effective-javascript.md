@@ -9,6 +9,7 @@ key: "effective-js"
 topics: ['Book Review', 'JavaScript']
 category: "reviews"
 amazonlink: https://amzn.to/2rZTyh6
+image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00AC1RP14&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
 pageViews: "1622"
 last30pageViews: "2"
 ---

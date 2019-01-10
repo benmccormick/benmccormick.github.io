@@ -7,6 +7,7 @@ description: "A book review of JavaScript Testing with Jasmine by Evan Hahn"
 keywords: "JavaScript Book Review JavaScript Testing with Jasmine"
 topics: ['Book Review', 'Jasmine', 'Testing']
 category: "reviews"
+image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1449356370&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
 pageViews: "102"
 last30pageViews: "0"
 ---
