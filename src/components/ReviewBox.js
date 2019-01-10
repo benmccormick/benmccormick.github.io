@@ -28,6 +28,7 @@ const boxClass = css({
   position: 'relative',
   justifyItems: 'center',
   alignItems: 'baseline',
+  width: '100%',
   boxShadow: '0 2px 4px 0 rgba(43, 59, 93, 0.29)',
   ':hover': {
     textDecoration: 'none',
@@ -77,8 +78,7 @@ const TitleRow = styled('div')({
 });
 
 const Image = styled('img')({
-  height: '100%',
-  //margin: '5%',
+  marginBottom: 0,
 });
 
 const IconWrapper = styled('div')({
