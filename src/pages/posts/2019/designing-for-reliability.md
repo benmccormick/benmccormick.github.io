@@ -12,7 +12,7 @@ isDraft: true
 readNext: "fe-concerns,react-confessions,feedback-loops"
 ---
 
-In my recent [post on Front End Architecture](https://benmccormick.org/2019/01/07/the-concerns-of-fe-architecture/) I identified **Reliability** as one of 6 areas of concern when thinking about front end architecture.  Reliability in this sense can be defined as follows:
+In my recent [post on Front End Architecture](https://benmccormick.org/2019/01/07/the-concerns-of-fe-architecture/) I identified *Reliability* as a key concern of front end architecture.  I define reliability as follows:
 
 > An application's ability to provide a consistent functional experience to all users in the intended audience over time.
 
@@ -31,21 +31,21 @@ Let's break that down a bit:
 
 So why are applications often unreliable?  There are a fairly predictable set of issues that most applications run into that degrade reliability.
 
-#### Unanticipated Usage Patterns
+#### Unexpected Usage Patterns
 
-Users are agents of chaos.  Oftentimes front end applications perform unreliably because they're used in ways that nobody expected.  Maybe a developer didn't expect that anyone would ever try to navigate to a new page in the middle of a file download.  Maybe they didn't realize that when a button was slow to respond, users would click it repeatedly and eventually spawn enough requests to overload the backend system. Or maybe they didn't expect anybody to be using an ad blocker when using their site.  Some of these things can be planned for, many will be learned with experience, but there are pretty much always going to be surprises.  This is especially the case if development and testing is only done against sample data.  The real world is always stranger than expected.
+Users are agents of chaos and the real world is stranger than expected.  Your sample database and QA testing doesn't come close to giving you a true idea of how your application will be used.
 
 #### External Failures
 
-Google never has bugs right?  So if you're connecting to a Google API, you can probably count on it always working as expected?  Ah, the naiveté of youth.  All systems break down sometimes.  If you want your system to be robust, it needs to handle failures in any system that it interacts with, whether that's a Google API, your own backend servers, or a 3rd party script that you're loading onto the site alongside your app code.  You also need to be prepared for the various capability levels of the different browsers that will run your application, and recognize that not every user will be running the browser you're developing in.  Or you can trust in Google and await your eventual disappointment.
+Google never has bugs right?  Good luck with that.  Even if the rest of the world always wrote perfect software, front end code usually has to deal with the network, even when your user is on a plane, accessing your site over 2G in the mountains, or just dealing with crappy coffeeshop wifi.
 
 #### Bugs
 
-Sometimes code breaks because it just wasn't written right. Bugs aren't necessarily incompatible with reliability.  They're a normal part of software development, but when there are a lot of bugs it can really hurt the reliability of the system.  Ultimately bugs are hurting reliability when users (and maybe even employees) don't trust that the system will work correctly.
+Bugs happen.  When they happen consistently and repeat themselves, you have a reliability problem.
 
 #### Scaling Problems
 
-Finally, some code works fine initially, but as things grow things break down.  On the Front End, this can be a cause of the external failure category above, but it can also happen with data.  A table that is able to display 10 items without problems may break down when it is passed 500 items.  A graph that was built to show 50 data points at a time would almost definitely run into issues if it was passed 50,000 items.  Any application that deals with user data or other real world data variations has to face these types of scalability, and they're often fairly challenging when designing user interfaces.
+Some things work great on small data sets or with a few users but break down when things get popular.  This isn't just a backend issue.  Data scales as well as people, and your program needs to be robust to slower backend responses when under load.
 
 ### Keeping Things Running
 
@@ -55,32 +55,9 @@ I'd like to offer some practical strategies for overcoming the challenges I've l
 
 One of the big leaps in JavaScript based UI development over the past decade has been moving from systems that we modeled as an initial UI state followed by a series of mutations (server generated HTML + jQuery) to systems that were modeled as partially driven with event systems that caused mutations to the UI (Backbone, Angular 1, Knockout), to systems that model the UI as a function of state (React, Vue, Angular2+, Modern Ember) State-driven systems tend to be more robust, because it is often more clear when a particular state might cause a problem, and it is more obvious when a problematic state occurs for a user how it happened.
 
-As an example, if we have a green button and we want to turn it blue on hover and red when there is an error, in a jQuery world we might be tempted to simply write code like this:
+Visibility into state is a huge step forward.  The next step is to define the possible states.  You can do this in your head, but it's much easier when using types or by thinking in terms of [state machines](https://benmccormick.org/2018/05/14/mobx-state-machines-and-flags/).  If you can map out different portions of your applications into a limited set of states and define behavior for each of them, reliability will be much easier to achieve.
 
-```javascript
-$(btn).on('errorEvent', () => $(btn).css('background, 'red'));
-$(btn).on('hover', () => $(btn).css('background, 'blue'));
-```
-
-With code like this, a button that is hovered and has an error will have its color depend on the order of operations.  If we model it as a function of state though, we will see this distinction and will have to make a consistent decision one way or another
-
-```javascript
-function getButtonColor(hasError, isHovered) {
-    if (hasError) {
-        return 'red';
-    } else if (isHovered) {
-        return 'blue';
-    } else {
-        return 'green';
-    }
-}
-```
-
-This code is more consistent (a hovered button with an error will always be red), but its also more explicit, and a programmer reading this code is more likely to notice that `hasError && isHovered` is a possible state.  At which point they can make a decision about how they want to handle it.
-
-This could easily be a whole article, but my final point here is that it's value to get used to thinking in terms of state machines.  If you see your UI as a "machine" that can be in a finite set of states, with a distinct set of actions that can move you between those states, it really helps the process of thinking through what states you may be missing or mishandling.  I wrote back in May about how [you can use MobX to create ergonomic state machines](https://benmccormick.org/2018/05/14/mobx-state-machines-and-flags/) for Ajax interactions.  Regardless of what technologies you use, this type of thinking can be helpful on both a micro (butto color) and macro (your application's routing strategies) level.
-
-Of course many applications are in practice "infinite" state machines, with an incredible variety of possible states.  You can still use these techniques on individual parts of your application, but it is also helpful to think about how you can limit the number of states to improve reliability.  More on this in the future.
+The final step is to limit these states where possible.  Some interfaces depend on user input or external data enough that they naturally are effectively "infinite state machines", but when you can limit states by cutting scope, rearranging components or cordoning "infinite state machines" off into a smaller area of your application, you gain a lot of benefits.
 
 #### 2. Don’t trust the network
 
@@ -99,3 +76,8 @@ This is another topic that's too big to cover fully here, but basically there's 
 Finally, sometimes it's just not possible to catch problems before they ship.  But you can still catch them before too many of your customers do if you put in the work.  I'll be honest, I've never had a monitoring setup that I've been happy with at work, but on the front end good monitoring can mean sending console logs over the network so that they're shared with whatever backend logging solution you're using, tracking feature usage through analytics to look for any large problems or lack of usage that may indicate bugs, and even more advanced stuff like session recording in some cases.
 
 
+**TL;DR**
+
+- **Reliability is an application's ability to provide a consistent functional experience to all users in the intended audience over time.**
+- **Reliability breaks down due to unexpected usage, external failures, bugs, and scaling problems**
+- **You can boost reliability by defining and limiting application states, distrusting the network, thinking about variation in data, testing and monitoring**

@@ -1,14 +1,15 @@
 ---
-title: "6 Keys To Valuable Code Reviews"
-date: "2019/01/14"
+title: "Why React?"
+date: "2019/01/28"
 layout: "post"
-path: "/2019/01/14/value-from-code-reviews"
+path: "/2019/01/28/why-react"
 description: "Getting the most out of your code review process"
 keywords: "code reviews"
-category: "software-productivity"
-topics: ['Architecture']
-key: "valuable-code-reviews"
-readNext: "philosophy-of-software-design-book,fe-concerns,feedback-loops"
+category: "frameworks"
+topics: ['Architecture', 'React']
+key: "why-react"
+isDraft: true
+readNext: "react-confessions,fe-concerns,valuable-code-reviews"
 ---
 
 I've read 2 things lately that really reminded me of the value of code reviews.  One was [A Philosophy Of Software Design](https://amzn.to/2Elk5g8) by John Ousterhout, which I reviewed [here](https://benmccormick.org/2018/12/31/book-review-philosophy-of-software-design/).  Philosophy of Software Design is a practical guide to software design, and Ousterhout emphasizes code reviews as the best point for "practicing architecture" in real world projects.  The 2nd was Sophie Alpert's recent blog post [Why Review Code](https://sophiebits.com/2018/12/25/why-review-code.html), where she lists the various advantages she's seen from having code reviews.  I can't improve on her list, but I can endorse it.  I've seen all of the things she listed as benefits from code reviews in the past.  However I've seen these benefits come out in some environments more than others.  So I wanted to share 6 practical tips to getting the most valuable possible out of your team's code reviews.
