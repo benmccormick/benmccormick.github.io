@@ -5,7 +5,7 @@ module.exports = {
     blogTitle: 'Ben McCormick',
     categories: [
       {
-        title: 'JavaScript Frameworks and Libraries',
+        title: 'JavaScript Libraries',
         description:
           'These posts cover development using JavaScript frameworks and libraries, including React, jQuery, Knockout, and Backbone',
         key: 'frameworks',
