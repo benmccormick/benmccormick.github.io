@@ -1,24 +1,24 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import InlineSVG from 'svg-inline-react';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-const iconContainerFactory = color =>
-  styled("span")({
+const iconContainerFactory = (color, dimensions) =>
+  styled('span')({
     display: 'block',
-    width: '2em',
-    height: '2em',
-    marginRight: '0.5em',
+    width: dimensions + 'rem',
+    height: dimensions + 'rem',
+    marginRight: '0.5rem',
     '& *': {
       fill: color,
     },
     '& > i': {
-      height: '30px',
+      height: dimensions * 0.2 + 'rem',
     },
   });
 
-const Icon = ({ icon, color }) => {
-  let IconContainer = iconContainerFactory(color);
+const Icon = ({ icon, color, dimensions = 2 }) => {
+  let IconContainer = iconContainerFactory(color, dimensions);
   return (
     <IconContainer color={color}>
       <InlineSVG src={icon} />

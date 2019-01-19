@@ -1,9 +1,9 @@
 import React from 'react';
 import defer from 'lodash/defer';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import { sansFontStack } from '../utils/typography';
 
-const AdWrapper = styled("div")({
+const AdWrapper = styled('div')({
   width: '100%',
   overflow: 'hidden',
   margin: '0 0 1rem 0',
@@ -14,7 +14,7 @@ const AdWrapper = styled("div")({
   position: 'relative',
   fontFamily: sansFontStack,
   background: 'rgba(99, 159, 110, 0.25)',
-  border: '1px solid #f0f0f0',
+  border: '1px solid rgba(90, 150, 100, 0.5)',
   padding: '4px',
   minHeight: '100px',
   opacity: '0',
@@ -80,6 +80,9 @@ export class Ad extends React.Component {
     this.container.appendChild(script);
     this.setState({ triedToShowAd: true });
     setTimeout(() => {
+      if (!this.container) {
+        return;
+      }
       let children = Array.from(this.container.childNodes);
       if (children.length > 1) {
         return;

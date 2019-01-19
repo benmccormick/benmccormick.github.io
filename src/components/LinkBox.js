@@ -5,11 +5,11 @@ import get from 'lodash/get';
 import typography from '../utils/typography';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import star from '../svg/star.svgi';
 import flame from '../svg/flame.svgi';
 import Icon from './Icon';
-import CategoryIcon from './CategoryIcon';
+import CategoryTag from './CategoryTag';
 import { css } from 'glamor';
 import { sansFontStack, serifFontStack } from '../utils/typography';
 
@@ -25,9 +25,11 @@ const boxClass = css({
   background: '#FFFFFF',
   transition: 'all 0.5s ease',
   display: 'grid',
-  gridTemplateColumns: '5rem 1fr 6rem',
-  gridTemplateRows: '1fr',
+  gridTemplateColumns: '67% 28%',
+  gridColumnGap: '5%',
+  gridTemplateRows: '5rem 1fr',
   boxShadow: '0 1px 2px 0 rgba(43, 59, 93, 0.29)',
+  padding: '0 0.5rem 0.5rem 0.5rem',
   ':hover': {
     // background: '#F1684E',
     // color: 'white',
@@ -35,24 +37,29 @@ const boxClass = css({
     boxShadow: '0 10px 30px 0 rgba(0, 0, 0, 0.29)',
   },
   '@media all and (max-width: 700px)': {
-    gridTemplateColumns: '5rem 1fr 0px',
+    gridTemplateColumns: '100%',
+    gridTemplateRows: 'auto auto auto auto',
+    gridRowGap: '0.5rem',
+    padding: '0.5rem',
+    marginBottom: `2rem`,
   },
 });
 
-const PageWrapper = styled("div")({
-  maxWidth: '60vw',
-  '@media all and (max-width: 700px)': {
-    maxWidth: '100vw',
-  },
+const CategoryArea = styled('div')({
   display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '1rem',
+  flexDirection: 'row',
+  justifyContent: 'flex-end',
+  alignItems: 'flex-end',
+  '@media all and (max-width: 700px)': {
+    justifyContent: 'flex-start',
+    marginTop: '1em',
+  },
 });
 
-const PageDescription = styled("p")({
+const PageDescription = styled('p')({
   fontFamily: serifFontStack,
   // fontStyle: 'italic',
+  opacity: '0.6',
   fontSize: '18px',
   margin: 0,
   '@media all and (max-width: 700px)': {
@@ -60,21 +67,23 @@ const PageDescription = styled("p")({
   },
 });
 
-const DateContainer = styled("span")({
+const DateContainer = styled('span')({
   whiteSpace: 'nowrap',
   display: 'flex',
   fontSize: '18px',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-end',
   alignItems: 'center',
+  opacity: '0.6',
   '@media all and (max-width: 700px)': {
     display: 'none',
   },
 });
 
-const TitleRow = styled("div")({
+const TitleRow = styled('h1')({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+  marginBottom: 0,
   '> *': {
     marginRight: '10px',
   },
@@ -89,22 +98,18 @@ class LinkBox extends React.Component {
     const _title = titleFn(page);
     return (
       <Link className={boxClass} to={page.path}>
-        {showCategory ? (
-          <CategoryIcon category={page.data.category} />
-        ) : (
-            <div />
-          )}
-        <PageWrapper>
-          <div>
-            <TitleRow>{_title}</TitleRow>
-            <PageDescription>{page.data.description}</PageDescription>
-          </div>
-        </PageWrapper>
+        <TitleRow>{_title}</TitleRow>
         {showDate ? (
           <DateContainer className="no-mobile">
             {format(parse(page.data.date), 'MMM Do YYYY')}
           </DateContainer>
-        ) : null}
+        ) : (
+          <div />
+        )}
+        <PageDescription>{page.data.description}</PageDescription>
+        <CategoryArea>
+          {showCategory ? <CategoryTag category={page.data.category} /> : null}
+        </CategoryArea>
       </Link>
     );
   }

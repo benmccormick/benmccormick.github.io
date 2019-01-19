@@ -21,7 +21,7 @@ module.exports = {
         subscribeText: 'JavaScript',
       },
       {
-        title: 'Productivity and Software Engineering',
+        title: 'Software Productivity',
         description:
           'These posts cover techniques and ideas around improving productivity and writing better software.',
         key: 'software-productivity',

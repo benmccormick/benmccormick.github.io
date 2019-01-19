@@ -14,10 +14,12 @@ import { BlogPostHeadContent } from '../components/BlogPostHeadContent';
 import Layout from '../components/Layout';
 import typography from '../utils/typography';
 import PostFooter from '../components/PostFooter';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import { serifFontStack } from '../utils/typography';
+import CategoryTag from '../components/CategoryTag';
+import { Link } from 'gatsby';
 
-const PostedDateContainer = styled("h5")({
+const PostedDateContainer = styled('h5')({
   display: 'block',
   fontFamily: serifFontStack,
   fontSize: '16px',
@@ -26,12 +28,28 @@ const PostedDateContainer = styled("h5")({
   marginBottom: typography.rhythm(0.5),
 });
 
-const Title = styled("h1")({
+const Title = styled('h1')({
   display: 'block',
   maxWidth: '100%',
 });
 
-const ArticleBody = styled("div")({
+const InfoBox = styled('div')({
+  fontSize: '14px',
+  '& > h4': {
+    fontSize: '20px',
+    marginBottom: '6px',
+  },
+  '& > h6': {
+    fontSize: '18px',
+    marginBottom: '6px',
+    marginTop: '12px',
+  },
+  backgroundColor: 'RGBA(191,237,253,0.5)',
+  border: '1px solid #68d4fa',
+  padding: '0.5rem',
+});
+
+const ArticleBody = styled('div')({
   maxWidth: '100%',
   '& li': {
     paddingLeft: '10px',
@@ -50,7 +68,7 @@ const ArticleBody = styled("div")({
   },
 });
 
-const Sidebar = styled("div")({
+const Sidebar = styled('div')({
   paddingLeft: '2rem',
   overflow: 'hidden',
 });
@@ -70,13 +88,6 @@ class BlogPostTemplate extends React.Component {
         <article className="markdown" ref={el => (this.markdownContainer = el)}>
           <BlogPostHeadContent post={post} slug={slug} body={body} />
           <div className="post-title-area">
-            {post.date ? (
-              <PostedDateContainer>
-                {format(new Date(post.date), 'MMMM Do YYYY')}
-              </PostedDateContainer>
-            ) : (
-              ''
-            )}
             <Title>{post.title}</Title>
           </div>
           <div className={showWithSidebarSupport('columns')}>
@@ -85,6 +96,23 @@ class BlogPostTemplate extends React.Component {
               <Sidebar className="no-mobile">
                 <EmailSubscribe />
                 <Ad url={location.pathname} />
+                <InfoBox>
+                  <h4>Article Info</h4>
+                  <h6>Author</h6>
+                  <Link to="/about">Ben McCormick</Link>
+                  {post.date ? (
+                    <React.Fragment>
+                      <h6>Publish Date</h6>
+                      {format(new Date(post.date), 'MMMM Do YYYY')}
+                    </React.Fragment>
+                  ) : null}
+                  {post.category ? (
+                    <React.Fragment>
+                      <h6>Category</h6>
+                      <CategoryTag category={post.category} />
+                    </React.Fragment>
+                  ) : null}
+                </InfoBox>
               </Sidebar>
             )}
           </div>

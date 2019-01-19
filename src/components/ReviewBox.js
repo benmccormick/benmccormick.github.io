@@ -34,7 +34,7 @@ const boxClass = css({
     textDecoration: 'none',
     boxShadow: '0 10px 30px 0 rgba(0, 0, 0, 0.29)',
   },
-  height: '100%',
+  height: '250px',
 });
 
 const BookInfoWrapper = styled('div')({
