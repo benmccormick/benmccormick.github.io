@@ -83,12 +83,13 @@ class CategoryTag extends React.Component {
         ? selectedCategory.altColor
         : 'rgba(256,256,256,1)';
     let tag = tagBuilder(color, textColor);
+    let title = selectedCategory ? selectedCategory.title : 'Not Filed';
     return (
       <Link className={tag} to={`/category/${category}`}>
         <IconWrapper>
           <Icon icon={icon} color={textColor} dimensions={0.8} />
         </IconWrapper>
-        <CategoryName>{selectedCategory.title}</CategoryName>
+        <CategoryName>{title}</CategoryName>
       </Link>
     );
   }
