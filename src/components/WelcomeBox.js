@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-let Wrapper = styled("div")({
+let Wrapper = styled('div')({
   display: 'grid',
   gridTemplateColumns: '80% 20%',
   gridColumnGap: '1rem',
@@ -12,7 +12,7 @@ let Wrapper = styled("div")({
   },
 });
 
-let ImageContainer = styled("div")({
+let ImageContainer = styled('div')({
   maxWidth: '200px',
   maxHeight: '200px',
   marginRight: '1rem',
@@ -25,17 +25,19 @@ let ImageContainer = styled("div")({
   },
 });
 
-let Image = styled("img")({
-  borderRadius: '50%',
+let Image = styled('img')({
+  // borderRadius: '50%',
   marginBottom: 0,
   opacity: 1,
+  clipPath:
+    'polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%)',
   '&.loading': {
     opacity: 0,
   },
   transition: 'opacity 1s',
 });
 
-let WelcomeContainer = styled("div")({
+let WelcomeContainer = styled('div')({
   maxWidth: '1000px',
   margin: '1rem 0',
   display: 'flex',
