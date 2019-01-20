@@ -58,6 +58,11 @@ const tagBuilder = (color, textColor) => {
     '&:hover': {
       textDecoration: 'none',
     },
+    '@media all and (max-width: 960px)': {
+      height: '1.6rem',
+      width: '7rem',
+      fontSize: '0.55rem',
+    },
   });
 };
 
@@ -68,6 +73,9 @@ const IconWrapper = styled.div({
   alignItems: 'center',
   height: '100%',
   marginRight: '0.1rem',
+  '@media all and (max-width: 960px)': {
+    marginRight: 0,
+  },
 });
 
 class CategoryTag extends React.Component {

@@ -45,7 +45,7 @@ module.exports = {
         subscribeText: 'Software tooling',
       },
       {
-        title: 'Book and Product Reviews',
+        title: 'Reviews',
         description:
           "These posts are reviews of books I've read and products I've used",
         key: 'reviews',
@@ -53,7 +53,7 @@ module.exports = {
         subscribeText: 'Web development',
       },
       {
-        title: 'Front End Architecture',
+        title: 'Architecture',
         description:
           'These posts cover ideas, practices and concepts related to structuring the front end code of web applications.',
         key: 'fe-architecture',
