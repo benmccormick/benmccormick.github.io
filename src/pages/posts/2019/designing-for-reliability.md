@@ -8,7 +8,6 @@ keywords: ""
 category: "fe-architecture"
 topics: ['Architecture', 'JavaScript']
 key: "reliability-design"
-isDraft: true
 readNext: "fe-concerns,react-confessions,feedback-loops"
 ---
 
