@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sun, 20 Jan 2019 15:58:06 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 21 Jan 2019 03:07:50 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,52 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Designing Front End Apps For Reliability]]></title>
+            <link>https://benmccormick.org/2019/01/21/designing-for-reliability</link>
+            <guid>https://benmccormick.org/2019/01/21/designing-for-reliability</guid>
+            <pubDate>Mon, 21 Jan 2019 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>In my recent <a href="https://benmccormick.org/2019/01/07/the-concerns-of-fe-architecture/">post on Front End Architecture</a> I identified <em>Reliability</em> as a key concern of front end architecture.  I define reliability as follows:</p>
+<blockquote>
+<p>An application’s ability to provide a consistent functional experience to all users in the intended audience over time.</p>
+</blockquote>
+<p>Let’s break that down a bit:</p>
+<p><strong>Consistent</strong> - Reliable applications function the same way over time or degrade gracefully, even on days with heavy load, leap years, and weekends.</p>
+<p><strong>Functional</strong> - Reliable applications allow the users to do the things they need to do, and are forgiving when a user attempts actions that weren’t part of an ideal use case.</p>
+<p><strong>All Users In The Intended Audience</strong> - Reliable applications work for users with strange data who live in different locales, and those with bad network connections and old browsers, at least within the limits of what what the business intends to support.  There is some overlap here with the concept of <strong>accessibility</strong>.</p>
+<p><strong>Over Time</strong> - In the real world, no application is ever completely reliable.  Things break down, there are bugs, and new edge cases are discovered.  What we can aspire to though, is an application where things that are working consistently stay working consistently, and as bugs, regressions and edge cases are discovered they get fixed in permanent ways.</p>
+<h3>Things Break Down</h3>
+<p>So why are applications often unreliable?  There are a fairly predictable set of issues that most applications run into that degrade reliability.</p>
+<h4>Unexpected Usage Patterns</h4>
+<p>Users are agents of chaos and the real world is stranger than expected.  Your sample database and QA testing doesn’t come close to giving you a true idea of how your application will be used.</p>
+<h4>External Failures</h4>
+<p>Google never has bugs right?  Good luck with that.  Even if the rest of the world always wrote perfect software, front end code usually has to deal with the network, even when your user is on a plane, accessing your site over 2G in the mountains, or just dealing with crappy coffeeshop wifi.</p>
+<h4>Bugs</h4>
+<p>Bugs happen.  When they happen consistently and repeat themselves, you have a reliability problem.</p>
+<h4>Scaling Problems</h4>
+<p>Some things work great on small data sets or with a few users but break down when things get popular.  This isn’t just a backend issue.  Data scales as well as people, and your program needs to be robust to slower backend responses when under load.</p>
+<h3>Keeping Things Running</h3>
+<p>I’d like to offer some practical strategies for overcoming the challenges I’ve listed.  These are things you can consider during code reviews and when setting up your dev processes.</p>
+<h4>1. Consider all states, and limit them if you can</h4>
+<p>One of the big leaps in JavaScript based UI development over the past decade has been moving from systems that we modeled as an initial UI state followed by a series of mutations (server generated HTML + jQuery) to systems that were modeled as partially driven with event systems that caused mutations to the UI (Backbone, Angular 1, Knockout), to systems that model the UI as a function of state (React, Vue, Angular2+, Modern Ember) State-driven systems tend to be more robust, because it is often more clear when a particular state might cause a problem, and it is more obvious when a problematic state occurs for a user how it happened.</p>
+<p>Visibility into state is a huge step forward.  The next step is to define the possible states.  You can do this in your head, but it’s much easier when using types or by thinking in terms of <a href="https://benmccormick.org/2018/05/14/mobx-state-machines-and-flags/">state machines</a>.  If you can map out different portions of your applications into a limited set of states and define behavior for each of them, reliability will be much easier to achieve.</p>
+<p>The final step is to limit these states where possible.  Some interfaces depend on user input or external data enough that they naturally are effectively “infinite state machines”, but when you can limit states by cutting scope, rearranging components or cordoning “infinite state machines” off into a smaller area of your application, you gain a lot of benefits.</p>
+<h4>2. Don’t trust the network</h4>
+<p>This one is straightforward, and easy to check in code reviews.  Don’t assume that anything over a network will return quickly.  Don’t assume it will return correctly.  And in fact, don’t assume it will return at all.  You may be limited in how you can handle these possibilities, but the baseline competence here is handling them.  Have strategies for loading states, timeouts, error handling and bad formats.  Things like service workers can help here, but also make the problems around the network even more complicated by introducing a new caching layer.  When you start making calls over a network, you’re entering the realm of distributed systems and things get tricky fast.  But the least you can do is recognize the complexity and make a plan for it.</p>
+<h4>3. Consider variations in data</h4>
+<p>Do you have a test data set that you develop against?  Is that your primary source of validation before you send code off into the wild?  Some of that may be unavoidable and out of your control, but remember that users are agents of chaos.  You will encounter data you didn’t expect, so plan ahead for challenges.  How would your data visualization function if the dataset you ended up displaying was 2x the size of your test database?  10x? 1000x?  What if the list of products to display in your table contained product names 200 characters long?  Or if some of them were empty?  The real world is strange and you should be ready.</p>
+<h4>4. You should have testing</h4>
+<p>This is another topic that’s too big to cover fully here, but basically there’s a reason that QA engineers have jobs.  You should have a plan for testing.  That plan will be better if it contains meaningful amounts of automated regression testing, with a clear process for making sure bugs are tested automatically once they’ve been discovered and fixed.  If you don’t know where to start, always focus on testing the most important things well over testing everything mediocrely. And if you’re not in a position to do meaningful automated testing, consider what it will take to get there.</p>
+<h4>5. Monitoring</h4>
+<p>Finally, sometimes it’s just not possible to catch problems before they ship.  But you can still catch them before too many of your customers do if you put in the work.  I’ll be honest, I’ve never had a monitoring setup that I’ve been happy with at work, but on the front end good monitoring can mean sending console logs over the network so that they’re shared with whatever backend logging solution you’re using, tracking feature usage through analytics to look for any large problems or lack of usage that may indicate bugs, and even more advanced stuff like session recording in some cases.</p>
+<p><strong>TL;DR</strong></p>
+<ul>
+<li><strong>Reliability is an application’s ability to provide a consistent functional experience to all users in the intended audience over time.</strong></li>
+<li><strong>Reliability breaks down due to unexpected usage, external failures, bugs, and scaling problems</strong></li>
+<li><strong>You can boost reliability by defining and limiting application states, distrusting the network, thinking about variation in data, testing and monitoring</strong></li>
+</ul>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[6 Keys To Valuable Code Reviews]]></title>
             <link>https://benmccormick.org/2019/01/14/value-from-code-reviews</link>
@@ -309,22 +355,6 @@ My take on which parts of ES6 should be avoided after 3 years of use.</p>
 <h3>Book Review</h3>
 <p><a href="https://amzn.to/2OqjY8u">The Everything Store | Brad Stone</a></p>
 <p>Still finishing this one up, but can already recommend it.  A great look into the creation of one of the most important companies in the world.  I was pretty interested to read about how intense Jeff Bezos is, and how hard he ran the early employees of Amazon.  I hadn’t realized that he fell into the Steve Job’s school of CEO-hood.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Weekly Links: September 23]]></title>
-            <link>https://benmccormick.org/2018/09/23/weekly-links-09-23-18/</link>
-            <guid>https://benmccormick.org/2018/09/23/weekly-links-09-23-18/</guid>
-            <pubDate>Sun, 23 Sep 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<h3>Javascript &#x26; the Web</h3>
-<p><a href="https://www.netlify.com/blog/2018/09/12/the-rise-of-immer-in-react/">The Rise of Immer | Shawn Wang</a></p>
-<p>I’m a few weeks late on this one, but it is worth your time.  Shawn breaks down a new trend in React state management: the increasing popularity of Immer as a base for improving state management APIs.  I’m particularly interested in <a href="https://github.com/aweary/react-copy-write">react-copy-write</a> as a new simpler paradigm for React state management.  Right now Redux has “won” that space, and MobX is the clear second option, but it still feels like there’s room for improvement and new options.  Will be cool to see what people build on top of immer.</p>
-<h3>Leadership</h3>
-<p><a href="https://blog.usejournal.com/how-to-fail-as-a-new-engineering-manager-30b5fb617a">How to fail as a new engineering manager | Brad Armstrong</a></p>
-<p>As a new engineering manager, I found this list super helpful.  I can already feel the temptation to fall into many of these traps, and it’s encouraging to hear about them from somebody who has gone ahead of me.</p>
-<h3>Book Review</h3>
-<p><a href="https://amzn.to/2xzyhho">Every Good Endeavor | Tim Keller</a></p>
-<p>This is a “Christian book”, but I think it would be interesting to anyone who is interested in thinking about why we work, and how we find meaning in our work.  If you are a Christian, there’s lots of insight here connecting the truths of our faith to the rhythms of our work lives.  If you’re not, there is plenty to provoke thought, because the questions this book raises; why do we work? why is work often so unfulfilling? How do we find our purpose?; are universal questions regardless of whether you agree with Keller’s answers or foundational beliefs.  Highly recommended.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
