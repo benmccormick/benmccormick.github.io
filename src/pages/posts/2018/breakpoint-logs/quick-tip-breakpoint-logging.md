@@ -25,3 +25,7 @@ Conditional breakpoints are useful when you're running through a code path many 
 
 That `console.log` will execute, and because `console.log` returns false, the breakpoint will never actually stop.  It's a heisenbug-safe version of watching variables when you're at a breakpoint, and there's no redeploys required.
 
+**Update January 2019: Chrome will soon be building this hack right into the devtools with a new "logpoint" option for breakpoints that formalizes this method.  Very cool!**
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">New feature in Chrome 73: Logpoints. Log messages to the Console without cluttering up your code with console.log() calls. <a href="https://t.co/aFl2e6GmnF">https://t.co/aFl2e6GmnF</a> <a href="https://t.co/fJ6CUNN0Lg">https://t.co/fJ6CUNN0Lg</a></p>&mdash; Chrome DevTools (@ChromeDevTools) <a href="https://twitter.com/ChromeDevTools/status/1088463799886200832?ref_src=twsrc%5Etfw">January 24, 2019</a></blockquote>
+
