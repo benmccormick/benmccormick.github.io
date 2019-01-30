@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-01-28T00:53:41Z</updated>
+    <updated>2019-01-30T13:30:11Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,152 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Book Review: Info We Trust]]></title>
+        <id>https://benmccormick.org/2019/01/30/book-review-info-we-trust</id>
+        <link href="https://benmccormick.org/2019/01/30/book-review-info-we-trust">
+        </link>
+        <updated>2019-01-30T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>Sometimes surprises are good.  I bought RJ Andrews new book <a href="https://amzn.to/2Ww9BBl">Info We Trust</a> expecting to get some practical tips on how to create better data visualizations.  But frankly there’s very little in the way of “how to” in this book.  Instead I was treated to a deeply engaging book that’s part history of data visualization, part exploration of human psychology, and 100% a love letter to “data storytelling”, with brief detours into linguistics, museum curation sentence diagramming and propaganda posters. If you’re looking to know when to use a bar chart vs a pie chart in your powerpoint slides, this book will be a disappointment.  But if you want to learn how to think deeply about telling stories with data, or just enjoy seeing somebody who loves their topic nerd out about it for 200 pages in a beautiful formatted book, this may be for you.</p>
+<p>Let’s start with that beautiful book.  This is not a read that you want to pick up on Kindle.  The book is littered with fascinating illustrations, all <a href="https://infowetrust.com/illustrations/">hand drawn by the author (!!!)</a>, and almost every page has interesting quotes, examples and tangents in the marginalia.  Here are a few random pages that I snapped with my phone while writing this:  every single page is this beautiful.</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/a84e2d937fc60341661ef1066f2f838e/0cf58/page1.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 74.90234375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQA/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAFqImyow5f/xAAbEAACAQUAAAAAAAAAAAAAAAAAEiEBAgMRIv/aAAgBAQABBQKyCHTHU3LdMf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAQACAwAAAAAAAAAAAAAAAAEAAiAhkf/aAAgBAQAGPwIIzdDmH//EABkQAAMBAQEAAAAAAAAAAAAAAAABMSERsf/aAAgBAQABPyGZiSEoFtylDLC2p4j4Z//aAAwDAQACAAMAAAAQ/O//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPxBX/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8QR//EABsQAQADAQADAAAAAAAAAAAAAAEAESFRMXGR/9oACAEBAAE/EGENEUL4i2rSKpft2LHolJVQ4+QxemZGz//Z'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Page 1"
+        title=""
+        src="/static/a84e2d937fc60341661ef1066f2f838e/6fbc3/page1.jpg"
+        srcset="/static/a84e2d937fc60341661ef1066f2f838e/da4c7/page1.jpg 143w,
+/static/a84e2d937fc60341661ef1066f2f838e/1d39e/page1.jpg 285w,
+/static/a84e2d937fc60341661ef1066f2f838e/6fbc3/page1.jpg 570w,
+/static/a84e2d937fc60341661ef1066f2f838e/9d77e/page1.jpg 855w,
+/static/a84e2d937fc60341661ef1066f2f838e/e356a/page1.jpg 1140w,
+/static/a84e2d937fc60341661ef1066f2f838e/4208b/page1.jpg 1710w,
+/static/a84e2d937fc60341661ef1066f2f838e/0cf58/page1.jpg 2048w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+  </span>
+  </a>
+<a
+    class="gatsby-resp-image-link"
+    href="/static/9cbe611fd78dc6684980f96b90447a9c/0cf58/page2.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 74.90234375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAaXiWH0OP//EABoQAAICAwAAAAAAAAAAAAAAAAECAAMEESL/2gAIAQEAAQUCrgPTKrFTC2icmsT/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAZEAEAAgMAAAAAAAAAAAAAAAAAASEQMqH/2gAIAQEABj8CSuMW24//xAAZEAADAQEBAAAAAAAAAAAAAAAAAREhMZH/2gAIAQEAAT8haMwCio+GgvdMGUr0f//aAAwDAQACAAMAAAAQZx//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPxBX/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8QR//EABsQAQADAAMBAAAAAAAAAAAAAAEAESFRYZHR/9oACAEBAAE/EGEXL8JVY7IAMBpJWYXdVnGOVYcfCf/Z'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Page 2"
+        title=""
+        src="/static/9cbe611fd78dc6684980f96b90447a9c/6fbc3/page2.jpg"
+        srcset="/static/9cbe611fd78dc6684980f96b90447a9c/da4c7/page2.jpg 143w,
+/static/9cbe611fd78dc6684980f96b90447a9c/1d39e/page2.jpg 285w,
+/static/9cbe611fd78dc6684980f96b90447a9c/6fbc3/page2.jpg 570w,
+/static/9cbe611fd78dc6684980f96b90447a9c/9d77e/page2.jpg 855w,
+/static/9cbe611fd78dc6684980f96b90447a9c/e356a/page2.jpg 1140w,
+/static/9cbe611fd78dc6684980f96b90447a9c/4208b/page2.jpg 1710w,
+/static/9cbe611fd78dc6684980f96b90447a9c/0cf58/page2.jpg 2048w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+  </span>
+  </a>
+<a
+    class="gatsby-resp-image-link"
+    href="/static/cb1d42855dc02f90a8197db101881b61/6964c/page3.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQL/xAAVAQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEAMQAAAB2uJxcDQf/8QAGhABAAMBAQEAAAAAAAAAAAAAAgEDEgATIf/aAAgBAQABBQKkmDgatpOio6X99T3/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwFX/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGxAAAgMAAwAAAAAAAAAAAAAAAAERISICcZH/2gAIAQEABj8CVIeePhmuhQxwy2f/xAAbEAACAwEBAQAAAAAAAAAAAAAAAREhMXFBYf/aAAgBAQABPyGBVSpw+jW6DqtEsYhiFCfQg6nD/9oADAMBAAIAAwAAABDn/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/EB//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8QZH//xAAcEAEAAwACAwAAAAAAAAAAAAABABEhMWFxkdH/2gAIAQEAAT8QfXAShd3WDluRFrfUUCDdEu3Y5NAA2PFeIKqqDR5lGFTt8n//2Q=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Page 3"
+        title=""
+        src="/static/cb1d42855dc02f90a8197db101881b61/6fbc3/page3.jpg"
+        srcset="/static/cb1d42855dc02f90a8197db101881b61/da4c7/page3.jpg 143w,
+/static/cb1d42855dc02f90a8197db101881b61/1d39e/page3.jpg 285w,
+/static/cb1d42855dc02f90a8197db101881b61/6fbc3/page3.jpg 570w,
+/static/cb1d42855dc02f90a8197db101881b61/9d77e/page3.jpg 855w,
+/static/cb1d42855dc02f90a8197db101881b61/6964c/page3.jpg 1024w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+  </span>
+  </a>
+<a
+    class="gatsby-resp-image-link"
+    href="/static/273d364db3287a8954088f89815e0c9c/6964c/page4.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMCBP/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAFaWiLvRX//xAAZEAADAQEBAAAAAAAAAAAAAAABAgMAESH/2gAIAQEAAQUClKeSMs8QrLVcHPQfP//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/AVf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwFH/8QAGxAAAgMAAwAAAAAAAAAAAAAAAAECITEREiL/2gAIAQEABj8CXMFZJdFp5w0bhdlqz//EABsQAQADAAMBAAAAAAAAAAAAAAEAESExYXHR/9oACAEBAAE/IUli60nPelK1l6XCvxKqbfUZPsn/2gAMAwEAAgADAAAAECjf/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAIAQMBAT8Qhhf/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QRk7f/8QAHBABAQADAQADAAAAAAAAAAAAAREAIUExUYGR/9oACAEBAAE/EOAAqQXR+YhYgqioX59xmaABLPvC9JJN+ecxg0UC7D3ePZEaaY5//9k='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Page 4"
+        title=""
+        src="/static/273d364db3287a8954088f89815e0c9c/6fbc3/page4.jpg"
+        srcset="/static/273d364db3287a8954088f89815e0c9c/da4c7/page4.jpg 143w,
+/static/273d364db3287a8954088f89815e0c9c/1d39e/page4.jpg 285w,
+/static/273d364db3287a8954088f89815e0c9c/6fbc3/page4.jpg 570w,
+/static/273d364db3287a8954088f89815e0c9c/9d77e/page4.jpg 855w,
+/static/273d364db3287a8954088f89815e0c9c/6964c/page4.jpg 1024w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+  </span>
+  </a></p>
+<p>In addition to the eye candy, Andrews mostly avoids giving readers rules, but instead dives deep into the whys of data storytelling.  Things I was left thinking about:</p>
+<ol>
+<li>The way I think about bars vs columns differently based on my different assumptions about distance vs stacks of items</li>
+<li>How the plethora of data available in the world today has a cost: our attention.  That has left me thinking both about designing interfaces that manage attention, but also how to reclaim my own distracted attention.</li>
+<li>The difference between data and information, and how each can be useful.  How in the product I work on we can help users get access to enough raw data to explore on their own, but also give them meaningful “information” derived from that data.</li>
+<li>I was motivated to get better at drawing, and explaining things with images in my day to day work.  I don’t do this enough.</li>
+</ol>
+<p>If all of that sounds too high level and impractical for you, this is probably not the book for you.  But anyone who is already a data viz geek will find something to love, and as somebody who is tangential to the field it certainly expanded my mind and gave me a lot to think about.  All in all, this one is easy to recommend. <a href="https://amzn.to/2Ww9BBl">Check it out!</a></p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Improving Code Readability With Async/Await]]></title>
         <id>https://benmccormick.org/2019/01/28/readable-async</id>
@@ -503,39 +649,6 @@ My take on which parts of ES6 should be avoided after 3 years of use.</p>
         </link>
         <updated>2018-10-13T00:00:00Z</updated>
         <content type="html"><![CDATA[<p>Due to a plethora of life events happening this year, I’m going to be putting the blog on pause for a while.  So no more updates through the end of the year.  Will re-evaluate then and hopefully start things back up.  I have plans to take the weekly links stuff I’ve been doing the past year and turn it into a real email newsletter with a better template, and some exciting ideas for a new blog series.  But I lack the capacity to follow up on them for now.  So Happy Holidays in advance everybody, I hope to be back early next year.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weekly Links: October 7th]]></title>
-        <id>https://benmccormick.org/2018/09/23/weekly-links-09-23-30/</id>
-        <link href="https://benmccormick.org/2018/09/23/weekly-links-09-23-30/">
-        </link>
-        <updated>2018-10-07T00:00:00Z</updated>
-        <content type="html"><![CDATA[<h3>Javascript &#x26; the Web</h3>
-<p><a href="https://medium.com/blackrock-engineering/5-common-mistakes-with-keys-in-react-b86e82020052">Common Mistakes with Keys in React | Li He</a></p>
-<p>This was a nice summary of a topic that lots of people likely breeze over in React until it burns them.  Short and informative; good stuff.</p>
-<p><a href="https://humanwhocodes.com/blog/2018/10/extracting-command-line-arguments-nodejs/">Extracting command line arguments from Node.js using destructuring |  Nicholas C. Zakas</a></p>
-<p>Destructuring is one of those JavaScript featurs that it’s easy to go a little crazy with.  You go from not knowing it exists to writing expressions like this in a day<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span>user<span class="token punctuation">:</span><span class="token punctuation">{</span>fname<span class="token punctuation">:</span>userFirstName <span class="token operator">=</span> <span class="token string">'Jon'</span><span class="token punctuation">,</span> lname<span class="token punctuation">:</span>userLastName<span class="token operator">=</span> 'Smith<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">=</span> data<span class="token punctuation">;</span></code></pre>
-      </div>
-<p>That type of thing will drive the people reading your programs crazy eventually.  This article provides a nice example of where destructuring shines.</p>
-<h3>Leadership</h3>
-<p><a href="https://www.attack-gecko.net/2018/09/04/followership/">Followership | Jason Wong</a></p>
-<p>This is a really interesting breakdown of “follower styles”.  I’ll admit I’m a sucker for 2x2 grid frameworks, but I love em because they’re powerful communication tools.  I’ll be thinking about how I can use this with my team, as well as thinking about how I relate to those in authority over me.<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup></p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>That sets 2 variables, <code class="language-text">userFirstName</code> and <code class="language-text">userLastName</code> pulling them from <code class="language-text">data.user.fname</code> and <code class="language-text">data.user.lname</code> respectively, and defaulting them to John and Smith if they’re not defined. …obviously?</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
