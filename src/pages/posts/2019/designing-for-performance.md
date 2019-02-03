@@ -8,7 +8,6 @@ keywords: ""
 category: "fe-architecture"
 topics: ['Architecture', 'JavaScript']
 key: "perf-design"
-isDraft: true
 readNext: "reliability-design,fe-concerns,valuable-code-reviews"
 ---
 
