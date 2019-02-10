@@ -8,6 +8,7 @@ keywords: ""
 category: "software-productivity"
 topics: []
 key: "everyday-algorithms"
+isDraft: true
 readNext: "feedback-loops,ten-things-js,react-confessions"
 ---
 

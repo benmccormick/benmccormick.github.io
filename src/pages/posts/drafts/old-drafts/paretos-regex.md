@@ -5,6 +5,7 @@ layout: "post"
 path: "/2017/02/05/paretos-regex/"
 description: "The most valuable information for occasional regular expression users"
 keywords: "Regular Expressions Pareto"
+isDraft: true
 category: "software-productivity"
 ---
 
@@ -20,7 +21,7 @@ Anybody want to guess what this is?
 \\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])
 ```
 
-It turns out, that mess of characters is the [closest we can get](http://emailregex.com/) to an official regular expression for determining whether a string is a valid email address.  Regular expressions (regexes) are a computer science tool to define a search pattern.  They are used to match patterns in text, extract information from text, and define acceptable formats for text.  There are regex implementations in pretty much all modern programming languages.  There are slight differences between language implementations, but most languages implement a subset of the [POSIX](http://www.boost.org/doc/libs/1_56_0/libs/regex/doc/html/boost_regex/syntax/basic_syntax.html) or [Perl](http://perldoc.perl.org/perlre.html) standards.  
+It turns out, that mess of characters is the [closest we can get](http://emailregex.com/) to an official regular expression for determining whether a string is a valid email address.  Regular expressions (regexes) are a computer science tool to define a search pattern.  They are used to match patterns in text, extract information from text, and define acceptable formats for text.  There are regex implementations in pretty much all modern programming languages.  There are slight differences between language implementations, but most languages implement a subset of the [POSIX](http://www.boost.org/doc/libs/1_56_0/libs/regex/doc/html/boost_regex/syntax/basic_syntax.html) or [Perl](http://perldoc.perl.org/perlre.html) standards.
 
 Regexes can be fairly basic and human friendly.  For instance, the following JavaScript regex attempts to match any string that has the substring `blue` in it:
 
@@ -50,7 +51,7 @@ If you don't use regular expressions very often, one of the more difficult skill
 
 ##### Useful: Validating an input
 
-Regexes are often useful for validating an input.  Leaving aside the complexity of the email regex at the start, there are usually standardized regexes you can find for validating things like dates, credit card numbers and phone numbers, and it is often the easiest way to check against simple business rules like password complexity requirements.  
+Regexes are often useful for validating an input.  Leaving aside the complexity of the email regex at the start, there are usually standardized regexes you can find for validating things like dates, credit card numbers and phone numbers, and it is often the easiest way to check against simple business rules like password complexity requirements.
 
 ##### Useful: Pulling portions of text out of a structured piece of data
 
@@ -96,7 +97,7 @@ Being able to match a specific set of characters is nice, but is a bit limited i
 
 ###### Methods
 
-Most languages have methods to search a large string for a regular expression match and extract the matching section, test whether a string matches a particular regex, and to replace content that matches a regex with different content.  
+Most languages have methods to search a large string for a regular expression match and extract the matching section, test whether a string matches a particular regex, and to replace content that matches a regex with different content.
 
 
 ### More Resources
