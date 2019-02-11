@@ -1,7 +1,19 @@
-
+---
+title: "Lodash WIP"
+date: "2018/09/17"
+layout: "post"
+path: "/2018/09/17/lodash-wip/"
+description: "Lodash wip"
+keywords: ""
+category: "software-productivity"
+topics: []
+key: "lodash-1"
+isDraft: true
+readNext: "feedback-loops,ten-things-js,react-confessions"
+---
 # Diving into lodash: Reducing collections
 
-7 years ago, TC39, the group responsible for authoring the ECMAScript standard produced ES5, the 4th major version of the JavaScript language[^1].  One of the hallmark features of that release was a set of functional methods for working with arrays: `forEach`, `map`, `filter` and `reduce`.  The first 3 seem to be fairly well understood and widely used by many JavaScript developers, but `reduce` has remained more obscure.  
+7 years ago, TC39, the group responsible for authoring the ECMAScript standard produced ES5, the 4th major version of the JavaScript language[^1].  One of the hallmark features of that release was a set of functional methods for working with arrays: `forEach`, `map`, `filter` and `reduce`.  The first 3 seem to be fairly well understood and widely used by many JavaScript developers, but `reduce` has remained more obscure.
 
 The purpose of `reduce` is to provide a simple functional way to reduce a list of values into a single value.  This can be done for simple mathematical operations like summing or maxing, to build complex objects out of a list of keys, or to transform a dataset into a different form.
 
@@ -53,7 +65,7 @@ const reverse = (arr) => _.reduce(arr, (newArr, val) => {
 }, []);
 ```
 
-The above code works fine, but it is extremely inefficient for large arrays.  
+The above code works fine, but it is extremely inefficient for large arrays.
 
 ```javascript
 reverse(_.range(0, 1000)) // 0.09 seconds

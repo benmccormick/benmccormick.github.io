@@ -1,3 +1,16 @@
+---
+title: "Lodash WIP"
+date: "2018/09/17"
+layout: "post"
+path: "/2018/09/17/lodash-wip/"
+description: "Lodash wip"
+keywords: ""
+category: "software-productivity"
+topics: []
+key: "lodash-1"
+isDraft: true
+readNext: "feedback-loops,ten-things-js,react-confessions"
+---
 # Diving into lodash: Iteration
 
 One of the fundamental tasks that every programmer will encounter on a regular basis is iterating over a list of values.  JavaScript provides a simple functional utility for accomplishing this, the `forEach` function on arrays. You can see an example below of using it to solve the [fizzbuzz problem](http://c2.com/cgi/wiki?FizzBuzzTest).
@@ -53,7 +66,7 @@ _.forEach(box, (val, key) => console.log(key, val));
 // 1 undefined
 ```
 
-lodash addresses this by providing a `_.forOwn` function, that acts the same as `_.forEach` but treats everything as an object and iterates over each of its properties, regardless of what they are.  
+lodash addresses this by providing a `_.forOwn` function, that acts the same as `_.forEach` but treats everything as an object and iterates over each of its properties, regardless of what they are.
 
 ```javascript
 let box = {
@@ -114,7 +127,7 @@ _.forIn(box, (val, key) => console.log(key, val));
 // material wood
 ```
 
-Like `_.forEach` both `_.forIn` and `_.forOwn` have corresponding 'Right' methods, `_.forInRight` and `_.forOwnRight` that iterate over properties in the exact order.  Since property iteration in JavaScript is not guaranteed to be reliable, I'm not aware of any particular use for these methods, other than API consistency.  I'd love to hear from readers in the comments if you use those methods, and I'll update this section with that information.  
+Like `_.forEach` both `_.forIn` and `_.forOwn` have corresponding 'Right' methods, `_.forInRight` and `_.forOwnRight` that iterate over properties in the exact order.  Since property iteration in JavaScript is not guaranteed to be reliable, I'm not aware of any particular use for these methods, other than API consistency.  I'd love to hear from readers in the comments if you use those methods, and I'll update this section with that information.
 
 
 

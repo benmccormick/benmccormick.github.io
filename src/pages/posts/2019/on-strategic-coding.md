@@ -1,8 +1,8 @@
 ---
-title: "On Strategic Coding"
-date: "2019/01/14"
+title: "Strategic Coding"
+date: "2019/02/18"
 layout: "post"
-path: "/2019/01/14/strategic-coding"
+path: "/2019/02/18/strategic-coding"
 description: "Thinking about architectural concerns is a full time occupation"
 keywords: ""
 category: "fe-architecture"
@@ -14,7 +14,7 @@ readNext: "philosophy-of-software-design-book,fe-concerns,feedback-loops"
 
 I recently read [A Philosophy Of Software Design](https://amzn.to/2Elk5g8) by John Ousterhout.  In an early chapter he paints a picture of a "tactical tornado" programmer, a programmer who is always focused on solving the current problem by the most expedient method possible, with no thought to the long term implications.  I suspect anyone with even a few years in the programming has seen programmers like this, and has also from time to time written "tactical" code like this themselves.  Ousterhout's recommendation is instead to write code strategically rather than tactically, taking more up front time to plan the structure for the benefit of longer term productivity.
 
-Ousterhout focuses his examination of tactical vs strategic coding on the issue of complexity.  Complexity as he defines it is anything that makes the system difficult to work with.  It is the root issue behind much of the *ease of change* concern I identified in my [previous post][fe-concerns].  But we can expand this to encompass all of the front end concerns.  We can easily impact reliability, performance, ease of change, accessibility, security and capability when we make short hand tradeoffs.
+Ousterhout focuses his examination of tactical vs strategic coding on the issue of complexity.  Complexity as he defines it is anything that makes the system difficult to work with.  It is the root issue behind much of the *ease of change* concern I identified in my [recent post](https://benmccormick.org/2019/01/07/the-concerns-of-fe-architecture/).  But we can expand this to encompass all of the front end concerns.  We can easily impact reliability, performance, ease of change, accessibility, security and capability when we make short hand tradeoffs.
 
 Let's consider the problem of getting a new sign up page set up for a site.  There are several different approaches we could take.  By far the simplest is a basic HTML page using normal CSS and little or no JavaScript, that posts to a backend service after the signup and then redirects to a different static page.  We could set this up on S3 or any other service that will host static files.  On the other extreme, we could set up a new server side rendered Typescript-based React application that uses Next.js to give us server side rendering, which we deploy using Docker and a fully automated CI build system with chatbot ops.  Which one of these approaches is better?
 
@@ -37,5 +37,4 @@ Ousterhout makes a case that aligns with my experience, that tactical programmin
 - **Strategic coding considers the context of the problem, and any architectural concerns involved in a change**
 - **Strategic coding doesn't mean never hacking and always investing, it means letting context inform the amount and direction of investment in a codebase**
 
-
-[fe-concerns]: TODO: Fill this out
+PS: I put a [full review of A Philosophy of Software Design](https://benmccormick.org/2018/12/31/book-review-philosophy-of-software-design/) up on the site a few weeks ago.  Check it out :)

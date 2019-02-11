@@ -1,4 +1,16 @@
-
+---
+title: "Lodash WIP"
+date: "2018/09/17"
+layout: "post"
+path: "/2018/09/17/lodash-wip/"
+description: "Lodash wip"
+keywords: ""
+category: "software-productivity"
+topics: []
+key: "lodash-1"
+isDraft: true
+readNext: "feedback-loops,ten-things-js,react-confessions"
+---
 # Object Helpers
 
 1. Intro

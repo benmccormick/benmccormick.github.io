@@ -8,7 +8,6 @@ keywords: "react inheritance composition mixins"
 category: "fe-architecture"
 topics: ['Architecture', 'React']
 key: "reusable-react"
-isDraft: true
 readNext: "react-confessions,fe-concerns,valuable-code-reviews"
 ---
 

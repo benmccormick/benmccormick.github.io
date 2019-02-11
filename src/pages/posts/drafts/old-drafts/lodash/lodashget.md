@@ -1,3 +1,16 @@
+---
+title: "Lodash WIP"
+date: "2018/09/17"
+layout: "post"
+path: "/2018/09/17/lodash-wip/"
+description: "Lodash wip"
+keywords: ""
+category: "software-productivity"
+topics: []
+key: "lodash-1"
+isDraft: true
+readNext: "feedback-loops,ten-things-js,react-confessions"
+---
 # Diving Into lodash: Getting and Setting nested properties
 
 Dealing with nested properties in JavaScript is a bit of a pain.  Because JavaScript has no explicit static typing system, it never makes guarantees about the structure of data, and there are no great language idioms for easily handling missing data.  There are a few common idioms for handling missing data.  Many developers will use `||` to assign a placeholder for a missing element, like this:
@@ -9,7 +22,7 @@ let message = obj.message || 'Nothing to say';
 When handling nested data that may be missing, the choice is usually between accessing it unsafely, checking each layer to see if it exists first, or using a try catch block:
 
 ```javascript
-/* 
+/*
 if we expect user to look like this:
 {
     name: 'Jon Smith',
@@ -30,12 +43,12 @@ let userCity = user.addresses[0].city;
 
 let userCity = user && user.addresses && user.addresses.length && user.addresses[0] && user.addresses[0].city ? user.addresses[0].city : 'Unknown City';
 
-//this is using try catch 
+//this is using try catch
 let userCity;
 try {
    userCity = user.addresses[0].city;
 } catch (e) {
-    userCity = 'Unknown City'; 
+    userCity = 'Unknown City';
 }
 ```
 
@@ -47,9 +60,9 @@ lodash provides 3 methods for safely accessing nested data, and 5 more for safel
 
 The 3 methods lodash provides for safely accessing nested data are `_.get`, `_.result`, and `_.invoke`.  Each provides a safe way of accessing data through a path.
 
-`_.get` is the simplest of the 3.  It takes 3 arguments: an object, a path, and optionally a default value.  With `_.get`, our example from above looks like this: 
+`_.get` is the simplest of the 3.  It takes 3 arguments: an object, a path, and optionally a default value.  With `_.get`, our example from above looks like this:
 ```javascript
-/* 
+/*
 if we expect user to look like this:
 {
     name: 'Jon Smith',
@@ -66,7 +79,7 @@ if we expect user to look like this:
 let userCity = _.get(user, 'addresses[0].city', 'Unknown City');
 ```
 
-If any portion of the nested path is undefined, `_.get` will return the default value, or undefined if one is not set.  The defaulting behavior is reliable.  It will only switch to the default on an undefined value along the path, not on a falsy value like `||`.  
+If any portion of the nested path is undefined, `_.get` will return the default value, or undefined if one is not set.  The defaulting behavior is reliable.  It will only switch to the default on an undefined value along the path, not on a falsy value like `||`.
 
 `_.result` has the same behavior and signature as `_.get` with one exception.  If the object and path evaluates to a function, `_.result` will evaluate the function and return the result.  This is extremely useful for designing flexible APIs, both for library authors and inside a larger application, as it is possible to specify options that can be passed either as data or as a function that will evaluate to data at run time.  [Backbone](http://backbonejs.org/) makes heavy use of this in their APIs, where many properties of Backbone Views and Models can be specified either as a string or a function.
 
@@ -93,7 +106,7 @@ _.invoke(obj, 'c') // undefined
 
 ### Updating nested data
 
-The 5 methods lodash provides for updating nested data are `_.set`, `_.setWith`, `_.unset`, `_.update`, and `_.updateWith`. 
+The 5 methods lodash provides for updating nested data are `_.set`, `_.setWith`, `_.unset`, `_.update`, and `_.updateWith`.
 
 `_.set` is the simplest possible update.  It allows you to set a nested property, but builds out the path to the property if it doesn't exist. So for instance you can do this:
 
@@ -122,7 +135,7 @@ console.log(a); // { b: [{}]}
 
 ```javascript
 
-let a = { 
+let a = {
     b: {
         c: 2
     }
@@ -136,7 +149,7 @@ _.update(a, 'b.d', safeSquare);
 // a => {b: {c: 4, d: 0}}
 ```
 
-`_.update` is also paired with an `_.updateWith`, which takes a customizer function that works the same way as `_.setWith`. 
+`_.update` is also paired with an `_.updateWith`, which takes a customizer function that works the same way as `_.setWith`.
 
 ### Subscribe
 

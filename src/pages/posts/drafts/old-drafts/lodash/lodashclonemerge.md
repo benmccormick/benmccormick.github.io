@@ -1,6 +1,19 @@
+---
+title: "Lodash WIP"
+date: "2018/09/17"
+layout: "post"
+path: "/2018/09/17/lodash-wip/"
+description: "Lodash wip"
+keywords: ""
+category: "software-productivity"
+topics: []
+key: "lodash-1"
+isDraft: true
+readNext: "feedback-loops,ten-things-js,react-confessions"
+---
 # Diving Into lodash - Merging and Cloning Objects
 
-When working with data, it's common to have to merge data from multiple objects to create a new object, create a copy of an existing object, or update an existing object with properties form another object.  [lodash][lodash] makes these operations easy.  Let's take a look at what it provides.  
+When working with data, it's common to have to merge data from multiple objects to create a new object, create a copy of an existing object, or update an existing object with properties form another object.  [lodash][lodash] makes these operations easy.  Let's take a look at what it provides.
 
 ### Merging Objects
 
@@ -52,11 +65,11 @@ let newContact = _.assign({}, contact1, contact2);
 */
 ```
 
-`_.assign` is great as a compatible stand-in for Object.assign.  But lodash provides several other variant methods for merging that give a clear unambiguous syntax for a variety of use cases.  
+`_.assign` is great as a compatible stand-in for Object.assign.  But lodash provides several other variant methods for merging that give a clear unambiguous syntax for a variety of use cases.
 
-`_.assignIn`  is a variant of `_.assign` that adds both enumerable "own" properties and enumerable "inherited" properties from the source objects to the destination object.  This is in contrast to `_.assign` and `Object.assign` which only add enumerable "own" properties.  
+`_.assignIn`  is a variant of `_.assign` that adds both enumerable "own" properties and enumerable "inherited" properties from the source objects to the destination object.  This is in contrast to `_.assign` and `Object.assign` which only add enumerable "own" properties.
 
-In JavaScript inheritance works through a "prototype object".  Both through ES6's class syntax and older function-based syntaxes for Object Oriented programming in JavaScript, objects that inherit from another object have the *parent* object defined as their "prototype".  `_.assignIn` will pull enumerable properties off of each source's prototype object (and its prototype object, and so on up the chain), and add them directly to the destination object.  
+In JavaScript inheritance works through a "prototype object".  Both through ES6's class syntax and older function-based syntaxes for Object Oriented programming in JavaScript, objects that inherit from another object have the *parent* object defined as their "prototype".  `_.assignIn` will pull enumerable properties off of each source's prototype object (and its prototype object, and so on up the chain), and add them directly to the destination object.
 
 `_.assignWith` is another `_.assign` variant that allows lodash to handle more complicated merges. In our example above, merging our 2 contacts causes us to lose contact1's phone number.  But in a real application that is probably not what we would want.  `_.assignWith` will allow us to preserve both phone numbers by merging them into an array.  `_.assignWith` takes the same arguments as `_.assign` but adds an optional final `customizer` argument.  `_.assignWith` expects `customizer` to be a function that takes 5 arguments: (objValue, srcValue, key, object, source). When merging values, customizer is run to determine what the destination value should be.  So our example above can become:
 
@@ -90,7 +103,7 @@ The customizer argument can be used for more things, including implementing a "s
 _.assign({foo: 0}, {foo: 5}, {foo: 10});
 ```
 
-Sometimes we might want to reverse that flow, with the destination object "winning" any conflicts.  This is specifically helpful if we want to fill in an existing object with the "defaults" for fields that are not defined. 
+Sometimes we might want to reverse that flow, with the destination object "winning" any conflicts.  This is specifically helpful if we want to fill in an existing object with the "defaults" for fields that are not defined.
 
 ```
 let obj1 = {
@@ -146,7 +159,7 @@ _.merge(contact1, contact2);
 */
 ```
 
-Now that we've seen `_.merge`, it's hopefully not surprising that `_.mergeWith` is similar to `_.assignWith`, with deep merging possibilities.  `_.mergeWith` has the same API as `_.assignWith`, with the only change being an extra argument, `stack`, passed to the customizer function.  `stack` is an internal lodash data structure that allows you to keep track of the traversal as you move through nested deep merges. Finally, `_.defaultsDeep` has the same API as `_.defaults` but performs a deep merge.  
+Now that we've seen `_.merge`, it's hopefully not surprising that `_.mergeWith` is similar to `_.assignWith`, with deep merging possibilities.  `_.mergeWith` has the same API as `_.assignWith`, with the only change being an extra argument, `stack`, passed to the customizer function.  `stack` is an internal lodash data structure that allows you to keep track of the traversal as you move through nested deep merges. Finally, `_.defaultsDeep` has the same API as `_.defaults` but performs a deep merge.
 
 There's one last merging function in lodash, and it is a bit of an oddball.  `_.mixin` is a legacy function from when lodash began as a fork of underscore, and it is a bit of an oddball in terms of syntax.  `_.mixin` has only one required argument, a source object.  It does not take multiple sources.  Instead, you can optionally pass a destination object as a first object, and an options object as a 3rd object.  The original intention of `_.mixin` was providing a way to extend the `underscore`/`lodash` object, and so the default destination is `_` itself.  I'll discuss that and the options argument more when I write about chaining lodash functions, but for now the important thing to know is that the main distinction between `_.mixin` and `_.assign` when merging a single source to a single destination is that `_.mixin` will add functions from the source object onto both the destination object and its prototype.
 
@@ -160,9 +173,9 @@ After learning about lodash's merge operations we already have everything we nee
 const shallowClone = obj => _.extend({}, obj);
 ```
 
-But lodash is all about simplifying common operations, so it provides its own `_.clone` function.  This function is a bit more powerful than our simple example above.  In addition to handling plain objects, it can also handle arrays, numbers, strings, Buffers and more.  It essentially tries to do something intelligent with anything you throw at it, though it will return empty objects for non-cloneable objects like functions and DOM nodes.   
+But lodash is all about simplifying common operations, so it provides its own `_.clone` function.  This function is a bit more powerful than our simple example above.  In addition to handling plain objects, it can also handle arrays, numbers, strings, Buffers and more.  It essentially tries to do something intelligent with anything you throw at it, though it will return empty objects for non-cloneable objects like functions and DOM nodes.
 
-Simple cloning is great, but we sometimes want to do something more complicated.  Let's consider the following order record: 
+Simple cloning is great, but we sometimes want to do something more complicated.  Let's consider the following order record:
 
 ```javascript
 let order = {
@@ -175,7 +188,7 @@ let order = {
 }
 ```
 
-If we want to allow a client to repeat their order, we might want to clone this object to make sure we capture all of the order metadata correctly.  The problem is that there are some fields we don't want to capture, specifically id and orderDate.  We could explicitly list the fields we want to copy, but then we'd have to update the code anytime we added a new field.  
+If we want to allow a client to repeat their order, we might want to clone this object to make sure we capture all of the order metadata correctly.  The problem is that there are some fields we don't want to capture, specifically id and orderDate.  We could explicitly list the fields we want to copy, but then we'd have to update the code anytime we added a new field.
 
 `_.cloneWith` helps solve this problem.  Like `_.assignWith` `_.cloneWith` takes a customizer function that allows us to choose how to handle an individual key. We can either return a value to use as the cloned value, or undefined.  Returning undefined causes the method to revert to the base code.  So we can handle our clone like this:
 
@@ -194,7 +207,7 @@ const mergeFunc = (value, key, object, stack) => {
 let newOrder = _.cloneWith(order, mergeFunc);
 ```
 
-The final 2 clone methods lodash provides are `_.cloneDeep` and `_.cloneDeepWith`.  If you've been paying attention up till now, these 2 should be self explanatory.  They work the same as `_.clone` and `_.cloneWith` but also clones nested objects.  
+The final 2 clone methods lodash provides are `_.cloneDeep` and `_.cloneDeepWith`.  If you've been paying attention up till now, these 2 should be self explanatory.  They work the same as `_.clone` and `_.cloneWith` but also clones nested objects.
 
 It may seem weird that lodash has 12 different functions for cloning and merging objects, but hopefully I've been able to show how that can be helpful.  Use the right tool for the job!
 

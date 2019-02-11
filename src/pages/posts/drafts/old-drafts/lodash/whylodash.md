@@ -1,10 +1,23 @@
+---
+title: "Lodash WIP"
+date: "2018/09/17"
+layout: "post"
+path: "/2018/09/17/lodash-wip/"
+description: "Lodash wip"
+keywords: ""
+category: "software-productivity"
+topics: []
+key: "lodash-1"
+isDraft: true
+readNext: "feedback-loops,ten-things-js,react-confessions"
+---
 # Diving Into lodash
 
 For the next few weeks, I'm going to be writing about one of my favorite libraries, [lodash][lodash].  lodash is a utility library, a collection of helpful functions for common small operations.  Over the following posts, I'm going to be walking through the whole API of lodash v4, and hopefully giving some new ideas on how each part might be useful to you.  Before that starts though, a quick word on why utility libraries in general and lodash in particular are a good idea.
 
 #### Utility libraries can provide better developer ergonomics
 
-Many of the functions that lodash provide have some equivalent in the JavaScript base language.  For instance `_.filter`, `_.map`, and `_.forEach` may seem redundant due to the widely supported `Array.prototype.filter`, `Array.prototype.map` and `Array.prototype.forEach`.  And its east to ask why lodash has `_.parseInt` when JavaScript provides a native `parseInt`.  In general redundancies like this in lodash are for 1 of 3 reasons: compatibility (covered below), better ergonomics for common use cases, or to overcome usability problems in the native API. 
+Many of the functions that lodash provide have some equivalent in the JavaScript base language.  For instance `_.filter`, `_.map`, and `_.forEach` may seem redundant due to the widely supported `Array.prototype.filter`, `Array.prototype.map` and `Array.prototype.forEach`.  And its east to ask why lodash has `_.parseInt` when JavaScript provides a native `parseInt`.  In general redundancies like this in lodash are for 1 of 3 reasons: compatibility (covered below), better ergonomics for common use cases, or to overcome usability problems in the native API.
 
 `_.filter` and its compatriots are a good example of improving the experience of using a native API for common use cases.  Let's say we have a list of movies that we want to allow the user to filter by release year. The movie data looks something like this:
 
@@ -35,7 +48,7 @@ with lodash we can take advantage of an alternate declarative syntax for the com
 const onFilterChanged(newFilterValue, currentPage) => {
     this.moviesToShow = this.moviesList.filter({
         releaseYear: newFilterValue,
-        studio: currentPage,    
+        studio: currentPage,
     });
 };
 ```
@@ -49,7 +62,7 @@ var list = ['10', '10', '10', '10', '10'];
 list.map(parseInt) // [10, NaN, 2, 3, 4]
 ```
 
-Wait what??  It turns out that `parseInt` accepts 2 arguments: a value to parse, and a radix, which determines what base to interpret the number as.  If radix is 0 or undefined, `parseInt` defaults to base 10 (or 16 for hexadecimal numbers).  Meanwhile, `map` always passes 3 arguments to the functions that it calls: value, index and the original array.  So when it is used with parseInt, the index becomes the radix value, resulting in the mess you see above.  `_.parseInt` maintains spec compliant behavior, but adds an additional check; if _.parseInt is passed a 3rd argument, it ignores the radix value and reverts to the default, thus catching the `map` edge case without effecting normal use.  
+Wait what??  It turns out that `parseInt` accepts 2 arguments: a value to parse, and a radix, which determines what base to interpret the number as.  If radix is 0 or undefined, `parseInt` defaults to base 10 (or 16 for hexadecimal numbers).  Meanwhile, `map` always passes 3 arguments to the functions that it calls: value, index and the original array.  So when it is used with parseInt, the index becomes the radix value, resulting in the mess you see above.  `_.parseInt` maintains spec compliant behavior, but adds an additional check; if _.parseInt is passed a 3rd argument, it ignores the radix value and reverts to the default, thus catching the `map` edge case without effecting normal use.
 
 This might seem like a tiny edge case, but the real value that lodash is providing is preventing you as a developer from needing to know every detail and sinkhole in the JavaScript spec and browser implementations.  Instead you're free to focus on your application and it's business logic.  lodash will handle the details and evolve over time as new traps are created or fixed.
 
@@ -102,7 +115,7 @@ keys2.forEach(function(key) {
 });
 ```
 
-lodash provides `_.assign`, which effectively serves as a replacement for Object.assign that will work in IE9+, Safari 8+, Node.js and evergreen browsers.  As with the usability examples, the issue is less that this is a huge savings or insurmountable problem, and more a security net that allows you to focus on your app rather than spending all your time on [caniuse.com](http://caniuse.com/).  
+lodash provides `_.assign`, which effectively serves as a replacement for Object.assign that will work in IE9+, Safari 8+, Node.js and evergreen browsers.  As with the usability examples, the issue is less that this is a huge savings or insurmountable problem, and more a security net that allows you to focus on your app rather than spending all your time on [caniuse.com](http://caniuse.com/).
 
 #### lodash is flexible, tested, and comprehensive
 
