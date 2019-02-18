@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Mon, 11 Feb 2019 19:03:28 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Feb 2019 03:23:27 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,33 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Strategic Coding]]></title>
+            <link>https://benmccormick.org/2019/02/18/strategic-coding</link>
+            <guid>https://benmccormick.org/2019/02/18/strategic-coding</guid>
+            <pubDate>Mon, 18 Feb 2019 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>I recently read <a href="https://amzn.to/2Elk5g8">A Philosophy Of Software Design</a> by John Ousterhout.  In an early chapter he paints a picture of a “tactical tornado” programmer, a programmer who is always focused on solving the current problem by the most expedient method possible, with no thought to the long term implications.  I suspect anyone with even a few years in the programming has seen programmers like this, and has also from time to time written “tactical” code like this themselves.  Ousterhout’s recommendation is instead to write code strategically rather than tactically, taking more up front time to plan the structure for the benefit of longer term productivity.</p>
+<p>Ousterhout focuses his examination of tactical vs strategic coding on the issue of complexity.  Complexity as he defines it is anything that makes the system difficult to work with.  It is the root issue behind much of the <em>ease of change</em> concern I identified in my <a href="https://benmccormick.org/2019/01/07/the-concerns-of-fe-architecture/">recent post</a>.  But we can expand this to encompass all of the front end concerns.  We can easily impact reliability, performance, ease of change, accessibility, security and capability when we make short hand tradeoffs.</p>
+<p>Let’s consider the problem of getting a new sign up page set up for a site.  There are several different approaches we could take.  By far the simplest is a basic HTML page using normal CSS and little or no JavaScript, that posts to a backend service after the signup and then redirects to a different static page.  We could set this up on S3 or any other service that will host static files.  On the other extreme, we could set up a new server side rendered Typescript-based React application that uses Next.js to give us server side rendering, which we deploy using Docker and a fully automated CI build system with chatbot ops.  Which one of these approaches is better?</p>
+<p>A tactical tornado would likely prefer the first solution.  They could get the whole thing up and running in an hour, stamp it and call it done.  Other developers might be attracted to the <em>cool</em> approach and want to avoid the “outdated” approach.  But we can only really answer the question by stepping back and asking some questions:</p>
+<ul>
+<li>What is the future of this application?  Is this a standalone page, or the first page in a larger application?</li>
+<li>What feature requests are we likely to get for the page?  Is it probable that we’ll eventually need form validation, dynamic success and failure states, complex behavior that depends on the use case?</li>
+<li>What browsers are we supporting</li>
+<li>What are our performance benchmarks?</li>
+</ul>
+<p>Questions like that can tell us when we’ll benefit from an up front investment in certain areas, and when it’s wiser to be quick and dirty.  They also allow us to evaluate whether any options we’re considering might cut us off from achieving long term goals.  For instance, if we know that we’ll eventually need to scale this site into a large application with responsive interactions, personalized content and information maintained between page loads, building this out as a series of static pages which POST to a backend would eventually limit our capabilities or require a refactor.  But if this is only a one-off landing page for an event happening next week that won’t be maintained beyond that point, developing a long-term maintenance strategy would be wasted effort.  This is <em>strategic coding</em>, and it doesn’t stop at the beginning of a project, it’s an ongoing mindset that you can take as you add each new feature to an application.</p>
+<p>Ousterhout makes a case that aligns with my experience, that strategic programming is a long term winner.  I’ve seen that over time improvements to ease of change will often help a team save time lost, significant hits to performance, security, reliability may hurt them more than a fast solution saves them, and solutions that unreasonably limit us in terms of system capability or accessibility will ultimately get rejected.  The weasel words there exist for a reason… sometimes it really is the best idea to just get something working.  But a strategic programmer will understand the context of their project, and make wise choices about where and how to invest in the codebase.</p>
+<p><strong>TL;DR</strong></p>
+<ul>
+<li><strong>It is possible to program either tactically or strategically</strong></li>
+<li><strong>Tactical programming is focused on solving the immediate problem as quickly as possible</strong></li>
+<li><strong>Strategic coding considers the context of the problem, and any architectural concerns involved in a change</strong></li>
+<li><strong>Strategic coding doesn’t mean never hacking and always investing, it means letting context inform the amount and direction of investment in a codebase</strong></li>
+</ul>
+<p>PS: I put a <a href="https://benmccormick.org/2018/12/31/book-review-philosophy-of-software-design/">full review of A Philosophy of Software Design</a> up on the site a few weeks ago.  Check it out :)</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Reusable Code In React: Inheritance, Composition, Decorators and Mixins]]></title>
             <link>https://benmccormick.org/2019/02/11/reusable-react</link>
@@ -811,98 +838,6 @@ expires.  Each time the loop runs, it checks to see whether it should wait for a
 <p>After chapter 11, the book takes a sudden detour from higher level concepts into much more concrete realms.  There is an extensive treatment of commenting style, naming conventions and other ways to make code readable and obvious.  There is a coherent through-line of building maintainable systems throughout, but the transition felt strange.  The content is still good though.</p>
 <p>The book ends on a chapter addressing modern software trends through the lens of the concepts considered in the book, which felt like a good place to wrap up, and then a chapter on designing for performance.  Given the books focus on complexity and the size of the performance topic, this chapter is content to argue that simple designs are friendly to performance, without trying to unpack many performance related topics.  It felt a bit tacked on to me, but it makes sense as a piece of objection handling for those who feel that they can’t simplify their architecture for performance reasons.</p>
 <p><em>A Philosophy of Software Design</em> is going to be my new go to recommendation for developers who are able to write code that runs but want to start thinking about how to write better code.  It doesn’t have the depth of something like <a href="https://benmccormick.org/2018/02/14/book-review-clean-architecture/">Clean Architecture</a>, but it is extremely readable and approachable, and I’ve never seen an architecture-level book that was so focused on actionable advice.  If you take the advice in the first chapter and consult the book during code reviews, every chapter in the book has something to consider when looking at a piece of non-trivial code.  That makes it a perfect introduction to higher-level software design thinking.  If you think that would be a fit for you, <a href="https://amzn.to/2Rpu6zX">go ahead and check it out</a>.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[New Newsletter and The 2018 Roundup]]></title>
-            <link>https://benmccormick.org/2018/12/22/2018-roundup</link>
-            <guid>https://benmccormick.org/2018/12/22/2018-roundup</guid>
-            <pubDate>Sat, 22 Dec 2018 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>2018 was the 5th full year of this blog, and I chose to experiment a bit.  For the first 9 months of the year, I posted a Weekly Links post every week, and also published 24 normal articles, before taking a break the last 3 months to deal with some changes in work and home life.  My employer went through an acquisition this year and I started working with a new team. Then Claire and I welcomed our first daughter, Elena, to the world earlier this month.  It’s been a busy but rewarding year.</p>
-<p><a
-    class="gatsby-resp-image-link"
-    href="/static/fe510b6a1de4cfb4ef847faf534c9811/b1526/family-pic.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEz0lEQVQ4ywHEBDv7ABoaDRgWDjcwIrqZa7ONXKaFW7SXcufGmdardtWpd8+ldMieb72VZrKMX6yHW6V9UredftTTx9PQxOXm3QAgHxcbGBAsJhq1mGy4kmKkhl2pkG/pzKTarnzYrn3Tq3zOpnjCm262kGOwil+ogla9ponV1MzS0cbl5+AAJiIYHhsTJCAXrZJrroxgnH1lpId5zrKW2bCA2LCD1bCD0Kx/xqF1upVqtI9krIZdwK2T1dXN0tLH5+jiAEpBMzMsIiUhGKKKZ5J3V8+ejv/GuNKpncemfuO9j9m0itKvhselfbuZcLaVbq6LZcKynNPWztLRx+fp4gBdUUE/NysrJBuQfV+igmKwgnDPk4O9i36sj3SqkHHIqofTsozFp4K7m3a3mXWwkG/FuKXV18/U1Mra3NMAZFRAUkUzKSEXemxVxJ98zpuG05KJypKGkm5gvpOGs5WBwaeGwaeGt517tJt6rpR1xryt19jT0s/Gz8u/AF1KNl9NOCofFGpfR7KXeZR6cb6TiKGCeWREN+uunsyZjLaafcyzkbOdfrGbfq2WfMjAtNfY1dPPxdPPxAAqIRc7Lx8fGA5sWlqegI9xVWZ7X1xwWE9AJx3FiXzdoJKSeGOYina8poewnYKum4TJxbvX2NTX1czf4NsABQUEEQ4LeGBxqIqpoIGgi2uBdFJcXT9ALxsQg1xMzJN+XEc6EBUekYNzuaeOr6CLx8fC09XT2NfP4OLeAAAAAE8/SqaFoJt+lqCAmqeIpJd3kHdaZVA7K0YzJ49kS2dOPRUbI6OMiM2snKugjcHExMzP0tjZ1N/j4QA7NzmPcIOYepGae5SggJqigZygfpuUdYdZSD4aGR0+MzI5MzQeICe/ioXao561qZm4w8nDztfV2drh6+4AjX6Ak3SIlHOJmXmRellqkm+GqYilm3qUNicyCA0YFRklChMgWUNQgkBds3KFwaugl5KcoWt5o1pkoH+AAGVPUZNyhpd4jodoelEzOHpYYpVxhpt5kko4QwUHDhQZJB0VJWolRGsgQ21DVopPVHEkL4IjNGAlLFEsKgB9bG2PbX+JaXp3WGZqT1mFZ3eKaHmFZHxeUFoHCQsMEh4kHS1OHjgpGiwpGilZIC5PKCiSKzuPMD2GLTgAjHp7imd5kHGEaVBfXUFOgF9xim2Di26MYlJZRE1fDA4aBwoTCA4YJygoYSkwcCEyTBofrC1ARiEnqzFFAJJ+gIlnen5idldCUWBGV4Vmf5Fuh35heENFW0JehSU4Uh8wRyk4Tzc+UBYdNSMjPTAcL2ouPUsmKo8lNACLd3mSc4qKcIpuWnNzYn9gWHVTUnE2P10WMVcoS3g8YI5Lb6BSdqVjjsRMcqEiQmkuUHpRU3eWNEmRLzwAh31ulHKEnX6adGSCNlB1R3CdS3WlRWyZM1R9LU14Iz5lHjdYLkhrPVl/WnyoNVN6Q2OMMVF1VkZUTVI/AIWBZIxwdph1jqCJqUpZfztbgUxtlVZ8qF6HtGCKvGSOwztagRIiOCxBYENegytDYy1EYRw0UFpIVW9YTgCDfmFoXFF0ZXesiKR9bYMlPFc9V3ZAXYBHZ41Pc55lj8J6qeEpO1QbLUQ6VHg1TnEmOlcaL0hBPEx8W08WcSkrymMeAgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-    ></span>
-    <img
-        class="gatsby-resp-image-image"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
-        alt="Christmas picture with Claire, Elena and myself"
-        title=""
-        src="/static/fe510b6a1de4cfb4ef847faf534c9811/d766e/family-pic.png"
-        srcset="/static/fe510b6a1de4cfb4ef847faf534c9811/a6b6e/family-pic.png 143w,
-/static/fe510b6a1de4cfb4ef847faf534c9811/8e488/family-pic.png 285w,
-/static/fe510b6a1de4cfb4ef847faf534c9811/d766e/family-pic.png 570w,
-/static/fe510b6a1de4cfb4ef847faf534c9811/b1526/family-pic.png 640w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-  </span>
-  </a></p>
-<p>I’m excited to get back to the blog in 2019, and take what I’ve learned the last few years and make some improvements I’ve been considering for a while.  The biggest one is shifting to a newsletter format for initially publishing my posts.</p>
-<h2>Newsletter</h2>
-<p>Over the last year, email newsletters have become my favorite ways to stay up to date in my professional world.  High quality newsletters from people like <a href="https://buttondown.email/kentcdodds">Kent</a>, <a href="https://larahogan.me/sign-up/">Lara</a>, and <a href="https://ponyfoo.com/weekly">Ponyfoo</a> are some of the best ways to both keep up with what’s going on tech and trends, but also learn new ideas in a blog post, way.  It’s a better forum for thoughtful content than social media, allows for communication between the writer and their audience.</p>
-<p>I’ve always allowed people to subscribe to this blog through email, but to be honest, the experience has been kind of crappy.  I’ve meant to improve my email template forever, and articles sometimes got jumbled into a single email.  Going forward, they’re going to be a first class citizen, and the best way to follow the blog.  I’ll publish articles there first, and include extra “weekly link” like content in the emails only.  I’m switching emails over to <a href="https://buttondown.email/">Buttondown</a> and they should be much cleaner and content focused going forward.  If you follow this blog through email, you’re probably reading this post in that format now.  If not, please go ahead and <a href="https://benmccormick.org/subscribe/">subscribe</a>.  I’ll be starting the year with a series of posts about front end architecture.</p>
-<h2>2018 Roundup</h2>
-<h3>Most Read Posts Published in 2018</h3>
-<ul>
-<li><a href="https://benmccormick.org/2018/02/07/react-confessions/">React Architecture Confessions</a> React unquestioningly has a learning curve.  I decided to talk through the various mistakes I’d made as I learned React on the fly while building a large web application.</li>
-</ul>
-<ul>
-<li>
-<p><a href="https://benmccormick.org/2018/07/04/evil-javascript/">Evil JavaScript</a> This was something different for me, a tongue-in-cheek look at the ways you can use and abuse some of JavaScript’s more powerful features</p>
-</li>
-<li>
-<p><a href="https://benmccormick.org/2018/06/05/es6-the-bad-parts/">ES6: The Bad Parts</a>
-My take on which parts of ES6 should be avoided after 3 years of use.</p>
-</li>
-</ul>
-<h3>Languages, Libraries, and Technologies I started using in 2018</h3>
-<p>With all the changes, it hasn’t been a big year for experimentation, but Immer is fantastic.</p>
-<ul>
-<li>
-<p><a href="https://github.com/mweststrate/immer">Immer</a> This probably deserves a full post at some point, but I’ve been experimenting with using only Immer and React’s built in state features for state management on a new project, and it’s been fairly nice so far.  It’s a lovely little library that makes working with immutable data pleasant.</p>
-</li>
-<li>
-<p><a href="https://storybook.js.org/">Storybook</a> My other big experiment on the new project has been using Storybook as a collaboration tool for our UI components.  It’s still early days, but I’m liking it.</p>
-</li>
-</ul>
-<h3>Languages and Libraries I used (more or less) every day in 2018</h3>
-<p>JavaScript (ES6), Python, React, PostgreSQL, lodash, MobX, Jest, Immer, CSS Modules</p>
-<h3>Languages and Libraries I want to try in 2019</h3>
-<p>I want to try building some small hardware projects and automating them this year.  Something completely different.</p>
-<h3>Blogs I started following in 2018</h3>
-<ul>
-<li><a href="https://larahogan.me/">Lara Hogan’s Engineering Leadership blog and newsletter</a></li>
-<li><a href="https://overreacted.io/">Overreacted by Dan Abramov</a></li>
-</ul>
-<h3>Blogs I read every post from in 2018</h3>
-<p><a href="https://overreacted.io/">Overreacted by Dan Abramov</a>, <a href="https://larahogan.me/">Lara Hogan’s Engineering Leadership blog and newsletter</a>, <a href="http://randsinrepose.com/">Rands In Repose</a>, <a href="https://stratechery.com/">Stratechery</a>, <a href="https://daringfireball.net/">Daring Fireball</a></p>
-<h3>Software I used (nearly) every day in 2018</h3>
-<p>MacOS/iOS, Google Search, Chrome/Safari/Firefox, GMail/MailPlane 3, Twitter/Tweetbot, Feedbin/Reeder, iMessage, Slack, Jira, 1Password, VS Code/Vim, iTerm, Fish Shell, Bitbucket, Fantastical, Spotify, Bear, Annotate, Dash</p>
-<h3>Best Technical Books I read in 2018</h3>
-<ul>
-<li><a href="https://amzn.to/2LsAJMk">Clean Architecture</a></li>
-<li><a href="http://atomicdesign.bradfrost.com/">Atomic Design</a></li>
-<li><a href="https://amzn.to/2EFXcVI">A Philosophy Of Software Design</a></li>
-</ul>
-<h3>Best Non-Technical Books I read in 2018</h3>
-<ul>
-<li><a href="https://amzn.to/2SfcnYP">Radical Candor</a></li>
-<li><a href="https://amzn.to/2Lscqy0">The Tech-Wise Family</a></li>
-<li><a href="https://amzn.to/2GHNX90">Between The World And Me</a></li>
-<li><a href="https://amzn.to/2V7vDJU">Vision</a></li>
-<li><a href="https://amzn.to/2Bts7QM">The Innovators</a></li>
-</ul>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
