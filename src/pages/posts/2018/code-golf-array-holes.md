@@ -87,4 +87,4 @@ let isSparse = a => a.reduce(x=>x+1)<a.length
 
 **Update: This last solution only works in situations where the array starts with `1`.  So 27 is the best generic solution I can find at this point.  Thanks to [Axel](https://twitter.com/rauschma/status/1009149034622275585) for correcting me. Code golf is hard 😔.**
 
-So there you have it.  27 characters to identify sparse arrays.  I'd love to hear from you if you can do better.  Hit me up on [Twitter](https://twitter.com/ben336) or by [email](ben@benmccormick.org).
+So there you have it.  27 characters to identify sparse arrays.  I'd love to hear from you if you can do better.  Hit me up on [Twitter](https://twitter.com/_benmccormick) or by [email](ben@benmccormick.org).

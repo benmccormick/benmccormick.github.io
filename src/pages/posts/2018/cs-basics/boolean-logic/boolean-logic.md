@@ -47,7 +47,7 @@ if(x && y) {  // false
 }
 ```
 
-is equivalent to `x∧y` in boolean algebra notation.  But this being JavaScript, there are some quirks and things to know about.  
+is equivalent to `x∧y` in boolean algebra notation.  But this being JavaScript, there are some quirks and things to know about.
 
 First of all it's worth noting that boolean logic in JavaScript is lazy by default.  That means that JavaScript will only evaluate enough of a boolean expression to know what the result will be.  So in an expression like this:
 
@@ -57,7 +57,7 @@ let alwaysReturnFalse = () => false;
 let value = alwaysReturnFalse() && alwaysReturnTrue();
 ```
 
-the function `alwaysReturnTrue` will never be called.  This will matter when we start talking about real world takeaways.  
+the function `alwaysReturnTrue` will never be called.  This will matter when we start talking about real world takeaways.
 
 The second JavaScript quirk gets its own section.  Because booleans get more complicated when they interact with the rest of the JavaScript world.
 
@@ -141,7 +141,7 @@ So far we've gone through some theory, as well as JavaScript's own quirks.  But 
     }
     ```
 
-    Do you see the bug?  It's subtle.  With code written like this, if there are no users it will be treated the same as if the number had failed to load at all.  This is a pretty common bug in situations where a value might be undefined or null, but could also be a number.  Strings have a similar issue.  
+    Do you see the bug?  It's subtle.  With code written like this, if there are no users it will be treated the same as if the number had failed to load at all.  This is a pretty common bug in situations where a value might be undefined or null, but could also be a number.  Strings have a similar issue.
 
     It's important to understand that if 0 or empty strings are a valid value for a variable, you can't rely on a general falsiness check to see if the value is defined.  Instead it's better to either define the exact falsy value you expect for "no value" (null in this case) or to check based on type.  For instance in this case, you could rewrite the code to look for a number:
 
@@ -156,7 +156,7 @@ So far we've gone through some theory, as well as JavaScript's own quirks.  But 
 
 ### Feedback Welcome
 
-This is the second post in a new series, and I'd love to hear whether it is helpful for you, and any other topics you'd like to see covered. Feel free to reach out on [Twitter](https://twitter.com/ben336) or [email](mailto:ben@benmccormick.org).  And if you see anything that looks wrong or misleading to you, don't hesitate to [open an issue](https://github.com/benmccormick/benmccormickorg/issues/new) on my blog's github repo.
+This is the second post in a new series, and I'd love to hear whether it is helpful for you, and any other topics you'd like to see covered. Feel free to reach out on [Twitter](https://twitter.com/_benmccormick) or [email](mailto:ben@benmccormick.org).  And if you see anything that looks wrong or misleading to you, don't hesitate to [open an issue](https://github.com/benmccormick/benmccormickorg/issues/new) on my blog's github repo.
 
 
 

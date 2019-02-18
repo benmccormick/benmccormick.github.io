@@ -52,9 +52,9 @@ That definition could mean that a library handles a single use cases, and there 
 
 ### What does it matter in the end?
 
-I didn't write my original post to say that Backbone is dead.  I wanted to highlight a way in which the experience of using it has declined over time.  It is specifically a way that makes using Backbone harder for me.  I'm grateful to the many people who have built Backbone and the ecosystem around it, and think it is still a very useful tool.  This ecosystem issue does make me unlikely to recommend Backbone for folks who are building web applications "at scale".  I think Ember or possibly React are better choices for that.  For small one off projects, and for content focused sites that need as little JavaScript as possible while still providing a rich experience, Backbone is a great choice.  
+I didn't write my original post to say that Backbone is dead.  I wanted to highlight a way in which the experience of using it has declined over time.  It is specifically a way that makes using Backbone harder for me.  I'm grateful to the many people who have built Backbone and the ecosystem around it, and think it is still a very useful tool.  This ecosystem issue does make me unlikely to recommend Backbone for folks who are building web applications "at scale".  I think Ember or possibly React are better choices for that.  For small one off projects, and for content focused sites that need as little JavaScript as possible while still providing a rich experience, Backbone is a great choice.
 
 
 [eco]: http://benmccormick.org/2016/03/07/the-sad-state-of-the-backbone-ecosystem/
-[charttweet]:https://twitter.com/ben336/status/707063566940016645
+[charttweet]:https://twitter.com/_benmccormick/status/707063566940016645
 [hn]:https://news.ycombinator.com/item?id=11237283

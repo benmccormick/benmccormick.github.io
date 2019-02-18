@@ -70,7 +70,7 @@ export class Header extends React.Component {
             Speaking
           </Link>
           <Padding />
-          <a className={headerLink} href="http://twitter.com/ben336">
+          <a className={headerLink} href="http://twitter.com/_benmccormick">
             Twitter
           </a>
           <Padding />

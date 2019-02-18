@@ -8,7 +8,6 @@ keywords: ""
 category: "fe-architecture"
 topics: ['Architecture', 'JavaScript']
 key: "strategies-tactics-moves"
-isDraft: true
 readNext: "philosophy-of-software-design-book,fe-concerns,feedback-loops"
 ---
 

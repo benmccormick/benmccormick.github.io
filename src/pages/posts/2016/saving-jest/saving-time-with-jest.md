@@ -32,7 +32,7 @@ Jest saves developers  time in 4 main ways:
 3. **Running Tests** - Jest runs tests in parallel, doesn't require a browser, and only runs the tests that are affected by the current code changes
 4. **Fixing Tests** - Jest gives great error messages, helps you find the failing code, and has other smaller UX features that make it easy to debug your failing tests quickly.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Tonight <a href="https://twitter.com/ben336">@ben336</a> speaks about using <a href="https://twitter.com/hashtag/jest?src=hash">#jest</a> with <a href="https://twitter.com/hashtag/reactjs?src=hash">#reactjs</a> for your testing needs <a href="https://twitter.com/nestraleigh">@nestraleigh</a> <a href="https://t.co/CAV8wZUwFw">pic.twitter.com/CAV8wZUwFw</a></p>&mdash; Tracy Lee | ladyleet (@ladyleet) <a href="https://twitter.com/ladyleet/status/806655476515618822">December 8, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Tonight <a href="https://twitter.com/_benmccormick">@_benmccormick</a> speaks about using <a href="https://twitter.com/hashtag/jest?src=hash">#jest</a> with <a href="https://twitter.com/hashtag/reactjs?src=hash">#reactjs</a> for your testing needs <a href="https://twitter.com/nestraleigh">@nestraleigh</a> <a href="https://t.co/CAV8wZUwFw">pic.twitter.com/CAV8wZUwFw</a></p>&mdash; Tracy Lee | ladyleet (@ladyleet) <a href="https://twitter.com/ladyleet/status/806655476515618822">December 8, 2016</a></blockquote>
 
 ### Setup
 

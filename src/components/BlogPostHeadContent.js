@@ -21,7 +21,7 @@ export class BlogPostHeadContent extends React.Component {
           {
             'twitter:card': 'summary',
             'twitter:site': '@benmccormickorg',
-            'twitter:creator': '@ben336',
+            'twitter:creator': '@_benmccormick',
             'twitter:title': post.title,
             'twitter:description': post.description || '',
             'twitter:image': post.image || 'http://benmccormick.org/logo.png',
@@ -57,7 +57,7 @@ export class BlogPostHeadContent extends React.Component {
                       "url": "http://benmccormick.org",
                 	    "sameAs" : [
                         "https://www.linkedin.com/in/benmccormick",
-                        "http://twitter.com/ben336",
+                        "http://twitter.com/_benmccormick",
                       ]
                    }
                 }`,

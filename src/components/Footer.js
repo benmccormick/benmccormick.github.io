@@ -89,7 +89,7 @@ export class Footer extends React.Component {
               <Link className={footerLink} to={'/built-with/'}>
                 Built With
               </Link>
-              <a className={footerLink} href="http://twitter.com/ben336">
+              <a className={footerLink} href="http://twitter.com/_benmccormick">
                 Personal Twitter
               </a>
               <a

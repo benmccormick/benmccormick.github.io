@@ -11,13 +11,13 @@ key: "proposals-in-production"
 readNext: "ecma-explanation,following-js-roadmap,ten-things-js"
 ---
 
-*This post was adopted from a twitter thread that outgrew it's medium today.  You can see the original thread [here](https://twitter.com/ben336/status/974670479905705984).*
+*This post was adopted from a twitter thread that outgrew it's medium today.  You can see the original thread [here](https://twitter.com/_benmccormick/status/974670479905705984).*
 
 This morning I saw the following tweet:
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">*TC39 proposes Array.flatten feature that breaks code that was working fine for 10 years*<br>&quot;IT&#39;S THEIR FAULT FOR DOING NONSTANDARD STUFF&quot;<br><br>*TC39 proposes changing classes feature not yet in standard*<br>&quot;IT&#39;S NOT FAIR I WROTE CODE USING THAT&quot;</p>&mdash; Dave Methvin (@davemethvin) <a href="https://twitter.com/davemethvin/status/974037352384430080?ref_src=twsrc%5Etfw">March 14, 2018</a></blockquote>
 
-The tweet refers to [this proposal](https://github.com/allenwb/js-classes-1.1) for replacing a number of other proposals for augmenting JS's current class syntax, as well as recent backlash on twitter over [a proposal ](https://github.com/tc39/proposal-flatMap/pull/56) to not use flatten or flatmap for future JS standard syntax due to their previous use in mootools.  
+The tweet refers to [this proposal](https://github.com/allenwb/js-classes-1.1) for replacing a number of other proposals for augmenting JS's current class syntax, as well as recent backlash on twitter over [a proposal ](https://github.com/tc39/proposal-flatMap/pull/56) to not use flatten or flatmap for future JS standard syntax due to their previous use in mootools.
 
 Because people have been using Babel or other tools to transpile their code and use the proposed class syntax today, it would be frustrating for many devs if the proposal shifted under them.  I've been there.  And thus, story time:
 

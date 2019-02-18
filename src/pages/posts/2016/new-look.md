@@ -36,7 +36,7 @@ The site is now built with Gatsby and hosted on Github pages.  I've ditched the 
 
 <img src="current_site.png" class="full-width">
 
-Like all software, as this blog has evolved, I'm sure not all of the progress has been forward.  If you see any issues with the new site, feedback and bugfixes are welcome.  Feel free to hit me up on [twitter](https://twitter.com/ben336), comment on this post, or open an issue on the site's [github repo](https://github.com/benmccormick/benmccormickorg/issues).  Thank you to everyone who has read and supported this site over the past several years.
+Like all software, as this blog has evolved, I'm sure not all of the progress has been forward.  If you see any issues with the new site, feedback and bugfixes are welcome.  Feel free to hit me up on [twitter](https://twitter.com/_benmccormick), comment on this post, or open an issue on the site's [github repo](https://github.com/benmccormick/benmccormickorg/issues).  Thank you to everyone who has read and supported this site over the past several years.
 
 ### More Resources
 

@@ -71,8 +71,8 @@ Several of us are also working to introduce more automated testing on our team. 
 Software Development estimation is hard. There are a variety of challenges, some of them inherent to the practice or certain projects, some of which can be overcome or mitigated through experience and attention.  In the end, accurate estimation is a skill worth cultivating, bringing value to both you and the team. Take the time, get it right.
 
 
-*Got some great tips for estimating software development times? Let me hear them on twitter [@ben336][twitter]*
+*Got some great tips for estimating software development times? Let me hear them on twitter [@_benmccormick][twitter]*
 
 
 [pragmatic]:http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X
-[twitter]: https://www.twitter.com/ben336
+[twitter]: https://www.twitter.com/_benmccormick

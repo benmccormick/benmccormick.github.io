@@ -19,7 +19,7 @@ I want to work with great people, so here's my no BS pitch to any JavaScript dev
 
 - Come live (stay?) in Durham NC, get great weather, big city resources for small city cost of living, and amazing food <sup id="fnref:1">[1](#fn:1)</sup>.
 
-- Work with a small but growing development team that has a good mix of senior and less experienced developers.  
+- Work with a small but growing development team that has a good mix of senior and less experienced developers.
 
 - Help build and shape an ambitious web app built with Backbone and Marionette.js on top of a Python backend
 
@@ -29,7 +29,7 @@ I want to work with great people, so here's my no BS pitch to any JavaScript dev
 
 - Finally, if you're interested, we're open to a mix of experience levels.  The main thing we want to see is JavaScript and programming knowledge that matches up to where you are right now, and an enthusiasm for building things on the web.
 
-In all seriousness, if this sounds interesting to you, feel free to get in touch [by email](mailto:ben.mccormick@windsorcircle.com) or on [Twitter](http://www.twitter.com/ben336).  You can also see the full job description and apply directly [on jobvite](https://hire.jobvite.com/Jobvite/Job.aspx?b=nMUoipwg&j=oZqQZfwY).
+In all seriousness, if this sounds interesting to you, feel free to get in touch [by email](mailto:ben.mccormick@windsorcircle.com) or on [Twitter](http://www.twitter.com/_benmccormick).  You can also see the full job description and apply directly [on jobvite](https://hire.jobvite.com/Jobvite/Job.aspx?b=nMUoipwg&j=oZqQZfwY).
 
 ---
 

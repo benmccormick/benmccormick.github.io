@@ -49,7 +49,7 @@ Autocomplete-plus is also a great example of the flexible nature of Atom.  Becau
 
 **Update**:  Twitter has pointed out this even crazier riff on this concept that I'd seen a while ago but had been unable to find when I dove back into Atom.  [Imdone](http://imdone.io/) is a trello-like experience in the editor for managing todos.
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/ben336">@ben336</a> <a href="https://twitter.com/AtomEditor">@AtomEditor</a> You might also like imdone-atom. It&#39;s a drag and drop TODO task board with issue tracking integration!</p>&mdash; imdone.io (@imdoneIO) <a href="https://twitter.com/imdoneIO/status/686577997395013633">January 11, 2016</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/_benmccormick">@_benmccormick</a> <a href="https://twitter.com/AtomEditor">@AtomEditor</a> You might also like imdone-atom. It&#39;s a drag and drop TODO task board with issue tracking integration!</p>&mdash; imdone.io (@imdoneIO) <a href="https://twitter.com/imdoneIO/status/686577997395013633">January 11, 2016</a></blockquote>
 
 ### Linter
 

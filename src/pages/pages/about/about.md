@@ -32,6 +32,6 @@ All opinions, positions and thoughts on the blog are my own and do not represent
 
 
 
-[twitter]:http://twitter.com/ben336
+[twitter]:http://twitter.com/_benmccormick
 [ghp]: https://pages.github.com/
 [gatsby]: https://github.com/gatsbyjs/gatsby

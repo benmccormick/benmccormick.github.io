@@ -72,7 +72,7 @@ To be clear, I don't think every interview question should be like this one.  Mo
 
 ---
 
-Feel free to hit me up on Twitter at [@ben336](https://twitter.com/ben336) to tell me your favorite interview question.  I'll retweet them.
+Feel free to hit me up on Twitter at [@_benmccormick](https://twitter.com/_benmccormick) to tell me your favorite interview question.  I'll retweet them.
 
 
 [^1]: There is of course a limit to how much any interview is going to teach you about how somebody will behave in a future job situation.  We're all chasing breadcrumbs here.

@@ -39,7 +39,7 @@ Knowing generally that a variable points to a value is a great start.  But a pro
 
 ### How Variables Work
 
-Here's the most important sentence for gaining a proper understanding of how variables work: "A variable points to a location in memory."  Explaining how memory is organized and allocated is outside the scope of this post, but for now it's sufficient to just understand memory as a long list of blocks, each of which has it's own address.  
+Here's the most important sentence for gaining a proper understanding of how variables work: "A variable points to a location in memory."  Explaining how memory is organized and allocated is outside the scope of this post, but for now it's sufficient to just understand memory as a long list of blocks, each of which has it's own address.
 
 ![memory as a series of boxes](./memory1.png)
 
@@ -128,7 +128,7 @@ Instead `const` is once again about memory and reference assignment.  A variable
 
 ### Feedback is lovely
 
-This is a new series, and I'd love to hear whether it is helpful for you, and any other topics you'd like to see covered. Feel free to reach out on [Twitter](https://twitter.com/ben336) or [email](mailto:ben@benmccormick.org)[^2].  
+This is a new series, and I'd love to hear whether it is helpful for you, and any other topics you'd like to see covered. Feel free to reach out on [Twitter](https://twitter.com/_benmccormick) or [email](mailto:ben@benmccormick.org)[^2].
 
 
 [^1]: A topic for a different post

@@ -152,11 +152,11 @@ class Subscribe extends React.Component {
             <div className="twitter-item">
               <span>Personal Feed: </span>
               <a
-                href="https://twitter.com/ben336"
+                href="https://twitter.com/_benmccormick"
                 className="twitter-follow-button"
                 data-show-count={false}
               >
-                Follow @ben336
+                Follow @_benmccormick
               </a>
             </div>
           </div>

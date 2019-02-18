@@ -97,7 +97,7 @@ ProgressBar.attributeChangedCallback = function(attrName, oldVal, newVal) {
 
 And that's it! We now have a working `progress-bar` element, that we can put anywhere in our HTML with no extra js configuration.
 
-<p data-height="257" data-theme-id="8140" data-slug-hash="cFyep" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/ben336/pen/cFyep/'>Custom Elements Progressbar Example</a> by Ben McCormick (<a href='http://codepen.io/ben336'>@ben336</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<p data-height="257" data-theme-id="8140" data-slug-hash="cFyep" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/ben336/pen/cFyep/'>Custom Elements Progressbar Example</a> by Ben McCormick (<a href='http://codepen.io/ben336'>@_benmccormick</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
 Of course there is plenty more we could do.  A more complicated element might require some initialization to be moved to the `attachedCallback`, and might require better cleanup using the `detachedCallback`.  For communication with the rest of our app that didn't fit well into the "changing attributes" model, we might need to implement an eventing system or global registry for accessing data.  But those are all additions on this basic, useful building block.
 

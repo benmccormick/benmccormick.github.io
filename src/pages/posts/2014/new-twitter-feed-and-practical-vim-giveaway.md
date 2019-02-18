@@ -13,7 +13,7 @@ I've got a few orders of site business to deal with today.  First, there's a new
 
 ### New Twitter Feed
 
-The new feed, [@benmccormickorg][twit], will be a Twitter "RSS Feed" with all of the posts from this site. It's just another option for people who want to subscribe, along with [RSS][rss] and my [mailing list][mail].  You can also find my personal account at [@ben336](http://twitter.com/ben336).
+The new feed, [@benmccormickorg][twit], will be a Twitter "RSS Feed" with all of the posts from this site. It's just another option for people who want to subscribe, along with [RSS][rss] and my [mailing list][mail].  You can also find my personal account at [@_benmccormick](http://twitter.com/_benmccormick).
 
 <a href="https://twitter.com/benmccormickorg" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @benmccormickorg</a>
 
