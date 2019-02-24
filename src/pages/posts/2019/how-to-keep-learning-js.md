@@ -8,7 +8,6 @@ keywords: "javascript learning newsletters blogs rss twitter"
 category: "software-productivity"
 topics: []
 key: "how-to-learn"
-isDraft: true
 readNext: "following-js-roadmap,fe-concerns,ten-things-js"
 ---
 
