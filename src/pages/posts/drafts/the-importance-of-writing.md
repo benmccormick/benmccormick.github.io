@@ -12,8 +12,9 @@ isDraft: true
 readNext: "adequate-talk,fe-concerns,favorite-interview"
 ---
 
-> I think once somebody hits a minimum threshold of technical skill to hold a job in the industry, about 80% of their ability to succeed in Software Development is determined by their communication and people skills, not their technical abilities
-> - Me, Christmas 2018
+> Once somebody hits a minimum threshold of technical skill to hold a job in the industry, about 80% of their ability to succeed in Software Development is determined by their communication and people skills, not their technical abilities
+>
+> \- *Me, Christmas 2018*
 
 I think I caught my sister in law by surprise a bit when I answered her questions about the importance of writing in my job that way.  She's an assistant professor who teaches writing to college students, and has found that her students pursuing technical degrees generally fail to see the value in learning to write.  The contrast between their expectations and my perspective after a decade working in software was strong.  I promised her at the time that I'd write down some thoughts on why writing skills are valuable for software engineers.  So here it is, 6 reasons that writing skills are crucial for working in the tech industry[^1].
 
