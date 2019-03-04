@@ -8,7 +8,6 @@ keywords: "writing"
 category: "software-productivity"
 topics: []
 key: "importance-of-writing"
-isDraft: true
 readNext: "adequate-talk,fe-concerns,favorite-interview"
 ---
 
