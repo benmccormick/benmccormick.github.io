@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-02-25T14:04:44Z</updated>
+    <updated>2019-03-04T00:16:16Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,65 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[The Importance of Writing For Software Developers]]></title>
+        <id>https://benmccormick.org/2019/03/02/the-importance-of-writing</id>
+        <link href="https://benmccormick.org/2019/03/02/the-importance-of-writing">
+        </link>
+        <updated>2019-03-02T00:00:00Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>Once somebody hits a minimum threshold of technical skill to hold a job in the industry, about 80% of their ability to succeed in Software Development is determined by their communication and people skills, not their technical abilities</p>
+<p>- <em>Me, Christmas 2018</em></p>
+</blockquote>
+<p>I think I caught my sister in law by surprise a bit when I answered her questions about the importance of writing in my job that way.  She’s an assistant professor who teaches writing to college students, and has found that her students pursuing technical degrees generally fail to see the value in learning to write.  The contrast between their expectations and my perspective after a decade working in software was strong.  I promised her at the time that I’d write down some thoughts on why writing skills are valuable for software engineers.  So here it is, 6 reasons that writing skills are crucial for working in the tech industry<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.</p>
+<h4>1. You will write every day</h4>
+<p>Every industry has truths that are obvious to those who have spent time working in the industry, but may be surprising to those on the outside.  One such truth for software engineers: our jobs involve an awful lot of writing.  Here are a few types of writing that I’ve done daily or weekly for the last decade:</p>
+<ol>
+<li>Discussing technical implementations through chat apps like slack</li>
+<li>Writing Bug Reports</li>
+<li>Writing comments in my code and technical documentation to help others and my future self understand what was done</li>
+<li>Writing reviews of other developers code to help our team improve and coordinate on best practices</li>
+<li>Answering questions from less technical employees or clients, often through email or slack.</li>
+<li>Creating design documents for complex work during planning times</li>
+</ol>
+<p>That list is illustrative but not exhaustive.  Any software engineer who wishes to build software that is used by others will end up doing plenty of writing.</p>
+<h4>2. The ability to explain complex topics will set you apart</h4>
+<p>The ability to take a complex topic and explain it in terms that somebody who doesn’t have all the background you do can understand is a critical one for software engineers.  This can help negate two of the most frustrating experiences for a developer:</p>
+<ol>
+<li>A business asking for work that doesn’t make sense because the business folks don’t understand how the product works</li>
+<li>Less experienced members of the the team routinely making mistakes and breaking things because they don’t understand how the product works</li>
+</ol>
+<p>Senior engineers who can explain and document complex pieces of software save everyone frustration by helping junior members of the team understand how things work and be more productive, and by aligning business expectations and plans to the reality of how their software systems actually work.  These are hugely valuable activities that can make a big difference in your career.</p>
+<h4>3. Writing will help you find a (better) job</h4>
+<p>When I’ve interviewed software engineers, I see a variety of problems: they fail to present their strengths, don’t manage to show a sincere interest in the job, and get caught flat-footed on fairly standard questions.  Most of these mistakes come down to a lack of preparation, not tailoring their message to their audience, and not knowing how to structure the information they know about themselves in a compelling way.  These are the skills that you’ll learn from a good class on writing, and develop through practice writing.</p>
+<p>Interviews are important, especially early on in your career.  Your compensation as you go throughout your career tends to be anchored to where you started, especially if you stay one place for a long time.  An increase of $5,000 in salary on a job you take today would mean an additional $92,000 of accumulated income over the next 15 years assuming a salary increase rate of 3% a year<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.</p>
+<p>In addition if you write publicly on a blog like this, it can help you show proof of your knowledge in a way that a resume never will.  Not everybody needs to be publicly blogging, but if that appeals to you it can be a great career booster.</p>
+<h4>4. Remote work increases the importance of writing</h4>
+<p>One of the biggest trends in the tech industry these days is the <a href="https://www.zenefits.com/blog/remote-workforce-rise/">rise of remote work</a>. More teams are embracing partial remote work, and there are major companies like Buffer, Invision and GitLab that are entirely remote.  Remote work is partially enabled by video chat technology, but written communication is the lifeblood of a successful remote team. Collaborating via tools like Slack, Github, Trello and Jira is part of most teams’ workflows, but when everybody is remote, being able to express yourself clearly on these platforms is critical.</p>
+<h4>5. Your career trajectory will depend on your ability to influence and persuade</h4>
+<p>Most developers when they begin their first software job will be given a set of tasks to do and the expectation is that they will create work to the spec that somebody else has designed.  They are implementors.  But as a developers career progresses there is an opportunity to be more than an implementor.  Since developers understand the system best, they often have ideas that can help shape product designs.  Developers also often need to work with other teams whose goals may not be completely aligned with their team.  These are not situations where even a senior engineer is likely to have direct authority.  Instead the developers who continue to grow in their careers are those who are able to influence and persuade without authority.</p>
+<p>This is again a skill that writing classes can cultivate.  Persuasive writing practice can help give you the clarity of thought and intuition for structuring arguments that will help both when you’re trying to make a point through writing or doing it verbally.</p>
+<h4>6. Writing skills translate to writing code</h4>
+<p>This last one is really specific to software engineering, but I’ve found that applying writing principles to code has helped me write more maintainable code.  Most code written in a professional context will be read many times by other people (or by the original author after they have long lost track of their original context).  Being able to write code that can be understood by both a computer and by human beings is a skill developed over time, but many of the same “brain muscles” that you develop in writing prose can be applied to code: it’s important to know your audience, structure your information in a logical manner, and use judgement when finding just the right phrase (or code structure) for a situation.  That could be a whole post in itself.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>I write based on the tech industry and software development specifically because that is what I have lived, but most of these points should be equally applicable to any engineering career and would likely require very little modification for science and research as well.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>Ok real world promotion rates in the tech industry are likely to be choppier than that, but the example holds.</p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How To Keep Learning JavaScript]]></title>
         <id>https://benmccormick.org/2019/02/18/how-to-keep-learning-js</id>
@@ -937,44 +996,6 @@ expires.  Each time the loop runs, it checks to see whether it should wait for a
 <li><strong>Architecture is about decisions that are important and hard to change, with a goal of improving the efficiency of a project</strong></li>
 <li><strong>Front End architecture is often concerned with the areas of Ease of Change, Security, Accessibility, Reliability, Performance and Capability</strong></li>
 </ul>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Book Review: Radical Candor]]></title>
-        <id>https://benmccormick.org/2019/01/01/book-review-radical-candor</id>
-        <link href="https://benmccormick.org/2019/01/01/book-review-radical-candor">
-        </link>
-        <updated>2019-01-01T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>Have you ever read a non-fiction book that you just couldn’t put down because you kept hitting paragraph after paragraph of useful, practical wisdom?  That was me reading <a href="https://amzn.to/2SABeXz">Radical Candor</a> by Kim Scott this summer.  It’s a ~200 page masterpiece on communication, leadership and being real at work.  The ideas in Radical Candor have already been a huge help to me as I’ve transitioned into a manager role over the past few months, and I fully expect to refer back to them a lot in the years to come.  It was the best thing I read in 2018, so I wanted to write a quick review to start the new year.</p>
-<p>Radical Candor is split into 2 parts: part 1 is philosophical, and builds out a philosophy of working with and managing people that’s based on honest guidance and feedback backed by genuine care.  The second half of the book is tactical and focused on techniques that managers can use to implement the philosophical ideas.  Overall it is a book for managers, but is also relevant and useful for anyone who has a manager or who wants to work better with others in a professional setting.</p>
-<div class="inline-img">
-    <a class="gatsby-resp-image-link" href="/static/99fcbb54afd2343a252ea238c5f977e3/12735/candor-diagram.png" style="display: block" target="_blank" rel="noopener">
-    <span class="gatsby-resp-image-wrapper" style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;">
-    <span class="gatsby-resp-image-background-image" style="padding-bottom: 90.35211267605634%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsSAAALEgHS3X78AAADp0lEQVQ4yz1Uy3LiVhDVp2Uzm1kli1QWU9klm2xTlayTWbhSediu8Zixx/Py2GMbP7BhMDYPgzFPCYQASSAEQoCn8hknp68giy7V7dv39OnT3dIWiwCzxQSzeYD5YorZLMDicc5zCNM0MRi69IfqHM54P49ssZhF9hjSpksLoM0FcD5hsFiAkMG266DTtXB8eoH4+SX6jo1xMEYwnUQWLmOXJiTmihABFRgDpmEULGzqehPxi0sUSiWk0hnsHxzDJdMpkwUqdgkkIPTNyV6qUwwjMGanTaZj+BNfPfry7wJniSQq9Zo6j8Ye70Zk6qs4IRAKcBgBz1YM5WIFJI+GIw+eL98hnn79PTZe7ipwdziAx/sRQaOkEeh0GlU4WzLWgqn/f1ax0XiEgTekliFirz+gXK3ycUC/r3SUryRexSu2K1ABnBDMn3hothrUroZasw693ULAjm6/fs+SG7DsLhpGE4bZYsNssvRV4hWRYGnCWPOZzR3auMndIH2bRjxxiuvcLcbM+mLnLR4IWG3WcJlO8j6DtmUuWY4iTQm+MiGnCbsJy9ZbOssrI1csoFAuYcRLASxVqjB7lvLf3Rdh9brL0qOyZ+zu/DFU0/H4ZQZt4LlIZ245d101f1a/D8PqwPWH2NjeQ/6+DNsbwGFThv4ILpvVMHTF0Gi31Wjdle5RqdVRq9ehxXbf4asn32Ir9hbrm6/w50YMf6zHsLXzHj/89Ct+X9vE5vYb/PNiF+tbu9h58xHffPcjnq+twyGBV3x/8OkE7/YPET+7gNZlOVefqU3HhNntoNFqodJoos1NWft7C6lMFrrZwQN9VV1n4wx8OIijUCwrLa8+XyN1ncEJt6oqDKXkWqOCYrmoLE+d0rksgXXFLHVzS18JxcoD9XzgBBjUbgKfYLI9anOWKyiNUYCZbAZHp8c4PDnCYfwEex/3VWM2Xu7h6Owc+/QfJy7w6ewUiVQSLVbTo9aO6yrdB9TYo7bSdW0wdDhfOvJ3OWQLWdzkc0hm0orhX9Q0kUrhPHmJDP3XZJ69Kyh5ev0ebMeBM3DVVsl2jQXQdnro2RYDuuhyJCS7YbZhdNpsxA7y7GCHfgERXU1Og5jVk3d9ghLQi1bWZ+e1vmPB6rbR5ha0aHW9wa3RlXZPnj7DNrsozao06qhzXJotg+AdNWYC2rdtVbqs64gstZ7dUYCmAHYMBSZrJiv48y+/4Sqdpr+lfmnSEGHftiJAqUjKHsiMsmyZzf8AI9K97oDI4JEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;"></span>
-    <img class="gatsby-resp-image-image" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;" alt="Radical Candor diagram" title="" src="/static/99fcbb54afd2343a252ea238c5f977e3/d766e/candor-diagram.png" srcset="/static/99fcbb54afd2343a252ea238c5f977e3/a6b6e/candor-diagram.png 143w,
-/static/99fcbb54afd2343a252ea238c5f977e3/8e488/candor-diagram.png 285w,
-/static/99fcbb54afd2343a252ea238c5f977e3/d766e/candor-diagram.png 570w,
-/static/99fcbb54afd2343a252ea238c5f977e3/13239/candor-diagram.png 855w,
-/static/99fcbb54afd2343a252ea238c5f977e3/cab6d/candor-diagram.png 1140w,
-/static/99fcbb54afd2343a252ea238c5f977e3/71f14/candor-diagram.png 1710w,
-/static/99fcbb54afd2343a252ea238c5f977e3/12735/candor-diagram.png 2840w" sizes="(max-width: 570px) 100vw, 570px">
-  </span>
-  </a>
-</div>
-<p>The heart of the book is the 2x2 grid diagram that Scott sprinkles throughout the chapters, showing the 4 quadrants that can characterize an interaction, relationship or communication style.  People who don’t care about those they work with and also don’t challenge them fall into manipulative insincerity and should be avoided at all costs.  The Steve Jobsian category of Obnoxious Aggression is when somebody is willing to challenge directly but doesn’t care about the people they’re challengin. To Scott’s mind, Obnoxious Aggression is preferred over Ruinous Empathy; when people who hate the idea of hurting somebody so much that they fail to tell them important truths.  But the target quadrant is Radical Candor, a state where you deal with people in a way that is backed by real humanity while still being willing to be exceptionally honest and challenging.</p>
-<p>This core idea wasn’t super new to me, I had seen it formulated in Church contexts as <code class="language-text">Grace + Truth = Growth</code> in the past.  But Scott puts in the work to show how these ideas play out in a wide variety of professional situations and relationships, and her examples left me teeming with new ideas on how to interact better with my coworkers.  The theme is good, but the implementation ideas and little nuggets of wisdom and experience sprinkled throughout are better.  As a result, Radical Candor is one of the best books on relationship and communication I have ever read.</p>
-<p>I would recommend it for anyone who</p>
-<ol>
-<li>Manages people</li>
-<li>Wants to manage people</li>
-<li>Has a manager</li>
-<li>Has to deal with people</li>
-</ol>
-<p>Do yourself a favor and check it out.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
