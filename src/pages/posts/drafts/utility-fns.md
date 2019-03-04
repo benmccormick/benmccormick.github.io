@@ -55,7 +55,7 @@ return <Button
 </Button>
 ```
 
-These are both ok, and you'll see plenty of examples of code like them out there, but the first puts a big chunk of code in a ternary, and its not always going to be clear to a reader where that `: null` came from at the end, or why its there by the time they reach the end.
+These are both ok, and you'll see plenty of examples of code like them out there, but the first puts a big chunk of code in a ternary, and it's not always going to be clear to a reader where that `: null` came from at the end, or why it's there by the time they reach the end.
 
 In the second example, we're dealing with a lot of ugly string concatenation.  There are other ways to handle this, like using template strings + ternaries but generally they each provide their own messy pieces.
 
