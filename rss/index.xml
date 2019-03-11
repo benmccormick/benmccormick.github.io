@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Mon, 04 Mar 2019 21:38:25 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 11 Mar 2019 03:21:24 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,209 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Utility Functions]]></title>
+            <link>https://benmccormick.org/2019/03/11/utility-functions</link>
+            <guid>https://benmccormick.org/2019/03/11/utility-functions</guid>
+            <pubDate>Mon, 11 Mar 2019 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>As I’ve gone through projects over time, I’ve found a few functions that I end up creating for every significant project that I’ve worked on.  Some of the details differ from project to project, but the basic function remains the same.  I thought it would be helpful to do a rundown:</p>
+<h3>React/JSX</h3>
+<p>Some of my utils are focused on making JSX nicer to deal with.  2 situations that I’ve run into a lot in JSX are conditionally showing an item in JSX, and determining which of several classes to add to an element based on logic.  Scenarios like these:</p>
+<div class="gatsby-highlight" data-language="js">
+      <pre class="language-js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token punctuation">{</span>shouldShowCreateButton <span class="token operator">?</span> <span class="token operator">&lt;</span>Button
+            onClick<span class="token operator">=</span><span class="token punctuation">{</span>createWidget<span class="token punctuation">}</span>
+            type <span class="token operator">=</span> <span class="token string">'primary'</span>
+            size <span class="token operator">=</span> <span class="token string">'Large'</span>
+            disabled <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">!</span>createEnabled<span class="token punctuation">}</span>
+            className<span class="token operator">=</span><span class="token string">'create-button'</span>
+        <span class="token operator">></span>
+            Create Widget
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span> <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre>
+      </div>
+<div class="gatsby-highlight" data-language="js">
+      <pre class="language-js"><code class="language-js"><span class="token keyword">let</span> classNames <span class="token operator">=</span> <span class="token string">'create-button'</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>extraClass<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    classNames <span class="token operator">+=</span> <span class="token string">' '</span> <span class="token operator">+</span> extraClass<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>createEnabled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    classNames <span class="token operator">+=</span> <span class="token string">' is-disabled'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>hasCreateError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    classNames <span class="token operator">+=</span> <span class="token string">' has-error'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token operator">&lt;</span>Button
+        onClick<span class="token operator">=</span><span class="token punctuation">{</span>createWidget<span class="token punctuation">}</span>
+        type <span class="token operator">=</span> <span class="token string">'primary'</span>
+        size <span class="token operator">=</span> <span class="token string">'Large'</span>
+        disabled <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">!</span>createEnabled<span class="token punctuation">}</span>
+        className<span class="token operator">=</span><span class="token punctuation">{</span>classNames<span class="token punctuation">}</span>
+    <span class="token operator">></span>
+        Create Widget
+<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span></code></pre>
+      </div>
+<p>These are both ok, and you’ll see plenty of examples of code like them out there, but the first puts a big chunk of code in a ternary, and it’s not always going to be clear to a reader where that <code class="language-text">: null</code> came from at the end, or why it’s there by the time they reach the end.</p>
+<p>In the second example, we’re dealing with a lot of ugly string concatenation.  There are other ways to handle this, like using template strings + ternaries but generally they each provide their own messy pieces.</p>
+<p>To solve these situations, I like to define these 2 small functions:</p>
+<div class="gatsby-highlight" data-language="js">
+      <pre class="language-js"><code class="language-js"><span class="token keyword">import</span> isString <span class="token keyword">from</span> <span class="token string">'lodash-es/isString'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> filter <span class="token keyword">from</span> <span class="token string">'lodash-es/filter'</span><span class="token punctuation">;</span>
+<span class="token comment">// A helper for React Components to reduce ternary use</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">showIf</span> <span class="token operator">=</span> <span class="token punctuation">(</span>condition<span class="token punctuation">,</span> element<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>condition <span class="token operator">?</span> element <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// A helper for handling class lists where some values may be undefined</span>
+<span class="token comment">// filters out anything that isn't a string and then adds spaces</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">classes</span> <span class="token operator">=</span> classList <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">filter</span><span class="token punctuation">(</span>classList<span class="token punctuation">,</span> c <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">isString</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> c<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+      </div>
+<p>The first just formalizes the most common use of ternaries in JSX (conditionally showing an item) and adds an easy to understand name to it.</p>
+<p>The second lets us work with an array of classNames instead of handling string concat ourselves, and will automatically filter out undefined or empty classNames.  This implementation does silently swallow errors on anything that is not a string, which may not be your preference.  Usage looks like this:</p>
+<div class="gatsby-highlight" data-language="js">
+      <pre class="language-js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token punctuation">{</span><span class="token function">showIf</span><span class="token punctuation">(</span>shouldShowCreateButton<span class="token punctuation">,</span> <span class="token operator">&lt;</span>Button
+            onClick<span class="token operator">=</span><span class="token punctuation">{</span>createWidget<span class="token punctuation">}</span>
+            type <span class="token operator">=</span> <span class="token string">'primary'</span>
+            size <span class="token operator">=</span> <span class="token string">'Large'</span>
+            disabled <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">!</span>createEnabled<span class="token punctuation">}</span>
+            className<span class="token operator">=</span><span class="token string">'create-button'</span>
+        <span class="token operator">></span>
+            Create Widget
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre>
+      </div>
+<p>the showIf reads much more clearly than the previous ternary, especially for language newbies who might not be used to ternaries.</p>
+<div class="gatsby-highlight" data-language="js">
+      <pre class="language-js"><code class="language-js"><span class="token keyword">let</span> classNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'create-button'</span><span class="token punctuation">,</span> extraClass<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>createEnabled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    classNames<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'is-disabled'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>hasCreateError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    classNames<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'has-error'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> <span class="token operator">&lt;</span>Button
+        onClick<span class="token operator">=</span><span class="token punctuation">{</span>createWidget<span class="token punctuation">}</span>
+        type <span class="token operator">=</span> <span class="token string">'primary'</span>
+        size <span class="token operator">=</span> <span class="token string">'Large'</span>
+        disabled <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">!</span>createEnabled<span class="token punctuation">}</span>
+        className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">classes</span><span class="token punctuation">(</span>classNames<span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token operator">></span>
+        Create Widget
+<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span></code></pre>
+      </div>
+<p>Here we’ve gotten rid of the extra string code and are working on arrays, which is a nicer data structure for dealing with lists of stuff. Also since we’re auto-filtering falsy stuff, we don’t have to worry about whether extraClass was defined if it was passed as a prop to our component or something.</p>
+<h3>Formatting</h3>
+<p>So the next few may be different for everyone.  The details here aren’t important, the important thing is that you centralize your formatting of numbers and dates.  For instance, here are functions for formatting dates, normal numbers and percentages from a current project:</p>
+<div class="gatsby-highlight" data-language="js">
+      <pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> format <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'date-fns'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> isNumber <span class="token keyword">from</span> <span class="token string">'lodash-es/isNumber'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// takes either a string or a date object and formats it as a standard date with time</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">stdFormat</span> <span class="token operator">=</span> dateStr <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>dateStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> dateStr<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">let</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>dateStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> <span class="token string">'MM/DD/YY hh:mm A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">commafy</span> <span class="token operator">=</span> <span class="token punctuation">(</span>num<span class="token punctuation">,</span> minDecimals <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNumber</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> num<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">'en-US'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            minimumFractionDigits<span class="token punctuation">:</span> minDecimals<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">percentify</span> <span class="token operator">=</span> <span class="token punctuation">(</span>num<span class="token punctuation">,</span> minDecimals <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNumber</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> num<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">'en-US'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            style<span class="token punctuation">:</span> <span class="token string">'percent'</span><span class="token punctuation">,</span>
+            minimumFractionDigits<span class="token punctuation">:</span> minDecimals<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+      </div>
+<p>The first one will take a date object and format it to something like <code class="language-text">05/30/17 01:16 PM</code>.  The second will take a number and return a string formatted with appropriate commas: <code class="language-text">1234567 -&gt; &#39;1,234,567&#39;</code>.  The last one will convert a decimal to a percentage string: <code class="language-text">0.5 -&gt; &#39;50%&#39;</code>.</p>
+<p>Note that none of these functions are very long.  I’m relying on a date library for the first piece and <code class="language-text">toLocaleString</code> for the other 2.  So I could inline this in most places and not have it get much longer.  The benefit of these types of functions is not in saving typing.  It’s in standardizing how you format or don’t format things throughout an application.  This has 2 benefits:</p>
+<ol>
+<li>It’s easy to fix bugs, add features or switch between libraries for these common tasks across your application because all of the logic is centralized.  If I needed to start supporting more locales than just the US for percentage formatting, or use moment for my date formatting library I could easily do so with edits to only one file.  That file is also well unit tested, so those transitions would be safe.</li>
+<li>It lets us control which formats are allowed.  For instance we’re allowing the function caller to specify how many decimal points to show for the numeric functions, but not giving options to change the date format for the formatting function, because we want that to be the same everywhere.  If we need to support multiple formats for different scenarios, like a date-only format or a format for communicating with the API, we can add options for that which don’t open up all formats, or expose them as separate functions.  With dates in particular, I want imports of libraries like moment or date-fns to be limited to 2 or 3 files at the most, and not used ad-hoc throughout the codebase.</li>
+</ol>
+<p>Note that all my examples so far have utilized other utility libraries like lodash and date-fns.  The best utility functions are those that you don’t have to maintain yourself.  I do recommend looking for libraries that you can tree-shake and only take what you need though.  Other ones like moment.js can make a big difference on your JavaScript bundle size if you let them.</p>
+<h3>Timing</h3>
+<p>Timeout functions are useful, but the browsers built in functions are callback based and don’t play well with promises or async await.  We can fix that:</p>
+<div class="gatsby-highlight" data-language="js">
+      <pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> secs <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> secs <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">pause</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+      </div>
+<p>I now have a promisified version of setTimeout (<code class="language-text">sleep</code>) and a special case version with a 0 timeout (useful for things that should happen as soon as possible after the current event loop executes. I prefer dealing with things in seconds over milliseconds, so I changed the API to use that.  That is probably not everyone’s cup of tea, so feel free to copy and modify.</p>
+<p>Usage looks like this:</p>
+<div class="gatsby-highlight" data-language="js">
+      <pre class="language-js"><code class="language-js"><span class="token comment">// function to kick off a "job" of some type and then</span>
+<span class="token comment">// check every 30 seconds to see if the job is complete</span>
+<span class="token keyword">const</span> createJobAndShowResults <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token function">createJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// don't do this without a timeout/failure</span>
+    <span class="token comment">// condition in real life!</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> jobStatus <span class="token operator">=</span> <span class="token function">checkIfJobIsCompleted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>jobStatus<span class="token punctuation">.</span>complete<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> jobStatus<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+      </div>
+<h3>And Even More!</h3>
+<p>This is just a sample of the small functions I usually create in projects.  Pretty much all of them exist for one or more of the reasons that were already discussed:</p>
+<ol>
+<li>Smoothing over awkward library syntax like multiple classes in JSX or HTML templates</li>
+<li>Making user intention clear with a well named function, like showIf or stdDateFormat</li>
+<li>Ensuring consistent application-specific behavior across common low-level operations like formatting or logging</li>
+<li>Making it easy to replace 3rd party utility libraries  like date-fns by wrapping them in an application specific function</li>
+<li>Improving browser level APIs, or shaping them to have useful defaults for the current application, like we did with toLocaleString and setTimeout.</li>
+</ol>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[Book Review: Deep Work & The Common Rule]]></title>
+            <link>https://benmccormick.org/2019/03/09/book-review-deep-work-common-rule</link>
+            <guid>https://benmccormick.org/2019/03/09/book-review-deep-work-common-rule</guid>
+            <pubDate>Sat, 09 Mar 2019 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>I’m trying something different today.  This is a review of 2 books I’ve read recently; I’m combining them because their similarities and differences are just as interesting to me as the practical steps they encourage.</p>
+<p><a href="https://amzn.to/2TqwDeR">Deep Work</a> is a 3 year old book from Cal Newport focused on encouraging readers to spend more time on their most important work.  It starts out with sections defining and motivating “Deep Work”: focusing without distraction on cognitively demanding tasks.  Then it goes on to give a series of recommended strategies for creating more and better deep work time in your life.</p>
+<p><a href="https://amzn.to/2F0AIgV">The Common Rule</a> is a new book by Justin Earley focused on building habits that allow living life with purpose.  It is a “Christian book”, and recommends practices like daily prayer and fasting.  But it is mainly focused on encouraging habits to combat some universal challenges of modern American life: distracting technologies, all consuming work environments, and increasing isolation.</p>
+<h3>A Shared Diagnosis</h3>
+<p>Deep Work and The Common Rule share a common view on the challenges facing many American adults today: they each tackle tech distractions, work expectations of constant availability, and time spent on shallow activities disconnected from our core goals and desires.</p>
+<p>Both authors are skeptical of modern “networking tools” like social networks, chat tools, news sites and email without dismissing them.  The primary issue both authors identify as the problem with technology is our non-critical acceptance of new tools into our lives as progress, the addictive nature of these services, and how they then impact our brains. Because we turn to technology for distraction and easy comfort whenever we’re bored, we lose our capacity for deeper engagement with the world and can lose sight of more important things.</p>
+<p>Each book also decries the problems with “constant connectivity culture”.  Deep Work comes at it from a pure productivity standpoint: expectations of constant availability create distractions that prevent us from getting into the flow of meaningful work, and when we’re answering emails at all hours of the day, we don’t get the context shifts where our brains can rest and help us be more productive later.  The Common Rule shares these concerns but is more interested in how these distractions can shape our thinking and emotions: when we get sucked into the world of social media news for instance, is the anger we feel about issues a reflection of our true priorities or a path that we’ve fallen down.  It also asks us to consider how long term media-consumption may shape these believes and not just distract from them.</p>
+<p>Finally, both authors touch on the amount of time we spend on meaningless activities.  Whether it is busy work, meetings, social media usage we feel we “have to do” or “real work” that just isn’t the most important work, both books encourage readers to value their time and be strategic about how to spend it.  They share a rare humble view of the human condition: we really do need to work with only 24 hours a day.  How to “make the most of them” is a core focus of each book.</p>
+<h3>A Suprisingly Similar Recommendation</h3>
+<p>In addition to a shared view of the problems people face, both books share a fairly similar approach to solving them.  Both books recommend ritualized structuring of life to reduce time spent on shallow, distracting activities and enable time for “the good life”.</p>
+<p>So… what is “ritualized structuring”?  Both books spend significant time outlying a series of recommended habits/rituals that combine to help make us more aware of how our time is spent, and also serve as enabling spaces for “the good life”.  Deep work recommends (among other things) structured work hours, work-free evenings, social media avoidance and end of the day “shutdown rituals” where you clean up todos and make a schedule for the next day.  The Common Rule advocates for taking an hour away from your phone each day, a meal with others each day, curating media to 4 hours each week as well as more obviously religious habits like daily prayer and a sabbath day.</p>
+<p>Each book offers these habits as “focusing tools”, ways to spend time on what is important and focus on the “good life”.  So what is the “good life”? Well…</p>
+<h3>A Subtly Different Motivation</h3>
+<p>The biggest difference between Deep Work and The Common Rule is what they’re aiming to enable.  What is the “good life” that we want to unlock as we wade out of the shallows?</p>
+<p>Deep Work sees “Deep Work” as both a good in itself and a means to career success.  Deep Work allows for craftsmanship and an impact on the world greater than we’re normally able to achieve.  And because it is both important and implicitly discouraged by the modern office environment, clearing space for it is a tremendous competitive advantage when it comes to career success.</p>
+<p>The Common Rule is explicitly focused on habits that turn us outward from ourselves; habits like a daily meal with others and a weekly hour of conversation with a friend are about connecting with the people around us, while daily prayer and weekly fasting are about connecting with God.  And ultimately they’re about health: when we connect well with God and others, we’re able to live in a way where we can accept our limitations and thrive where we are.</p>
+<p>I don’t think the 2 philosophies are incompatible per say: you can work efficiently at work while valuing your relationships, as long as you’re willing to accept the inherent limitations of the 24 hour day.  But reading these 2 books back to back reminded me that “efficiency” is never an end to itself.  It’s always important to make sure you’re heading efficiently in the right direction.</p>
+<h3>Recommendation</h3>
+<p>I highly recommend both of these books.  They are full of fantastic suggestions that I plan on implementing over time (I’m trying to avoid my classic blunder of trying to change everything about my life at once and look for bits and pieces to attempt first). But as you take in the ideas, make sure to reflect on what the “good life” looks like to you.</p>
+<h4>Amazon Links</h4>
+<ul>
+<li><a href="https://amzn.to/2TqwDeR">Deep Work by Cal Newport</a></li>
+<li><a href="https://amzn.to/2F0AIgV">The Common Rule by Justin Earley</a></li>
+</ul>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[The Importance of Writing For Software Developers]]></title>
             <link>https://benmccormick.org/2019/03/02/the-importance-of-writing</link>
@@ -861,89 +1064,6 @@ expires.  Each time the loop runs, it checks to see whether it should wait for a
 <li><strong>Reliability is an application’s ability to provide a consistent functional experience to all users in the intended audience over time.</strong></li>
 <li><strong>Reliability breaks down due to unexpected usage, external failures, bugs, and scaling problems</strong></li>
 <li><strong>You can boost reliability by defining and limiting application states, distrusting the network, thinking about variation in data, testing and monitoring</strong></li>
-</ul>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[6 Keys To Valuable Code Reviews]]></title>
-            <link>https://benmccormick.org/2019/01/14/value-from-code-reviews</link>
-            <guid>https://benmccormick.org/2019/01/14/value-from-code-reviews</guid>
-            <pubDate>Mon, 14 Jan 2019 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>I’ve read 2 things lately that really reminded me of the value of code reviews.  One was <a href="https://amzn.to/2Elk5g8">A Philosophy Of Software Design</a> by John Ousterhout, which I reviewed <a href="https://benmccormick.org/2018/12/31/book-review-philosophy-of-software-design/">here</a>.  Philosophy of Software Design is a practical guide to software design, and Ousterhout emphasizes code reviews as the best point for “practicing architecture” in real world projects.  The 2nd was Sophie Alpert’s recent blog post <a href="https://sophiebits.com/2018/12/25/why-review-code.html">Why Review Code</a>, where she lists the various advantages she’s seen from having code reviews.  I can’t improve on her list, but I can endorse it.  I’ve seen all of the things she listed as benefits from code reviews in the past.  However I’ve seen these benefits come out in some environments more than others.  So I wanted to share 6 practical tips to getting the most valuable possible out of your team’s code reviews.</p>
-<h4>1. Make sure that code reviews are multi-directional</h4>
-<p>When you start doing code reviews, it can be tempting to only have senior developers review code.  After all, they’re the ones who know the system best. But not only do you risk burning out your senior staff that way, you also miss out on some of the biggest benefits of code reviews.  You get different benefits with different team combinations.  I’m using Junior and Senior here relatively speaking, the roles may change over time or in different areas of the codebase.</p>
-<ul>
-<li><strong>Senior Reviewing Junior</strong> - This is the first thing most folks think about.  This is an opportunity for a more experienced developer to catch bugs in a less experienced developer’s code and also give suggestions for improving architecture-level structure, introducing new ways of doing things, or catching when there are opportunities for code consolidation that the original author might not have known about.</li>
-<li><strong>Junior Reviewing Senior</strong> - When a less experienced developer reviews the code of a more experienced developer, its an opportunity for them to see new ways of doing things, and also get “cheap” exposure to new areas of a codebase.  It’s also a great opportunity for them to ask questions about things they don’t understand.  But it shouldn’t be a one way street.  Often times a fresh pair of eyes are great at catching bugs, and if a code review is particularly confusing to a less experienced dev, it’s a sign that the code may need to be rewritten or better documented so that it can be maintained in the future.</li>
-<li><strong>Peer Reviewing Peer</strong> - When 2 developers have roughly equal skill and experience with the codebase, code reviews are still an opportunity for a second pair of eyes, but they also have the benefits of building team collective knowledge about the codebase and exposing times when there are differences in approach across the team.  Conversations at this level are a great place to standardize on best practices and team conventions.</li>
-</ul>
-<h4>2. Hold reviewers responsible for the code they review</h4>
-<p>If a bug makes it past initial development efforts and is caught by QA or ends up in production, who is responsible for it?  Although there will ideally always be layers of accountability here, most developers I know naturally tend to hold themselves responsible when code they wrote breaks something, but also apply the same standard to others.  This can lead to rubber-stamp code reviews when things get busy, since there’s no “skin in the game”.  The benefits of code review tend to come out though, when developers take that same responsibility for the code they review.  A team culture that sees the reviewer and the developer as equally responsible for maintainable code, bug-smashing, and other architecture concerns will lead to better code reviews.  This means treating code review as a core job responsibilities for devs and rewarding those who do it well, rather than just tacking it on.</p>
-<h4>3. Match technology to your process</h4>
-<p>The teams I’ve worked on that didn’t have real code review processes also didn’t have an easy setup to make it work.  They were reviewing diffs manually in their editors or over email.  Tools like Github, Bitbucket and Gitlab have made this much easier.  If you want this to be part of your process, make it as easy as possible.</p>
-<h4>4. Use checklists where appropriate</h4>
-<p>In moderation, I’ve found checklists a useful tool for code reviews.  If your team has specific areas of focus that you want to improve compliance on, it can be helpful to give reviewers a list of items to sign off on.  For instance:</p>
-<ul>
-<li>Verify change supports internationalization</li>
-<li>Verify change doesn’t add any new code with legacy framework</li>
-<li>If change is user-facing, verify it includes documentation updates</li>
-</ul>
-<p>You can take this too far, the review process shouldn’t be reduced to repetitive box-ticking.  But these can be great as guides for implementing new initiatives or addressing problem areas in code.</p>
-<h4>5. Make code reviews as atomic as possible</h4>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">10 lines of code = 10 issues.<br><br>500 lines of code = &quot;looks fine.&quot;<br><br>Code reviews.</p>&mdash; I Am Devloper (@iamdevloper) <a href="https://twitter.com/iamdevloper/status/397664295875805184?ref_src=twsrc%5Etfw">November 5, 2013</a></blockquote>
-<p>Huge code reviews are overwhelming, and much easier to rubber stamp.  When you develop a culture of creating small focused issues and reviewing each of them, it leads to more interaction and better results. Single issue (atomic) code reviews are best.  As a rule of thumb, if you can describe the change without using the words “and”, “rewrite”, or “a couple of different”, you’re probably doing alright.</p>
-<h4>6. Leave space to make changes</h4>
-<p>Finally, code reviews will have the most value if as a team you’re committed to acting on the feedback received.  That means being supportive when a code review leads to a re-write or refactor.  Sometimes that will need to be delayed of course, but in a healthy process there should usually be time to act on feedback.  This is of course easier if you’ve followed the previous suggestion and kept your code reviews small.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[What's involved in Front End Architecture?]]></title>
-            <link>https://benmccormick.org/2019/01/07/the-concerns-of-fe-architecture/</link>
-            <guid>https://benmccormick.org/2019/01/07/the-concerns-of-fe-architecture/</guid>
-            <pubDate>Mon, 07 Jan 2019 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>The word “architecture” gets thrown around a lot in software discussions.  But we don’t seem to always use it the same way.  Some example usages:</p>
-<blockquote>
-<p>Our app uses Redux for our architecture.</p>
-</blockquote>
-<p>Sometimes we assume that because we are using a framework or data management library, that must be our architecture.</p>
-<blockquote>
-<p>I created a diagram of our dependency graph, showing all the imports in the code, as a way of seeing our architecture.</p>
-</blockquote>
-<p>We could also say the way your program is structured (which files depend on which other files) represents your architecture.  If we’re fancy, then maybe we have <a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language">UML diagrams</a> representing this structure.</p>
-<blockquote>
-<p> Bob is our architecture guy: he decides what dependencies we can bring in, is always asking us to refactor code to make it “cleaner”, and runs a design meeting before each feature to decide how to structure the code</p>
-</blockquote>
-<p>This final quote sounds like architecture is more about the decisions you’re making as you go through a project.</p>
-<h3>Appealing to authority?</h3>
-<p>So if the community isn’t using the term consistently, let’s ask the experts.  Here are 2 definitions from folks who have written popular books on software architecture.</p>
-<p>Robert Martin (Uncle Bob) uses the following definition in <a href="https://amzn.to/2rROcEA">Clean Architecture</a>:</p>
-<blockquote>
-<p>The goal of software architecture is to minimize the human resources required to build and maintain the required system.</p>
-</blockquote>
-<p>Martin Fowler gave his definition in a talk titled <a href="https://www.youtube.com/watch?v=DngAZyWMGR0">Making Architecture Matter</a>. It is worth watching in full, but paraphrased, his definition is:</p>
-<blockquote>
-<p>Software architecture is those decisions which are both important and hard to change</p>
-</blockquote>
-<p>These 2 definitions turn out to be complementary.  Uncle Bob motivates architecture: we’re focused on minimizing the work put into the system.  Martin Fowler’s definition shows what parts of the system architecture is concerned with: the parts that are “important” and hard to change.</p>
-<p>The next question of course is… what is important?  The unsatisfactory answer is that it depends.  It will change between projects, and will change within a project over time.  But when we scope the question to the domain of front end development, common themes emerge.  Specifically there are 6 areas of concern that I see coming up again and again in public and private front end architecture discussions.  They’re not exclusive to the front end, but they’re a good starting point for anyone thinking about building web applications.</p>
-<h4>Ease of Change</h4>
-<p>When new requirements arrive, how quickly are developers able to make changes and release new code to production?  When there are bugs, how easy is it to find the problem and fix it?  Are developers able to consistently deliver correct code?  Or are multiple iterations often required?</p>
-<h4>Security</h4>
-<p>Can a malicious user inject code into your site?  Are you unnecessarily exposing information about your users or code structure? And you are working with your API developers to use secure authentication and authorization practices right?</p>
-<h4>Accessibility</h4>
-<p>This concern is broader than the way the word is often used in web dev circles.  Is the full audience of this site or application able to use it with as few limitations as possible?  Users with disabilities?  Users with older but supported browsers?  How about international users or those with slow connections?  Does your site work on mobile?  Offline?  On Apple Watch?  Do you support AMP? And do your pages appear nicely on social media?  Do you even care about any of these audiences? Maybe you’re optimizing for people who aren’t your users?</p>
-<h4>Reliability</h4>
-<p>Is a site or  application consistently available to users?  Does it often fail, and if so how does it recover?  If things are breaking, are the developers aware of it quickly?  Do different users in different scenarios receive a consistent experience?</p>
-<h4>Performance</h4>
-<p>Is a site or application consistently quick to load and interact with?  If there are animations or highly interactive elements, are they responsive and usable, or do they freeze/jank? Is the user disrupted in their tasks by strange loading behavior?</p>
-<h4>Capability</h4>
-<p>Is your site limited in fulfilling its purpose because of foundational decisions or tradeoffs with the other concerns?  Have you made decisions that let you serve your audience in unique ways because of your tech stack or development processes?  Do your technical decisions even make sense in the context of your site or application’s purpose?</p>
-<h3>Coming Soon</h3>
-<p>I’m hoping to look at each of these areas more in depth in the coming weeks, as well as exploring how we make decisions that impact multiple areas simultaneously.  In the meantime, as you’re looking at decisions and tools that will impact the long term structure of your front end application, consider how they’ll impact each of these areas.</p>
-<p><strong>TL;DR</strong></p>
-<ul>
-<li><strong>Architecture is about decisions that are important and hard to change, with a goal of improving the efficiency of a project</strong></li>
-<li><strong>Front End architecture is often concerned with the areas of Ease of Change, Security, Accessibility, Reliability, Performance and Capability</strong></li>
 </ul>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
