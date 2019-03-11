@@ -8,7 +8,6 @@ keywords: "utility functions"
 category: "software-productivity"
 topics: []
 key: "utility-functions"
-isDraft: true
 readNext: "readable-async,how-to-learn,react-confessions"
 ---
 
