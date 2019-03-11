@@ -9,6 +9,7 @@ category: "reviews"
 topics: []
 key: "deep-work-common-rule-review"
 amazonlink: https://amzn.to/2TqwDeR
+isDraft: true
 image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1455586692&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
 readNext: "info-we-trust-review,philosophy-of-software-design-book,radical-candor-book"
 ---
