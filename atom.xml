@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-03-11T03:21:24Z</updated>
+    <updated>2019-03-18T02:13:12Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -190,42 +190,6 @@
 <li>Making it easy to replace 3rd party utility libraries  like date-fns by wrapping them in an application specific function</li>
 <li>Improving browser level APIs, or shaping them to have useful defaults for the current application, like we did with toLocaleString and setTimeout.</li>
 </ol>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Book Review: Deep Work & The Common Rule]]></title>
-        <id>https://benmccormick.org/2019/03/09/book-review-deep-work-common-rule</id>
-        <link href="https://benmccormick.org/2019/03/09/book-review-deep-work-common-rule">
-        </link>
-        <updated>2019-03-09T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>I’m trying something different today.  This is a review of 2 books I’ve read recently; I’m combining them because their similarities and differences are just as interesting to me as the practical steps they encourage.</p>
-<p><a href="https://amzn.to/2TqwDeR">Deep Work</a> is a 3 year old book from Cal Newport focused on encouraging readers to spend more time on their most important work.  It starts out with sections defining and motivating “Deep Work”: focusing without distraction on cognitively demanding tasks.  Then it goes on to give a series of recommended strategies for creating more and better deep work time in your life.</p>
-<p><a href="https://amzn.to/2F0AIgV">The Common Rule</a> is a new book by Justin Earley focused on building habits that allow living life with purpose.  It is a “Christian book”, and recommends practices like daily prayer and fasting.  But it is mainly focused on encouraging habits to combat some universal challenges of modern American life: distracting technologies, all consuming work environments, and increasing isolation.</p>
-<h3>A Shared Diagnosis</h3>
-<p>Deep Work and The Common Rule share a common view on the challenges facing many American adults today: they each tackle tech distractions, work expectations of constant availability, and time spent on shallow activities disconnected from our core goals and desires.</p>
-<p>Both authors are skeptical of modern “networking tools” like social networks, chat tools, news sites and email without dismissing them.  The primary issue both authors identify as the problem with technology is our non-critical acceptance of new tools into our lives as progress, the addictive nature of these services, and how they then impact our brains. Because we turn to technology for distraction and easy comfort whenever we’re bored, we lose our capacity for deeper engagement with the world and can lose sight of more important things.</p>
-<p>Each book also decries the problems with “constant connectivity culture”.  Deep Work comes at it from a pure productivity standpoint: expectations of constant availability create distractions that prevent us from getting into the flow of meaningful work, and when we’re answering emails at all hours of the day, we don’t get the context shifts where our brains can rest and help us be more productive later.  The Common Rule shares these concerns but is more interested in how these distractions can shape our thinking and emotions: when we get sucked into the world of social media news for instance, is the anger we feel about issues a reflection of our true priorities or a path that we’ve fallen down.  It also asks us to consider how long term media-consumption may shape these believes and not just distract from them.</p>
-<p>Finally, both authors touch on the amount of time we spend on meaningless activities.  Whether it is busy work, meetings, social media usage we feel we “have to do” or “real work” that just isn’t the most important work, both books encourage readers to value their time and be strategic about how to spend it.  They share a rare humble view of the human condition: we really do need to work with only 24 hours a day.  How to “make the most of them” is a core focus of each book.</p>
-<h3>A Suprisingly Similar Recommendation</h3>
-<p>In addition to a shared view of the problems people face, both books share a fairly similar approach to solving them.  Both books recommend ritualized structuring of life to reduce time spent on shallow, distracting activities and enable time for “the good life”.</p>
-<p>So… what is “ritualized structuring”?  Both books spend significant time outlying a series of recommended habits/rituals that combine to help make us more aware of how our time is spent, and also serve as enabling spaces for “the good life”.  Deep work recommends (among other things) structured work hours, work-free evenings, social media avoidance and end of the day “shutdown rituals” where you clean up todos and make a schedule for the next day.  The Common Rule advocates for taking an hour away from your phone each day, a meal with others each day, curating media to 4 hours each week as well as more obviously religious habits like daily prayer and a sabbath day.</p>
-<p>Each book offers these habits as “focusing tools”, ways to spend time on what is important and focus on the “good life”.  So what is the “good life”? Well…</p>
-<h3>A Subtly Different Motivation</h3>
-<p>The biggest difference between Deep Work and The Common Rule is what they’re aiming to enable.  What is the “good life” that we want to unlock as we wade out of the shallows?</p>
-<p>Deep Work sees “Deep Work” as both a good in itself and a means to career success.  Deep Work allows for craftsmanship and an impact on the world greater than we’re normally able to achieve.  And because it is both important and implicitly discouraged by the modern office environment, clearing space for it is a tremendous competitive advantage when it comes to career success.</p>
-<p>The Common Rule is explicitly focused on habits that turn us outward from ourselves; habits like a daily meal with others and a weekly hour of conversation with a friend are about connecting with the people around us, while daily prayer and weekly fasting are about connecting with God.  And ultimately they’re about health: when we connect well with God and others, we’re able to live in a way where we can accept our limitations and thrive where we are.</p>
-<p>I don’t think the 2 philosophies are incompatible per say: you can work efficiently at work while valuing your relationships, as long as you’re willing to accept the inherent limitations of the 24 hour day.  But reading these 2 books back to back reminded me that “efficiency” is never an end to itself.  It’s always important to make sure you’re heading efficiently in the right direction.</p>
-<h3>Recommendation</h3>
-<p>I highly recommend both of these books.  They are full of fantastic suggestions that I plan on implementing over time (I’m trying to avoid my classic blunder of trying to change everything about my life at once and look for bits and pieces to attempt first). But as you take in the ideas, make sure to reflect on what the “good life” looks like to you.</p>
-<h4>Amazon Links</h4>
-<ul>
-<li><a href="https://amzn.to/2TqwDeR">Deep Work by Cal Newport</a></li>
-<li><a href="https://amzn.to/2F0AIgV">The Common Rule by Justin Earley</a></li>
-</ul>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
@@ -1116,6 +1080,43 @@ expires.  Each time the loop runs, it checks to see whether it should wait for a
 <li><strong>Reliability breaks down due to unexpected usage, external failures, bugs, and scaling problems</strong></li>
 <li><strong>You can boost reliability by defining and limiting application states, distrusting the network, thinking about variation in data, testing and monitoring</strong></li>
 </ul>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[6 Keys To Valuable Code Reviews]]></title>
+        <id>https://benmccormick.org/2019/01/14/value-from-code-reviews</id>
+        <link href="https://benmccormick.org/2019/01/14/value-from-code-reviews">
+        </link>
+        <updated>2019-01-14T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>I’ve read 2 things lately that really reminded me of the value of code reviews.  One was <a href="https://amzn.to/2Elk5g8">A Philosophy Of Software Design</a> by John Ousterhout, which I reviewed <a href="https://benmccormick.org/2018/12/31/book-review-philosophy-of-software-design/">here</a>.  Philosophy of Software Design is a practical guide to software design, and Ousterhout emphasizes code reviews as the best point for “practicing architecture” in real world projects.  The 2nd was Sophie Alpert’s recent blog post <a href="https://sophiebits.com/2018/12/25/why-review-code.html">Why Review Code</a>, where she lists the various advantages she’s seen from having code reviews.  I can’t improve on her list, but I can endorse it.  I’ve seen all of the things she listed as benefits from code reviews in the past.  However I’ve seen these benefits come out in some environments more than others.  So I wanted to share 6 practical tips to getting the most valuable possible out of your team’s code reviews.</p>
+<h4>1. Make sure that code reviews are multi-directional</h4>
+<p>When you start doing code reviews, it can be tempting to only have senior developers review code.  After all, they’re the ones who know the system best. But not only do you risk burning out your senior staff that way, you also miss out on some of the biggest benefits of code reviews.  You get different benefits with different team combinations.  I’m using Junior and Senior here relatively speaking, the roles may change over time or in different areas of the codebase.</p>
+<ul>
+<li><strong>Senior Reviewing Junior</strong> - This is the first thing most folks think about.  This is an opportunity for a more experienced developer to catch bugs in a less experienced developer’s code and also give suggestions for improving architecture-level structure, introducing new ways of doing things, or catching when there are opportunities for code consolidation that the original author might not have known about.</li>
+<li><strong>Junior Reviewing Senior</strong> - When a less experienced developer reviews the code of a more experienced developer, its an opportunity for them to see new ways of doing things, and also get “cheap” exposure to new areas of a codebase.  It’s also a great opportunity for them to ask questions about things they don’t understand.  But it shouldn’t be a one way street.  Often times a fresh pair of eyes are great at catching bugs, and if a code review is particularly confusing to a less experienced dev, it’s a sign that the code may need to be rewritten or better documented so that it can be maintained in the future.</li>
+<li><strong>Peer Reviewing Peer</strong> - When 2 developers have roughly equal skill and experience with the codebase, code reviews are still an opportunity for a second pair of eyes, but they also have the benefits of building team collective knowledge about the codebase and exposing times when there are differences in approach across the team.  Conversations at this level are a great place to standardize on best practices and team conventions.</li>
+</ul>
+<h4>2. Hold reviewers responsible for the code they review</h4>
+<p>If a bug makes it past initial development efforts and is caught by QA or ends up in production, who is responsible for it?  Although there will ideally always be layers of accountability here, most developers I know naturally tend to hold themselves responsible when code they wrote breaks something, but also apply the same standard to others.  This can lead to rubber-stamp code reviews when things get busy, since there’s no “skin in the game”.  The benefits of code review tend to come out though, when developers take that same responsibility for the code they review.  A team culture that sees the reviewer and the developer as equally responsible for maintainable code, bug-smashing, and other architecture concerns will lead to better code reviews.  This means treating code review as a core job responsibilities for devs and rewarding those who do it well, rather than just tacking it on.</p>
+<h4>3. Match technology to your process</h4>
+<p>The teams I’ve worked on that didn’t have real code review processes also didn’t have an easy setup to make it work.  They were reviewing diffs manually in their editors or over email.  Tools like Github, Bitbucket and Gitlab have made this much easier.  If you want this to be part of your process, make it as easy as possible.</p>
+<h4>4. Use checklists where appropriate</h4>
+<p>In moderation, I’ve found checklists a useful tool for code reviews.  If your team has specific areas of focus that you want to improve compliance on, it can be helpful to give reviewers a list of items to sign off on.  For instance:</p>
+<ul>
+<li>Verify change supports internationalization</li>
+<li>Verify change doesn’t add any new code with legacy framework</li>
+<li>If change is user-facing, verify it includes documentation updates</li>
+</ul>
+<p>You can take this too far, the review process shouldn’t be reduced to repetitive box-ticking.  But these can be great as guides for implementing new initiatives or addressing problem areas in code.</p>
+<h4>5. Make code reviews as atomic as possible</h4>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">10 lines of code = 10 issues.<br><br>500 lines of code = &quot;looks fine.&quot;<br><br>Code reviews.</p>&mdash; I Am Devloper (@iamdevloper) <a href="https://twitter.com/iamdevloper/status/397664295875805184?ref_src=twsrc%5Etfw">November 5, 2013</a></blockquote>
+<p>Huge code reviews are overwhelming, and much easier to rubber stamp.  When you develop a culture of creating small focused issues and reviewing each of them, it leads to more interaction and better results. Single issue (atomic) code reviews are best.  As a rule of thumb, if you can describe the change without using the words “and”, “rewrite”, or “a couple of different”, you’re probably doing alright.</p>
+<h4>6. Leave space to make changes</h4>
+<p>Finally, code reviews will have the most value if as a team you’re committed to acting on the feedback received.  That means being supportive when a code review leads to a re-write or refactor.  Sometimes that will need to be delayed of course, but in a healthy process there should usually be time to act on feedback.  This is of course easier if you’ve followed the previous suggestion and kept your code reviews small.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
