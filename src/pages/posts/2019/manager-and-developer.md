@@ -3,13 +3,12 @@ title: "Lessons from Six Months As A Manager/Developer Hybrid"
 date: "2019/03/25"
 layout: "post"
 path: "/2019/03/25/manager-and-developer"
-description: ""
+description: "What I've learned holding 2 roles"
 keywords: "manager developer"
 category: "software-productivity"
 topics: ['Management', 'Leadership']
 key: "manager-and-developer"
 readNext: "radical-candor-book,how-to-learn,book-review-five-dysfunctions"
-isDraft: true
 ---
 
 For the last 6 months I've been serving as a hybrid developer/engineering manager.  It's been an interesting experience, and because this is a fairly common way to transition into engineering management[^1], I thought it might be worthwhile to share some lessons I've learned so far.
