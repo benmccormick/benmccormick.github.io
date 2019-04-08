@@ -9,7 +9,6 @@ category: "software-productivity"
 topics: ['Management', 'Leadership']
 key: "consistency"
 readNext: "utility-functions,reusable-react,book-review-five-dysfunctions"
-isDraft: true
 ---
 
 The last few weeks I've had several conversations with a coworker about consistency in code: why do we do things one way here, and a different way there?  Some of this is macro level; Where do we split chunks of related functionality into different files?  Some of it is micro level; what should the rules be for when we use an inline function instead of pulling it out into its own named method?  Some of it is trivial; Do we use `_` or `-` to separate words in file names?  In our current codebase we're not always consistent on many of these issues.  As we've discussed the various issues, I realized that some of them bothered me more than others, and (more interestingly to me) my ideas have changed here over time.

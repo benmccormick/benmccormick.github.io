@@ -12,6 +12,7 @@ import project from '../svg/project.svgi';
 import tools from '../svg/tools.svgi';
 import question from '../svg/question.svgi';
 import desktop from '../svg/desktop.svgi';
+import smiley from '../svg/smiley.svgi';
 import categoryList from '../pages/categories.json';
 import get from 'lodash/get';
 import find from 'lodash/find';
@@ -30,6 +31,7 @@ let icons = {
   tools,
   desktop,
   organization,
+  smiley,
 };
 
 const iconWrapperBuilder = color =>
