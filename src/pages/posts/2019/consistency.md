@@ -30,7 +30,7 @@ The other thing that can happen when you try to standardize everything is a loss
 
 ### User Friendly Consistency
 
-So what **can** we do to get the benefits of consistency? The 3 ways I like to see this happen are:
+So what **can** we do to get the benefits of consistency? The 4 ways I like to see this happen are:
 
 #### Automation
 
@@ -40,7 +40,7 @@ The best way to enforce stylistic consistency and other straightforward things l
 
 Code reviews can be a good way to limitedly enforce consistency; but its good to limit scope to avoid [developers trying to become human compilers](https://samsaccone.com/posts/code-reviews-not-nits.html).  If you try to enforce too many things in code reviews, its easy for people to get caught up in going through a list and forget to apply human judgement to the context of the current code. But [code review checklists](https://benmccormick.org/2019/01/14/value-from-code-reviews) are a good way to make a coordinated push on high value items that are either new or often neglected.  This checklist should consist of a few important things to check during every review. The list should be re-examined on a regular basis and ideally kept to 5 or less items.
 
-##### Focused Refactorings
+#### Focused Refactoring
 
 Sometimes its appropriate to have "refactoring initiatives" to standardize on a particular pattern over time.  This can be good for standardizing on a particular library for a task, or removing an older pattern that persists in the codebase after a better way has been found.  My advice here is to [only do one of these at a time, and complete them before starting a new one](https://benmccormick.org/2018/01/07/large-improvements-small-team/).  One of the biggest causes of inconsistency is when a team attempts to "[standardize](https://xkcd.com/927/)" on a solution, then abandons that for a new solution without finish the migration, resulting in a [lava layer architecture](http://mikehadlow.blogspot.com/2014/12/the-lava-layer-anti-pattern.html).
 
