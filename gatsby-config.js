@@ -85,6 +85,15 @@ module.exports = {
         icon: 'desktop',
         subscribeText: 'Computer Science',
       },
+      {
+        title: 'Soft Skills',
+        description:
+          'These posts cover the human skills you need to succeed in a software career',
+        key: 'soft-skills',
+        icon: 'smiley',
+        color: '#FF3366',
+        subscribeText: 'Soft Skills',
+      },
     ],
     featuredTopics: [
       'JavaScript',
