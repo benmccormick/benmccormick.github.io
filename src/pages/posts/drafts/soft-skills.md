@@ -3,7 +3,7 @@ title: "Ten Soft Skills That Will Shape Your Career"
 date: "2019/04/15"
 layout: "post"
 path: "/2019/04/15/soft-skills"
-description: "The \"other 80%\" of career skills."
+description: "The other 80% of career skills."
 keywords: ""
 category: "soft-skills"
 topics: []
