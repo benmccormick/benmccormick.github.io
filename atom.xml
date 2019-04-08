@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-04-08T14:22:24Z</updated>
+    <updated>2019-04-08T16:46:14Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -36,12 +36,12 @@
 <h4>Standards too soon</h4>
 <p>The other thing that can happen when you try to standardize everything is a loss of creativity.  Sometimes it’s helpful to experiment for a while to find the right pattern in a codebase.  In an ideal situation experiments like that will happen on the side, or be explored in branches, but for small teams or new codebases, it will likely happen at least partially in production.</p>
 <h3>User Friendly Consistency</h3>
-<p>So what <strong>can</strong> we do to get the benefits of consistency? The 3 ways I like to see this happen are:</p>
+<p>So what <strong>can</strong> we do to get the benefits of consistency? The 4 ways I like to see this happen are:</p>
 <h4>Automation</h4>
 <p>The best way to enforce stylistic consistency and other straightforward things like naming conventions is to use automation.  Linters like <a href="https://eslint.org/">eslint</a> and auto-formatters like <a href="https://prettier.io/">Prettier</a>.  My rule here is that any linter rule that is about stylistic consistency should be auto-fixable, if not it isn’t clear enough or isn’t worth it.  For “correctness rules” it can be ok to flag errors without auto-fixing, if human judgement is needed.</p>
 <h4>Code Review Checklists</h4>
 <p>Code reviews can be a good way to limitedly enforce consistency; but its good to limit scope to avoid <a href="https://samsaccone.com/posts/code-reviews-not-nits.html">developers trying to become human compilers</a>.  If you try to enforce too many things in code reviews, its easy for people to get caught up in going through a list and forget to apply human judgement to the context of the current code. But <a href="https://benmccormick.org/2019/01/14/value-from-code-reviews">code review checklists</a> are a good way to make a coordinated push on high value items that are either new or often neglected.  This checklist should consist of a few important things to check during every review. The list should be re-examined on a regular basis and ideally kept to 5 or less items.</p>
-<h5>Focused Refactorings</h5>
+<h4>Focused Refactoring</h4>
 <p>Sometimes its appropriate to have “refactoring initiatives” to standardize on a particular pattern over time.  This can be good for standardizing on a particular library for a task, or removing an older pattern that persists in the codebase after a better way has been found.  My advice here is to <a href="https://benmccormick.org/2018/01/07/large-improvements-small-team/">only do one of these at a time, and complete them before starting a new one</a>.  One of the biggest causes of inconsistency is when a team attempts to ”<a href="https://xkcd.com/927/">standardize</a>” on a solution, then abandons that for a new solution without finish the migration, resulting in a <a href="http://mikehadlow.blogspot.com/2014/12/the-lava-layer-anti-pattern.html">lava layer architecture</a>.</p>
 <h4>Focus on the high level</h4>
 <p>If there is one place to apply human consistency checks its at the structural level.  If your high level patterns are consistent, the code base will be easy to navigate, and modular code written in a standardized high level structure will be <a href="https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to">easy to delete</a>.  Overall low level code that is inconsistent or poorly written is easier to overcome than high level code as long as you’re taking advantage of code reviews and the other methods suggested here to improve new code, because most low level code is only read occasionally.  So high traffic “messy code” can be a focus of refactoring efforts, and the rest can continue working without disturbing anything.</p>
