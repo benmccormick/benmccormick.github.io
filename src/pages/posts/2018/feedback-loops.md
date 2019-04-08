@@ -5,7 +5,7 @@ layout: "post"
 path: "/2018/08/02/feedback-loops/"
 description: "How smaller loops lead to better software"
 keywords: "feedback loops agile"
-category: "software-productivity"
+category: "soft-skills"
 topics: []
 key: "feedback-loops"
 readNext: "large-improvements-small-team,ten-things-js,react-confessions"

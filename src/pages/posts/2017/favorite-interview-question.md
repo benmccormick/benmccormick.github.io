@@ -5,7 +5,7 @@ layout: "post"
 path: "/2017/07/24/my-favorite-interview-question/"
 description: "How does the Internet work anyway?"
 keywords: "hiring interview internet"
-category: "software-productivity"
+category: "soft-skills"
 key: "favorite-interview"
 topics: ['Interviewing', 'Teams']
 readNext: "ten-things-js,jest-git,orthogonality-css-js"

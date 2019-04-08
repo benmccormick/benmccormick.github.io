@@ -5,7 +5,7 @@ layout: "post"
 path: "/2019/02/18/how-to-keep-learning-js"
 description: "What you can do to keep getting better once you have a solid baseline."
 keywords: "javascript learning newsletters blogs rss twitter"
-category: "software-productivity"
+category: "soft-skills"
 topics: []
 key: "how-to-learn"
 readNext: "following-js-roadmap,fe-concerns,ten-things-js"
