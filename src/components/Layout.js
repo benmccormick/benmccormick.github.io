@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import typography from '../utils/typography';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import '../css/mobile.css';
@@ -9,11 +9,11 @@ import '../css/typography.css';
 
 let { rhythm } = typography;
 
-const Container = styled("div")({
+const Container = styled('div')({
   width: '100%',
-  maxWidth: '960px',
+  maxWidth: '1000px',
   margin: '0 auto',
-  padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+  padding: `${rhythm(1.5)} 20px`,
 });
 
 class Layout extends React.Component {
