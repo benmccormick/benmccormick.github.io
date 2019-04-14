@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-04-11T01:27:21Z</updated>
+    <updated>2019-04-14T16:58:33Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,101 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Ten Soft Skills That Will Shape Your Career]]></title>
+        <id>https://benmccormick.org/2019/04/15/soft-skills</id>
+        <link href="https://benmccormick.org/2019/04/15/soft-skills">
+        </link>
+        <updated>2019-04-15T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>One of the most popular posts in the history of my blog was a list with the click-baity name <a href="https://benmccormick.org/2017/07/19/ten-things-javascript/">Ten Things A Serious JavaScript Developer Should Learn</a>.  It explicitly focused on the set of technical skills that you need to become a “senior” JavaScript developer.  While I’m happy with that post, I’ve always wanted to revisit the idea, because it is my strong belief that <em>once you’ve hit a minimum level of technical capability, only about 20% of career success is determined by your technical skills</em>.  The other 80% is composed of skills that can be loosely bundled under “soft skills”.</p>
+<p>You may quibble with my choice of percentage, but I don’t think the underlying idea that things other than technical ability is particularly controversial.  Even if they bitterly dismiss such things as “politics” most developers are aware that their careers are impacted by things that go beyond their ability to write algorithms.  What I haven’t seen much of however, are attempts to catalogue what these soft skills are, and how somebody might get better at them.  The second part is outside of the scope of a single post, though I will attempt to list resources here.  But the first is achievable, and that is what I will attempt to do here.</p>
+<p>The following is not an exhaustive list, but it covers 10 “soft skills” that I’ve seen have a clear impact on my career in software and those of others.  The best part? These are things you can grow in that will have an impact in your life outside of work, and in any career you might transition into in the future.</p>
+<h3>The Skills</h3>
+<h4>1. Clear Communication</h4>
+<p>While I’m making bold statements: A developer’s ability to communicate clearly is the single most important skill in determining the trajectory of their career.  Poor communicators are forced to rely on others to interpret their work, even when it is brilliant.  They will often create problems for others through miscommunications or lead teams to make suboptimal decisions because they were not able to explain the technical considerations involved in a situation.</p>
+<p>Great communicators on the other hand, enlighten.  They help teams understand what is really going on so that non-technical team members can make good decisions, and technical folk can work with confidence.  Great communicators cut through misunderstandings, expose ambiguity and poor assumptions, and can translate for team members who are having trouble making themselves heard.</p>
+<p>Communication skills are important for those on a management track, but they are just as important for those on a technical trajectory. Architects, Principal Engineers and Tech Leads must coordinate with many teams, teach less experienced developers, explain technical tradeoffs and document decisions and code.  Those are core parts of a senior technical employee’s job, and all of them come down to communication.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://benmccormick.org/2019/03/02/the-importance-of-writing">The Importance Of Writing For Software Developers</a></li>
+<li><a href="https://www.codingame.com/blog/10-tips-to-improve-your-communication-skills-as-a-software-developer/">10 Tips to Improve your Communication Skills as a Software Developer</a></li>
+</ul>
+<h4>2. Attention Management</h4>
+<p>This one is more commonly referred to as “time management”, but I agree with <a href="https://www.nytimes.com/2019/03/28/smarter-living/productivity-isnt-about-time-management-its-about-attention-management.html">this recent NYT Op-Ed</a>: the mechanics of how we organize our time is less important than whether we end up spending it on the most important things.  This broadly encompasses the ability to prioritize, to prevent distractions from wreaking havoc on productivity, and the ability to find ways to get back on track when things go wrong or priorities change.</p>
+<p>This was a weakness for me early in my career: I got things done but often did them haphazardly or inefficiently.  One of my biggest sources of growth in the last few years has been finding ways to structure and prioritize my time better, while cutting out distractions.  This has been necessary due to life changes: I’m now a parent and have people reporting to me at work.  I wouldn’t be able to meet my current responsibilities with the habits I had as a 25 year old.  For me this has been largely about focusing in on a small amount of essential things and actively removing less important things from my life.  For others it may be more about establishing patterns and limits.  Either way, this requires planning and introspection first to be effective.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://amzn.to/2TqwDeR">Deep Work - Cal Newport</a></li>
+<li><a href="http://bradfrost.com/blog/post/scheduling-every-minute-of-my-day/">Scheduling Every Minute of My Day - Brad Frost</a></li>
+<li><a href="https://www.nytimes.com/2019/03/28/smarter-living/productivity-isnt-about-time-management-its-about-attention-management.html">Productivity Isn’t About Time Management, It’s about Attention Management - Adam Grant</a></li>
+</ul>
+<h4>3. Initiative</h4>
+<p>If you see an opportunity or a problem, do you do something about it?  I’ve been reading a good amount of “manager books” recently, and in many of them a surprising amount of focus is dedicated to the question of how we create conditions when people are “empowered” to act.  And there certainly is an environmental factor here.  People are more likely to take initiative and risks when they’re not afraid of being punished for it.  But the individual also controls a lot here.  Developers who are willing to step up and take initiative in a situation can make an outsize impact.</p>
+<p>Do you have a piece of code or process on your team that everybody acknowledges is a bit wonky, but nobody has ever taken the time to fix even though it is slowly taking a toll on the team over time?  Are there simple things that you know could make your product better, but nobody has quite taken the time to get to them?  Those are the opportunities that initiative can turn into value.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://overreacted.io/fix-like-no-ones-watching/">Fix Like No One’s Watching</a></li>
+</ul>
+<h4>4. Empathy</h4>
+<p>There is no meaningful software product that has been created in isolation.  One person may have written the code (though that is quite rare for software with any scale of impact), and maybe even didn’t collaborate with anyone to handle distribution / hosting etc, but if that software is used by others there is always support, training and marketing to consider.  You can create a todo app for yourself without talking to anyone.  But nobody makes a career in this business without talking to other humans.</p>
+<p>The thing about us humans; we work well with people who we trust, and who we perceive as caring about us.  We also are for the most part exceptionally good at discerning when somebody is faking it.  So if we can’t get away from humans, and we can’t be fake, what can we do?  We are left with, in the words of Dale Carnegie “becoming genuinely interested in other people”.  If you’re currently filled with red-faced frustration at your annoying co-worker or manipulative boss, this may seem like asking for a miracle. And arguably any time we look outside ourselves it is a miracle. But regardless of your philosophical outlook on such things, there are definitely ways we can improve in how we work with and care for the people around us.  And it starts with trying to empathize and seeing the people around us as human beings and not obstacles or tools.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://amzn.to/2Iiooe4">How To Win Friends And Influence People - Dale Carnegie</a></li>
+<li><a href="https://amzn.to/2YSZasy">Radical Candor - Kimball Scott</a></li>
+<li><a href="https://amzn.to/2WVkqfv">I Hear You - Michael Sorenson</a></li>
+</ul>
+<h4>5. Negotiation &#x26; Persuasion</h4>
+<p>You may not think that Software Engineering involves much negotiation.  But that is only true if you use a shallow definition of negotiation.  Every time a team debates implementation strategies for a feature, which tickets should end up in a sprint, and how much time to spend chasing a difficult to reproduce bug, they are engaging in negotiation, and team members are attempting to persuade.  And there is a wealth of knowledge out there describing how to improve on these skills.</p>
+<p>A word of caution here; unlike some of the other things on this list, these skills can often be dangerous when they’re improved in isolation.  When developers complain about politics trumping technical ability, they’re often experiencing decisions being made based on the ability of some employees to persuade and negotiate.  When those employees are not actually providing the best ideas this is suboptimal.  For the technically skilled employees, the answer is to learn to persuade better.  But for those who can negotiate we always need to make sure that we’re <strong>persuading for good</strong>.  Just like the loudest voices shouldn’t always win, when you can communicate well, make sure to stay humble and  boost other’s good ideas when you see them.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://amzn.to/2OUBnnl">Negotiation Genius - Deepak Malhotra and Max Bazerman</a></li>
+</ul>
+<h4>6. Continual Learning</h4>
+<p>Were you paying attention in high school physics when they taught about the difference between distance, velocity, and acceleration?  Distance is the amount an object has traveled.  Velocity is the speed at which it is currently moving in a given direction.  Acceleration is the rate at which the object’s velocity is changing.  If you want to know where an object is <em>right now</em>, distance is the only thing that matters.  But as time progresses, velocity starts to matter more, and in the very long term any difference in acceleration will be the only thing that matters.</p>
+<p>The same ideas play out when acquiring skills.  If you need to evaluate your career potential for the next few months, the skills and accomplishments you’ve acquired so far (distance) are the only things that matter.  But if you want to think about your career potential over the next 30 years, the new skills you’re acquiring (velocity) and even more importantly your ability to get better at learning new things (acceleration) will matter much much more. Learning is a skill unto itself, and the earlier you invest in it the more dividends it will pay over time.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://css-tricks.com/learning-to-learn/">Learning To Learn - Sarah Drasner</a></li>
+<li><a href="http://benmccormick.org/2019/02/18/how-to-keep-learning-js">How To Keep Learning JavaScript</a></li>
+</ul>
+<h4>7. Self Care</h4>
+<p>Another lesson that I’ve learned the hard way in my career is the reality of my own mortality.  None of us are indestructible, and our bodies are not perpetual energy machines.  They require care and maintenance.  Our souls too are not meant to run on work alone, and we can burn out hard without sufficient rest.  This is all aside from deeper issues of disease and mental health that can change our lives in even more profound and difficult ways.</p>
+<p>Self care is a career skill because frankly we are great at deluding ourselves into thinking we’re functioning normally while we’ve compromised ourselves.  <a href="https://www.thecut.com/2014/07/you-might-not-know-if-youre-sleep-deprived.html">Research</a> shows that we are horrible judges of whether our judgement and creativity are compromised by lack of sleep.  Because we can’t run controlled studies on ourselves, we don’t really know whether our lack of exercise or 60 hour workweek induced burnout are hurting our creativity.  But research suggests it is for pretty much everybody.</p>
+<p>Healthy socialization, sleeping, eating and exercise ultimately lead to better emotional stability, ability to focus, and creativity.  But even aside from the career benefits, when we’re devouring our bodies and minds for work, it leads to a question of what we’re doing this for in the first place.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://amzn.to/2OVBpvx">Why We Sleep - Matthew Walker</a></li>
+<li><a href="https://benmccormick.org/2019/03/09/book-review-deep-work-common-rule">Deep Work &#x26; The Common Rule</a></li>
+</ul>
+<h4>8. Business Awareness</h4>
+<p>Do you know what your company actually does?  Do you understand why the features you’re building are important, and the relative priority of them?  Can you explain the business tradeoffs involved when you’re making an software architecture decision between performance and security?</p>
+<p>In companies larger than a few people it’s not ultimately developers’ jobs to make business decisions.  But understanding the context for those decisions helps us better prioritize our time, make good tradeoffs, and call attention to inefficiencies or counterproductive behavior in our products. In addition, nobody wants to spend time working on things that don’t matter. But when we try to innovate without understanding the broader business, we often end up doing just that.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://mcfunley.com/choose-boring-technology">Choose Boring Technology - Dan McKinley</a></li>
+</ul>
+<h4>9. Marketing and Branding</h4>
+<p>Marketing is a dirty word in engineering circles.  Many take the attitude of the Dilbert comics that <a href="https://dilbert.com/strip/1997-05-02">marketing is a synonym for exaggeration lying, and fraud</a>.  But at it’s core marketing is just making sure that the people who could benefit from your services are aware of those services.  This has several applications to developers.  In the job market, finding ways to let employers know who you are and what you’re capable of is important.  But in medium to large companies it also is important to do some level of internal marketing; to make sure you’re credited for the work you’ve done and that people understand it’s values.  Developers who consider themselves above this or dismiss it as politics do so at their own peril.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://www.stephaniemorillo.co/single-post/2019/02/17/7-Common-Content-Marketing-Mistakes-Developers-Make-and-How-to-Avoid-Them">7 Common Content Marketing Mistakes Developers Make and How to Avoid Them - Stephanie Morillo</a></li>
+</ul>
+<h4>10. Character</h4>
+<p>The final item here is in some ways an oddball.  While the other 9 things on this list are skills that you can work on, character is something deeper.  Questions of what good character is and how you develop it are way outside the scope of this post.  And I would personally consider any attempt to improve your character for solely utilitarian career reasons to be ultimately hollow.  But character is undeniably important in your career.</p>
+<p>Do the people around you trust you?  Do they believe that you’re trying to do the right thing?  If the answers are no, you may find obstacles in the most unexpected places.  If the answers are yes, you will eventually find help from people you would never have looked to.</p>
+<p>In addition, as an industry, technology has the power to shape the world, and as practitioners we all get the chance to impact our little corners of the world.  It’s worth considering not just whether we’re “succeeding in our career”, but what impact we’re having on the world around us.</p>
+<p><strong>Resources</strong></p>
+<ul>
+<li><a href="https://amzn.to/2I5jP7K">Future Ethics - Cennydd Bowles</a></li>
+</ul>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Consistency]]></title>
         <id>https://benmccormick.org/2019/04/01/consistency</id>
@@ -940,70 +1035,6 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
 <li>I was motivated to get better at drawing, and explaining things with images in my day to day work.  I don’t do this enough.</li>
 </ol>
 <p>If all of that sounds too high level and impractical for you, this is probably not the book for you.  But anyone who is already a data viz geek will find something to love, and as somebody who is tangential to the field it certainly expanded my mind and gave me a lot to think about.  All in all, this one is easy to recommend. <a href="https://amzn.to/2Ww9BBl">Check it out!</a></p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Designing Front End Apps For Performance]]></title>
-        <id>https://benmccormick.org/2019/01/28/designing-for-perf</id>
-        <link href="https://benmccormick.org/2019/01/28/designing-for-perf">
-        </link>
-        <updated>2019-01-28T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>Performance is a tricky topic to give generalized advice about.  Moreso than any of the other <a href="https://benmccormick.org/2019/01/07/the-concerns-of-fe-architecture/">front end concerns</a> I discussed in my post at the beginning of the year, it is remarkably tied into the details of what an app is doing and how it is built.  That said, here are some general principles for designing performant applications that I’ve picked up over the years:</p>
-<h4>1. Measure First</h4>
-<p>One of the most tempting things with performance is to start making changes before you have a specific slow measurement to improve.  Maybe you’re writing your code up front with a major focus on performance because you know you’ll need it, or diving in to make changes the first time a user complains about slowness.  Regardless it can be tempting to “performance tune” before you get detailed performance measurements.</p>
-<p>This is problematic for 2 reasons: First, we often don’t know what good enough system performance is until users start using the system.  Secondly, programmers’ data-free intuitions on what parts of a system will be slow tend to be universally awful.</p>
-<p>Measuring different aspects of your system first provides several benefits:</p>
-<ol>
-<li>It gives you micro-benchmarks to improve upon, rather than waiting till “it feels good”</li>
-<li>It lets you determine which parts of the system are actually slow, so you can focus on bottlenecks</li>
-<li>It may help you justify performance focused work to project stakeholders.</li>
-<li>It will allow you to test for regressions later on</li>
-<li>It may reveal that the system performance is actually adequate in most situations, and help you narrow down edge cases to optimize or restrict</li>
-</ol>
-<p>Note that this advice encompasses two often quoted pieces of advice: Donald Knuth’s “Premature optimization is the root of all evil” and Kent Beck’s “Make it work, make it right, make it fast”.  When you only optimize based off of measurements, those things are going to naturally fall into place.</p>
-<p>So what should you measure? On the front end Google’s <a href="https://developers.google.com/web/fundamentals/performance/rail">RAIL model</a> is a good place to start.  For loading you can look at benchmarks like first paint, first meaningful paint, and Time To Interactive (TTI) as useful benchmarks. They also provide similar guidance for input responsiveness and animation. Google is a bit preachy about specific perf benchmarks to my mind, but their analysis of <em>what</em> to measure is fantastic.</p>
-<p>It’s also useful to be able to communicate to backend developers when slowness comes from backend requests, so it’s good to familiarize yourself with the network panel in your favorite browser’s developer tools.  That will let you see how long different requests are taking and help evaluate when a performance problem is actually a network problem.</p>
-<h4>2. Assume the network is slow</h4>
-<p>Related to the end of the last point, one of the defining attributes of front end development is that it always involves a network.  You can think of network requests as a giant chaos machine at the heart of your web application.  Network requests will fail, they will be slow… and they’ll almost always look better to you in local development than they will be to your users, assuming like many developers that you’re operating on reasonably good hardware and decent wifi.</p>
-<p>So the network can be a bit of a performance trap for devs.  While I still advocate measuring first, with the network it’s worth assuming that your local setup is not a good proxy for the user and either finding ways to do better tests or simply expecting that the user will have a slower or flakier connection and designing for that.  Firefox and Chrome are very helpful here, as they will allow you to simulate slower connections from within their network panel, allowing you to experience your app the way your users do.  This is especially important if you’re targeting mobile users.</p>
-<h4>3. You can do things more efficiently or you can do less</h4>
-<p>This is ultimately the heart of performance.  When an operation is slow, it is ultimately because your user’s computer is performing too many operations to fit them all into the time you want them to.  To speed things up, you either have to reduce the number of operations by making your code more efficient, or by removing some work completely.  When people talk about compiled languages being faster than non-compiled languages, this is usually what they mean: compilers are very proficient at optimizing code for efficiency and removing wasted operations.</p>
-<p>On the front end there are several major areas of potential waste: we can send too many things over the network, we can cause the browser to repaint or layout thrash unnecessarily, and we can block critical actions like responding to a users input with less critical actions like re-rendering an item offscreen.  Each of those could merit a series of articles on their own, but are great starting points when thinking about how to improve performance when no one component is obviously slow.</p>
-<p>But it is worth remembering that sometime the only way out is doing less. Maybe you need to delay rendering some parts of the screen, or remove an expensive to render visualization. Maybe you should be using built in components instead of shipping a fancy UI component library.  I have no idea what your use case is, but it’s always worth thinking about what you can do less of.</p>
-<h4>4. Perception matters more than reality</h4>
-<p>Engineers like to deal with data and reality.  My first 3 points played right into that.  Now it’s time to go against the grain.  The truth is that users aren’t pulling up devtools to check and see if your site is slow.  It either feels slow to them or it doesn’t.  And the actual numbers are only part of that perception.  Here are some things that can make fast sites seem sluggish and slow sites seem broken:</p>
-<ol>
-<li>
-<p><strong>Not showing a visual response to user interaction</strong></p>
-<p>When a user clicks a button that triggers a network request, and the system does nothing till that request completes, it will lead to the user thinking the system is slow at best and broken at worst.</p>
-</li>
-<li>
-<p><strong>Freezing the interface while waiting on a response to a previous interaction</strong></p>
-<p>It’s always important to keep the screen interactive while waiting on a request, even if some options are disabled or limited.  The user should be able to access navigation and other standard elements of the interface as normal.  In a scenario where the request is saving data, it may be necessary to add prompts to check whether they want to interrupt the save however.</p>
-</li>
-<li>
-<p><strong>Loading states without any movement or animation</strong></p>
-<p>Sometimes people just want to know that you’re doing something.  Animation communicates that something is happening.  It can be a spinner, a flowing placeholder block, or a progress bar.  The important thing is to show the user “things are happening”.  Of course the more relevant your loading state is the better.  Facebook’s placeholder items in their newsfeed create an illusion of content coming in even faster since the loading state itself helps frame the screen for the user.  Much more effective than a loading spinner that serves to remind the user that they’re having to wait for something.</p>
-</li>
-</ol>
-<h3>Performance Is All About Effort</h3>
-<p>To quote <a href="https://hackernoon.com/10-things-i-learned-making-the-fastest-site-in-the-world-18a0e1cdf4a7">David Gilbertson’s great post on performance</a>:</p>
-<blockquote>
-<p>It’s really easy to make a slow site, all you have to do is not try to make a fast one.</p>
-</blockquote>
-<p>Performance comes down to caring, measuring and investing.  If you set reasonable benchmarks, and track them as you make changes, you’re likely to find ways to achieve them.  If you set unreasonable benchmarks and make the space to work at them, you’re likely to do better than anyone who isn’t trying that hard would expect.</p>
-<p><strong>TL;DR</strong></p>
-<ul>
-<li><strong>Measure First</strong></li>
-<li><strong>Assume The Network is Slow</strong></li>
-<li><strong>You can do things more efficiently or you can do less</strong></li>
-<li><strong>Perception > Reality</strong></li>
-<li><strong>Performance is all about effort</strong></li>
-</ul>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
