@@ -106,6 +106,7 @@ module.exports = {
   },
 
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -133,10 +134,9 @@ module.exports = {
       },
     },
     `gatsby-plugin-twitter`,
-    'gatsby-plugin-offline',
     'gatsby-plugin-emotion',
     'gatsby-plugin-glamor',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
   ],
 };
