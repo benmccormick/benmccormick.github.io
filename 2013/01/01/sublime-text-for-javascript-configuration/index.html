@@ -46,8 +46,7 @@ settings.  Its not a bad idea to immediately copy the default settings file to
 the User-Settings file when you’re initially setting up sublime so that you can
 see all of the options that are set in that file and edit them accordingly.</p>
 <p>Heres my User-Settings file for my Windows-based version of Sublime:</p>
-<div class=\"gatsby-highlight\" data-language=\"json\">
-      <pre class=\"language-json\"><code class=\"language-json\"><span class=\"token punctuation\">{</span>
+<div class=\"gatsby-highlight\" data-language=\"json\"><pre class=\"language-json\"><code class=\"language-json\"><span class=\"token punctuation\">{</span>
     // Modified Solarized Theme with Mardown Support (https<span class=\"token operator\">:</span>//gist.github.com/<span class=\"token number\">1904917</span><span class=\"token punctuation\">)</span>
    <span class=\"token property\">\"color_scheme\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Packages/User/Solarized (Light).tmTheme\"</span><span class=\"token punctuation\">,</span>
 
@@ -87,8 +86,7 @@ see all of the options that are set in that file and edit them accordingly.</p>
         <span class=\"token string\">\"Vintage\"</span><span class=\"token punctuation\">,</span>
         <span class=\"token string\">\"ZenCoding\"</span>
     <span class=\"token punctuation\">]</span>
-<span class=\"token punctuation\">}</span></code></pre>
-      </div>
+<span class=\"token punctuation\">}</span></code></pre></div>
 <h3>Visuals</h3>
 <p>One of the most configurable thing about Sublime Text is the GUI.  If you don’t
 like something about how the program looks, it is probably configurable. Some of the
@@ -100,9 +98,7 @@ more online with <a href=\"http://wbond.net/sublime_packages/package_control\">P
 plugins article.  I use Sublime’s Monokai Bright theme for JS development, and a
 <a href=\"https://gist.github.com/1904917\">custom Solarized theme</a> for writing in Markdown for this blog and my
 notes.  You can set color scheme with a command like this in one of your settings files</p>
-<div class=\"gatsby-highlight\" data-language=\"javascript\">
-      <pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token string\">\"color_scheme\"</span><span class=\"token punctuation\">:</span> <span class=\"token string\">\"Packages/User/Solarized (Light).tmTheme\"</span></code></pre>
-      </div>
+<div class=\"gatsby-highlight\" data-language=\"javascript\"><pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token string\">\"color_scheme\"</span><span class=\"token punctuation\">:</span> <span class=\"token string\">\"Packages/User/Solarized (Light).tmTheme\"</span></code></pre></div>
 <p>or you can set it in the preferences menu on the top of the screen (this will set it
 in your User-Settings file)</p>
 <h4>Theme</h4>
@@ -110,9 +106,7 @@ in your User-Settings file)</p>
 default is by no means ugly, many people prefer the <a href=\"https://github.com/buymeasoda/soda-theme/\">Soda</a> theme that adds
 some prettier gradients and a choice of a light/dark theme.  You can set that
 like this after downloading the theme:</p>
-<div class=\"gatsby-highlight\" data-language=\"javascript\">
-      <pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token string\">\"theme\"</span><span class=\"token punctuation\">:</span> <span class=\"token string\">\"Soda Light.sublime-theme\"</span><span class=\"token punctuation\">,</span></code></pre>
-      </div>
+<div class=\"gatsby-highlight\" data-language=\"javascript\"><pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token string\">\"theme\"</span><span class=\"token punctuation\">:</span> <span class=\"token string\">\"Soda Light.sublime-theme\"</span><span class=\"token punctuation\">,</span></code></pre></div>
 <h4>Quickies</h4>
 <p>Here are a few more quick visual tweaks</p>
 <ul>
@@ -123,33 +117,28 @@ like this after downloading the theme:</p>
 <h3>Key Bindings</h3>
 <p>This is where all of the information from <a href=\"http://benmccormick.org/2012/12/30/sublime-text-for-javascript-keyboard-shortcuts\">Monday’s post</a> starts to become a whole lot less useful.  All of the keyboard shortcuts that were discussed in that post are completely configurable.  Again you want to use the “User” preferences file in
 Packages/User to set the keybindings.  Keybindings are stored in json form like this:</p>
-<div class=\"gatsby-highlight\" data-language=\"json\">
-      <pre class=\"language-json\"><code class=\"language-json\"><span class=\"token punctuation\">{</span> <span class=\"token property\">\"keys\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"ctrl+z\"</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span> <span class=\"token property\">\"command\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"undo\"</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>
+<div class=\"gatsby-highlight\" data-language=\"json\"><pre class=\"language-json\"><code class=\"language-json\"><span class=\"token punctuation\">{</span> <span class=\"token property\">\"keys\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"ctrl+z\"</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span> <span class=\"token property\">\"command\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"undo\"</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>
 <span class=\"token punctuation\">{</span> <span class=\"token property\">\"keys\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"ctrl+shift+z\"</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span> <span class=\"token property\">\"command\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"redo\"</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>
 <span class=\"token punctuation\">{</span> <span class=\"token property\">\"keys\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"ctrl+y\"</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span> <span class=\"token property\">\"command\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"redo_or_repeat\"</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>
 <span class=\"token punctuation\">{</span> <span class=\"token property\">\"keys\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"ctrl+u\"</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span> <span class=\"token property\">\"command\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"soft_undo\"</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>
-<span class=\"token punctuation\">{</span> <span class=\"token property\">\"keys\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"ctrl+shift+u\"</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span> <span class=\"token property\">\"command\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"soft_redo\"</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span></code></pre>
-      </div>
+<span class=\"token punctuation\">{</span> <span class=\"token property\">\"keys\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"ctrl+shift+u\"</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span> <span class=\"token property\">\"command\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"soft_redo\"</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span></code></pre></div>
 <p>You can override existing shortcuts to make common commands more convenient or
 create your own by combining <a href=\"http://www.sublimetext.com/docs/commands\">sublime commands</a>.  One cool trick is the ability to define keyboard shortcuts to toggle settings.</p>
 <blockquote>
 <p>The toggle_setting command can be used to toggle a setting. For example, to make a key binding that toggles the word_wrap setting on the current file, you can use (in Preferences/Key Bindings - User):</p>
 </blockquote>
-<div class=\"gatsby-highlight\" data-language=\"json\">
-      <pre class=\"language-json\"><code class=\"language-json\"><span class=\"token punctuation\">{</span>
+<div class=\"gatsby-highlight\" data-language=\"json\"><pre class=\"language-json\"><code class=\"language-json\"><span class=\"token punctuation\">{</span>
     <span class=\"token property\">\"keys\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"alt+w\"</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span>
     <span class=\"token property\">\"command\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"toggle_setting\"</span><span class=\"token punctuation\">,</span>
     <span class=\"token property\">\"args\"</span><span class=\"token operator\">:</span>
     <span class=\"token punctuation\">{</span>
         <span class=\"token property\">\"setting\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"word_wrap\"</span>
     <span class=\"token punctuation\">}</span>
-<span class=\"token punctuation\">}</span></code></pre>
-      </div>
+<span class=\"token punctuation\">}</span></code></pre></div>
 <blockquote>
 <p>The set_setting command can be used to set a setting to a specific value. For example, this key binding makes the current file use the Cobalt color scheme:</p>
 </blockquote>
-<div class=\"gatsby-highlight\" data-language=\"json\">
-      <pre class=\"language-json\"><code class=\"language-json\"><span class=\"token punctuation\">{</span>
+<div class=\"gatsby-highlight\" data-language=\"json\"><pre class=\"language-json\"><code class=\"language-json\"><span class=\"token punctuation\">{</span>
     <span class=\"token property\">\"keys\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">\"ctrl+k\"</span><span class=\"token punctuation\">,</span> <span class=\"token string\">\"ctrl+c\"</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span>
     <span class=\"token property\">\"command\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"set_setting\"</span><span class=\"token punctuation\">,</span>
     <span class=\"token property\">\"args\"</span><span class=\"token operator\">:</span>
@@ -157,8 +146,7 @@ create your own by combining <a href=\"http://www.sublimetext.com/docs/commands\
         <span class=\"token property\">\"setting\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"color_scheme\"</span><span class=\"token punctuation\">,</span>
         <span class=\"token property\">\"value\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Packages/Color Scheme - Default/Cobalt.tmTheme\"</span>
     <span class=\"token punctuation\">}</span>
-<span class=\"token punctuation\">}</span></code></pre>
-      </div>
+<span class=\"token punctuation\">}</span></code></pre></div>
 <p>The settings modified here are buffer specific settings: they override any settings placed in a settings file, but apply to the current file only.</p>
 <h3>Plugins</h3>
 <p>Plugins also sometimes have their own configuration files.  These generally mimic the format of the editor, and its adviced as usual to use the User Settings for these so as to avoid having your settings blown away with updates</p>
@@ -195,7 +183,7 @@ from the “Tools/Macro” menu.  There’s more information in the <a href=\"ht
                         "http://twitter.com/_benmccormick",
                       ]
                    }
-                }</script><link as="script" rel="preload" href="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"/><link as="script" rel="preload" href="/app-2c200c44da36b1866c0c.js"/><link as="script" rel="preload" href="/3-321c16e210ff1af46765.js"/><link as="script" rel="preload" href="/1-f4886410c6c000bfd2f3.js"/><link as="script" rel="preload" href="/2-d268f3af82553fe5190d.js"/><link as="script" rel="preload" href="/0-a077396c7fb69f9768a7.js"/><link as="script" rel="preload" href="/webpack-runtime-5c5d1ce37720788ff3d1.js"/><link as="fetch" rel="preload" href="/static/d/358/path---2013-01-01-sublime-text-for-javascript-configuration-f-52-9a8-rKqvgDteQX5HXk8k6FrUKyacRe4.json" crossOrigin="use-credentials"/></head><body class="landing-page" style="background:#FCFCFC"><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><style data-emotion-css="1f3kluc">.css-1f3kluc{width:100%;max-width:1000px;margin:0 auto;padding:2.4rem 20px;}</style><div class="css-1f3kluc em100y90"><style data-emotion-css="13vv67v">.css-13vv67v{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-bottom:2rem;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}</style><div class="css-13vv67v e1b8f8ar0"><style data-emotion-css="txnzm6">.css-txnzm6{margin:0 20px 0 0;padding-bottom:0;}.css-txnzm6 a{box-shadow:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;}.css-txnzm6 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><h3 class="css-txnzm6 e1b8f8ar2"><a name="title" href="/">Ben McCormick</a></h3><style data-emotion-css="177tisd">.css-177tisd{color:#999999;}</style><div class="css-177tisd e1b8f8ar3"><a class="css-tcc0st" href="/archive/">Blog</a><style data-emotion-css="12jh0su">.css-12jh0su{padding:0 0.5rem;}@media all and (max-width:400px){.css-12jh0su{padding:0 0.25rem;}}</style><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/subscribe/">Subscribe</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/speaking/">Speaking</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="http://twitter.com/_benmccormick">Twitter</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/about/">About</a></div></div><article class="markdown"><div class="post-title-area"><style data-emotion-css="92repi">.css-92repi{display:block;max-width:100%;}</style><h1 class="css-92repi e15djruj1">Sublime Text For Javascript: Configuration</h1></div><div class="columns"><style data-emotion-css="qsg3oo">.css-qsg3oo{max-width:100%;}.css-qsg3oo li{padding-left:10px;}.css-qsg3oo .reading-img img{width:150px;float:right;margin:0px 10px 20px 10px;}.css-qsg3oo img.full-width{max-height:none;}.css-qsg3oo img.half-width{max-height:none;width:50%;}</style><div class="css-qsg3oo e15djruj3"><p>I’m starting a new series of posts on Sublime Text, and how to get the most out of the editor.
+                }</script><link as="script" rel="preload" href="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"/><link as="script" rel="preload" href="/app-cc39682fd5193aca312d.js"/><link as="script" rel="preload" href="/3-321c16e210ff1af46765.js"/><link as="script" rel="preload" href="/1-f4886410c6c000bfd2f3.js"/><link as="script" rel="preload" href="/2-d268f3af82553fe5190d.js"/><link as="script" rel="preload" href="/0-a077396c7fb69f9768a7.js"/><link as="script" rel="preload" href="/webpack-runtime-31fecf462c0e680a72ab.js"/><link as="fetch" rel="preload" href="/static/d/513/path---2013-01-01-sublime-text-for-javascript-configuration-f-52-9a8-Kn9VyOlscArLExPAlL1ahlzoBI.json" crossOrigin="use-credentials"/></head><body class="landing-page" style="background:#FCFCFC"><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><style data-emotion-css="1f3kluc">.css-1f3kluc{width:100%;max-width:1000px;margin:0 auto;padding:2.4rem 20px;}</style><div class="css-1f3kluc em100y90"><style data-emotion-css="13vv67v">.css-13vv67v{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-bottom:2rem;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}</style><div class="css-13vv67v e1b8f8ar0"><style data-emotion-css="txnzm6">.css-txnzm6{margin:0 20px 0 0;padding-bottom:0;}.css-txnzm6 a{box-shadow:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;}.css-txnzm6 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><h3 class="css-txnzm6 e1b8f8ar2"><a name="title" href="/">Ben McCormick</a></h3><style data-emotion-css="177tisd">.css-177tisd{color:#999999;}</style><div class="css-177tisd e1b8f8ar3"><a class="css-tcc0st" href="/archive/">Blog</a><style data-emotion-css="12jh0su">.css-12jh0su{padding:0 0.5rem;}@media all and (max-width:400px){.css-12jh0su{padding:0 0.25rem;}}</style><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/subscribe/">Subscribe</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/speaking/">Speaking</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="http://twitter.com/_benmccormick">Twitter</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/about/">About</a></div></div><article class="markdown"><div class="post-title-area"><style data-emotion-css="92repi">.css-92repi{display:block;max-width:100%;}</style><h1 class="css-92repi e15djruj1">Sublime Text For Javascript: Configuration</h1></div><div class="columns"><style data-emotion-css="qsg3oo">.css-qsg3oo{max-width:100%;}.css-qsg3oo li{padding-left:10px;}.css-qsg3oo .reading-img img{width:150px;float:right;margin:0px 10px 20px 10px;}.css-qsg3oo img.full-width{max-height:none;}.css-qsg3oo img.half-width{max-height:none;width:50%;}</style><div class="css-qsg3oo e15djruj3"><p>I’m starting a new series of posts on Sublime Text, and how to get the most out of the editor.
 The series will be focused on Javascript development, as that is how I use Sublime Text, but it should be applicable to any developer who uses Sublime Text as part of their workflow.</p>
 <ul>
 <li><a href="http://benmccormick.org/2012/12/30/sublime-text-for-javascript-keyboard-shortcuts">Sublime Text For Javascript: Keyboard Shortcuts</a></li>
@@ -229,8 +217,7 @@ settings.  Its not a bad idea to immediately copy the default settings file to
 the User-Settings file when you’re initially setting up sublime so that you can
 see all of the options that are set in that file and edit them accordingly.</p>
 <p>Heres my User-Settings file for my Windows-based version of Sublime:</p>
-<div class="gatsby-highlight" data-language="json">
-      <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     // Modified Solarized Theme with Mardown Support (https<span class="token operator">:</span>//gist.github.com/<span class="token number">1904917</span><span class="token punctuation">)</span>
    <span class="token property">"color_scheme"</span><span class="token operator">:</span> <span class="token string">"Packages/User/Solarized (Light).tmTheme"</span><span class="token punctuation">,</span>
 
@@ -270,8 +257,7 @@ see all of the options that are set in that file and edit them accordingly.</p>
         <span class="token string">"Vintage"</span><span class="token punctuation">,</span>
         <span class="token string">"ZenCoding"</span>
     <span class="token punctuation">]</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
+<span class="token punctuation">}</span></code></pre></div>
 <h3>Visuals</h3>
 <p>One of the most configurable thing about Sublime Text is the GUI.  If you don’t
 like something about how the program looks, it is probably configurable. Some of the
@@ -283,9 +269,7 @@ more online with <a href="http://wbond.net/sublime_packages/package_control">Pac
 plugins article.  I use Sublime’s Monokai Bright theme for JS development, and a
 <a href="https://gist.github.com/1904917">custom Solarized theme</a> for writing in Markdown for this blog and my
 notes.  You can set color scheme with a command like this in one of your settings files</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token string">"color_scheme"</span><span class="token punctuation">:</span> <span class="token string">"Packages/User/Solarized (Light).tmTheme"</span></code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token string">"color_scheme"</span><span class="token punctuation">:</span> <span class="token string">"Packages/User/Solarized (Light).tmTheme"</span></code></pre></div>
 <p>or you can set it in the preferences menu on the top of the screen (this will set it
 in your User-Settings file)</p>
 <h4>Theme</h4>
@@ -293,9 +277,7 @@ in your User-Settings file)</p>
 default is by no means ugly, many people prefer the <a href="https://github.com/buymeasoda/soda-theme/">Soda</a> theme that adds
 some prettier gradients and a choice of a light/dark theme.  You can set that
 like this after downloading the theme:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token string">"theme"</span><span class="token punctuation">:</span> <span class="token string">"Soda Light.sublime-theme"</span><span class="token punctuation">,</span></code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token string">"theme"</span><span class="token punctuation">:</span> <span class="token string">"Soda Light.sublime-theme"</span><span class="token punctuation">,</span></code></pre></div>
 <h4>Quickies</h4>
 <p>Here are a few more quick visual tweaks</p>
 <ul>
@@ -306,33 +288,28 @@ like this after downloading the theme:</p>
 <h3>Key Bindings</h3>
 <p>This is where all of the information from <a href="http://benmccormick.org/2012/12/30/sublime-text-for-javascript-keyboard-shortcuts">Monday’s post</a> starts to become a whole lot less useful.  All of the keyboard shortcuts that were discussed in that post are completely configurable.  Again you want to use the “User” preferences file in
 Packages/User to set the keybindings.  Keybindings are stored in json form like this:</p>
-<div class="gatsby-highlight" data-language="json">
-      <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ctrl+z"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"undo"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ctrl+z"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"undo"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ctrl+shift+z"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"redo"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ctrl+y"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"redo_or_repeat"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ctrl+u"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"soft_undo"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ctrl+shift+u"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"soft_redo"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
-      </div>
+<span class="token punctuation">{</span> <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ctrl+shift+u"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"soft_redo"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
 <p>You can override existing shortcuts to make common commands more convenient or
 create your own by combining <a href="http://www.sublimetext.com/docs/commands">sublime commands</a>.  One cool trick is the ability to define keyboard shortcuts to toggle settings.</p>
 <blockquote>
 <p>The toggle_setting command can be used to toggle a setting. For example, to make a key binding that toggles the word_wrap setting on the current file, you can use (in Preferences/Key Bindings - User):</p>
 </blockquote>
-<div class="gatsby-highlight" data-language="json">
-      <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"alt+w"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"toggle_setting"</span><span class="token punctuation">,</span>
     <span class="token property">"args"</span><span class="token operator">:</span>
     <span class="token punctuation">{</span>
         <span class="token property">"setting"</span><span class="token operator">:</span> <span class="token string">"word_wrap"</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
+<span class="token punctuation">}</span></code></pre></div>
 <blockquote>
 <p>The set_setting command can be used to set a setting to a specific value. For example, this key binding makes the current file use the Cobalt color scheme:</p>
 </blockquote>
-<div class="gatsby-highlight" data-language="json">
-      <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">"keys"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ctrl+k"</span><span class="token punctuation">,</span> <span class="token string">"ctrl+c"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"set_setting"</span><span class="token punctuation">,</span>
     <span class="token property">"args"</span><span class="token operator">:</span>
@@ -340,8 +317,7 @@ create your own by combining <a href="http://www.sublimetext.com/docs/commands">
         <span class="token property">"setting"</span><span class="token operator">:</span> <span class="token string">"color_scheme"</span><span class="token punctuation">,</span>
         <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"Packages/Color Scheme - Default/Cobalt.tmTheme"</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
+<span class="token punctuation">}</span></code></pre></div>
 <p>The settings modified here are buffer specific settings: they override any settings placed in a settings file, but apply to the current file only.</p>
 <h3>Plugins</h3>
 <p>Plugins also sometimes have their own configuration files.  These generally mimic the format of the editor, and its adviced as usual to use the User Settings for these so as to avoid having your settings blown away with updates</p>
@@ -379,4 +355,4 @@ from the “Tools/Macro” menu.  There’s more information in the <a href="htt
             },
             h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/wf-loading/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
           })(document);
-        </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"2013-01-01-sublime-text-for-javascript-configuration-f52","path":"/2013/01/01/sublime-text-for-javascript-configuration"};window.dataPath="358/path---2013-01-01-sublime-text-for-javascript-configuration-f-52-9a8-rKqvgDteQX5HXk8k6FrUKyacRe4";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-2c200c44da36b1866c0c.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-6c3cb25c69a33194b725.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.f3985d4a4b7bdcd8e938.css","/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-2408db2f7d4db12e014b.js"],"component---src-templates-topic-page-js":["/component---src-templates-topic-page-js-a5331e7c78918d6b6ea9.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-b233b14132501dcc18da.js"],"component---src-pages-index-js":["/component---src-pages-index-js-67d5311c328defd1b167.js"],"component---src-pages-links-archive-js":["/component---src-pages-links-archive-js-8404a10ddcf65ffbf936.js"],"component---src-pages-reviews-archive-js":["/component---src-pages-reviews-archive-js-419aed9b5a54d9b2345a.js"]};/*]]>*/</script><script src="/webpack-runtime-5c5d1ce37720788ff3d1.js" async=""></script><script src="/0-a077396c7fb69f9768a7.js" async=""></script><script src="/2-d268f3af82553fe5190d.js" async=""></script><script src="/1-f4886410c6c000bfd2f3.js" async=""></script><script src="/3-321c16e210ff1af46765.js" async=""></script><script src="/app-2c200c44da36b1866c0c.js" async=""></script><script src="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js" async=""></script></body></html>
+        </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"2013-01-01-sublime-text-for-javascript-configuration-f52","path":"/2013/01/01/sublime-text-for-javascript-configuration"};window.dataPath="513/path---2013-01-01-sublime-text-for-javascript-configuration-f-52-9a8-Kn9VyOlscArLExPAlL1ahlzoBI";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-cc39682fd5193aca312d.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-6c3cb25c69a33194b725.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.f3985d4a4b7bdcd8e938.css","/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-2408db2f7d4db12e014b.js"],"component---src-templates-topic-page-js":["/component---src-templates-topic-page-js-a5331e7c78918d6b6ea9.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-b233b14132501dcc18da.js"],"component---src-pages-index-js":["/component---src-pages-index-js-67d5311c328defd1b167.js"],"component---src-pages-links-archive-js":["/component---src-pages-links-archive-js-8404a10ddcf65ffbf936.js"],"component---src-pages-reviews-archive-js":["/component---src-pages-reviews-archive-js-419aed9b5a54d9b2345a.js"]};/*]]>*/</script><script src="/webpack-runtime-31fecf462c0e680a72ab.js" async=""></script><script src="/0-a077396c7fb69f9768a7.js" async=""></script><script src="/2-d268f3af82553fe5190d.js" async=""></script><script src="/1-f4886410c6c000bfd2f3.js" async=""></script><script src="/3-321c16e210ff1af46765.js" async=""></script><script src="/app-cc39682fd5193aca312d.js" async=""></script><script src="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js" async=""></script></body></html>

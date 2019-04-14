@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-04-14T16:58:33Z</updated>
+    <updated>2019-04-14T23:13:09Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -213,8 +213,7 @@
         <content type="html"><![CDATA[<p>As I’ve gone through projects over time, I’ve found a few functions that I end up creating for every significant project that I’ve worked on.  Some of the details differ from project to project, but the basic function remains the same.  I thought it would be helpful to do a rundown:</p>
 <h3>React/JSX</h3>
 <p>Some of my utils are focused on making JSX nicer to deal with.  2 situations that I’ve run into a lot in JSX are conditionally showing an item in JSX, and determining which of several classes to add to an element based on logic.  Scenarios like these:</p>
-<div class="gatsby-highlight" data-language="js">
-      <pre class="language-js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">></span>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">></span>
     <span class="token punctuation">{</span>shouldShowCreateButton <span class="token operator">?</span> <span class="token operator">&lt;</span>Button
             onClick<span class="token operator">=</span><span class="token punctuation">{</span>createWidget<span class="token punctuation">}</span>
             type <span class="token operator">=</span> <span class="token string">'primary'</span>
@@ -224,10 +223,8 @@
         <span class="token operator">></span>
             Create Widget
         <span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span> <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre>
-      </div>
-<div class="gatsby-highlight" data-language="js">
-      <pre class="language-js"><code class="language-js"><span class="token keyword">let</span> classNames <span class="token operator">=</span> <span class="token string">'create-button'</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> classNames <span class="token operator">=</span> <span class="token string">'create-button'</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>extraClass<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     classNames <span class="token operator">+=</span> <span class="token string">' '</span> <span class="token operator">+</span> extraClass<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -245,13 +242,11 @@
         className<span class="token operator">=</span><span class="token punctuation">{</span>classNames<span class="token punctuation">}</span>
     <span class="token operator">></span>
         Create Widget
-<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span></code></pre>
-      </div>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span></code></pre></div>
 <p>These are both ok, and you’ll see plenty of examples of code like them out there, but the first puts a big chunk of code in a ternary, and it’s not always going to be clear to a reader where that <code class="language-text">: null</code> came from at the end, or why it’s there by the time they reach the end.</p>
 <p>In the second example, we’re dealing with a lot of ugly string concatenation.  There are other ways to handle this, like using template strings + ternaries but generally they each provide their own messy pieces.</p>
 <p>To solve these situations, I like to define these 2 small functions:</p>
-<div class="gatsby-highlight" data-language="js">
-      <pre class="language-js"><code class="language-js"><span class="token keyword">import</span> isString <span class="token keyword">from</span> <span class="token string">'lodash-es/isString'</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> isString <span class="token keyword">from</span> <span class="token string">'lodash-es/isString'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> filter <span class="token keyword">from</span> <span class="token string">'lodash-es/filter'</span><span class="token punctuation">;</span>
 <span class="token comment">// A helper for React Components to reduce ternary use</span>
 <span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">showIf</span> <span class="token operator">=</span> <span class="token punctuation">(</span>condition<span class="token punctuation">,</span> element<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>condition <span class="token operator">?</span> element <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -262,12 +257,10 @@
     <span class="token keyword">return</span> <span class="token function">filter</span><span class="token punctuation">(</span>classList<span class="token punctuation">,</span> c <span class="token operator">=></span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token function">isString</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> c<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-      </div>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <p>The first just formalizes the most common use of ternaries in JSX (conditionally showing an item) and adds an easy to understand name to it.</p>
 <p>The second lets us work with an array of classNames instead of handling string concat ourselves, and will automatically filter out undefined or empty classNames.  This implementation does silently swallow errors on anything that is not a string, which may not be your preference.  Usage looks like this:</p>
-<div class="gatsby-highlight" data-language="js">
-      <pre class="language-js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">></span>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">></span>
     <span class="token punctuation">{</span><span class="token function">showIf</span><span class="token punctuation">(</span>shouldShowCreateButton<span class="token punctuation">,</span> <span class="token operator">&lt;</span>Button
             onClick<span class="token operator">=</span><span class="token punctuation">{</span>createWidget<span class="token punctuation">}</span>
             type <span class="token operator">=</span> <span class="token string">'primary'</span>
@@ -277,11 +270,9 @@
         <span class="token operator">></span>
             Create Widget
         <span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre>
-      </div>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre></div>
 <p>the showIf reads much more clearly than the previous ternary, especially for language newbies who might not be used to ternaries.</p>
-<div class="gatsby-highlight" data-language="js">
-      <pre class="language-js"><code class="language-js"><span class="token keyword">let</span> classNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'create-button'</span><span class="token punctuation">,</span> extraClass<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> classNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'create-button'</span><span class="token punctuation">,</span> extraClass<span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>createEnabled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     classNames<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'is-disabled'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -296,13 +287,11 @@
         className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">classes</span><span class="token punctuation">(</span>classNames<span class="token punctuation">)</span><span class="token punctuation">}</span>
     <span class="token operator">></span>
         Create Widget
-<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span></code></pre>
-      </div>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span></code></pre></div>
 <p>Here we’ve gotten rid of the extra string code and are working on arrays, which is a nicer data structure for dealing with lists of stuff. Also since we’re auto-filtering falsy stuff, we don’t have to worry about whether extraClass was defined if it was passed as a prop to our component or something.</p>
 <h3>Formatting</h3>
 <p>So the next few may be different for everyone.  The details here aren’t important, the important thing is that you centralize your formatting of numbers and dates.  For instance, here are functions for formatting dates, normal numbers and percentages from a current project:</p>
-<div class="gatsby-highlight" data-language="js">
-      <pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> format <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'date-fns'</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> format <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'date-fns'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> isNumber <span class="token keyword">from</span> <span class="token string">'lodash-es/isNumber'</span><span class="token punctuation">;</span>
 
 <span class="token comment">// takes either a string or a date object and formats it as a standard date with time</span>
@@ -333,8 +322,7 @@
     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> num<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-      </div>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <p>The first one will take a date object and format it to something like <code class="language-text">05/30/17 01:16 PM</code>.  The second will take a number and return a string formatted with appropriate commas: <code class="language-text">1234567 -&gt; &#39;1,234,567&#39;</code>.  The last one will convert a decimal to a percentage string: <code class="language-text">0.5 -&gt; &#39;50%&#39;</code>.</p>
 <p>Note that none of these functions are very long.  I’m relying on a date library for the first piece and <code class="language-text">toLocaleString</code> for the other 2.  So I could inline this in most places and not have it get much longer.  The benefit of these types of functions is not in saving typing.  It’s in standardizing how you format or don’t format things throughout an application.  This has 2 benefits:</p>
 <ol>
@@ -344,14 +332,11 @@
 <p>Note that all my examples so far have utilized other utility libraries like lodash and date-fns.  The best utility functions are those that you don’t have to maintain yourself.  I do recommend looking for libraries that you can tree-shake and only take what you need though.  Other ones like moment.js can make a big difference on your JavaScript bundle size if you let them.</p>
 <h3>Timing</h3>
 <p>Timeout functions are useful, but the browsers built in functions are callback based and don’t play well with promises or async await.  We can fix that:</p>
-<div class="gatsby-highlight" data-language="js">
-      <pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> secs <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> secs <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">pause</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> secs <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> secs <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">pause</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>I now have a promisified version of setTimeout (<code class="language-text">sleep</code>) and a special case version with a 0 timeout (useful for things that should happen as soon as possible after the current event loop executes. I prefer dealing with things in seconds over milliseconds, so I changed the API to use that.  That is probably not everyone’s cup of tea, so feel free to copy and modify.</p>
 <p>Usage looks like this:</p>
-<div class="gatsby-highlight" data-language="js">
-      <pre class="language-js"><code class="language-js"><span class="token comment">// function to kick off a "job" of some type and then</span>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// function to kick off a "job" of some type and then</span>
 <span class="token comment">// check every 30 seconds to see if the job is complete</span>
 <span class="token keyword">const</span> createJobAndShowResults <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
     <span class="token function">createJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -364,8 +349,7 @@
             <span class="token keyword">return</span> jobStatus<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-      </div>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <h3>And Even More!</h3>
 <p>This is just a sample of the small functions I usually create in projects.  Pretty much all of them exist for one or more of the reasons that were already discussed:</p>
 <ol>
@@ -622,8 +606,7 @@
         <content type="html"><![CDATA[<p>Once you get past the initial complexity it creates by bucking conventions, React is the most developer friendly UI library I have ever used.  A big reason for that is the way it uses and encourages a variety of patterns to share codes and concepts across a code base. Let’s look at how 4 traditional code re-use patterns are used by React and in the React ecosystem, using a simple counter example to explore why each pattern is used.</p>
 <h4>Inheritance</h4>
 <p>Inheritance is a code-reuse technique associated with object oriented programming.  If you’re like me and learned to program in school using Java, it probably is one of the very first Computer Science concepts you learned.  For self-taught JavaScript devs it may be much less familiar.  Inheritance is a pattern for extending an existing class or object with additional methods or data, possibly overriding the implementations of other methods in the process.  A classic example of inheritance looks like this in JS:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Automobile</span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Automobile</span> <span class="token punctuation">{</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>vehicleName <span class="token operator">=</span> automobile<span class="token punctuation">;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>numWheels <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
@@ -652,13 +635,11 @@
 <span class="token keyword">const</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> bike <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bicycle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 car<span class="token punctuation">.</span><span class="token function">printNumWheels</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// This car has 4 wheels</span>
-bike<span class="token punctuation">.</span><span class="token function">printNumWheels</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// This bike has 2 wheels</span></code></pre>
-      </div>
+bike<span class="token punctuation">.</span><span class="token function">printNumWheels</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// This bike has 2 wheels</span></code></pre></div>
 <p>Inheritance is useful for highly structured objects where you have a lot of shared behavior across similar but slightly different objects and you want to be able to treat all of the objects as interchangeable from an API perspective. This is especially valuable when that interchangeable API is well defined and unlikely to change too much.  However it tends to lead to brittle structures when nested across multiple levels, and is a poor fit when dealing with dissimilar objects that need to share a few behaviors.</p>
 <p>React Components are objects that we want to treat as interchangeable from an outside API perspective, and they have well defined points where behavior may need to be different between components but don’t always need to differ: the lifecycle methods like render, componentDidMount, componentWillUnmount, etc.  Thus React relies on a single level of inheritance as the foundation of its class components.  Class components inherit from React.Component, and only implement the life cycle methods that they’re interested in.  But all of them inherit useable setState and forceUpdate functions, and React can verify that by checking the <code class="language-text">isReactComponent</code> property on the object.</p>
 <p>Here is a basic counter component.  Notice how we don’t have to define <code class="language-text">setState</code> on our <code class="language-text">Counter</code> class.  Instead it inherits it from React.Component.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">//counter.js</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">//counter.js</span>
 <span class="token keyword">class</span> <span class="token class-name">Counter</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -683,14 +664,12 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
             <span class="token operator">></span>Increment<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
         <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
+<span class="token punctuation">}</span></code></pre></div>
 <p>Outside of this single layer of inheritance for defining Class components, inheritance isn’t used much in React development.  It turns out that better patterns have emerged for sharing application code.</p>
 <p><strong>Inheritance Pattern</strong>: Used sparingly to share common code across React class components.</p>
 <h4>Composition</h4>
 <p>Composition is a code reuse technique where a larger object is created by combining multiple smaller objects.  Composition is in some ways the natural pattern of the browser, as HTML uses it.  We build a table in html, not by adding a bunch of configuration to a single table object, but by combining a <code class="language-text">table</code> tag with <code class="language-text">tr</code>s, <code class="language-text">td</code>s, and <code class="language-text">th</code>s like this:</p>
-<div class="gatsby-highlight" data-language="html">
-      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Web Framework<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Language<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">></span></span>
@@ -702,11 +681,9 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Play<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Express<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>JavaScript<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span></code></pre>
-      </div>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span></code></pre></div>
 <p>React has fully embraced the HTML style of composing UI components, and it takes thing to the next level by allowing components to be stateful and pass values down into children.  For instance, if we wanted to split the counter component above into a separate control and display, perhaps using a standard set of UI components we could do it by extracting <code class="language-text">FancyLayout</code>, <code class="language-text">FancyButton</code> and <code class="language-text">FancyDisplay</code> elements out into their own components and then composing them back into a single counter component.  This type of thing is useful for creating and reusing standard UI elements, and might look something like the following:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// UI components defined elsewhere</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// UI components defined elsewhere</span>
 <span class="token keyword">const</span> <span class="token function-variable function">FancyLayout</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"fancy-layout"</span><span class="token operator">></span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token function-variable function">FancyDisplay</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"fancy-display"</span><span class="token operator">></span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token function-variable function">FancyButton</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">,</span> className<span class="token punctuation">,</span> onClick<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token operator">&lt;</span>button
@@ -742,8 +719,7 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
             <span class="token operator">></span>Increment<span class="token operator">&lt;</span><span class="token operator">/</span>FancyButton<span class="token operator">></span>
         <span class="token operator">&lt;</span><span class="token operator">/</span>FancyLayout<span class="token operator">></span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
+<span class="token punctuation">}</span></code></pre></div>
 <p>In this example we now have 4 components instead of one.  Three of them are laser-focused on defining a specific element type, and are “display only” with no logic of their own.  The 4th contains all of our logic and defines how the display pieces come together.</p>
 <p>In the seminal 1994 book <a href="https://amzn.to/2WDhncv">Design Patterns</a> the authors argue that composition should be strictly preferred over inheritance where possible because it creates less tightly coupled objects, and encourages designs where objects are small, focused and readable.  Composition also lets us hide complexity inside of child objects, because parent components only have to concern themselves with the APIs exposed by those child objects.  One of the keys to React’s success has been making this type of composition clean and painless by encouraging strong component interfaces and utilizing JSX to provide a comfortable syntax for describing composed UIs while keeping all component concerns in the same place<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.</p>
 <p>It is worth noting that after this refactor, our counting logic is still tightly tied to the layout of our counter component.  Let’s explore 2 more patterns that can help us extract our logic from the display completely.</p>
@@ -751,8 +727,7 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
 <h4>Decorators</h4>
 <p>Decorators are a pattern for editing an instance of a class to give it additional behaviors than it had previously.  In contrast to inheritance, decorators are not part of the class definition, but are modifications to the class at run time to allow a subset of objects to have additional data or behavior <sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  In classic object oriented programming, this was implemented by having a decorator class that shared an interface with the class to be decorated, and called its methods through to that class, with additional behavior before or after the pass-through.  The React community has generally implemented this pattern slightly differently, by writing functions that take a component class and return a new component class that calls through to the original component, possibly with additional props passed in, extra components rendered around it, or conditional logic that causes it not to render in some cases.  The React community generally refers to this pattern as <a href="https://reactjs.org/docs/higher-order-components.html">Higher Order Components</a>.</p>
 <p>Here’s an example of using a higher order component called <code class="language-text">withCounter</code> to separate out the display and logic portions of our Counter component.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">withCounter</span> <span class="token operator">=</span> WrappedComponent <span class="token operator">=></span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">withCounter</span> <span class="token operator">=</span> WrappedComponent <span class="token operator">=></span> <span class="token punctuation">{</span>
    <span class="token keyword">class</span> <span class="token class-name">ComponentWithCounter</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
       <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
          <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -794,8 +769,7 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
 <span class="token punctuation">}</span>
 
 <span class="token comment">// this adds the logic back to the display only version</span>
-<span class="token keyword">const</span> Counter <span class="token operator">=</span> <span class="token function">withCounter</span><span class="token punctuation">(</span>CounterDisplay<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-      </div>
+<span class="token keyword">const</span> Counter <span class="token operator">=</span> <span class="token function">withCounter</span><span class="token punctuation">(</span>CounterDisplay<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>Now we’ve taken our refactored <code class="language-text">Counter</code> and split it into 2 more pieces.  The display logic remains in a simplified <code class="language-text">CounterDisplay</code> component that doesn’t have any state or business logic of its own.  <code class="language-text">CounterDisplay</code> takes 2 new props, <code class="language-text">count</code> and <code class="language-text">increment</code> that allow it to implement the counting logic without having to know how it is implemented.</p>
 <p>Meanwhile, we split the counting logic out into a Higher Order Component.  <code class="language-text">withCounter</code> takes a React component and wraps it with another component that is solely responsible for keeping track of counts and providing the increment function.  In this case that is our CounterDisplay component, but if we decided we wanted to also have fancy counters that incremented when the user clicked a checkbox or hovered over a box or typed the word increment, it would be easy to reuse this logic.</p>
 <p>Higher Order Components helped many React libraries like Redux and React Router define elegant APIs when they first came on the scene, but they’ve always been a power user technique.  There are many ways to screw them up, and although they allow for theoretical loose coupling, they still require a certain level of shared understanding between the decorator and decoratee, including knowing what props to make available, whether any methods have to be proxied through to the decorated component, and more.  The community as a whole has tended to favor render props over the past year<sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup>, and now looks poised to move towards our 4th pattern: mixins.</p>
@@ -805,8 +779,7 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
 <p>So first, what is a mixin?  It is yet another way of defining shared behavior onto a class, in this case providing methods and/or data that are “mixed in” to one or more classes.  It differs from inheritance because a class using a mixin doesn’t have to use the mixin as a parent class, and the class may use several mixins at once.  Mixins that are used together in one class may not be used together in another.  Mixins also different from the decorator pattern, because the mixin is part of the class definition, not something that is applied dynamically later.</p>
 <p>Mixins are useful when you have classes with different purposes that shouldn’t share an inheritance tree but do have some shared behavior.  In practice though they have historically been tricky to use because it is easy to tightly bind mixin code to the implementation of the code that it is mixed into.  Poorly implemented Mixins can result in naming collisions, inflexible code, and hard to trace errors.</p>
 <p>React Hooks may not look like mixins, since they are used in a function, not a class.  But they fill the exact same role as traditional mixins, while avoiding some of the footguns (no naming collisions!).  Let’s look at an example from Dan Abramov’s blog post <a href="https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889">introducing hooks</a>.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">useWindowWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">useWindowWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> <span class="token punctuation">[</span>width<span class="token punctuation">,</span> setWidth<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>innerWidth<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
@@ -818,11 +791,9 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token keyword">return</span> width<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
+<span class="token punctuation">}</span></code></pre></div>
 <p>This is a hook that provides the width of the current window to a React component, updating each time the window is resized.  You would use it in practice like this example of a header bar that replaces its menu items with a hamburger menu on smaller screens:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Header</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Header</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> windowWidth <span class="token operator">=</span> <span class="token function">useWindowWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">let</span> showHamburgerMenu <span class="token operator">=</span> windowWidth <span class="token operator">&lt;</span> <span class="token number">800</span><span class="token punctuation">;</span>
 
@@ -830,13 +801,11 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
         <span class="token operator">&lt;</span>Logo<span class="token operator">></span>
         <span class="token punctuation">{</span>showHamburgerMenu <span class="token operator">?</span> <span class="token operator">&lt;</span>HamburgerMenu<span class="token operator">/</span><span class="token operator">></span> <span class="token punctuation">:</span> <span class="token operator">&lt;</span>MenuItems<span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
+<span class="token punctuation">}</span></code></pre></div>
 <p>This usage is different from a normal helper function, because it enhances the component; because this is using React’s state code within the hook, this component will automatically update when needed.  So it is a way of reusing component behavior like Higher Order Components.  But we lose a lot of the disadvantages of HOCs.   <code class="language-text">useWindowWidth</code> and <code class="language-text">Header</code> are extremely loosely coupled.  <code class="language-text">useWindowWidth</code> doesn’t know anything about the header bar structure or logic, or the rules for when things should show.  It is only providing information.  At the same time, if we refactored it to get the window size in some other way, or to throttle updates, we wouldn’t have to change anything about <code class="language-text">Header</code>, since all it knows is that <code class="language-text">useWindowWidth</code> will occasionally provide it an updated windowWidth.</p>
 <p>The functional style makes this look different than a traditional object oriented “mixin pattern” example, but it is using the same concepts and solving the same problems.  This way of doing things has advantages; because it is “just a function” that gets called, we never need to worry about it having a naming collision with a different class method, or having to be aware of the structure of the outer component.  If it needs component specific information, we can just pass it an argument.</p>
 <p>With Hooks, we can create a much cleaner version of our Higher Order Component example from the decorators section.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// defined in a library file</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// defined in a library file</span>
 <span class="token keyword">const</span> <span class="token function-variable function">useIncrement</span> <span class="token operator">=</span> <span class="token punctuation">(</span>initial <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
    <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> increment<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useReducer</span><span class="token punctuation">(</span>val <span class="token operator">=></span> val <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> initial<span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token keyword">return</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> increment<span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -854,15 +823,12 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
             onClick<span class="token operator">=</span><span class="token punctuation">{</span>increment<span class="token punctuation">}</span>
         <span class="token operator">></span>Increment<span class="token operator">&lt;</span><span class="token operator">/</span>FancyButton<span class="token operator">></span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>FancyLayout<span class="token operator">></span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
+<span class="token punctuation">}</span></code></pre></div>
 <p>As with decorators we’ve extracted the logic in a reusable form, but we’ve done so with much less boilerplate.  I’ve removed the intermediate <code class="language-text">CounterDisplay</code> here, because if we’re not using it for anything else, it is easy enough to just include the hook directly in the definition.  But if we wanted, we could easily use that <code class="language-text">CounterDisplay</code> component with a hooks enabled wrapper component:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> increment<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useIncrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">&lt;</span>CounterDisplay count<span class="token operator">=</span><span class="token punctuation">{</span>count<span class="token punctuation">}</span> increment<span class="token operator">=</span><span class="token punctuation">{</span>increment<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
+<span class="token punctuation">}</span></code></pre></div>
 <p><strong>Mixin Pattern</strong>: Hooks use a variation on the Mixin pattern to allow sharing related behavior and data between unrelated function components easily.</p>
 <h3>Summary</h3>
 <p>If I took one thing out of this analysis personally, it was a renewed appreciation for considering the needs of a situation and finding the right approach for the job, rather than trying to fit every problem to my favorite solution.  I’m over 2000 words and I haven’t even addressed all the different strategies React and the React community use for code re-use. <em>Sorry render props</em> 😢.   So next time you run into an architecture problem, consider a few different solutions and their tradeoffs.</p>

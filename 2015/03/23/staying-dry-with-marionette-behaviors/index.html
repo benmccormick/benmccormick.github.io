@@ -17,8 +17,7 @@
 <p>Marionette Behaviors are reusable chunks of UI logic that you can mix into your Views.  When you have a common problem that you face across several Views, Behaviors can help you reduce boilerplate and repetition.  We’ll take a look at a practical example first, and then we can get into the Behaviors API.  </p>
 <p>Let’s see how Behaviors can help us write better form validation code.  When I’m validating forms, I use the <a href=\"http://thedersen.com/projects/backbone-validation/\">backbone.validation</a> library. It provides helpers for checking the validity of model properties and attaching error messages to inputs, but doesn’t force a specific workflow. However, I have a specific flow I usually want.  A user should be able to enter data as they see fit to start, with no validation warnings until they’ve tried to submit the form.  After they’ve initially submitted the form, warnings should appear next to any invalid fields, and they should update and disappear as the user fixes their input.</p>
 <p>That process is pretty easy to implement with backbone.validation.  I simply connect my Model to each form View I create, and in the Model I add some logic to re-validate each time the Model is changed, but only after the first time validation is triggered by a user submit.  That works great in most cases.  The problem comes when I need to re-render my view in the middle of this process.  This is a pretty common occurrence if your form has sub-views that may appear based on the contents of other parts of the form. In that case, I have to make sure that the validation state persists across renders.  That might look something like this. <sup id=\"fnref:1\"><a href=\"#fn:1\">1</a></sup></p>
-<div class=\"gatsby-highlight\" data-language=\"javascript\">
-      <pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> Mn <span class=\"token keyword\">from</span> <span class=\"token string\">'marionette'</span><span class=\"token punctuation\">;</span>
+<div class=\"gatsby-highlight\" data-language=\"javascript\"><pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> Mn <span class=\"token keyword\">from</span> <span class=\"token string\">'marionette'</span><span class=\"token punctuation\">;</span>
 <span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> Validation <span class=\"token keyword\">from</span> <span class=\"token string\">'backbone-validation'</span><span class=\"token punctuation\">;</span>
 
 <span class=\"token keyword\">var</span> FormView <span class=\"token operator\">=</span> Mn<span class=\"token punctuation\">.</span>LayoutView<span class=\"token punctuation\">.</span><span class=\"token function\">extend</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">{</span>
@@ -54,12 +53,10 @@
         <span class=\"token comment\">//handle form submission</span>
     <span class=\"token punctuation\">}</span>
 
-<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></code></pre>
-      </div>
+<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></code></pre></div>
 <p>So it’s not that much code to add the functionality we want.  But when we need this code on multiple Views, adding and maintaining it becomes a pain quickly, creating the type of boilerplate that developers rage against.  So how can Behaviors help? It turns out to be easy to pull the functionality from our example out into a separate Behavior that any View can implement.  </p>
 <p>That would look something like this:</p>
-<div class=\"gatsby-highlight\" data-language=\"javascript\">
-      <pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> Mn <span class=\"token keyword\">from</span> <span class=\"token string\">'marionette'</span><span class=\"token punctuation\">;</span>
+<div class=\"gatsby-highlight\" data-language=\"javascript\"><pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> Mn <span class=\"token keyword\">from</span> <span class=\"token string\">'marionette'</span><span class=\"token punctuation\">;</span>
 <span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> Validation <span class=\"token keyword\">from</span> <span class=\"token string\">'backbone-validation'</span><span class=\"token punctuation\">;</span>
 
 <span class=\"token keyword\">var</span> ValidationBehavior <span class=\"token operator\">=</span> Mn<span class=\"token punctuation\">.</span>Behavior<span class=\"token punctuation\">.</span><span class=\"token function\">extend</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">{</span>
@@ -83,11 +80,9 @@
 
 <span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>
 
-<span class=\"token keyword\">export</span> <span class=\"token keyword\">default</span> ValidationBehavior<span class=\"token punctuation\">;</span></code></pre>
-      </div>
+<span class=\"token keyword\">export</span> <span class=\"token keyword\">default</span> ValidationBehavior<span class=\"token punctuation\">;</span></code></pre></div>
 <p>You could then pull the Behavior back into the View like this:</p>
-<div class=\"gatsby-highlight\" data-language=\"javascript\">
-      <pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> Mn <span class=\"token keyword\">from</span> <span class=\"token string\">'marionette'</span><span class=\"token punctuation\">;</span>
+<div class=\"gatsby-highlight\" data-language=\"javascript\"><pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> Mn <span class=\"token keyword\">from</span> <span class=\"token string\">'marionette'</span><span class=\"token punctuation\">;</span>
 <span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> Validation <span class=\"token keyword\">from</span> <span class=\"token string\">'backbone-validation'</span><span class=\"token punctuation\">;</span>
 <span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> ValidationBehavior <span class=\"token keyword\">from</span> <span class=\"token string\">'behaviors/validation'</span><span class=\"token punctuation\">;</span>
 
@@ -112,31 +107,26 @@
     submitForm<span class=\"token punctuation\">:</span> <span class=\"token keyword\">function</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>
         <span class=\"token comment\">//handle form submission</span>
     <span class=\"token punctuation\">}</span>
-<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></code></pre>
-      </div>
+<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></code></pre></div>
 <p>We could do this for any number of Views that required validation.  The same thing can be done for many other types of functionality, including key-binding and “warn before delete”.</p>
 <h3>Behaviors API</h3>
 <p>Behaviors have essentially the same API as Marionette Views, because they’re meant to be extracted out of existing Views.  So the event hashes, ui elements, and life-cycle methods that you find on a Marionette View are all also available on Behaviors.  The life cycle functions on a Behavior execute immediately after their corresponding functions on the Behavior’s associated View. Behaviors also get <code class=\"language-text\">el</code>, <code class=\"language-text\">$el</code> and <code class=\"language-text\">$</code> properties that are proxied to the equivalent properties on the Behaviors view.</p>
 <p>Behaviors are not just mixins though. Behavior properties are isolated from the Views they’re associated with, preventing naming collisions and also encouraging reusable, decoupled designs.  Generally Behaviors don’t directly modify their associated Views or data.  The communication flow is one way, with Behaviors accepting input from their parent View in the form of an options object that is attached to the Behavior when it is created.  You can pass these options through using the behaviors hash on the View.  For instance to pass an error message to the validation behavior above, you could define your behaviors hash like this:</p>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">    behaviors: {
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">    behaviors: {
         validation: {
             behaviorClass: ValidationBehavior,
             errorMessage: &#39;You did something wrong.&#39;
         }
-    },</code></pre>
-      </div>
+    },</code></pre></div>
 <h3>A quick note on how Behaviors attach to Views</h3>
 <p>You can see in the example above that the general form for attaching Behaviors to a View is to include a key-value pair for each Behavior, where the value is an object that lays out the options for the Behavior.  The interesting thing in the example above is that the name of the key doesn’t matter at all.  It’s not used by the library in any way; instead Marionette picks out the correct behavior to use based on the behaviorClass property in the value.  So why is the API structured like that?  To understand, you need to know that the Behaviors API supports two separate scenarios for looking up the correct Behaviors for a View.  </p>
 <p>The original API Marionette included for looking up Behaviors requires you to override a behaviorsLookup function on Marionette to tell the library where to retrieve your Behaviors from.  The keys of the behaviors hash on a view were passed to the lookup function, which then retrieved the Behavior classes from wherever the user chose to store them (probably a global namespace object).  </p>
 <p>That API works great for developers used to using namespaces to organize their code, but for developers using modern JavaScript module loaders, it introduces global state and indirection where it wasn’t needed.  To handle this case, the behaviorClass key was added as an option for the value object, allowing developers to specify Behaviors as dependencies of the file they were defining a View in, and then attach the Behavior directly to the View.  </p>
 <p>That makes much more sense for module users, but leads to a clunky API where the keys aren’t used.  Fortunately, in newer versions of Marionette you can get around this entirely, by defining your behaviors as an array on a view.  So the example above would look like:</p>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">    behaviors: [{
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">    behaviors: [{
         behaviorClass: ValidationBehavior,
         errorMessage: &#39;You did something wrong.&#39;
-    }]</code></pre>
-      </div>
+    }]</code></pre></div>
 <p>This works due to an undocumented implementation detail in Marionette 2.4.1 <sup id=\"fnref:2\"><a href=\"#fn:2\">2</a></sup>, but will be <a href=\"https://github.com/marionettejs/backbone.marionette/pull/2368\">fully supported</a> in future versions.  In future versions you also will be able to pass a class directly as an array item if the Behavior is not taking any arguments, further cleaning up the API.</p>
 <h3>When are Behaviors useful?</h3>
 <p>Marionette’s documentation explains Behaviors very broadly, which makes sense for official documentation since it gives ideas without limiting how users think about them.  But in my experience Behaviors are best used for three different use-cases.</p>
@@ -144,32 +134,27 @@
 <p>This is the most obvious use for Behaviors, and what the documentation focuses on.  It’s easy to set up common event based UI patterns like “warn on close” with behaviors.  But they also can be used for more complicated event based UI logic.  At Windsor Circle we use 2 behaviors to share common “drag and drop” code with a Droppable Behavior that can be implemented by a CollectionView and a Draggable Behavior for ItemViews.  That makes it simple to make any CollectionView based list sortable with drag and drop, and keeps the code in a nice central place where any improvements will be shared across the code base.</p>
 <h4>Sharing common life-cycle functions</h4>
 <p>In addition to event handling, Behaviors also give you access to the various <a href=\"http://benmccormick.org/2015/01/05/marionette-view-life-cycles/\">life cycle</a> methods of Marionette Views.  That lets you split out common life cycle functionality and reduce code.  An easy example of this would be a Behavior that fades a View in each time by adding a css class with an animation associated with it.</p>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">let FadeIn = Marionette.Behavior.extend({
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">let FadeIn = Marionette.Behavior.extend({
     onBeforeShow: function() {
         this.$el.addClass(&#39;hidden fadein&#39;);
     },
     onShow: function() {
         this.$el.removeClass(&#39;hidden&#39;);
     }
-});</code></pre>
-      </div>
+});</code></pre></div>
 <p>which would work with a CSS snippet like this:</p>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">.fadein {
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">.fadein {
   transition: opacity 1s;  
   opacity: 1;
 }
 
 .fadein.hidden {
     opacity: 0;
-}</code></pre>
-      </div>
+}</code></pre></div>
 <h4>Simplifying integration with libraries</h4>
 <p>This final use case is a special case of the first 2, but I think its worth mentioning in its own
 category.  Many 3rd party Backbone or jQuery libraries require repetitive initialization code to use within a View.  This code is often the same across all Views, or only requires minor tweaks.  The perfect use case for a Behavior!  The Validation code above is one example of this, but it’s useful for many plugins.  For instance, if you use the <a href=\"http://harvesthq.github.io/chosen/\">Chosen</a> jQuery plugin to create rich dropdown boxes, you could create a Behavior to automatically initialize select elements with Chosen, and optionally pass a class to restrict it to only initialize selects with a specific class.</p>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">let UseChosen = Marionette.Behavior.extend({
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">let UseChosen = Marionette.Behavior.extend({
     onRender: function() {
         let className = this.options.className,
             chosenOptions = this.options.chosenOptions || {};
@@ -180,8 +165,7 @@ category.  Many 3rd party Backbone or jQuery libraries require repetitive initia
             this.$(&#39;select&#39;).chosen(chosenOptions);
         }
     }
-});</code></pre>
-      </div>
+});</code></pre></div>
 <h4>Wrap-Up</h4>
 <p>Behaviors are a great resource for avoiding repetition in your Backbone code.  If you have examples of good open-source Behaviors out there, please mention them in the comments.  I’d also love to hear what use cases you’ve found for them, even if the code isn’t public to share.</p>
 <h3>More Resources</h3>
@@ -220,13 +204,12 @@ category.  Many 3rd party Backbone or jQuery libraries require repetitive initia
                         "http://twitter.com/_benmccormick",
                       ]
                    }
-                }</script><link as="script" rel="preload" href="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"/><link as="script" rel="preload" href="/app-2c200c44da36b1866c0c.js"/><link as="script" rel="preload" href="/3-321c16e210ff1af46765.js"/><link as="script" rel="preload" href="/1-f4886410c6c000bfd2f3.js"/><link as="script" rel="preload" href="/2-d268f3af82553fe5190d.js"/><link as="script" rel="preload" href="/0-a077396c7fb69f9768a7.js"/><link as="script" rel="preload" href="/webpack-runtime-5c5d1ce37720788ff3d1.js"/><link as="fetch" rel="preload" href="/static/d/434/path---2015-03-23-staying-dry-with-marionette-behaviors-c-2-d-ed1-FsMSjr72zGjOEvEwy2TAUiHkY.json" crossOrigin="use-credentials"/></head><body class="landing-page" style="background:#FCFCFC"><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><style data-emotion-css="1f3kluc">.css-1f3kluc{width:100%;max-width:1000px;margin:0 auto;padding:2.4rem 20px;}</style><div class="css-1f3kluc em100y90"><style data-emotion-css="13vv67v">.css-13vv67v{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-bottom:2rem;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}</style><div class="css-13vv67v e1b8f8ar0"><style data-emotion-css="txnzm6">.css-txnzm6{margin:0 20px 0 0;padding-bottom:0;}.css-txnzm6 a{box-shadow:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;}.css-txnzm6 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><h3 class="css-txnzm6 e1b8f8ar2"><a name="title" href="/">Ben McCormick</a></h3><style data-emotion-css="177tisd">.css-177tisd{color:#999999;}</style><div class="css-177tisd e1b8f8ar3"><a class="css-tcc0st" href="/archive/">Blog</a><style data-emotion-css="12jh0su">.css-12jh0su{padding:0 0.5rem;}@media all and (max-width:400px){.css-12jh0su{padding:0 0.25rem;}}</style><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/subscribe/">Subscribe</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/speaking/">Speaking</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="http://twitter.com/_benmccormick">Twitter</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/about/">About</a></div></div><article class="markdown"><div class="post-title-area"><style data-emotion-css="92repi">.css-92repi{display:block;max-width:100%;}</style><h1 class="css-92repi e15djruj1">Staying DRY with Marionette Behaviors</h1></div><div class="columns"><style data-emotion-css="qsg3oo">.css-qsg3oo{max-width:100%;}.css-qsg3oo li{padding-left:10px;}.css-qsg3oo .reading-img img{width:150px;float:right;margin:0px 10px 20px 10px;}.css-qsg3oo img.full-width{max-height:none;}.css-qsg3oo img.half-width{max-height:none;width:50%;}</style><div class="css-qsg3oo e15djruj3"><p><em>This is the sixth post in a series on <a href="http://marionettejs.com/">Marionette.js</a>.  For more background on what Marionette is, check out the series page, <a href="http://benmccormick.org/marionette-explained/">Marionette Explained</a></em></p>
+                }</script><link as="script" rel="preload" href="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"/><link as="script" rel="preload" href="/app-cc39682fd5193aca312d.js"/><link as="script" rel="preload" href="/3-321c16e210ff1af46765.js"/><link as="script" rel="preload" href="/1-f4886410c6c000bfd2f3.js"/><link as="script" rel="preload" href="/2-d268f3af82553fe5190d.js"/><link as="script" rel="preload" href="/0-a077396c7fb69f9768a7.js"/><link as="script" rel="preload" href="/webpack-runtime-31fecf462c0e680a72ab.js"/><link as="fetch" rel="preload" href="/static/d/607/path---2015-03-23-staying-dry-with-marionette-behaviors-c-2-d-ed1-Eg6E2NU7vKC0m2FCUoqmj2idvyE.json" crossOrigin="use-credentials"/></head><body class="landing-page" style="background:#FCFCFC"><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><style data-emotion-css="1f3kluc">.css-1f3kluc{width:100%;max-width:1000px;margin:0 auto;padding:2.4rem 20px;}</style><div class="css-1f3kluc em100y90"><style data-emotion-css="13vv67v">.css-13vv67v{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-bottom:2rem;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}</style><div class="css-13vv67v e1b8f8ar0"><style data-emotion-css="txnzm6">.css-txnzm6{margin:0 20px 0 0;padding-bottom:0;}.css-txnzm6 a{box-shadow:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;}.css-txnzm6 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><h3 class="css-txnzm6 e1b8f8ar2"><a name="title" href="/">Ben McCormick</a></h3><style data-emotion-css="177tisd">.css-177tisd{color:#999999;}</style><div class="css-177tisd e1b8f8ar3"><a class="css-tcc0st" href="/archive/">Blog</a><style data-emotion-css="12jh0su">.css-12jh0su{padding:0 0.5rem;}@media all and (max-width:400px){.css-12jh0su{padding:0 0.25rem;}}</style><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/subscribe/">Subscribe</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/speaking/">Speaking</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="http://twitter.com/_benmccormick">Twitter</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/about/">About</a></div></div><article class="markdown"><div class="post-title-area"><style data-emotion-css="92repi">.css-92repi{display:block;max-width:100%;}</style><h1 class="css-92repi e15djruj1">Staying DRY with Marionette Behaviors</h1></div><div class="columns"><style data-emotion-css="qsg3oo">.css-qsg3oo{max-width:100%;}.css-qsg3oo li{padding-left:10px;}.css-qsg3oo .reading-img img{width:150px;float:right;margin:0px 10px 20px 10px;}.css-qsg3oo img.full-width{max-height:none;}.css-qsg3oo img.half-width{max-height:none;width:50%;}</style><div class="css-qsg3oo e15djruj3"><p><em>This is the sixth post in a series on <a href="http://marionettejs.com/">Marionette.js</a>.  For more background on what Marionette is, check out the series page, <a href="http://benmccormick.org/marionette-explained/">Marionette Explained</a></em></p>
 <p>Any successful project draws complaints, and <a href="http://backbonejs.org/">Backbone.js</a> is a successful project by pretty much any measurement.  The biggest complaints I’ve heard leveled against Backbone as an MVC framework revolve around the boilerplate involved in writing Backbone apps.  The claim goes that Backbone forces you to write the same event binding and workflow code over and over again.  In general I’d claim that’s a feature of <em>bad</em> Backbone apps, and  not something unavoidable.  But it’s certainly true that Backbone doesn’t give you much guidance on how to reduce repetition and boilerplate in your code.  Making it easy to reduce repetition turns out to be one of the main roles of <a href="http://marionettejs.com/">Marionette</a>. This post is a look at one of the tools that Marionette provides to help you simplify your applications: the Behavior class.</p>
 <p>Marionette Behaviors are reusable chunks of UI logic that you can mix into your Views.  When you have a common problem that you face across several Views, Behaviors can help you reduce boilerplate and repetition.  We’ll take a look at a practical example first, and then we can get into the Behaviors API.  </p>
 <p>Let’s see how Behaviors can help us write better form validation code.  When I’m validating forms, I use the <a href="http://thedersen.com/projects/backbone-validation/">backbone.validation</a> library. It provides helpers for checking the validity of model properties and attaching error messages to inputs, but doesn’t force a specific workflow. However, I have a specific flow I usually want.  A user should be able to enter data as they see fit to start, with no validation warnings until they’ve tried to submit the form.  After they’ve initially submitted the form, warnings should appear next to any invalid fields, and they should update and disappear as the user fixes their input.</p>
 <p>That process is pretty easy to implement with backbone.validation.  I simply connect my Model to each form View I create, and in the Model I add some logic to re-validate each time the Model is changed, but only after the first time validation is triggered by a user submit.  That works great in most cases.  The problem comes when I need to re-render my view in the middle of this process.  This is a pretty common occurrence if your form has sub-views that may appear based on the contents of other parts of the form. In that case, I have to make sure that the validation state persists across renders.  That might look something like this. <sup id="fnref:1"><a href="#fn:1">1</a></sup></p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Mn <span class="token keyword">from</span> <span class="token string">'marionette'</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Mn <span class="token keyword">from</span> <span class="token string">'marionette'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Validation <span class="token keyword">from</span> <span class="token string">'backbone-validation'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">var</span> FormView <span class="token operator">=</span> Mn<span class="token punctuation">.</span>LayoutView<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
@@ -262,12 +245,10 @@ category.  Many 3rd party Backbone or jQuery libraries require repetitive initia
         <span class="token comment">//handle form submission</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-      </div>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>So it’s not that much code to add the functionality we want.  But when we need this code on multiple Views, adding and maintaining it becomes a pain quickly, creating the type of boilerplate that developers rage against.  So how can Behaviors help? It turns out to be easy to pull the functionality from our example out into a separate Behavior that any View can implement.  </p>
 <p>That would look something like this:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Mn <span class="token keyword">from</span> <span class="token string">'marionette'</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Mn <span class="token keyword">from</span> <span class="token string">'marionette'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Validation <span class="token keyword">from</span> <span class="token string">'backbone-validation'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">var</span> ValidationBehavior <span class="token operator">=</span> Mn<span class="token punctuation">.</span>Behavior<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
@@ -291,11 +272,9 @@ category.  Many 3rd party Backbone or jQuery libraries require repetitive initia
 
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> ValidationBehavior<span class="token punctuation">;</span></code></pre>
-      </div>
+<span class="token keyword">export</span> <span class="token keyword">default</span> ValidationBehavior<span class="token punctuation">;</span></code></pre></div>
 <p>You could then pull the Behavior back into the View like this:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Mn <span class="token keyword">from</span> <span class="token string">'marionette'</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Mn <span class="token keyword">from</span> <span class="token string">'marionette'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Validation <span class="token keyword">from</span> <span class="token string">'backbone-validation'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> ValidationBehavior <span class="token keyword">from</span> <span class="token string">'behaviors/validation'</span><span class="token punctuation">;</span>
 
@@ -320,31 +299,26 @@ category.  Many 3rd party Backbone or jQuery libraries require repetitive initia
     submitForm<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">//handle form submission</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-      </div>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>We could do this for any number of Views that required validation.  The same thing can be done for many other types of functionality, including key-binding and “warn before delete”.</p>
 <h3>Behaviors API</h3>
 <p>Behaviors have essentially the same API as Marionette Views, because they’re meant to be extracted out of existing Views.  So the event hashes, ui elements, and life-cycle methods that you find on a Marionette View are all also available on Behaviors.  The life cycle functions on a Behavior execute immediately after their corresponding functions on the Behavior’s associated View. Behaviors also get <code class="language-text">el</code>, <code class="language-text">$el</code> and <code class="language-text">$</code> properties that are proxied to the equivalent properties on the Behaviors view.</p>
 <p>Behaviors are not just mixins though. Behavior properties are isolated from the Views they’re associated with, preventing naming collisions and also encouraging reusable, decoupled designs.  Generally Behaviors don’t directly modify their associated Views or data.  The communication flow is one way, with Behaviors accepting input from their parent View in the form of an options object that is attached to the Behavior when it is created.  You can pass these options through using the behaviors hash on the View.  For instance to pass an error message to the validation behavior above, you could define your behaviors hash like this:</p>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">    behaviors: {
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">    behaviors: {
         validation: {
             behaviorClass: ValidationBehavior,
             errorMessage: &#39;You did something wrong.&#39;
         }
-    },</code></pre>
-      </div>
+    },</code></pre></div>
 <h3>A quick note on how Behaviors attach to Views</h3>
 <p>You can see in the example above that the general form for attaching Behaviors to a View is to include a key-value pair for each Behavior, where the value is an object that lays out the options for the Behavior.  The interesting thing in the example above is that the name of the key doesn’t matter at all.  It’s not used by the library in any way; instead Marionette picks out the correct behavior to use based on the behaviorClass property in the value.  So why is the API structured like that?  To understand, you need to know that the Behaviors API supports two separate scenarios for looking up the correct Behaviors for a View.  </p>
 <p>The original API Marionette included for looking up Behaviors requires you to override a behaviorsLookup function on Marionette to tell the library where to retrieve your Behaviors from.  The keys of the behaviors hash on a view were passed to the lookup function, which then retrieved the Behavior classes from wherever the user chose to store them (probably a global namespace object).  </p>
 <p>That API works great for developers used to using namespaces to organize their code, but for developers using modern JavaScript module loaders, it introduces global state and indirection where it wasn’t needed.  To handle this case, the behaviorClass key was added as an option for the value object, allowing developers to specify Behaviors as dependencies of the file they were defining a View in, and then attach the Behavior directly to the View.  </p>
 <p>That makes much more sense for module users, but leads to a clunky API where the keys aren’t used.  Fortunately, in newer versions of Marionette you can get around this entirely, by defining your behaviors as an array on a view.  So the example above would look like:</p>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">    behaviors: [{
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">    behaviors: [{
         behaviorClass: ValidationBehavior,
         errorMessage: &#39;You did something wrong.&#39;
-    }]</code></pre>
-      </div>
+    }]</code></pre></div>
 <p>This works due to an undocumented implementation detail in Marionette 2.4.1 <sup id="fnref:2"><a href="#fn:2">2</a></sup>, but will be <a href="https://github.com/marionettejs/backbone.marionette/pull/2368">fully supported</a> in future versions.  In future versions you also will be able to pass a class directly as an array item if the Behavior is not taking any arguments, further cleaning up the API.</p>
 <h3>When are Behaviors useful?</h3>
 <p>Marionette’s documentation explains Behaviors very broadly, which makes sense for official documentation since it gives ideas without limiting how users think about them.  But in my experience Behaviors are best used for three different use-cases.</p>
@@ -352,32 +326,27 @@ category.  Many 3rd party Backbone or jQuery libraries require repetitive initia
 <p>This is the most obvious use for Behaviors, and what the documentation focuses on.  It’s easy to set up common event based UI patterns like “warn on close” with behaviors.  But they also can be used for more complicated event based UI logic.  At Windsor Circle we use 2 behaviors to share common “drag and drop” code with a Droppable Behavior that can be implemented by a CollectionView and a Draggable Behavior for ItemViews.  That makes it simple to make any CollectionView based list sortable with drag and drop, and keeps the code in a nice central place where any improvements will be shared across the code base.</p>
 <h4>Sharing common life-cycle functions</h4>
 <p>In addition to event handling, Behaviors also give you access to the various <a href="http://benmccormick.org/2015/01/05/marionette-view-life-cycles/">life cycle</a> methods of Marionette Views.  That lets you split out common life cycle functionality and reduce code.  An easy example of this would be a Behavior that fades a View in each time by adding a css class with an animation associated with it.</p>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">let FadeIn = Marionette.Behavior.extend({
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">let FadeIn = Marionette.Behavior.extend({
     onBeforeShow: function() {
         this.$el.addClass(&#39;hidden fadein&#39;);
     },
     onShow: function() {
         this.$el.removeClass(&#39;hidden&#39;);
     }
-});</code></pre>
-      </div>
+});</code></pre></div>
 <p>which would work with a CSS snippet like this:</p>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">.fadein {
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">.fadein {
   transition: opacity 1s;  
   opacity: 1;
 }
 
 .fadein.hidden {
     opacity: 0;
-}</code></pre>
-      </div>
+}</code></pre></div>
 <h4>Simplifying integration with libraries</h4>
 <p>This final use case is a special case of the first 2, but I think its worth mentioning in its own
 category.  Many 3rd party Backbone or jQuery libraries require repetitive initialization code to use within a View.  This code is often the same across all Views, or only requires minor tweaks.  The perfect use case for a Behavior!  The Validation code above is one example of this, but it’s useful for many plugins.  For instance, if you use the <a href="http://harvesthq.github.io/chosen/">Chosen</a> jQuery plugin to create rich dropdown boxes, you could create a Behavior to automatically initialize select elements with Chosen, and optionally pass a class to restrict it to only initialize selects with a specific class.</p>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">let UseChosen = Marionette.Behavior.extend({
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">let UseChosen = Marionette.Behavior.extend({
     onRender: function() {
         let className = this.options.className,
             chosenOptions = this.options.chosenOptions || {};
@@ -388,8 +357,7 @@ category.  Many 3rd party Backbone or jQuery libraries require repetitive initia
             this.$(&#39;select&#39;).chosen(chosenOptions);
         }
     }
-});</code></pre>
-      </div>
+});</code></pre></div>
 <h4>Wrap-Up</h4>
 <p>Behaviors are a great resource for avoiding repetition in your Backbone code.  If you have examples of good open-source Behaviors out there, please mention them in the comments.  I’d also love to hear what use cases you’ve found for them, even if the code isn’t public to share.</p>
 <h3>More Resources</h3>
@@ -429,4 +397,4 @@ category.  Many 3rd party Backbone or jQuery libraries require repetitive initia
             },
             h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/wf-loading/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
           })(document);
-        </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"2015-03-23-staying-dry-with-marionette-behaviors-c2d","path":"/2015/03/23/staying-dry-with-marionette-behaviors"};window.dataPath="434/path---2015-03-23-staying-dry-with-marionette-behaviors-c-2-d-ed1-FsMSjr72zGjOEvEwy2TAUiHkY";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-2c200c44da36b1866c0c.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-6c3cb25c69a33194b725.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.f3985d4a4b7bdcd8e938.css","/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-2408db2f7d4db12e014b.js"],"component---src-templates-topic-page-js":["/component---src-templates-topic-page-js-a5331e7c78918d6b6ea9.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-b233b14132501dcc18da.js"],"component---src-pages-index-js":["/component---src-pages-index-js-67d5311c328defd1b167.js"],"component---src-pages-links-archive-js":["/component---src-pages-links-archive-js-8404a10ddcf65ffbf936.js"],"component---src-pages-reviews-archive-js":["/component---src-pages-reviews-archive-js-419aed9b5a54d9b2345a.js"]};/*]]>*/</script><script src="/webpack-runtime-5c5d1ce37720788ff3d1.js" async=""></script><script src="/0-a077396c7fb69f9768a7.js" async=""></script><script src="/2-d268f3af82553fe5190d.js" async=""></script><script src="/1-f4886410c6c000bfd2f3.js" async=""></script><script src="/3-321c16e210ff1af46765.js" async=""></script><script src="/app-2c200c44da36b1866c0c.js" async=""></script><script src="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js" async=""></script></body></html>
+        </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"2015-03-23-staying-dry-with-marionette-behaviors-c2d","path":"/2015/03/23/staying-dry-with-marionette-behaviors"};window.dataPath="607/path---2015-03-23-staying-dry-with-marionette-behaviors-c-2-d-ed1-Eg6E2NU7vKC0m2FCUoqmj2idvyE";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-cc39682fd5193aca312d.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-6c3cb25c69a33194b725.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.f3985d4a4b7bdcd8e938.css","/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-2408db2f7d4db12e014b.js"],"component---src-templates-topic-page-js":["/component---src-templates-topic-page-js-a5331e7c78918d6b6ea9.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-b233b14132501dcc18da.js"],"component---src-pages-index-js":["/component---src-pages-index-js-67d5311c328defd1b167.js"],"component---src-pages-links-archive-js":["/component---src-pages-links-archive-js-8404a10ddcf65ffbf936.js"],"component---src-pages-reviews-archive-js":["/component---src-pages-reviews-archive-js-419aed9b5a54d9b2345a.js"]};/*]]>*/</script><script src="/webpack-runtime-31fecf462c0e680a72ab.js" async=""></script><script src="/0-a077396c7fb69f9768a7.js" async=""></script><script src="/2-d268f3af82553fe5190d.js" async=""></script><script src="/1-f4886410c6c000bfd2f3.js" async=""></script><script src="/3-321c16e210ff1af46765.js" async=""></script><script src="/app-cc39682fd5193aca312d.js" async=""></script><script src="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js" async=""></script></body></html>

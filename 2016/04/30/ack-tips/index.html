@@ -24,58 +24,33 @@
 </ol>
 <p>This is easiest to see by comparing commands.</p>
 <h4>Searching for “javascript” in a file</h4>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">grep javascript foo.txt</code></pre>
-      </div>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">ack javascript foo.txt</code></pre>
-      </div>
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">grep javascript foo.txt</code></pre></div>
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">ack javascript foo.txt</code></pre></div>
 <h4>Searching every file in the current directory for “javascript”</h4>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">grep -r javascript .</code></pre>
-      </div>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">ack javascript</code></pre>
-      </div>
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">grep -r javascript .</code></pre></div>
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">ack javascript</code></pre></div>
 <h4>Searching every file in the current directory for “javascript”, excluding a .git directory</h4>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">grep -r javascript . $(find . -type f | grep -v &#39;\.git&#39;)</code></pre>
-      </div>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">ack javascript</code></pre>
-      </div>
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">grep -r javascript . $(find . -type f | grep -v &#39;\.git&#39;)</code></pre></div>
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">ack javascript</code></pre></div>
 <h4>Searching every HTML file in the current directory for “javascript”, excluding a .git directory</h4>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">grep -r javascript . $(find . -name &#39;*.html&#39; -or -name &#39;*.htm&#39;| grep -v &#39;\.git&#39;)</code></pre>
-      </div>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">ack --html javascript</code></pre>
-      </div>
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">grep -r javascript . $(find . -name &#39;*.html&#39; -or -name &#39;*.htm&#39;| grep -v &#39;\.git&#39;)</code></pre></div>
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">ack --html javascript</code></pre></div>
 <p>Basically, as the complexity of what you’re trying to do increases in terms of multiple files, the overhead of using grep increases proportionately.  Because ack and ag are optimized for common use cases, they’re able to scale much better.</p>
 <h3>#2: Use Ack to get familiar with a new codebase</h3>
 <p><a href=\"http://beyondgrep.com/\">ack</a> is an incredibly useful tool when approaching a new codebase, especially if you’re focused on a specific feature. It allows you to quickly get a view of the codebase, and then zero in on the functionality you’re interested in.  To see how this works, let’s use jQuery’s <a href=\"https://github.com/jquery/jquery\">source repo</a> as an example, and see what happens if we want to get a look at how it implements ajax.</p>
-<div class=\"gatsby-highlight\" data-language=\"bash get jquery\">
-      <pre class=\"language-bash get jquery\"><code class=\"language-bash get jquery\">❯ git clone git@github.com:jquery/jquery.git
-❯ cd jquery</code></pre>
-      </div>
+<div class=\"gatsby-highlight\" data-language=\"bash get jquery\"><pre class=\"language-bash get jquery\"><code class=\"language-bash get jquery\">❯ git clone git@github.com:jquery/jquery.git
+❯ cd jquery</code></pre></div>
 <p>We can start by trying to get a general idea of the size of the codebase.  Running <code class=\"language-text\">ack -f</code> to show all files in the directory will immediately overrun our terminal, so we can get a file count using <code class=\"language-text\">wc</code> instead</p>
-<div class=\"gatsby-highlight\" data-language=\"bash\">
-      <pre class=\"language-bash\"><code class=\"language-bash\">❯ ack -f <span class=\"token operator\">|</span><span class=\"token function\">wc</span> -l
-    249</code></pre>
-      </div>
+<div class=\"gatsby-highlight\" data-language=\"bash\"><pre class=\"language-bash\"><code class=\"language-bash\">❯ ack -f <span class=\"token operator\">|</span><span class=\"token function\">wc</span> -l
+    249</code></pre></div>
 <p>Ok thats a good amount of files.  But how many of them are actually source files?  We can filter down to just the javascript files.</p>
-<div class=\"gatsby-highlight\" data-language=\"bash\">
-      <pre class=\"language-bash\"><code class=\"language-bash\">❯ ack -f --js <span class=\"token operator\">|</span><span class=\"token function\">wc</span> -l
-    155</code></pre>
-      </div>
+<div class=\"gatsby-highlight\" data-language=\"bash\"><pre class=\"language-bash\"><code class=\"language-bash\">❯ ack -f --js <span class=\"token operator\">|</span><span class=\"token function\">wc</span> -l
+    155</code></pre></div>
 <p>But thats probably still a bit high, since not all of the JavaScript files are source files.  A quick <code class=\"language-text\">ls</code> shows that we probably want to filter down to the src directory.</p>
-<div class=\"gatsby-highlight\" data-language=\"bash\">
-      <pre class=\"language-bash\"><code class=\"language-bash\">❯ ack -f --js src <span class=\"token operator\">|</span><span class=\"token function\">wc</span> -l
-    92</code></pre>
-      </div>
+<div class=\"gatsby-highlight\" data-language=\"bash\"><pre class=\"language-bash\"><code class=\"language-bash\">❯ ack -f --js src <span class=\"token operator\">|</span><span class=\"token function\">wc</span> -l
+    92</code></pre></div>
 <p>Ok so now we’re down to 92 source files.  Still a bit much, but its probably worth printing them with <code class=\"language-text\">ack -f --js src</code> at this point to get an idea of the directory structure.  When we do that, we can see there’s an ajax folder, which is probably what we’re interested in.  To make sure we’re not missing related files, we can continue on to searching for files with ajax in the file name directly.</p>
-<div class=\"gatsby-highlight\" data-language=\"bash\">
-      <pre class=\"language-bash\"><code class=\"language-bash\">❯ ack -g --js ajax src
+<div class=\"gatsby-highlight\" data-language=\"bash\"><pre class=\"language-bash\"><code class=\"language-bash\">❯ ack -g --js ajax src
     src/ajax/jsonp.js
     src/ajax/load.js
     src/ajax/parseJSON.js
@@ -86,11 +61,9 @@
     src/ajax/var/rquery.js
     src/ajax/xhr.js
     src/ajax.js
-    src/event/ajax.js</code></pre>
-      </div>
+    src/event/ajax.js</code></pre></div>
 <p>That gets us down to 11 files to look at.  But we might be getting a bit greedy.  Not every file related to ajax may have ajax in the file path.  We can use the <code class=\"language-text\">-l</code> option of ack to display the list of files that contain ajax somewhere in their text.</p>
-<div class=\"gatsby-highlight\" data-language=\"bash\">
-      <pre class=\"language-bash\"><code class=\"language-bash\">❯ ack --js -l ajax src
+<div class=\"gatsby-highlight\" data-language=\"bash\"><pre class=\"language-bash\"><code class=\"language-bash\">❯ ack --js -l ajax src
     src/ajax/jsonp.js
     src/ajax/load.js
     src/ajax/script.js
@@ -99,18 +72,14 @@
     src/event/ajax.js
     src/jquery.js
     src/manipulation/_evalUrl.js
-    src/serialize.js</code></pre>
-      </div>
+    src/serialize.js</code></pre></div>
 <p>Ok that adds 3 additional files with ajax references.  But its not clear that they’re relevant to jQuery’s ajax implementation, it may just be a file reference or comment.  Lets use ack to get a quick look at how ajax is referenced in those files.  This part gets a bit more complicated.  We can use ack’s <code class=\"language-text\">-v</code> option to invert our matching and find non-matching inputs, then use unix piping to filter our previous command.</p>
-<div class=\"gatsby-highlight\" data-language=\"bash\">
-      <pre class=\"language-bash\"><code class=\"language-bash\">❯ ack --js -l ajax src <span class=\"token operator\">|</span>ack -v ajax
+<div class=\"gatsby-highlight\" data-language=\"bash\"><pre class=\"language-bash\"><code class=\"language-bash\">❯ ack --js -l ajax src <span class=\"token operator\">|</span>ack -v ajax
     src/jquery.js
     src/manipulation/_evalUrl.js
-    src/serialize.js</code></pre>
-      </div>
+    src/serialize.js</code></pre></div>
 <p>Now we can use ack’s <code class=\"language-text\">-x</code> argument to search the files piped in through standard input.</p>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">❯ ack --js -l ajax src |ack -v ajax|ack -x ajax
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">❯ ack --js -l ajax src |ack -v ajax|ack -x ajax
 
     src/jquery.js
     20:     &quot;./ajax&quot;,
@@ -126,20 +95,17 @@
     9:              // Make this explicit, since user can override this through ajaxSetup (#11264)
 
     src/serialize.js
-    61:             traditional = jQuery.ajaxSettings &amp;&amp; jQuery.ajaxSettings.traditional;</code></pre>
-      </div>
+    61:             traditional = jQuery.ajaxSettings &amp;&amp; jQuery.ajaxSettings.traditional;</code></pre></div>
 <p>So we can see pretty quickly that these files are safe to ignore in terms of understanding how ajax works in jQuery.  They’re just module loads, an actual call to the ajax method for other purposes, and settings serialization. It is useful to note that <code class=\"language-text\">src/ajax</code> is loaded into the main jQuery file first. Its probably worth looking at it as the starting point for our investigation. We’re well on our way to diving into the ajax functionality, able to focus on 11 of the 249 files in the repo immediately, already knowing how those files are loaded into the main library.</p>
 <p>This was just a simple example.  Whenever you’re spelunking into new code territory, consider using ack to get your bearings.  Things go a lot faster when you know the lay of the land in advance.</p>
 <h3>#3: Take advantage of Ack’s configurability</h3>
 <p>One of the nice things about <a href=\"http://beyondgrep.com/\">ack</a> is the fact that it takes an <code class=\"language-text\">.ackrc</code> configuration file <sup id=\"fnref:2\"><a href=\"#fn:2\">2</a></sup>. These files can be scoped at a directory level, a user level or at a root level, and mirror the options available on the executable itself.  This allows you to extend and customize acks behavior in 3 primary ways.</p>
 <h4>a. Add new filetypes, and bundle existing ones</h4>
 <p>One of ack’s most useful features is the ability to add a <code class=\"language-text\">--&lt;filetype&gt;</code> flag to your searches to restrict your searches to a specific filetype.   ack comes with 75 builtin types including almost all common languages.  But those aren’t always good enough.  To handle obscure languages, and not so obscure syntaxes like handlebars templates, ack lets you define new filetypes.  You’re also able to modify existing filetypes to add additional file extensions to include under that filetype.  So for instance my ackrc includes these lines:</p>
-<div class=\"gatsby-highlight\" data-language=\"text\">
-      <pre class=\"language-text\"><code class=\"language-text\">--type-add
+<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">--type-add
 hbs=hbs
 --type-add
-js=js,es6</code></pre>
-      </div>
+js=js,es6</code></pre></div>
 <p>The first 2 lines allow me to specifically search handlebars files, which are where all of the html content for my work projects is stored.  The next 2 lines include es6 files in my JavaScript searches, useful since I append JavaScript files that I intend to process with <a href=\"https://babeljs.io/\">Babel</a> with the <code class=\"language-text\">.es6</code> extenstion.  Customizing the js extension allows me to search all of my JavaScript together.  You can also define richer types in ackrc <a href=\"http://beyondgrep.com/documentation/ack-2.14-man.html#defining_your_own_types\">based on file names using regular expressions or direct name matching</a>.</p>
 <h4>b. Set default options</h4>
 <p>Any option that the ack executable takes can have a default set or changed in an ackrc file.  This is mainly useful for the display option.  By default ack groups matches from different files and gives the file information above each group of matches.  It also shows all output in color.  Any of those things can be disabled or changed in your ackrc file.</p>
@@ -182,7 +148,7 @@ js=js,es6</code></pre>
                         "http://twitter.com/_benmccormick",
                       ]
                    }
-                }</script><link as="script" rel="preload" href="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"/><link as="script" rel="preload" href="/app-2c200c44da36b1866c0c.js"/><link as="script" rel="preload" href="/3-321c16e210ff1af46765.js"/><link as="script" rel="preload" href="/1-f4886410c6c000bfd2f3.js"/><link as="script" rel="preload" href="/2-d268f3af82553fe5190d.js"/><link as="script" rel="preload" href="/0-a077396c7fb69f9768a7.js"/><link as="script" rel="preload" href="/webpack-runtime-5c5d1ce37720788ff3d1.js"/><link as="fetch" rel="preload" href="/static/d/255/path---2016-04-30-ack-tips-7-d-1-602-xf6rLF7GT8YQX3zowotKznWiQ.json" crossOrigin="use-credentials"/></head><body class="landing-page" style="background:#FCFCFC"><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><style data-emotion-css="1f3kluc">.css-1f3kluc{width:100%;max-width:1000px;margin:0 auto;padding:2.4rem 20px;}</style><div class="css-1f3kluc em100y90"><style data-emotion-css="13vv67v">.css-13vv67v{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-bottom:2rem;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}</style><div class="css-13vv67v e1b8f8ar0"><style data-emotion-css="txnzm6">.css-txnzm6{margin:0 20px 0 0;padding-bottom:0;}.css-txnzm6 a{box-shadow:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;}.css-txnzm6 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><h3 class="css-txnzm6 e1b8f8ar2"><a name="title" href="/">Ben McCormick</a></h3><style data-emotion-css="177tisd">.css-177tisd{color:#999999;}</style><div class="css-177tisd e1b8f8ar3"><a class="css-tcc0st" href="/archive/">Blog</a><style data-emotion-css="12jh0su">.css-12jh0su{padding:0 0.5rem;}@media all and (max-width:400px){.css-12jh0su{padding:0 0.25rem;}}</style><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/subscribe/">Subscribe</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/speaking/">Speaking</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="http://twitter.com/_benmccormick">Twitter</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/about/">About</a></div></div><article class="markdown"><div class="post-title-area"><style data-emotion-css="92repi">.css-92repi{display:block;max-width:100%;}</style><h1 class="css-92repi e15djruj1">Ack Tips</h1></div><div class="columns"><style data-emotion-css="qsg3oo">.css-qsg3oo{max-width:100%;}.css-qsg3oo li{padding-left:10px;}.css-qsg3oo .reading-img img{width:150px;float:right;margin:0px 10px 20px 10px;}.css-qsg3oo img.full-width{max-height:none;}.css-qsg3oo img.half-width{max-height:none;width:50%;}</style><div class="css-qsg3oo e15djruj3"><p><em>Last summer I briefly considered creating a separate blog focused on command line tools.  The idea is that the articles would be shorter and more practical than the longer pieces I write here.  I ended up scrapping the idea, but had written a few posts on one of my favorite command line tools Ack, so I wanted to preserve them here, as a single, longer piece, separated into 3 “tips”</em></p>
+                }</script><link as="script" rel="preload" href="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"/><link as="script" rel="preload" href="/app-cc39682fd5193aca312d.js"/><link as="script" rel="preload" href="/3-321c16e210ff1af46765.js"/><link as="script" rel="preload" href="/1-f4886410c6c000bfd2f3.js"/><link as="script" rel="preload" href="/2-d268f3af82553fe5190d.js"/><link as="script" rel="preload" href="/0-a077396c7fb69f9768a7.js"/><link as="script" rel="preload" href="/webpack-runtime-31fecf462c0e680a72ab.js"/><link as="fetch" rel="preload" href="/static/d/252/path---2016-04-30-ack-tips-7-d-1-602-tBJeTceKrtuMkNK1opTYGAfbCs.json" crossOrigin="use-credentials"/></head><body class="landing-page" style="background:#FCFCFC"><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><style data-emotion-css="1f3kluc">.css-1f3kluc{width:100%;max-width:1000px;margin:0 auto;padding:2.4rem 20px;}</style><div class="css-1f3kluc em100y90"><style data-emotion-css="13vv67v">.css-13vv67v{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-bottom:2rem;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}</style><div class="css-13vv67v e1b8f8ar0"><style data-emotion-css="txnzm6">.css-txnzm6{margin:0 20px 0 0;padding-bottom:0;}.css-txnzm6 a{box-shadow:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;}.css-txnzm6 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><h3 class="css-txnzm6 e1b8f8ar2"><a name="title" href="/">Ben McCormick</a></h3><style data-emotion-css="177tisd">.css-177tisd{color:#999999;}</style><div class="css-177tisd e1b8f8ar3"><a class="css-tcc0st" href="/archive/">Blog</a><style data-emotion-css="12jh0su">.css-12jh0su{padding:0 0.5rem;}@media all and (max-width:400px){.css-12jh0su{padding:0 0.25rem;}}</style><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/subscribe/">Subscribe</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/speaking/">Speaking</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="http://twitter.com/_benmccormick">Twitter</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/about/">About</a></div></div><article class="markdown"><div class="post-title-area"><style data-emotion-css="92repi">.css-92repi{display:block;max-width:100%;}</style><h1 class="css-92repi e15djruj1">Ack Tips</h1></div><div class="columns"><style data-emotion-css="qsg3oo">.css-qsg3oo{max-width:100%;}.css-qsg3oo li{padding-left:10px;}.css-qsg3oo .reading-img img{width:150px;float:right;margin:0px 10px 20px 10px;}.css-qsg3oo img.full-width{max-height:none;}.css-qsg3oo img.half-width{max-height:none;width:50%;}</style><div class="css-qsg3oo e15djruj3"><p><em>Last summer I briefly considered creating a separate blog focused on command line tools.  The idea is that the articles would be shorter and more practical than the longer pieces I write here.  I ended up scrapping the idea, but had written a few posts on one of my favorite command line tools Ack, so I wanted to preserve them here, as a single, longer piece, separated into 3 “tips”</em></p>
 <h3>#1: Prefer ack or ag to grep</h3>
 <p><a href="http://linux.die.net/man/1/grep">grep</a> is one of the most well known unix utilties.  If you’ve had any exposure to the command line at all, you’ve probably searched for something using grep.  grep’s standalone use is searching for content inside of files, but with Unix’s piping philosophy it is useful as a general search and filtering tool.  Originally created for Version 4 Unix 42 years ago, it has been a staple of *Nix operating systems ever since.   If you’ve been using it for even half that time, I’m sure a blog post isn’t enough to convince you to stop.  But for the rest of us, there’s an opportunity to do better.</p>
 <p><a href="http://beyondgrep.com/">ack</a> and <a href="https://github.com/ggreer/the_silver_searcher">ag</a> <sup id="fnref:1"><a href="#fn:1">1</a></sup> are similar projects with the same goal: providing a better experience than grep when searching directories of files, particularly for programmers.  The key selling points:</p>
@@ -194,58 +160,33 @@ js=js,es6</code></pre>
 </ol>
 <p>This is easiest to see by comparing commands.</p>
 <h4>Searching for “javascript” in a file</h4>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">grep javascript foo.txt</code></pre>
-      </div>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">ack javascript foo.txt</code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">grep javascript foo.txt</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ack javascript foo.txt</code></pre></div>
 <h4>Searching every file in the current directory for “javascript”</h4>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">grep -r javascript .</code></pre>
-      </div>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">ack javascript</code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">grep -r javascript .</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ack javascript</code></pre></div>
 <h4>Searching every file in the current directory for “javascript”, excluding a .git directory</h4>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">grep -r javascript . $(find . -type f | grep -v &#39;\.git&#39;)</code></pre>
-      </div>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">ack javascript</code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">grep -r javascript . $(find . -type f | grep -v &#39;\.git&#39;)</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ack javascript</code></pre></div>
 <h4>Searching every HTML file in the current directory for “javascript”, excluding a .git directory</h4>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">grep -r javascript . $(find . -name &#39;*.html&#39; -or -name &#39;*.htm&#39;| grep -v &#39;\.git&#39;)</code></pre>
-      </div>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">ack --html javascript</code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">grep -r javascript . $(find . -name &#39;*.html&#39; -or -name &#39;*.htm&#39;| grep -v &#39;\.git&#39;)</code></pre></div>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ack --html javascript</code></pre></div>
 <p>Basically, as the complexity of what you’re trying to do increases in terms of multiple files, the overhead of using grep increases proportionately.  Because ack and ag are optimized for common use cases, they’re able to scale much better.</p>
 <h3>#2: Use Ack to get familiar with a new codebase</h3>
 <p><a href="http://beyondgrep.com/">ack</a> is an incredibly useful tool when approaching a new codebase, especially if you’re focused on a specific feature. It allows you to quickly get a view of the codebase, and then zero in on the functionality you’re interested in.  To see how this works, let’s use jQuery’s <a href="https://github.com/jquery/jquery">source repo</a> as an example, and see what happens if we want to get a look at how it implements ajax.</p>
-<div class="gatsby-highlight" data-language="bash get jquery">
-      <pre class="language-bash get jquery"><code class="language-bash get jquery">❯ git clone git@github.com:jquery/jquery.git
-❯ cd jquery</code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="bash get jquery"><pre class="language-bash get jquery"><code class="language-bash get jquery">❯ git clone git@github.com:jquery/jquery.git
+❯ cd jquery</code></pre></div>
 <p>We can start by trying to get a general idea of the size of the codebase.  Running <code class="language-text">ack -f</code> to show all files in the directory will immediately overrun our terminal, so we can get a file count using <code class="language-text">wc</code> instead</p>
-<div class="gatsby-highlight" data-language="bash">
-      <pre class="language-bash"><code class="language-bash">❯ ack -f <span class="token operator">|</span><span class="token function">wc</span> -l
-    249</code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ ack -f <span class="token operator">|</span><span class="token function">wc</span> -l
+    249</code></pre></div>
 <p>Ok thats a good amount of files.  But how many of them are actually source files?  We can filter down to just the javascript files.</p>
-<div class="gatsby-highlight" data-language="bash">
-      <pre class="language-bash"><code class="language-bash">❯ ack -f --js <span class="token operator">|</span><span class="token function">wc</span> -l
-    155</code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ ack -f --js <span class="token operator">|</span><span class="token function">wc</span> -l
+    155</code></pre></div>
 <p>But thats probably still a bit high, since not all of the JavaScript files are source files.  A quick <code class="language-text">ls</code> shows that we probably want to filter down to the src directory.</p>
-<div class="gatsby-highlight" data-language="bash">
-      <pre class="language-bash"><code class="language-bash">❯ ack -f --js src <span class="token operator">|</span><span class="token function">wc</span> -l
-    92</code></pre>
-      </div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ ack -f --js src <span class="token operator">|</span><span class="token function">wc</span> -l
+    92</code></pre></div>
 <p>Ok so now we’re down to 92 source files.  Still a bit much, but its probably worth printing them with <code class="language-text">ack -f --js src</code> at this point to get an idea of the directory structure.  When we do that, we can see there’s an ajax folder, which is probably what we’re interested in.  To make sure we’re not missing related files, we can continue on to searching for files with ajax in the file name directly.</p>
-<div class="gatsby-highlight" data-language="bash">
-      <pre class="language-bash"><code class="language-bash">❯ ack -g --js ajax src
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ ack -g --js ajax src
     src/ajax/jsonp.js
     src/ajax/load.js
     src/ajax/parseJSON.js
@@ -256,11 +197,9 @@ js=js,es6</code></pre>
     src/ajax/var/rquery.js
     src/ajax/xhr.js
     src/ajax.js
-    src/event/ajax.js</code></pre>
-      </div>
+    src/event/ajax.js</code></pre></div>
 <p>That gets us down to 11 files to look at.  But we might be getting a bit greedy.  Not every file related to ajax may have ajax in the file path.  We can use the <code class="language-text">-l</code> option of ack to display the list of files that contain ajax somewhere in their text.</p>
-<div class="gatsby-highlight" data-language="bash">
-      <pre class="language-bash"><code class="language-bash">❯ ack --js -l ajax src
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ ack --js -l ajax src
     src/ajax/jsonp.js
     src/ajax/load.js
     src/ajax/script.js
@@ -269,18 +208,14 @@ js=js,es6</code></pre>
     src/event/ajax.js
     src/jquery.js
     src/manipulation/_evalUrl.js
-    src/serialize.js</code></pre>
-      </div>
+    src/serialize.js</code></pre></div>
 <p>Ok that adds 3 additional files with ajax references.  But its not clear that they’re relevant to jQuery’s ajax implementation, it may just be a file reference or comment.  Lets use ack to get a quick look at how ajax is referenced in those files.  This part gets a bit more complicated.  We can use ack’s <code class="language-text">-v</code> option to invert our matching and find non-matching inputs, then use unix piping to filter our previous command.</p>
-<div class="gatsby-highlight" data-language="bash">
-      <pre class="language-bash"><code class="language-bash">❯ ack --js -l ajax src <span class="token operator">|</span>ack -v ajax
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ ack --js -l ajax src <span class="token operator">|</span>ack -v ajax
     src/jquery.js
     src/manipulation/_evalUrl.js
-    src/serialize.js</code></pre>
-      </div>
+    src/serialize.js</code></pre></div>
 <p>Now we can use ack’s <code class="language-text">-x</code> argument to search the files piped in through standard input.</p>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">❯ ack --js -l ajax src |ack -v ajax|ack -x ajax
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">❯ ack --js -l ajax src |ack -v ajax|ack -x ajax
 
     src/jquery.js
     20:     &quot;./ajax&quot;,
@@ -296,20 +231,17 @@ js=js,es6</code></pre>
     9:              // Make this explicit, since user can override this through ajaxSetup (#11264)
 
     src/serialize.js
-    61:             traditional = jQuery.ajaxSettings &amp;&amp; jQuery.ajaxSettings.traditional;</code></pre>
-      </div>
+    61:             traditional = jQuery.ajaxSettings &amp;&amp; jQuery.ajaxSettings.traditional;</code></pre></div>
 <p>So we can see pretty quickly that these files are safe to ignore in terms of understanding how ajax works in jQuery.  They’re just module loads, an actual call to the ajax method for other purposes, and settings serialization. It is useful to note that <code class="language-text">src/ajax</code> is loaded into the main jQuery file first. Its probably worth looking at it as the starting point for our investigation. We’re well on our way to diving into the ajax functionality, able to focus on 11 of the 249 files in the repo immediately, already knowing how those files are loaded into the main library.</p>
 <p>This was just a simple example.  Whenever you’re spelunking into new code territory, consider using ack to get your bearings.  Things go a lot faster when you know the lay of the land in advance.</p>
 <h3>#3: Take advantage of Ack’s configurability</h3>
 <p>One of the nice things about <a href="http://beyondgrep.com/">ack</a> is the fact that it takes an <code class="language-text">.ackrc</code> configuration file <sup id="fnref:2"><a href="#fn:2">2</a></sup>. These files can be scoped at a directory level, a user level or at a root level, and mirror the options available on the executable itself.  This allows you to extend and customize acks behavior in 3 primary ways.</p>
 <h4>a. Add new filetypes, and bundle existing ones</h4>
 <p>One of ack’s most useful features is the ability to add a <code class="language-text">--&lt;filetype&gt;</code> flag to your searches to restrict your searches to a specific filetype.   ack comes with 75 builtin types including almost all common languages.  But those aren’t always good enough.  To handle obscure languages, and not so obscure syntaxes like handlebars templates, ack lets you define new filetypes.  You’re also able to modify existing filetypes to add additional file extensions to include under that filetype.  So for instance my ackrc includes these lines:</p>
-<div class="gatsby-highlight" data-language="text">
-      <pre class="language-text"><code class="language-text">--type-add
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">--type-add
 hbs=hbs
 --type-add
-js=js,es6</code></pre>
-      </div>
+js=js,es6</code></pre></div>
 <p>The first 2 lines allow me to specifically search handlebars files, which are where all of the html content for my work projects is stored.  The next 2 lines include es6 files in my JavaScript searches, useful since I append JavaScript files that I intend to process with <a href="https://babeljs.io/">Babel</a> with the <code class="language-text">.es6</code> extenstion.  Customizing the js extension allows me to search all of my JavaScript together.  You can also define richer types in ackrc <a href="http://beyondgrep.com/documentation/ack-2.14-man.html#defining_your_own_types">based on file names using regular expressions or direct name matching</a>.</p>
 <h4>b. Set default options</h4>
 <p>Any option that the ack executable takes can have a default set or changed in an ackrc file.  This is mainly useful for the display option.  By default ack groups matches from different files and gives the file information above each group of matches.  It also shows all output in color.  Any of those things can be disabled or changed in your ackrc file.</p>
@@ -353,4 +285,4 @@ js=js,es6</code></pre>
             },
             h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/wf-loading/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
           })(document);
-        </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"2016-04-30-ack-tips-7d1","path":"/2016/04/30/ack-tips"};window.dataPath="255/path---2016-04-30-ack-tips-7-d-1-602-xf6rLF7GT8YQX3zowotKznWiQ";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-2c200c44da36b1866c0c.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-6c3cb25c69a33194b725.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.f3985d4a4b7bdcd8e938.css","/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-2408db2f7d4db12e014b.js"],"component---src-templates-topic-page-js":["/component---src-templates-topic-page-js-a5331e7c78918d6b6ea9.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-b233b14132501dcc18da.js"],"component---src-pages-index-js":["/component---src-pages-index-js-67d5311c328defd1b167.js"],"component---src-pages-links-archive-js":["/component---src-pages-links-archive-js-8404a10ddcf65ffbf936.js"],"component---src-pages-reviews-archive-js":["/component---src-pages-reviews-archive-js-419aed9b5a54d9b2345a.js"]};/*]]>*/</script><script src="/webpack-runtime-5c5d1ce37720788ff3d1.js" async=""></script><script src="/0-a077396c7fb69f9768a7.js" async=""></script><script src="/2-d268f3af82553fe5190d.js" async=""></script><script src="/1-f4886410c6c000bfd2f3.js" async=""></script><script src="/3-321c16e210ff1af46765.js" async=""></script><script src="/app-2c200c44da36b1866c0c.js" async=""></script><script src="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js" async=""></script></body></html>
+        </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"2016-04-30-ack-tips-7d1","path":"/2016/04/30/ack-tips"};window.dataPath="252/path---2016-04-30-ack-tips-7-d-1-602-tBJeTceKrtuMkNK1opTYGAfbCs";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-cc39682fd5193aca312d.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-6c3cb25c69a33194b725.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.f3985d4a4b7bdcd8e938.css","/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-2408db2f7d4db12e014b.js"],"component---src-templates-topic-page-js":["/component---src-templates-topic-page-js-a5331e7c78918d6b6ea9.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-b233b14132501dcc18da.js"],"component---src-pages-index-js":["/component---src-pages-index-js-67d5311c328defd1b167.js"],"component---src-pages-links-archive-js":["/component---src-pages-links-archive-js-8404a10ddcf65ffbf936.js"],"component---src-pages-reviews-archive-js":["/component---src-pages-reviews-archive-js-419aed9b5a54d9b2345a.js"]};/*]]>*/</script><script src="/webpack-runtime-31fecf462c0e680a72ab.js" async=""></script><script src="/0-a077396c7fb69f9768a7.js" async=""></script><script src="/2-d268f3af82553fe5190d.js" async=""></script><script src="/1-f4886410c6c000bfd2f3.js" async=""></script><script src="/3-321c16e210ff1af46765.js" async=""></script><script src="/app-cc39682fd5193aca312d.js" async=""></script><script src="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js" async=""></script></body></html>

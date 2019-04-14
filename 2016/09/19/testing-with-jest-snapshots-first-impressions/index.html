@@ -17,8 +17,7 @@
 <p>About a month ago, Jest debuted a new feature: Snapshot testing.  It works a bit differently than a normal unit test.  Instead of executing some code and comparing the output against a value provided by a developer, the first time a test is run, the output passed into the test is saved to a “snapshot file”.  Then when the test is run in the future, the output is compared to the snapshot file.  If the output matches the file, the test passes, if the output is different then the file, the test fails and Jest prints a diff.  We’ve been using Jest snapshots for a few weeks now and I wanted to share my initial impressions.</p>
 <h3>What is it like to use a snapshot test ?</h3>
 <p>The process for snapshot testing is a bit different than normal tests.  Most snapshot tests look fairly simple.  Something like this example from the <a href=\"https://github.com/facebook/jest/tree/master/examples/snapshot\">Jest repository</a>:</p>
-<div class=\"gatsby-highlight\" data-language=\"javascript\">
-      <pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token comment\">// Link.react.js</span>
+<div class=\"gatsby-highlight\" data-language=\"javascript\"><pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token comment\">// Link.react.js</span>
 <span class=\"token comment\">// Copyright 2004-present Facebook. All Rights Reserved.</span>
 
 <span class=\"token keyword\">import</span> React <span class=\"token keyword\">from</span> <span class=\"token string\">'react'</span><span class=\"token punctuation\">;</span>
@@ -78,11 +77,9 @@
     <span class=\"token operator\">&lt;</span>Link page<span class=\"token operator\">=</span><span class=\"token string\">\"http://www.facebook.com\"</span><span class=\"token operator\">></span>Facebook<span class=\"token operator\">&lt;</span><span class=\"token operator\">/</span>Link<span class=\"token operator\">></span>
   <span class=\"token punctuation\">)</span><span class=\"token punctuation\">.</span><span class=\"token function\">toJSON</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>
   <span class=\"token function\">expect</span><span class=\"token punctuation\">(</span>tree<span class=\"token punctuation\">)</span><span class=\"token punctuation\">.</span><span class=\"token function\">toMatchSnapshot</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>
-<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></code></pre>
-      </div>
+<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></code></pre></div>
 <p>The first time the test is run, a snapshot file is produced.  In this case, running the previous test produces a snapshot file that looks like this:</p>
-<div class=\"gatsby-highlight\" data-language=\"javascript\">
-      <pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token comment\">// Link.react-test.js.snap  (partial)</span>
+<div class=\"gatsby-highlight\" data-language=\"javascript\"><pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token comment\">// Link.react-test.js.snap  (partial)</span>
 exports<span class=\"token punctuation\">[</span><span class=\"token template-string\"><span class=\"token string\">`test renders correctly 1`</span></span><span class=\"token punctuation\">]</span> <span class=\"token operator\">=</span> <span class=\"token template-string\"><span class=\"token string\">`
 &lt;a
   className=\"normal\"
@@ -91,12 +88,10 @@ exports<span class=\"token punctuation\">[</span><span class=\"token template-st
   onMouseLeave={[Function bound _onMouseLeave]}>
   Facebook
 &lt;/a>
-`</span></span><span class=\"token punctuation\">;</span></code></pre>
-      </div>
+`</span></span><span class=\"token punctuation\">;</span></code></pre></div>
 <p>This gives us a baseline for what we expect the UI to look like.  The snapshot is generated in a folder in your <code class=\"language-text\">__tests__</code> directory, so that it can be checked into source control.</p>
 <p>The next time a test is run, if nothing has changed, the test passes.  However, if we change something (let’s say we add a class), the test fails and shows us a diff.</p>
-<div class=\"gatsby-highlight\" data-language=\"javascript\">
-      <pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token comment\">// updated link render method</span>
+<div class=\"gatsby-highlight\" data-language=\"javascript\"><pre class=\"language-javascript\"><code class=\"language-javascript\"><span class=\"token comment\">// updated link render method</span>
 
 <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>
   <span class=\"token keyword\">return</span> <span class=\"token punctuation\">(</span>
@@ -108,10 +103,8 @@ exports<span class=\"token punctuation\">[</span><span class=\"token template-st
       <span class=\"token punctuation\">{</span><span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>props<span class=\"token punctuation\">.</span>children<span class=\"token punctuation\">}</span>
     <span class=\"token operator\">&lt;</span><span class=\"token operator\">/</span>a<span class=\"token operator\">></span>
   <span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>
-<span class=\"token punctuation\">}</span></code></pre>
-      </div>
-<div class=\"gatsby-highlight\" data-language=\"diff\">
-      <pre class=\"language-diff\"><code class=\"language-diff\"># jest output
+<span class=\"token punctuation\">}</span></code></pre></div>
+<div class=\"gatsby-highlight\" data-language=\"diff\"><pre class=\"language-diff\"><code class=\"language-diff\"># jest output
 
 FAIL  __tests__/Link.react-test.js
  ✕ renders correctly (16ms)
@@ -132,8 +125,7 @@ FAIL  __tests__/Link.react-test.js
         Facebook
       &lt;/a>
 
-      at Object.&lt;anonymous> (__tests__/Link.react-test.js:14:16)</code></pre>
-      </div>
+      at Object.&lt;anonymous> (__tests__/Link.react-test.js:14:16)</code></pre></div>
 <p>We can then choose to accept this change by running <code class=\"language-text\">jest -u</code> to update the snapshot, or update our code to fix the regression.  If we update the snapshot file, the test will start passing again.</p>
 <h3>Snapshot tests are a complement for conventional tests not a replacement</h3>
 <p>The first thing that became clear to me while using snapshot testing is that they’re not for everything.  They are optimized for a different case than normal assertion-based tests.</p>
@@ -205,13 +197,12 @@ FAIL  __tests__/Link.react-test.js
                         "http://twitter.com/_benmccormick",
                       ]
                    }
-                }</script><link as="script" rel="preload" href="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"/><link as="script" rel="preload" href="/app-2c200c44da36b1866c0c.js"/><link as="script" rel="preload" href="/3-321c16e210ff1af46765.js"/><link as="script" rel="preload" href="/1-f4886410c6c000bfd2f3.js"/><link as="script" rel="preload" href="/2-d268f3af82553fe5190d.js"/><link as="script" rel="preload" href="/0-a077396c7fb69f9768a7.js"/><link as="script" rel="preload" href="/webpack-runtime-5c5d1ce37720788ff3d1.js"/><link as="fetch" rel="preload" href="/static/d/154/path---2016-09-19-testing-with-jest-snapshots-first-impressions-4-dc-363-jUhcWAp6wC9xV20D2GYmmyxqsB4.json" crossOrigin="use-credentials"/></head><body class="landing-page" style="background:#FCFCFC"><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><style data-emotion-css="1f3kluc">.css-1f3kluc{width:100%;max-width:1000px;margin:0 auto;padding:2.4rem 20px;}</style><div class="css-1f3kluc em100y90"><style data-emotion-css="13vv67v">.css-13vv67v{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-bottom:2rem;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}</style><div class="css-13vv67v e1b8f8ar0"><style data-emotion-css="txnzm6">.css-txnzm6{margin:0 20px 0 0;padding-bottom:0;}.css-txnzm6 a{box-shadow:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;}.css-txnzm6 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><h3 class="css-txnzm6 e1b8f8ar2"><a name="title" href="/">Ben McCormick</a></h3><style data-emotion-css="177tisd">.css-177tisd{color:#999999;}</style><div class="css-177tisd e1b8f8ar3"><a class="css-tcc0st" href="/archive/">Blog</a><style data-emotion-css="12jh0su">.css-12jh0su{padding:0 0.5rem;}@media all and (max-width:400px){.css-12jh0su{padding:0 0.25rem;}}</style><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/subscribe/">Subscribe</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/speaking/">Speaking</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="http://twitter.com/_benmccormick">Twitter</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/about/">About</a></div></div><article class="markdown"><div class="post-title-area"><style data-emotion-css="92repi">.css-92repi{display:block;max-width:100%;}</style><h1 class="css-92repi e15djruj1">Testing with Jest Snapshots: First Impressions</h1></div><div class="columns"><style data-emotion-css="qsg3oo">.css-qsg3oo{max-width:100%;}.css-qsg3oo li{padding-left:10px;}.css-qsg3oo .reading-img img{width:150px;float:right;margin:0px 10px 20px 10px;}.css-qsg3oo img.full-width{max-height:none;}.css-qsg3oo img.half-width{max-height:none;width:50%;}</style><div class="css-qsg3oo e15djruj3"><p>Over the past 6 months my team at work has been slowly transitioning a large Backbone application to React.  One of the main goals of the transition has been to build out unit tests as we transition components.  As part of that we switched from using Karma to using Jest for managing our tests.</p>
+                }</script><link as="script" rel="preload" href="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"/><link as="script" rel="preload" href="/app-cc39682fd5193aca312d.js"/><link as="script" rel="preload" href="/3-321c16e210ff1af46765.js"/><link as="script" rel="preload" href="/1-f4886410c6c000bfd2f3.js"/><link as="script" rel="preload" href="/2-d268f3af82553fe5190d.js"/><link as="script" rel="preload" href="/0-a077396c7fb69f9768a7.js"/><link as="script" rel="preload" href="/webpack-runtime-31fecf462c0e680a72ab.js"/><link as="fetch" rel="preload" href="/static/d/196/path---2016-09-19-testing-with-jest-snapshots-first-impressions-4-dc-363-YLofoEz2JYuCkZO30jgqW9yTmU.json" crossOrigin="use-credentials"/></head><body class="landing-page" style="background:#FCFCFC"><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><style data-emotion-css="1f3kluc">.css-1f3kluc{width:100%;max-width:1000px;margin:0 auto;padding:2.4rem 20px;}</style><div class="css-1f3kluc em100y90"><style data-emotion-css="13vv67v">.css-13vv67v{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-bottom:2rem;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}</style><div class="css-13vv67v e1b8f8ar0"><style data-emotion-css="txnzm6">.css-txnzm6{margin:0 20px 0 0;padding-bottom:0;}.css-txnzm6 a{box-shadow:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;}.css-txnzm6 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><h3 class="css-txnzm6 e1b8f8ar2"><a name="title" href="/">Ben McCormick</a></h3><style data-emotion-css="177tisd">.css-177tisd{color:#999999;}</style><div class="css-177tisd e1b8f8ar3"><a class="css-tcc0st" href="/archive/">Blog</a><style data-emotion-css="12jh0su">.css-12jh0su{padding:0 0.5rem;}@media all and (max-width:400px){.css-12jh0su{padding:0 0.25rem;}}</style><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/subscribe/">Subscribe</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/speaking/">Speaking</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="http://twitter.com/_benmccormick">Twitter</a><span class="css-12jh0su e1b8f8ar1"></span><a class="css-tcc0st" href="/about/">About</a></div></div><article class="markdown"><div class="post-title-area"><style data-emotion-css="92repi">.css-92repi{display:block;max-width:100%;}</style><h1 class="css-92repi e15djruj1">Testing with Jest Snapshots: First Impressions</h1></div><div class="columns"><style data-emotion-css="qsg3oo">.css-qsg3oo{max-width:100%;}.css-qsg3oo li{padding-left:10px;}.css-qsg3oo .reading-img img{width:150px;float:right;margin:0px 10px 20px 10px;}.css-qsg3oo img.full-width{max-height:none;}.css-qsg3oo img.half-width{max-height:none;width:50%;}</style><div class="css-qsg3oo e15djruj3"><p>Over the past 6 months my team at work has been slowly transitioning a large Backbone application to React.  One of the main goals of the transition has been to build out unit tests as we transition components.  As part of that we switched from using Karma to using Jest for managing our tests.</p>
 <p>Our new setup with Jest has several advantages over our previous setup. All Jest tests run through node using a fake DOM implementation.  We don’t need to start up a browser so tests are faster and less flaky <sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  Jest makes it possible to mock all modules by default <sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>, which works well for us since our code base currently contains a large amount of code that is difficult to test for one reason or another.  Jest provides great integration with Babel, which is helpful since all of our Backbone and React code uses ES6 that we transpile for the browser.  Finally Jest provides a wonderful watch mode that runs only the tests that are relevant to the changes you’ve made and makes it easy to see the result.</p>
 <p>About a month ago, Jest debuted a new feature: Snapshot testing.  It works a bit differently than a normal unit test.  Instead of executing some code and comparing the output against a value provided by a developer, the first time a test is run, the output passed into the test is saved to a “snapshot file”.  Then when the test is run in the future, the output is compared to the snapshot file.  If the output matches the file, the test passes, if the output is different then the file, the test fails and Jest prints a diff.  We’ve been using Jest snapshots for a few weeks now and I wanted to share my initial impressions.</p>
 <h3>What is it like to use a snapshot test ?</h3>
 <p>The process for snapshot testing is a bit different than normal tests.  Most snapshot tests look fairly simple.  Something like this example from the <a href="https://github.com/facebook/jest/tree/master/examples/snapshot">Jest repository</a>:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Link.react.js</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Link.react.js</span>
 <span class="token comment">// Copyright 2004-present Facebook. All Rights Reserved.</span>
 
 <span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
@@ -271,11 +262,9 @@ FAIL  __tests__/Link.react-test.js
     <span class="token operator">&lt;</span>Link page<span class="token operator">=</span><span class="token string">"http://www.facebook.com"</span><span class="token operator">></span>Facebook<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">></span>
   <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toJSON</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">expect</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toMatchSnapshot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-      </div>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>The first time the test is run, a snapshot file is produced.  In this case, running the previous test produces a snapshot file that looks like this:</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Link.react-test.js.snap  (partial)</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Link.react-test.js.snap  (partial)</span>
 exports<span class="token punctuation">[</span><span class="token template-string"><span class="token string">`test renders correctly 1`</span></span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
 &lt;a
   className="normal"
@@ -284,12 +273,10 @@ exports<span class="token punctuation">[</span><span class="token template-strin
   onMouseLeave={[Function bound _onMouseLeave]}>
   Facebook
 &lt;/a>
-`</span></span><span class="token punctuation">;</span></code></pre>
-      </div>
+`</span></span><span class="token punctuation">;</span></code></pre></div>
 <p>This gives us a baseline for what we expect the UI to look like.  The snapshot is generated in a folder in your <code class="language-text">__tests__</code> directory, so that it can be checked into source control.</p>
 <p>The next time a test is run, if nothing has changed, the test passes.  However, if we change something (let’s say we add a class), the test fails and shows us a diff.</p>
-<div class="gatsby-highlight" data-language="javascript">
-      <pre class="language-javascript"><code class="language-javascript"><span class="token comment">// updated link render method</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">// updated link render method</span>
 
 <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -301,10 +288,8 @@ exports<span class="token punctuation">[</span><span class="token template-strin
       <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>children<span class="token punctuation">}</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-      </div>
-<div class="gatsby-highlight" data-language="diff">
-      <pre class="language-diff"><code class="language-diff"># jest output
+<span class="token punctuation">}</span></code></pre></div>
+<div class="gatsby-highlight" data-language="diff"><pre class="language-diff"><code class="language-diff"># jest output
 
 FAIL  __tests__/Link.react-test.js
  ✕ renders correctly (16ms)
@@ -325,8 +310,7 @@ FAIL  __tests__/Link.react-test.js
         Facebook
       &lt;/a>
 
-      at Object.&lt;anonymous> (__tests__/Link.react-test.js:14:16)</code></pre>
-      </div>
+      at Object.&lt;anonymous> (__tests__/Link.react-test.js:14:16)</code></pre></div>
 <p>We can then choose to accept this change by running <code class="language-text">jest -u</code> to update the snapshot, or update our code to fix the regression.  If we update the snapshot file, the test will start passing again.</p>
 <h3>Snapshot tests are a complement for conventional tests not a replacement</h3>
 <p>The first thing that became clear to me while using snapshot testing is that they’re not for everything.  They are optimized for a different case than normal assertion-based tests.</p>
@@ -399,4 +383,4 @@ FAIL  __tests__/Link.react-test.js
             },
             h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/wf-loading/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
           })(document);
-        </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"2016-09-19-testing-with-jest-snapshots-first-impressions-4dc","path":"/2016/09/19/testing-with-jest-snapshots-first-impressions/"};window.dataPath="154/path---2016-09-19-testing-with-jest-snapshots-first-impressions-4-dc-363-jUhcWAp6wC9xV20D2GYmmyxqsB4";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-2c200c44da36b1866c0c.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-6c3cb25c69a33194b725.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.f3985d4a4b7bdcd8e938.css","/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-2408db2f7d4db12e014b.js"],"component---src-templates-topic-page-js":["/component---src-templates-topic-page-js-a5331e7c78918d6b6ea9.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-b233b14132501dcc18da.js"],"component---src-pages-index-js":["/component---src-pages-index-js-67d5311c328defd1b167.js"],"component---src-pages-links-archive-js":["/component---src-pages-links-archive-js-8404a10ddcf65ffbf936.js"],"component---src-pages-reviews-archive-js":["/component---src-pages-reviews-archive-js-419aed9b5a54d9b2345a.js"]};/*]]>*/</script><script src="/webpack-runtime-5c5d1ce37720788ff3d1.js" async=""></script><script src="/0-a077396c7fb69f9768a7.js" async=""></script><script src="/2-d268f3af82553fe5190d.js" async=""></script><script src="/1-f4886410c6c000bfd2f3.js" async=""></script><script src="/3-321c16e210ff1af46765.js" async=""></script><script src="/app-2c200c44da36b1866c0c.js" async=""></script><script src="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js" async=""></script></body></html>
+        </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"2016-09-19-testing-with-jest-snapshots-first-impressions-4dc","path":"/2016/09/19/testing-with-jest-snapshots-first-impressions/"};window.dataPath="196/path---2016-09-19-testing-with-jest-snapshots-first-impressions-4-dc-363-YLofoEz2JYuCkZO30jgqW9yTmU";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-cc39682fd5193aca312d.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-6c3cb25c69a33194b725.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.f3985d4a4b7bdcd8e938.css","/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js"],"component---src-templates-category-page-js":["/component---src-templates-category-page-js-2408db2f7d4db12e014b.js"],"component---src-templates-topic-page-js":["/component---src-templates-topic-page-js-a5331e7c78918d6b6ea9.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-b233b14132501dcc18da.js"],"component---src-pages-index-js":["/component---src-pages-index-js-67d5311c328defd1b167.js"],"component---src-pages-links-archive-js":["/component---src-pages-links-archive-js-8404a10ddcf65ffbf936.js"],"component---src-pages-reviews-archive-js":["/component---src-pages-reviews-archive-js-419aed9b5a54d9b2345a.js"]};/*]]>*/</script><script src="/webpack-runtime-31fecf462c0e680a72ab.js" async=""></script><script src="/0-a077396c7fb69f9768a7.js" async=""></script><script src="/2-d268f3af82553fe5190d.js" async=""></script><script src="/1-f4886410c6c000bfd2f3.js" async=""></script><script src="/3-321c16e210ff1af46765.js" async=""></script><script src="/app-cc39682fd5193aca312d.js" async=""></script><script src="/component---src-templates-blog-post-js-0c0701b359aa800a4aa1.js" async=""></script></body></html>
