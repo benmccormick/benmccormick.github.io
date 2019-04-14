@@ -6,7 +6,7 @@ path: "/2019/01/14/value-from-code-reviews"
 description: "Getting the most out of your code review process"
 keywords: "code reviews"
 category: "soft-skills"
-topics: ['Architecture']
+topics: ['Architecture', 'Code Reviews']
 key: "valuable-code-reviews"
 readNext: "philosophy-of-software-design-book,fe-concerns,feedback-loops"
 ---

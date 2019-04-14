@@ -9,7 +9,6 @@ category: "soft-skills"
 topics: []
 key: "soft-skills"
 readNext: "ten-things-js,importance-of-writing,book-review-five-dysfunctions"
-isDraft: true
 ---
 
 One of the most popular posts in the history of my blog was a list with the click-baity name [Ten Things A Serious JavaScript Developer Should Learn](https://benmccormick.org/2017/07/19/ten-things-javascript/).  It explicitly focused on the set of technical skills that you need to become a "senior" JavaScript developer.  While I'm happy with that post, I've always wanted to revisit the idea, because it is my strong belief that *once you've hit a minimum level of technical capability, only about 20% of career success is determined by your technical skills*.  The other 80% is composed of skills that can be loosely bundled under "soft skills".
