@@ -4,7 +4,7 @@ date: "2013-12-30T11:00:00+00:00"
 layout: "post"
 path: "/2013/12/30/meetings-and-concurrency"
 description: "The trouble with in-person meetings"
-category: "opinion"
+category: "soft-skills"
 topics: ['Teams']
 pageViews: "114"
 last30pageViews: "0"

@@ -3,7 +3,7 @@ title: "Staying Productive"
 date: "2016-01-25T04:41:46+00:00"
 layout: "post"
 path: "/2016/01/25/staying-productive"
-category: "software-productivity"
+category: "soft-skills"
 description: "Thinking through the environmental factors that lead to productivity"
 key: "staying-productive"
 topics: ['Career Advice']
@@ -32,7 +32,7 @@ Distractions can be self-inflicted as well as coming from others.  When I want t
 
 ### Day to Day work adds up
 
-I'm a [magpie](http://blog.codinghorror.com/the-magpie-developer/).  I love shiny new tools, projects, and ideas.  It's very easy for me to get bored with a problem once I feel like I understand it.   I get excited by pouring effort into learning something new, not so much the hard work to finish the last 20% of what I've started.  What I'm slowly learning though is that it is my day-to-day work that makes an impact, not my crazy productivity binges.  Making things that last requires day to day dedication.  That also means maintaining focus.  The easiest way to waste day to day hard work is to spend it on a different thing each day.  There's nothing wrong with trying new things.  But real productivity requires setting some priorities and sticking with them for a while.  
+I'm a [magpie](http://blog.codinghorror.com/the-magpie-developer/).  I love shiny new tools, projects, and ideas.  It's very easy for me to get bored with a problem once I feel like I understand it.   I get excited by pouring effort into learning something new, not so much the hard work to finish the last 20% of what I've started.  What I'm slowly learning though is that it is my day-to-day work that makes an impact, not my crazy productivity binges.  Making things that last requires day to day dedication.  That also means maintaining focus.  The easiest way to waste day to day hard work is to spend it on a different thing each day.  There's nothing wrong with trying new things.  But real productivity requires setting some priorities and sticking with them for a while.
 
 ### Team matters more than the project
 
