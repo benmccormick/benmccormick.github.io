@@ -137,6 +137,5 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-glamor',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-offline',
   ],
 };
