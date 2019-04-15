@@ -16,7 +16,7 @@ isDraft: true
 >
 > *- Cal Newport, Deep Work*
 
-In [Deep Work](https://amzn.to/2TqwDeR), Cal Newport explains that research has shown the primary difference between experts and amateurs in the field to be the extent of time they've spent in *Deliberate Practice* within their field of study.  Deliberate practice is not merely time spent working on the craft, but includes a [feedback loop](https://benmccormick.org/2018/08/02/feedback-loops/) aspect. To get better at something, we need to receive meaningful feedback on whether what we're doing is working.
+In [Deep Work](https://amzn.to/2TqwDeR), Cal Newport explains that research has shown the primary difference between experts and amateurs in a typical field is not innate talent; instead it is the amount of time they've spent in *Deliberate Practice* within their field of study that sets them apart.  Deliberate practice is not merely time spent working on the craft, but includes a [feedback loop](https://benmccormick.org/2018/08/02/feedback-loops/) aspect. To get better at something, we need to receive meaningful feedback on whether what we're doing is working.
 
 When working with a team, one of the best ways to get this type of feedback is [quality code reviews](https://benmccormick.org/2019/01/14/value-from-code-reviews).  When you're reviewing, you get to see other developers approaches to code, and when you've written code, you hopefully get high quality feedback from a different point of view.
 
