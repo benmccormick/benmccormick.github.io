@@ -13,6 +13,7 @@ isDraft: true
 ---
 
 > Deliberate practice [is when] (1) your attention is focused tightly on a specific skill you're trying to improve [...] (2) **you receive feedback so you can correct your approach to keep your attention exactly where it is most productive.**
+>
 > *- Cal Newport, Deep Work*
 
 In [Deep Work](https://amzn.to/2TqwDeR), Cal Newport explains that research has shown the primary difference between experts and amateurs in the field to be the extent of time they've spent in *Deliberate Practice* within their field of study.  Deliberate practice is not merely time spent working on the craft, but includes a [feedback loop](https://benmccormick.org/2018/08/02/feedback-loops/) aspect. To get better at something, we need to receive meaningful feedback on whether what we're doing is working.
