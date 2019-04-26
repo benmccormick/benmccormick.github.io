@@ -9,7 +9,6 @@ category: "soft-skills"
 topics: ['Code Reviews']
 key: "better-code-feedback"
 readNext: "valuable-code-reviews,consistency,soft-skills"
-isDraft: true
 ---
 
 > Deliberate practice [is when] (1) your attention is focused tightly on a specific skill you're trying to improve [...] (2) **you receive feedback so you can correct your approach to keep your attention exactly where it is most productive.**

@@ -11,6 +11,14 @@ I occasionally give talks about JavaScript and software development.  If you're 
 
 I am open to talking about pretty much anything that I write about on this blog.  Here are some talks I've given in the past:
 
+## 2019
+
+#### A Second Set of Eyes: Getting The Most From Code Reviews - *Triangle Modern Web Meetup*
+
+I talked about Code Reviews at the Modern Web Meetup in Durham.  This talk was an expansion on the ideas in a few of my blog posts from the previous months: [6 Keys To Valuable Code Review](https://benmccormick.org/2019/01/14/value-from-code-reviews) and [How To Get Better Feedback On Your Code](https://benmccormick.org/2019/04/22/better-code-feedback).
+
+- [Slides](https://www.slideshare.net/BenMcCormick/a-second-set-of-eyes-getting-the-most-from-code-reviews)
+
 ## 2017
 
 #### Saving Time With Jest - *All Things Open*
@@ -40,7 +48,7 @@ who were interested in using it as their primary editor.
 
 - [Writeup](http://benmccormick.org/2016/12/10/saving-time-with-jest/)
 
-I gave a talk at the first Triangle ReactJS meetup about testing with Jest and how it can save you time.  
+I gave a talk at the first Triangle ReactJS meetup about testing with Jest and how it can save you time.
 
 ## 2015
 
