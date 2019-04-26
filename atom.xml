@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-04-15T17:33:49Z</updated>
+    <updated>2019-04-26T00:52:44Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,64 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[How To Get Better Feedback On Your Code]]></title>
+        <id>https://benmccormick.org/2019/04/22/better-code-feedback</id>
+        <link href="https://benmccormick.org/2019/04/22/better-code-feedback">
+        </link>
+        <updated>2019-04-22T00:00:00Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>Deliberate practice [is when] (1) your attention is focused tightly on a specific skill you’re trying to improve […] (2) <strong>you receive feedback so you can correct your approach to keep your attention exactly where it is most productive.</strong></p>
+<p><em>- Cal Newport, Deep Work</em></p>
+</blockquote>
+<p>In <a href="https://amzn.to/2TqwDeR">Deep Work</a>, Cal Newport explains that research has shown the primary difference between experts and amateurs in a typical field is not innate talent; instead it is the amount of time they’ve spent in <em>Deliberate Practice</em> within their field of study that sets them apart.  Deliberate practice is not merely time spent working on the craft, but includes a <a href="https://benmccormick.org/2018/08/02/feedback-loops/">feedback loop</a> aspect. To get better at something, we need to receive meaningful feedback on whether what we’re doing is working.</p>
+<p>When working with a team, one of the best ways to get this type of feedback is <a href="https://benmccormick.org/2019/01/14/value-from-code-reviews">quality code reviews</a>.  When you’re reviewing, you get to see other developers approaches to code, and when you’ve written code, you hopefully get high quality feedback from a different point of view.</p>
+<p>In reality, code reviews don’t always provide the value they could.  Many developers don’t give much feedback at all on code reviews, give unhelpful aesthetic feedback, or may even use it abusively to try to show off their “superiority”. I can’t solve all of those problems, but here are a few tips I’ve found that help me get better feedback when my code is being reviewed.</p>
+<h4>1. Annotate Pull Requests</h4>
+<p>Most people assume that the inline commenting features in Github and Bitbucket code reviews are for use by the people reviewing the code.  But I’ve found that it can be helpful to preemptively add comments to my PRs to give reviewers context.
+This is especially useful for information that may be relevant during a code review but isn’t long term relevant, like the original reason for extracting some reusable code and where it came from.  Below is an example of a comment I left demoing how React hooks could be used to pull out shared logic in my work project.</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/a883e2a63572b0df0719ee97fac65e95/40651/comment-example.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 32.14285714285714%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABD0lEQVQY04WQWW/CMBCE8/9/WA/1ECpSaShFUHI5duz4inNApxtD1T6Vh0+z1o7Xs058FyCaFqo1ETmjLlDNtMDsCWGI+K4H4wq1UPFeIzWpRkN+5wMSax01W+xqhp0osRcFMlVFmBNggaPpJaGiiiBR2hqV5agcJ8+vci+R8LLAZrPH+tBim3Hs8gpctpSOXlaUXFNyY2C8h73gug6282fmc+giYeiRTNMR2jgw1oDTKhVpHZVSyfPqWjsM/YhxmDDM9H/0Uv/0kvlfjPVYsQ+8sBWW9RsW5StW8h2f4wHFV4H8lCM7Zv9yIPKxOA9U2uK5WuKGPeCWPeKOuK+fsDBLpFOK9Wl9lfSUYnvc4hs/scSv4Qbq/QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="hooks comment example"
+        title=""
+        src="/static/a883e2a63572b0df0719ee97fac65e95/d766e/comment-example.png"
+        srcset="/static/a883e2a63572b0df0719ee97fac65e95/a6b6e/comment-example.png 143w,
+/static/a883e2a63572b0df0719ee97fac65e95/8e488/comment-example.png 285w,
+/static/a883e2a63572b0df0719ee97fac65e95/d766e/comment-example.png 570w,
+/static/a883e2a63572b0df0719ee97fac65e95/13239/comment-example.png 855w,
+/static/a883e2a63572b0df0719ee97fac65e95/40651/comment-example.png 1036w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+  </span>
+  </a></p>
+<p>These types of comments are also good ways to point a reviewer to the important parts of a review. This matters for reviews where there are many small changes across a large number of files, with a few high impact changes.  It’s always better to make atomic changes (see <a href="https://benmccormick.org/2019/01/14/value-from-code-reviews">more here</a>), but when you must make a large change, this technique can help a lot.  I have received noticeably better feedback on my large pull requests since I began annotating</p>
+<h4>2. Encourage Questions</h4>
+<p>If you’re receiving feedback from more junior members of a team, they may not always be comfortable giving direct feedback on code.  One way to get better feedback in those situations is to encourage them to ask questions about things they don’t understand.  This gives them opportunities to learn, but also let’s you see which parts of your code are unintuitive or unfamiliar to the rest of the team.  In some cases the questions will expose bugs that a more confident reviewer may have pointed out straight out, and that experience can help grow a reviewers confidence and lead to even better feedback next time.</p>
+<p>Of course asking questions rather than assuming understanding can be a good tactic when giving feedback in general, and is worth considering when doing your own reviews regardless of whether a reviewer has encouraged it.</p>
+<h4>3. Find More Than One Reviewer</h4>
+<p>This applies to more than just code, but if you’re not getting the feedback you need right now, ask somebody else.  In a work setting, this might be finding different team members to review your code.  If that isn’t possible at work, finding other ways to write code and get feedback on it can make a big difference in your career.  Not everyone has time or capacity for this, but contributing to open source, project nights at local meetups and hackathons can all be great ways to learn and get feedback from others.  If you can find a mentor to talk through code challenges with, that can be beneficial even if they aren’t on your team and going through your code line by line.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Ten Soft Skills That Will Shape Your Career]]></title>
         <id>https://benmccormick.org/2019/04/15/soft-skills</id>
@@ -855,152 +913,6 @@ bike<span class="token punctuation">.</span><span class="token function">printNu
 </li>
 </ol>
 </div>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Book Review: Info We Trust]]></title>
-        <id>https://benmccormick.org/2019/01/30/book-review-info-we-trust</id>
-        <link href="https://benmccormick.org/2019/01/30/book-review-info-we-trust">
-        </link>
-        <updated>2019-01-30T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>Sometimes surprises are good.  I bought RJ Andrews new book <a href="https://amzn.to/2Ww9BBl">Info We Trust</a> expecting to get some practical tips on how to create better data visualizations.  But frankly there’s very little in the way of “how to” in this book.  Instead I was treated to a deeply engaging book that’s part history of data visualization, part exploration of human psychology, and 100% a love letter to “data storytelling”, with brief detours into linguistics, museum curation sentence diagramming and propaganda posters. If you’re looking to know when to use a bar chart vs a pie chart in your powerpoint slides, this book will be a disappointment.  But if you want to learn how to think deeply about telling stories with data, or just enjoy seeing somebody who loves their topic nerd out about it for 200 pages in a beautiful formatted book, this may be for you.</p>
-<p>Let’s start with that beautiful book.  This is not a read that you want to pick up on Kindle.  The book is littered with fascinating illustrations, all <a href="https://infowetrust.com/illustrations/">hand drawn by the author (!!!)</a>, and almost every page has interesting quotes, examples and tangents in the marginalia.  Here are a few random pages that I snapped with my phone while writing this;  it turns out that every single page is this beautiful.</p>
-<p><a
-    class="gatsby-resp-image-link"
-    href="/static/a84e2d937fc60341661ef1066f2f838e/0cf58/page1.jpg"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 74.90234375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQA/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAFqImyow5f/xAAbEAACAQUAAAAAAAAAAAAAAAAAEiEBAgMRIv/aAAgBAQABBQKyCHTHU3LdMf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAQACAwAAAAAAAAAAAAAAAAEAAiAhkf/aAAgBAQAGPwIIzdDmH//EABkQAAMBAQEAAAAAAAAAAAAAAAABMSERsf/aAAgBAQABPyGZiSEoFtylDLC2p4j4Z//aAAwDAQACAAMAAAAQ/O//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPxBX/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8QR//EABsQAQADAQADAAAAAAAAAAAAAAEAESFRMXGR/9oACAEBAAE/EGENEUL4i2rSKpft2LHolJVQ4+QxemZGz//Z'); background-size: cover; display: block;"
-    ></span>
-    <img
-        class="gatsby-resp-image-image"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
-        alt="Page 1"
-        title=""
-        src="/static/a84e2d937fc60341661ef1066f2f838e/6fbc3/page1.jpg"
-        srcset="/static/a84e2d937fc60341661ef1066f2f838e/da4c7/page1.jpg 143w,
-/static/a84e2d937fc60341661ef1066f2f838e/1d39e/page1.jpg 285w,
-/static/a84e2d937fc60341661ef1066f2f838e/6fbc3/page1.jpg 570w,
-/static/a84e2d937fc60341661ef1066f2f838e/9d77e/page1.jpg 855w,
-/static/a84e2d937fc60341661ef1066f2f838e/e356a/page1.jpg 1140w,
-/static/a84e2d937fc60341661ef1066f2f838e/4208b/page1.jpg 1710w,
-/static/a84e2d937fc60341661ef1066f2f838e/0cf58/page1.jpg 2048w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-  </span>
-  </a>
-<a
-    class="gatsby-resp-image-link"
-    href="/static/9cbe611fd78dc6684980f96b90447a9c/0cf58/page2.jpg"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 74.90234375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwQA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAaXiWH0OP//EABoQAAICAwAAAAAAAAAAAAAAAAECAAMEESL/2gAIAQEAAQUCrgPTKrFTC2icmsT/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAZEAEAAgMAAAAAAAAAAAAAAAAAASEQMqH/2gAIAQEABj8CSuMW24//xAAZEAADAQEBAAAAAAAAAAAAAAAAAREhMZH/2gAIAQEAAT8haMwCio+GgvdMGUr0f//aAAwDAQACAAMAAAAQZx//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPxBX/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8QR//EABsQAQADAAMBAAAAAAAAAAAAAAEAESFRYZHR/9oACAEBAAE/EGEXL8JVY7IAMBpJWYXdVnGOVYcfCf/Z'); background-size: cover; display: block;"
-    ></span>
-    <img
-        class="gatsby-resp-image-image"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
-        alt="Page 2"
-        title=""
-        src="/static/9cbe611fd78dc6684980f96b90447a9c/6fbc3/page2.jpg"
-        srcset="/static/9cbe611fd78dc6684980f96b90447a9c/da4c7/page2.jpg 143w,
-/static/9cbe611fd78dc6684980f96b90447a9c/1d39e/page2.jpg 285w,
-/static/9cbe611fd78dc6684980f96b90447a9c/6fbc3/page2.jpg 570w,
-/static/9cbe611fd78dc6684980f96b90447a9c/9d77e/page2.jpg 855w,
-/static/9cbe611fd78dc6684980f96b90447a9c/e356a/page2.jpg 1140w,
-/static/9cbe611fd78dc6684980f96b90447a9c/4208b/page2.jpg 1710w,
-/static/9cbe611fd78dc6684980f96b90447a9c/0cf58/page2.jpg 2048w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-  </span>
-  </a>
-<a
-    class="gatsby-resp-image-link"
-    href="/static/cb1d42855dc02f90a8197db101881b61/6964c/page3.jpg"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQL/xAAVAQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEAMQAAAB2uJxcDQf/8QAGhABAAMBAQEAAAAAAAAAAAAAAgEDEgATIf/aAAgBAQABBQKkmDgatpOio6X99T3/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwFX/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGxAAAgMAAwAAAAAAAAAAAAAAAAERISICcZH/2gAIAQEABj8CVIeePhmuhQxwy2f/xAAbEAACAwEBAQAAAAAAAAAAAAAAAREhMXFBYf/aAAgBAQABPyGBVSpw+jW6DqtEsYhiFCfQg6nD/9oADAMBAAIAAwAAABDn/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/EB//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8QZH//xAAcEAEAAwACAwAAAAAAAAAAAAABABEhMWFxkdH/2gAIAQEAAT8QfXAShd3WDluRFrfUUCDdEu3Y5NAA2PFeIKqqDR5lGFTt8n//2Q=='); background-size: cover; display: block;"
-    ></span>
-    <img
-        class="gatsby-resp-image-image"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
-        alt="Page 3"
-        title=""
-        src="/static/cb1d42855dc02f90a8197db101881b61/6fbc3/page3.jpg"
-        srcset="/static/cb1d42855dc02f90a8197db101881b61/da4c7/page3.jpg 143w,
-/static/cb1d42855dc02f90a8197db101881b61/1d39e/page3.jpg 285w,
-/static/cb1d42855dc02f90a8197db101881b61/6fbc3/page3.jpg 570w,
-/static/cb1d42855dc02f90a8197db101881b61/9d77e/page3.jpg 855w,
-/static/cb1d42855dc02f90a8197db101881b61/6964c/page3.jpg 1024w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-  </span>
-  </a>
-<a
-    class="gatsby-resp-image-link"
-    href="/static/273d364db3287a8954088f89815e0c9c/6964c/page4.jpg"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMCBP/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAFaWiLvRX//xAAZEAADAQEBAAAAAAAAAAAAAAABAgMAESH/2gAIAQEAAQUClKeSMs8QrLVcHPQfP//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/AVf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwFH/8QAGxAAAgMAAwAAAAAAAAAAAAAAAAECITEREiL/2gAIAQEABj8CXMFZJdFp5w0bhdlqz//EABsQAQADAAMBAAAAAAAAAAAAAAEAESExYXHR/9oACAEBAAE/IUli60nPelK1l6XCvxKqbfUZPsn/2gAMAwEAAgADAAAAECjf/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAIAQMBAT8Qhhf/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QRk7f/8QAHBABAQADAQADAAAAAAAAAAAAAREAIUExUYGR/9oACAEBAAE/EOAAqQXR+YhYgqioX59xmaABLPvC9JJN+ecxg0UC7D3ePZEaaY5//9k='); background-size: cover; display: block;"
-    ></span>
-    <img
-        class="gatsby-resp-image-image"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
-        alt="Page 4"
-        title=""
-        src="/static/273d364db3287a8954088f89815e0c9c/6fbc3/page4.jpg"
-        srcset="/static/273d364db3287a8954088f89815e0c9c/da4c7/page4.jpg 143w,
-/static/273d364db3287a8954088f89815e0c9c/1d39e/page4.jpg 285w,
-/static/273d364db3287a8954088f89815e0c9c/6fbc3/page4.jpg 570w,
-/static/273d364db3287a8954088f89815e0c9c/9d77e/page4.jpg 855w,
-/static/273d364db3287a8954088f89815e0c9c/6964c/page4.jpg 1024w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-  </span>
-  </a></p>
-<p>In addition to the eye candy, Andrews mostly avoids giving readers rules, but instead dives deep into the whys of data storytelling.  Things I was left thinking about:</p>
-<ol>
-<li>The way I think about bars vs columns differently based on my different assumptions about distance vs stacks of items</li>
-<li>How the plethora of data available in the world today has a cost: our attention.  That has left me thinking both about designing interfaces that manage attention, but also how to reclaim my own distracted attention.</li>
-<li>The difference between data and information, and how each can be useful.  How in the product I work on we can help users get access to enough raw data to explore on their own, but also give them meaningful “information” derived from that data.</li>
-<li>I was motivated to get better at drawing, and explaining things with images in my day to day work.  I don’t do this enough.</li>
-</ol>
-<p>If all of that sounds too high level and impractical for you, this is probably not the book for you.  But anyone who is already a data viz geek will find something to love, and as somebody who is tangential to the field it certainly expanded my mind and gave me a lot to think about.  All in all, this one is easy to recommend. <a href="https://amzn.to/2Ww9BBl">Check it out!</a></p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
