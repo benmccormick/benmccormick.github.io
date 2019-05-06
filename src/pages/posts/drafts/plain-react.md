@@ -1,8 +1,8 @@
 ---
-title: 'Impressions of Building An App With "Plain React"'
-date: "2019/04/29"
+title: "Impressions of Building An App With \"Plain React\""
+date: "2019/05/06"
 layout: "post"
-path: "/2019/05/6/plain-react-impressions"
+path: "/2019/05/06/plain-react-impressions"
 description: "What I've learned working on an app without a state management library"
 keywords: ""
 category: "frameworks"
