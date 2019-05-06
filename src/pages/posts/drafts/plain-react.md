@@ -1,5 +1,5 @@
 ---
-title: "Impressions of Building An App With \"Plain React\""
+title: "Impressions of Building An App With Plain React"
 date: "2019/05/06"
 layout: "post"
 path: "/2019/05/06/plain-react-impressions"

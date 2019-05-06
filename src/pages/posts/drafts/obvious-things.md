@@ -18,7 +18,7 @@ I saw a tweet thread a few weeks ago that made me think:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">And then you repeat it to someone and they say “lol that is obvious” and you wonder if you know the advice well enough yet to correct them on how not obvious it is going to be for their next 10 years.</p>&mdash; Patrick McKenzie (@patio11) <a href="https://twitter.com/patio11/status/1115752453910061056?ref_src=twsrc%5Etfw">April 9, 2019</a></blockquote>
 
-I realized that I've encountered plenty of pieces of wisdom in my software career that have this property; I seem them as clear and obvious when put in the abstract, but only learn to actually apply them by repeatedly failing to do so.  This is what people talk about when they say something is "hard earned experience" I guess.
+I realized that I've encountered plenty of pieces of wisdom in my software career that have this property; I see them as clear and obvious when put in the abstract, but only learn to actually apply them by repeatedly failing to do so.  This is what people talk about when they say something is "hard earned experience" I guess.
 
 Here are some examples from my career:
 
