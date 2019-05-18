@@ -10,6 +10,8 @@ import flame from '../svg/flame.svgi';
 import Icon from './Icon';
 import { css } from 'glamor';
 import { sansFontStack, serifFontStack } from '../utils/typography';
+import { getCategory } from '../utils/page-helpers';
+import get from 'lodash/get';
 
 export const TrendingIcon = () => <Icon color="#E55934" icon={flame} />;
 export const FavoriteIcon = () => <Icon color="#D7AF70" icon={star} />;
@@ -46,10 +48,10 @@ const PageDescription = styled('p')({
   color: '#999999',
 });
 
-const DateContainer = styled('span')({
-  fontFamily: serifFontStack,
+const Header = styled('span')({
+  fontFamily: sansFontStack,
   whiteSpace: 'nowrap',
-  fontSize: '18px',
+  fontSize: '14px',
   color: '#999999',
 });
 
@@ -59,40 +61,42 @@ const TitleRow = styled('div')({
   '> *': {
     marginRight: '10px',
   },
+  '> a': {
+    fontSize: '18px',
+    color: '#474747',
+    '&:hover': {
+      color: '#F1684E',
+    },
+  },
 });
 
 class PageLink extends React.Component {
   render() {
-    let {
-      page,
-      showDate,
-      showDescription,
-      titleFn,
-      showPopular,
-      showTrending,
-    } = this.props;
+    let { page, showDate, showDescription, titleFn } = this.props;
     const _title = titleFn(page);
+    let categoryInfo = getCategory(page.data.category);
+    const prettyCategory = get(categoryInfo, 'title');
+    const categoryLink = `/category/${page.data.category}`;
     return (
       <ListItem>
         <PageWrapper>
           <div>
+            {showDate ? (
+              <Header>
+                {format(parse(page.data.date), 'MMM Do')}{' '}
+                <Link to={categoryLink}>{prettyCategory}</Link>
+              </Header>
+            ) : null}
             <TitleRow>
               <Link className={linkClass} to={page.path}>
                 {_title}
               </Link>
-              {showTrending && page.data.isTrending ? <TrendingIcon /> : null}
-              {showPopular && page.data.isPopular ? <FavoriteIcon /> : null}
             </TitleRow>
             {showDescription ? (
               <PageDescription>{page.data.description}</PageDescription>
             ) : null}
           </div>
         </PageWrapper>
-        {showDate ? (
-          <DateContainer className="no-mobile">
-            {format(parse(page.data.date), 'MMM Do YYYY')}
-          </DateContainer>
-        ) : null}
       </ListItem>
     );
   }
@@ -103,8 +107,6 @@ PageLink.propTypes = {
   showDate: PropTypes.bool.isRequired,
   showCategory: PropTypes.bool.isRequired,
   showDescription: PropTypes.bool.isRequired,
-  showPopular: PropTypes.bool.isRequired,
-  showTrending: PropTypes.bool.isRequired,
   titleFn: PropTypes.func.isRequired,
 };
 

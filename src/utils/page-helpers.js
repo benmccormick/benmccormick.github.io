@@ -1,4 +1,6 @@
+import categoryJSON from '../pages/categories.json';
 import get from 'lodash/get';
+import find from 'lodash/find';
 import includes from 'lodash/includes';
 import parseInt from 'lodash/parseInt';
 import sortBy from 'lodash/sortBy';
@@ -119,3 +121,8 @@ export const getTopicLinks = (topics, count = Infinity) =>
     topics.map(topic => ({ data: { title: topic }, path: `topics/${topic}` })),
     count
   );
+
+export const getCategory = key => {
+  let categories = get(categoryJSON, 'categories', []);
+  return find(categories, { key });
+};
