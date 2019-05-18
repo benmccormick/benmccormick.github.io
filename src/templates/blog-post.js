@@ -12,21 +12,12 @@ import { Ad } from '../components/Ad';
 import { EmailSubscribe } from '../components/EmailSubscribe';
 import { BlogPostHeadContent } from '../components/BlogPostHeadContent';
 import Layout from '../components/Layout';
-import typography from '../utils/typography';
-import PostFooter from '../components/PostFooter';
+// import typography from '../utils/typography';
+// import PostFooter from '../components/PostFooter';
 import styled from '@emotion/styled';
-import { serifFontStack } from '../utils/typography';
+// import { serifFontStack } from '../utils/typography';
 import CategoryTag from '../components/CategoryTag';
 import { Link } from 'gatsby';
-
-const PostedDateContainer = styled('h5')({
-  display: 'block',
-  fontFamily: serifFontStack,
-  fontSize: '16px',
-  color: 'rgba(100,100,100, 0.8)',
-  marginTop: typography.rhythm(0.5),
-  marginBottom: typography.rhythm(0.5),
-});
 
 const Title = styled('h1')({
   display: 'block',
@@ -75,13 +66,13 @@ const Sidebar = styled('div')({
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const { data, pageContext, location } = this.props;
+    const { data, /*pageContext, */ location } = this.props;
 
     const post = data.markdownRemark.frontmatter;
     const body = data.markdownRemark.html;
     const slug = data.markdownRemark.fields.slug;
-    let isPost = post.layout === 'post';
-    let showForPostsOnly = content => (isPost ? content : null);
+    // let isPost = post.layout === 'post';
+    // let showForPostsOnly = content => (isPost ? content : null);
     let showWithSidebarSupport = content => (post.hideSidebar ? null : content);
     return (
       <Layout>
@@ -116,12 +107,12 @@ class BlogPostTemplate extends React.Component {
               </Sidebar>
             )}
           </div>
-          {showForPostsOnly(
+          {/* {showForPostsOnly(
             <PostFooter
               post={post}
               recommendedPosts={pageContext.relatedPosts}
             />
-          )}
+          )} */}
         </article>
       </Layout>
     );

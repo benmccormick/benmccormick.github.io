@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import ReviewBox from './ReviewBox';
 
-const ListTitle = styled('h2')({
+const ListTitle = styled('h1')({
   color: 'inherit',
 });
 
@@ -17,20 +17,18 @@ const ListItem = styled('li')({
 
 const List = styled('ul')({
   display: 'grid',
-  gridTemplateColumns: '30% 30% 30%',
-  gridColumnGap: '5%',
+  gridTemplateColumns: 'repeat(auto-fill, 180px)',
+  gridColumnGap: '40px',
   marginLeft: 0,
-  gridRowGap: '30px',
+  gridRowGap: 'auto',
   gridAutoRows: '1fr',
 
-  '@media all and (max-width: 960px)': {
-    gridTemplateColumns: '45% 45%',
-    gridColumnGap: '10%',
+  '@media all and (max-width: 400px)': {
+    display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
-  },
-  '@media all and (max-width: 700px)': {
-    gridTemplateColumns: '300px',
-    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
   },
 });
 

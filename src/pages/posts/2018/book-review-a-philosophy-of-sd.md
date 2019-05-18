@@ -3,7 +3,7 @@ title: "Book Review: A Philosophy of Software Design"
 date: "2018/12/31"
 layout: "review"
 path: "/2018/12/31/book-review-philosophy-of-software-design/"
-description: "John Ousterhout's book is a solid intermediate book on the art of writing software"
+description: "A solid intermediate book on the art of writing software"
 keywords: "software engineering "
 category: "reviews"
 topics: ['Architecture', 'Book Review']

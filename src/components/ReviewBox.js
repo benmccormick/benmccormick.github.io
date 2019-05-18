@@ -27,8 +27,8 @@ const boxClass = css({
   gridTemplateRows: '1fr',
   position: 'relative',
   justifyItems: 'center',
-  alignItems: 'baseline',
-  width: '100%',
+  alignItems: 'center',
+  width: '180px',
   boxShadow: '0 2px 4px 0 rgba(43, 59, 93, 0.29)',
   ':hover': {
     textDecoration: 'none',
@@ -79,6 +79,8 @@ const TitleRow = styled('div')({
 
 const Image = styled('img')({
   marginBottom: 0,
+  width: '100%',
+  height: '100%',
 });
 
 const IconWrapper = styled('div')({

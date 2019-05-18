@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import get from 'lodash/get';
 import take from 'lodash/take';
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import LinkBox from './LinkBox';
 import ReviewList from './ReviewList';
@@ -16,15 +16,15 @@ let bottomLink = css({
   textDecoration: 'none',
 });
 
-const Bold = styled("span")({
+const Bold = styled('span')({
   fontWeight: '700',
 });
 
-const Section = styled("div")({
+const Section = styled('div')({
   margin: '1.5rem 0',
 });
 
-const TriColumnSection = styled("div")({
+const TriColumnSection = styled('div')({
   margin: '1.5rem 0',
   display: 'grid',
   gridTemplateColumns: '30% 30% 30%',
@@ -32,12 +32,12 @@ const TriColumnSection = styled("div")({
   gridColumnGap: '5%',
 });
 
-const Spacer = styled("div")({
+const Spacer = styled('div')({
   width: '100%',
   height: '1.5rem',
 });
 
-let LayoutContainer = styled("div")({
+let LayoutContainer = styled('div')({
   display: 'grid',
   gridTemplateColumns: '66% 34%',
   gridTemplateRows: 'auto',
@@ -67,7 +67,7 @@ export class HomeMenu extends React.Component {
   render() {
     let { sortedPosts, sortedReviews, popularPosts, topicLinks } = this.props;
     let firstPosts = take(sortedPosts, 3);
-    let firstReviews = take(sortedReviews, 3);
+    let firstReviews = take(sortedReviews, 4);
     let reviewRegex = /Book Review: (.+)/;
     let getReviewTitle = page => {
       let title = get(page, 'data.title') || page.path;
@@ -120,28 +120,6 @@ export class HomeMenu extends React.Component {
             </Link>
           </LayoutContainer>
         </div>
-        <Spacer />
-        <h1> More From The Blog </h1>
-        <Section>
-          <LayoutContainer>
-            <LinkList
-              title="Most Read Articles"
-              pages={popularPosts}
-              showCategory={false}
-              showDate={false}
-              showDescriptions={false}
-              className={leftSide}
-            />
-            <LinkList
-              title="Featured Topics"
-              pages={topicLinks}
-              showCategory={false}
-              showDate={false}
-              showDescriptions={false}
-              className={rightSide}
-            />
-          </LayoutContainer>
-        </Section>
       </div>
     );
   }
