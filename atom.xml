@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-05-18T13:33:41Z</updated>
+    <updated>2019-05-18T13:33:53Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -21,10 +21,10 @@
     </contributor>
     <entry>
         <title type="html"><![CDATA[Obvious Things]]></title>
-        <id>https://benmccormick.org/2019/05/13/obvious-things</id>
-        <link href="https://benmccormick.org/2019/05/13/obvious-things">
+        <id>https://benmccormick.org/2019/05/18/obvious-things</id>
+        <link href="https://benmccormick.org/2019/05/18/obvious-things">
         </link>
-        <updated>2019-05-13T00:00:00Z</updated>
+        <updated>2019-05-18T00:00:00Z</updated>
         <content type="html"><![CDATA[<p>I saw a tweet thread a few weeks ago that made me think:</p>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">There’s a bit of a meme in some parts that there is value in saying, out loud, “I realize that I am surprised.” For similar reasons, I often subvocalize “I believe I now understand the type of situation the ‘trivial’ advice was preparing me for.” <a href="https://t.co/JzdYmSvJWH">https://t.co/JzdYmSvJWH</a></p>&mdash; Patrick McKenzie (@patio11) <a href="https://twitter.com/patio11/status/1115751939210223616?ref_src=twsrc%5Etfw">April 9, 2019</a></blockquote>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">And then you repeat it to someone and they say “lol that is obvious” and you wonder if you know the advice well enough yet to correct them on how not obvious it is going to be for their next 10 years.</p>&mdash; Patrick McKenzie (@patio11) <a href="https://twitter.com/patio11/status/1115752453910061056?ref_src=twsrc%5Etfw">April 9, 2019</a></blockquote>
