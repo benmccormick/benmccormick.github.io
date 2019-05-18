@@ -1,8 +1,8 @@
 ---
 title: 'Obvious Things'
-date: "2019/05/13"
+date: "2019/05/18"
 layout: "post"
-path: "/2019/05/13/obvious-things"
+path: "/2019/05/18/obvious-things"
 description: "Obvious things that I still end up learning over and over again"
 keywords: ""
 category: "soft-skills"
