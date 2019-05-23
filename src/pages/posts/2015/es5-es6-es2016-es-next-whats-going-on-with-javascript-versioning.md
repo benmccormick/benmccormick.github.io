@@ -11,7 +11,7 @@ key: "ecma-explanation"
 pageViews: "130069"
 topics: ['JavaScript', 'ECMAScript']
 last30pageViews: "9013"
-dontfeature: true
+dontfeature: "true"
 ---
 
 JavaScript has a strange naming history. For its initial release in 1995 as part of Netscape Navigator, Netscape labeled their new language LiveScript, before renaming it to JavaScript a year later, hoping to capitalize on Java's popularity at the time ([JavaScript has no actual relationship to Java][javacomic]). In 1996 Netscape submitted JavaScript to [ECMA International][ecma] for standardization.  This eventually resulted in a new language standard, labeled ECMAScript.  All major JavaScript implementations since have actually been implementations of the ECMAScript standard, but the term JavaScript has stuck for historical and marketing reasons <sup id="fnref:1">[1](#fn:1)</sup>.  In the real world ECMAScript is usually used to refer to the standard while JavaScript is used when talking about the language in practice.
