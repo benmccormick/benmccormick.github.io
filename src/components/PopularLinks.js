@@ -27,6 +27,7 @@ const List = styled('ul')({
 const Item = styled('li')({
   margin: '0 0 0 20px',
   padding: 0,
+  whiteSpace: 'pre',
   '&:nth-child(2)': {
     display: 'inline',
     margin: '0 0 0 5px',
