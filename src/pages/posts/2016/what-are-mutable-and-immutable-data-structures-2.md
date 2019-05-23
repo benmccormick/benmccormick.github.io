@@ -11,10 +11,10 @@ topics: ['Computer Science']
 pageViews: "1456"
 last30pageViews: "296"
 ---
+t
+Sometimes concepts and ideas slowly grow in a programming community, sometimes they seem to appear in a flash.  For the first several years I wrote JavaScript, I don't recall ever seeing anything written online about immutable data.  Since React hit the scene in the last 2 years however, articles mentioning mutable and immutable data seem to have multiplied, as have libraries like Immutable.js and alternate front end languages like Elm that allow users to "use immutable data".  I'm not going to address those libraries, but thought it would be useful to throw out a quick primer on what immutable data actually is, how it differs from mutable data, and why anyone cares.
 
-Sometimes concepts and ideas slowly grow in a programming community, sometimes they seem to appear in a flash.  For the first several years I wrote JavaScript, I don't recall ever seeing anything written online about immutable data.  Since React hit the scene in the last 2 years however, articles mentioning mutable and immutable data seem to have multiplied, as have libraries like Immutable.js and alternate front end languages like Elm that allow users to "use immutable data".  I'm not going to address those libraries, but thought it would be useful to throw out a quick primer on what immutable data actually is, how it differs from mutable data, and why anyone cares.  
-
-A mutable object is an object whose state can be modified after it is created.  An immutable object is an object whose state cannot be modified after it is created.  Examples of native JavaScript values that are immutable are numbers and strings.  Examples of native JavaScript values that are mutable include objects, arrays, functions, classes, sets, and maps.  
+A mutable object is an object whose state can be modified after it is created.  An immutable object is an object whose state cannot be modified after it is created.  Examples of native JavaScript values that are immutable are numbers and strings.  Examples of native JavaScript values that are mutable include objects, arrays, functions, classes, sets, and maps.
 
 ### Implications of mutable objects
 
