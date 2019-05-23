@@ -25,7 +25,7 @@ const List = styled('ul')({
   margin: 0,
 });
 const Item = styled('li')({
-  margin: '0 0 0 20px',
+  margin: '0 0 0 30px',
   padding: 0,
   whiteSpace: 'pre',
   '&:nth-child(2)': {
