@@ -49,7 +49,7 @@ export const getSlugsForTrendingPosts = (pages, count) => {
 // expects to be run against processed pages, not the raw nodes
 // with frontmatter
 export const getPopularPosts = (pages, count = Infinity) =>
-  take(sortBy(pages, 'data.last30pageViews').reverse(), count);
+  take(sortBy(pages, p => +p.data.last30pageViews).reverse(), count);
 
 export const getSortedPosts = (
   pages,
