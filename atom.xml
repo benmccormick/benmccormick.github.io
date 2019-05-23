@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-05-19T16:46:06Z</updated>
+    <updated>2019-05-23T00:20:36Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,25 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Herding Lions]]></title>
+        <id>https://benmccormick.org/2019/05/27/herding-lions</id>
+        <link href="https://benmccormick.org/2019/05/27/herding-lions">
+        </link>
+        <updated>2019-05-27T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>I used to find myself using the term “herding cats” a lot when confronting inertia, disorganization or ambiguity in work situations.  <a href="https://www.urbandictionary.com/define.php?term=herding%20cats">Urban Dictionary</a> actually endorses this:</p>
+<blockquote>
+<p>The phrase herding cats comes from the common saying that something involving coordination of many different groups or people is as difficult as herding cats. One of the commonly encountered uses of the term in technical fields is the phrase “Managing programmers is like herding cats” or “Managing engineers is like herding cats”. In education it would be “Managing students is like herding cats”.</p>
+</blockquote>
+<p>The phrase correctly captures the difficulty of getting a group of programmers (or even worse <em>teams of programmers</em>) on the same page.  But there’s an inherent arrogance to it.  The implication is that the herder is the adult in the room and everyone else’s pointless individualism is getting in the way.</p>
+<p>There are days that I think I could fix everything if I could just get the *&#x26;$% cats to move in the right direction.  In those situations  I’ve started telling myself that what I’m actually doing is herding <strong>lions</strong>.  How do you herd a group of lions?  I have no idea.  But I know that if you don’t start with a healthy respect for the lion’s capabilities and agenda, it won’t end well for you.</p>
+<p>When you treat people like lions, it’s an opportunity to stop and figure out <em>why</em> they’re not just getting on board with your <em>obvious</em> plan.  It’s an opportunity to learn, to find new ways to motivate people, and maybe even to empower somebody who had been viewing themselves as more of a kitten.  Ultimately the best teams flourish where people can <a href="https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/">be strong contributors, take risks and do work they find meaningful</a>.  They’re teams of lions.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Obvious Things]]></title>
         <id>https://benmccormick.org/2019/05/18/obvious-things</id>
@@ -645,38 +664,6 @@ This is especially useful for information that may be relevant during a code rev
 </ul>
 <h3>A final note</h3>
 <p>I just want to end where I started, and encourage you to not rush out and try to absorb all of these things at once, but instead work on projects and find the resources that give you what you need.  And then explore a bit on the side to help yourself grow.  Your resources will probably be different than mine.  The internet is huge, the world is even bigger. Explore and have fun!</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Strategic Coding]]></title>
-        <id>https://benmccormick.org/2019/02/18/strategic-coding</id>
-        <link href="https://benmccormick.org/2019/02/18/strategic-coding">
-        </link>
-        <updated>2019-02-18T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>I recently read <a href="https://amzn.to/2Elk5g8">A Philosophy Of Software Design</a> by John Ousterhout.  In an early chapter he paints a picture of a “tactical tornado” programmer, a programmer who is always focused on solving the current problem by the most expedient method possible, with no thought to the long term implications.  I suspect anyone with even a few years in the programming has seen programmers like this, and has also from time to time written “tactical” code like this themselves.  Ousterhout’s recommendation is instead to write code strategically rather than tactically, taking more up front time to plan the structure for the benefit of longer term productivity.</p>
-<p>Ousterhout focuses his examination of tactical vs strategic coding on the issue of complexity.  Complexity as he defines it is anything that makes the system difficult to work with.  It is the root issue behind much of the <em>ease of change</em> concern I identified in my <a href="https://benmccormick.org/2019/01/07/the-concerns-of-fe-architecture/">recent post</a>.  But we can expand this to encompass all of the front end concerns.  We can easily impact reliability, performance, ease of change, accessibility, security and capability when we make short hand tradeoffs.</p>
-<p>Let’s consider the problem of getting a new sign up page set up for a site.  There are several different approaches we could take.  By far the simplest is a basic HTML page using normal CSS and little or no JavaScript, that posts to a backend service after the signup and then redirects to a different static page.  We could set this up on S3 or any other service that will host static files.  On the other extreme, we could set up a new server side rendered Typescript-based React application that uses Next.js to give us server side rendering, which we deploy using Docker and a fully automated CI build system with chatbot ops.  Which one of these approaches is better?</p>
-<p>A tactical tornado would likely prefer the first solution.  They could get the whole thing up and running in an hour, stamp it and call it done.  Other developers might be attracted to the <em>cool</em> approach and want to avoid the “outdated” approach.  But we can only really answer the question by stepping back and asking some questions:</p>
-<ul>
-<li>What is the future of this application?  Is this a standalone page, or the first page in a larger application?</li>
-<li>What feature requests are we likely to get for the page?  Is it probable that we’ll eventually need form validation, dynamic success and failure states, complex behavior that depends on the use case?</li>
-<li>What browsers are we supporting</li>
-<li>What are our performance benchmarks?</li>
-</ul>
-<p>Questions like that can tell us when we’ll benefit from an up front investment in certain areas, and when it’s wiser to be quick and dirty.  They also allow us to evaluate whether any options we’re considering might cut us off from achieving long term goals.  For instance, if we know that we’ll eventually need to scale this site into a large application with responsive interactions, personalized content and information maintained between page loads, building this out as a series of static pages which POST to a backend would eventually limit our capabilities or require a refactor.  But if this is only a one-off landing page for an event happening next week that won’t be maintained beyond that point, developing a long-term maintenance strategy would be wasted effort.  This is <em>strategic coding</em>, and it doesn’t stop at the beginning of a project, it’s an ongoing mindset that you can take as you add each new feature to an application.</p>
-<p>Ousterhout makes a case that aligns with my experience, that strategic programming is a long term winner.  I’ve seen that over time improvements to ease of change will often help a team save time lost, significant hits to performance, security, reliability may hurt them more than a fast solution saves them, and solutions that unreasonably limit us in terms of system capability or accessibility will ultimately get rejected.  The weasel words there exist for a reason… sometimes it really is the best idea to just get something working.  But a strategic programmer will understand the context of their project, and make wise choices about where and how to invest in the codebase.</p>
-<p><strong>TL;DR</strong></p>
-<ul>
-<li><strong>It is possible to program either tactically or strategically</strong></li>
-<li><strong>Tactical programming is focused on solving the immediate problem as quickly as possible</strong></li>
-<li><strong>Strategic coding considers the context of the problem, and any architectural concerns involved in a change</strong></li>
-<li><strong>Strategic coding doesn’t mean never hacking and always investing, it means letting context inform the amount and direction of investment in a codebase</strong></li>
-</ul>
-<p>PS: I put a <a href="https://benmccormick.org/2018/12/31/book-review-philosophy-of-software-design/">full review of A Philosophy of Software Design</a> up on the site a few weeks ago.  Check it out :)</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
