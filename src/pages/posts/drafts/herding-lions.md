@@ -16,7 +16,7 @@ I used to find myself using the term "herding cats" a lot when confronting inert
 
 > The phrase herding cats comes from the common saying that something involving coordination of many different groups or people is as difficult as herding cats. One of the commonly encountered uses of the term in technical fields is the phrase "Managing programmers is like herding cats" or "Managing engineers is like herding cats". In education it would be "Managing students is like herding cats".
 
-The phrase correctly captures the difficulty of getting a group of programmers (or even worse *teams of programmers*) on the same page.  But there's an implied arrogance to it.  The implication is that the herder is the adult in the room and everyone else's pointless individualism is getting in the way.
+The phrase correctly captures the difficulty of getting a group of programmers (or even worse *teams of programmers*) on the same page.  But there's an inherent arrogance to it.  The implication is that the herder is the adult in the room and everyone else's pointless individualism is getting in the way.
 
 There are days that I think I could fix everything if I could just get the *&$% cats to move in the right direction.  In those situations  I've started telling myself that what I'm actually doing is herding **lions**.  How do you herd a group of lions?  I have no idea.  But I know that if you don't start with a healthy respect for the lion's capabilities and agenda, it won't end well for you.
 
