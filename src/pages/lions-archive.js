@@ -6,37 +6,32 @@ import { getSortedPosts } from '../utils/page-helpers';
 import LinkList from '../components/LinkList';
 import Layout from '../components/Layout';
 
-class CategoryArchive extends React.Component {
+class LionsArchive extends React.Component {
   render() {
     // Sort pages.
     const posts = this.props.data.allMarkdownRemark.edges;
-    const sortedPosts = getSortedPosts(posts, Infinity, true);
+    const sortedPosts = getSortedPosts(posts, Infinity, true).filter(
+      post => post.data.blog === 'lions'
+    );
     return (
       <Layout>
         <div ref={el => (this.archiveContainer = el)}>
           <HeadContent keywords="blog,articles,posts,javascript,software tools,web development" />
-          <LinkList
-            pages={sortedPosts}
-            title="Blog"
-            showCategory={true}
-            showPopular={true}
-            showTrending={true}
-            useBox={true}
-          />
+          <LinkList pages={sortedPosts} title="Articles" showCategory={true} />
         </div>
       </Layout>
     );
   }
 }
 
-CategoryArchive.propTypes = {
+LionsArchive.propTypes = {
   route: PropTypes.object,
 };
 
-export default CategoryArchive;
+export default LionsArchive;
 
 export const pageQuery = graphql`
-  query ArchiveQuery {
+  query LionsArchiveQuery {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
@@ -53,6 +48,7 @@ export const pageQuery = graphql`
             description
             category
             isDraft
+            blog
           }
           fields {
             slug

@@ -46,21 +46,10 @@ export const getSlugsForTrendingPosts = (pages, count) => {
   return take(rankByTrending.map(getSlug), count);
 };
 
-// this returns a list of popular posts, deprecated for now
+// expects to be run against processed pages, not the raw nodes
+// with frontmatter
 export const getPopularPosts = (pages, count = Infinity) =>
-  take(
-    sortBy(pages, getRecentPageViews)
-      .reverse()
-      .filter(
-        page =>
-          !includes(page.node.frontmatter.path, '/404') &&
-          !page.node.frontmatter.dontfeature &&
-          !isDraft(page) &&
-          get(page, 'node.frontmatter.layout') === 'post'
-      )
-      .map(p => ({ data: p.node.frontmatter, path: p.node.fields.slug })),
-    count
-  );
+  take(sortBy(pages, 'data.last30pageViews').reverse(), count);
 
 export const getSortedPosts = (
   pages,

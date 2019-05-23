@@ -7,9 +7,9 @@ description: "Creating change starts with respect"
 keywords: ""
 category: "soft-skills"
 topics: []
-key: "obvious-things"
+key: "herding-lions"
 readNext: "soft-skills,radical-candor-book,obvious-things"
-isDraft: true
+blog: 'lions'
 ---
 
 I used to find myself using the term "herding cats" a lot when confronting inertia, disorganization or ambiguity in work situations.  [Urban Dictionary](https://www.urbandictionary.com/define.php?term=herding%20cats) actually endorses this:

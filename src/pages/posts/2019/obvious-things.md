@@ -9,6 +9,7 @@ category: "soft-skills"
 topics: []
 key: "obvious-things"
 readNext: "soft-skills,fe-concerns,react-confessions"
+blog: "lions"
 ---
 
 I saw a tweet thread a few weeks ago that made me think:

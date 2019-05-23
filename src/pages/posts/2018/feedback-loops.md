@@ -9,6 +9,7 @@ category: "soft-skills"
 topics: []
 key: "feedback-loops"
 readNext: "large-improvements-small-team,ten-things-js,react-confessions"
+blog: 'lions'
 ---
 
 *How do we get better faster?*  It's amazing to consider the amount of money, thought and effort that has gone into solving that one simple problem in software development over the past 2 decades.  Here's a small sample of buzzwords, trends and methodology that are concerned with reducing the time between making a change to software and seeing the results:

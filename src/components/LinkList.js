@@ -8,6 +8,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 import PageLink from './PageLink';
+import PopularLinks from './PopularLinks';
 
 const ListTitle = styled('h1')({
   color: 'inherit',
@@ -17,6 +18,9 @@ const YearTitleContainer = styled('ul')({
   gridColumn: '1 / -1',
   padding: '30px 0 10px 0',
   margin: 0,
+  '&:first-child': {
+    padding: '20px 0 10px 0',
+  },
 });
 
 const YearTitleContent = styled('h4')({
@@ -43,7 +47,14 @@ const List = styled('ul')({
 
 class LinkList extends React.Component {
   render() {
-    let { pages, title, description, className, titleFn } = this.props;
+    let {
+      pages,
+      title,
+      description,
+      className,
+      titleFn,
+      showPopular,
+    } = this.props;
     let pagesByYear = groupBy(pages, page => {
       return new Date(page.data.date).getFullYear();
     });
@@ -71,6 +82,7 @@ class LinkList extends React.Component {
       <div className={className}>
         {title ? <ListTitle>{title}</ListTitle> : null}
         {description || null}
+        {showPopular ? <PopularLinks pages={pages} titleFn={titleFn} /> : null}
         <List>{map(yearSections, 1)}</List>
       </div>
     );
@@ -84,10 +96,10 @@ LinkList.propTypes = {
   showCategory: PropTypes.bool.isRequired,
   showDate: PropTypes.bool.isRequired,
   showPopular: PropTypes.bool.isRequired,
-  showTrending: PropTypes.bool.isRequired,
   showDescriptions: PropTypes.bool.isRequired,
   className: PropTypes.any.isRequired,
   titleFn: PropTypes.func.isRequired,
+  showPopular: PropTypes.bool.isRequired,
 };
 
 LinkList.defaultProps = {

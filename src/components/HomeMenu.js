@@ -53,19 +53,9 @@ let leftSide = css({
   gridRow: 1,
 });
 
-let rightSide = css({
-  gridColumn: 2,
-  gridRow: 1,
-
-  '@media all and (max-width: 700px)': {
-    gridColumn: 1,
-    gridRow: 2,
-  },
-});
-
 export class HomeMenu extends React.Component {
   render() {
-    let { sortedPosts, sortedReviews, popularPosts, topicLinks } = this.props;
+    let { sortedPosts, sortedReviews } = this.props;
     let firstPosts = take(sortedPosts, 3);
     let firstReviews = take(sortedReviews, 4);
     let reviewRegex = /Book Review: (.+)/;

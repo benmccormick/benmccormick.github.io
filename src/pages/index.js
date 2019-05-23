@@ -7,7 +7,6 @@ import { HeadContent } from '../components/HeadContent';
 import { WelcomeBox } from '../components/WelcomeBox';
 import {
   getSortedPosts,
-  getPopularPosts,
   getSortedReviews,
   getTopicLinks,
 } from '../utils/page-helpers';
@@ -19,20 +18,13 @@ class BlogIndex extends React.Component {
     const featuredTopics = this.props.data.site.siteMetadata.featuredTopics;
     const sortedPosts = getSortedPosts(pages, 5);
     const sortedReviews = getSortedReviews(pages, 5);
-    const popularPosts = getPopularPosts(pages, 5);
-    const topicLinks = getTopicLinks(featuredTopics, 5);
 
     return (
       <Layout>
         <div ref={el => (this.indexContainer = el)}>
           <HeadContent />
           <WelcomeBox />
-          <HomeMenu
-            sortedPosts={sortedPosts}
-            sortedReviews={sortedReviews}
-            popularPosts={popularPosts}
-            topicLinks={topicLinks}
-          />
+          <HomeMenu sortedPosts={sortedPosts} sortedReviews={sortedReviews} />
         </div>
       </Layout>
     );
