@@ -51,7 +51,7 @@ Justice is something that often requires active work, and I should always pursue
 My thinking on values has evolved over time. I've particularly been influenced by
 
 - My Christian faith
-- My time working at [Windsor Circle](https://www.crunchbase.com/organization/windsor-circle#section-overview)
+- My time working at [Windsor Circle](https://www.crunchbase.com/organization/windsor-circle#section-overview), and their company values
 - Ray Dalio's Book [Principles](https://amzn.to/2EzEVaN)
 - Google's publicly available [new manager training](https://rework.withgoogle.com/guides/managers-develop-and-support-managers/steps/review-googles-new-manager-training/)
 
