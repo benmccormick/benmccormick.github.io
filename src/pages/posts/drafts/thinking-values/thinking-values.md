@@ -32,6 +32,8 @@ Going through the list, I eventually cut things down to 20, 12, 10 and then 8.  
 7. Be *accountable* for my responsibilities and hold others to the same.
 8. Actively work for *justice*
 
+I've published these [here](/my-values).
+
 Those are "guideposts" that I can easily quote to myself or post up somewhere, but still have enough substance to say something meaningful when I'm considering how to handle a low performing team, organizational changes, or personal career decisions. I've already seen them bring a clarity to my thinking about tough things in a short period of time.  If you're interested, I highly recommend checking out [Google's training](https://rework.withgoogle.com/guides/managers-develop-and-support-managers/steps/review-googles-new-manager-training/)
 
 
