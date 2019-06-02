@@ -10,7 +10,6 @@ topics: []
 key: "thinking-values"
 readNext: "herding-lions,soft-skills,obvious-things"
 blog: 'lions'
-isDraft: true
 ---
 
 As a way to help myself grow in my first year as a manager, I've been working through [Google's New Manager Training](https://rework.withgoogle.com/guides/managers-develop-and-support-managers/steps/review-googles-new-manager-training/) which they have generously published online.  One exercise that stood out to me was a "values selection" process, where they encourage managers to select a ranked list of 5-10 words that resonate with them as values from a list of around 400 "values words".
