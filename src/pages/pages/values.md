@@ -36,7 +36,7 @@ Don’t save it all for myself. Leave margin for others and be generous.  When I
 
 #### Continual Improvement
 
-*Continual Improvement* + Goodism are a powerful combo. (Goodism is contrasted to perfectionism here: I want to build good things, not obsess after diminishing returns)
+Continual Improvement + Goodism are a powerful combo. (Goodism is contrasted to perfectionism here: I want to build good things, not obsess after diminishing returns)
 
 #### Accountability
 
@@ -44,7 +44,7 @@ I should be accountable for my responsibilities and hold others to the same.
 
 #### Justice
 
-Justice is something that often requires active work, and I should always pursue it.
+Justice often requires active work, and I should always pursue it.
 
 ---
 
@@ -52,6 +52,6 @@ My thinking on values has evolved over time. I've particularly been influenced b
 
 - My Christian faith
 - My time working at [Windsor Circle](https://www.crunchbase.com/organization/windsor-circle#section-overview), and their company values
-- Ray Dalio's Book [Principles](https://amzn.to/2EzEVaN)
+- Ray Dalio's [Principles](https://amzn.to/2EzEVaN)
 - Google's publicly available [new manager training](https://rework.withgoogle.com/guides/managers-develop-and-support-managers/steps/review-googles-new-manager-training/)
 
