@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-06-09T03:09:51Z</updated>
+    <updated>2019-06-12T22:07:50Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -20,6 +20,23 @@
         <uri>http://benmccormick.org</uri>
     </contributor>
     <entry>
+        <title type="html"><![CDATA[Book Review: The Manager's Path]]></title>
+        <id>https://benmccormick.org/2019/06/12/book-review-the-managers-path</id>
+        <link href="https://benmccormick.org/2019/06/12/book-review-the-managers-path">
+        </link>
+        <updated>2019-06-12T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>Titles in the software engineering world are strange.  Without much work, it’s easy to find <em>Senior Engineers</em> with 2 years of professional experience, <em>junior developer</em> job descriptions requesting 5 years of experience, <em>tech lead</em> roles focused purely on technology, <em>tech lead</em> roles where the lead is managing a team, and who can tell the difference between a <em>CTO</em> and a <em>VP of Engineering</em> anyway?  This results in weird title shifts when developers switch jobs, odd or unfair salary distributions, and a world where it is very difficult to understand what a career path looks like in this industry.</p>
+<p>Camille Fournier’s book <a href="https://amzn.to/2F2jG1p">The Manager’s Path</a> steps into this breach by laying out a clear look at an engineering management-focused career path. The book runs through a series of roles: <em>Mentor</em> to <em>Tech Lead</em> to <em>Manager</em> to <em>Manager of Managers</em> all the way up to <em>Executive</em>. For each role she describes what the job is,  walks through what type of challenges you might face in the role after a promotion, and offers practical advice on overcoming those challenges.</p>
+<p>I found it to be an extremely engaging read, and the best description of what it actually looks like to advance in technical leadership roles I’ve ever read.  Because she focuses on skills and responsibilities more than titles, it’s possible to apply her advice across large and small companies, even those with wonky title structures.  It helped me think about what skills I need to be building in my career, and gave me a glimpse of what next steps look like.</p>
+<p>The focus on common challenges and how to face them was also helpful, though whole books could (and have) been written on those challenges and how to face them at each level.  The Manager’s Path serves as a good starting point here, identifying the challenges and giving good solid general advice for facing them.  For those new to a role it could help them identify where they’re weak or uncomfortable, and serve as a starting point to a deeper dive into those areas.</p>
+<p>As I read the book, I immediately thought of 4 or 5 people at various points in their career I knew who could benefit greatly from reading this book.  If you’re working in the software world and think that you long term are interested in advancing in your career beyond your current role, there will probably be interesting tidbits in here for you.  Even those who are sure they <strong>don’t</strong> want to be in management could benefit from understanding the perspectives of what engineering managers actually <em>do</em>.  The book is also structured so that the first few chapters are highly relevant for both technical and manager track developers; tech lead is an important role on both tracks.  If you fall into one of those buckets, I highly recommend <a href="https://amzn.to/2F2jG1p">The Manager’s Path</a>.</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Thinking About Values]]></title>
         <id>https://benmccormick.org/2019/06/03/thinking-values</id>
         <link href="https://benmccormick.org/2019/06/03/thinking-values">
@@ -28,7 +45,7 @@
         <content type="html"><![CDATA[<p>As a way to help myself grow in my first year as a manager, I’ve been working through <a href="https://rework.withgoogle.com/guides/managers-develop-and-support-managers/steps/review-googles-new-manager-training/">Google’s New Manager Training</a> which they have generously published online.  One exercise that stood out to me was a “values selection” process, where they encourage managers to select a ranked list of 5-10 words that resonate with them as values from a list of around 400 “values words”.</p>
 <p><a
     class="gatsby-resp-image-link"
-    href="/static/f585fe7fa02d9e97dc89883f7e623db6/ec82b/values-list.png"
+    href="/static/f585fe7fa02d9e97dc89883f7e623db6/67e88/values-list.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -46,11 +63,11 @@
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
         alt="A list of 400 values words like accountability, accuracy, achievement, altruism and more"
         title=""
-        src="/static/f585fe7fa02d9e97dc89883f7e623db6/d766e/values-list.png"
-        srcset="/static/f585fe7fa02d9e97dc89883f7e623db6/a6b6e/values-list.png 143w,
-/static/f585fe7fa02d9e97dc89883f7e623db6/8e488/values-list.png 285w,
-/static/f585fe7fa02d9e97dc89883f7e623db6/d766e/values-list.png 570w,
-/static/f585fe7fa02d9e97dc89883f7e623db6/ec82b/values-list.png 596w"
+        src="/static/f585fe7fa02d9e97dc89883f7e623db6/a9e6e/values-list.png"
+        srcset="/static/f585fe7fa02d9e97dc89883f7e623db6/40f08/values-list.png 143w,
+/static/f585fe7fa02d9e97dc89883f7e623db6/d4502/values-list.png 285w,
+/static/f585fe7fa02d9e97dc89883f7e623db6/a9e6e/values-list.png 570w,
+/static/f585fe7fa02d9e97dc89883f7e623db6/67e88/values-list.png 596w"
         sizes="(max-width: 570px) 100vw, 570px"
       />
   </span>
@@ -154,7 +171,7 @@
 This is especially useful for information that may be relevant during a code review but isn’t long term relevant, like the original reason for extracting some reusable code and where it came from.  Below is an example of a comment I left demoing how React hooks could be used to pull out shared logic in my work project.</p>
 <p><a
     class="gatsby-resp-image-link"
-    href="/static/a883e2a63572b0df0719ee97fac65e95/40651/comment-example.png"
+    href="/static/a883e2a63572b0df0719ee97fac65e95/df1a7/comment-example.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -172,12 +189,12 @@ This is especially useful for information that may be relevant during a code rev
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
         alt="hooks comment example"
         title=""
-        src="/static/a883e2a63572b0df0719ee97fac65e95/d766e/comment-example.png"
-        srcset="/static/a883e2a63572b0df0719ee97fac65e95/a6b6e/comment-example.png 143w,
-/static/a883e2a63572b0df0719ee97fac65e95/8e488/comment-example.png 285w,
-/static/a883e2a63572b0df0719ee97fac65e95/d766e/comment-example.png 570w,
-/static/a883e2a63572b0df0719ee97fac65e95/13239/comment-example.png 855w,
-/static/a883e2a63572b0df0719ee97fac65e95/40651/comment-example.png 1036w"
+        src="/static/a883e2a63572b0df0719ee97fac65e95/a9e6e/comment-example.png"
+        srcset="/static/a883e2a63572b0df0719ee97fac65e95/40f08/comment-example.png 143w,
+/static/a883e2a63572b0df0719ee97fac65e95/d4502/comment-example.png 285w,
+/static/a883e2a63572b0df0719ee97fac65e95/a9e6e/comment-example.png 570w,
+/static/a883e2a63572b0df0719ee97fac65e95/c2e96/comment-example.png 855w,
+/static/a883e2a63572b0df0719ee97fac65e95/df1a7/comment-example.png 1036w"
         sizes="(max-width: 570px) 100vw, 570px"
       />
   </span>
@@ -424,12 +441,12 @@ This is especially useful for information that may be relevant during a code rev
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> isString <span class="token keyword">from</span> <span class="token string">'lodash-es/isString'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> filter <span class="token keyword">from</span> <span class="token string">'lodash-es/filter'</span><span class="token punctuation">;</span>
 <span class="token comment">// A helper for React Components to reduce ternary use</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">showIf</span> <span class="token operator">=</span> <span class="token punctuation">(</span>condition<span class="token punctuation">,</span> element<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>condition <span class="token operator">?</span> element <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">showIf</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">condition<span class="token punctuation">,</span> element</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>condition <span class="token operator">?</span> element <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// A helper for handling class lists where some values may be undefined</span>
 <span class="token comment">// filters out anything that isn't a string and then adds spaces</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">classes</span> <span class="token operator">=</span> classList <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">filter</span><span class="token punctuation">(</span>classList<span class="token punctuation">,</span> c <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">classes</span> <span class="token operator">=</span> <span class="token parameter">classList</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">filter</span><span class="token punctuation">(</span>classList<span class="token punctuation">,</span> <span class="token parameter">c</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token function">isString</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> c<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
@@ -470,7 +487,7 @@ This is especially useful for information that may be relevant during a code rev
 <span class="token keyword">import</span> isNumber <span class="token keyword">from</span> <span class="token string">'lodash-es/isNumber'</span><span class="token punctuation">;</span>
 
 <span class="token comment">// takes either a string or a date object and formats it as a standard date with time</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">stdFormat</span> <span class="token operator">=</span> dateStr <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">stdFormat</span> <span class="token operator">=</span> <span class="token parameter">dateStr</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>dateStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> dateStr<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -478,7 +495,7 @@ This is especially useful for information that may be relevant during a code rev
     <span class="token keyword">return</span> <span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> <span class="token string">'MM/DD/YY hh:mm A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">commafy</span> <span class="token operator">=</span> <span class="token punctuation">(</span>num<span class="token punctuation">,</span> minDecimals <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">commafy</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> minDecimals <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNumber</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> num<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">'en-US'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
             minimumFractionDigits<span class="token punctuation">:</span> minDecimals<span class="token punctuation">,</span>
@@ -488,7 +505,7 @@ This is especially useful for information that may be relevant during a code rev
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">percentify</span> <span class="token operator">=</span> <span class="token punctuation">(</span>num<span class="token punctuation">,</span> minDecimals <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">percentify</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> minDecimals <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNumber</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> num<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">'en-US'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
             style<span class="token punctuation">:</span> <span class="token string">'percent'</span><span class="token punctuation">,</span>
@@ -507,13 +524,13 @@ This is especially useful for information that may be relevant during a code rev
 <p>Note that all my examples so far have utilized other utility libraries like lodash and date-fns.  The best utility functions are those that you don’t have to maintain yourself.  I do recommend looking for libraries that you can tree-shake and only take what you need though.  Other ones like moment.js can make a big difference on your JavaScript bundle size if you let them.</p>
 <h3>Timing</h3>
 <p>Timeout functions are useful, but the browsers built in functions are callback based and don’t play well with promises or async await.  We can fix that:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> secs <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>res <span class="token operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> secs <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">secs</span> <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> secs <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">pause</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>I now have a promisified version of setTimeout (<code class="language-text">sleep</code>) and a special case version with a 0 timeout (useful for things that should happen as soon as possible after the current event loop executes. I prefer dealing with things in seconds over milliseconds, so I changed the API to use that.  That is probably not everyone’s cup of tea, so feel free to copy and modify.</p>
 <p>Usage looks like this:</p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// function to kick off a "job" of some type and then</span>
 <span class="token comment">// check every 30 seconds to see if the job is complete</span>
-<span class="token keyword">const</span> createJobAndShowResults <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">createJobAndShowResults</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
     <span class="token function">createJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment">// don't do this without a timeout/failure</span>
     <span class="token comment">// condition in real life!</span>
@@ -570,65 +587,6 @@ This is especially useful for information that may be relevant during a code rev
 <li><a href="https://amzn.to/2TqwDeR">Deep Work by Cal Newport</a></li>
 <li><a href="https://amzn.to/2F0AIgV">The Common Rule by Justin Earley</a></li>
 </ul>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Importance of Writing For Software Developers]]></title>
-        <id>https://benmccormick.org/2019/03/02/the-importance-of-writing</id>
-        <link href="https://benmccormick.org/2019/03/02/the-importance-of-writing">
-        </link>
-        <updated>2019-03-02T00:00:00Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>Once somebody hits a minimum threshold of technical skill to hold a job in the industry, about 80% of their ability to succeed in Software Development is determined by their communication and people skills, not their technical abilities</p>
-<p>- <em>Me, Christmas 2018</em></p>
-</blockquote>
-<p>I think I caught my sister in law by surprise a bit when I answered her questions about the importance of writing in my job that way.  She’s an assistant professor who teaches writing to college students, and has found that her students pursuing technical degrees generally fail to see the value in learning to write.  The contrast between their expectations and my perspective after a decade working in software was strong.  I promised her at the time that I’d write down some thoughts on why writing skills are valuable for software engineers.  So here it is, 6 reasons that writing skills are crucial for working in the tech industry<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.</p>
-<h4>1. You will write every day</h4>
-<p>Every industry has truths that are obvious to those who have spent time working in the industry, but may be surprising to those on the outside.  One such truth for software engineers: our jobs involve an awful lot of writing.  Here are a few types of writing that I’ve done daily or weekly for the last decade:</p>
-<ol>
-<li>Discussing technical implementations through chat apps like slack</li>
-<li>Writing Bug Reports</li>
-<li>Writing comments in my code and technical documentation to help others and my future self understand what was done</li>
-<li>Writing reviews of other developers code to help our team improve and coordinate on best practices</li>
-<li>Answering questions from less technical employees or clients, often through email or slack.</li>
-<li>Creating design documents for complex work during planning times</li>
-</ol>
-<p>That list is illustrative but not exhaustive.  Any software engineer who wishes to build software that is used by others will end up doing plenty of writing.</p>
-<h4>2. The ability to explain complex topics will set you apart</h4>
-<p>The ability to take a complex topic and explain it in terms that somebody who doesn’t have all the background you do can understand is a critical one for software engineers.  This can help negate two of the most frustrating experiences for a developer:</p>
-<ol>
-<li>A business asking for work that doesn’t make sense because the business folks don’t understand how the product works</li>
-<li>Less experienced members of the the team routinely making mistakes and breaking things because they don’t understand how the product works</li>
-</ol>
-<p>Senior engineers who can explain and document complex pieces of software save everyone frustration by helping junior members of the team understand how things work and be more productive, and by aligning business expectations and plans to the reality of how their software systems actually work.  These are hugely valuable activities that can make a big difference in your career.</p>
-<h4>3. Writing will help you find a (better) job</h4>
-<p>When I’ve interviewed software engineers, I see a variety of problems: they fail to present their strengths, don’t manage to show a sincere interest in the job, and get caught flat-footed on fairly standard questions.  Most of these mistakes come down to a lack of preparation, not tailoring their message to their audience, and not knowing how to structure the information they know about themselves in a compelling way.  These are the skills that you’ll learn from a good class on writing, and develop through practice writing.</p>
-<p>Interviews are important, especially early on in your career.  Your compensation as you go throughout your career tends to be anchored to where you started, especially if you stay one place for a long time.  An increase of $5,000 in salary on a job you take today would mean an additional $92,000 of accumulated income over the next 15 years assuming a salary increase rate of 3% a year<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.</p>
-<p>In addition if you write publicly on a blog like this, it can help you show proof of your knowledge in a way that a resume never will.  Not everybody needs to be publicly blogging, but if that appeals to you it can be a great career booster.</p>
-<h4>4. Remote work increases the importance of writing</h4>
-<p>One of the biggest trends in the tech industry these days is the <a href="https://www.zenefits.com/blog/remote-workforce-rise/">rise of remote work</a>. More teams are embracing partial remote work, and there are major companies like Buffer, Invision and GitLab that are entirely remote.  Remote work is partially enabled by video chat technology, but written communication is the lifeblood of a successful remote team. Collaborating via tools like Slack, Github, Trello and Jira is part of most teams’ workflows, but when everybody is remote, being able to express yourself clearly on these platforms is critical.</p>
-<h4>5. Your career trajectory will depend on your ability to influence and persuade</h4>
-<p>Most developers when they begin their first software job will be given a set of tasks to do and the expectation is that they will create work to the spec that somebody else has designed.  They are implementors.  But as a developers career progresses there is an opportunity to be more than an implementor.  Since developers understand the system best, they often have ideas that can help shape product designs.  Developers also often need to work with other teams whose goals may not be completely aligned with their team.  These are not situations where even a senior engineer is likely to have direct authority.  Instead the developers who continue to grow in their careers are those who are able to influence and persuade without authority.</p>
-<p>This is again a skill that writing classes can cultivate.  Persuasive writing practice can help give you the clarity of thought and intuition for structuring arguments that will help both when you’re trying to make a point through writing or doing it verbally.</p>
-<h4>6. Writing skills translate to writing code</h4>
-<p>This last one is really specific to software engineering, but I’ve found that applying writing principles to code has helped me write more maintainable code.  Most code written in a professional context will be read many times by other people (or by the original author after they have long lost track of their original context).  Being able to write code that can be understood by both a computer and by human beings is a skill developed over time, but many of the same “brain muscles” that you develop in writing prose can be applied to code: it’s important to know your audience, structure your information in a logical manner, and use judgement when finding just the right phrase (or code structure) for a situation.  That could be a whole post in itself.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>I write based on the tech industry and software development specifically because that is what I have lived, but most of these points should be equally applicable to any engineering career and would likely require very little modification for science and research as well.</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-<li id="fn-2">
-<p>Ok real world promotion rates in the tech industry are likely to be choppier than that, but the example holds.</p>
-<a href="#fnref-2" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
