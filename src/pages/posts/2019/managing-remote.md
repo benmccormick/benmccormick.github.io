@@ -10,7 +10,6 @@ topics: []
 key: "managing-distributed-team"
 readNext: "manager-and-developer,herding-lions,soft-skills"
 blog: 'lions'
-isDraft: true
 ---
 
 Working with people over the internet is different from meeting in an office five days a week.  This isn't a moral statement.  I've done and enjoyed both.  Working with a distributed team requires a different set of skills, especially when you're a leader.  Today I want to share the most helpful lessons I've learned over the last year managing a distributed team.
