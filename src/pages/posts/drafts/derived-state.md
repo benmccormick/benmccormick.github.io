@@ -1,5 +1,5 @@
 ---
-title: "The Derived State Problem"
+title: "Avoiding Derived State In React"
 date: "2019/04/15"
 layout: "post"
 path: "/2019/04/15/derived-state"
