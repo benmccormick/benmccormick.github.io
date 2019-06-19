@@ -1,8 +1,8 @@
 ---
 title: "Avoiding Derived State In React"
-date: "2019/04/15"
+date: "2019/06/24"
 layout: "post"
-path: "/2019/04/15/derived-state"
+path: "/2019/06/24/derived-state"
 description: "What derived state is, what problems it can cause, and how to avoid it"
 keywords: ""
 category: "architecture"
