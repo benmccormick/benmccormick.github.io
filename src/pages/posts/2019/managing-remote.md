@@ -1,6 +1,6 @@
 ---
 title: 'Lessons From Managing A Distributed Team'
-date: "2019/06/24"
+date: "2019/06/17"
 layout: "post"
 path: "/2019/06/24/managing-a-distributed-team"
 description: "What to do when you can't just walk to your employee's desk."
