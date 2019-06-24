@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-06-19T12:44:01Z</updated>
+    <updated>2019-06-24T17:23:49Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -55,6 +55,94 @@
 <li id="fn-3">
 <p>My team doesn’t actually use Google Docs for documentation, we use Confluence.  Which is… worse than Jira.  So this is more of a “don’t be miserable like me” recommendation than one based on experience.  I’d be curious to hear if anyone has a documentation/wiki tool that they love.</p>
 <a href="#fnref-3" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Avoiding Derived State In React]]></title>
+        <id>https://benmccormick.org/2019/06/24/derived-state</id>
+        <link href="https://benmccormick.org/2019/06/24/derived-state">
+        </link>
+        <updated>2019-06-24T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>A lot of advice in the React community is focused around avoiding explicitly storing “derived state” of some type or another.  Some examples of this type of “derived state” that the community warns against:</p>
+<h4>Storing data that is directly derived from another piece of data in redux</h4>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> reducer <span class="token operator">=</span> <span class="token function">createReducer</span><span class="token punctuation">(</span>initialState<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">ADD_USER</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    state<span class="token punctuation">.</span>users <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>state<span class="token punctuation">.</span>users<span class="token punctuation">,</span> action<span class="token punctuation">.</span>user<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">// numUsers is derived state: it will always be tied to users</span>
+    state<span class="token punctuation">.</span>numUsers <span class="token operator">=</span> state<span class="token punctuation">.</span>users<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<h4>Storing state that is directly derived from a prop in a component</h4>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Widget</span> <span class="token operator">=</span> <span class="token parameter">props</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// the hasError state is derived from the error prop</span>
+    <span class="token keyword">let</span> <span class="token punctuation">[</span>hasError<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">!</span>props<span class="token punctuation">.</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//... continued ...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h4>Storing state that is directly derived from another piece of state</h4>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">NameForm</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+            firstName<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            lastName<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            fullName<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// because fullName is directly associated with firstName and lastName, we have to update it</span>
+    <span class="token comment">// any time they are updated</span>
+    <span class="token function">updateFirstName</span><span class="token punctuation">(</span><span class="token parameter">newFirstName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token parameter">state</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token operator">...</span>state<span class="token punctuation">,</span>
+            firstName<span class="token punctuation">:</span> newFirstName<span class="token punctuation">,</span>
+            fullName<span class="token punctuation">:</span> newFirstName <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> state<span class="token punctuation">.</span>lastName<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">updateLastName</span><span class="token punctuation">(</span><span class="token parameter">newLastName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token parameter">state</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token operator">...</span>state<span class="token punctuation">,</span>
+            lastName<span class="token punctuation">:</span> newLastName<span class="token punctuation">,</span>
+            fullName<span class="token punctuation">:</span> state<span class="token punctuation">.</span>firstName <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> newLastName<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// ... continued ....</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>These examples are all based on real-world code I’ve seen.  And they all were in code that <em>worked</em>, the program executed as expected.  But they’re still problematic.  This type of derived state is error-prone; when new code is written to update the state, each new programmer touching the code has to understand the relationship, or the whole thing can get out of sync.  When state is coming from props, like the error example above, you have to make sure that the state gets updated properly when the props change. And when the state gets out of sync, it is possible to end up in strange states where a programmer’s expectations are violated.  A program shows a blank state saying no users have been added, even though one has already been created. A form is expecting to have an error, but the error text is empty or set to a default value.  Or a site has 2 different names for an individual that show up differently in separate parts of the interface.</p>
+<p>This type of problem isn’t a new thing in Computer Science.  When programmers do it by accident they usually call it a <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY violation</a>.  When they do it intentionally they call it caching.  And when they do it intentionally but screw things up, they <a href="https://twitter.com/secretGeek/status/7269997868">make jokes about off by one errors</a>.  Fortunately, that means that the tradeoffs are pretty well understood here.  So how do we handle situations where it looks like derived state may be necessary?</p>
+<h4>Just Derive State At Render Time</h4>
+<p>For many many things, including the 3 examples above, if you need information at render time that can be derived from other pieces of state, it’s totally fine to just calculate it at render time.  For the first name example above, you can just include a <code class="language-text">let fullName = this.state.firstName + &#39; &#39; + this.state.lastName;</code> line at the top of your render function and move on<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>. Storing derived information is unnecessary and harmful when calculating it at runtime adds minimal performance overhead or repetition.</p>
+<h4>Memoization</h4>
+<p>But Ben, my component is slow now!</p>
+<p>…are you sure it’s actually slow?  Have you tested it?  Have you proven that the derived state calculation is actually a meaningful part of this?</p>
+<p>Deriving state can be slow when you have to do complicated calculations or reformatting of data.  This is still not usually a problem, but if you’re in a performance sensitive area of code and have proven it to be a problem, you can start considering caching solutions. You still don’t want to store your cached values in state or your redux stores though.  Instead, you want to use a computed value that is recalculated when its inputs change.  The exact code will depend on your state management strategy, but some examples out there include</p>
+<ul>
+<li><a href="https://github.com/reduxjs/reselect">Reselect for Redux</a></li>
+<li><a href="https://mobx.js.org/refguide/computed-decorator.html">Computeds in MobX</a></li>
+<li><a href="https://reactjs.org/docs/hooks-reference.html#usememo">useMemo in React Components</a></li>
+</ul>
+<p>All of these methods use <em>memoization</em>, a type of caching where arguments are passed to a function, and if the function has been called with those arguments before, it returns the previous result rather than recomputing.  If for instance we had a component and wanted to get the names of all <code class="language-text">users</code> with the current <code class="language-text">type</code> based on props, and we knew that <code class="language-text">users</code> was sometimes quite large, making the calculations slow, and we expected the component to re-render often for some reason or another we might write code like this:</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">UsersList</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>users<span class="token punctuation">,</span> type<span class="token punctuation">,</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">let</span> userNames <span class="token operator">=</span> <span class="token function">useMemo</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> users<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">user</span> <span class="token operator">=></span> user<span class="token punctuation">.</span>type <span class="token operator">===</span> type<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>users<span class="token punctuation">,</span> type<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// ... continued ...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Now userNames will automatically be recalculated only when users or type changes<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  The MobX and Redux solutions work similarly.  Memoization isn’t a performance silver bullet: at some point, you might have to look at how you can make your calculations less expensive or take them off of the rendering path completely.  But for most simple data transformation tasks, deriving state at render time and using memoization to keep it performant where needed should help you tame any derived state problems you encounter.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>But you should probably read about all the ways that <a href="https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/">names can be more complicated than you think</a></p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>Note that useMemo (and most memoization solutions generally) doesn’t guarantee the function will never run more than once.  Most solutions have a limited number of results they will store, so if the inputs change often, the result might get recalculated.</p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
 </li>
 </ol>
 </div>]]></content>
@@ -435,167 +523,6 @@ This is especially useful for information that may be relevant during a code rev
 </li>
 </ol>
 </div>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Utility Functions]]></title>
-        <id>https://benmccormick.org/2019/03/11/utility-functions</id>
-        <link href="https://benmccormick.org/2019/03/11/utility-functions">
-        </link>
-        <updated>2019-03-11T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>As I’ve gone through projects over time, I’ve found a few functions that I end up creating for every significant project that I’ve worked on.  Some of the details differ from project to project, but the basic function remains the same.  I thought it would be helpful to do a rundown:</p>
-<h3>React/JSX</h3>
-<p>Some of my utils are focused on making JSX nicer to deal with.  2 situations that I’ve run into a lot in JSX are conditionally showing an item in JSX, and determining which of several classes to add to an element based on logic.  Scenarios like these:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">></span>
-    <span class="token punctuation">{</span>shouldShowCreateButton <span class="token operator">?</span> <span class="token operator">&lt;</span>Button
-            onClick<span class="token operator">=</span><span class="token punctuation">{</span>createWidget<span class="token punctuation">}</span>
-            type <span class="token operator">=</span> <span class="token string">'primary'</span>
-            size <span class="token operator">=</span> <span class="token string">'Large'</span>
-            disabled <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">!</span>createEnabled<span class="token punctuation">}</span>
-            className<span class="token operator">=</span><span class="token string">'create-button'</span>
-        <span class="token operator">></span>
-            Create Widget
-        <span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span> <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre></div>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> classNames <span class="token operator">=</span> <span class="token string">'create-button'</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>extraClass<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    classNames <span class="token operator">+=</span> <span class="token string">' '</span> <span class="token operator">+</span> extraClass<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>createEnabled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    classNames <span class="token operator">+=</span> <span class="token string">' is-disabled'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>hasCreateError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    classNames <span class="token operator">+=</span> <span class="token string">' has-error'</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">return</span> <span class="token operator">&lt;</span>Button
-        onClick<span class="token operator">=</span><span class="token punctuation">{</span>createWidget<span class="token punctuation">}</span>
-        type <span class="token operator">=</span> <span class="token string">'primary'</span>
-        size <span class="token operator">=</span> <span class="token string">'Large'</span>
-        disabled <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">!</span>createEnabled<span class="token punctuation">}</span>
-        className<span class="token operator">=</span><span class="token punctuation">{</span>classNames<span class="token punctuation">}</span>
-    <span class="token operator">></span>
-        Create Widget
-<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span></code></pre></div>
-<p>These are both ok, and you’ll see plenty of examples of code like them out there, but the first puts a big chunk of code in a ternary, and it’s not always going to be clear to a reader where that <code class="language-text">: null</code> came from at the end, or why it’s there by the time they reach the end.</p>
-<p>In the second example, we’re dealing with a lot of ugly string concatenation.  There are other ways to handle this, like using template strings + ternaries but generally they each provide their own messy pieces.</p>
-<p>To solve these situations, I like to define these 2 small functions:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> isString <span class="token keyword">from</span> <span class="token string">'lodash-es/isString'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> filter <span class="token keyword">from</span> <span class="token string">'lodash-es/filter'</span><span class="token punctuation">;</span>
-<span class="token comment">// A helper for React Components to reduce ternary use</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">showIf</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">condition<span class="token punctuation">,</span> element</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>condition <span class="token operator">?</span> element <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// A helper for handling class lists where some values may be undefined</span>
-<span class="token comment">// filters out anything that isn't a string and then adds spaces</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">classes</span> <span class="token operator">=</span> <span class="token parameter">classList</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">filter</span><span class="token punctuation">(</span>classList<span class="token punctuation">,</span> <span class="token parameter">c</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">isString</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> c<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
-<p>The first just formalizes the most common use of ternaries in JSX (conditionally showing an item) and adds an easy to understand name to it.</p>
-<p>The second lets us work with an array of classNames instead of handling string concat ourselves, and will automatically filter out undefined or empty classNames.  This implementation does silently swallow errors on anything that is not a string, which may not be your preference.  Usage looks like this:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">></span>
-    <span class="token punctuation">{</span><span class="token function">showIf</span><span class="token punctuation">(</span>shouldShowCreateButton<span class="token punctuation">,</span> <span class="token operator">&lt;</span>Button
-            onClick<span class="token operator">=</span><span class="token punctuation">{</span>createWidget<span class="token punctuation">}</span>
-            type <span class="token operator">=</span> <span class="token string">'primary'</span>
-            size <span class="token operator">=</span> <span class="token string">'Large'</span>
-            disabled <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">!</span>createEnabled<span class="token punctuation">}</span>
-            className<span class="token operator">=</span><span class="token string">'create-button'</span>
-        <span class="token operator">></span>
-            Create Widget
-        <span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre></div>
-<p>the showIf reads much more clearly than the previous ternary, especially for language newbies who might not be used to ternaries.</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> classNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'create-button'</span><span class="token punctuation">,</span> extraClass<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>createEnabled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    classNames<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'is-disabled'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>hasCreateError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    classNames<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'has-error'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">return</span> <span class="token operator">&lt;</span>Button
-        onClick<span class="token operator">=</span><span class="token punctuation">{</span>createWidget<span class="token punctuation">}</span>
-        type <span class="token operator">=</span> <span class="token string">'primary'</span>
-        size <span class="token operator">=</span> <span class="token string">'Large'</span>
-        disabled <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">!</span>createEnabled<span class="token punctuation">}</span>
-        className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">classes</span><span class="token punctuation">(</span>classNames<span class="token punctuation">)</span><span class="token punctuation">}</span>
-    <span class="token operator">></span>
-        Create Widget
-<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span></code></pre></div>
-<p>Here we’ve gotten rid of the extra string code and are working on arrays, which is a nicer data structure for dealing with lists of stuff. Also since we’re auto-filtering falsy stuff, we don’t have to worry about whether extraClass was defined if it was passed as a prop to our component or something.</p>
-<h3>Formatting</h3>
-<p>So the next few may be different for everyone.  The details here aren’t important, the important thing is that you centralize your formatting of numbers and dates.  For instance, here are functions for formatting dates, normal numbers and percentages from a current project:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> format <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'date-fns'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> isNumber <span class="token keyword">from</span> <span class="token string">'lodash-es/isNumber'</span><span class="token punctuation">;</span>
-
-<span class="token comment">// takes either a string or a date object and formats it as a standard date with time</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">stdFormat</span> <span class="token operator">=</span> <span class="token parameter">dateStr</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>dateStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> dateStr<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">let</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>dateStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> <span class="token string">'MM/DD/YY hh:mm A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">commafy</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> minDecimals <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNumber</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> num<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">'en-US'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-            minimumFractionDigits<span class="token punctuation">:</span> minDecimals<span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> num<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">percentify</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> minDecimals <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNumber</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> num<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">'en-US'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-            style<span class="token punctuation">:</span> <span class="token string">'percent'</span><span class="token punctuation">,</span>
-            minimumFractionDigits<span class="token punctuation">:</span> minDecimals<span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> num<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
-<p>The first one will take a date object and format it to something like <code class="language-text">05/30/17 01:16 PM</code>.  The second will take a number and return a string formatted with appropriate commas: <code class="language-text">1234567 -&gt; &#39;1,234,567&#39;</code>.  The last one will convert a decimal to a percentage string: <code class="language-text">0.5 -&gt; &#39;50%&#39;</code>.</p>
-<p>Note that none of these functions are very long.  I’m relying on a date library for the first piece and <code class="language-text">toLocaleString</code> for the other 2.  So I could inline this in most places and not have it get much longer.  The benefit of these types of functions is not in saving typing.  It’s in standardizing how you format or don’t format things throughout an application.  This has 2 benefits:</p>
-<ol>
-<li>It’s easy to fix bugs, add features or switch between libraries for these common tasks across your application because all of the logic is centralized.  If I needed to start supporting more locales than just the US for percentage formatting, or use moment for my date formatting library I could easily do so with edits to only one file.  That file is also well unit tested, so those transitions would be safe.</li>
-<li>It lets us control which formats are allowed.  For instance we’re allowing the function caller to specify how many decimal points to show for the numeric functions, but not giving options to change the date format for the formatting function, because we want that to be the same everywhere.  If we need to support multiple formats for different scenarios, like a date-only format or a format for communicating with the API, we can add options for that which don’t open up all formats, or expose them as separate functions.  With dates in particular, I want imports of libraries like moment or date-fns to be limited to 2 or 3 files at the most, and not used ad-hoc throughout the codebase.</li>
-</ol>
-<p>Note that all my examples so far have utilized other utility libraries like lodash and date-fns.  The best utility functions are those that you don’t have to maintain yourself.  I do recommend looking for libraries that you can tree-shake and only take what you need though.  Other ones like moment.js can make a big difference on your JavaScript bundle size if you let them.</p>
-<h3>Timing</h3>
-<p>Timeout functions are useful, but the browsers built in functions are callback based and don’t play well with promises or async await.  We can fix that:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">sleep</span> <span class="token operator">=</span> <span class="token parameter">secs</span> <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=></span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> secs <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">pause</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<p>I now have a promisified version of setTimeout (<code class="language-text">sleep</code>) and a special case version with a 0 timeout (useful for things that should happen as soon as possible after the current event loop executes. I prefer dealing with things in seconds over milliseconds, so I changed the API to use that.  That is probably not everyone’s cup of tea, so feel free to copy and modify.</p>
-<p>Usage looks like this:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// function to kick off a "job" of some type and then</span>
-<span class="token comment">// check every 30 seconds to see if the job is complete</span>
-<span class="token keyword">const</span> <span class="token function-variable function">createJobAndShowResults</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token function">createJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">// don't do this without a timeout/failure</span>
-    <span class="token comment">// condition in real life!</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">await</span> <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">let</span> jobStatus <span class="token operator">=</span> <span class="token function">checkIfJobIsCompleted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>jobStatus<span class="token punctuation">.</span>complete<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> jobStatus<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
-<h3>And Even More!</h3>
-<p>This is just a sample of the small functions I usually create in projects.  Pretty much all of them exist for one or more of the reasons that were already discussed:</p>
-<ol>
-<li>Smoothing over awkward library syntax like multiple classes in JSX or HTML templates</li>
-<li>Making user intention clear with a well named function, like showIf or stdDateFormat</li>
-<li>Ensuring consistent application-specific behavior across common low-level operations like formatting or logging</li>
-<li>Making it easy to replace 3rd party utility libraries  like date-fns by wrapping them in an application specific function</li>
-<li>Improving browser level APIs, or shaping them to have useful defaults for the current application, like we did with toLocaleString and setTimeout.</li>
-</ol>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
