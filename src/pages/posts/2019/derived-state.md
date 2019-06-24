@@ -9,7 +9,6 @@ category: "architecture"
 topics: ['React']
 key: "derived-state"
 readNext: "consistency,reusable-react,book-review-five-dysfunctions"
-isDraft: true
 ---
 
 A lot of advice in the React community is focused around avoiding explicitly storing "derived state" of some type or another.  Some examples of this type of "derived state" that the community warns against:
