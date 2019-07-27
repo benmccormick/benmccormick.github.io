@@ -9,7 +9,6 @@ category: "reviews"
 topics: ['Leadership', 'Book Review']
 key: "resilient-management-book"
 readNext: "radical-candor-book,clean-architecture-book,tech-leads-book"
-isDraft: true
 ---
 
 [Resilient Management](https://abookapart.com/products/resilient-management) by Lara Hogan is a short and useful read for engineering managers who want to think more systematically about how they support their team.  Lara covers concepts like how to connect with a new team, how to encourage growth in your teammates, and how to communicate difficult news.  This is a *blog+* book: most of the material here has appeared previously in Lara's blog or newsletter, but for the book it has been cleaned up and organized together in a coherent fashion that makes it greater than the sum of its parts.

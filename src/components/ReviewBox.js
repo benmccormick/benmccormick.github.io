@@ -83,6 +83,11 @@ const Image = styled('img')({
   height: '100%',
 });
 
+const ImagelessBookTitle = styled('div')({
+  padding: '5px 15px',
+  lineHeight: '110%',
+});
+
 const IconWrapper = styled('div')({
   width: '100%',
   height: '100%',
@@ -102,7 +107,7 @@ class ReviewBox extends React.Component {
         ) : (
           <IconWrapper>
             <CategoryIcon category="reviews" />
-            <div>{_title}</div>
+            <ImagelessBookTitle>{_title}</ImagelessBookTitle>
           </IconWrapper>
         )}
         <BookInfoWrapper>
