@@ -7,5 +7,5 @@ const copyManifest = () =>
 
 module.exports = {
   copyCNAME,
-  copyManifest
+  copyManifest,
 };

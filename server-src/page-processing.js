@@ -48,16 +48,18 @@ const createTopicArchives = async (graphql, createPage) => {
 
   // Loop through all nodes (our markdown posts) and add the tags to our post object.
 
-  edges.filter(post => !post.node.frontmatter.isDraft).forEach(post => {
-    if (post.node.frontmatter.topics) {
-      post.node.frontmatter.topics.forEach(topic => {
-        if (!topics[topic]) {
-          topics[topic] = [];
-        }
-        topics[topic].push(post);
-      });
-    }
-  });
+  edges
+    .filter(post => !post.node.frontmatter.isDraft)
+    .forEach(post => {
+      if (post.node.frontmatter.topics) {
+        post.node.frontmatter.topics.forEach(topic => {
+          if (!topics[topic]) {
+            topics[topic] = [];
+          }
+          topics[topic].push(post);
+        });
+      }
+    });
   Object.keys(topics).forEach(topicName => {
     const posts = topics[topicName];
     createPage({
