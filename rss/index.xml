@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Thu, 19 Dec 2019 01:25:43 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 19 Dec 2019 14:50:10 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -16,8 +16,8 @@
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[How Software Engineers Produce Value]]></title>
-            <link>https://benmccormick.orghow-se-add-value</link>
-            <guid>https://benmccormick.orghow-se-add-value</guid>
+            <link>https://benmccormick.org/how-se-add-value</link>
+            <guid>https://benmccormick.org/how-se-add-value</guid>
             <pubDate>Wed, 18 Dec 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>I had the opportunity this week to walk a software engineer who is new to the field through some lessons I’ve learned over the years about how software engineers add value to the business.  It seemed generally applicable, so here’s a cleaned up version of what I shared.</p>
 <hr>
