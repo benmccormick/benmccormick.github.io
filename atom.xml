@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2019-11-17T19:49:33Z</updated>
+    <updated>2019-12-19T01:25:43Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -19,6 +19,64 @@
         <email>ben@benmccormick.org</email>
         <uri>http://benmccormick.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[How Software Engineers Produce Value]]></title>
+        <id>https://benmccormick.orghow-se-add-value</id>
+        <link href="https://benmccormick.orghow-se-add-value">
+        </link>
+        <updated>2019-12-18T00:00:00Z</updated>
+        <content type="html"><![CDATA[<p>I had the opportunity this week to walk a software engineer who is new to the field through some lessons I’ve learned over the years about how software engineers add value to the business.  It seemed generally applicable, so here’s a cleaned up version of what I shared.</p>
+<hr>
+<h2>What Is Value?</h2>
+<p>It can be easy to think of software engineering work as a series of task where you’re given instructions and you make the computer do what the designer / PM / CEO asked.  Or as a series of fun problem solving challenges that you’re somehow getting paid to complete.  Both of those views will eventually lead you to make suboptimal decisions when it comes to helping your business and growing in your role though.  Instead consider the following definition:</p>
+<blockquote>
+<p>Software Developers create value through shipping working code that solves important user problems in a predictable manner.</p>
+</blockquote>
+<p>This captures a number of important things.</p>
+<h3>Shipping</h3>
+<blockquote>
+<p>Real Artists Ship - <em>Steve Jobs</em></p>
+</blockquote>
+<p>Software Engineer’s super power compared to other roles is that we get to build.  We create new things, add new behaviors, and ultimately (for a product company) control the shape of the product our company is built around.  This only has value when software actually ships though.  When we’re not shipping, it’s actually worse than just being slow to deliver value, because of a few non-obvious factors.</p>
+<p>First, <strong>unshipped code rots.</strong>  When we leave code in a branch 90% done, it doesn’t just stay the same.  It’s quite common for our situation to get worse.  Our teammates check in code that may cause merge conflicts, or worse just doesn’t take into account the unshipped code and sets us up for subtle bugs.  And when we do get back to the work we’ve often lost valuable mental context that makes any remaining work or testing harder and more error-prone.</p>
+<p>Second, <strong>we learn from shipping!</strong>  It’s quite common in software development for a developer or team to complete 90% of their feature according to the spec, only to find that they have another 90% of the work to go.  Doing the work to push things through to production inherently de-risks things, because we learn what the challenges are, and we know how long the work took.  Up until then, we will always have unknowns.  And when software goes out to users, we get to hear their feedback as well.  Shipped software lets us learn from our users (and from the performance of our system) and make adjustments that we wouldn’t have known about if we sat on the code.  </p>
+<p>So how do we get to shipping?  First, it’s important to push things through to completion rather than allowing ourselves to jump from project to project, making progress without finishing, and incurring a lot of cost from context switching.  Soemtimes this may mean imposing kanban style <a href="https://lethain.com/limiting-wip/">work in progress limits</a> on ourselves.  Second, its often helpful to break things into smaller chunks.  Small code reviews are easier to complete, test, <a href="https://benmccormick.org/2019/04/22/better-code-feedback">review</a> and verify.  So multiple small changes will often go through faster than the same changes bundled together into a big chunk.  This can go too far, but as long as your changes work in isolation and provide value, I’d encourage erring on this side when in doubt.</p>
+<h3>Working Code</h3>
+<blockquote>
+<p>[We Prefer] working software over comprehensive documentation - <em>The Agile Manifesto</em></p>
+</blockquote>
+<p>Software engineers are responsible for their code working.  At the simplest level that means delivering code that doesn’t crash when run in the intended way.  As we grow and mature as developers however, we should aspire to  learn to write code that will scale to any reasonable load the system might see (and maybe even to unreasonable loads), code that handles odd input or context gracefully, and code that is easy to modify and maintain.  We should also take responsibility for proving that it works; writing tests, making the code easy to monitor in production, and providing good logging for debugging all fall under a software engineer’s domain. We also should make sure that our definition of working matches what the business needs, not just a pedantic reading of whatever spec we’re working off of.  More on that in a moment.</p>
+<h3>Solving Important User Problems</h3>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just really funny- What the Customer Wanted expanded <a href="https://t.co/kdr7HKTSDy">pic.twitter.com/kdr7HKTSDy</a></p>&mdash; Frank Spillers (@farreaching) <a href="https://twitter.com/farreaching/status/764256002053025792?ref_src=twsrc%5Etfw">August 13, 2016</a></blockquote>
+<p>Software Engineers can be quite inventive in the ways they write code without solving important user problems.  Some common routes:</p>
+<ol>
+<li><strong>Working on their own pet projects over the prioritized business problems</strong> - Tech improvement work and engineer-driven projects are part of a healthy organization, but if they consistently replace work that was scoped based on user requests / feedback, they can cause problems</li>
+<li><strong>Matching the spec without solving the original problem</strong> - This is partially a design/product problem, but its often possible to meet all the stated requirements for a project without solving the original user pain point.  Great engineers understand exactly what problem they’re trying to solve with a feature and will always step back to evaluate whether they’re succeeding throughout the development process.</li>
+<li><strong>Matching the spec and causing new problems</strong> - Oftentimes our efforts to fix cause or expose new problems.  When we dodge responsibility by ignoring or hiding those problems instead of openly evaluating tradeoffs or working to improve the solution, we’re not providing all the value we’re capable of. </li>
+</ol>
+<p>These are ultimately issues of ownership. When we’re invested in our work, we will want to work on useful problems and make sure they produce real value.  If you’re consistently not feeling that way, it may be time to find something else to work on.</p>
+<h3>In a predictable manner</h3>
+<blockquote>
+<p>The challenge and the mission are to find real solutions to real problems on actual schedules with available resources - <em>Fred Brooks</em></p>
+</blockquote>
+<p>Ok, now we come to the section that is the <em>boring part</em> for many software engineers.  But as somebody who has recently converted to the management side of the fence, the ability to ship predictably is incredibly important.  </p>
+<p>It’s important for software engineers to ship predictably in 2 senses:</p>
+<ol>
+<li>There is ongoing understanding of when something is likely to ship among the people who need to know</li>
+<li>There is ongoing understanding of how something will work when it will ship among the people who need to know.  </li>
+</ol>
+<p>Estimating software engineering projects is not an exact science. Nobody reasonable expects estimation perfection from software engineers, especially those new to the field.  Instead we aim to be as accurate as possible, and especially to be transparent as those estimates change over time.  </p>
+<p>When we encounter obstacles, it’s important to be realistic about what they mean to schedules and update the important people in a timely manner. </p>
+<p>For those working on a product team that may be a manager and a PM, for those building something solo, that may be the customers or internal users of the software directly.  It’s never fun to say something is going to be late, but its always better to say that we’ll miss a date that is 2 weeks away than to tell somebody for the first time that you’ve missed the date that was 2 days ago.</p>
+<p>Communicating about the scope of work is just as important as schedule.  If we find out a piece of a feature is unfeasable or we dropped it due to time pressure, its important to communicate that.  Depending on your team/product, that may mean sharing with people directly, updating documentation, or just making the new behavior clear in an interface.   </p>
+<h3>It’s a process</h3>
+<p>Nobody starts out their first software engineering job with a fully evolved sense of how to estimate, scope and document their work.  Most have no clue how to think about building a system to be scalable or when to escalate problems to other members of the team.  These are skills learned through hard experience.  Make sure to <a href="https://benmccormick.org/2019/05/18/obvious-things">always be reflecting</a> on what you’re experiencing though.  Experience combined with reflection is a powerful mixture, and eventually will lead to growth.  Good luck!</p>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Book Review: Resilient Management]]></title>
         <id>https://benmccormick.org/2019/07/22/book-review-resilient-management</id>
@@ -450,39 +508,6 @@ This is especially useful for information that may be relevant during a code rev
 <ul>
 <li><a href="https://amzn.to/2I5jP7K">Future Ethics - Cennydd Bowles</a></li>
 </ul>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Consistency]]></title>
-        <id>https://benmccormick.org/2019/04/01/consistency</id>
-        <link href="https://benmccormick.org/2019/04/01/consistency">
-        </link>
-        <updated>2019-04-01T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>The last few weeks I’ve had several conversations with a coworker about consistency in code: why do we do things one way here, and a different way there?  Some of this is macro level; Where do we split chunks of related functionality into different files?  Some of it is micro level; what should the rules be for when we use an inline function instead of pulling it out into its own named method?  Some of it is trivial; Do we use <code class="language-text">_</code> or <code class="language-text">-</code> to separate words in file names?  In our current codebase we’re not always consistent on many of these issues.  As we’ve discussed the various issues, I realized that some of them bothered me more than others, and (more interestingly to me) my ideas have changed here over time.</p>
-<h3>The Platonic Ideal</h3>
-<blockquote>
-<p> In a perfectly consistent system, 3 developers writing the same module would produce line by line identical code</p>
-</blockquote>
-<p>There’s an extreme point of view out there that says “while a perfectly consistent system might not be possible, the closer we can get to that the better”.  The benefits of consistency are many: consistent naming helps with code search and connecting different parts of a system.  Consistent code structure makes code easier to scan once a developer is familiar with the system, and it makes exceptions stand out as something intentional and interesting.  Consistent formatting removes potential distractions.   So what’s not to love?  Shouldn’t we always try to add more consistency?  I see 2 primary reasons why it might not be worth trying to enforce every single rule we can come up with.</p>
-<h4>We’re only human</h4>
-<p>The first reason not to enforce “everything” is that our human attention spans can only internalize so many rules at once.  When we’re trying to remember a large number of rules, its easy to miss one.  But more importantly, when we’re writing code or reviewing it, focusing too much on human enforced consistency rules can distract from the actual purpose of the code, making it harder to notice the substance of code because we’re so focused on the form.</p>
-<h4>Standards too soon</h4>
-<p>The other thing that can happen when you try to standardize everything is a loss of creativity.  Sometimes it’s helpful to experiment for a while to find the right pattern in a codebase.  In an ideal situation experiments like that will happen on the side, or be explored in branches, but for small teams or new codebases, it will likely happen at least partially in production.</p>
-<h3>User Friendly Consistency</h3>
-<p>So what <strong>can</strong> we do to get the benefits of consistency? The 4 ways I like to see this happen are:</p>
-<h4>Automation</h4>
-<p>The best way to enforce stylistic consistency and other straightforward things like naming conventions is to use automation.  Linters like <a href="https://eslint.org/">eslint</a> and auto-formatters like <a href="https://prettier.io/">Prettier</a>.  My rule here is that any linter rule that is about stylistic consistency should be auto-fixable, if not it isn’t clear enough or isn’t worth it.  For “correctness rules” it can be ok to flag errors without auto-fixing, if human judgement is needed.</p>
-<h4>Code Review Checklists</h4>
-<p>Code reviews can be a good way to limitedly enforce consistency; but its good to limit scope to avoid <a href="https://samsaccone.com/posts/code-reviews-not-nits.html">developers trying to become human compilers</a>.  If you try to enforce too many things in code reviews, its easy for people to get caught up in going through a list and forget to apply human judgement to the context of the current code. But <a href="https://benmccormick.org/2019/01/14/value-from-code-reviews">code review checklists</a> are a good way to make a coordinated push on high value items that are either new or often neglected.  This checklist should consist of a few important things to check during every review. The list should be re-examined on a regular basis and ideally kept to 5 or less items.</p>
-<h4>Focused Refactoring</h4>
-<p>Sometimes its appropriate to have “refactoring initiatives” to standardize on a particular pattern over time.  This can be good for standardizing on a particular library for a task, or removing an older pattern that persists in the codebase after a better way has been found.  My advice here is to <a href="https://benmccormick.org/2018/01/07/large-improvements-small-team/">only do one of these at a time, and complete them before starting a new one</a>.  One of the biggest causes of inconsistency is when a team attempts to ”<a href="https://xkcd.com/927/">standardize</a>” on a solution, then abandons that for a new solution without finish the migration, resulting in a <a href="http://mikehadlow.blogspot.com/2014/12/the-lava-layer-anti-pattern.html">lava layer architecture</a>.</p>
-<h4>Focus on the high level</h4>
-<p>If there is one place to apply human consistency checks its at the structural level.  If your high level patterns are consistent, the code base will be easy to navigate, and modular code written in a standardized high level structure will be <a href="https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to">easy to delete</a>.  Overall low level code that is inconsistent or poorly written is easier to overcome than high level code as long as you’re taking advantage of code reviews and the other methods suggested here to improve new code, because most low level code is only read occasionally.  So high traffic “messy code” can be a focus of refactoring efforts, and the rest can continue working without disturbing anything.</p>
-<p>Messy code is much more problematic at a structural level though, because when different areas of the code are arranged in different ways, it becomes much harder to find functionality when debugging.  This type of inconsistency also tends to make bulk improvements harder, as you have to have a much greater understanding of all the ways a codebase is put together.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
