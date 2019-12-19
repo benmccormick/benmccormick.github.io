@@ -2,7 +2,7 @@
 title: "How Software Engineers Produce Value"
 date: "2019/12/18"
 layout: "post"
-path: "how-se-add-value"
+path: "/how-se-add-value"
 description: "A high level view at how we can turn programming skills into business value"
 keywords: ""
 category: "soft-skills"
