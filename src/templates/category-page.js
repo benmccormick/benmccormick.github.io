@@ -4,6 +4,7 @@ import React from 'react';
 import CategoryArchive from '../components/CategoryArchive';
 import { getSortedPosts } from '../utils/page-helpers';
 import Layout from '../components/Layout';
+import '../utils/kusty';
 
 const CategoryPage = ({ data, pageContext, history }) => {
   const posts = data.allMarkdownRemark.edges;

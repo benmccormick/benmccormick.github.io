@@ -18,6 +18,7 @@ import styled from '@emotion/styled';
 // import { serifFontStack } from '../utils/typography';
 import CategoryTag from '../components/CategoryTag';
 import { Link } from 'gatsby';
+import '../utils/kusty';
 
 const Title = styled('h1')({
   display: 'block',

@@ -5,6 +5,7 @@ import { HeadContent } from '../components/HeadContent';
 import { getSortedPosts } from '../utils/page-helpers';
 import LinkList from '../components/LinkList';
 import Layout from '../components/Layout';
+import '../utils/kusty';
 
 class CategoryArchive extends React.Component {
   render() {

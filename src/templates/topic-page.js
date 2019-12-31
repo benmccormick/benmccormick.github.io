@@ -2,6 +2,7 @@ import React from 'react';
 import TopicArchive from '../components/TopicArchive';
 import Layout from '../components/Layout';
 import { getSortedPosts } from '../utils/page-helpers';
+import '../utils/kusty';
 
 const TopicPage = ({ data, pageContext, history }) => {
   const { posts, topic } = pageContext;

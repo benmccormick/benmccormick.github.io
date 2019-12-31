@@ -11,6 +11,7 @@ import {
   getTopicLinks,
 } from '../utils/page-helpers';
 import { HomeMenu } from '../components/HomeMenu';
+import '../utils/kusty';
 
 class BlogIndex extends React.Component {
   render() {
