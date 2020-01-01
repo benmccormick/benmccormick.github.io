@@ -8,17 +8,13 @@ description: "A look back at benmccormick.org in 2019"
 key: "2019-roundup"
 topics: []
 readNext: "react-confessions,evil-js,es6-the-bad-parts"
-isDraft: true
 ---
 
 2019 was the 6th full year of this blog, and it was a bit up and down posting wise.  For the first half of the year I published more or less a post a week, with 24 posts from January till July.  But this is only my 2nd post since then.  
 
 Turns out that starting a new job while learning to be a parent sucks up a lot of time!  I'm not making any promises for 2020, but I expect that my writing rate will fall somewhere in between the first 7 months and last 5 months of 2019.  In the meantime, here's a brief look back at the year on the blog.
 
-### Kustomer
-
-I shared this in my [newsletter](https://benmccormick.org/subscribe), but one of the reasons 
-
+This was my first year where I spent the full year managing people, and that was reflected in the blog's topics as well as where I spent my time.  
 
 ### Most Read Posts Published in 2018
 
@@ -31,48 +27,46 @@ I shared this in my [newsletter](https://benmccormick.org/subscribe), but one of
 Another one of my favorite posts to write, this is a look at what types of things developers should be thinking about when they consider front end architecture.
 
 
-### Languages, Libraries, and Technologies I started using in 2019
+### Languages and Libraries I used a lot of in 2019
 
-With all the changes, it hasn't been a big year for experimentation, but Immer is fantastic.
+JavaScript (ES6), React (including hooks), PostgreSQL, lodash, Jest, Immer, CSS Modules, Redux, 
 
-- [Immer](https://github.com/mweststrate/immer) This probably deserves a full post at some point, but I've been experimenting with using only Immer and React's built in state features for state management on a new project, and it's been fairly nice so far.  It's a lovely little library that makes working with immutable data pleasant.
+### Tech I want to try in 2019
 
-- [Storybook](https://storybook.js.org/) My other big experiment on the new project has been using Storybook as a collaboration tool for our UI components.  It's still early days, but I'm liking it.
+We're starting to roll out TypeScript at [Kustomer](https://www.kustomer.com/) and I'm excited to use it in production for the first time.  My code time is more limited these days, so that will probably be my main area for learning as I focus more on helping other people get stuff done.
 
-### Languages and Libraries I used (more or less) every day in 2018
+### Blogs I started following in 2019
 
-JavaScript (ES6), Python, React, PostgreSQL, lodash, MobX, Jest, Immer, CSS Modules
-
-### Languages and Libraries I want to try in 2019
-
-I want to try building some small hardware projects and automating them this year.  Something completely different.
-
-### Blogs I started following in 2018
-
-- [Lara Hogan's Engineering Leadership blog and newsletter](https://larahogan.me/)
-- [Overreacted by Dan Abramov](https://overreacted.io/)
+- [Irrational Exuberance! by Will Larson](https://lethain.com/) - a great engineering / technical leadership blog
 
 
-### Blogs I read every post from in 2018
+### Blogs I read every post from in 2019
 
-[Overreacted by Dan Abramov](https://overreacted.io/), [Lara Hogan's Engineering Leadership blog and newsletter](https://larahogan.me/), [Rands In Repose](http://randsinrepose.com/), [Stratechery](https://stratechery.com/), [Daring Fireball](https://daringfireball.net/)
-
-
-### Software I used (nearly) every day in 2018
-
-MacOS/iOS, Google Search, Chrome/Safari/Firefox, GMail/MailPlane 3, Twitter/Tweetbot, Feedbin/Reeder, iMessage, Slack, Jira, 1Password, VS Code/Vim, iTerm, Fish Shell, Bitbucket, Fantastical, Spotify, Bear, Annotate, Dash
-
-### Best Technical Books I read in 2018
-
-- [Clean Architecture](https://amzn.to/2LsAJMk)
-- [Atomic Design](http://atomicdesign.bradfrost.com/)
-- [A Philosophy Of Software Design](https://amzn.to/2EFXcVI)
+[Overreacted by Dan Abramov](https://overreacted.io/), [Lara Hogan's Engineering Leadership blog and newsletter](https://larahogan.me/), [Rands In Repose](http://randsinrepose.com/) 
 
 
-### Best Non-Technical Books I read in 2018
+### Software I used (nearly) every day in 2019
 
-- [Radical Candor](https://amzn.to/2SfcnYP)
-- [The Tech-Wise Family](https://amzn.to/2Lscqy0)
-- [Between The World And Me](https://amzn.to/2GHNX90)
-- [Vision](https://amzn.to/2V7vDJU)
-- [The Innovators](https://amzn.to/2Bts7QM)
+MacOS/iOS, Google Search, Chrome/Safari/Firefox, GMail/MailPlane 3, Twitter/Tweetbot, Feedbin/Reeder, iMessage, Slack, Jira, 1Password, VS Code, iTerm, Fish Shell, Github/Bitbucket, Fantastical, Spotify, Bear, CloudApp, Dash, Postman
+
+### Best Technical Books I read in 2019
+
+- [The Pragmatic Programmer 20th Anniversary Edition](https://amzn.to/35j1Jq1)
+- [Accelerate](https://amzn.to/2QhpkTH)
+
+### Best Technical Leadership Books I Read in 2019
+
+- [Resilient Management](https://abookapart.com/products/resilient-management)
+- [The Manager's Path](https://amzn.to/2QyJLKM)
+- [An Elegant Puzzle](https://amzn.to/2ZHbFbx)
+- [Turn The Ship Around](https://amzn.to/2Fc4izu)
+
+
+### Best Non-Technical Books I read in 2019
+
+- [I Hear You](https://amzn.to/369CpDX)
+- [Why We Sleep](https://amzn.to/2ZHuM52)
+- [Team Of Rivals](https://amzn.to/2ZH3bRR)
+- [Evicted: Poverty and Profit in the American City](https://amzn.to/2MH6F1e)
+- [The Common Rule](https://amzn.to/2sFrDqz)
+- [The Foundation Trilogy](https://amzn.to/2QyKhsc)
