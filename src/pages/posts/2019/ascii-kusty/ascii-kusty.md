@@ -129,3 +129,5 @@ It works pretty well!
 ### Next Steps 
 
 Now that I've done this it would be pretty easy to reuse this code to create a terminal Kusty with [chalk](https://github.com/chalk/chalk#readme). Maybe next New Years.
+
+For everyone else, if this seemed fun to you, you might be interested in the [job openings at Kustomer](https://boards.greenhouse.io/kustomer).  Feel free to apply or reach out to me directly if you're interested in working with us.  
