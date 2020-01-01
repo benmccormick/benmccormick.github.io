@@ -21,7 +21,7 @@ or practical like Facebook's
 
 I'm also part of a [fast growing company](https://www.kustomer.com/) and we're always hiring, so I thought I'd see if I could leave a fun message in the console, and play around with ASCII art while I was at it.  
 
-Kustomer's logo is *Kusty* a smily speech bubble with apostrophes for eyes:
+Kustomer's logo is *Kusty*; a smily speech bubble with apostrophes for eyes:
 
 
 ![Kustomer logo](./logo.png)
