@@ -51,22 +51,22 @@ MacOS/iOS, Google Search, Chrome/Safari/Firefox, GMail/MailPlane 3, Twitter/Twee
 
 ### Best Technical Books I read in 2019
 
-- [The Pragmatic Programmer 20th Anniversary Edition](https://amzn.to/35j1Jq1)
-- [Accelerate](https://amzn.to/2QhpkTH)
+- [The Pragmatic Programmer 20th Anniversary Edition](https://amzn.to/35j1Jq1) - A huge update from the 1st edition, this remains my #1 book recommendation for any professional software developer
+- [Accelerate](https://amzn.to/2QhpkTH) - A great look at the impact improving devops/release practices can have on software teams/companies
 
 ### Best Technical Leadership Books I Read in 2019
 
-- [Resilient Management](https://abookapart.com/products/resilient-management)
-- [The Manager's Path](https://amzn.to/2QyJLKM)
-- [An Elegant Puzzle](https://amzn.to/2ZHbFbx)
-- [Turn The Ship Around](https://amzn.to/2Fc4izu)
+- [Resilient Management](https://abookapart.com/products/resilient-management) - A great collection of management wisdom from Lara Hogan.  Nothing revolutionary here for those who already follow her blog/newsletter, but its great to have it all together in one place.
+- [The Manager's Path](https://amzn.to/2QyJLKM) - A super helpful book for anyone thinking about their career path in tech, especially if they're considering management.  Lots of helpful tips for those already managing people as well.
+- [An Elegant Puzzle](https://amzn.to/2ZHbFbx) - Another "blog book", this one is a bit of a grab bag of topics, but the content is so high quality it was completely worth it.
+- [Turn The Ship Around](https://amzn.to/2Fc4izu) - Not tech-specific, but one of the best books on leadership I've read, in the form of a history of a nuclear submarine crew getting ready to deploy.
 
 
 ### Best Non-Technical Books I read in 2019
 
-- [I Hear You](https://amzn.to/369CpDX)
-- [Why We Sleep](https://amzn.to/2ZHuM52)
-- [Team Of Rivals](https://amzn.to/2ZH3bRR)
-- [Evicted: Poverty and Profit in the American City](https://amzn.to/2MH6F1e)
-- [The Common Rule](https://amzn.to/2sFrDqz)
-- [The Foundation Trilogy](https://amzn.to/2QyKhsc)
+- [I Hear You](https://amzn.to/369CpDX) - A small practical book on validation that will make you a better friend / spouse / coworker.
+- [Why We Sleep](https://amzn.to/2ZHuM52) - A fascinating book on the (pop) science behind sleep
+- [Team Of Rivals](https://amzn.to/2ZH3bRR) - A very readable history of the Lincoln presidency focused on his relationships with the other candidates for President in 1860. Incredibly well done.
+- [Evicted: Poverty and Profit in the American City](https://amzn.to/2MH6F1e) - A sobering look at how laws, norms and expectations around rentals and evictions in America contribute to spirals of poverty.  Another very well written book, make sure to read the end to understand the research that went into it and allowed for the very personal feel.
+- [The Common Rule](https://amzn.to/2sFrDqz) - This is a Christian look at how ritual and habit can help us overcome modern distractions and focus on the things that are important.  I've read a lot of books in this genre in recent years (Deep Work / Indistractable / The Tech Wise Family) and this was my favorite.
+- [The Foundation Trilogy](https://amzn.to/2QyKhsc) - Classic scifi, and a great read. Fascinating to read a mid 1900s view of the future and realize that while space travel and force fields sounded great, it was inconceivable that casual tobacco use in the home might go away. 
