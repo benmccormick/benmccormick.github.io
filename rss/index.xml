@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Wed, 01 Jan 2020 00:51:23 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 Jan 2020 16:26:46 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -15,10 +15,230 @@
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title><![CDATA[Fun with Ascii: Putting some console art on my site]]></title>
+            <link>https://benmccormick.org/ascii-kusty</link>
+            <guid>https://benmccormick.org/ascii-kusty</guid>
+            <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>I’ve always enjoyed sites that had easter eggs in their consoles, whether they’re simple and whimsical like Ponyfoo.com</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/bc30390af4e06b9340a4f34c5e77c434/d40c8/ponyfoo.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 69.4%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACGUlEQVQ4y6VU247TMBD18/4CD4hP4R3Ef/RbkOArkFbLK3wE2u4WiZWoeqVNk9RxYsd2bm3js+O0KV0kJC4jnczFM+NRziSsriqUZYk0y7AKAiRSItcatiigjUFu9BnKa6vBUwGZKygPbcFVgSSVUEKA1VUBS4lFoVEVOSoRod1ZCL6C0ZyackgdIzMxhImwNSFiG2KrQro8otoMtVHYUY+9MmD7wwEHQuscGltg+vkTrq8/YDQawct+v0fbUs4lfH7bHuNk+5wezD/quu6K3719j6vnV3jx8hmyrexiu93uScHvcDgN1jWs6D16GQwGYIzh9ZtXiKLoPGGf3E926fc4T9gneHl4+IaPNzcYfx93viVSdJ4jJ2hPlDWQRJ7xZClFWndndVPTRQ6tn1DRgS9SuSEWS5R1QyyTTchUfoRUxGIGkcnO9hDkq1yjrGoUxqLQEsZasMlkiul8jngxQbacgM8mUKs5qiRCxUPUcQAbBZAU08EP2JTDZAkMaS04+GYNEQaIVwukcQi2WcwwHk+h+BiNGEKsh5CbO6TBEFlw18Hb6fr26G/uIaOvlHcLQfGE8uPlF/DgHo1ZgoXrFWazGYrqyHTb7uHccSVad/hpn3yv3Ul7AI62pKIPwdBGNGA8SRHFW1rsAv8i7hefecY8+l10tOD/A+bXoaP+1PDJ7c799cRdQ4/uB5GmkPRz8NrSClxO/KfyCKL6KxcSGcYGAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Ponyfoo has a "welcome adventurer" message in their console"
+        title=""
+        src="/static/bc30390af4e06b9340a4f34c5e77c434/a9e6e/ponyfoo.png"
+        srcset="/static/bc30390af4e06b9340a4f34c5e77c434/40f08/ponyfoo.png 143w,
+/static/bc30390af4e06b9340a4f34c5e77c434/d4502/ponyfoo.png 285w,
+/static/bc30390af4e06b9340a4f34c5e77c434/a9e6e/ponyfoo.png 570w,
+/static/bc30390af4e06b9340a4f34c5e77c434/c2e96/ponyfoo.png 855w,
+/static/bc30390af4e06b9340a4f34c5e77c434/f4f98/ponyfoo.png 1140w,
+/static/bc30390af4e06b9340a4f34c5e77c434/d40c8/ponyfoo.png 2000w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+  </span>
+  </a></p>
+<p>or practical like Facebook’s </p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/18f8473330556eccf15a6bf869f37e5a/7554f/facebook.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 60.739260739260736%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAACsUlEQVQoz5WTy4sUVxTGS3DjxlV2+VsixE3QVZJFFhpmISIBSTSD/4ELMyjOWsUHuglEk2iCQdDxDfNQZhymu6d6umeqna73o7u63tXd88upEiTgKhc+zr2Xe79zvu/cq0zKnDTLcD2Pvq7j+T6jOCaKkxqjKCLPM6aTnL1pyWRcMC5T8iyCvbI+60UxeRqxN85QHi/usPTuPastk/W2zZrEtw2dNxt9gS5rnd8eNTh/ZZG5m8vM31jg8u0VLt5a5pLgwtWXzF17wdz118zfWUG5/+gNz5fbLK5pQrDLihCtNg3WVYt3gnXV5PmKxr3HKn88UXmw0OTPhTb3BQ9f7vDPqx2JXf5+sc3vTzoojU4PQ+/X0gaBz8bqEqXYMJ2UIq0Apnw69rh08RdmZo4xe+4ss7NnOXXqJGd+/kkqfKXS3epguwMsx6eltknTTHwtiJOMoigosoQkzckL8XA6lYQTvjj8FYqioOw/gLJvfz0/+NnnKGsNlV5PxxYyfxDiDIcEwQA/THC8IaNwSBhYMg9EhZifl2R5wdGvv+PQkW84eWaW7384zbETP/Ltl8dRNO09ruthWi493cEwLIZhSDQaEVZkEofhSOwIGEoyzw+wbJenz56x0WiQJIkoyEjkzNKyNGWr00Ftt3Edh5FcGsiziYWkkpplHyRHlb+DAbE8kYogTROmIj3P83qvuhv4niQeohjbHTrdLqFjEz68S/DXr5R9jf8zxuOx+FrWUPTdXbRe70Mmy8LUdrBMUzx1a5iWjVNbYtePv94zLaxqLfuGzDWtV9uRpimKZXviiVPLaqpbtLa6qILWZpt2p0uzpdIQbDQ32e3rH8ltkekIuev5dZLqh1UWKXEcffTGkUOGfD/DMOj3+1KJiS7rKvpV58VjX5pSiLT/jqp5VUFVhf8CEp9WPtXli+cAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Facebook warns people about scams in the console"
+        title=""
+        src="/static/18f8473330556eccf15a6bf869f37e5a/a9e6e/facebook.png"
+        srcset="/static/18f8473330556eccf15a6bf869f37e5a/40f08/facebook.png 143w,
+/static/18f8473330556eccf15a6bf869f37e5a/d4502/facebook.png 285w,
+/static/18f8473330556eccf15a6bf869f37e5a/a9e6e/facebook.png 570w,
+/static/18f8473330556eccf15a6bf869f37e5a/c2e96/facebook.png 855w,
+/static/18f8473330556eccf15a6bf869f37e5a/f4f98/facebook.png 1140w,
+/static/18f8473330556eccf15a6bf869f37e5a/7554f/facebook.png 2002w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+  </span>
+  </a></p>
+<p>I’m also part of a <a href="https://www.kustomer.com/">fast growing company</a> and we’re always hiring, so I thought I’d see if I could leave a fun message in the console, and play around with ASCII art while I was at it.  </p>
+<p>Kustomer’s logo is <em>Kusty</em>; a smily speech bubble with apostrophes for eyes:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/80799b63db397c007bcc85e9d9bc4c17/3b243/logo.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABIElEQVQoz2NgoAX4HxnK8KOrnflLXzfz/9JCRpCYCBcXAyM5hn0xNyKkhBGKkdkgzIRGIxlqoM32v7Is9n9tVcHf6Ag5kJiBsBAb+V6uLHW7uXXL/ztnz/7/P292J1DIjo2NLRFISwOxHhDbA3EQEFsBsTEQOwOxH5TvBlIPxBIIA+ur3e9t3/b/8tEj//8vX9IDFLJmZ2ePAdLhQJwLxAlAHAfF0UAMkvMC4hIgLgDiCCDmRxjIx8Hxv7cr4feKZcX/w4IUQWLusjIsQEoSiIWgmBMUV0AsCA03ViBmg8ohgue/gTZmEPz/T2GyMdFn+D1vDvOPfXuZ/yfFg2NMgZ+fASP2cKcCBPiXlQ4xNDGW4X9JIcN/dyeIeHoyWY4DADgiT1+U/QKHAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Kustomer logo"
+        title=""
+        src="/static/80799b63db397c007bcc85e9d9bc4c17/a9e6e/logo.png"
+        srcset="/static/80799b63db397c007bcc85e9d9bc4c17/40f08/logo.png 143w,
+/static/80799b63db397c007bcc85e9d9bc4c17/d4502/logo.png 285w,
+/static/80799b63db397c007bcc85e9d9bc4c17/a9e6e/logo.png 570w,
+/static/80799b63db397c007bcc85e9d9bc4c17/c2e96/logo.png 855w,
+/static/80799b63db397c007bcc85e9d9bc4c17/3b243/logo.png 1024w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+  </span>
+  </a></p>
+<p>So how did I get Kusty showing up in the console on this site?  I started with a bit of a cheat: I asciified the logo using <a href="https://www.asciify.me/">asciify.me/</a>.  That got me a nice starting place, I had an Ascii version of Kusty to work with:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"> &#39; ``.&#39;` . -_+&quot;)cTtfyyyszztszszszztzfztfsfzsfzsstttyt17vr&gt;, .   ` &#39;-`- `
+  ..`.&#39;`.~)71tyyzzfzfzsyststztyftsytsystyztzzyzsyyytyfsytf1l?!  -.` `&#39;`.
+-.- - `+}Tzztsfyffztzzyyztsffyytfyyzztyfzyfzyfystzftszfytfysyt{+--&#39;.- `.
+ `--.&gt;Lyffttyztsfyztyt11fYtyyzYTz1yT1yfzfTt1TsYfftsttzzysffssyyt7+  &#39;&#39;`-
+ -`!iysttfstffzTi?&quot;+,,!~^~!^__~!_:,:^^^,!~_~~:_,,!:^+/i1zyytfyztzzi~&#39;&#39;-.
+. !}tsftzffyTv+~..  -`-.&#39; &#39;. .`-   .&#39;.-- ` ` . -&#39;- .-..~+v1fsfttszf}&lt; . 
+ ,xftyyysszv, -. ```&#39; &#39;. .-.``&#39;.-   &#39;&#39;.&#39;--&#39;- &#39;  ` ...&#39;&#39;  .!vytyzsstsx^- 
+&#39;/zsstzzzf*` `` &#39;  ` `- &#39;`- ` `.`  -.-   - `.&#39;-- -` - &#39;` &#39;``=1szfyzssi&#39; 
++Yzftsztf? `  `-` ` -- ` &quot;vje4J&gt;&#39; ...` `  &#39;~iteau(.&#39;` `-- ``&#39;/tzszszfY+&#39;
+isttsstzl:     `.-  .`&#39;[qQQRgQBt  - `-.&#39; rkDQWRQg6  -&#39;&#39;- `   ^]ffyzstyi&#39;
+xyfssytyv&#39;&#39;- .&#39;&#39;-   .:#QBW&amp;j}v+&#39;  &#39;`. `&#39;s@gR@$Lv&quot;-``   - - .&#39;`?ystysztL`
+xtyytzsyv .`-.&#39;-  `&#39; JRgBV:...``.&#39; -.  [HWHd+  .&#39;-- `-     &#39;&#39; /ysyzftsl&#39;
+cyyfysfyi  &#39;-`&#39;``&#39; -`NBWW^&#39;    .&#39;`` - &#39;2gBQ{`    .-`-&#39;. . `-&#39;.(zsyyzzzL_ 
+{ytyztfti    &#39;-`&#39;..&#39;&#39;DBRWSS%9wk&quot;-  .-  nWWHOwE%%5x    `&#39; -  `&#39;|ftzttytx- 
+{ttszfysi.`-&#39; `.&#39;&#39; -.DWHgggBRgH2-`.&#39;&#39;  2BWHgWRHgB&amp;&#39; .`. &#39;  . &#39;/sfztfsyc` 
+7zzsfsyzi - &#39;`  &#39;&#39; ` &amp;BHgQWRgBHj-&#39;- &#39; &#39;JQWHBBHHHQ@   ` .-```- /ttfttyy7&#39; 
+lsfsttfti-&#39;.`  -` -&#39;`DBHgHHRWRHu.. `&#39;`.nWHRgRRBgg&amp;.`&#39;` &#39;`   &#39;-?fsysfss7.
+xstfsytti `- `.&#39;&#39;&#39;`.&#39;pBBRQQRBgBn. &#39;&#39; &#39; CQBWBQBBBQO--&#39;`   - -- )sstfzyz] 
+}fzztyfsv.  &#39; -   &#39;..+[yfsfyzyv!-    ` !ittfftztc+&#39; &#39;  &#39;  -. &#39;)zzzzstsL`
+7ttszfssi&#39;- &#39;-  &#39;`  -``-- - -`` -.-.-`` `` &#39;..- . .&#39;&#39;- .  &#39;.- /sfyyftsL`
+{fsyysyzv-&#39; &#39; .-  &#39;`  &#39;    - - -  ```-...&#39; .&#39; -  - .-&#39;`-.&#39;-  `/fstyzszl&#39;
+7{yzzyttfi &#39;- &#39;.&#39;.&#39; &#39; &#39; . - - . -&#39;  -&#39;-- &#39;&#39;`  .  -&#39;   `&#39;- .  &#39;`(ffstfss}`
+{ztfzttsi -   -&#39; ..&#39;` ``&#39;`.--  .  -. &#39;. .&#39;&#39;&#39;   &#39;  -&#39; -&#39;&#39;.-. &#39; )zssfyzs]-
+{tzszzzyi&#39;.&#39;-`.--  &#39; `&quot;&amp;QQQHQWWgHWWgBQWWBggBgWW&amp;/ `` &#39;.&#39; &#39;`- -/zfszzzs}-
+xyffzzzsi -.`-`&#39;&#39;&#39;- &#39; &#39;]MHgHRHHgRQHBBWQWHHgBQQO1-`.`&#39;.--. &#39;&#39;` |zzztfysl&#39; 
+ittsfsttc^`   -  .&#39;   &#39;`~zMHHQWgBQRQgHQWggHQMt:&#39;&#39; &#39;`- .&#39;   `-,{fttttzzi`
++Yzftsstt|&#39;. .  &#39; .   .  .-vJONHHBWQggBB&amp;MFi. ` &#39; -.  `.&#39;--  \yyzszyf1&gt;`
+ /tfyyyzyf&quot;  - `.`&#39;..``  -`- -+\c1f2yTc/&lt;. &#39;``.-`.`&#39;-.&#39;`-&#39;` rfztyssfsi&#39;&#39; 
+ :Ltzzytsstv,- ` &#39;.`&#39;  &#39;` &#39; ```- &#39;`    .`.- `&#39;. . - ` ``--,itftfsfyt{,&#39;`  
+--^LtfsfsftsYi+:&#39;`-. `  .  .-` - `.--&#39;&#39;`` -   `. ``&#39;`  ~&gt;iTztyyyfzs[&lt; `.
+.. ^iftstzzfsssYv)r,^__!_^!!~&#39;.-&#39;. ..- -&#39;&#39; `,_:_~_~:&gt;)i1zsfzsstfzfi!. `-
+.`  .&gt;]ytfyyzsyszftsz1TYY1Y11v&gt;-     -.&#39;-&#39;. {TYTTYstzttfzsfftsstl&lt;&#39;   &#39;`
+-.-.-. &gt;lfsszzsyytszysyzzzzysfy1?&lt; &#39;       `7zzffsyystzsttztzfx&gt;` &#39; - .&#39;
+`.&#39; `&#39;&#39;`.^(c1zfttfztfyssyyffttzyyf}r~.- &#39;&#39;&#39;-7tfyzszzztysfy1L(!-.-`-.`.-`
+-&#39;    `&#39; -. !+&quot;([TyyzyzzsztststfsszyYi*_` -`{zyzfzfffT[v&quot;&gt;!&#39;`..`-` .`.-` </code></pre></div>
+<p>At this point I could have tossed that into a console.log and called it a day, but I wanted to take this to the next level.  And that means color!</p>
+<p>This isn’t something you run into every day while writing for the web, but it turns out that you can apply css to text in the console using a <code class="language-text">%c</code> macro.  The format goes like this:</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'%cbold text %cred text'</span><span class="token punctuation">,</span> <span class="token string">'font-weight:bold'</span><span class="token punctuation">,</span> <span class="token string">'color: red'</span><span class="token punctuation">)</span></code></pre></div>
+<p>That code outputs <span style="font-weight: bold">bold text</span> <span style="color:red">red text</span>.</p>
+<p>Of course its a pain to split that giant Kusty ascii block into multiple console logs with different colors.  So I minimized the pain and wrote a script that would let me take a set of ranges and render characters in one of 3 colors, and using either solid characters <code class="language-text">A-Za-z1-9+{}&lt;&gt;;</code> or space characters <code> `.,_-’</code>. I did eat the cost of writing out the map characters manually based on the generated ascii.  If I was going to do this again, I’d probably write out a script to generate the map from the original ascii image, and just fill in the color mappings manually. </p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//we use these characters for the solid lines</span>
+<span class="token keyword">const</span> solidChars <span class="token operator">=</span>
+  <span class="token string">'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789+{}&lt;>;'</span><span class="token punctuation">;</span>
+<span class="token comment">// and these ones for empty space</span>
+<span class="token keyword">const</span> spaceChars <span class="token operator">=</span> <span class="token string">" `.,_-'"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// these maps chars and colors </span>
+<span class="token keyword">const</span> chars <span class="token operator">=</span> <span class="token punctuation">[</span>spaceChars<span class="token punctuation">,</span> solidChars<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'#E0E0E0'</span><span class="token punctuation">,</span> <span class="token string">'#ED6159'</span><span class="token punctuation">,</span> <span class="token string">'black'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token operator">/</span><span class="token operator">/</span> <span class="token keyword">this</span> is the mapping to generate kusty
+<span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">53</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment">/* etc */</span> <span class="token punctuation">]</span>
+
+<span class="token operator">/</span><span class="token operator">/</span> generate the ascii string <span class="token keyword">from</span> the map
+<span class="token keyword">const</span> ascii <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">agg<span class="token punctuation">,</span> val</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token operator">/</span><span class="token operator">/</span> nulls mean spaces
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>val <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> agg <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
+  agg <span class="token operator">=</span> agg <span class="token operator">+=</span> <span class="token string">'%c'</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> characters <span class="token operator">=</span> chars<span class="token punctuation">[</span>val<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">randChar</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+    characters<span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> characters<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> val<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    agg <span class="token operator">+=</span> <span class="token function">randChar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> agg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> colorStrings <span class="token operator">=</span> map
+  <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">x</span> <span class="token operator">=></span> x <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>
+    <span class="token parameter">val</span> <span class="token operator">=></span> <span class="token template-string"><span class="token string">`color:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>colors<span class="token punctuation">[</span>val<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">; font-family: monospace, font-weight: bold`</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ascii<span class="token punctuation">,</span> <span class="token operator">...</span>colorStrings<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>The code is fairly straightforward, going through each segment and generating a string of random characters based on the map.  The interesting parts are probably:</p>
+<ul>
+<li>We use <code class="language-text">null</code> to denote new lines.  Could have been anything, but null is pretty obvious when you write out the mapping markup.  </li>
+<li>I usually use lodash for this, but I wrote some custom code to pull a random item from an array:
+<code class="language-text">const randChar = () =&gt; characters[Math.floor(Math.random() * characters.length)];</code></li>
+<li>I added a rare for loop in JavaScript code: even though map/filter/forEach etc work better for most things, a for loop is still the best way to do things when you’re given a number of times you want something to occur.</li>
+</ul>
+<p>It works pretty well!</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/9ded1afd1d1509a486545a308418b312/796f5/console-kusty.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 91.68260038240918%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAACx0lEQVQ4y51Uy27UQBD0Z/IBiBN3lC+AL+DGiUvOXHJDHKIgBSEugTx2s6/Ya68f67c99nhcVI8TlESESHjVmp7ecXV1dY+duizR1DXCMIK33dJ8pFmOLC+Q878sp1/QL0obKxjbp5m1kn6vFJZugDAtUGYpnKqukDcKRavQdj0GrdG2LRQPit33J+vQNI2Na54VG4cBoxlgzAinJFDYjdgpg7xjcNAYeOBfdpdoMgU9Aqrr0NGcuqpQ5hmKLLP0jTHPAprh9gzPtlUB7/wHqjQBCcIpqE8UxfCpXU5fsjwsUdlYK6xYrrCqmxqNailPh9XxET68fonDdwfo2mbS0Au3cHcefJ/rjYvNZgPXnVbP8+DSYs9F4XvI0hRJsUda59CqwfrbFxwevMHbVy9QkKVTs8OqUzZrVU9ii+gSF2sYk71i9p4mbHWvbXPGXuF7kOH9x084+nyMkT/nerGwLHa7EO52Z/0wDJFT0zTdI+MoyN7ztoji2PpRFCEIAsTcx3GCKEk5QjkC34czu7zC+a9zxEkCn4e8YMcDBCoVknxArdhVjobiSN11VhiLdbed1X0/VUGdnWC9wHq1tG23Hd4nGKiV5pD37rQa7g0n4alnHEcmoiQEdlY3HtYb12Y2gY/+eg6TxBhZqiG4rFriVxcYJH4L8NiEjKyO6CSj07Lb+noGw0ZUHNY1u9xz3raUoWUTDLurl9cWEI9A7z/Ofr9HyeFWvJd6tZCTdmTmsxly3uOfZ2eTHJJws/oDcB/sPrgFlAuvysIyIHfcEPD09JQdzvD15MR+CCCAy8UD3f72TIDCkGUPUhKFrVi2xOV6yYi0wtAm/A9AYy9/h/l8jjOWu1ouMfDlgUn0evmgzKcBpWTOkQAO7Kow23JILy4vLVPDT9MQhdA36zt6zwCSnWKpMmt6PqP4fJEjInqiqqy2YgP98RnA30n+ZDpHr3AnAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="A picture of the console"
+        title=""
+        src="/static/9ded1afd1d1509a486545a308418b312/a9e6e/console-kusty.png"
+        srcset="/static/9ded1afd1d1509a486545a308418b312/40f08/console-kusty.png 143w,
+/static/9ded1afd1d1509a486545a308418b312/d4502/console-kusty.png 285w,
+/static/9ded1afd1d1509a486545a308418b312/a9e6e/console-kusty.png 570w,
+/static/9ded1afd1d1509a486545a308418b312/c2e96/console-kusty.png 855w,
+/static/9ded1afd1d1509a486545a308418b312/f4f98/console-kusty.png 1140w,
+/static/9ded1afd1d1509a486545a308418b312/796f5/console-kusty.png 2092w"
+        sizes="(max-width: 570px) 100vw, 570px"
+      />
+  </span>
+  </a></p>
+<h3>Next Steps</h3>
+<p>Now that I’ve done this it would be pretty easy to reuse this code to create a terminal Kusty with <a href="https://github.com/chalk/chalk#readme">chalk</a>. Maybe next New Years.</p>
+<p>For everyone else, if this seemed fun to you, you might be interested in the <a href="https://boards.greenhouse.io/kustomer">job openings at Kustomer</a>.  Feel free to apply or reach out to me directly if you’re interested in working with us.  </p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
             <title><![CDATA[2019 Roundup]]></title>
             <link>https://benmccormick.org/2019-roundup</link>
             <guid>https://benmccormick.org/2019-roundup</guid>
-            <pubDate>Mon, 30 Dec 2019 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 31 Dec 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>2019 was the 6th full year of this blog, and it was a bit up and down posting wise.  For the first half of the year I published more or less a post a week, with 24 posts from January till July.  But this is only my 2nd post since then.  </p>
 <p>Turns out that starting a new job while learning to be a parent sucks up a lot of time!  I’m not making any promises for 2020, but I expect that my writing rate will fall somewhere in between the first 7 months and last 5 months of 2019.  In the meantime, here’s a brief look back at the year on the blog.</p>
 <p>This was my first year where I spent the full year managing people, and that was reflected in the blog’s topics as well as where I spent my time.  </p>
@@ -49,24 +269,24 @@ Another one of my favorite posts to write, this is a look at what types of thing
 <p>MacOS/iOS, Google Search, Chrome/Safari/Firefox, GMail/MailPlane 3, Twitter/Tweetbot, Feedbin/Reeder, iMessage, Slack, Jira, 1Password, VS Code, iTerm, Fish Shell, Github/Bitbucket, Fantastical, Spotify, Bear, CloudApp, Dash, Postman</p>
 <h3>Best Technical Books I read in 2019</h3>
 <ul>
-<li><a href="https://amzn.to/35j1Jq1">The Pragmatic Programmer 20th Anniversary Edition</a></li>
-<li><a href="https://amzn.to/2QhpkTH">Accelerate</a></li>
+<li><a href="https://amzn.to/35j1Jq1">The Pragmatic Programmer 20th Anniversary Edition</a> - A huge update from the 1st edition, this remains my #1 book recommendation for any professional software developer</li>
+<li><a href="https://amzn.to/2QhpkTH">Accelerate</a> - A great look at the impact improving devops/release practices can have on software teams/companies</li>
 </ul>
 <h3>Best Technical Leadership Books I Read in 2019</h3>
 <ul>
-<li><a href="https://abookapart.com/products/resilient-management">Resilient Management</a></li>
-<li><a href="https://amzn.to/2QyJLKM">The Manager’s Path</a></li>
-<li><a href="https://amzn.to/2ZHbFbx">An Elegant Puzzle</a></li>
-<li><a href="https://amzn.to/2Fc4izu">Turn The Ship Around</a></li>
+<li><a href="https://abookapart.com/products/resilient-management">Resilient Management</a> - A great collection of management wisdom from Lara Hogan.  Nothing revolutionary here for those who already follow her blog/newsletter, but its great to have it all together in one place.</li>
+<li><a href="https://amzn.to/2QyJLKM">The Manager’s Path</a> - A super helpful book for anyone thinking about their career path in tech, especially if they’re considering management.  Lots of helpful tips for those already managing people as well.</li>
+<li><a href="https://amzn.to/2ZHbFbx">An Elegant Puzzle</a> - Another “blog book”, this one is a bit of a grab bag of topics, but the content is so high quality it was completely worth it.</li>
+<li><a href="https://amzn.to/2Fc4izu">Turn The Ship Around</a> - Not tech-specific, but one of the best books on leadership I’ve read, in the form of a history of a nuclear submarine crew getting ready to deploy.</li>
 </ul>
 <h3>Best Non-Technical Books I read in 2019</h3>
 <ul>
-<li><a href="https://amzn.to/369CpDX">I Hear You</a></li>
-<li><a href="https://amzn.to/2ZHuM52">Why We Sleep</a></li>
-<li><a href="https://amzn.to/2ZH3bRR">Team Of Rivals</a></li>
-<li><a href="https://amzn.to/2MH6F1e">Evicted: Poverty and Profit in the American City</a></li>
-<li><a href="https://amzn.to/2sFrDqz">The Common Rule</a></li>
-<li><a href="https://amzn.to/2QyKhsc">The Foundation Trilogy</a></li>
+<li><a href="https://amzn.to/369CpDX">I Hear You</a> - A small practical book on validation that will make you a better friend / spouse / coworker.</li>
+<li><a href="https://amzn.to/2ZHuM52">Why We Sleep</a> - A fascinating book on the (pop) science behind sleep</li>
+<li><a href="https://amzn.to/2ZH3bRR">Team Of Rivals</a> - A very readable history of the Lincoln presidency focused on his relationships with the other candidates for President in 1860. Incredibly well done.</li>
+<li><a href="https://amzn.to/2MH6F1e">Evicted: Poverty and Profit in the American City</a> - A sobering look at how laws, norms and expectations around rentals and evictions in America contribute to spirals of poverty.  Another very well written book, make sure to read the end to understand the research that went into it and allowed for the very personal feel.</li>
+<li><a href="https://amzn.to/2sFrDqz">The Common Rule</a> - This is a Christian look at how ritual and habit can help us overcome modern distractions and focus on the things that are important.  I’ve read a lot of books in this genre in recent years (Deep Work / Indistractable / The Tech Wise Family) and this was my favorite.</li>
+<li><a href="https://amzn.to/2QyKhsc">The Foundation Trilogy</a> - Classic scifi, and a great read. Fascinating to read a mid 1900s view of the future and realize that while space travel and force fields sounded great, it was inconceivable that casual tobacco use in the home might go away. </li>
 </ul>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
@@ -370,59 +590,6 @@ Another one of my favorite posts to write, this is a look at what types of thing
 <li><strong>Note Missed Opportunities</strong> - When you do those reviews, make sure to pay attention to when you missed an opportunity to apply something you <em>knew</em>.  Sometimes we make mistakes because we just didn’t know something.  It’s more common though that we didn’t properly apply our own principles and knowledge.</li>
 <li><strong>Identify Cues</strong> - Identify the thing that you know you’re going to have to handle different next time.  Maybe you say “if I’m looking for a job, I should consider at least 4 or 5 different companies and not focus in on just one”, or if I’m asked to fix a legacy codebase, I will spend at least 3 months trying to improve it before considering a re-write,and I’ll look for real world comparisons to base a rewrite estimate on”.  Whatever it is for you, when you can identify situations where a specific action should take place, it can help you be better the next time instead of repeating the same old mistakes.</li>
 </ol>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[How To Get Better Feedback On Your Code]]></title>
-            <link>https://benmccormick.org/2019/04/22/better-code-feedback</link>
-            <guid>https://benmccormick.org/2019/04/22/better-code-feedback</guid>
-            <pubDate>Mon, 22 Apr 2019 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<blockquote>
-<p>Deliberate practice [is when] (1) your attention is focused tightly on a specific skill you’re trying to improve […] (2) <strong>you receive feedback so you can correct your approach to keep your attention exactly where it is most productive.</strong></p>
-<p><em>- Cal Newport, Deep Work</em></p>
-</blockquote>
-<p>In <a href="https://amzn.to/2TqwDeR">Deep Work</a>, Cal Newport explains that research has shown the primary difference between experts and amateurs in a typical field is not innate talent; instead it is the amount of time they’ve spent in <em>Deliberate Practice</em> within their field of study that sets them apart.  Deliberate practice is not merely time spent working on the craft, but includes a <a href="https://benmccormick.org/2018/08/02/feedback-loops/">feedback loop</a> aspect. To get better at something, we need to receive meaningful feedback on whether what we’re doing is working.</p>
-<p>When working with a team, one of the best ways to get this type of feedback is <a href="https://benmccormick.org/2019/01/14/value-from-code-reviews">quality code reviews</a>.  When you’re reviewing, you get to see other developers approaches to code, and when you’ve written code, you hopefully get high quality feedback from a different point of view.</p>
-<p>In reality, code reviews don’t always provide the value they could.  Many developers don’t give much feedback at all on code reviews, give unhelpful aesthetic feedback, or may even use it abusively to try to show off their “superiority”. I can’t solve all of those problems, but here are a few tips I’ve found that help me get better feedback when my code is being reviewed.</p>
-<h4>1. Annotate Pull Requests</h4>
-<p>Most people assume that the inline commenting features in Github and Bitbucket code reviews are for use by the people reviewing the code.  But I’ve found that it can be helpful to preemptively add comments to my PRs to give reviewers context.
-This is especially useful for information that may be relevant during a code review but isn’t long term relevant, like the original reason for extracting some reusable code and where it came from.  Below is an example of a comment I left demoing how React hooks could be used to pull out shared logic in my work project.</p>
-<p><a
-    class="gatsby-resp-image-link"
-    href="/static/a883e2a63572b0df0719ee97fac65e95/df1a7/comment-example.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 32.14285714285714%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABD0lEQVQY04WQWW/CMBCE8/9/WA/1ECpSaShFUHI5duz4inNApxtD1T6Vh0+z1o7Xs058FyCaFqo1ETmjLlDNtMDsCWGI+K4H4wq1UPFeIzWpRkN+5wMSax01W+xqhp0osRcFMlVFmBNggaPpJaGiiiBR2hqV5agcJ8+vci+R8LLAZrPH+tBim3Hs8gpctpSOXlaUXFNyY2C8h73gug6282fmc+giYeiRTNMR2jgw1oDTKhVpHZVSyfPqWjsM/YhxmDDM9H/0Uv/0kvlfjPVYsQ+8sBWW9RsW5StW8h2f4wHFV4H8lCM7Zv9yIPKxOA9U2uK5WuKGPeCWPeKOuK+fsDBLpFOK9Wl9lfSUYnvc4hs/scSv4Qbq/QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-    ></span>
-    <img
-        class="gatsby-resp-image-image"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
-        alt="hooks comment example"
-        title=""
-        src="/static/a883e2a63572b0df0719ee97fac65e95/a9e6e/comment-example.png"
-        srcset="/static/a883e2a63572b0df0719ee97fac65e95/40f08/comment-example.png 143w,
-/static/a883e2a63572b0df0719ee97fac65e95/d4502/comment-example.png 285w,
-/static/a883e2a63572b0df0719ee97fac65e95/a9e6e/comment-example.png 570w,
-/static/a883e2a63572b0df0719ee97fac65e95/c2e96/comment-example.png 855w,
-/static/a883e2a63572b0df0719ee97fac65e95/df1a7/comment-example.png 1036w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-  </span>
-  </a></p>
-<p>These types of comments are also good ways to point a reviewer to the important parts of a review. This matters for reviews where there are many small changes across a large number of files, with a few high impact changes.  It’s always better to make atomic changes (see <a href="https://benmccormick.org/2019/01/14/value-from-code-reviews">more here</a>), but when you must make a large change, this technique can help a lot.  I have received noticeably better feedback on my large pull requests since I began annotating</p>
-<h4>2. Encourage Questions</h4>
-<p>If you’re receiving feedback from more junior members of a team, they may not always be comfortable giving direct feedback on code.  One way to get better feedback in those situations is to encourage them to ask questions about things they don’t understand.  This gives them opportunities to learn, but also let’s you see which parts of your code are unintuitive or unfamiliar to the rest of the team.  In some cases the questions will expose bugs that a more confident reviewer may have pointed out straight out, and that experience can help grow a reviewers confidence and lead to even better feedback next time.</p>
-<p>Of course asking questions rather than assuming understanding can be a good tactic when giving feedback in general, and is worth considering when doing your own reviews regardless of whether a reviewer has encouraged it.</p>
-<h4>3. Find More Than One Reviewer</h4>
-<p>This applies to more than just code, but if you’re not getting the feedback you need right now, ask somebody else.  In a work setting, this might be finding different team members to review your code.  If that isn’t possible at work, finding other ways to write code and get feedback on it can make a big difference in your career.  Not everyone has time or capacity for this, but contributing to open source, project nights at local meetups and hackathons can all be great ways to learn and get feedback from others.  If you can find a mentor to talk through code challenges with, that can be beneficial even if they aren’t on your team and going through your code line by line.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
