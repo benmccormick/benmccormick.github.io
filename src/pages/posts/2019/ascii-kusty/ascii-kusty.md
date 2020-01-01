@@ -4,7 +4,7 @@ date: "2020/01/01"
 layout: "post"
 path: "/ascii-kusty"
 category: "tools"
-description: "Giving \"Kusty\" a home on my site"
+description: "Giving Kusty a home on my site"
 key: "ascii-kusty"
 topics: []
 readNext: "feedback-loops,react-confessions,orthogonality-css-js"
