@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2020-01-01T16:26:46Z</updated>
+    <updated>2020-07-25T20:56:38Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -20,11 +20,82 @@
         <uri>http://benmccormick.org</uri>
     </contributor>
     <entry>
+        <title type="html"><![CDATA[The Management Resources I Keep Coming Back To]]></title>
+        <id>https://benmccormick.org/2020/07/25/management-resources-2-years</id>
+        <link href="https://benmccormick.org/2020/07/25/management-resources-2-years">
+        </link>
+        <updated>2020-07-25T04:00:00Z</updated>
+        <content type="html"><![CDATA[<p>Although I don’t read Hacker News much these days, I do subscribe to <a href="https://hackernewsletter.com/">a newsletter</a> that rounds up the best links every week, and there are almost always one or two gems in there. </p>
+<p>This week my favorite link was this roundup of <a href="https://www.benkuhn.net/progessays/">Essays on Programming I Think About A lot</a> by Ben Kuhn, cataloguing essays on the internet that he comes back to or references repeatedly.  </p>
+<p>I’m now ~2 years into managing people and because <a href="https://www.fastcompany.com/90282088/why-being-a-manager-is-a-career-change-not-a-promotion">Engineering Management is not a promotion</a>, I’ve spent a lot of time leading up to that change and since reading about management in an attempt to avoid being completely clueless at my job<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  </p>
+<p>Like Ben, I have a few key essays and books that I reference and go back to over and over again.  These are a mix of books and essays that have shaped how I think about the job of engineering leadership.  The books here are mostly well known, while the essays are more obscure, and might be a surprising choice to highlight if you asked their authors.  But each one has taught me something specific that has helped shape my leadership style. </p>
+<h2>Essays</h2>
+<p><a href="https://larahogan.me/blog/leadership-style-colors/">Leadership Style Colors | Lara Hogan</a></p>
+<blockquote>
+<p>It’s totally natural to embody one a lot—that’s your style! But it’s important to be aware of the other styles/approaches available in your leadership toolbox. A strong leader understands that different styles can be valuable when an environment or situation calls for it. As Herminia Ibarra says in my <a href="https://hbr.org/2015/01/the-authenticity-paradox">favorite article</a> on this subject, “Small changes—in the way we carry ourselves, the way we communicate, the way we interact—often make a world of difference in how effectively we lead.”</p>
+</blockquote>
+<hr>
+<p><a href="https://randsinrepose.com/archives/act-last-read-the-room-and-taste-the-soup/">Taste The Soup | Rands</a></p>
+<blockquote>
+<p>In a meeting where an individual or team is presenting a complex idea or project, my job as the leader is soup tasting. It’s sampling critical parts of the idea to get a sense of how this soup has been or will be made. Who are the critical people? What are the critical parts? Which decisions matter? I don’t know. I do believe that a pre-requisite for leadership is that you have experience. You’ve had trials which have resulted in both impressive successes and majestic failures. These aggregate lessons define your metaphoric soup tasting ability, and when your team brings you a topic to review, it is this experience you apply to ask the critical soup questions.</p>
+</blockquote>
+<hr>
+<p><a href="https://charity.wtf/2019/01/04/engineering-management-the-pendulum-or-the-ladder/">Engineering Management: The Pendulum Or The Ladder | Charity Majors</a></p>
+<blockquote>
+<p>If you like engineering management, your tendency is to go “cool, now I’m a manager”, and move from job to job as an engineering manager, managing team after team of engineers.  But this is a trap.  It is not a sound long term plan.  It leads too many people off to a place they never wanted to end up: technically sidelined.</p>
+</blockquote>
+<hr>
+<p><a href="https://lethain.com/values-oasis/">Trapped in a Values Oasis | Will Larson</a>  </p>
+<blockquote>
+<p>  The rule of thumb here is to lead through ambiguity, and advocate through disagreement.
+It’s important to diagnose your situation correctly, because when you get it wrong, it’ll still feel like you’re making progress, but it’s wholly dependent on you and it’s progress that is likely to come at the cost of undermining both you and your team within the broader organization. It can be extraordinarily frustrating to “disagree and commit” to a policy or value that goes against your personal values, but any worthwhile measure of successful leadership needs to consider your team’s success more highly than your own.</p>
+</blockquote>
+<hr>
+<p><a href="https://kellanem.com/notes/friday-wins">Friday Wins &#x26; A Case Study in Ritual Design | Kellan Elliott-McCrea</a></p>
+<blockquote>
+<p>Culture is what you celebrate. Rituals are the tools you use to shape culture. Yet very few of us think much about ritual design.</p>
+</blockquote>
+<h2>Books</h2>
+<p><a href="https://amzn.to/3jyxofc">Radical Candor | Kim Scott</a></p>
+<blockquote>
+<p>“It’s brutally hard to tell people when they are screwing up. You don’t want to hurt anyone’s feelings; that’s because you’re not a sadist. You don’t want that person or the rest of the team to think you’re a jerk. Plus, you’ve been told since you learned to talk, “If you don’t have anything nice to say, don’t say anything at all.” Now all of a sudden it’s your job to say it. You’ve got to undo a lifetime of training. Management is hard.”</p>
+</blockquote>
+<p>The best thing I’ve read on how to give feedback well.</p>
+<hr>
+<p><a href="https://amzn.to/2D4btMb">Death By Meeting | Patrick Lencioni</a></p>
+<blockquote>
+<p>The hard truth is, bad meetings almost always lead to bad decisions, which is the best recipe for mediocrity.</p>
+</blockquote>
+<p>A lot of this book is focused on very specific advice for specific types of meetings, but the philosophical takeaway it left me with was much simpler; meetings aren’t non-negotiable things that we all must endure.  They can be designed, and that design matters.</p>
+<hr>
+<p><a href="https://amzn.to/3f4EvbH">The Common Rule | James Early</a></p>
+<blockquote>
+<p>All those who want to be attentive to who they are becoming must realize that formation begins with a framework of habits.</p>
+</blockquote>
+<p>This is a book written through the lens of the author’s Christian faith, so if that bothers you, you might prefer <a href="https://amzn.to/3jInPdF">Deep Work</a>, which covers similar ground in a secular manner.  But for me personally, the rituals and worldview laid out in the Common Rule has been life changing, and has been my most helpful tool as I navigate the “Advanced Time Management 501” lifestyle of engineering management</p>
+<hr>
+<p><em>That’s the list for now, but I’m sure I’ll add more as time goes on.</em></p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>I would like to think this has worked, but Dunning-Kruger being what it is, I don’t know how I could really tell you with confidence.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content>
+        <author>
+            <name>Ben McCormick</name>
+            <email>ben@benmccormick.org</email>
+            <uri>http://benmccormick.org</uri>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Fun with Ascii: Putting some console art on my site]]></title>
         <id>https://benmccormick.org/ascii-kusty</id>
         <link href="https://benmccormick.org/ascii-kusty">
         </link>
-        <updated>2020-01-01T00:00:00Z</updated>
+        <updated>2020-01-01T05:00:00Z</updated>
         <content type="html"><![CDATA[<p>I’ve always enjoyed sites that had easter eggs in their consoles, whether they’re simple and whimsical like Ponyfoo.com</p>
 <p><a
     class="gatsby-resp-image-link"
@@ -249,7 +320,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <id>https://benmccormick.org/2019-roundup</id>
         <link href="https://benmccormick.org/2019-roundup">
         </link>
-        <updated>2019-12-31T00:00:00Z</updated>
+        <updated>2019-12-31T05:00:00Z</updated>
         <content type="html"><![CDATA[<p>2019 was the 6th full year of this blog, and it was a bit up and down posting wise.  For the first half of the year I published more or less a post a week, with 24 posts from January till July.  But this is only my 2nd post since then.  </p>
 <p>Turns out that starting a new job while learning to be a parent sucks up a lot of time!  I’m not making any promises for 2020, but I expect that my writing rate will fall somewhere in between the first 7 months and last 5 months of 2019.  In the meantime, here’s a brief look back at the year on the blog.</p>
 <p>This was my first year where I spent the full year managing people, and that was reflected in the blog’s topics as well as where I spent my time.  </p>
@@ -310,7 +381,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
         <id>https://benmccormick.org/how-se-add-value</id>
         <link href="https://benmccormick.org/how-se-add-value">
         </link>
-        <updated>2019-12-18T00:00:00Z</updated>
+        <updated>2019-12-18T05:00:00Z</updated>
         <content type="html"><![CDATA[<p>I had the opportunity this week to walk a software engineer who is new to the field through some lessons I’ve learned over the years about how software engineers add value to the business.  It seemed generally applicable, so here’s a cleaned up version of what I shared.</p>
 <hr>
 <h2>What Is Value?</h2>
@@ -368,7 +439,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
         <id>https://benmccormick.org/2019/07/22/book-review-resilient-management</id>
         <link href="https://benmccormick.org/2019/07/22/book-review-resilient-management">
         </link>
-        <updated>2019-07-22T00:00:00Z</updated>
+        <updated>2019-07-22T04:00:00Z</updated>
         <content type="html"><![CDATA[<p><a href="https://abookapart.com/products/resilient-management">Resilient Management</a> by Lara Hogan is a short and useful read for engineering managers who want to think more systematically about how they support their team.  Lara covers concepts like how to connect with a new team, how to encourage growth in your teammates, and how to communicate difficult news.  This is a <em>blog+</em> book: most of the material here has appeared previously in Lara’s blog or newsletter, but for the book it has been cleaned up and organized together in a coherent fashion that makes it greater than the sum of its parts.</p>
 <p>If you’ve followed my <a href="https://benmccormick.org/subscribe">newsletter</a> for a while, you’ll have seen me link to Lara’s work on a regular basis.  Lara’s strength as a teacher is building meaningful exercises for thinking through abstract topics, and that plays out here.  Almost every piece of advice and insight comes with a suggestion on how to start implementing it, or an exercise to help you think deeper about yourself or your situation.  I’ve found her <a href="https://larahogan.me/blog/leadership-style-colors/">leadership colors</a> and her <a href="https://larahogan.me/blog/team-introspection/">MadLibs worksheet for leadership philosophy</a> particularly helpful for me.</p>
 <p>In addition to the helpful exercises, the highlights of the book for me were Lara’s look at the BICEPS model for understanding people’s needs at work, the way she structured her book around a groups evolution over time, and the chapter on communication plans.  I’ve made notes to reference each of those areas the next time I hit a relevant situation.</p>
@@ -385,7 +456,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
         <id>https://benmccormick.org/2019/06/24/derived-state</id>
         <link href="https://benmccormick.org/2019/06/24/derived-state">
         </link>
-        <updated>2019-06-24T00:00:00Z</updated>
+        <updated>2019-06-24T04:00:00Z</updated>
         <content type="html"><![CDATA[<p>A lot of advice in the React community is focused around avoiding explicitly storing “derived state” of some type or another.  Some examples of this type of “derived state” that the community warns against:</p>
 <h4>Storing data that is directly derived from another piece of data in redux</h4>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> reducer <span class="token operator">=</span> <span class="token function">createReducer</span><span class="token punctuation">(</span>initialState<span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -473,7 +544,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
         <id>https://benmccormick.org/2019/06/24/managing-a-distributed-team</id>
         <link href="https://benmccormick.org/2019/06/24/managing-a-distributed-team">
         </link>
-        <updated>2019-06-17T00:00:00Z</updated>
+        <updated>2019-06-17T04:00:00Z</updated>
         <content type="html"><![CDATA[<p>Working with people over the internet is different from meeting in an office five days a week.  This isn’t a moral statement.  I’ve done and enjoyed both.  Working with a distributed team requires a different set of skills, especially when you’re a leader.  Today I want to share the most helpful lessons I’ve learned over the last year managing a distributed team.</p>
 <h4>Evaluate process and outcomes, not inputs</h4>
 <p>Focusing on output` is great advice for any team, but it’s easier and more important when managing remote teams.  When you’re not in the office with people, you won’t see when they start in the morning or finish at night.  You won’t be able to tell if they’re taking long coffee breaks or checking Amazon between tasks.  You’ll have to evaluate them on their output and on the methods they use to get work done.</p>
@@ -518,7 +589,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
         <id>https://benmccormick.org/2019/06/12/book-review-the-managers-path</id>
         <link href="https://benmccormick.org/2019/06/12/book-review-the-managers-path">
         </link>
-        <updated>2019-06-12T00:00:00Z</updated>
+        <updated>2019-06-12T04:00:00Z</updated>
         <content type="html"><![CDATA[<p>Titles in the software engineering world are strange.  Without much work, it’s easy to find <em>Senior Engineers</em> with 2 years of professional experience, <em>junior developer</em> job descriptions requesting 5 years of experience, <em>tech lead</em> roles focused purely on technology, <em>tech lead</em> roles where the lead is managing a team, and who can tell the difference between a <em>CTO</em> and a <em>VP of Engineering</em> anyway?  This results in weird title shifts when developers switch jobs, odd or unfair salary distributions, and a world where it is very difficult to understand what a career path looks like in this industry.</p>
 <p>Camille Fournier’s book <a href="https://amzn.to/2F2jG1p">The Manager’s Path</a> steps into this breach by laying out a clear look at an engineering management-focused career path. The book runs through a series of roles: <em>Mentor</em> to <em>Tech Lead</em> to <em>Manager</em> to <em>Manager of Managers</em> all the way up to <em>Executive</em>. For each role she describes what the job is,  walks through what type of challenges you might face in the role after a promotion, and offers practical advice on overcoming those challenges.</p>
 <p>I found it to be an extremely engaging read, and the best description of what it actually looks like to advance in technical leadership roles I’ve ever read.  Because she focuses on skills and responsibilities more than titles, it’s possible to apply her advice across large and small companies, even those with wonky title structures.  It helped me think about what skills I need to be building in my career, and gave me a glimpse of what next steps look like.</p>
@@ -535,7 +606,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
         <id>https://benmccormick.org/2019/06/03/thinking-values</id>
         <link href="https://benmccormick.org/2019/06/03/thinking-values">
         </link>
-        <updated>2019-06-03T00:00:00Z</updated>
+        <updated>2019-06-03T04:00:00Z</updated>
         <content type="html"><![CDATA[<p>As a way to help myself grow in my first year as a manager, I’ve been working through <a href="https://rework.withgoogle.com/guides/managers-develop-and-support-managers/steps/review-googles-new-manager-training/">Google’s New Manager Training</a> which they have generously published online.  One exercise that stood out to me was a “values selection” process, where they encourage managers to select a ranked list of 5-10 words that resonate with them as values from a list of around 400 “values words”.</p>
 <p><a
     class="gatsby-resp-image-link"
@@ -605,7 +676,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
         <id>https://benmccormick.org/2019/05/27/herding-lions</id>
         <link href="https://benmccormick.org/2019/05/27/herding-lions">
         </link>
-        <updated>2019-05-27T00:00:00Z</updated>
+        <updated>2019-05-27T04:00:00Z</updated>
         <content type="html"><![CDATA[<p>I used to find myself using the term “herding cats” a lot when confronting inertia, disorganization or ambiguity in work situations.  <a href="https://www.urbandictionary.com/define.php?term=herding%20cats">Urban Dictionary</a> actually endorses this:</p>
 <blockquote>
 <p>The phrase herding cats comes from the common saying that something involving coordination of many different groups or people is as difficult as herding cats. One of the commonly encountered uses of the term in technical fields is the phrase “Managing programmers is like herding cats” or “Managing engineers is like herding cats”. In education it would be “Managing students is like herding cats”.</p>
@@ -613,34 +684,6 @@ Another one of my favorite posts to write, this is a look at what types of thing
 <p>The phrase correctly captures the difficulty of getting a group of programmers (or even worse <em>teams of programmers</em>) on the same page.  But there’s an inherent arrogance to it.  The implication is that the herder is the adult in the room and everyone else’s pointless individualism is getting in the way.</p>
 <p>There are days that I think I could fix everything if I could just get the *&#x26;$% cats to move in the right direction.  In those situations  I’ve started telling myself that what I’m actually doing is herding <strong>lions</strong>.  How do you herd a group of lions?  I have no idea.  But I know that if you don’t start with a healthy respect for the lion’s capabilities and agenda, it won’t end well for you.</p>
 <p>When you treat people like lions, it’s an opportunity to stop and figure out <em>why</em> they’re not just getting on board with your <em>obvious</em> plan.  It’s an opportunity to learn, to find new ways to motivate people, and maybe even to empower somebody who had been viewing themselves as more of a kitten.  Ultimately the best teams flourish where people can <a href="https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/">be strong contributors, take risks and do work they find meaningful</a>.  They’re teams of lions.</p>]]></content>
-        <author>
-            <name>Ben McCormick</name>
-            <email>ben@benmccormick.org</email>
-            <uri>http://benmccormick.org</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Obvious Things]]></title>
-        <id>https://benmccormick.org/2019/05/18/obvious-things</id>
-        <link href="https://benmccormick.org/2019/05/18/obvious-things">
-        </link>
-        <updated>2019-05-18T00:00:00Z</updated>
-        <content type="html"><![CDATA[<p>I saw a tweet thread a few weeks ago that made me think:</p>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">There’s a bit of a meme in some parts that there is value in saying, out loud, “I realize that I am surprised.” For similar reasons, I often subvocalize “I believe I now understand the type of situation the ‘trivial’ advice was preparing me for.” <a href="https://t.co/JzdYmSvJWH">https://t.co/JzdYmSvJWH</a></p>&mdash; Patrick McKenzie (@patio11) <a href="https://twitter.com/patio11/status/1115751939210223616?ref_src=twsrc%5Etfw">April 9, 2019</a></blockquote>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">And then you repeat it to someone and they say “lol that is obvious” and you wonder if you know the advice well enough yet to correct them on how not obvious it is going to be for their next 10 years.</p>&mdash; Patrick McKenzie (@patio11) <a href="https://twitter.com/patio11/status/1115752453910061056?ref_src=twsrc%5Etfw">April 9, 2019</a></blockquote>
-<p>I realized that I’ve encountered plenty of pieces of wisdom in my software career that have this property; I see them as clear and obvious when put in the abstract, but only learn to actually apply them by repeatedly failing to do so.  This is what people talk about when they say something is “hard earned experience” I guess.</p>
-<p>Here are some examples from my career:</p>
-<ol>
-<li><strong>In the long run, rate of improvement (or regression) matters more than current level</strong> - This has applications in hiring, code quality, and finding/staying in a job.  But it’s often easier to observe how good something is now than to see how its changing, and I often fail to properly estimate what a trend means for a situation 1-3 years down the road.  It’s also easy to mis-apply this principle when you for get about the “long run” part.  A new employee with tons of potential won’t help you when you need an experienced hand <em>now</em> and fixing technical debt can easily cost you your ability to hit a quarterly objective.  Knowing how to balance these long and short term goals is something I still struggle with all the time.</li>
-<li><strong>Rewriting from scratch is (almost) never worth it</strong> - <a href="https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/">Joel Spoelsky</a> wrote about this way back in 2000 and I remember reading that article nearly a decade ago and nodding along.  I seem to have infinite capacity to convince myself that my current situation fits in those parentheses though.  In my career this has mostly been a problem where I’m able to more accurately forecast the pain that would ensue from fixing what exists (because that code exists and is easier to work with), while I appear to systematically underestimate the pain of building the new thing (because the internet told me it would be great, and the code doesn’t exist for me to nitpick yet).</li>
-<li><strong>Always consider multiple options</strong> - Pretty much any decision (technical or otherwise) benefits from having multiple contenders.  This seems obvious.  But I have often let myself fall into situations where I’m choosing between just 2 options, or really just choosing whether or not to do 1 thing.  This has applications in technology choices, job choices, responding to another person’s provocations, and more.  I intuitively know that more options are good, and I constantly miss opportunities to add options.</li>
-</ol>
-<p>So how do we improve on these situations where we fail to apply <em>obvious</em> wisdom?  I’ve been learning a few things lately.</p>
-<ol>
-<li><strong>Always review what you’ve done on a regular basis</strong> - Do weekly reviews about how your week went.  Do quarterly reviews with yourself about how your job is going.  When you make big decisions, make sure to find a time to check back in later and evaluate how it went.  We make better decisions when we take the time to measure our results</li>
-<li><strong>Note Missed Opportunities</strong> - When you do those reviews, make sure to pay attention to when you missed an opportunity to apply something you <em>knew</em>.  Sometimes we make mistakes because we just didn’t know something.  It’s more common though that we didn’t properly apply our own principles and knowledge.</li>
-<li><strong>Identify Cues</strong> - Identify the thing that you know you’re going to have to handle different next time.  Maybe you say “if I’m looking for a job, I should consider at least 4 or 5 different companies and not focus in on just one”, or if I’m asked to fix a legacy codebase, I will spend at least 3 months trying to improve it before considering a re-write,and I’ll look for real world comparisons to base a rewrite estimate on”.  Whatever it is for you, when you can identify situations where a specific action should take place, it can help you be better the next time instead of repeating the same old mistakes.</li>
-</ol>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
