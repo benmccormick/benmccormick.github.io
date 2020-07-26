@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sun, 26 Jul 2020 09:48:11 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 26 Jul 2020 09:51:23 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -18,7 +18,7 @@
             <title><![CDATA[The Management Resources I Keep Coming Back To]]></title>
             <link>https://benmccormick.org/2020/07/25/management-resources-2-years</link>
             <guid>https://benmccormick.org/2020/07/25/management-resources-2-years</guid>
-            <pubDate>Sat, 25 Jul 2020 04:00:00 GMT</pubDate>
+            <pubDate>Sat, 25 Jul 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>Although I don’t read Hacker News much these days, I do subscribe to <a href="https://hackernewsletter.com/">a newsletter</a> that rounds up the best links every week, and there are almost always one or two gems in there. </p>
 <p>This week my favorite link was this roundup of <a href="https://www.benkuhn.net/progessays/">Essays on Programming I Think About A lot</a> by Ben Kuhn, cataloguing essays on the internet that he comes back to or references repeatedly.  </p>
 <p>I’m now ~2 years into managing people and because <a href="https://www.fastcompany.com/90282088/why-being-a-manager-is-a-career-change-not-a-promotion">Engineering Management is not a promotion</a>, I’ve spent a lot of time leading up to that change and since reading about management in an attempt to avoid being completely clueless at my job<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  </p>
@@ -84,7 +84,7 @@ It’s important to diagnose your situation correctly, because when you get it w
             <title><![CDATA[Fun with Ascii: Putting some console art on my site]]></title>
             <link>https://benmccormick.org/ascii-kusty</link>
             <guid>https://benmccormick.org/ascii-kusty</guid>
-            <pubDate>Wed, 01 Jan 2020 05:00:00 GMT</pubDate>
+            <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>I’ve always enjoyed sites that had easter eggs in their consoles, whether they’re simple and whimsical like Ponyfoo.com</p>
 <p><a
     class="gatsby-resp-image-link"
@@ -304,7 +304,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <title><![CDATA[2019 Roundup]]></title>
             <link>https://benmccormick.org/2019-roundup</link>
             <guid>https://benmccormick.org/2019-roundup</guid>
-            <pubDate>Tue, 31 Dec 2019 05:00:00 GMT</pubDate>
+            <pubDate>Tue, 31 Dec 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>2019 was the 6th full year of this blog, and it was a bit up and down posting wise.  For the first half of the year I published more or less a post a week, with 24 posts from January till July.  But this is only my 2nd post since then.  </p>
 <p>Turns out that starting a new job while learning to be a parent sucks up a lot of time!  I’m not making any promises for 2020, but I expect that my writing rate will fall somewhere in between the first 7 months and last 5 months of 2019.  In the meantime, here’s a brief look back at the year on the blog.</p>
 <p>This was my first year where I spent the full year managing people, and that was reflected in the blog’s topics as well as where I spent my time.  </p>
@@ -360,7 +360,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
             <title><![CDATA[How Software Engineers Produce Value]]></title>
             <link>https://benmccormick.org/how-se-add-value</link>
             <guid>https://benmccormick.org/how-se-add-value</guid>
-            <pubDate>Wed, 18 Dec 2019 05:00:00 GMT</pubDate>
+            <pubDate>Wed, 18 Dec 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>I had the opportunity this week to walk a software engineer who is new to the field through some lessons I’ve learned over the years about how software engineers add value to the business.  It seemed generally applicable, so here’s a cleaned up version of what I shared.</p>
 <hr>
 <h2>What Is Value?</h2>
@@ -413,7 +413,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
             <title><![CDATA[Book Review: Resilient Management]]></title>
             <link>https://benmccormick.org/2019/07/22/book-review-resilient-management</link>
             <guid>https://benmccormick.org/2019/07/22/book-review-resilient-management</guid>
-            <pubDate>Mon, 22 Jul 2019 04:00:00 GMT</pubDate>
+            <pubDate>Mon, 22 Jul 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p><a href="https://abookapart.com/products/resilient-management">Resilient Management</a> by Lara Hogan is a short and useful read for engineering managers who want to think more systematically about how they support their team.  Lara covers concepts like how to connect with a new team, how to encourage growth in your teammates, and how to communicate difficult news.  This is a <em>blog+</em> book: most of the material here has appeared previously in Lara’s blog or newsletter, but for the book it has been cleaned up and organized together in a coherent fashion that makes it greater than the sum of its parts.</p>
 <p>If you’ve followed my <a href="https://benmccormick.org/subscribe">newsletter</a> for a while, you’ll have seen me link to Lara’s work on a regular basis.  Lara’s strength as a teacher is building meaningful exercises for thinking through abstract topics, and that plays out here.  Almost every piece of advice and insight comes with a suggestion on how to start implementing it, or an exercise to help you think deeper about yourself or your situation.  I’ve found her <a href="https://larahogan.me/blog/leadership-style-colors/">leadership colors</a> and her <a href="https://larahogan.me/blog/team-introspection/">MadLibs worksheet for leadership philosophy</a> particularly helpful for me.</p>
 <p>In addition to the helpful exercises, the highlights of the book for me were Lara’s look at the BICEPS model for understanding people’s needs at work, the way she structured her book around a groups evolution over time, and the chapter on communication plans.  I’ve made notes to reference each of those areas the next time I hit a relevant situation.</p>
@@ -425,7 +425,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
             <title><![CDATA[Avoiding Derived State In React]]></title>
             <link>https://benmccormick.org/2019/06/24/derived-state</link>
             <guid>https://benmccormick.org/2019/06/24/derived-state</guid>
-            <pubDate>Mon, 24 Jun 2019 04:00:00 GMT</pubDate>
+            <pubDate>Mon, 24 Jun 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>A lot of advice in the React community is focused around avoiding explicitly storing “derived state” of some type or another.  Some examples of this type of “derived state” that the community warns against:</p>
 <h4>Storing data that is directly derived from another piece of data in redux</h4>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> reducer <span class="token operator">=</span> <span class="token function">createReducer</span><span class="token punctuation">(</span>initialState<span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -508,7 +508,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
             <title><![CDATA[Lessons From Managing A Distributed Team]]></title>
             <link>https://benmccormick.org/2019/06/24/managing-a-distributed-team</link>
             <guid>https://benmccormick.org/2019/06/24/managing-a-distributed-team</guid>
-            <pubDate>Mon, 17 Jun 2019 04:00:00 GMT</pubDate>
+            <pubDate>Mon, 17 Jun 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>Working with people over the internet is different from meeting in an office five days a week.  This isn’t a moral statement.  I’ve done and enjoyed both.  Working with a distributed team requires a different set of skills, especially when you’re a leader.  Today I want to share the most helpful lessons I’ve learned over the last year managing a distributed team.</p>
 <h4>Evaluate process and outcomes, not inputs</h4>
 <p>Focusing on output` is great advice for any team, but it’s easier and more important when managing remote teams.  When you’re not in the office with people, you won’t see when they start in the morning or finish at night.  You won’t be able to tell if they’re taking long coffee breaks or checking Amazon between tasks.  You’ll have to evaluate them on their output and on the methods they use to get work done.</p>
@@ -548,7 +548,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
             <title><![CDATA[Book Review: The Manager's Path]]></title>
             <link>https://benmccormick.org/2019/06/12/book-review-the-managers-path</link>
             <guid>https://benmccormick.org/2019/06/12/book-review-the-managers-path</guid>
-            <pubDate>Wed, 12 Jun 2019 04:00:00 GMT</pubDate>
+            <pubDate>Wed, 12 Jun 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>Titles in the software engineering world are strange.  Without much work, it’s easy to find <em>Senior Engineers</em> with 2 years of professional experience, <em>junior developer</em> job descriptions requesting 5 years of experience, <em>tech lead</em> roles focused purely on technology, <em>tech lead</em> roles where the lead is managing a team, and who can tell the difference between a <em>CTO</em> and a <em>VP of Engineering</em> anyway?  This results in weird title shifts when developers switch jobs, odd or unfair salary distributions, and a world where it is very difficult to understand what a career path looks like in this industry.</p>
 <p>Camille Fournier’s book <a href="https://amzn.to/2F2jG1p">The Manager’s Path</a> steps into this breach by laying out a clear look at an engineering management-focused career path. The book runs through a series of roles: <em>Mentor</em> to <em>Tech Lead</em> to <em>Manager</em> to <em>Manager of Managers</em> all the way up to <em>Executive</em>. For each role she describes what the job is,  walks through what type of challenges you might face in the role after a promotion, and offers practical advice on overcoming those challenges.</p>
 <p>I found it to be an extremely engaging read, and the best description of what it actually looks like to advance in technical leadership roles I’ve ever read.  Because she focuses on skills and responsibilities more than titles, it’s possible to apply her advice across large and small companies, even those with wonky title structures.  It helped me think about what skills I need to be building in my career, and gave me a glimpse of what next steps look like.</p>
@@ -560,7 +560,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
             <title><![CDATA[Thinking About Values]]></title>
             <link>https://benmccormick.org/2019/06/03/thinking-values</link>
             <guid>https://benmccormick.org/2019/06/03/thinking-values</guid>
-            <pubDate>Mon, 03 Jun 2019 04:00:00 GMT</pubDate>
+            <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>As a way to help myself grow in my first year as a manager, I’ve been working through <a href="https://rework.withgoogle.com/guides/managers-develop-and-support-managers/steps/review-googles-new-manager-training/">Google’s New Manager Training</a> which they have generously published online.  One exercise that stood out to me was a “values selection” process, where they encourage managers to select a ranked list of 5-10 words that resonate with them as values from a list of around 400 “values words”.</p>
 <p><a
     class="gatsby-resp-image-link"
@@ -625,7 +625,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
             <title><![CDATA[Herding Lions]]></title>
             <link>https://benmccormick.org/2019/05/27/herding-lions</link>
             <guid>https://benmccormick.org/2019/05/27/herding-lions</guid>
-            <pubDate>Mon, 27 May 2019 04:00:00 GMT</pubDate>
+            <pubDate>Mon, 27 May 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>I used to find myself using the term “herding cats” a lot when confronting inertia, disorganization or ambiguity in work situations.  <a href="https://www.urbandictionary.com/define.php?term=herding%20cats">Urban Dictionary</a> actually endorses this:</p>
 <blockquote>
 <p>The phrase herding cats comes from the common saying that something involving coordination of many different groups or people is as difficult as herding cats. One of the commonly encountered uses of the term in technical fields is the phrase “Managing programmers is like herding cats” or “Managing engineers is like herding cats”. In education it would be “Managing students is like herding cats”.</p>
