@@ -5,7 +5,7 @@ layout: "post"
 path: "/2014/11/24/alternative-javascript"
 description: "A non-comprehensive run-through of the various compile to JS languages out there"
 category: "javascript"
-topics: ['JavaScript']
+topics: ['javascript']
 pageViews: "4502"
 last30pageViews: "23"
 ---

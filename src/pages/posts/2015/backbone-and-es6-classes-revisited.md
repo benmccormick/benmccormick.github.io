@@ -9,7 +9,7 @@ category: "frameworks"
 key: "bb-es6-2"
 readNext: "bb-es6-1,backbone-devs-react,mn-series"
 pageViews: "14438"
-topics: ['JavaScript', 'ECMAScript', 'Backbone']
+topics: ['javascript', 'backbone']
 last30pageViews: "362"
 ---
 

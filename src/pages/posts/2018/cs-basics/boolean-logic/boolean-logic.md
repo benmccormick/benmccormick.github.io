@@ -6,7 +6,7 @@ path: "/2018/03/27/cs-basics-boolean/"
 description: "Breaking down a math concept at the center of programming"
 keywords: "boolean computer science JavaScript"
 category: "computer-science"
-topics: ['Computer Science', 'JavaScript']
+topics: ['computer-science', 'javascript']
 key: "cs-basics-boolean"
 readNext: "cs-basics-variables,cs-for-fe,ten-things-js"
 ---

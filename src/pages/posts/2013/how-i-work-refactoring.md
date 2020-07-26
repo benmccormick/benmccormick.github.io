@@ -5,7 +5,7 @@ layout: "post"
 path: "/2013/02/03/how-i-work-refactoring"
 category: "software-productivity"
 description: "Describing the process that goes behind refactoring code"
-topics: ['Code Quality', 'Architecture']
+topics: ['Code Quality', 'architecture']
 pageViews: "505"
 last30pageViews: "1"
 ---

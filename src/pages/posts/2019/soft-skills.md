@@ -6,7 +6,7 @@ path: "/2019/04/15/soft-skills"
 description: "The other 80% of career skills."
 keywords: ""
 category: "soft-skills"
-topics: []
+topics: ["leadership", "career"]
 key: "soft-skills"
 readNext: "ten-things-js,importance-of-writing,book-review-five-dysfunctions"
 ---

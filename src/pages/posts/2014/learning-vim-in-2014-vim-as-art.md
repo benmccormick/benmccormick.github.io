@@ -8,7 +8,7 @@ keywords: "vim dot command"
 category: "tools"
 readNext: "learning-vim,vim-files,vim-language"
 key: "vim-art"
-topics: ['Vim', 'Text Editors']
+topics: ['vim', 'productivity']
 pageViews: "15243"
 last30pageViews: "56"
 ---

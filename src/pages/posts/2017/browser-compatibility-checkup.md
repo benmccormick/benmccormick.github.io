@@ -7,7 +7,7 @@ description: "It's good news!"
 keywords: "web browsers safari chrome edge firefox grid async await"
 category: "platform"
 key: "browser-compatibility-checkup"
-topics: ['Browsers']
+topics: []
 readNext: "ten-things-js,favorite-interview,following-js-roadmap"
 ---
 

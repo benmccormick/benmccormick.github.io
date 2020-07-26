@@ -6,7 +6,7 @@ path: "/2018/07/15/prime-generation-revisited/"
 description: "Implementing The Sieve Of Eratosthenes in Go"
 keywords: ""
 category: "computer-science"
-topics: ['Math', 'Go']
+topics: ['math']
 key: "prime-generation-revisited"
 readNext: "sieveoferatosthenes,evil-js,code-golf-array-holes"
 ---

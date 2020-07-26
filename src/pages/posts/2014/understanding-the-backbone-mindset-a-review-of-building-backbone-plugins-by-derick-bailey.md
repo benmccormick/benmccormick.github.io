@@ -6,7 +6,7 @@ path: "/2014/07/09/understanding-the-backbone-mindset-a-review-of-building-backb
 category: "reviews"
 description: "A book review of a great deep dive into Backbone best practices"
 readNext: "mn-series,backbone-devs-react,bb-radio"
-topics: ['Backbone', 'Marionette', 'JavaScript', 'Book Review']
+topics: ['backbone', 'javascript', 'book-review']
 pageViews: "12652"
 last30pageViews: "22"
 ---

@@ -6,7 +6,7 @@ path: "/2016/01/08/reusable-code-patterns"
 category: "software-productivity"
 description: "Practical tips on reusing existing code"
 readNext: "readable-code,ll-context,productive-js-dev"
-topics: ['Architecture']
+topics: ['architecture']
 pageViews: "6261"
 last30pageViews: "35"
 ---

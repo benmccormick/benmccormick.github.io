@@ -7,7 +7,7 @@ description: "How does the Internet work anyway?"
 keywords: "hiring interview internet"
 category: "soft-skills"
 key: "favorite-interview"
-topics: ['Interviewing', 'Teams']
+topics: ['management', 'leadership']
 readNext: "ten-things-js,jest-git,orthogonality-css-js"
 ---
 

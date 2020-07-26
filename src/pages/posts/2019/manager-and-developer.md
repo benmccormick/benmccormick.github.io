@@ -6,7 +6,7 @@ path: "/2019/03/25/manager-and-developer"
 description: "What I've learned holding 2 roles"
 keywords: "manager developer"
 category: "soft-skills"
-topics: ['Management', 'Leadership']
+topics: ['management', 'leadership']
 key: "manager-and-developer"
 readNext: "radical-candor-book,how-to-learn,book-review-five-dysfunctions"
 ---

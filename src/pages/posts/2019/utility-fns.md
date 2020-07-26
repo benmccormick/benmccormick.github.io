@@ -6,7 +6,7 @@ path: "/2019/03/11/utility-functions"
 description: "A few helpful functions that I bring along to all of my projects"
 keywords: "utility functions"
 category: "software-productivity"
-topics: []
+topics: ["javascript", "react"]
 key: "utility-functions"
 readNext: "readable-async,how-to-learn,react-confessions"
 ---

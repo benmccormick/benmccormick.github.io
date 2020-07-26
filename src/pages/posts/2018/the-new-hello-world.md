@@ -6,7 +6,7 @@ path: "/2018/04/25/the-new-hello-world/"
 description: "JavaScript's learning curve is getting better again"
 keywords: "JavaScript learning hello world"
 category: "javascript"
-topics: ['JavaScript']
+topics: ['javascript']
 key: "new-hello-world"
 readNext: "ten-things-js,following-js-roadmap,proposals-in-production"
 ---

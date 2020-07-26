@@ -6,7 +6,7 @@ path: "/2018/03/16/proposals-in-production/"
 description: "The problems with using proposed JavaScript features in production"
 keywords: "JavaScript ECMAScript"
 category: "javascript"
-topics: ['ECMAScript', 'JavaScript']
+topics: ['javascript']
 key: "proposals-in-production"
 readNext: "ecma-explanation,following-js-roadmap,ten-things-js"
 ---

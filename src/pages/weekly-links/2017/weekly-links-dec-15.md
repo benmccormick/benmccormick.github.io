@@ -6,7 +6,7 @@ path: "/2017/12/15/weekly-links-12-15-17/"
 description: "The state of JavaScript, Glimmer, and updates to some cool software"
 keywords: "javascript glimmer atom visual studio code bear"
 category: "opinion"
-topics: ['JavaScript', 'Atom']
+topics: ['javascript', 'atom']
 key: "weekly-links-12-15-17"
 ---
 

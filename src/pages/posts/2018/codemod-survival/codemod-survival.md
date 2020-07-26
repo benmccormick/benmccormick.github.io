@@ -6,7 +6,7 @@ path: "/2018/06/18/codemod-survival/"
 description: "Getting started with jscodeshift"
 keywords: "jscodeshift, javascript"
 category: "javascript"
-topics: ['JavaScript']
+topics: ['javascript']
 key: "codemod-survival"
 readNext: "ten-things-js,following-js-roadmap,proposals-in-production"
 ---

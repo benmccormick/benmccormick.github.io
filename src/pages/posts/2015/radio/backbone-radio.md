@@ -8,7 +8,7 @@ keywords: "Backbone, JavaScript, Backbone Radio, Marionette, messaging"
 category: "frameworks"
 key: "bb-radio"
 readNext: "mn-series,backbone-devs-react,bb-es6-1"
-topics: ['Backbone', 'Marionette', 'JavaScript']
+topics: ['backbone', 'javascript']
 pageViews: "20022"
 last30pageViews: "155"
 ---

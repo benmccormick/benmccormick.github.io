@@ -6,7 +6,7 @@ path: "/2018/06/26/javascript-stale-practices/"
 description: "Looking at a few previous JavaScript best practices that are now out of date."
 keywords: "javascript best practices"
 category: "javascript"
-topics: ['JavaScript']
+topics: ['javascript']
 key: "javascript-stale-practices"
 readNext: "new-hello-world,ten-things-js,es6-the-bad-parts"
 ---

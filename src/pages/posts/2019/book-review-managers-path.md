@@ -6,7 +6,7 @@ path: "/2019/06/12/book-review-the-managers-path"
 description: "A wonderfully detailed look at the career path for leadership-focused engineers"
 keywords: "management career book review camille fournier"
 category: "reviews"
-topics: []
+topics: ["leadership", "management"]
 key: "management-path-review"
 amazonlink: https://amzn.to/2F2jG1p
 image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1491973897&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US

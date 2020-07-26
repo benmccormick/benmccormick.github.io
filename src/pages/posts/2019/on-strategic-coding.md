@@ -6,7 +6,7 @@ path: "/2019/02/18/strategic-coding"
 description: "Thinking about architectural concerns is a full time occupation"
 keywords: ""
 category: "fe-architecture"
-topics: ['Architecture', 'JavaScript']
+topics: ['architecture', 'javascript']
 key: "strategies-tactics-moves"
 readNext: "philosophy-of-software-design-book,fe-concerns,feedback-loops"
 ---

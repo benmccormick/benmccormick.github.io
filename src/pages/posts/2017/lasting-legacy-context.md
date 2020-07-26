@@ -8,7 +8,7 @@ keywords: "best practices JavaScript"
 category: "software-productivity"
 readNext: "staying-productive,orthogonality-css-js,readable-code"
 key: "ll-context"
-topics: ['Architecture', 'Code Quality']
+topics: ['architecture']
 pageViews: "269"
 last30pageViews: "52"
 ---

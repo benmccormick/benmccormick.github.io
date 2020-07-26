@@ -7,7 +7,7 @@ description: "How to set up a modern vim config"
 keywords: "vim configuration vimrc"
 category: "tools"
 readNext: "learning-vim,vim-files,vim-language"
-topics: ['Vim', 'Text Editors']
+topics: ['vim', 'productivity']
 pageViews: "39162"
 last30pageViews: "721"
 ---

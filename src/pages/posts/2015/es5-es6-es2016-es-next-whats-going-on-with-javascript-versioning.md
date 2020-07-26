@@ -9,7 +9,7 @@ category: "javascript"
 readNext: "following-js-roadmap,callbacks-to-promises,clean-higher-order-functions"
 key: "ecma-explanation"
 pageViews: "130069"
-topics: ['JavaScript', 'ECMAScript']
+topics: ['javascript']
 last30pageViews: "9013"
 dontfeature: "true"
 ---

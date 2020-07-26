@@ -5,7 +5,7 @@ layout: "post"
 path: "/2014/08/19/the-debugging-toolbox"
 category: "software-productivity"
 description: "The process I use for solving problems"
-topics: ['Code Quality']
+topics: ['productivity']
 pageViews: "824"
 last30pageViews: "1"
 ---

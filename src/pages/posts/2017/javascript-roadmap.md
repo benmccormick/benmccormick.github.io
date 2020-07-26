@@ -6,7 +6,7 @@ path: "/2017/07/10/how-to-follow-the-javascript-roadmap/"
 description: "Keeping up with the language's progress"
 keywords: "javascript roadmap tc39 ecmascript"
 category: "javascript"
-topics: ['JavaScript', 'ECMAScript']
+topics: ['javascript']
 key: "following-js-roadmap"
 readNext: "ecma-explanation,orthogonality-css-js,atom-tips"
 ---

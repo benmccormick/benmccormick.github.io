@@ -6,7 +6,7 @@ path: "/2018/06/05/es6-the-bad-parts/"
 description: "Three years later, what parts of ES6 have I stopped using?"
 keywords: "es6 destructuring const"
 category: "javascript"
-topics: ['JavaScript']
+topics: ['javascript']
 key: "es6-the-bad-parts"
 readNext: "ten-things-js,following-js-roadmap,proposals-in-production"
 ---

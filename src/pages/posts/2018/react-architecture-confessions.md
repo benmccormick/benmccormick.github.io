@@ -6,7 +6,7 @@ path: "/2018/02/07/react-confessions/"
 description: "The mistakes I made while learning React and why I made them"
 keywords: "react architecture mistakes confessions"
 category: "fe-architecture"
-topics: ['React', 'Architecture', 'JavaScript']
+topics: ['react', 'architecture', 'javascript']
 key: "react-confessions"
 readNext: "large-improvements-small-team,ten-things-js,ll-context"
 ---

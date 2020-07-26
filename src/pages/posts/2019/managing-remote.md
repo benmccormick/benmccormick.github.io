@@ -6,7 +6,7 @@ path: "/2019/06/24/managing-a-distributed-team"
 description: "What to do when you can't just walk to your employee's desk."
 keywords: ""
 category: "soft-skills"
-topics: []
+topics: ['leadership', 'management']
 key: "managing-distributed-team"
 readNext: "manager-and-developer,herding-lions,soft-skills"
 blog: 'lions'

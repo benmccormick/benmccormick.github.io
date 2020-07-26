@@ -6,7 +6,7 @@ path: "/2020/07/25/management-resources-2-years"
 description: "Ideas that have shaped my approach"
 keywords: ""
 category: "soft-skills"
-topics: []
+topics: ["leadership", "management"]
 key: "management-resources-2-years"
 readNext: "soft-skills,herding-lions,meetings-concurrency"
 ---

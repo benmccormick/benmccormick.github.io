@@ -6,7 +6,7 @@ path: "/2019/06/24/derived-state"
 description: "What derived state is, what problems it can cause, and how to avoid it"
 keywords: ""
 category: "fe-architecture"
-topics: ['React']
+topics: ['react', 'architecture']
 key: "derived-state"
 readNext: "consistency,reusable-react,book-review-five-dysfunctions"
 ---

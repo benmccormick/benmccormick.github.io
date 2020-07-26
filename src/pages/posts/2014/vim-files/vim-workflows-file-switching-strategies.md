@@ -7,7 +7,7 @@ description: "A look at the different approaches you can take to managing files 
 category: "tools"
 key: "vim-files"
 readNext: "learning-vim,vim-art,vim-language"
-topics: ['Vim', 'Text Editors']
+topics: ['vim', 'productivity']
 pageViews: "5510"
 last30pageViews: "105"
 ---

@@ -8,7 +8,7 @@ keywords: "JavaScript Marionette.js Backbone MVC Model View"
 category: "frameworks"
 readNext: "mn-series,backbone-devs-react,bb-radio"
 pageViews: "25012"
-topics: ['Backbone', 'Marionette', 'JavaScript']
+topics: ['backbone', 'marionette', 'javascript']
 last30pageViews: "381"
 ---
 

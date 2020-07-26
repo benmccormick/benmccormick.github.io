@@ -8,7 +8,7 @@ keywords: "normal curve bell highcharts javascript"
 category: "frameworks"
 readNext: "jest-first,react-component-styles,mobx-first"
 key: "highcharts-normal"
-topics: ['JavaScript', 'Highcharts', 'Math']
+topics: ['javascript', 'highcharts', 'math']
 pageViews: "0"
 last30pageViews: "0"
 ---

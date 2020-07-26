@@ -6,7 +6,7 @@ path: "/2015/11/25/productive-javascript-development"
 category: "software-productivity"
 description: "An examination of what makes JavaScript development productive"
 key: "productive-js-dev"
-topics: ['JavaScript']
+topics: ['javaScript', 'productivity']
 pageViews: "2572"
 last30pageViews: "48"
 ---

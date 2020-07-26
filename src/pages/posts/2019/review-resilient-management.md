@@ -6,7 +6,7 @@ path: "/2019/07/22/book-review-resilient-management"
 description: "A great collection of management wisdom"
 keywords: "lara hogan leadership management"
 category: "reviews"
-topics: ['Leadership', 'Book Review']
+topics: ['leadership', 'book review', 'management']
 key: "resilient-management-book"
 readNext: "radical-candor-book,clean-architecture-book,tech-leads-book"
 ---

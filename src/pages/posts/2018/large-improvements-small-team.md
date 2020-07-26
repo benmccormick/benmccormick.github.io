@@ -7,7 +7,7 @@ description: "How do you keep improving things with limited resources?"
 keywords: "productivity refactoring efficiency team"
 category: "fe-architecture"
 key: "large-improvements-small-team"
-topics: ['Teams', 'Code Quality', 'Leadership']
+topics: ['architecture', 'productivity']
 readNext: "ten-things-js,favorite-interview,ll-context"
 ---
 

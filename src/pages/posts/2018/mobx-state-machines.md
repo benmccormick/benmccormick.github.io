@@ -6,7 +6,7 @@ path: "/2018/05/14/mobx-state-machines-and-flags/"
 description: "Getting the best of state machine and flag patterns"
 keywords: "mobx computed state machines"
 category: "frameworks"
-topics: ['JavaScript']
+topics: ['javaScript']
 key: "mobx-state-machine-flags"
 readNext: "mobx-first,ten-things-js,following-js-roadmap"
 ---

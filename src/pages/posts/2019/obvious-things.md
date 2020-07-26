@@ -6,7 +6,7 @@ path: "/2019/05/18/obvious-things"
 description: "Obvious things that I still end up learning over and over again"
 keywords: ""
 category: "soft-skills"
-topics: []
+topics: ['leadership', 'career']
 key: "obvious-things"
 readNext: "soft-skills,fe-concerns,react-confessions"
 blog: "lions"

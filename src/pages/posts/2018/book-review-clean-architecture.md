@@ -6,7 +6,7 @@ path: "/2018/02/14/book-review-clean-architecture/"
 description: "Uncle Bob's book on architecture is informative, but limits its scope"
 keywords: "SOLID architecture Uncle Bob Robert Martin interfaces"
 category: "reviews"
-topics: ['Architecture', 'Book Review']
+topics: ['architecture', 'book-review']
 key: "clean-architecture-book"
 image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0134494164&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
 amazonlink: https://amzn.to/2RkxQTb

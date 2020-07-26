@@ -6,7 +6,7 @@ path: "/2019/06/03/thinking-values"
 description: "Thinking about values"
 keywords: ""
 category: "soft-skills"
-topics: []
+topics: ['leadership', 'management', 'career']
 key: "thinking-values"
 readNext: "herding-lions,soft-skills,obvious-things"
 blog: 'lions'

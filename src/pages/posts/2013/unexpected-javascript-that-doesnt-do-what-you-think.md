@@ -5,7 +5,7 @@ layout: "post"
 path: "/2013/01/15/unexpected-javascript-that-doesnt-do-what-you-think"
 category: "javascript"
 description: "A quiz for JavaScript developers"
-topics: ['JavaScript']
+topics: ['javascript']
 pageViews: "737"
 last30pageViews: "0"
 ---

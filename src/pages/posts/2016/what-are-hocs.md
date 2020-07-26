@@ -8,7 +8,7 @@ keywords: "react components higher order"
 category: "frameworks"
 key: "what-are-hocs"
 readNext: "react-component-styles,callbacks-to-promises,mobx-first"
-topics: ['React']
+topics: ['react']
 pageViews: "832"
 last30pageViews: "248"
 ---

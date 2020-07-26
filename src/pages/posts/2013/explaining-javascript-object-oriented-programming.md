@@ -5,7 +5,7 @@ layout: "post"
 path: "/2013/01/12/explaining-javascript-object-oriented-programming"
 category: "javascript"
 description: "A look at Object Oriented programming principles in JavaScript"
-topics: ['JavaScript']
+topics: ['javascript']
 pageViews: "1006"
 last30pageViews: "21"
 ---

@@ -60,6 +60,7 @@ const createTopicArchives = async (graphql, createPage) => {
         });
       }
     });
+  console.log(JSON.stringify(Object.keys(topics), null, 2));
   Object.keys(topics).forEach(topicName => {
     const posts = topics[topicName];
     createPage({

@@ -6,7 +6,7 @@ path: "/2018/04/11/book-review-inmates-are-running-the-asylum/"
 description: "Don't judge a book by its first few chapters"
 keywords: "design cooper inmates asylumn"
 category: "reviews"
-topics: ['Book Review', 'Design']
+topics: ['book-review', 'design']
 key: "inmates-book"
 image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0672326140&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
 amazon-link: https://amzn.to/2VgABE8

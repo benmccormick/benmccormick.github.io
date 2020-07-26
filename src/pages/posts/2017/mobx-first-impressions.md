@@ -7,7 +7,7 @@ description: "First impression of managing data with MobX"
 keywords: "mobx JavaScript data React"
 category: "frameworks"
 key: "mobx-first"
-topics: ['Mobx', 'JavaScript', 'React']
+topics: ["javascript", "react"]
 readNext: "jest-first,backbone-devs-react,react-component-styles"
 pageViews: "940"
 last30pageViews: "189"

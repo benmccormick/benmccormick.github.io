@@ -6,7 +6,7 @@ path: "/2018/07/17/quick-tip-logging-breakpoints/"
 description: "Did you know breakpoints can have side effects?"
 keywords: "debugging, console.log, jsparty"
 category: "platform"
-topics: ['JavaScript']
+topics: ['javascript']
 key: "quick-logging-breakpoints"
 readNext: "evil-js,javascript-stale-practices,ten-things-js"
 ---

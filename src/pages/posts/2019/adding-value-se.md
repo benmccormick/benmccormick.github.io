@@ -6,7 +6,7 @@ path: "/how-se-add-value"
 description: "A high level view at how we can turn programming skills into business value"
 keywords: ""
 category: "soft-skills"
-topics: []
+topics: ["career", "leadership", "productivity"]
 key: "how-se-add-value"
 readNext: "strategies-tactics-moves,soft-skills,obvious-things"
 ---

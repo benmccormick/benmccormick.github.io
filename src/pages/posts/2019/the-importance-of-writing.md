@@ -6,7 +6,7 @@ path: "/2019/03/02/the-importance-of-writing"
 description: "Why your ability to write will shape your career"
 keywords: "writing"
 category: "soft-skills"
-topics: []
+topics: ["career", "leadership", "productivity"]
 key: "importance-of-writing"
 readNext: "adequate-talk,fe-concerns,favorite-interview"
 ---

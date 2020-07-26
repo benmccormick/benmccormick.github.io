@@ -6,7 +6,7 @@ path: "/2018/07/04/evil-javascript/"
 description: "The code you write when you don't care about people"
 keywords: "evil javascript proxies"
 category: "javascript"
-topics: ['JavaScript']
+topics: ['javascript']
 key: "evil-js"
 readNext: "es6-the-bad-parts,javascript-stale-practices,mobx-state-machine-flags"
 ---

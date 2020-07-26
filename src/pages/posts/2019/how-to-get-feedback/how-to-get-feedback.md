@@ -6,7 +6,7 @@ path: "/2019/04/22/better-code-feedback"
 description: "Learning more when your code is reviewed"
 keywords: "code reviews deep work"
 category: "soft-skills"
-topics: ['Code Reviews']
+topics: ['code-reviews', 'software-engineering']
 key: "better-code-feedback"
 readNext: "valuable-code-reviews,consistency,soft-skills"
 ---

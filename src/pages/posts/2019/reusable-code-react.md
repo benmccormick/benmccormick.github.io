@@ -6,7 +6,7 @@ path: "/2019/02/11/reusable-react"
 description: "How React uses multiple code sharing patterns to create a great developer experience"
 keywords: "react inheritance composition mixins"
 category: "fe-architecture"
-topics: ['Architecture', 'React']
+topics: ["architecture", "react"]
 key: "reusable-react"
 readNext: "react-confessions,fe-concerns,valuable-code-reviews"
 ---

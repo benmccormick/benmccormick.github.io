@@ -6,7 +6,7 @@ path: "/2018/03/21/cs-basics-variables/"
 description: "A look at one of the most fundamental building blocks of programming"
 keywords: "variables computer science JavaScript"
 category: "computer-science"
-topics: ['Computer Science', 'JavaScript']
+topics: ['Computer Science', 'javascript']
 key: "cs-basics-variables"
 readNext: "cs-for-fe,large-improvements-small-team,ten-things-js"
 ---

@@ -7,7 +7,7 @@ description: "Generating a series of prime numbers"
 keywords: "javascript prime numbers sieve of eratosthenes"
 category: "javascript"
 key: "sieveoferatosthenes"
-topics: ['JavaScript', 'Math']
+topics: ['javascript', 'math']
 readNext: "ten-things-js,favorite-interview,following-js-roadmap"
 ---
 

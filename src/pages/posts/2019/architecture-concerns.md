@@ -6,7 +6,7 @@ path: "/2019/01/07/the-concerns-of-fe-architecture/"
 description: "6 areas of interest in front end software design discussions"
 keywords: "architecture software performance security accessibility"
 category: "fe-architecture"
-topics: ['Architecture', 'JavaScript']
+topics: ['architecture', 'javascript']
 key: "fe-concerns"
 readNext: "feedback-loops,react-confessions,orthogonality-css-js"
 ---

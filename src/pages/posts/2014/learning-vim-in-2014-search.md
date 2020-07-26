@@ -7,7 +7,7 @@ description: "How to search for anything in Vim"
 category: "tools"
 keywords: "vim, search"
 readNext: "learning-vim,vim-files,vim-language"
-topics: ['Vim', 'Text Editors']
+topics: ['vim', 'productivity']
 pageViews: "10328"
 last30pageViews: "25"
 ---

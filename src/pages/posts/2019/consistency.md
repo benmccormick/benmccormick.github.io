@@ -6,7 +6,7 @@ path: "/2019/04/01/consistency"
 description: "How do we encourage standards in a code base without losing perspective?"
 keywords: ""
 category: "software-productivity"
-topics: ['Management', 'Leadership']
+topics: ['management', 'leadership']
 key: "consistency"
 readNext: "utility-functions,reusable-react,book-review-five-dysfunctions"
 ---

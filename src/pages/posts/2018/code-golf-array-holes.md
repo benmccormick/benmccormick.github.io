@@ -6,7 +6,7 @@ path: "/2018/06/19/code-golf-sparse-arrays/"
 description: "Solving a fun little coding challenge"
 keywords: "code golf arrays"
 category: "javascript"
-topics: ['JavaScript']
+topics: ['javaScript']
 key: "code-golf-array-holes"
 readNext: "codemod-survival,ten-things-js,es6-the-bad-parts"
 ---

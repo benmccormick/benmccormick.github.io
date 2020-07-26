@@ -6,7 +6,7 @@ path: "/2019/01/01/book-review-radical-candor"
 description: "The best book I read in 2018"
 keywords: "radical candor leadership management"
 category: "reviews"
-topics: ['Leadership', 'Book Review']
+topics: ['leadership', 'book-review']
 key: "radical-candor-book"
 amazonlink: https://amzn.to/2SABeXz
 image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1250103509&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US

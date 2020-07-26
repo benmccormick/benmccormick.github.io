@@ -8,7 +8,7 @@ keywords: "Jest JavaScript testing React Snapshot Tests"
 category: "tools"
 key: "jest-first"
 readNext: "saving-time-jest,backbone-devs-react,mobx-first"
-topics: ['Jest', 'Testing', 'React']
+topics: ['jest', 'testing', 'react']
 pageViews: "8589"
 last30pageViews: "1140"
 ---

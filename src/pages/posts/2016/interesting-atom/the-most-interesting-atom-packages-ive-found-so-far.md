@@ -7,7 +7,7 @@ category: "tools"
 description: "A rundown of the coolest Atom packages I've seen"
 key: "interesting-atom"
 readNext: "atom-tips,learning-vim,mariana"
-topics: ['Atom', 'Text Editors']
+topics: ['Atom', 'productivity']
 pageViews: "87921"
 last30pageViews: "3357"
 ---

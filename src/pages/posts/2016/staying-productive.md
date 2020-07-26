@@ -6,7 +6,7 @@ path: "/2016/01/25/staying-productive"
 category: "soft-skills"
 description: "Thinking through the environmental factors that lead to productivity"
 key: "staying-productive"
-topics: ['Career Advice']
+topics: ['productivity', 'career']
 pageViews: "1017"
 last30pageViews: "5"
 ---

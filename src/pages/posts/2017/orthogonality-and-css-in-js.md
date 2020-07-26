@@ -7,7 +7,7 @@ description: "Separation of concerns in the context of CSS and JavaScript"
 keywords: "CSS JavaScript Orthogonality Pragmatic Programmer"
 category: "software-productivity"
 key: "orthogonality-css-js"
-topics: ['Architecture', 'CSS', 'Code Quality']
+topics: ['architecture']
 readNext: "jest-first,ll-context,callbacks-to-promises"
 pageViews: "6775"
 last30pageViews: "119"

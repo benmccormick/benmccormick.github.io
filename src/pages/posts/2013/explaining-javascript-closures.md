@@ -6,7 +6,7 @@ path: "/2013/01/08/explaining-javascript-closures"
 category: "javascript"
 description: "Diving into one of JavaScripts more confusing concepts"
 key: "closures"
-topics: ['JavaScript']
+topics: ['javascript']
 pageViews: "164"
 last30pageViews: "0"
 ---

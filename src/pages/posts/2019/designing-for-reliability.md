@@ -6,7 +6,7 @@ path: "/2019/01/21/designing-for-reliability"
 description: "Principles for creating more robust applications"
 keywords: ""
 category: "fe-architecture"
-topics: ['Architecture', 'JavaScript']
+topics: ['architecture', 'javascript']
 key: "reliability-design"
 readNext: "fe-concerns,react-confessions,feedback-loops"
 ---

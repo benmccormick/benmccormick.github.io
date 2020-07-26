@@ -7,7 +7,7 @@ description: "A quick observation about what it means to write readable code"
 keywords: "readable code python"
 category: "software-productivity"
 key: "readable-code"
-topics: ['Code Quality']
+topics: ['architecture']
 pageViews: "254"
 last30pageViews: "19"
 ---

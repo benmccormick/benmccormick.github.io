@@ -6,7 +6,7 @@ path: "/2019/01/28/designing-for-perf"
 description: "Principles for creating more responsive applications"
 keywords: ""
 category: "fe-architecture"
-topics: ['Architecture', 'JavaScript']
+topics: ['architecture', 'javascript']
 key: "perf-design"
 readNext: "reliability-design,fe-concerns,valuable-code-reviews"
 ---

@@ -6,7 +6,7 @@ path: "/2019/01/28/readable-async"
 description: "How async await can improve code maintainability"
 keywords: "async await"
 category: "javascript"
-topics: ['JavaScript']
+topics: ['javascript']
 key: "readable-async"
 readNext: "callbacks-to-promises,fe-concerns,valuable-code-reviews"
 ---

@@ -6,7 +6,7 @@ path: "/2019/01/28/why-react"
 description: "Getting the most out of your code review process"
 keywords: "code reviews"
 category: "frameworks"
-topics: ['Architecture', 'React']
+topics: ['architecture', 'react']
 key: "why-react"
 isDraft: true
 readNext: "react-confessions,fe-concerns,valuable-code-reviews"

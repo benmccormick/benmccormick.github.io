@@ -8,7 +8,7 @@ keywords: "underscore lodash lo-dash JavaScript performance"
 category: "frameworks"
 key: "underscore-lodash"
 readNext: "mn-series,backbone-devs-react,mobx-first"
-topics: ['lodash', 'JavaScript']
+topics: ['lodash', 'javascript']
 pageViews: "116368"
 last30pageViews: "1633"
 ---

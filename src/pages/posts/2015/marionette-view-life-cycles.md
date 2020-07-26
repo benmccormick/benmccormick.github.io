@@ -8,7 +8,7 @@ keywords: "Marionette.js JavaScript Backbone Views life cycle"
 category: "frameworks"
 readNext: "mn-series,backbone-devs-react,bb-radio"
 pageViews: "19611"
-topics: ['Backbone', 'Marionette', 'JavaScript']
+topics: ['backbone', 'javaScript']
 last30pageViews: "321"
 ---
 
