@@ -8,6 +8,7 @@ keywords: "lara hogan leadership management"
 category: "reviews"
 topics: ['leadership', 'book review', 'management']
 key: "resilient-management-book"
+image: "https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1937557820&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US"
 readNext: "radical-candor-book,clean-architecture-book,tech-leads-book"
 ---
 
