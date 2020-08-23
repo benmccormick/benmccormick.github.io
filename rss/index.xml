@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sun, 26 Jul 2020 09:51:23 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 23 Aug 2020 18:32:05 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,72 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[The Management Resources I Keep Coming Back To]]></title>
+            <link>https://benmccormick.org/2020/07/25/management-resources-2-years</link>
+            <guid>https://benmccormick.org/2020/07/25/management-resources-2-years</guid>
+            <pubDate>Sat, 25 Jul 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>Although I don’t read Hacker News much these days, I do subscribe to <a href="https://hackernewsletter.com/">a newsletter</a> that rounds up the best links every week, and there are almost always one or two gems in there. </p>
+<p>This week my favorite link was this roundup of <a href="https://www.benkuhn.net/progessays/">Essays on Programming I Think About A lot</a> by Ben Kuhn, cataloguing essays on the internet that he comes back to or references repeatedly.  </p>
+<p>I’m now ~2 years into managing people and because <a href="https://www.fastcompany.com/90282088/why-being-a-manager-is-a-career-change-not-a-promotion">Engineering Management is not a promotion</a>, I’ve spent a lot of time leading up to that change and since reading about management in an attempt to avoid being completely clueless at my job<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  </p>
+<p>Like Ben, I have a few key essays and books that I reference and go back to over and over again.  These are a mix of books and essays that have shaped how I think about the job of engineering leadership.  The books here are mostly well known, while the essays are more obscure, and might be a surprising choice to highlight if you asked their authors.  But each one has taught me something specific that has helped shape my leadership style. </p>
+<h2>Essays</h2>
+<p><a href="https://larahogan.me/blog/leadership-style-colors/">Leadership Style Colors | Lara Hogan</a></p>
+<blockquote>
+<p>It’s totally natural to embody one a lot—that’s your style! But it’s important to be aware of the other styles/approaches available in your leadership toolbox. A strong leader understands that different styles can be valuable when an environment or situation calls for it. As Herminia Ibarra says in my <a href="https://hbr.org/2015/01/the-authenticity-paradox">favorite article</a> on this subject, “Small changes—in the way we carry ourselves, the way we communicate, the way we interact—often make a world of difference in how effectively we lead.”</p>
+</blockquote>
+<hr>
+<p><a href="https://randsinrepose.com/archives/act-last-read-the-room-and-taste-the-soup/">Taste The Soup | Rands</a></p>
+<blockquote>
+<p>In a meeting where an individual or team is presenting a complex idea or project, my job as the leader is soup tasting. It’s sampling critical parts of the idea to get a sense of how this soup has been or will be made. Who are the critical people? What are the critical parts? Which decisions matter? I don’t know. I do believe that a pre-requisite for leadership is that you have experience. You’ve had trials which have resulted in both impressive successes and majestic failures. These aggregate lessons define your metaphoric soup tasting ability, and when your team brings you a topic to review, it is this experience you apply to ask the critical soup questions.</p>
+</blockquote>
+<hr>
+<p><a href="https://charity.wtf/2019/01/04/engineering-management-the-pendulum-or-the-ladder/">Engineering Management: The Pendulum Or The Ladder | Charity Majors</a></p>
+<blockquote>
+<p>If you like engineering management, your tendency is to go “cool, now I’m a manager”, and move from job to job as an engineering manager, managing team after team of engineers.  But this is a trap.  It is not a sound long term plan.  It leads too many people off to a place they never wanted to end up: technically sidelined.</p>
+</blockquote>
+<hr>
+<p><a href="https://lethain.com/values-oasis/">Trapped in a Values Oasis | Will Larson</a>  </p>
+<blockquote>
+<p>  The rule of thumb here is to lead through ambiguity, and advocate through disagreement.
+It’s important to diagnose your situation correctly, because when you get it wrong, it’ll still feel like you’re making progress, but it’s wholly dependent on you and it’s progress that is likely to come at the cost of undermining both you and your team within the broader organization. It can be extraordinarily frustrating to “disagree and commit” to a policy or value that goes against your personal values, but any worthwhile measure of successful leadership needs to consider your team’s success more highly than your own.</p>
+</blockquote>
+<hr>
+<p><a href="https://kellanem.com/notes/friday-wins">Friday Wins &#x26; A Case Study in Ritual Design | Kellan Elliott-McCrea</a></p>
+<blockquote>
+<p>Culture is what you celebrate. Rituals are the tools you use to shape culture. Yet very few of us think much about ritual design.</p>
+</blockquote>
+<h2>Books</h2>
+<p><a href="https://amzn.to/3jyxofc">Radical Candor | Kim Scott</a></p>
+<blockquote>
+<p>“It’s brutally hard to tell people when they are screwing up. You don’t want to hurt anyone’s feelings; that’s because you’re not a sadist. You don’t want that person or the rest of the team to think you’re a jerk. Plus, you’ve been told since you learned to talk, “If you don’t have anything nice to say, don’t say anything at all.” Now all of a sudden it’s your job to say it. You’ve got to undo a lifetime of training. Management is hard.”</p>
+</blockquote>
+<p>The best thing I’ve read on how to give feedback well.</p>
+<hr>
+<p><a href="https://amzn.to/2D4btMb">Death By Meeting | Patrick Lencioni</a></p>
+<blockquote>
+<p>The hard truth is, bad meetings almost always lead to bad decisions, which is the best recipe for mediocrity.</p>
+</blockquote>
+<p>A lot of this book is focused on very specific advice for specific types of meetings, but the philosophical takeaway it left me with was much simpler; meetings aren’t non-negotiable things that we all must endure.  They can be designed, and that design matters.</p>
+<hr>
+<p><a href="https://amzn.to/3f4EvbH">The Common Rule | James Early</a></p>
+<blockquote>
+<p>All those who want to be attentive to who they are becoming must realize that formation begins with a framework of habits.</p>
+</blockquote>
+<p>This is a book written through the lens of the author’s Christian faith, so if that bothers you, you might prefer <a href="https://amzn.to/3jInPdF">Deep Work</a>, which covers similar ground in a secular manner.  But for me personally, the rituals and worldview laid out in the Common Rule has been life changing, and has been my most helpful tool as I navigate the “Advanced Time Management 501” lifestyle of engineering management</p>
+<hr>
+<p><em>That’s the list for now, but I’m sure I’ll add more as time goes on.</em></p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>I would like to think this has worked, but Dunning-Kruger being what it is, I don’t know how I could really tell you with confidence.</p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[The Management Resources I Keep Coming Back To]]></title>
             <link>https://benmccormick.org/2020/07/25/management-resources-2-years</link>
@@ -619,20 +685,6 @@ Another one of my favorite posts to write, this is a look at what types of thing
 </li>
 </ol>
 </div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Herding Lions]]></title>
-            <link>https://benmccormick.org/2019/05/27/herding-lions</link>
-            <guid>https://benmccormick.org/2019/05/27/herding-lions</guid>
-            <pubDate>Mon, 27 May 2019 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>I used to find myself using the term “herding cats” a lot when confronting inertia, disorganization or ambiguity in work situations.  <a href="https://www.urbandictionary.com/define.php?term=herding%20cats">Urban Dictionary</a> actually endorses this:</p>
-<blockquote>
-<p>The phrase herding cats comes from the common saying that something involving coordination of many different groups or people is as difficult as herding cats. One of the commonly encountered uses of the term in technical fields is the phrase “Managing programmers is like herding cats” or “Managing engineers is like herding cats”. In education it would be “Managing students is like herding cats”.</p>
-</blockquote>
-<p>The phrase correctly captures the difficulty of getting a group of programmers (or even worse <em>teams of programmers</em>) on the same page.  But there’s an inherent arrogance to it.  The implication is that the herder is the adult in the room and everyone else’s pointless individualism is getting in the way.</p>
-<p>There are days that I think I could fix everything if I could just get the *&#x26;$% cats to move in the right direction.  In those situations  I’ve started telling myself that what I’m actually doing is herding <strong>lions</strong>.  How do you herd a group of lions?  I have no idea.  But I know that if you don’t start with a healthy respect for the lion’s capabilities and agenda, it won’t end well for you.</p>
-<p>When you treat people like lions, it’s an opportunity to stop and figure out <em>why</em> they’re not just getting on board with your <em>obvious</em> plan.  It’s an opportunity to learn, to find new ways to motivate people, and maybe even to empower somebody who had been viewing themselves as more of a kitten.  Ultimately the best teams flourish where people can <a href="https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/">be strong contributors, take risks and do work they find meaningful</a>.  They’re teams of lions.</p>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
