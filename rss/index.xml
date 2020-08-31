@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sun, 23 Aug 2020 18:51:42 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 31 Aug 2020 20:06:59 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,37 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Simple Burnout Triage]]></title>
+            <link>https://benmccormick.org/2020/08/31/simple-burnout-triage</link>
+            <guid>https://benmccormick.org/2020/08/31/simple-burnout-triage</guid>
+            <pubDate>Mon, 31 Aug 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>I have a one question triage process when I’m concerned that I or one of my teammates is headed towards burnout:</p>
+<blockquote>
+<p>If you take the pace &#x26; quality of the last 2 months of your life and repeated it again and again, how long would you be able to sustain it?   </p>
+</blockquote>
+<p>Why 2 months?  It’s long enough to be a representative sample of your pace and cut out the rush of a specific project deadline or medium sized stressful life event<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  But it’s a small enough sample to check in regularly, and most people have a fairly clear sense of what their last 2 months have been like for them and can visualize what repeating it would look like.  </p>
+<p>When I ask myself or a teammate this question, it tends to elicit one of 3 responses:</p>
+<p><strong>”I can’t go on like this.”</strong>  The current pace is unsustainable and we’re probably already well into the burnout phase where tasks are being dropped, personal needs are not being met, and everyday life has become overwhelming.  </p>
+<p><strong>”I can make this work, but…”</strong> The most interesting result of this question to me is that it often makes it clear where a priority is being dropped.  “I’m doing good, but I wish I was doing a better job making time for my kids”.  “I’m getting by, but I feel like I only have time for the urgent and I haven’t had a chance to invest in myself”.   “I can do this for a while longer, but I have to figure out a way to live in the moment in the evenings and leave my work at the office”.  The act of visualizing a plausible future often causes people to hone in on what they’re missing.</p>
+<p><strong>”I love my life, and I can keep doing this forever.”</strong>  If this is where you’re at, treasure it and check in regularly to make sure it’s still the case. </p>
+<h3>What next?</h3>
+<p>The question above is laser focused on triage.  Exactly how to handle partial or complete burnout is situation dependent.  But I try to hold to principles of optimizing for the long term and tying my time to my values.  That means while it sometimes may make sense to live in an unsustainable place for a season, I’m always going to weigh that impact on myself, my family and my teammates against the longterm value and take it seriously<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  And if my time spent doesn’t line up with my principles and values for a significant length of time, I know it’s time to implement a plan for change.   </p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1">
+<p>For large life changes like job switches, family emergencies, society-changing pandemics etc it is probably better to assume that short term data is not representative, err on the side of scaling back as needed, and take stock of things on a regular basis. </p>
+<a href="#fnref-1" class="footnote-backref">↩</a>
+</li>
+<li id="fn-2">
+<p>A note on taking things on for a season; It’s only a season if it has a defined endpoint or offramp.  If you and your spouse live in different cities to optimize for your career, or you’re working 70 hour work-weeks because your job demands it, and you don’t know when these things will end, you’re not in a season.  This is your life.</p>
+<a href="#fnref-2" class="footnote-backref">↩</a>
+</li>
+</ol>
+</div>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Better than a wild guess]]></title>
             <link>https://benmccormick.org/2020/08/23/better-than-a-guess</link>
@@ -580,71 +611,6 @@ Another one of my favorite posts to write, this is a look at what types of thing
 <p>I found it to be an extremely engaging read, and the best description of what it actually looks like to advance in technical leadership roles I’ve ever read.  Because she focuses on skills and responsibilities more than titles, it’s possible to apply her advice across large and small companies, even those with wonky title structures.  It helped me think about what skills I need to be building in my career, and gave me a glimpse of what next steps look like.</p>
 <p>The focus on common challenges and how to face them was also helpful, though whole books could (and have) been written on those challenges and how to face them at each level.  The Manager’s Path serves as a good starting point here, identifying the challenges and giving good solid general advice for facing them.  For those new to a role it could help them identify where they’re weak or uncomfortable, and serve as a starting point to a deeper dive into those areas.</p>
 <p>As I read the book, I immediately thought of 4 or 5 people at various points in their career I knew who could benefit greatly from reading this book.  If you’re working in the software world and think that you long term are interested in advancing in your career beyond your current role, there will probably be interesting tidbits in here for you.  Even those who are sure they <strong>don’t</strong> want to be in management could benefit from understanding the perspectives of what engineering managers actually <em>do</em>.  The book is also structured so that the first few chapters are highly relevant for both technical and manager track developers; tech lead is an important role on both tracks.  If you fall into one of those buckets, I highly recommend <a href="https://amzn.to/2F2jG1p">The Manager’s Path</a>.</p>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Thinking About Values]]></title>
-            <link>https://benmccormick.org/2019/06/03/thinking-values</link>
-            <guid>https://benmccormick.org/2019/06/03/thinking-values</guid>
-            <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>As a way to help myself grow in my first year as a manager, I’ve been working through <a href="https://rework.withgoogle.com/guides/managers-develop-and-support-managers/steps/review-googles-new-manager-training/">Google’s New Manager Training</a> which they have generously published online.  One exercise that stood out to me was a “values selection” process, where they encourage managers to select a ranked list of 5-10 words that resonate with them as values from a list of around 400 “values words”.</p>
-<p><a
-    class="gatsby-resp-image-link"
-    href="/static/f585fe7fa02d9e97dc89883f7e623db6/67e88/values-list.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-wrapper"
-    style="position: relative; display: block;  max-width: 570px; margin-left: auto; margin-right: auto;"
-  >
-    <span
-      class="gatsby-resp-image-background-image"
-      style="padding-bottom: 96.14093959731544%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsSAAALEgHS3X78AAAB10lEQVQ4y2WUh47DMAxD8/8/2JnupnvvqcMzQJ3iBggCEzIlUVSK7/dr1+vVjsej3e934wE7nU52uVxMD9j5fLbP5/OD8dVTEFBVlU0mE3s8HgkEG41Gtlwua5en06mt12t7v98eNx6Pbbfb2e12S+dECBnB+/0+gVwmcLFYOKHieNWJsMFgkDpMFXK53+/bbDbzzGC9Xs+Gw+FP1a1Wy1arlWOQdbtdez6f/y2XZZkqQksRttttm8/nfublIslfr5cTkhgZFOeElB4rJDOYBCcOWQ6HQ00G4sB1t5BeqkaEtIeGIuTLmanmg4pxRRQ7XuacJ8ENDC5WSDG0LDt5hbSNTTRlWmEoEltJqBBMLXJPbnANIURwGVnaMPloESVFR03/h1B6YQe1A0Z12+3WTSt7yTLRXrUpSxuCMSeZsQVJOMsy0poE0UpgUZpESGuQQsAOQwoWd1mE4LFCBkeVSuQVooMmJYvI6CKMU1aFYOgtO7mGgHEDwMgejQ1GhfHvAoZcGpLvcr5mYPlWoFWz2azpiEMajUaq1I1Nlk6nY5vNprZ6bEG+ZsRCiA/lhlrLEhthpY8w7CAdIaAacAanTvL9LrT0+e+LFjBx/JkShzT6SyuOBLr3BwgCtgPfjUqrAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-    ></span>
-    <img
-        class="gatsby-resp-image-image"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
-        alt="A list of 400 values words like accountability, accuracy, achievement, altruism and more"
-        title=""
-        src="/static/f585fe7fa02d9e97dc89883f7e623db6/a9e6e/values-list.png"
-        srcset="/static/f585fe7fa02d9e97dc89883f7e623db6/40f08/values-list.png 143w,
-/static/f585fe7fa02d9e97dc89883f7e623db6/d4502/values-list.png 285w,
-/static/f585fe7fa02d9e97dc89883f7e623db6/a9e6e/values-list.png 570w,
-/static/f585fe7fa02d9e97dc89883f7e623db6/67e88/values-list.png 596w"
-        sizes="(max-width: 570px) 100vw, 570px"
-      />
-  </span>
-  </a></p>
-<p>Choosing values is an odd process, because you’re choosing between “goods”.  When I first went through this sheet, I circled over 40 words as values that “resonated” with me.  They’re things that I value and strive for, or wish that I was more like.  Deciding between adventurousness and cowardice is not a “values decision”. A real values decision means that you’re trying to decide whether good traits like adventurousness, belonging, or clear-mindedness are more important to you.</p>
-<p>Management often forces you to choose between goods: Will we ship quicker? Aim for higher quality? How do those choices impact work/life balance for our teams?. It’s hard to know if we’re making good choices, because the results routinely lack clarity.  Indicators lag, causation is fuzzy, and we don’t get to compare to a control group.  Values can be guideposts through ambiguity.  I’ve seen the power of this at a company level in my current gig, where having a set of values that are kept in the spotlight often allows us to weaponize them as decision making tools <sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.</p>
-<p>Going through the list, I eventually cut things down to 20, 12, 10 and then 8.  That still feels like a lot to me, but for each of the 8 I can easily cite work situations I’ve faced in the past month where my response came directly out that value.  In the end I ended up with <em>Integrity</em>, <em>Thankfulness</em>, <em>Community</em>, <em>Prudence</em> (in the <a href="https://en.wikipedia.org/wiki/Prudence">classical sense</a>), <em>Generosity</em>, <em>Continual Improvement</em>, <em>Accountability</em>, <em>Justice</em>.  I find that these are easy to connect to my everyday work when I write them out as more detailed sentences though.</p>
-<ol>
-<li>Act with <em>integrity</em>.</li>
-<li>Live with <em>thankfulness</em> for what I’ve been blessed with.</li>
-<li>I want to work and live life in <em>community</em>.</li>
-<li>Make decisions based on a rational analysis of reality, not feelings and first impressions (<em>Prudence</em>).</li>
-<li>Don’t save it all for myself. Leave margin and be <em>generous</em>.</li>
-<li><em>Continual Improvement</em> + Goodism are a powerful combo<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.</li>
-<li>Be <em>accountable</em> for my responsibilities and hold others to the same.</li>
-<li>Actively work for <em>justice</em></li>
-</ol>
-<p>I’ve published them <a href="/my-values">here</a> with a bit more detail.</p>
-<p>Those are “guideposts” that I can easily quote to myself or post up somewhere, but they still have enough substance to say something meaningful when I’m considering how to handle a low-performing employee, organizational changes, or personal career decisions. I’ve already seen these values bring a clarity to my thinking about tough things in a short period of time.  If you’re interested, I highly recommend checking out <a href="https://rework.withgoogle.com/guides/managers-develop-and-support-managers/steps/review-googles-new-manager-training/">Google’s training</a>.</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>I’ve also seen how quickly this becomes useless when those values are not universally embraced or enforced.</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-<li id="fn-2">
-<p>Probably a separate post, but <em>goodism</em> has always been my response when asked if I’m a perfectionist: “I’m a goodist.  I care about doing work that is good and meets the needed standards, but tend to move to the next challenge when I pass that bar and hit diminishing returns”.</p>
-<a href="#fnref-2" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
