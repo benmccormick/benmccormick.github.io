@@ -58,7 +58,7 @@
     "feed": "^1.1.0",
     "front-matter": "^2.1.0",
     "gh-pages": "^0.12.0",
-    "googleapis": "^20.0.1",
+    "googleapis": "^39.1.0",
     "inquirer": "^3.3.0",
     "sitemap": "^1.8.2",
     "svg-inline-loader": "^0.7.1"
