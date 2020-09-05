@@ -2,26 +2,32 @@ import Typography from 'typography';
 import CodePlugin from 'typography-plugin-code';
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants';
 
-export const sansFontStack =
-  '"mr-eaves-xl-modern", "Helvetica Neue", Arial, sans-serif';
+export const headerFontStack =
+  '"Inter", "Helvetica Neue", "Helvetica", Arial, sans-serif';
 
-export const serifFontStack = '"minion-3", Garamond, serif';
+export const bodyFontStack =
+  '"Work Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif';
 
 const typography = new Typography({
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   //baseLineHeight: 1.666,
-  baseLineHeight: 1.6,
+  baseLineHeight: 1.4,
   headerFontFamily: [
-    'mr-eaves-xl-modern',
+    'Inter',
+    'Helvetica Neue',
+    'Helvetica',
+    'Arial',
     'sans-serif',
     'Apple Color Emoji',
     'Segoe UI Emoji',
     'Segoe UI Symbol',
   ],
   bodyFontFamily: [
-    'minion-3',
-    'Garamond',
-    'serif',
+    'Work Sans',
+    'Helvetica Neue',
+    'Helvetica',
+    'Arial',
+    'sans-serif',
     'Apple Color Emoji',
     'Segoe UI Emoji',
     'Segoe UI Symbol',
@@ -32,10 +38,10 @@ const typography = new Typography({
   plugins: [new CodePlugin()],
   overrideStyles: () => ({
     'h1,h2,h3,h4,h5,h6': {
-      lineHeight: 1.1,
+      lineHeight: 1.2,
     },
     'tt,code': {
-      fontSize: '14px',
+      fontSize: '12px',
     },
     pre: {
       lineHeight: 1.1,

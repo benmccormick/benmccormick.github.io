@@ -1,7 +1,7 @@
 import React from 'react';
 import defer from 'lodash/defer';
 import styled from '@emotion/styled';
-import { sansFontStack } from '../utils/typography';
+import { headerFontStack } from '../utils/typography';
 
 const AdWrapper = styled('div')({
   width: '100%',
@@ -12,7 +12,7 @@ const AdWrapper = styled('div')({
   },
   fontSize: '14px',
   position: 'relative',
-  fontFamily: sansFontStack,
+  fontFamily: headerFontStack,
   background: 'rgba(99, 159, 110, 0.25)',
   border: '1px solid rgba(90, 150, 100, 0.5)',
   padding: '4px',

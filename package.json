@@ -16,6 +16,7 @@
     "gatsby": "^2.24.11",
     "gatsby-plugin-emotion": "^4.0.1",
     "gatsby-plugin-glamor": "2.0.7",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-offline": "2.0.20",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "2.1.4",

@@ -5,7 +5,7 @@ layout: "post"
 path: "/2020/08/23/better-than-a-guess"
 description: "We know more than we think when we don't know something"
 keywords: ""
-category: "soft-skills"
+category: "eng-management"
 topics: ["leadership", "management"]
 key: "better-than-a-guess"
 readNext: "soft-skills,herding-lions,management-resources-2-years"

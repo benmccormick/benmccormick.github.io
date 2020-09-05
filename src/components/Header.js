@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import '../css/header.css';
 import styled from '@emotion/styled';
 import { css } from 'glamor';
-import { sansFontStack } from '../utils/typography';
+import { headerFontStack } from '../utils/typography';
 
 const HeaderWrapper = styled('div')({
   display: 'flex',
@@ -35,13 +35,13 @@ const Logo = styled('h3')({
 });
 
 const LinksWrapper = styled('div')({
-  color: '#999999',
+  color: '#777777',
 });
 
 const headerLink = css({
-  color: '#999999',
+  color: '#777777',
   fontSize: '16px',
-  fontFamily: sansFontStack,
+  fontFamily: headerFontStack,
   ':hover': {
     color: '#F1684E',
   },

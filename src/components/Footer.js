@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import '../css/header.css';
 import styled from '@emotion/styled';
 import { css } from 'glamor';
-import { sansFontStack } from '../utils/typography';
+import { headerFontStack } from '../utils/typography';
 import typography from '../utils/typography';
 
 let { rhythm } = typography;
@@ -14,8 +14,8 @@ const FooterContainer = styled('div')({
   padding: '3em 0 1em 0',
   flexDirection: 'column',
   justifyContent: 'center',
-  backgroundColor: 'RGBA(191, 237, 253, 0.5)',
-  borderTop: '1px solid #68d4fa',
+  backgroundColor: 'rgba(150, 178, 198, 0.4)',
+  borderTop: '1px solid rgb(150, 178, 198)',
 });
 const InnerFooter = styled('div')({
   width: '100%',
@@ -45,11 +45,11 @@ const FooterHeader = styled('h2')({
 
 const footerLink = css({
   fontSize: '16px',
-  fontFamily: sansFontStack,
+  fontFamily: headerFontStack,
 });
 
 const CopyRightContainer = styled('div')({
-  fontFamily: sansFontStack,
+  fontFamily: headerFontStack,
   fontSize: '14px',
   overflow: 'visible',
   whiteSpace: 'nowrap',

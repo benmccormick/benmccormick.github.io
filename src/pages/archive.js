@@ -20,7 +20,7 @@ class CategoryArchive extends React.Component {
             pages={sortedPosts}
             title="Blog"
             showCategory={true}
-            showPopular={true}
+            showPopular={false}
             showTrending={true}
             useBox={true}
           />

@@ -15,7 +15,7 @@ This blog has always been a place to learn through writing regularly, and learn 
 Gatsby is the primary framework for the blog.  It lets me make it as fast as serving static HTML while still having client side routing, hot reloading during development, and the lovely React development model.
 
 
-##### [React](https://reactjs.org/)
+#### [React](https://reactjs.org/)
 
 Is building a blog with React overkill?  Sure probably, but with Gatsby it lets me create a wicked fast site with cool extra features like recommended posts and multiple types of posts while still having a very productive development model.  If you think this is crazy, don't do it.  But it has worked great for me 😊.
 
@@ -43,11 +43,11 @@ Travis CI will do builds of open source projects for free.  Since its open sourc
 I use Cloudflare for caching and to provide an https option while using Github pages.  It's another convenient service where my site fits into the free tier.
 
 
-#### [Adobe Fonts](https://fonts.adobe.com/) ($25 a year)
+#### [Google Fonts](https://fonts.google.com/) ($0 a year)
 
-I use Adobe Fonts (formerly Typekit) to provide the webfonts (Mr Eaves and Minion) for this blog.  I don't love the dynamics of hosted font services like this, but they're the most affordable way to have nice looking typography on the web.
+I use Inter and Work Sans fonts on this site and load them from google fonts.
 
-#### [Bluehost](https://bluehost.com) ($xxx a year)
+#### [Bluehost](https://bluehost.com) ($17 a year)
 
 My domain names are registered with Bluehost.  To be honest, this is a relic of history that I just haven't gotten around to correcting.  They're not great as either a hosting service or as a registrar, and the only thing keeping me there is inertia.
 
@@ -57,16 +57,16 @@ I track user visits with Google Analytics.  This is actually used in the site co
 
 #### [Buttondown](https://buttondown.email/) ($0 a year, will be $30 if I get some more subscribers)
 
-I use Buttondown as the email provider for my [email newsletter](/subscribe). I just started using it in December 2018, but it has been really wonderful so far.
+I use Buttondown as the email provider for my [email newsletter](/subscribe). Its excellent low maintenance .
 
 
 ### Monetization
 
-#### [Carbon Ads](https://www.carbonads.net/) (Currently pays ~$350 a year)
+#### [Carbon Ads](https://www.carbonads.net/) (Currently pays ~$100 a year, was paying $350 when I was more focused on driving traffic)
 
 The ads that I show on the site are all through Carbon.  I use them because they work by targeting a specific niche (developers and designers) and partnering with sites in that industry, rather than tracking people across the internet to determine their interests and showing them a wide variety of ads.
 
-#### [Amazon Referral Links](https://affiliate-program.amazon.com/) (Currently pays ~$100 a year)
+#### [Amazon Referral Links](https://affiliate-program.amazon.com/) (Currently pays <$100 a year)
 
 When I do book reviews or reference other products, I usually include an affiliate link.  I use them because of the UX and selection of their affiliate links, moreso than any particular loyalty to the company.
 

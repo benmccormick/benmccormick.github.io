@@ -8,11 +8,12 @@ import PropTypes from 'prop-types';
 import LinkBox from './LinkBox';
 import ReviewList from './ReviewList';
 import LinkList from './LinkList';
-import { sansFontStack } from '../utils/typography';
+import { headerFontStack } from '../utils/typography';
+import PageLink from './PageLink';
 
 let bottomLink = css({
   boxShadow: 'none',
-  fontFamily: sansFontStack,
+  fontFamily: headerFontStack,
   textDecoration: 'none',
 });
 
@@ -22,14 +23,6 @@ const Bold = styled('span')({
 
 const Section = styled('div')({
   margin: '1.5rem 0',
-});
-
-const TriColumnSection = styled('div')({
-  margin: '1.5rem 0',
-  display: 'grid',
-  gridTemplateColumns: '30% 30% 30%',
-  gridTemplateRows: '1fr',
-  gridColumnGap: '5%',
 });
 
 const Spacer = styled('div')({
@@ -57,7 +50,7 @@ export class HomeMenu extends React.Component {
   render() {
     let { sortedPosts, sortedReviews } = this.props;
     let firstPosts = take(sortedPosts, 3);
-    let firstReviews = take(sortedReviews, 4);
+    let firstReviews = take(sortedReviews, 3);
     let reviewRegex = /Book Review: (.+)/;
     let getReviewTitle = page => {
       let title = get(page, 'data.title') || page.path;
@@ -69,8 +62,12 @@ export class HomeMenu extends React.Component {
         <h1> The Latest Articles </h1>
         {firstPosts.map(post => (
           <Section>
-            <LinkBox
+            <PageLink
               page={post}
+              showCategory={true}
+              key={post.path}
+              showDate={true}
+              showDescription={true}
               titleFn={page => (
                 <span>
                   <Bold>{get(page, 'data.title') || page.path}</Bold>
@@ -90,14 +87,18 @@ export class HomeMenu extends React.Component {
         <Spacer />
         <h1> The Latest Book Reviews </h1>
         <Section>
-          <ReviewList
-            pages={firstReviews}
-            titleFn={page => (
-              <span>
-                <Bold>{getReviewTitle(page)}</Bold>
-              </span>
-            )}
-          />
+          {firstReviews.map(post => (
+            <Section>
+              <PageLink
+                page={post}
+                showCategory={true}
+                key={post.path}
+                showDate={true}
+                showDescription={true}
+                titleFn={getReviewTitle}
+              />
+            </Section>
+          ))}
         </Section>
         <hr />
         <div>

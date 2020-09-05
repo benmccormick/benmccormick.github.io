@@ -3,13 +3,13 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { getPopularPosts } from '../utils/page-helpers';
-import { sansFontStack } from '../utils/typography';
+import { headerFontStack } from '../utils/typography';
 
 const Container = styled('div')({
   display: 'flex',
   alignItems: 'baseline',
   flexWrap: 'wrap',
-  fontFamily: sansFontStack,
+  fontFamily: headerFontStack,
   fontSize: '16px',
 });
 

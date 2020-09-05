@@ -12,10 +12,7 @@ import { Ad } from '../components/Ad';
 import { EmailSubscribe } from '../components/EmailSubscribe';
 import { BlogPostHeadContent } from '../components/BlogPostHeadContent';
 import Layout from '../components/Layout';
-// import typography from '../utils/typography';
-// import PostFooter from '../components/PostFooter';
 import styled from '@emotion/styled';
-// import { serifFontStack } from '../utils/typography';
 import CategoryTag from '../components/CategoryTag';
 import { Link } from 'gatsby';
 import '../utils/kusty';
@@ -26,18 +23,18 @@ const Title = styled('h1')({
 });
 
 const InfoBox = styled('div')({
-  fontSize: '14px',
+  fontSize: '13px',
   '& > h4': {
     fontSize: '20px',
     marginBottom: '6px',
   },
   '& > h6': {
-    fontSize: '18px',
+    fontSize: '16px',
     marginBottom: '6px',
     marginTop: '12px',
   },
-  backgroundColor: 'RGBA(191,237,253,0.5)',
-  border: '1px solid #68d4fa',
+  backgroundColor: 'rgba(150, 178, 198, 0.4)',
+  border: '1px solid rgb(150, 178, 198)',
   padding: '0.5rem',
 });
 

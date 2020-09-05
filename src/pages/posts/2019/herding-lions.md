@@ -5,7 +5,7 @@ layout: "post"
 path: "/2019/05/27/herding-lions"
 description: "Creating change starts with respect"
 keywords: ""
-category: "soft-skills"
+category: "eng-management"
 topics: ['leadership', 'management']
 key: "herding-lions"
 readNext: "soft-skills,radical-candor-book,obvious-things"

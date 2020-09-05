@@ -11,13 +11,13 @@ import flame from '../svg/flame.svgi';
 import Icon from './Icon';
 import CategoryTag from './CategoryTag';
 import { css } from 'glamor';
-import { sansFontStack, serifFontStack } from '../utils/typography';
+import { headerFontStack, bodyFontStack } from '../utils/typography';
 
 export const TrendingIcon = () => <Icon color="#E55934" icon={flame} />;
 export const FavoriteIcon = () => <Icon color="#D7AF70" icon={star} />;
 
 const boxClass = css({
-  fontFamily: sansFontStack,
+  fontFamily: headerFontStack,
   fontSize: '120%',
   // 1px margin on the size in order to fix border on Safari
   margin: `0 1px ${typography.rhythm(1 / 2)} 1px`,
@@ -57,7 +57,7 @@ const CategoryArea = styled('div')({
 });
 
 const PageDescription = styled('p')({
-  fontFamily: serifFontStack,
+  fontFamily: bodyFontStack,
   // fontStyle: 'italic',
   opacity: '0.6',
   fontSize: '18px',

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { HeadContent } from '../components/HeadContent';
 import { getSortedReviews } from '../utils/page-helpers';
-import ReviewList from '../components/ReviewList';
 import Layout from '../components/Layout';
 import get from 'lodash/get';
+import LinkList from '../components/LinkList';
 
 class ReviewsArchive extends React.Component {
   render() {
@@ -22,7 +22,7 @@ class ReviewsArchive extends React.Component {
       <Layout>
         <div ref={el => (this.archiveContainer = el)}>
           <HeadContent keywords="blog,articles,posts,javascript,software tools,web development" />
-          <ReviewList
+          <LinkList
             pages={sortedPosts}
             title="Book Reviews"
             titleFn={page => getReviewTitle(page)}

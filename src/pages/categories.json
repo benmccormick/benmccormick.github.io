@@ -14,7 +14,7 @@
       "description": "These posts cover the JavaScript language, its evolution over time, and practical usage examples.",
       "key": "javascript",
       "icon": "code",
-      "color": "rgb(42, 194, 240)",
+      "color": "#0193e8",
       "altColor": "#333",
       "subscribeText": "JavaScript"
     },
@@ -89,6 +89,14 @@
       "icon": "smiley",
       "color": "#FF3366",
       "subscribeText": "Soft Skills"
+    },
+    {
+      "title": "Engineering Management",
+      "description": "These posts cover the ideas and challenges of engineering management",
+      "key": "eng-management",
+      "icon": "smiley",
+      "color": "#FF3366",
+      "subscribeText": "Engineering Management"
     }
   ]
 }

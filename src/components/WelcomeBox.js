@@ -32,8 +32,8 @@ export class WelcomeBox extends React.Component {
             {' '}
             I make software in Durham, North Carolina. This is my site where I
             write about <strong>engineering leadership </strong> and{' '}
-            <strong>shipping web software</strong>. If you're interested seeing
-            more, feel free to <Link to="/subscribe">subscribe</Link>.
+            <strong>productive product teams</strong>. If you're interested
+            seeing more, feel free to <Link to="/subscribe">subscribe</Link>.
           </p>
           <p>
             First time on the site? <Link to="/start-here">Start here.</Link>

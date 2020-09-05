@@ -94,6 +94,15 @@ module.exports = {
         color: '#FF3366',
         subscribeText: 'Soft Skills',
       },
+      {
+        title: 'Engineering Management',
+        description:
+          'These posts cover the ideas and challenges of engineering management',
+        key: 'eng-management',
+        icon: 'smiley',
+        color: '#FF3366',
+        subscribeText: 'Engineering Management',
+      },
     ],
     featuredTopics: [
       'JavaScript',
@@ -112,6 +121,13 @@ module.exports = {
       options: {
         name: 'pages',
         path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Inter`, `Work Sans`],
+        display: 'swap',
       },
     },
     {

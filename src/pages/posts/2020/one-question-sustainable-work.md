@@ -5,7 +5,7 @@ layout: "post"
 path: "/2020/08/31/simple-burnout-triage"
 description: "One question to find out whether my pace is sustainable"
 keywords: ""
-category: "soft-skills"
+category: "eng-management"
 topics: ["leadership", "management"]
 key: "simple-burnout-triage"
 readNext: "soft-skills,herding-lions,management-resources-2-years"

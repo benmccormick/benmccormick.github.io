@@ -19,7 +19,7 @@ a:hover {
 }
 
 blockquote {
-    border-left: 5px solid rgb(42, 194, 240);
+    border-left: 5px solid #0193e8;
     /*font-style: italic;*/
     background: #EEE;
     font-weight: 400;
@@ -33,7 +33,7 @@ blockquote p {
 }
 
 h3 {
-    color: rgb(42, 194, 240);
+    color: #0193e8;
 }
 
 h4 {
@@ -59,11 +59,11 @@ h4 {
 
 
 strong {
-  color: rgba(99, 159, 110, 1.00);
+  color: #222;
 }
 
 em {
-  color: rgba(154, 116, 170, 1.00);
+  color: #666;
 }
 
 
