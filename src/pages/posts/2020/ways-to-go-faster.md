@@ -10,11 +10,12 @@ topics: ["leadership", "productivity"]
 key: "how-teams-go-faster"
 readNext: "better-than-a-guess,herding-lions,management-resources-2-years"
 ---
+I recently discovered John Cutler's [Twitter](https://twitter.com/johncutlefish) and [blog](https://cutlefish.substack.com/).  Everything I've read from him so far is excellent and highly recommended, but this table in particular felt like it was worth sharing.
 
 <blockquote class="twitter-tweet" data-conversation="none" data-theme="light"><p lang="en" dir="ltr">13/13 Feels like fast ... is actually faster <a href="https://t.co/c87USFeu6b">pic.twitter.com/c87USFeu6b</a></p>&mdash; John Cutler (@johncutlefish) <a href="https://twitter.com/johncutlefish/status/1145240762243698688?ref_src=twsrc%5Etfw">June 30, 2019</a></blockquote> 
 
 
-I recently discovered John Cutler's [Twitter](https://twitter.com/johncutlefish) and [blog](https://cutlefish.substack.com/).  Everything I've read from him so far is excellent and highly recommended, but this table in particular felt like it was worth sharing.  It's amazing to me how unhelpful our intuition often is when we're under pressure to speed up.  I've observed clear examples of several of these items personally over the last several years.
+It's amazing to me how unhelpful our intuition often is when we're under pressure to speed up.  I've observed clear examples of several of these items personally over the last several years.
 
 - I've seen my team go significantly faster *with less stress* by shifting projects to being serialized with pairing and collaboration rather than giving everyone their own project [^1]
 
