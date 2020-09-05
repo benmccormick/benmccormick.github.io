@@ -10,13 +10,13 @@
 <url> <loc>https://benmccormick.org/subscribe</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/my-values</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2012/11/09/bayesian-witch-hunt</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/readinglist</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2012/12/20/awesome-software-trello</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2012/12/29/i-hate-computing-ecosystems</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2012/11/09/bayesian-witch-hunt</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2012/12/29/cleaning-my-digital-house</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2012/12/29/i-hate-computing-ecosystems</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2012/10/06/it-took-a-month-to-get-sick-of-php</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2012/12/25/medium-the-end-of-history-and-the-last-website</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/readinglist</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2012/11/08/shutdown-tiles-for-windows-8-start-screen</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2012/11/07/sync-multiple-google-calendars-in-windows-8</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2012/09/19/the-iphone-5-conversation-so-far</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -46,7 +46,6 @@
 <url> <loc>https://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/07/11/new-twitter-feed-and-practical-vim-giveaway</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/07/24/one-day-left-in-practical-vim-giveaway</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2014/07/09/understanding-the-backbone-mindset-a-review-of-building-backbone-plugins-by-derick-bailey</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2015/12/31/2015-roundup-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2015/06/15/book-review-talking-with-tech-leads</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -100,6 +99,7 @@
 <url> <loc>https://benmccormick.org/2020/07/25/management-resources-2-years</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2020/08/23/better-than-a-guess</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2020/08/31/simple-burnout-triage</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2020/09/05/how-teams-go-faster</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/11/10/friday-links/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/11/03/friday-links/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/12/01/weekly-links-12-01-17/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -126,6 +126,7 @@
 <url> <loc>https://benmccormick.org/2019/01/30/book-review-info-we-trust</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2019/06/03/thinking-values</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/ascii-kusty</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2014/07/09/understanding-the-backbone-mindset-a-review-of-building-backbone-plugins-by-derick-bailey</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2012/12/30/sublime-text-for-javascript-keyboard-shortcuts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2013/01/25/career-fairs-how-to-not-get-hired-and-how-to-give-yourself-a-chance</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2013/03/23/creating-a-build-system-for-a-coffeescript-project-with-ant</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -147,9 +148,9 @@
 <url> <loc>https://benmccormick.org/2014/07/07/learning-vim-in-2014-working-with-files</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/12/10/marionette-explained-connecting-your-data-to-your-views</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/10/13/setting-up-your-text-editor-for-javascript-development</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2014/12/02/the-case-for-marionette-js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/08/19/the-debugging-toolbox</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/11/12/underscore-vs-lodash</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2014/12/02/the-case-for-marionette-js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2015/12/30/es6-patterns-converting-callbacks-to-promises</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2015/06/08/how-jquery-works-an-introduction</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2015/01/05/marionette-view-life-cycles</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
