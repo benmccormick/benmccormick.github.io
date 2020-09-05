@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Sat, 05 Sep 2020 18:06:17 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 05 Sep 2020 18:59:01 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -19,8 +19,9 @@
             <link>https://benmccormick.org/2020/09/05/how-teams-go-faster</link>
             <guid>https://benmccormick.org/2020/09/05/how-teams-go-faster</guid>
             <pubDate>Sat, 05 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<blockquote class="twitter-tweet" data-conversation="none" data-theme="light"><p lang="en" dir="ltr">13/13 Feels like fast ... is actually faster <a href="https://t.co/c87USFeu6b">pic.twitter.com/c87USFeu6b</a></p>&mdash; John Cutler (@johncutlefish) <a href="https://twitter.com/johncutlefish/status/1145240762243698688?ref_src=twsrc%5Etfw">June 30, 2019</a></blockquote> 
-<p>I recently discovered John Cutler’s <a href="https://twitter.com/johncutlefish">Twitter</a> and <a href="https://cutlefish.substack.com/">blog</a>.  Everything I’ve read from him so far is excellent and highly recommended, but this table in particular felt like it was worth sharing.  It’s amazing to me how unhelpful our intuition often is when we’re under pressure to speed up.  I’ve observed clear examples of several of these items personally over the last several years.</p>
+            <content:encoded><![CDATA[<p>I recently discovered John Cutler’s <a href="https://twitter.com/johncutlefish">Twitter</a> and <a href="https://cutlefish.substack.com/">blog</a>.  Everything I’ve read from him so far is excellent and highly recommended, but this table in particular felt like it was worth sharing.</p>
+<blockquote class="twitter-tweet" data-conversation="none" data-theme="light"><p lang="en" dir="ltr">13/13 Feels like fast ... is actually faster <a href="https://t.co/c87USFeu6b">pic.twitter.com/c87USFeu6b</a></p>&mdash; John Cutler (@johncutlefish) <a href="https://twitter.com/johncutlefish/status/1145240762243698688?ref_src=twsrc%5Etfw">June 30, 2019</a></blockquote> 
+<p>It’s amazing to me how unhelpful our intuition often is when we’re under pressure to speed up.  I’ve observed clear examples of several of these items personally over the last several years.</p>
 <ul>
 <li>
 <p>I’ve seen my team go significantly faster <em>with less stress</em> by shifting projects to being serialized with pairing and collaboration rather than giving everyone their own project <sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup></p>
