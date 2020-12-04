@@ -31,7 +31,7 @@
     "gatsby-transformer-sharp": "2.1.21",
     "glamor": "^2.20.40",
     "glamorous": "^4.9.1",
-    "highlight.js": "^9.7.0",
+    "highlight.js": "^10.4.1",
     "lodash": "^4.17.19",
     "ncp": "^2.0.0",
     "prettier": "^1.5.2",
