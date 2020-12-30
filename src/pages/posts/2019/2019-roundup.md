@@ -16,7 +16,7 @@ Turns out that starting a new job while learning to be a parent sucks up a lot o
 
 This was my first year where I spent the full year managing people, and that was reflected in the blog's topics as well as where I spent my time.  
 
-### Most Read Posts Published in 2018
+### Most Read Posts Published in 2019
 
 - [Reusable Code In React: Inheritance, Composition, Decorators and Mixins](https://benmccormick.org/2019/02/11/reusable-react) The most popular post for the year was also one of my favorites: a dive into the various mechanisms React provides for reusing code.
 
@@ -31,7 +31,7 @@ Another one of my favorite posts to write, this is a look at what types of thing
 
 JavaScript (ES6), React (including hooks), PostgreSQL, lodash, Jest, Immer, CSS Modules, Redux, 
 
-### Tech I want to try in 2019
+### Tech I want to try in 2020
 
 We're starting to roll out TypeScript at [Kustomer](https://www.kustomer.com/) and I'm excited to use it in production for the first time.  My code time is more limited these days, so that will probably be my main area for learning as I focus more on helping other people get stuff done.
 
