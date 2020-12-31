@@ -16,7 +16,7 @@ I only published 5 posts this year, with the posts generally focused on what I w
 
 ### Most Read Post Published in 2020
 
-- [Simple Burnout Triage](https://benmccormick.org/2020/08/31/simple-burnout-triage) This post got picked up by [The Changelog](https://changelog.com/) which led to a pretty large spike -- but it also is obviously a topic that a lot of people are working through in 2020.  Given that this got 70x more views than any of my other new posts this year, it can hog the summary spotlight all by itself this year. 
+[Simple Burnout Triage](https://benmccormick.org/2020/08/31/simple-burnout-triage) - This post got picked up by [The Changelog](https://changelog.com/) which led to a pretty large spike -- but it also is obviously a topic that a lot of people are working through in 2020.  Given that this got 70x more views than any of my other new posts this year, it can hog the summary spotlight all by itself this year. 
 
 
 ### Languages and Libraries I used a lot of in 2020
@@ -36,7 +36,9 @@ My code time is limited these days -- but I'd like to go deeper into some of the
 
 ### Blogs I read every post from in 2020
 
-[Irrational Exuberance! by Will Larson](https://lethain.com/), [Lara Hogan's Engineering Leadership blog and newsletter](https://larahogan.me/), [Rands In Repose](http://randsinrepose.com/) 
+- [Irrational Exuberance! by Will Larson](https://lethain.com/) 
+- [Lara Hogan's Engineering Leadership blog and newsletter](https://larahogan.me/)
+- [Rands In Repose](http://randsinrepose.com/) 
 
 
 ### Software I used (nearly) every day in 2020
