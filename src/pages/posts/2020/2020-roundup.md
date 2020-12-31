@@ -1,6 +1,6 @@
 ---
 title: "2020 Roundup"
-date: "2020/12/31"
+date: "2020/12/30"
 layout: "post"
 path: "/2020-roundup"
 category: "meta"
