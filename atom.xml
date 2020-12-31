@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2020-12-30T23:28:14Z</updated>
+    <updated>2020-12-31T01:42:27Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -28,9 +28,7 @@
         <content type="html"><![CDATA[<p>2020 was the 7th full year of this blog, and it was by far the quietest in terms of output.  For reasons that are both obvious (global pandemic!) and personal (toddler, puppy, still learning a new job) writing has been on the backburner for a year.  I hope to change that in 2021, but with another child on the way in February I’m not foolish enough to make any promises here. </p>
 <p>I only published 5 posts this year, with the posts generally focused on what I was reading and learning as an engineering manager.  </p>
 <h3>Most Read Post Published in 2020</h3>
-<ul>
-<li><a href="https://benmccormick.org/2020/08/31/simple-burnout-triage">Simple Burnout Triage</a> This post got picked up by <a href="https://changelog.com/">The Changelog</a> which led to a pretty large spike — but it also is obviously a topic that a lot of people are working through in 2020.  Given that this got 70x more views than any of my other new posts this year, it can hog the summary spotlight all by itself this year. </li>
-</ul>
+<p><a href="https://benmccormick.org/2020/08/31/simple-burnout-triage">Simple Burnout Triage</a> - This post got picked up by <a href="https://changelog.com/">The Changelog</a> which led to a pretty large spike — but it also is obviously a topic that a lot of people are working through in 2020.  Given that this got 70x more views than any of my other new posts this year, it can hog the summary spotlight all by itself this year. </p>
 <h3>Languages and Libraries I used a lot of in 2020</h3>
 <p>JavaScript (ES6 + TypeScript), React, Node + Express, lodash, Jest, Redux</p>
 <p>But realistically this was my first year spending significantly more time focused on people &#x26; product management than hands on software work</p>
@@ -39,7 +37,11 @@
 <h3>Blogs I started following in 2020</h3>
 <p><a href="https://cutlefish.substack.com/">The Beautiful Mess by John Cutler</a></p>
 <h3>Blogs I read every post from in 2020</h3>
-<p><a href="https://lethain.com/">Irrational Exuberance! by Will Larson</a>, <a href="https://larahogan.me/">Lara Hogan’s Engineering Leadership blog and newsletter</a>, <a href="http://randsinrepose.com/">Rands In Repose</a> </p>
+<ul>
+<li><a href="https://lethain.com/">Irrational Exuberance! by Will Larson</a> </li>
+<li><a href="https://larahogan.me/">Lara Hogan’s Engineering Leadership blog and newsletter</a></li>
+<li><a href="http://randsinrepose.com/">Rands In Repose</a> </li>
+</ul>
 <h3>Software I used (nearly) every day in 2020</h3>
 <p>MacOS/iOS, Google Search, Chrome, GMail/MailPlane 3, Twitter/Tweetbot, Feedbin/Reeder, iMessage, Slack, Jira, 1Password, VS Code, iTerm, Fish Shell, Github, Fantastical, Spotify, Bear -> Roam Research, CloudApp, Dash, Postman, Complice</p>
 <h3>Best Technical Books I read in 2020</h3>
