@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Thu, 31 Dec 2020 01:42:27 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 31 Dec 2020 02:07:06 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -18,7 +18,7 @@
             <title><![CDATA[2020 Roundup]]></title>
             <link>https://benmccormick.org/2020-roundup</link>
             <guid>https://benmccormick.org/2020-roundup</guid>
-            <pubDate>Thu, 31 Dec 2020 00:00:00 GMT</pubDate>
+            <pubDate>Wed, 30 Dec 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>2020 was the 7th full year of this blog, and it was by far the quietest in terms of output.  For reasons that are both obvious (global pandemic!) and personal (toddler, puppy, still learning a new job) writing has been on the backburner for a year.  I hope to change that in 2021, but with another child on the way in February I’m not foolish enough to make any promises here. </p>
 <p>I only published 5 posts this year, with the posts generally focused on what I was reading and learning as an engineering manager.  </p>
 <h3>Most Read Post Published in 2020</h3>
