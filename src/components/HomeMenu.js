@@ -64,10 +64,11 @@ export class HomeMenu extends React.Component {
           <Section>
             <PageLink
               page={post}
-              showCategory={true}
+              showCategory
               key={post.path}
-              showDate={true}
-              showDescription={true}
+              showDate
+              showDescription
+              showYear
               titleFn={page => (
                 <span>
                   <Bold>{get(page, 'data.title') || page.path}</Bold>
@@ -91,10 +92,11 @@ export class HomeMenu extends React.Component {
             <Section>
               <PageLink
                 page={post}
-                showCategory={true}
+                showCategory
                 key={post.path}
-                showDate={true}
-                showDescription={true}
+                showDate
+                showDescription
+                showYear
                 titleFn={getReviewTitle}
               />
             </Section>

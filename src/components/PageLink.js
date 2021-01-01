@@ -72,18 +72,19 @@ const TitleRow = styled('div')({
 
 class PageLink extends React.Component {
   render() {
-    let { page, showDate, showDescription, titleFn } = this.props;
+    let { page, showDate, showDescription, titleFn, showYear } = this.props;
     const _title = titleFn(page);
     let categoryInfo = getCategory(page.data.category);
     const prettyCategory = get(categoryInfo, 'title');
     const categoryLink = `/category/${page.data.category}`;
+    const dateFormat = showYear ? 'MMM Do YYYY' : 'MMM Do';
     return (
       <ListItem>
         <PageWrapper>
           <div>
             {showDate ? (
               <Header>
-                {format(parse(page.data.date), 'MMM Do')}{' '}
+                {format(parse(page.data.date), dateFormat)}{' '}
                 <Link to={categoryLink}>{prettyCategory}</Link>
               </Header>
             ) : null}
@@ -108,12 +109,14 @@ PageLink.propTypes = {
   showCategory: PropTypes.bool.isRequired,
   showDescription: PropTypes.bool.isRequired,
   titleFn: PropTypes.func.isRequired,
+  showYear: PropTypes.bool.isRequired,
 };
 
 PageLink.defaultProps = {
   showCategory: true,
   showDate: true,
   showDescription: true,
+  showYear: false,
 };
 
 export default PageLink;
