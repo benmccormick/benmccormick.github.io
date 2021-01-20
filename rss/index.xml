@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Wed, 20 Jan 2021 01:33:37 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 20 Jan 2021 01:59:09 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -19,8 +19,8 @@
             <link>https://benmccormick.org/2021/01/19/driving-change-without-authority</link>
             <guid>https://benmccormick.org/2021/01/19/driving-change-without-authority</guid>
             <pubDate>Tue, 19 Jan 2021 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>I recently had a conversation with a coworker where they mentioned that they didn’t feel like they had the same power to change other people’s behavior that I did since I was a manager.  It’s a common sentiment that has some truth but usually feels somewhere between laughable and infuriating when you’re actually in the manager seat.  Managing people well involves very little imposing your will on a situation and a lot more driving change indirectly.  The good news is that most of the techniques for this type of indirect change not only can be used by non-managers, many of them are actually more effective coming from engineers directly.  A lot of these techniques deserve posts of their own and I intend to keep these short, so consider this a brainstorming list for the next time you want to change something on your team and don’t feel empowered to do so.</p>
-<h3>Build The Thing You Want To Exist</h3>
+            <content:encoded><![CDATA[<p>I recently had a conversation with a coworker where they mentioned that they didn’t feel like they had the same power to change other people’s behavior that I did since I was a manager.  It’s a common sentiment that has some truth but usually will make a manager start laughing or crying if you suggest that it represents reality.  Managing people well involves very little imposing your will on a situation and a lot more driving change indirectly.  The good news is that most of the techniques for this type of indirect change not only can be used by non-managers, many of them are actually more effective coming from engineers directly.  A lot of these techniques deserve posts of their own and I intend to keep these short, so consider this a brainstorming list for the next time you want to change something on your team and don’t feel empowered to do so.</p>
+<h3>Build the thing you want to exist</h3>
 <p>A software engineer’s ultimate power move is the ability to create new things.  If you’re in an argument on the best path forward for a project, just going ahead and building the thing you think should exist can be incredibly powerful.  This could be a proof of concept for larger things, or the full thing for smaller features.  Opposition and bikeshedding often melts away in the face of a working example of the future.  This is especially effective if the argument has been about whether your preferred solution is possible.  </p>
 <p>Note that this path can be overused, is helped along by a gentle touch, and I wouldn’t recommend it if you put so much time and effort into it that you’d be crushed if people still said no.  But it is a powerful way to move discussions forward.</p>
 <h3>Make it easier</h3>
