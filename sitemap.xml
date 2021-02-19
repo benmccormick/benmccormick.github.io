@@ -106,6 +106,7 @@
 <url> <loc>https://benmccormick.org/2017/11/07/blog-deploy-ux/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/11/15/browser-compatibility-checkup/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/07/24/my-favorite-interview-question/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2017/06/03/rss-atom-json-gatsby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/07/10/how-to-follow-the-javascript-roadmap/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/02/18/context-to-best-practices/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/01/09/mobx-first-impressions/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -116,7 +117,6 @@
 <url> <loc>https://benmccormick.org/2018/12/31/book-review-philosophy-of-software-design/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/07/02/book-review-atomic-design/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/02/14/book-review-clean-architecture/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2017/06/03/rss-atom-json-gatsby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/04/11/book-review-inmates-are-running-the-asylum/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/06/19/code-golf-sparse-arrays/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/06/05/es6-the-bad-parts/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
