@@ -9,7 +9,7 @@ then
   git config --global user.name "npm gh-pages"
 fi
 
-node ./analytics.js
+#node ./analytics.js
 ./node_modules/.bin/gatsby build
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
