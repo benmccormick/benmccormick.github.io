@@ -86,6 +86,7 @@
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"No tests yet\" && exit 0",
     "develop": "gatsby develop",
+    "build:ci": "gatsby build",
     "build": "rm -r public && gatsby build",
     "serve": "gatsby serve",
     "gh-pages": "gh-pages -d public",
