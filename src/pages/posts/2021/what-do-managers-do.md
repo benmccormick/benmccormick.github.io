@@ -7,7 +7,7 @@ description: "The activities of an Engineering Manager"
 keywords: ""
 category: "eng-management"
 topics: ["leadership", "productivity"]
-key: "change-without-authority"
+key: "what-do-ems-do"
 readNext: "how-teams-go-faster,play-other-positions,simple-burnout-triage"
 ---
 
@@ -15,7 +15,7 @@ readNext: "how-teams-go-faster,play-other-positions,simple-burnout-triage"
 
 There are a lot of different ideas out there about what engineering managers actually do, from pithy one liners like "nothing" or "meetings" to detailed expectations that sound like a superset of tech lead, project manager, and people manager roles.  When I got started in management I quickly found that at fast growing companies people will happily flow as much work as possible to EMs, and it's important to have a clear idea of what your job really is, because the workload will quickly become larger than one person can do -- at which point effective managers excel primarily because of good time management and prioritization.  Those skills start by understanding your core responsibilities.  
 
-In [High Output Management](https://amzn.to/2ZvSXnP) Andy Grove summarizes a manager's output as the sum of the output of his team and the output of neighboring teams that he influences.  A manager's goal then is to maximize those outputs -- a framing that is helpful to come back to when it comes to prioritizing work.  Making good choices of what to work on is a different article, but for now I'd like to consider a semi-comprehensive list of the different areas a manager can focus to influence those outputs. In my career and reading I've seen a pretty consistent set of 3 high level areas that effective managers invest in: facilitating information flow, driving progress forward, and building a sustainably productive team. 
+In [High Output Management](https://amzn.to/2ZvSXnP) Andy Grove summarizes a manager's output as the sum of the output of his team and the output of neighboring teams that he influences.  A manager's goal then is to maximize those outputs -- a framing that is helpful to come back to when it comes to prioritizing work.  Making good choices of what to work on is a [different article](https://benmccormick.org/2021/02/21/ems-choosing-what-to-work-on), but for now I'd like to consider a semi-comprehensive list of the different areas a manager can focus to influence those outputs. In my career and reading I've seen a pretty consistent set of 3 high level areas that effective managers invest in: facilitating information flow, driving progress forward, and building a sustainably productive team. 
 
 **Facilitating information flow** includes a mix of information gathering and information sharing.  Engineering Managers are responsible for doing the work to understand what is happening in their team and also understand what is happening in the broader organization.  Effective EMs then find useful ways to synthesize and share that information to help their teams be more effective and give other teams and executives clarity into what is happening with their team.  There are a multitude of anti-patterns here including undersharing or oversharing in either direction, manipulating people via information flow, and failing to extract and emphasize the most critical pieces of information.  But doing this right means bringing clarity to everyone an EM works with, pushing the most important information to the people who need it and making it easy for people to pull other information when needed.
 
@@ -34,3 +34,7 @@ The biggest anti-pattern here is simply neglecting the work -- I've worked for a
 I labeled this list as semi-comprehensive because while most of the valuable work I do as an engineering manager falls under one of the categories above, managing engineers is fundamentally different than the type of work someone who has just been promoted from a mid-senior engineering role might be used to.  Instead of taking tasks or projects to completion, you're now operating at a level of an organization where the expected deliverables get a little hazier and you're being asked to achieve higher level business outcomes.  
 
 So don't be afraid to shift the time you spend on different parts of this list over time or even do work that seems a bit far afield from your role.  If it's grounded in a desire to produce good outcomes for the business and help your team and it won't get done without you stepping in, consider it part of the job.  
+
+### More Parental Leave Engineering Management Posts
+
+* [Choosing What To Work On](https://benmccormick.org/2021/02/21/ems-choosing-what-to-work-on)
