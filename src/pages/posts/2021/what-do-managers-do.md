@@ -38,3 +38,4 @@ So don't be afraid to shift the time you spend on different parts of this list o
 ### More Parental Leave Engineering Management Posts
 
 * [Choosing What To Work On](https://benmccormick.org/2021/02/21/ems-choosing-what-to-work-on)
+* [Handling Accountability](https://benmccormick.org/2021/02/23/ems-handling-accountability)
