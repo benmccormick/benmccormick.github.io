@@ -52,10 +52,10 @@
 <url> <loc>https://benmccormick.org/2014/11/08/all-about-angular-2-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/11/24/alternative-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/12/22/building-complex-layouts-with-marionette-js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2014/12/18/come-build-with-me</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/08/07/component-based-development</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/08/28/custom-elements-by-example</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/01/06/digging-into-knockout-builds</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2014/12/18/come-build-with-me</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/06/02/discovering-vim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/07/14/learning-vim-in-2014-configuring-vim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2014/07/27/learning-vim-in-2014-copy-and-paste-the-vim-way</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -160,6 +160,7 @@
 <url> <loc>https://benmccormick.org/2020/08/31/simple-burnout-triage</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2020/09/05/how-teams-go-faster</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2021/01/19/driving-change-without-authority</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2021/02/23/ems-handling-accountability</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2021/02/21/ems-choosing-what-to-work-on</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2021/01/01/play-other-positions</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2021/02/18/what-do-ems-do</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -210,8 +211,8 @@
 <url> <loc>https://benmccormick.org/2018/03/02/weekly-links-03-02-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/03/24/weekly-links-03-11-24/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/03/24/weekly-links-03-11-30/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2018/04/22/weekly-links-04-22-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/04/27/weekly-links-04-22-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2018/04/22/weekly-links-04-22-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/04/07/weekly-links-04-07-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/06/03/weekly-links-06-03-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/06/10/weekly-links-06-10-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
