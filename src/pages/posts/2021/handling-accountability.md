@@ -11,7 +11,7 @@ key: "ems-handling-accountability"
 readNext: "what-do-ems-do,play-other-positions,change-without-authority"
 ---
 
-*I'm currently taking some time away from my job on parental leave, and it seemed like a good time to reflect on the lessons I've learned the last few years about engineering management, this is my third post, you can see a list of past posts at the bottom of the article*
+*I'm currently taking some time away from my job on parental leave, and it seemed like a good time to reflect on the lessons I've learned the last few years about engineering management, this is my third post, you can see a list of past posts on the [series page](https://benmccormick.org/engineering-management-thoughts)*
 
 When moving into an engineering manager role, one of the toughest transitions for me was mentally adjusting from being responsible for tasks and projects that I owned to being accountable for the output of a team.  As I discussed in [What Engineering Managers Do](https://benmccormick.org/2021/02/18/what-do-ems-do), I like using Andy Grove's definition of a manager's output: the output of their team as well as the output of any teams that they're influencing.  Manager's thus bring value by improving those outputs.  This potentially allows you as a manager to have a much larger sphere of impact than an individual contributor working on a single project at a time.  But it also means that you will be held accountable for actions that you may not have had direct control over.  This can be distressing for new EMs (it was for me!) as you realize that "working harder when things go wrong" may no longer be a viable strategy for avoiding failures.  
 
@@ -34,7 +34,6 @@ As your team grows you'll be able to start shifting the work you take on and say
 Managing a team that feels ownership of their work and is growing into higher levels of capability is more rewarding, less stressful, more educational, and more powerful for your career than micromanaging.  It's also ultimately morally good -- you're creating an environment where other people can thrive and use their gifts and abilities.  
 
 
-### More Parental Leave Engineering Management Posts
+### More Engineering Management Posts
 
-* [What EMs Do](https://benmccormick.org/2021/02/18/what-do-ems-do)
-* [Choosing What To Work On](https://benmccormick.org/2021/02/21/ems-choosing-what-to-work-on)
+This is part of a series of posts on Engineering Management.  You can see the whole series [here](https://benmccormick.org/engineering-management-thoughts).

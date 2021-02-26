@@ -38,6 +38,6 @@ My second principle is that constraints are good.  Any EM will have an essential
 Managing your time in more senior roles is hard.  You're not given the direction that you may have gotten used to as an IC engineer, and a lot of the most important work won't have a timer or anyone yelling at you to get it done.  If you're struggling with this I recommend giving yourself grace.  And if you take anything from this piece I hope you remember to protect yourself with constraints so that you stay sane, avoid compromising your integrity by over-committing and ultimately err on the side of investing in people.  In 5 years it will be the people you're interacting with today who are going to have the biggest impact on your career, and as I look at the scope of the rest of my life I expect it to be my impact on people that I remember for better or worse, much more than the results of a project or whether I nailed a certain process for my team.
 
 
-### More Parental Leave Engineering Management Posts
+### More Engineering Management Posts
 
-* [What EMs Do](https://benmccormick.org/2021/02/18/what-do-ems-do)
+This is part of a series of posts on Engineering Management.  You can see the whole series [here](https://benmccormick.org/engineering-management-thoughts).

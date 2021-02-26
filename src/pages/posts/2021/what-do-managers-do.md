@@ -35,7 +35,6 @@ I labeled this list as semi-comprehensive because while most of the valuable wor
 
 So don't be afraid to shift the time you spend on different parts of this list over time or even do work that seems a bit far afield from your role.  If it's grounded in a desire to produce good outcomes for the business and help your team and it won't get done without you stepping in, consider it part of the job.  
 
-### More Parental Leave Engineering Management Posts
+### More Engineering Management Posts
 
-* [Choosing What To Work On](https://benmccormick.org/2021/02/21/ems-choosing-what-to-work-on)
-* [Handling Accountability](https://benmccormick.org/2021/02/23/ems-handling-accountability)
+This is part of a series of posts on Engineering Management.  You can see the whole series [here](https://benmccormick.org/engineering-management-thoughts).
