@@ -10,6 +10,7 @@ hideFooter: true
 <div class="explanation">
 While on parental leave in early 2021, I took the time to write about the lessons I'd learned as an engineering manager over the previous few years.  This page collects all of the posts from that series
 </div>
+
 ### More Parental Leave Engineering Management Posts
 
 1. [What EMs Do](https://benmccormick.org/2021/02/18/what-do-ems-do) -- A rundown of what it is that engineering managers do all day and how they provide value.
