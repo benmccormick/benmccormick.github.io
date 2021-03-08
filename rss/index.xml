@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Fri, 26 Feb 2021 19:06:13 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Mar 2021 04:02:17 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,37 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Engineering Management: How To Give Feedback]]></title>
+            <link>https://benmccormick.org/2021/03/07/ems-how-to-give-feedback</link>
+            <guid>https://benmccormick.org/2021/03/07/ems-how-to-give-feedback</guid>
+            <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p><em>I’m currently taking some time away from my job on parental leave, and it seemed like a good time to reflect on the lessons I’ve learned the last few years about engineering management. This is my fifth post, you can see a list of past posts on the <a href="https://benmccormick.org/engineering-management-thoughts">series page</a></em></p>
+<p>Giving good feedback to others is a core piece of any manager’s job, but it’s also one that is rarely taught formally.  We all give feedback in some form or other every day: we leave reviews, give compliments, complain, or thank people.  But making the feedback effective is a lot harder, and as a manager it is well worth the effort to consider how you can improve.  Let’s talk about the why, when and how of effective feedback.</p>
+<blockquote>
+<p>The majority of people-related disasters I’ve created originate with my choice to not say the hard thing. On my short list of critical leadership skills, the ability to “say the hard thing” is right after “delegate until it hurts.” - <a href="https://randsinrepose.com/archives/say-the-hard-thing/">Michael Lopp</a></p>
+</blockquote>
+<p>As managers we give feedback because it is <strong>the core way we drive improvement</strong>.  We are not generally <em>doing the work</em>, instead we <em>evaluate the work</em> and give feedback.  That means making it clear to the team when we see things that are or are not working with the end product, the process to build that product or the inner dynamics of the team.  And it means being clear with individuals what is or isn’t working.  Improvement for teams and individuals is a function of practicing the relevant tasks over time with useful feedback loops.  Teams will get some natural feedback loops from the result of their work, peer feedback, and self evaluation but those are unreliable and/or slow.  As a manager you are responsible for making sure that your teammates have tight feedback loops that allow them to understand quickly when things are going off track and correct them, or when they are doing something well and have an opportunity to do even more.  </p>
+<blockquote>
+<p>“if it hurts, do it more often, and bring the pain forward.” - <a href="https://amzn.to/2PFTySp">Continuous Delivery</a> by Jez Humble and David Farley</p>
+</blockquote>
+<p>It’s important to understand that feedback isn’t something that should happen only at performance reviews — <strong>good feedback is continuous</strong>.  It’s helpful to have regular times for giving and soliciting feedback like a weekly 1-1, but even those should be a backstop — giving feedback directly after you observe a behavior or impact is often the best time.  We want to minimize the <em>feedback loop</em> so that your teammate can respond quickly, and also minimize distance from the event which can often bring skewed memories from both parties.  For those who find giving feedback hard or scary, the idea of doing this regularly might seem overwhelming.  In this case though we can benefit from the devops principle of doing hard things more often.  When feedback is regular and low intensity it can be easier to give and absorb, whereas a mountain of feedback at a performance review can be overwhelming and scary to give.  Early feedback also allows for quicker course correction, hopefully making those difficult review conversations less common.  Performance reviews should never contain surprises, they should just be formalization of an ongoing conversation.  </p>
+<blockquote>
+<p>“Radical Candor” is what happens when you put “Care Personally” and “Challenge Directly” together - <a href="https://amzn.to/3sVHLh2">Radical Candor by Kim Scott</a></p>
+</blockquote>
+<p><a href="https://amzn.to/3sVHLh2">Radical Candor</a> has influenced my thoughts on feedback more than any other single source, and while the book is worth reading in full, its core idea is easy to summarize: <strong>good feedback comes from caring personally about the individual and being willing to challenge them directly</strong>.  We’ve all dealt with the jerk who is happy to give unfeeling and unwelcome feedback on anything — that’s challenging without caring, what Kim Scott calls “obnoxious agression” in the book.  More common and insiduous though is what she calls “ruinous empathy” and “manipulative insincerity” — caring or not caring without challenging and thus simply avoiding feedback altogether.  The single biggest antipattern around feedback that I’ve seen is choosing to not give it until it is much too late.  People who give good feedback have plenty of empathy and understand the impact of their words — but they also understand how people can be hurt when nobody tells them the truth, so they let that empathy drive them to choose their words carefully and judiciously speak out with courage.  </p>
+<blockquote>
+<p>The Situation-Behavior-Impact method is simple and direct: You capture and clarify the Situation, describe the specific Behaviors observed, and explain the Impact that the person’s behavior had on you. <a href="https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-and-impact/">Center For Creative Leadership</a></p>
+</blockquote>
+<p>If you’re struggling with how to express a certain piece of feedback it can be helpful to prepare in advance.  I usually benefit from writing down my thoughts and have found the SBI method from the Center For Creative Leadership very helpful here.  <strong>For any feedback you want to give, frame it in terms of the situation (when and where did this happen — any relevant context), the behavior you observed from the person receiving the feedback (what did they do), and the impact on you or that you observed</strong>.  This model is helpful in giving a clear way to write feedback as well as avoiding a bunch of potential traps.  It leads you away from guessing at anyone’s intent or motivations, grounds the feedback in a real situation and behavior, and makes the severity of the feedback clear.  Optionally you can continue to a 4th step — asking the person receiving the feedback what their intention was and giving them a chance to share their thoughts, hopefully leading to a productive 2 way conversation.  </p>
+<blockquote>
+<p>Feedback is a gift - <a href="https://marcusblankenship.com/the-art-of-leadership-with-michael-lopp/#:~:text=Feedback%20is%20a%20gift.">Michael Lopp again</a></p>
+</blockquote>
+<p>So far in this piece I’ve focused on giving feedback, but it’s important to remember that feedback is a two way street.  <strong>Giving feedback well gets easier when we develop an attitude of curiousity and gratitude when we receive feedback.</strong> Remember that all feedback is a gift — even if some pieces of feedback are easier to work with and better delivered than others.  Creating an environment where others are comfortable giving you feedback is hard — if you’re a manager you will have to work upstream to overcome some natural power dynamics if you want real honest feedback.  It means being persistent in asking over time, building trust by proving you care, and being willing to take and be grateful for hard feedback when it does come.  Ultimately there is almost nothing you can do that will help you more as a manager than creating an attitude where people are comfortable sharing unfiltered truth with you — you’ll grow faster and be more effective as you learn what is really happening around you, and it is much easier to share hard feedback with people who trust that you’re listening to them.  Feedback is a gift.  Give it, receive it and value it.  </p>
+<h3>More Engineering Management Posts</h3>
+<p>This is part of a series of posts on Engineering Management.  You can see the whole series <a href="https://benmccormick.org/engineering-management-thoughts">here</a>.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Engineering Management: How To Delegate]]></title>
             <link>https://benmccormick.org/2021/02/26/ems-how-to-delegate</link>
@@ -302,32 +333,6 @@
 <li id="fn-2">
 <p>A note on taking things on for a season; It’s only a season if it has a defined endpoint or offramp.  If you and your spouse live in different cities to optimize for your career, or you’re working 70 hour work-weeks because your job demands it, and you don’t know when these things will end, you’re not in a season.  This is your life.</p>
 <a href="#fnref-2" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Better than a wild guess]]></title>
-            <link>https://benmccormick.org/2020/08/23/better-than-a-guess</link>
-            <guid>https://benmccormick.org/2020/08/23/better-than-a-guess</guid>
-            <pubDate>Sun, 23 Aug 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>I’m currently reading Doublas Hubbard’s <a href="https://amzn.to/3lcY3yY">How To Measure Anything</a> and it is driving home a point I’ve observed anecdotally throughout my career; when people don’t know something exactly, they often throw away a ton of things that they do know.  You can see this in project estimation, where engineers often resist providing any estimate since “it’s hard to tell before we actually build it”.  You can see it in product planning, where teams I’ve worked with struggle to provide clear usage or business impact goals since “it is hard to tell how impactful this will be till we build it”.  </p>
-<p>Hubbard’s advice for making properly calibrated estimates would probably help in multiple places in the software world:</p>
-<ol>
-<li><strong>Use 90% confidence intervals when there’s uncertainty, not point estimates or vague categories like “medium risk”</strong> - Saying a piece of software work is “large” is much less actionable and informative than “we’re 90% confident that it will take between 3 and 15 days to complete.  </li>
-<li><strong>Use absurd scenarios and alternative bets to calibrate a confidence interval</strong> - You may think you have no idea how long a novel new software project will take, but even for projects with high uncertainty this is untrue.  You can start by asking questions like “is there any chance this will be done tomorrow” and “is there any chance this project will take more than 5 years”.  If the answer is no, then you’ve established a baseline confidence interval, and you can start working inward from there.  When you get to the point that something is feasible if unlikely, its a sign that you’re probably near the 90% confidence interval<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  Once you have a starting place, you can further consider a hypothetical bet where you had to choose between a lottery with a 90% payout of $1000 and a scenario where you got the $1000 when the item ended in your range.  If you would clearly prefer one of those scenarios to the other, your range is probably too tight or too loose.</li>
-<li><strong>Model your estimates with simple monte carlo simulations</strong> - Hubbard recommends using Monte Carlo simulations (picking random numbers according to the distributions set up by your confidence intervals ~1000 times) in order to get a better intuition of what real world outcomes might look like.  Doing this right does mean understanding not just the confidence range, but also what the distribution looks like.  Estimating simple software feature work for instance, is likely not a normal distribution.  Many tasks will be straightforward and be completed quickly, but we’ll hit occasional tasks that require significant restructuring of a program to complete.  It’s a classic “long tail” scenario.</li>
-<li><strong>Break down estimates into component parts</strong> - One of the most powerful techniques for making better estimates under uncertainty is “Fermi Decomposition”, the process of breaking an estimation problem into smaller estimation problems (which may be more tractable) and then combining the estimate.  In software this can mean breaking up a large project into the component pieces of work and then estimating those.  Doing this right of course means capturing our uncertainty on the sub-estimates, so that we can roll that up into the larger estimate.  If we optimistically point estimate every element of a project, we’re going to end up with a total estimate that is actually less likely, since we need <em>everything</em> to go well to hit that total estimate.  I commonly see engineers handle this by doing optimistic estimates and then adding a buffer period.  It would be better to be clear about uncertainty and do your decompositions with a range of values (although it does make sense to factor in uncertainty about tasks that may be missing).  </li>
-<li><strong>Consider what measurements will be valuable</strong> - When we start viewing our estimation goal as reducing uncertainty rather than eliminating it, its easier to see that some easy measurements might go a long way toward improving our projections, even if they won’t take us to an exact value.  For instance if we want to know how many tickets we might close during an upcoming sprint, it can be easy to say that there’s no way to know.  The new work is unique and isn’t necessarily directly comparable to work we’ve done in the past.  However just because we can’t make an exact projection doesn’t mean we know nothing.  If we look at our last 10 sprints and see how many tasks we completed in each of them, we can feel confident that this upcoming sprint is likely to be between the minimum and maximum value in that range, or at least close.  If we’re currently planning like we will accomplish something outside of that range, this could be very useful information.</li>
-</ol>
-<p>All of this definitely has me thinking about the good and bad of software estimation, and how I might incorporate this into my team’s rhythms.  Would love to hear stories of effective estimation processes in software.  What do you do that is better than wild guessing?</p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Remember that 90% total interval means that there’s a 95% chance that a value is greater than the lower bound and a 95% chance that the value is less than the upper bound.</p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
 </li>
 </ol>
 </div>]]></content:encoded>
