@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Mon, 08 Mar 2021 04:23:55 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Sep 2021 02:32:39 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,24 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Kustomer Is Hiring]]></title>
+            <link>https://benmccormick.org/2021/09/23/kustomer-is-hiring</link>
+            <guid>https://benmccormick.org/2021/09/23/kustomer-is-hiring</guid>
+            <pubDate>Thu, 23 Sep 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>👋 Hi There!</p>
+<p>It’s been a bit of a quiet year on the blog as I’ve been figuring out life with 2 children, work and a pandemic that doesn’t seem like it wants to go away.  I’m going to try writing a bit more soon, but in the meantime wanted to add a quick plug for <a href="https://www.kustomer.com/">Kustomer</a>.  </p>
+<p>I’ve had the pleasure of working at Kustomer the past 2 years now — it’s been a crazy rocket ship experience, my first time in a high growth unicorn startup, and we’re very much <em>just getting started</em> in many ways — we’re looking forward to <a href="https://about.fb.com/news/2020/11/kustomer-to-join-facebook/">joining Facebook</a> in the future and all the possibilities that will bring to the table.  </p>
+<p>In the here and now though, we’re building an extremely cool product — improving customer service experiences for millions of people by giving agents better info and better tools and making it easier for people to find the info they want themselves without long hold times or delays between emails. We’ve got lots of fun technical challenges as we scale  and work to improve performance of our system at every level (you can get a taste of a few of these at the recently started  <a href="https://medium.com/kustomerengineering">Kustomer Engineering blog</a>).  And we have a fantastic team of engineers who are extremely collaborative and focused on building the best experience for our customers (and their customers).  </p>
+<p>We’re growing like crazy and have a ton of ambitious plans for the future, which means we need more folks.  We’re hiring for</p>
+<ul>
+<li><a href="https://grnh.se/310f16421us">Engineering Managers</a>: EMs at Kustomer get to lead 1 to 2 teams of 3-7 engineers each of which have a specific product focus.  You get to wear a lot of hats — technical leader, domain expert, coach, chaos-tamer, and are pretty much guaranteed to learn a lot.  My 2 years in this role has not always been easy, but it has pushed me to grow more than any other stretch in my career. It’s a great role for people who like a challenge and thrive on taking on different types of work depending on the day.</li>
+<li><a href="https://grnh.se/5765189b1us">Frontend Engineers</a> at Kustomer get a large amount of autonomy to solve business and user experience problems in their domain of expertise.  Every team has a dedicated Product Manager and Designer that you’ll be collaborating closely with, and we’re at a fun point in our growth where we’re taking a product that has grown organically and finding ways to standardize best practices, improve performance, and be more consistent in building great user experiences, not just “working” experiences.  It adds up to a lot of great technical challenges, and we’re big enough to have experienced engineers to support and teach while still being small enough to have lots of room for people to come in and own important problems.  Our core stack is React / Redux / TypeScript / Jest / Cypress / Webpack. </li>
+<li><a href="https://grnh.se/3fe8d8871us">Backend Engineers</a> have similar collaborative and ownership opportunities as FE devs, and get to work in a modern Node microservice based codebase with its own set of interesting technical challenges, especially as we scale the product.  We spend a lot of time thinking about reliable message processing, storing and performantly accessing large amounts of data, and applying machine learning and intelligent automation techniques to customer service data.  Our core stack is Node / Express / Docker / ECS / AWS / MongoDB / ElasticSearch. </li>
+</ul>
+<p>All of these roles will eventually be New York City based, but are currently operating remotely.  </p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Engineering Management: How To Give Feedback]]></title>
             <link>https://benmccormick.org/2021/03/07/ems-how-to-give-feedback</link>
@@ -302,37 +320,6 @@
 <li id="fn-3">
 <p>Even worse if this is a manager doing this, something I struggled with as I transitioned from being a <a href="https://benmccormick.org/2019/03/25/manager-and-developer">dev-manager hybrid</a> to managing a larger team.  </p>
 <a href="#fnref-3" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[Simple Burnout Triage]]></title>
-            <link>https://benmccormick.org/2020/08/31/simple-burnout-triage</link>
-            <guid>https://benmccormick.org/2020/08/31/simple-burnout-triage</guid>
-            <pubDate>Mon, 31 Aug 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>I have a one question triage process when I’m concerned that I or one of my teammates is headed towards burnout:</p>
-<blockquote>
-<p>If you take the pace &#x26; quality of the last 2 months of your life and repeated it again and again, how long would you be able to sustain it?   </p>
-</blockquote>
-<p>Why 2 months?  It’s long enough to be a representative sample of your pace and cut out the rush of a specific project deadline or medium sized stressful life event<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>.  But it’s a small enough sample to check in regularly, and most people have a fairly clear sense of what their last 2 months have been like for them and can visualize what repeating it would look like.  </p>
-<p>When I ask myself or a teammate this question, it tends to elicit one of 3 responses:</p>
-<p><strong>”I can’t go on like this.”</strong>  The current pace is unsustainable and we’re probably already well into the burnout phase where tasks are being dropped, personal needs are not being met, and everyday life has become overwhelming.  </p>
-<p><strong>”I can make this work, but…”</strong> The most interesting result of this question to me is that it often makes it clear where a priority is being dropped.  “I’m doing good, but I wish I was doing a better job making time for my kids”.  “I’m getting by, but I feel like I only have time for the urgent and I haven’t had a chance to invest in myself”.   “I can do this for a while longer, but I have to figure out a way to live in the moment in the evenings and leave my work at the office”.  The act of visualizing a plausible future often causes people to hone in on what they’re missing.</p>
-<p><strong>”I love my life, and I can keep doing this forever.”</strong>  If this is where you’re at, treasure it and check in regularly to make sure it’s still the case. </p>
-<h3>What next?</h3>
-<p>The question above is laser focused on triage.  Exactly how to handle partial or complete burnout is situation dependent.  But I try to hold to principles of optimizing for the long term and tying my time to my values.  That means while it sometimes may make sense to live in an unsustainable place for a season, I’m always going to weigh that impact on myself, my family and my teammates against the longterm value and take it seriously<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>.  And if my time spent doesn’t line up with my principles and values for a significant length of time, I know it’s time to implement a plan for change.   </p>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>For large life changes like job switches, family emergencies, society-changing pandemics etc it is probably better to assume that short term data is not representative, err on the side of scaling back as needed, and take stock of things on a regular basis. </p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-<li id="fn-2">
-<p>A note on taking things on for a season; It’s only a season if it has a defined endpoint or offramp.  If you and your spouse live in different cities to optimize for your career, or you’re working 70 hour work-weeks because your job demands it, and you don’t know when these things will end, you’re not in a season.  This is your life.</p>
-<a href="#fnref-2" class="footnote-backref">↩</a>
 </li>
 </ol>
 </div>]]></content:encoded>
