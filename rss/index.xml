@@ -4,7 +4,7 @@
         <title>benmccormick.org</title>
         <link>http://benmccormick.org</link>
         <description>A blog by Ben McCormick</description>
-        <lastBuildDate>Fri, 24 Sep 2021 02:41:04 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 21 Oct 2021 20:20:27 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,6 +14,30 @@
         </image>
         <copyright>All rights reserved 2016, Ben McCormick</copyright>
         <atom:link href="http://benmccormick.org/atom.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Thinking Fast & Slow: Lessons For Managers]]></title>
+            <link>https://benmccormick.org/2021/10/21/thinking-fast-and-slow-for-managers</link>
+            <guid>https://benmccormick.org/2021/10/21/thinking-fast-and-slow-for-managers</guid>
+            <pubDate>Thu, 21 Oct 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>I recently read <a href="https://amzn.to/3jpFxUJ">Thinking Fast &#x26; Slow</a> by Daniel Kahneman, and it was my favorite read of this year.  I had been generally familiar with Behavioral Economics previously, but this was the deepest I’d gotten into it.  Kahneman is a very strong writer, and it left me with lots of things to think about.  A few of the ideas in particular felt relevant to management, and I thought I’d highlight them here.</p>
+<blockquote>
+<p>Everybody thinks about their lives and careers as a story.  When we evaluate how good a story it is we tend to think about the high points, low points and most recent feelings <em>only</em>, neglecting how long any of those things lasted. [Summarized from the chapter 36 “Life as a Story”]</p>
+</blockquote>
+<p>This made me think of how a bad week, or a very bad incident in the past can negatively color the story of an employee with an otherwise happy tenure leading to what Michael Lopp calls <a href="https://randsinrepose.com/archives/shields-down/">shields down</a> moments.  This can feel unfair for managers who are doing things right and want to maintain their teams, but the main lesson I take is to not let little annoyances fester without addressing them, as little things can shift people’s attitudes by more than is justified by a big picture view. </p>
+<blockquote>
+<p>Humans have a number of cognitive traits that make us bad at predicting and estimating — we ignore evidence that is not currently on our mind, become confident on relatively small pieces of information, and have a tendency to simplify complexity away by answering easier questions than what we’ve been asked. We also over-weight “causal thinking” and underestimate regression to the mean. [Summarized from Chapters 18-24]</p>
+</blockquote>
+<p>This was easy enough to accept personally — I’m perennially overconfident in my estimates.  The lesson here in my mind is that more process around predictions may lead to better outcomes; left to our own devices we’ll think less about predictions and not notice that our confidence is based on flimsy evidence.  For more important predictions, processes that force us to be more thorough should help. </p>
+<blockquote>
+<p>Humans are very sensitive to how questions are framed — we hate losing things more than we like gaining them, are very associative in our thinking, and often aren’t consistent in how we make choices depending on external factors like a suggested answer, another question we were just asked, or how close it is to a meal.  [Summarized from Chapters 25-34]</p>
+</blockquote>
+<p>I see this type of stuff in behavioral economics mostly quoted in terms of “nudge” like behavioral manipulation, but this mostly has me thinking about the importance of communication plans.  It’s easy to think that getting info passed to a team or individual is more important than how you do it, but actually how choices and changes are communicated has a real impact on how people feel about them, which can make a big difference to team morale and retention over the course of many communication opportunities. Lara Hogan has some good resources on communication plans including <a href="https://larahogan.me/blog/communicating-news-to-team/">this article</a>.</p>
+<blockquote>
+<p>We all overweight things that are easy for us to see vs things that are not (availability bias).  We tend to see our own contributions as bigger and more meaningful than others, our own challenges as more painful, and our own skills as more impressive.  Because of course we see all the evidence for those and only a fraction of what others are doing. [Summarized from Chapter 12 and some references elsewhere]</p>
+</blockquote>
+<p>This was a good reminder to me to be humble and not overweight my own accomplishments first.  But it also is a good thing to keep in mind the next time a teammate feels underappreciated or that they may have been unfairly passed up for an opportunity.  We’re all prisoners of our own perspectives, and while that may sometimes lead us astray in terms of how we stack up a little grace can go a long way here. </p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
         <item>
             <title><![CDATA[Kustomer Is Hiring]]></title>
             <link>https://benmccormick.org/2021/09/23/kustomer-is-hiring</link>
@@ -150,7 +174,7 @@
 <p>Tools for facilitating information flow include 1 on 1 meetings, building or advocating for processes and tools that expose team and project status clearly, encapsulating decisions and reasoning in documents that can be shared widely and referenced later, and asking good questions in standups and project meetings that lead to better understanding of problems and any misalignments between the team and the business.  Getting good at this stuff means being a good written and verbal communicator, keeping an attitude of curiousity and humility that lets you learn from others and stay up to date with what is going on, and being intentional about building relationships with all of the key people you work with.  </p>
 <p><strong>Driving progress forward</strong> breaks down into 3 parts: decision influencing, delegating/monitoring and “doing the work”.  The first item here is phrased as <em>decision influencing</em> rather than decision making because while you will have to make many decisions as an Engineering Manager it is even more common and in many cases more desirable that you’ll be providing input and influence on decisions but not ultimately “owning” the decision yourself.  <a href="/2021/02/26/ems-how-to-delegate">Delegating work to others</a> is an important part of getting things done and scaling yourself as a manager, but to again quote Andy Grove “delegation without follow-through is abdication”.  So even delegated tasks still require the work of monitoring and supporting, and thus take time.  Finally, EMs sometimes take on work that is actually directly part of their teams day to day — writing code for a feature, designing architecture for an upcoming project, or debugging a production issue.  That last point is the most controversial — there are plenty of “engineering managers shouldn’t code” zealots out there.  I simply add it here as something an EM <em>can</em> do to increase their team’s output.  Whether it is an effective or impactful activity is going to be highly context specific and is out of the scope of this article.  </p>
 <p>Progress on a team’s work has the shortest feedback loop of the 3 top level areas: missing information can often go unnoticed for a while, and unhappy teams’ troubles may take a while to manifest.  But everybody notices when your team is not succeeding at it’s goals.  Thus the anti-patterns here are often trading off team and communication for an appearance of progress: doing too much work yourself at the expense of your team’s development and long term scalability, failing to take responsibility for your team’s output — often by delegating without supporting a teammate, or making decisions that optimize for making yourself look good at the expense of your team or other parts of your organization.  Getting really good at driving progress as an engineering manager means learning to delegate with an appropriate amount of support and monitoring, learning how to influence work usefully without having to own it end to end and being strategic about what you yourself try to own.  </p>
-<p><em>Building a sustainably productive team</em> involves a mix of hiring, culture shaping, team development, and what <a href="https://twitter.com/rands">Michael Lopp</a> calls the <a href="https://randsinrepose.com/archives/bored-people-quit/#:~:text=care%20and%20feeding%20of%20engineers">care and feeding of engineers</a>.  Hiring new engineers is arguably the highest leverage activity we undertake as engineering managers — it’s a one time process that will have impacts on your team for years.  Engineering managers have outsized influence on their team’s culture: what work is valued, what the expectations are for meeting preparation and timeliness, how people are treated, what type of people and ideas are welcome.  This is often influenced as much by what EMs neglect as what they do.  EMs can help their teammates develop through <a href="/2021/03/07/ems-how-to-give-feedback">thoughtful feedback</a>, coaching, sponsorship and training.  And we work in an industry where our teammates usually have many great work options — setting aside the moral case for being a compassionate manager, managers that do not care for their employees, understand their needs, concerns and ambitions, and help them thrive are unlikely to develop a sustainably productive team over any length of time.  </p>
+<p><strong>Building a sustainably productive team</strong> involves a mix of hiring, culture shaping, team development, and what <a href="https://twitter.com/rands">Michael Lopp</a> calls the <a href="https://randsinrepose.com/archives/bored-people-quit/#:~:text=care%20and%20feeding%20of%20engineers">care and feeding of engineers</a>.  Hiring new engineers is arguably the highest leverage activity we undertake as engineering managers — it’s a one time process that will have impacts on your team for years.  Engineering managers have outsized influence on their team’s culture: what work is valued, what the expectations are for meeting preparation and timeliness, how people are treated, what type of people and ideas are welcome.  This is often influenced as much by what EMs neglect as what they do.  EMs can help their teammates develop through <a href="/2021/03/07/ems-how-to-give-feedback">thoughtful feedback</a>, coaching, sponsorship and training.  And we work in an industry where our teammates usually have many great work options — setting aside the moral case for being a compassionate manager, managers that do not care for their employees, understand their needs, concerns and ambitions, and help them thrive are unlikely to develop a sustainably productive team over any length of time.  </p>
 <p>The biggest anti-pattern here is simply neglecting the work — I’ve worked for and around managers who simply didn’t take the time to regularly talk with their team, were not mindful of the impact their actions had on culture, or treated their employees as replacable cogs in an industrial machine.  Even hiring is often not given the investment it deserves based on impact: many managers are content to offload sourcing and evaluation to other people or put minimal time into preparing for interviews and new job postings.  Getting really good at building a sustainable team means thinking of yourself as a role model for the behavior you want to see, investing heavily in hiring and supporting your current team, regularly giving and seeking meaningful feedback and being organized about helping your team in their career growth.  </p>
 <h3>It’s all about outcomes</h3>
 <p>I labeled this list as semi-comprehensive because while most of the valuable work I do as an engineering manager falls under one of the categories above, managing engineers is fundamentally different than the type of work someone who has just been promoted from a mid-senior engineering role might be used to.  Instead of taking tasks or projects to completion, you’re now operating at a level of an organization where the expected deliverables get a little hazier and you’re being asked to achieve higher level business outcomes.  </p>
@@ -278,52 +302,6 @@
 <li><a href="https://amzn.to/3hs4lJM">How To Talk So Little Kids Will Listen</a> - An incredibly practical book for how to interact with toddlers.  I’ve found a bunch of helpful parenting books, but none beat this for giving parents practical actionable advice that will reduce stress in your house and help you build a relationship with your kids.  </li>
 <li><a href="https://amzn.to/380fM8k">House of X / Powers of X</a> - For the comics fans out there, I’ve been really enjoying Jonathan Hickman’s run on the X-Men, starting with this graphic novel that soft-reboots the whole world of mutants</li>
 </ul>]]></content:encoded>
-            <author>ben@benmccormick.org (Ben McCormick)</author>
-        </item>
-        <item>
-            <title><![CDATA[How Teams Go Faster]]></title>
-            <link>https://benmccormick.org/2020/09/05/how-teams-go-faster</link>
-            <guid>https://benmccormick.org/2020/09/05/how-teams-go-faster</guid>
-            <pubDate>Sat, 05 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>I recently discovered John Cutler’s <a href="https://twitter.com/johncutlefish">Twitter</a> and <a href="https://cutlefish.substack.com/">blog</a>.  Everything I’ve read from him so far is excellent and highly recommended, but this table in particular felt like it was worth sharing.</p>
-<blockquote class="twitter-tweet" data-conversation="none" data-theme="light"><p lang="en" dir="ltr">13/13 Feels like fast ... is actually faster <a href="https://t.co/c87USFeu6b">pic.twitter.com/c87USFeu6b</a></p>&mdash; John Cutler (@johncutlefish) <a href="https://twitter.com/johncutlefish/status/1145240762243698688?ref_src=twsrc%5Etfw">June 30, 2019</a></blockquote> 
-<p>It’s amazing to me how unhelpful our intuition often is when we’re under pressure to speed up.  I’ve observed clear examples of several of these items personally over the last several years.</p>
-<ul>
-<li>
-<p>I’ve seen my team go significantly faster <em>with less stress</em> by shifting projects to being serialized with pairing and collaboration rather than giving everyone their own project <sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup></p>
-</li>
-<li>
-<p>I’ve watched attempts to get ahead on planning be thwarted by changing business priorities.  This can be frustrating in the moment until you realize the problem is a planning process that can’t adapt to new information cleanly. </p>
-</li>
-<li>
-<p>I’ve been part of another team that doubled in size and then got cut back in half without much discernable impact in actual output over time.  </p>
-</li>
-<li>
-<p>The most effective change my team has made this year has been de-emphasizing filling sprints in favor of being clear about what we’re trying to accomplish in the sprint.  I don’t think we’ve gone far enough in that direction yet.  </p>
-</li>
-</ul>
-<p>Some items I’d add to John’s list:</p>
-<ul>
-<li>Manual QA / Deployments <strong>vs</strong> Test Automation as part of development<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup></li>
-<li>Senior devs filling up on feature work <strong>vs</strong> Senior devs mentoring, enabling and unblocking other devs<sup id="fnref-3"><a href="#fn-3" class="footnote-ref">3</a></sup> </li>
-</ul>
-<div class="footnotes">
-<hr>
-<ol>
-<li id="fn-1">
-<p>Besides the creative and redundancy benefits of pairing, shared resources like PMs/EMs/QA become bottlenecks as you parallelize.  </p>
-<a href="#fnref-1" class="footnote-backref">↩</a>
-</li>
-<li id="fn-2">
-<p>This relates to the “handing off” QA point in John’s list.  If the original people responsible for creating the feature aren’t writing automation as part of development, there is likely to be inefficiency or gaps in the testing. </p>
-<a href="#fnref-2" class="footnote-backref">↩</a>
-</li>
-<li id="fn-3">
-<p>Even worse if this is a manager doing this, something I struggled with as I transitioned from being a <a href="https://benmccormick.org/2019/03/25/manager-and-developer">dev-manager hybrid</a> to managing a larger team.  </p>
-<a href="#fnref-3" class="footnote-backref">↩</a>
-</li>
-</ol>
-</div>]]></content:encoded>
             <author>ben@benmccormick.org (Ben McCormick)</author>
         </item>
     </channel>
