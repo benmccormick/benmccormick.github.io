@@ -11,6 +11,8 @@ You can subscribe via RSS or Atom.  You'll get access to articles and book revie
 
 - [RSS](/rss/)
 - [Atom](/atom.xml)
+
+
 #### Subscribe To Herding Lions
 
 Herding Lions is my newsletter focused on Engineering Management.  
@@ -40,6 +42,7 @@ I'll never spam the list or send more than one email a week.  You can see past m
   <div class="revue-form-actions">
     <input type="submit" value="Subscribe" name="member[subscribe]" id="member_submit">
   </div>
+
   <div class="revue-form-footer">By subscribing, you agree with Revue’s <a target="_blank" href="https://www.getrevue.co/terms">Terms of Service</a> and <a target="_blank" href="https://www.getrevue.co/privacy">Privacy Policy</a>.</div>
   </form>
 </div>
