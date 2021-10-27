@@ -105,10 +105,10 @@
 <url> <loc>https://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/10/29/adequate-talks/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/11/07/blog-deploy-ux/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2014/10/13/setting-up-your-text-editor-for-javascript-development</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/11/15/browser-compatibility-checkup/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/07/24/my-favorite-interview-question/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/06/03/rss-atom-json-gatsby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2014/10/13/setting-up-your-text-editor-for-javascript-development</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/07/10/how-to-follow-the-javascript-roadmap/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/02/18/context-to-best-practices/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/01/09/mobx-first-impressions/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -130,8 +130,8 @@
 <url> <loc>https://benmccormick.org/2018/07/15/prime-generation-revisited/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/03/16/proposals-in-production/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/07/04/evil-javascript/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2018/06/26/javascript-stale-practices/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/02/07/react-confessions/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2018/06/26/javascript-stale-practices/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/04/25/the-new-hello-world/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2019-roundup</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/how-se-add-value</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -185,6 +185,9 @@
 <url> <loc>https://benmccormick.org/2017/05/29/atom-tips/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/03/28/the-mystery-of-docker-and-the-disk-eating-cow/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/02/26/running-jest-tests-before-each-git-commit/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2017/12/01/weekly-links-12-01-17/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2017/11/10/friday-links/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2017/11/03/friday-links/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/08/15/jest-matchers-1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/09/04/jest-matchers-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2017/02/13/improving-site-performance-with-lighthouse</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -202,9 +205,6 @@
 <url> <loc>https://benmccormick.org/2019/01/30/book-review-info-we-trust</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2019/06/03/thinking-values</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/ascii-kusty</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2017/11/03/friday-links/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2017/11/10/friday-links/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2017/12/01/weekly-links-12-01-17/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/02/16/weekly-links-02-16-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/02/23/weekly-links-02-23-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/02/03/weekly-links-02-03-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -219,9 +219,9 @@
 <url> <loc>https://benmccormick.org/2018/03/24/weekly-links-03-11-30/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/04/22/weekly-links-04-22-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/04/27/weekly-links-04-22-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://benmccormick.org/2018/04/07/weekly-links-04-07-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/06/03/weekly-links-06-03-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/06/10/weekly-links-06-10-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://benmccormick.org/2018/04/07/weekly-links-04-07-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/06/15/weekly-links-06-15-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/06/23/weekly-links-06-23-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://benmccormick.org/2018/06/30/weekly-links-06-30-18/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
