@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://benmccormick.org</id>
     <title>benmccormick.org</title>
-    <updated>2021-10-27T21:56:02Z</updated>
+    <updated>2021-10-27T22:07:08Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben McCormick</name>
@@ -26,7 +26,8 @@
         </link>
         <updated>2021-10-27T00:00:00Z</updated>
         <content type="html"><![CDATA[<p>This blog has always been a bit of an eclectic assortment of topics that have reflected my shifting interests over time.  Recently I’ve been <em>primarily</em> interested in writing about Engineering Management, my role for the last 3.5 years.  I’ve also been craving more conversation on these topics and want to be more interactive in my writing. </p>
-<p>As an experiment towards those 2 goals, I’m starting a new newsletter <a href="https://www.getrevue.co/profile/herdinglions">Herding Lions</a> focused on Engineering Management.  It will have a mix of shorter pieces from me, interesting links, and questions that I’m hoping to engage with folks on.  You can see the first issue and subscribe <a href="https://www.getrevue.co/profile/herdinglions/issues/herding-lions-1-team-output-is-the-smallest-unit-of-productivity-828140">here</a>.  I’m excited to hear from you there.</p>]]></content>
+<p>As an experiment towards those 2 goals, I’m starting a new newsletter <a href="https://www.getrevue.co/profile/herdinglions">Herding Lions</a> focused on Engineering Management.  It will have a mix of shorter pieces from me, interesting links, and questions that I’m hoping to engage with folks on. I’m excited to hear from you there.</p>
+<p><a href="https://www.getrevue.co/profile/herdinglions/issues/herding-lions-1-team-output-is-the-smallest-unit-of-productivity-828140">You can see the first issue and subscribe here</a>.</p>]]></content>
         <author>
             <name>Ben McCormick</name>
             <email>ben@benmccormick.org</email>
