@@ -1,20 +1,31 @@
-#bd-label {
+.revue-row {
+  display: grid;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
+
+.revue-form-footer {
+  font-size: 10px;
+  color: #777777;
+}
+
+.revue-label{
+  font-size: 20px;
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
 }
 
-#bd-label.large-label {
-  font-size: 20px;
-}
-
-#bd-email {
+#member_email {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   padding-left: 5px;
   font-size: 14px;
 }
 
 
-#bd-submit {
+#member_submit {
   background: #F1684E;
 
   color: white;
