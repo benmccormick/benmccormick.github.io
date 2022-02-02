@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>benmccormick.org</title>
+        <link>http://benmccormick.org</link>
+        <description>A blog by Ben McCormick</description>
+        <lastBuildDate>Wed, 02 Feb 2022 03:35:05 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>benmccormick.org</title>
+            <url>https://benmccormick.org/logo.png</url>
+            <link>http://benmccormick.org</link>
+        </image>
+        <copyright>All rights reserved 2016, Ben McCormick</copyright>
+        <item>
+            <title><![CDATA[Mental Models For Managing Change]]></title>
+            <link>https://benmccormick.org/2022/01/25/mental-models-for-change</link>
+            <guid>https://benmccormick.org/2022/01/25/mental-models-for-change</guid>
+            <pubDate>Tue, 25 Jan 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p><em>This article was first published in my newsletter, <a href="https://herdinglions.benmccormick.org/">Herding Lions</a></em></p>
+<p>At this point I’ve spent the large majority of my career working in startups at different stages. While life can look very different in a 15 person early stage startup and a 300 employee growth stage startup, one thing that is constant across every startup I’ve encountered is a rapid pace of change and a relatively short time horizon for planning. Plans aren’t made for too long in advance, and yet often still manage to change significantly before reaching the original goal. Even in more stable environments, the reality is every software project is a unique undertaking to bring something new into the world. That brings an unavoidable level of unpredictability, meaning that everyone working in software must accept dealing with changing plans and priorities.</p>
+<p>Some common questions predictably come with this state of affairs. How much change is too much? For a specific change, why are we doing this instead of sticking to our original plan? As engineering leaders we need to be able to both make choices about what changes to advocate for and push back on, and also learn how to explain those choices to our teams and other folks we work with.</p>
+<p>I’ve found 2 different models helpful for thinking about changes in plans.</p>
+<h3>Understanding the level of the change</h3>
+<p>Changes in roadmap can come in at a few different levels. Understanding the level can help you understand how to think about it, and how to talk to your team about it.</p>
+<ol>
+<li><strong>A consequence of existing ambiguity</strong></li>
+</ol>
+<p>This occurs when a team didn’t have clear committed plans previously or didn’t communicate them clearly elsewhere. This is less of a change and more a symptom of ongoing chaos. If a situation like this persists, it is the Engineering Manager’s problem to fix.</p>
+<ol start="2">
+<li><strong>A higher level need</strong></li>
+</ol>
+<p>A team is sometimes asked to do something that doesn’t directly tie into its mission, but is important for the broader company. Examples include helping another team with their project, or working on a revenue driving sales ask that wasn’t part of the original product roadmap.</p>
+<p>Higher level requests are important to take seriously and often are the right thing to do. But if they become a regular pattern it can be a sign that your team doesn’t have the right mission, or you’re getting sucked into thinking too short term.</p>
+<ol start="3">
+<li><strong>A tactical change</strong></li>
+</ol>
+<p>When working on a project a team often learns about new and better ways to achieve their goals. A different approach to code, a new feature that moves the same goal, or putting different people with a new perspective on a problem are all new pieces of.information that serve as opportunities to make a better plan.</p>
+<p>Tactical changes are normal and a sign that you’re paying attention to what you learn as you go. However, If you’re making these type of changes repeatedly, they’re not tied to a clear lesson from the work you’re doing, or you’re making similar tweaks on every project (looks like we need to add unexpected time for more testing again) it might be a sign that you didn’t properly plan or the team isn’t aligned on a goal.</p>
+<ol start="4">
+<li><strong>A strategic change</strong></li>
+</ol>
+<p>Sometimes teams change plans because their overall approach to achieving their goals has changed. Maybe they’ve decided to focus on a specific segment of their customer base or realized they need to focus on building up our quality before releasing new features.</p>
+<p>The most important thing with strategic changes is clear communication – do your team and the stakeholders around your team understand not just what new work you’re doing, but also the strategic change behind it? If not, that misalignment can quickly move a project into muddy waters.</p>
+<ol start="5">
+<li><strong>A change in mission</strong></li>
+</ol>
+<p>Sometimes a team’s whole purpose can change. This often corresponds with a reorg or a higher level strategic change in the company. These changes should be rare, but are a good opportunity for a team to increase its impact.</p>
+<p>After a change in mission expect to spend a lot of time learning, helping teammates work through the change, and handling a period of other change requests – because by default you’ve found your way back to ambiguity and it is your job to work your way out of that.</p>
+<h3>Track Your Stability Over Time</h3>
+<p>Beyond examining individual changes it can be helpful to keep track of how often you’re changing your plans over time. Some teams are naturally more stable, while others change plans more often. These aren’t necessarily descriptions of virtue – a team that never changes its plan can end up being slow to respond to environment changes and continue for months on low impact work, but a team that is constantly changing plans may never hold a direction long enough to make a dent in any problem. It’s best to consider this along 2 axes, level of change and level of impact.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 570px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ee508dbf9d1533574f641a5e3fe1e32e/0a47e/changechart.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.545454545454554%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABp0lEQVQoz32PbXOqMBSE+f9/qnduXwRB3lECAsEqlcQACvXr3kmIrXam98MzZzfZsxDjfB7Qn8UvdBA9B60rRTeI/2QFZJfB+wYVj1CfEtBTomZ9WitNeYK6S1DuCYr9rOUZ1Zn7HdkhBgaD9QeUPETJAzVztkLOHO0DUBGBNhnKw0bpQp+Tdoktc/VuiIqHOA0tDD40KlAwDwX3VUiWSr9lHqgIVWFxSLDlK6StBdJa2BwXqlSStbba684cRsNrVCKen3hD3OkuBm1yFPIPux85+dSvGaFp32HkOQEtU1Q3Co3WdUVA0gTpJkZdZQ93tx1aEWyzGEWRw+hris/QxRR5M7E/o/019MCyFGwdKf2Qi75zU7AC39Uwxv0O42qB0bUUk/lXMbqm4tM1wdIELPaVvp2rzPJFewvjysTYfsC4HN4xOW+YrGdM9ium16fvUvMZV2eBlqzB4gBXuSRzyxdMb3/mnPQS18LlKAv3O0zyK76NybcxBg5G35m1b+PqLcHJBjwJlX7M2V852TEXdkKJS6s53qF9lWWoSIqxPT7e/8hd+h7/AKb5HDCfebjWAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Chart showing the change model"
+        title="Chart showing the change model"
+        src="/static/ee508dbf9d1533574f641a5e3fe1e32e/432e7/changechart.png"
+        srcset="/static/ee508dbf9d1533574f641a5e3fe1e32e/a6b04/changechart.png 143w,
+/static/ee508dbf9d1533574f641a5e3fe1e32e/0e2fe/changechart.png 285w,
+/static/ee508dbf9d1533574f641a5e3fe1e32e/432e7/changechart.png 570w,
+/static/ee508dbf9d1533574f641a5e3fe1e32e/0a47e/changechart.png 600w"
+        sizes="(max-width: 570px) 100vw, 570px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Teams that are stagnant may need to consider more aggressively seeking feedback on their approach from users and consider making changes, or finding a higher value mission that is unlocking more impact over time.</p>
+<p>Teams that are churning on the other hand might need to commit to finishing more, even if that means being a bit less responsive to new requests or opportunities. A discipline of making and then completing small time bound goals can be helpful here.</p>
+<p>Of course there’s a fine line between stagnant and steady, churning and adaptive. An approach that was working before might go stale, and a team that appears stagnant may be in the early stages of unlocking a big iterative return. So this model should be used carefully, but it is helpful to have an opinion on where your team stands today as you consider new requests to change your plans.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[More Thoughts On Time]]></title>
+            <link>https://benmccormick.org/2022/01/11/more-thoughts-on-time</link>
+            <guid>https://benmccormick.org/2022/01/11/more-thoughts-on-time</guid>
+            <pubDate>Tue, 11 Jan 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p><em>This article was first published in my newsletter, <a href="https://herdinglions.benmccormick.org/">Herding Lions</a></em></p>
+<p>In my <a href="/2021/12/14/think-about-time">last post</a> I listed some process tips for how to manage your time as an engineering leader. Continuing that thought, in the spirit of new habits in the new year this week will explore the question of how to choose what to focus on with the time that you do have. After all, efficiency is only valuable if it is pointed in a worthwhile direction.</p>
+<p>Generally the time on my schedule can be divided into 3 categories - ongoing rhythms, one off must-dos, and opportunities. Each of these requires a different strategy.</p>
+<h3>Rhythms</h3>
+<p>Rhythms are my word for any activity or task that takes place on a regular cadence (daily / weekly / monthly / quarterly). As EMs we’re likely to have rhythm meetings focused around our teams (standups, 1-1s, quarterly planning, performance reviews), as well as upward and outward rhythms (staff meetings or regular cross-departmental syncs), and personal rhythms (clearing time each week to write a status report, or do code reviews or review the backlog).</p>
+<blockquote>
+<p>If you get one percent better each day for one year, you’ll end up thirty-seven times better by the time you’re done. - <a href="https://jamesclear.com/continuous-improvement?utm_campaign=Herding%20Lions&#x26;utm_medium=email&#x26;utm_source=Revue%20newsletter">James Clear</a></p>
+</blockquote>
+<p>Healthy rhythms are extremely valuable. When you thoughtfully invest in relationships or valuable work on a regular basis, that investment can compound and redefine the type of impact you and your team can achieve. And regular maintenance of important relationships or projects can also help you stay informed and aware when things are off. When I plan out my quarters and years, I spend much more time on figuring out what rhythms and habits I want to maintain or develop than setting goals, because it’s the regular investment of time that ultimately leads us wherever we end up.</p>
+<p>However, not all rhythms are healthy and inefficient rhythms that are not thoughtfully moving you toward some broader goal can be a painful tax on your productivity and your sense of well-being. Almost everyone who has done time in the corporate world has had the experience at some point of regularly attending a meeting that seemed to provide little value to many or all of the participants, where engagement was low and morale was lower. This type of “rhythm” can easily have negative externalities where it wastes not just the hour in the meeting but time before where you’re dreading it and time after when you’re recovering as well.
+Better time management with regard to rhythms means designing your rhythms. That means understanding the <strong>why</strong> behind each recurring calendar event and taking steps to remove or redeem the low and negative value ones. <a href="/2021/11/03/good-meetings-are-designed">I covered this for meetings a few weeks ago</a>, but the principles apply to any regular use of time. It also means taking the time to evaluate your goals and focus areas and consider whether there are any rhythms you <strong>should</strong> be investing in that might allow you to unlock the type of compound gains that require regular time. This could be clearing time for networking, building a new skill, 1-1s with key peers, or just dedicated “focus time” that you block and protect for deep work.</p>
+<h3>Must-Dos</h3>
+<p>Ok so this is the tricky one — what if you’re drowning in “must do” work? There may be seasons where you really are filling your calendar with mostly one-off non-recurring work. If this is a short term season with a clear ending (a big project push, a switch to a new team or company) that may be fine, but this is an area to tread carefully. When we perceive a large chunk of work as things we <strong>must</strong> do, it becomes much harder to be thoughtful about balancing our priorities.</p>
+<p>It’s a cliché, but the key for this type of work is developing a healthy ability to say no, as well as good rhythms of prioritizing and evaluating your time. EMs who say yes to everything will quickly overwhelm themselves, and even worse will overwhelm and burn out their teams; so the ability to say <strong>no</strong> in a way that is effective and doesn’t burn bridges within your organization is a key skill. But often time work that we’re pushed to do <strong>is</strong> valuable. So the key is to make sure you’re prioritizing thoughtfully, and that takes time. I have a few questions that I commonly ask when considering external requests (or marching orders passed from above)</p>
+<ul>
+<li>
+<p><strong>Is this a high leverage activity?</strong> I love Andy Grove’s model of manager time being valued in terms of leverage, or how much impact an action has relative to time/effort commitment. For asks of both me personally and my team, it’s helpful to see whether this is an incremental win or something that will enable more value over time. You can also think about this in terms of return on investment.</p>
+</li>
+<li>
+<p><strong>Can somebody else do this?</strong> For EMs, almost any work that can be done by somebody else on their team should be done by somebody else. Especially if you feel like you’re spending a high amount of time on urgent “must do” work. Give away your Legos, develop your time and clear your time to work on higher level work.</p>
+</li>
+<li>
+<p><strong>Can I do less here?</strong> When people are making external requests of you, most of the time they’ll ask for everything they think they might want up front, and are not thinking about your schedule. If the work isn’t core to your responsibilities, it’s always worth asking if there is a scrappier solution that will still make people happy. There’s a fine line to walk here — you don’t want to become known for skimpy/sloppy work, but it’s important to develop a habit of understanding what level of quality is needed for a task. People are used to making cost vs speed vs quality choices, and can usually help you understand their priorities if you frame things in that light (I can do it like this now, or do the full thing next month. If you need the full thing now it will mean stopping all work on some other thing they care about)</p>
+</li>
+</ul>
+<h3>Opportunities</h3>
+<p>The final category of work is the most likely to get pushed off your category. This is work that won’t blow up if its neglected, might not ever be asked about, and in many cases isn’t visible to the rest of your org at first. This is taking the time to do a deep dive on understanding the quality issues on your “problem feature”, writing a reusable onboarding plan for your team to make it easier to add new teammates or clearing time to organize a brainstorming session on future roadmap activities. If you don’t already have ideas of what this might be for you, you could always start with clearing time to think about what areas your team could most improve in and your top ideas for addressing those problems.</p>
+<p>This type of strategic deep work is an important part of having a team that is continuously improving. Without time to identify and understand problems, and time to address those issues, most teams will stagnate. And while that leadership can come from anywhere, on many issues it is often most impactful and most practical for it to start with an EM. The key skill for opportunities is to keep an identified list of your top strategic opportunities and priorities so that as time does become available to work on them, you’re ready to take advantage and don’t automatically fill that time with lower priority work.</p>
+<p>Every EMs calendar is going to shift over time, with some months bringing more opportunities and others resembling more of a fire fighting session. But consistent habits of designing your rhythms, carefully evaluating the asks that come in to you and your team, and identifying and prioritizing key opportunities can go a long way. An Engineering Manager’s calendar abhors a vacuum and time will fill up. Invest in making sure that it goes to the right things.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[How I Think About Time]]></title>
+            <link>https://benmccormick.org/2021/12/14/think-about-time</link>
+            <guid>https://benmccormick.org/2021/12/14/think-about-time</guid>
+            <pubDate>Tue, 14 Dec 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p><em>This article was first published in my newsletter, <a href="https://herdinglions.benmccormick.org/">Herding Lions</a></em></p>
+<p>One of the biggest challenges every engineering leader faces is making decisions on how best to use their time. Every engineering team I’ve ever seen has more opportunities than capacity, and leaders can always do more.</p>
+<blockquote>
+<p>My day always ends when I’m tired and ready to go home, not when I’m done. <strong>I am never done</strong>. - Andy Grove</p>
+</blockquote>
+<p>Below are 4 lessons I’ve learned about using time well during my time as a manager.</p>
+<ol>
+<li>
+<p><strong>Time is your primary resource as a manager, and it is finite</strong>. The Andy Grove quote above is challenging. When we can always do more, there aren’t natural boundaries that tell us when to stop. For individual contributors this can get managed without much intention through the rhythms of sprints / projects / the rate that product managers can assign work. EMs tend to be expected to generate their own work and there are fewer natural cues to tell you that you’ve done “enough”. As a result, management tends to be next level time management, and that means you need to start by defining some boundaries (when will you choose to go home and sign off?) and learning to be intentional with your time. A lack of boundaries, or setting your boundaries based on demand in an unbounded way is a sure path to burnout. This is a lesson I’ve had to learn several times personally, as demands on my time have scaled up.</p>
+</li>
+<li>
+<p><strong>Be careful with the Maker’s Schedule, Manager’s Schedule mindset.</strong> One of the most famous articles on schedule management in tech is <a href="http://www.paulgraham.com/makersschedule.html?utm_campaign=Herding%20Lions&#x26;utm_medium=email&#x26;utm_source=Revue%20newsletter">Maker’s Schedule, Manager’s Schedule</a>. In it, Paul Graham breaks down 2 ways of managing your time: manager schedules, where days are neatly divided into hourly blocks, and maker schedules where time is ideally at least in half day uninterrupted blocks (due to the need to do Deep Work / avoid context switching). I think most engineers take the right lesson from this article when they read this and work to protect blocks of time on their calendar better. And many managers empathetically learn from it that they should be considerate of their reports calendars and be careful how they schedule meetings. But there’s a dangerous assumption that people can take from the labels: that once they become a manager, they must be on the manager schedule. Now, plenty of manager’s are on a pure manager’s schedule (I’ve been there). But if you can, working at least partially on a maker’s schedule can unlock a lot more opportunity for creative and strategic work that is difficult to fit into 30 minute blocks scattered throughout your week. The article itself is essentially Graham explaining why he as an “important business person” chooses to operate on a maker schedule against social expectations. So read the article, learn from it, but don’t typecast yourself. Structure your time in the way that lets you have the most impact.</p>
+</li>
+<li>
+<p><strong>Run your calendar, don’t let your calendar run you.</strong> On the subject of manager schedules, becoming a manager was the first time in my life I really ran my schedule based off an external calendar, as opposed to primarily relying on my memory for what I needed to do on a day and using calendars and todo lists as a poorly utilized backup plans. Even if you have fewer direct reports and more strategic or technical duties, it’s hart to avoid becoming calendar driven as you move into leadership roles. That said, it’s important to take charge of your calendar, and not let other people structure it for you. That means being judicious about what meetings you accept, and regularly reviewing your recurring meetings for opportunities to prune them, blocking time for strategic and creative work in lengths that allow for deep work and is appropriate to your obligations, and <a href="https://larahogan.me/blog/manager-energy-drain/?utm_campaign=Herding%20Lions&#x26;utm_medium=email&#x26;utm_source=Revue%20newsletter#calendar-color-coding-and-defragging">defragging your calendar</a> to be as efficient as possible. When I’m running on the busier side I’ve also found it helpful to fully block my day the night before the day starts (if it isn’t already) to prevent last second invitations from sapping up prep or break time in my schedule. Your mileage may vary on that depending on how much you culturally feel you need to be available for last second invites. If you do this I recommend explaining it to your direct reports and give them a path to escalate urgent things to you in order to not appear unavailable or “too busy”.</p>
+</li>
+<li>
+<p><strong>Clear time to review and improve how you use your time.</strong> The retro is my favorite “agile ritual”, and I think its difficult to overuse for both teams and individuals. One great use for personal retros is a regular review of where your time is going. Most people seem to have a bad intuitive understanding of this, its helpful to do a short term tracking exercise or reconstruct at the end of a week based on your calendar. This is a good time to prune meetings as mentioned above, identify “important but not urgent” work that is falling through the cracks, and also do a <a href="https://benmccormick.org/2020/08/31/simple-burnout-triage">quick burnout triage</a>.</p>
+</li>
+</ol>
+<h3>When Everything Falls Apart</h3>
+<p>All of the above lessons have been very helpful to me, but I’ve struggled to follow some of them at specific points where I feel completely overwhelmed. So my 4 additional lessons here are patterns that I fallback to when I need to dig my way out of insanity.</p>
+<ol>
+<li>
+<p><strong>Do 3 things a day.</strong> I’ve never been great with task management / productivity systems. I’ve wandered through a bunch of tools and patterns without really developing consistent habits. So I may be a poor person to give advice on this topic. However the most effective habit I’ve had, which I’ve picked up multiple times when things have gotten overwhelming is very simple – pick 3 things to do each day, write them down and then try to do them. Limiting myself to 3, not keeping a backlog and writing the 3 things somewhere I can visually see it has helped me focus and make choices when life felt overwhelming. Long term I’m not sure this is an optimal system – the lack of backlog and long term planning can leave blind spots. But it’s simple, productive, and easy to implement, and a great way to build momentum and prioritize when you’re underwater.</p>
+</li>
+<li>
+<p><strong>Distinguish between core work and non-core work</strong> - When things are going well and can feel easy to follow Grove’s advice at the top. I do stuff and then go home. However when you’re juggling 3 plates that are each stacked too high, it can be really hard to know how to stop. At this time it’s very important to draw lines between the essential and nice to have. One dimension I think about with this is core work vs non-core work. There are things I do at work to grow my career, to help others, or just because I’m interested in them. That’s healthy and should be part of my normal rhythms. But in crisis mode it’s important to identify these as things that can be cut down on or dropped. And then actually doing it, even if it’s painful.</p>
+</li>
+<li>
+<p><strong>Distinguish between glass and rubber balls.</strong> Similarly, it’s useful to distinguish between glass balls – responsibilities at home or work that won’t come back if you drop them, like being there for a child’s graduation or executing on a career altering project, vs those that we will be able to recover from more easily because there will be more opportunities to make up for it. The distinction between glass and rubber balls will be different for everybody, but Scott Eblin <a href="https://eblingroup.com/blog/juggling-rubber-or-glass/?utm_campaign=Herding%20Lions&#x26;utm_medium=email&#x26;utm_source=Revue%20newsletter">has some good advice here for distinguishing the two</a>.</p>
+</li>
+<li>
+<p><strong>Choose between doing more things acceptably or a few things well.</strong> One of my biggest recent challenges as a manager was learning when my own standards for what “doing my job” were making me less impactful. At a time when I had more on my plate than I could reasonably do well, I made a choice to drop responsibilities where I had a real chance to provide value, because I didn’t think I could perform them to my own standards. That’s a defensible choice, but I didn’t really make it intentionally – instead I freaked out and protected myself. An alternative that I didn’t really consider until I’d gotten to a calmer place was accepting a lower standard of performance (and communicating that expectation to others) in return for being able to keep some projects going without having to disrupt others. Neither of these things are globally the right strategy, it will depend on circumstances and what responsibilities you’re balancing. But making the choice to not just commit to something, but to commit to a maintainable level of quality is an important skill and can help you scale yourself as a manager when under high demand.</p>
+</li>
+</ol>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[Values Are How You Scale Culture]]></title>
+            <link>https://benmccormick.org/2021/11/30/values-scale-culture</link>
+            <guid>https://benmccormick.org/2021/11/30/values-scale-culture</guid>
+            <pubDate>Tue, 30 Nov 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p><em>This article was first published in my newsletter, <a href="https://herdinglions.benmccormick.org/">Herding Lions</a></em></p>
+<p>I recently had the pleasure of working with a team to help define <a href="https://medium.com/kustomerengineering/kustomers-engineering-values-80d06dae4306?utm_campaign=Herding%20Lions&#x26;utm_medium=email&#x26;utm_source=Revue%20newsletter">Kustomer’s engineering values</a>. We went through a brainstorming process, got feedback from the team and ended up with a set of values that we believe reflect the best of our culture and how we work. These days this is the type of work that often feels most impactful to me; we’re investing in culture. But earlier in my career I probably would have been deeply suspicious of it. Aren’t values just babble-speak that managers use to justify their existence? Have I become what I once hated?</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 570px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f18f953821cc6cc98da5b15e46508baa/b4294/dilbert1.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 31.46853146853147%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAGABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAIDBP/EABUBAQEAAAAAAAAAAAAAAAAAAAIA/9oADAMBAAIQAxAAAAHXYKkCf//EABgQAQEAAwAAAAAAAAAAAAAAAAECABES/9oACAEBAAEFAtnWSFH/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8BrI//xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAgEBPwEn/8QAGhAAAgIDAAAAAAAAAAAAAAAAAAECESFBYf/aAAgBAQAGPwJKs7JcLP/EABoQAAICAwAAAAAAAAAAAAAAAAERADFBUaH/2gAIAQEAAT8hBrIVpEMbrkagU//aAAwDAQACAAMAAAAQ9C//xAAYEQACAwAAAAAAAAAAAAAAAAAAAREhYf/aAAgBAwEBPxBpoyP/xAAYEQEBAAMAAAAAAAAAAAAAAAABABEh8P/aAAgBAgEBPxBKOe2S3//EABoQAQEAAgMAAAAAAAAAAAAAAAERACFBcaH/2gAIAQEAAT8QP8BTpx5gdTBEdptjyhZBz//Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Dilbert Comic"
+        title="Dilbert Comic"
+        src="/static/f18f953821cc6cc98da5b15e46508baa/882a4/dilbert1.jpg"
+        srcset="/static/f18f953821cc6cc98da5b15e46508baa/8f870/dilbert1.jpg 143w,
+/static/f18f953821cc6cc98da5b15e46508baa/6c669/dilbert1.jpg 285w,
+/static/f18f953821cc6cc98da5b15e46508baa/882a4/dilbert1.jpg 570w,
+/static/f18f953821cc6cc98da5b15e46508baa/b4294/dilbert1.jpg 600w"
+        sizes="(max-width: 570px) 100vw, 570px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>What I’ve learned through seeing this modeled in healthy organizations (both before and after shifting to management) is that values are how you scale culture as a company grows and evolves. Good values help employees make hard choices, help new employees know how to be productive in an organization, and allow hiring for culture fit in a way that doesn’t just translate to “this person looks like me”.</p>
+<p>This of course doesn’t happen in every (most?) organizations that define a set of values. For values to be useful you need meaningful values that are regularly used well. Otherwise they’re just an easy to make fun of list of words.</p>
+<p><img src="/5ee295b88c7a03ce6e9ed944bc957f5a/dilbert2.gif" alt="Dilbert Comic"></p>
+<p>Meaningful values are opinionated tradeoffs and applicable to day to day decisions. Opinionated means that you’re making a choice – values are a decision to prioritize one good over another good, not just to reject something obviously bad. The <a href="https://agilemanifesto.org/?utm_campaign=Herding%20Lions&#x26;utm_medium=email&#x26;utm_source=Revue%20newsletter">agile manifesto</a> is a good example of this: instead of saying “Quality is good” (duh!) they say prefer working software over comprehensive documentation – a guiding preference that some devs may not embrace and can practically be used to guide decisions. From Kustomer’s values, we choose to “Optimize For Impact”, which means we may move off of something before getting to perfect, and may explicitly ignore some issues if they won’t move the needle. We value “Do What You Say” because we’re targeting a culture of accountability and trust over one that is simply “nice”. These values directly guide how I as a manager might choose to give feedback in a situation, and how an engineer thinks about calculating scope and an estimated due date for a project.
+Meaningful values are also specific to their context. Instead of writing our own values, Kustomer could have just taken <a href="https://about.google/philosophy/?utm_campaign=Herding%20Lions&#x26;utm_medium=email&#x26;utm_source=Revue%20newsletter">Google’s values</a>. And we certainly did look at other companies for inspiration. But ultimately values are useful for defining the culture of a company and the behaviors that are successful there, and that will not be the same between 2 companies. If you ask your employees to start behaving like Google employees that will likely lead to some interesting results, but your context isn’t Google’s and ultimately you’ll likely find that what works for a huge multi-national tech giant may not make sense for you. And realistically the values and behaviors that benefited Google as they were a small growing startup may not be the right ones for them today – <a href="https://gizmodo.com/google-removes-nearly-all-mentions-of-dont-be-evil-from-1826153393?utm_campaign=Herding%20Lions&#x26;utm_medium=email&#x26;utm_source=Revue%20newsletter">they’ve even famously shaded away from “Don’t be evil”</a>. Instead, understand what behaviors and priorities are useful and valued in your current context (some level of aspirational values are appropriate but mostly this should be descriptive of what is effective in your context today), and find ways to communicate those clearly and crisply, preferably using language that you already hear in your company today. It doesn’t mean that you can’t share values with another place or even use a term that is somewhat generic – it just has to have a clear meaning in your culture. Kustomer’s value of “Trust” is somewhat generic as a buzzword, but in practice its a term that has been important throughout our history and internally provides a clear set of priorities – work that threatens our customers’ trust always comes first, and we should always be proactive rather than reactive about quality issues. We also value going fast, but quality comes ahead of velocity. Every new engineer goes through a training where we unpack these concepts, so the value was simply naming something that already existed for us.</p>
+<p>Once you’ve established a set of meaningful values, you still need to regularly put them to use in order to see value. That means referencing them when you make decisions (“We shouldn’t work on this because we need to <strong>optimize for impact</strong>” or “We can’t ship this without a monitoring strategy – we need to keep our customer’s <strong>trust</strong>, and we can’t do that if we don’t know when things break”). It also means rewarding behaviors that align with our values. At the company level, Kustomer monthly recognizes an employee who embodies our “Don’t just talk about it, be about it” value with a DJTAIBAI award. I’ve seen other companies experiment with “micro-awards” where employees have a budget for sending other employees rewards that get tied to their values. This also can work into your normal processes of evaluation and recognition by emphasizing behavior that aligns or deviates from values in performance reviews and 1-1 coaching. The more the values get talked about and rewarded as expected behavior, the more they have the power to scale culture.</p>
+<p>Values are a tool for naming the culture you want to have and starting to iterate to it. They don’t guarantee that you’ll get there, and if the values you list aren’t already a meaningful reality for at least part of your company, they’re probably not going to transform your team. But they can help you scale what you have as you grow, and they can help set a bar that will open the path to the difficult conversations needed when things need to change.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[Strategies For Building Team Resilience]]></title>
+            <link>https://benmccormick.org/2021/11/15/strategies-for-resilience</link>
+            <guid>https://benmccormick.org/2021/11/15/strategies-for-resilience</guid>
+            <pubDate>Mon, 15 Nov 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p><em>This article was first published in my newsletter, <a href="https://herdinglions.benmccormick.org/">Herding Lions</a></em></p>
+<p>In <a href="https://amzn.to/3klmrQ9">Thinking In Systems</a> Donella Meadows observed that when maintaining a system the properties you can choose to optimize for include productivity, stability, and resiliency. Productivity is about producing outputs – for a software team this might be completed projects, fixed bugs, or releases shipped. Stability is about consistency of output; can you maintain the same level of productivity over time? Resilience is the property of being able to recover from perturbations and unexpected changes. For a software team that might mean being able to handle losing a teammate, adapt to remote work or maintaining productivity during a tumultuous time for an organization.</p>
+<p>Meadow’s interesting observation was that because resilience is less observable than productivity or stability, people tend to systematically underinvest in it. We can see outputs go up, and we can measure how they change over time, but resilience is by definition about response to rare and unexpected events, and therefore is hard to measure in normal circumstances. But the last year has been a reminder for many just how important resilience is; whether dealing with moving teams to remote work, <a href="https://www.theatlantic.com/ideas/archive/2021/10/great-resignation-accelerating/620382/?utm_campaign=Herding%20Lions&#x26;utm_medium=email&#x26;utm_source=Revue%20newsletter">the great resignation</a>, supporting parents whose kids were suddenly home with them during the day, or the trauma of illness or loss from the pandemic, we’ve all had to deal with out of the ordinary circumstances when leading teams this year.</p>
+<p>So how do we cultivate resilience on our teams? Here are a few things I’m thinking about:</p>
+<ol>
+<li><strong>Reduce Work In Progress</strong> - In addition to other benefits, reducing the # of things you’re working on a time helps team be more resilient by encouraging collaboration / shared knowledge.</li>
+<li><strong>Leave Margin</strong> - Don’t fill 100% of your sprint/quarter/annual planning with roadmap projects. Leave meaningful slack that can be used on technical improvements, unplanned requests, maintenance and learning tasks. That work is valuable to start with but the margin that planning for it provides also can make your team more resilient to changes in plan or scope creep surprises.</li>
+<li><strong>Build Psychological Safety</strong> - Teams that trust each other and can talk about difficult things are less likely to have issues fester and explode, and are more able to weather storms. Building a safe environment is the right thing to do for your teammates regardless of effectiveness, but the business case here is also easy to make.</li>
+<li><strong>Prioritize Developer Tooling &#x26; Velocity</strong> - Its easy to adjust to change when you can move fast. Velocity makes everything easier, and great tooling also makes it easier to onboard new team members and reduces reliance on the head-canon context of your more experienced team members.</li>
+<li><strong>Hire and Train For Redundancy In Your Team</strong> - Teams of specialists lack resiliency. If only one person can do a particular task, then you’re vulnerable to anything that removes that person: leaving for a new job, an illness, a vacation, or just an opportunity for them to be promoted into new responsibilities.</li>
+<li><strong>Have Everybody Take Real Vacations</strong> - Vacations are good for your team, but when people truly take the time off they’re also great “chaos engineering” experiments for your team to see how well you can function without different team members. If your output is limited when somebody is on vacation, it’s a smell that you can try and correct with some of the other tactics here.</li>
+<li><strong>Rotate Responsibilities</strong> - Similar to the last 2 items, we can build redundancy by making sure that we don’t rely on a single person to always fulfill certain tasks. It’s great to have experts and “owners” but those titles shouldn’t be exclusive and part of the responsibility should be helping others do the work and grow into co-owners.</li>
+<li><strong>Give Everyone Context</strong> - When everybody understands the why behind a team’s work, it’s easier to adapt to changing conditions because that can happen throughout the team – the leader doesn’t need to understand every change or detail</li>
+<li><strong>Write Documentation</strong> - Another way to make it easier to ramp people up or move people between roles is to write things down. This means processes, architecture, how-tos. Thoughtful, well-maintained docs can add significant resilience to a team. Unfortunately this item is also the one that I’ve never really seen done well at a team level and may in practice be unrealistic. At an org level though this is extremely important for resilience.</li>
+</ol>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[Good Meetings Are Designed Not Born]]></title>
+            <link>https://benmccormick.org/2021/11/03/good-meetings-are-designed</link>
+            <guid>https://benmccormick.org/2021/11/03/good-meetings-are-designed</guid>
+            <pubDate>Wed, 03 Nov 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p><em>This article was first published in my newsletter, <a href="https://herdinglions.benmccormick.org/">Herding Lions</a></em></p>
+<p>There’s something deeply human about wanting to excel at the work we find ourselves doing. When we aspire to be effective at our jobs, how we describe and understand the key concepts in our work matters a lot. Last week <a href="/2021/10/27/team-output-productivity">I talked about having a better model for productivity</a> — measuring productivity at the team rather than the individual level can cause significant change in what we choose to work on and the environment we create for our teammates. This week I want to consider the beliefs we have around meetings. Do you believe that bad meetings are just an inevitable cost of the working world that we all must endure? Or can we work to create better meetings?</p>
+<p>I didn’t think very much about meetings early in my career; I just showed up where I was told, when I was told. Sometimes meetings were interesting, sometimes I just sat and waited for them to be over. For the especially long and irrelevant meetings, I learned that people didn’t object to me “taking notes” on my laptop, and I soon learned how to tune out without anyone caring.</p>
+<p>As I moved into the startup world and began to care more about my work though, I started to get into more meetings that were genuinely interesting to me, and bad meetings started to bother me more. When I began learning about management and taking more leadership, I read more about the theory behind meetings and started paying closer attention to what worked and didn’t in meetings. What I learned is that good meetings are designed, not born. It’s possible to have meetings that are good experiences for everyone involved, but it takes intentionality.</p>
+<p>There are 4 levers I use when designing a meeting: choosing the audience, crafting the agenda, picking the right cadence, and shifting aspects async.</p>
+<blockquote>
+<p><strong>Audience</strong> - Meetings without key decision makers or subject matter experts often end without conclusions, and decisions can get overturned quickly afterwards. On the flip side, while it may feel kind to invite anyone interested to a meeting, a meeting with too many people can become chaotic, waste people’s time, or stifle contribution if some people aren’t comfortable being open and honest in front of the full group for reasons of timidity, confidentiality, or simply unfamiliarity with the participants.</p>
+</blockquote>
+<blockquote>
+<p><strong>Agenda</strong>- Coming into a meeting with a clear agenda doesn’t always lead to a great experience, but without one it’s pretty much impossible to guarantee a well run meeting. A thoughtful agenda sets a direction for a meeting, makes goals clear and helps people prepare. Written agendas are great, but a simple verbal “the goal for this meeting is” at the beginning of a less formal meeting can go a long way. It’s never too late to reset everybody towards a plan.</p>
+</blockquote>
+<blockquote>
+<p><strong>Cadence</strong> - Should a meeting occur daily? Weekly? Monthly? On an as needed / ad hoc basis? This decision has a big impact on a meetings tone and impact. Set this too regularly and you’ll find you’re wasting people’s time and losing engagement. Too spread apart and you might not really be accomplishing your goals.</p>
+</blockquote>
+<blockquote>
+<p><strong>Async</strong> - We’ve all been in a classic “could have been an email” meeting. But even for meetings that clearly do merit time together, it’s worth asking if parts of it can be split out async. Maybe updates can go into Slack while we meet to talk about strategic discussions or open problems. Maybe instead of demoing a new design and then discussing it in a meeting, a designer could send a video of the design, take some async comments and then meet to discuss the more controversial aspects of the design that weren’t fleshed out in comments.</p>
+</blockquote>
+<p>The process for designing a meeting with these levers is straightforward. Break down what needs to be accomplished (goals), identify the audience for each goal, consider whether a goal can be fully or partially accomplished async, figure out the cadence for the meeting(s), and then write an agenda for each meeting you’re creating.</p>
+<p>My single most important meeting design advice is never start with a meeting, start with your goals. Some of the worst meetings are those that try to do 5 things poorly rather than 1 or 2 things well. When you start by breaking down and defining what you want to accomplish, it becomes much easier to pick the right audience, agenda and cadence for your goals. For instance I was recently part of a weekly cross-org meeting that was attempting to push forward tactical code level changes as well as serve as an announcement/discussion place for important strategic announcements. Attendance was poor and the meetings were often low on engagement. The organizers were able to greatly improve this meeting by identifying and breaking apart these goals, shifting to 2 meetings: a monthly strategic meetings for managers and a weekly tactical meeting for engineers involved in the initiatives.</p>
+<p>Once you have a set of goals, you should figure out the audience for each one. If the audiences of your goals are sufficiently different, consider splitting your goals across multiple meetings or async mediums rather than trying to cram them into a single meeting. Even if it feels inefficient for you as an organizer, it can greatly streamline the process and bring better outcomes for everyone as in the above example. If your goals all need roughly the same audience, just think carefully about who really needs to be included. There’s a lot of value in keeping information open, sponsoring folks for opportunities, and listening to all voices. However there’s a delicate balance between pursuing those goals and inviting chaos or wasting people’s time. If you’re having trouble cutting a meeting, consider inviting a smaller group but sending the minutes to a larger one to keep them in the loop, or workshopping a proposal with a small group and then presenting it to a different group of stakeholders.</p>
+<p>At this point you should be able to see if you really need a meeting or whether your goals can be accomplished async, and what their cadence should be. Sometimes some goals may need a meeting while others can be handled async. For instance when we redesigned my team’s standups last year we determined that our “individual status updates” could be handled async through Slack, and the purpose of our standup Zooms would be connecting as a team, checking in on project status with a quick confidence check and an open floor for people to discuss issues and blockers. This allowed us to remove some boilerplate from the meeting discussion, honored my team’s desire to have more dedicated “team time” during the pandemic, and led to deeper and more relevant discussions. When in doubt I recommend starting with something happening async until it proves that it needs a meeting. If you do believe you need to meet in person consider starting with meetings scheduled on a case by case basis rather than immediately jumping into a recurring cadence. You’ll get a sense of how often the meeting is relevant.</p>
+<p>Finally, make sure to have an agenda. If you’ve started with goals this is easier. Each goal covered by a meeting should be an agenda item. I’m currently running a daily project check in sync where we determined the goals were to make sure we stayed on track, make sure we were working tightly together across roles, and quickly resolve blockers as they arose. As a result the agenda for that meeting is a 2 minute review of our progress against project tickets in Jira, an open time for developers and our designer to demo any new updates to the team as they complete work, and then a period for raising blockers or issues for the team to discuss and hopefully resolve. Each section of the meeting is directly connected to a goal so the agenda was easy to write. For one off or informal meetings you may not have a written agenda, but I still recommend that you call out the goals as you start the meeting, and circle back at the end to make sure you’ve addressed each goal. This practice has made a big difference for me in terms of running effective meetings.</p>
+<p>The quality of a meeting isn’t the result of a dice roll. You can make a meeting better with planning. Take the time to do it.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[Team Output Is The Smallest Unit Of Productivity]]></title>
+            <link>https://benmccormick.org/2021/10/27/team-output-productivity</link>
+            <guid>https://benmccormick.org/2021/10/27/team-output-productivity</guid>
+            <pubDate>Wed, 27 Oct 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p><em>This article was first published in my newsletter, <a href="https://herdinglions.benmccormick.org/">Herding Lions</a></em></p>
+<p>I’ve been thinking recently about how most of my growth as a manager has come either from</p>
+<p>a. Internalizing new ways of looking at the world (Mental Models)</p>
+<p>b. Developing new habits</p>
+<p>Over the next few months I’m hoping to do a deep dive on a few of the mental models that have been most helpful to me, starting with the idea that “team output is the smallest unit of productivity”.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I’ve found a lot of getting better as a manager is finding the right way to think about things. A few of the mental models that have helped me be more effective: (🧵)</p>&mdash; Ben McCormick (@_benmccormick) <a href="https://twitter.com/_benmccormick/status/1452998614314274825?ref_src=twsrc%5Etfw">October 26, 2021</a></blockquote> 
+<p>In <a href="https://amzn.to/2XKPLHI?utm_campaign=Herding%20Lions&#x26;utm_medium=email&#x26;utm_source=Revue%20newsletter">The Great Mental Models</a>, Shane Parrish defines mental models like this</p>
+<blockquote>
+<p>A mental model is simply a representation of how something works. We cannot keep all of the details of the world in our brains, so we use models to simplify the complex into understandable and organizable chunks. Whether we realize it or not, we then use these models every day to think, decide and understand our world.</p>
+</blockquote>
+<p>In other words – the ways we simplify and talk about the world will guide our decisions on how to act. We all simplify, so it’s important to simplify in ways that are accurate and lead to effective actions.
+How we think about measuring, improving and planning productivity matters a lot! We all want to have impact at work, move the needle and work on things that matter. But most people come into management with a faulty intuition about what productivity looks like.</p>
+<p>Managers often come into their first EM job fresh from the ranks of being an everyday coding engineer. For individual contributor engineers, productivity is commonly judged by personal output. An engineer will be able to say things like “I built that”, I “reviewed that code”, “I tested the project then found and fixed some bugs”. Impact is tangible, demo-able, and obviously tied to some larger objective handed down from above. Even more senior engineers who do more glue work and cross-org communication can usually still point to something that they owned and saw a result from: “I mentored that engineer as he built that”, “I led that project”, “I supported our sales team on that deal”. The life of an IC dev naturally leads to a world where productivity is defined with “I…” statements.</p>
+<p>As a manager you are responsible for optimizing the output of your team over time. This may mean identifying opportunities and bottlenecks in your team’s processes and taking action. It may mean coaching a teammate through leading their first project. It may mean taking on interrupt driven grunt work personally to help your team achieve flow. It may mean standing up to other organizational leaders and making the case for a slower shipping schedule to allow your team to recover from a history of tech debt and burnout. It will certainly not stay the same over time.</p>
+<p>The tempting thing is that it’s still easy to make “I…” statements as an EM. “I held a 1 on 1”, “I wrote the document”, or even “I wrote the code myself”. And because you probably have years of experience of benchmarking your success on those statements, it is deceptively hard to let go of them as a marker of your own personal productivity and progress. Put another way, your mental model of productivity is tied to the quantity and quality of your “I…” statements, and that is holding you back from having a broader impact.</p>
+<p>“I…” sickness in a manager has a lot of common symptoms. I-sick managers don’t delegate as much, or only delegate the tasks they’re not qualified to do and are least able to coach and monitor on. They may confuse trackable busyness with productivity, or burn themselves out trying to keep an IC workload on top of their managerial responsibilities. I could go on for a while; it’s easy for me as this was my personal largest failing as a new manager.</p>
+<blockquote>
+<p>The output of a manager is the output of the organizational units under his or her supervision or influence. - Andy Grove</p>
+</blockquote>
+<blockquote>
+<p>An important property of teams is that they abstract the complexities of the individuals that compose them. - Will Larson</p>
+</blockquote>
+<p>For me things only started getting better when I fully internalized an idea that I’d heard but not believed at a root level early on in management - the team’s output is the only thing that matters and what I should be optimizing for. I’ve found it most helpful to treat this as a general rule that “team output is the smallest unit of productivity”. That means tracking output at the team level, determining the effectiveness of my own actions based on how it impacts team output, and of course prioritizing work that maximizes “We…” statements, not “I…” statements.</p>
+<p>I’m still not 100% consistent in personally applying this, which helpfully has allowed me to observe the impact of my choices over time. I find that when I focus more on optimizing for the team:</p>
+<ul>
+<li>it is easier to manage my time, and limit my hours to a reasonable level, as my work is more aligned with my built in responsibilities, and I don’t feel the need to hit a quota of personal productivity before clocking out</li>
+<li>it is harder to see the short term impact of my actions, which can be discouraging on days when other external factors are not aligned to help me feel my work is valued or useful</li>
+<li>I create a better environment for my team (duh?) and enjoy my relationships with them more</li>
+<li>Its harder to ignore lingering problems – including messy people problems where the next step may be an uncomfortable discussion</li>
+<li>I end up with a lot more variety in my work, as todays bottlenecks to team output are not likely to be the same as yesterdays</li>
+</ul>
+<p>This has been a very manager-centric view so far, but tracking output at the team level can also have a very powerful impact on your IC teammates. The cult of “I…” based productivity has negative outcomes for non-managers as well. When your teammates are judging their productivity based on the number of tickets they’ve closed, projects that they took the lead on , or tech specs they’ve closed, it makes it harder to encourage glue work, swarming on critical issues, pairing, or other soft skill / collaborative activities.
+It’s easy to send messages as a manager that reinforce an “I…”-centric view of productivity: early on in my career as a manager I would track individual dev velocity sprint over sprint and divide up Kanban swimlanes by developer. Strangely my teammates always seemed to work in isolation and never had time for work that wasn’t directly assigned to them. When I switched from talking to people about improving their velocity to talking about helping the team achieve great outcomes, I saw huge improvements here. I’m grateful to some more experienced engineers who called me out on this and helped me see the benefits of focusing on the team over the individual at every level.</p>
+<p>If you’re struggling to feel your work as a manager is valuable, feel like you never have enough time to “be productive”, or want to foster more collaboration in your team, start asking yourself: “What can I do today to make my team more effective?” and drop every other metric of productivity until you find that view natural.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[New Newsletter: Herding Lions]]></title>
+            <link>https://benmccormick.org/2021/10/27/herding-lions-newsletter</link>
+            <guid>https://benmccormick.org/2021/10/27/herding-lions-newsletter</guid>
+            <pubDate>Wed, 27 Oct 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>This blog has always been a bit of an eclectic assortment of topics that have reflected my shifting interests over time.  Recently I’ve been <em>primarily</em> interested in writing about Engineering Management, my role for the last 3.5 years.  I’ve also been craving more conversation on these topics and want to be more interactive in my writing.</p>
+<p>As an experiment towards those 2 goals, I’m starting a new newsletter <a href="https://herdinglions.benmccormick.org">Herding Lions</a> focused on Engineering Management.  It will have a mix of shorter pieces from me, interesting links, and questions that I’m hoping to engage with folks on. I’m excited to hear from you there.</p>
+<p><a href="https://herdinglions.benmccormick.org/issues/herding-lions-1-team-output-is-the-smallest-unit-of-productivity-828140">You can see the first issue and subscribe here</a>.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[Thinking Fast & Slow: Lessons For Managers]]></title>
+            <link>https://benmccormick.org/2021/10/21/thinking-fast-and-slow-for-managers</link>
+            <guid>https://benmccormick.org/2021/10/21/thinking-fast-and-slow-for-managers</guid>
+            <pubDate>Thu, 21 Oct 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>I recently read <a href="https://amzn.to/3jpFxUJ">Thinking Fast &#x26; Slow</a> by Daniel Kahneman, and it was my favorite read of this year.  I had been generally familiar with Behavioral Economics previously, but this was the deepest I’d gotten into it.  Kahneman is a very strong writer, and it left me with lots of things to think about.  A few of the ideas in particular felt relevant to management, and I thought I’d highlight them here.</p>
+<blockquote>
+<p>Everybody thinks about their lives and careers as a story.  When we evaluate how good a story it is we tend to think about the high points, low points and most recent feelings <em>only</em>, neglecting how long any of those things lasted. [Summarized from the chapter 36 “Life as a Story”]</p>
+</blockquote>
+<p>This made me think of how a bad week, or a very bad incident in the past can negatively color the story of an employee with an otherwise happy tenure leading to what Michael Lopp calls <a href="https://randsinrepose.com/archives/shields-down/">shields down</a> moments.  This can feel unfair for managers who are doing things right and want to maintain their teams, but the main lesson I take is to not let little annoyances fester without addressing them, as little things can shift people’s attitudes by more than is justified by a big picture view.</p>
+<blockquote>
+<p>Humans have a number of cognitive traits that make us bad at predicting and estimating — we ignore evidence that is not currently on our mind, become confident on relatively small pieces of information, and have a tendency to simplify complexity away by answering easier questions than what we’ve been asked. We also over-weight “causal thinking” and underestimate regression to the mean. [Summarized from Chapters 18-24]</p>
+</blockquote>
+<p>This was easy enough to accept personally — I’m perennially overconfident in my estimates.  The lesson here in my mind is that more process around predictions may lead to better outcomes; left to our own devices we’ll think less about predictions and not notice that our confidence is based on flimsy evidence.  For more important predictions, processes that force us to be more thorough should help.</p>
+<blockquote>
+<p>Humans are very sensitive to how questions are framed — we hate losing things more than we like gaining them, are very associative in our thinking, and often aren’t consistent in how we make choices depending on external factors like a suggested answer, another question we were just asked, or how close it is to a meal.  [Summarized from Chapters 25-34]</p>
+</blockquote>
+<p>I see this type of stuff in behavioral economics mostly quoted in terms of “nudge” like behavioral manipulation, but this mostly has me thinking about the importance of communication plans.  It’s easy to think that getting info passed to a team or individual is more important than how you do it, but actually how choices and changes are communicated has a real impact on how people feel about them, which can make a big difference to team morale and retention over the course of many communication opportunities. Lara Hogan has some good resources on communication plans including <a href="https://larahogan.me/blog/communicating-news-to-team/">this article</a>.</p>
+<blockquote>
+<p>We all overweight things that are easy for us to see vs things that are not (availability bias).  We tend to see our own contributions as bigger and more meaningful than others, our own challenges as more painful, and our own skills as more impressive.  Because of course we see all the evidence for those and only a fraction of what others are doing. [Summarized from Chapter 12 and some references elsewhere]</p>
+</blockquote>
+<p>This was a good reminder to me to be humble and not overweight my own accomplishments first.  But it also is a good thing to keep in mind the next time a teammate feels underappreciated or that they may have been unfairly passed up for an opportunity.  We’re all prisoners of our own perspectives, and while that may sometimes lead us astray in terms of how we stack up a little grace can go a long way here.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+        <item>
+            <title><![CDATA[Kustomer Is Hiring]]></title>
+            <link>https://benmccormick.org/2021/09/23/kustomer-is-hiring</link>
+            <guid>https://benmccormick.org/2021/09/23/kustomer-is-hiring</guid>
+            <pubDate>Thu, 23 Sep 2021 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>👋 Hi There!</p>
+<p>It’s been a bit of a quiet year on the blog as I’ve been figuring out life with 2 children, work and a pandemic that doesn’t seem like it wants to go away.  I’m going to try writing a bit more soon, but in the meantime wanted to add a quick plug for <a href="https://www.kustomer.com/">Kustomer</a>.</p>
+<p>I’ve had the pleasure of working at Kustomer the past 2 years now — it’s been a crazy rocket ship experience, my first time in a high growth unicorn startup, and we’re very much <em>just getting started</em> in many ways — we’re looking forward to <a href="https://about.fb.com/news/2020/11/kustomer-to-join-facebook/">joining Facebook</a> in the future and all the possibilities that will bring to the table.</p>
+<p>In the here and now though, we’re building an extremely cool product — improving customer service experiences for millions of people by giving agents better info and better tools and making it easier for people to find the info they want themselves without long hold times or delays between emails. We’ve got lots of fun technical challenges as we scale  and work to improve performance of our system at every level (you can get a taste of a few of these at the recently started  <a href="https://medium.com/kustomerengineering">Kustomer Engineering blog</a>).  And we have a fantastic team of engineers who are extremely collaborative and focused on building the best experience for our customers (and their customers).</p>
+<p>We’re growing like crazy and have a ton of ambitious plans for the future, which means we need more folks.  We’re hiring for</p>
+<ul>
+<li><a href="https://grnh.se/310f16421us">Engineering Managers</a>: EMs at Kustomer get to lead 1 to 2 teams of 3-7 engineers each of which have a specific product focus.  You get to wear a lot of hats — technical leader, domain expert, coach, chaos-tamer, and are pretty much guaranteed to learn a lot.  My 2 years in this role has not always been easy, but it has pushed me to grow more than any other stretch in my career. It’s a great role for people who like a challenge and thrive on taking on different types of work depending on the day.</li>
+<li><a href="https://grnh.se/5765189b1us">Frontend Engineers</a> at Kustomer get a large amount of autonomy to solve business and user experience problems in their domain of expertise.  Every team has a dedicated Product Manager and Designer that you’ll be collaborating closely with, and we’re at a fun point in our growth where we’re taking a product that has grown organically and finding ways to standardize best practices, improve performance, and be more consistent in building great user experiences, not just “working” experiences.  It adds up to a lot of great technical challenges, and we’re big enough to have experienced engineers to support and teach while still being small enough to have lots of room for people to come in and own important problems.  Our core stack is React / Redux / TypeScript / Jest / Cypress / Webpack.</li>
+<li><a href="https://grnh.se/3fe8d8871us">Backend Engineers</a> have similar collaborative and ownership opportunities as FE devs, and get to work in a modern Node microservice based codebase with its own set of interesting technical challenges, especially as we scale the product.  We spend a lot of time thinking about reliable message processing, storing and performantly accessing large amounts of data, and applying machine learning and intelligent automation techniques to customer service data.  Our core stack is Node / Express / Docker / ECS / AWS / MongoDB / ElasticSearch.</li>
+</ul>
+<p>*All of these roles will eventually be New York City based, but are currently operating remotely.  *</p>
+<p>If any of the above roles sound like the right type of challenge for you please feel free to reach out and apply.  You’re also welcome to <a href="mailto:ben@kustomer.com">contact me</a> with any questions about working at Kustomer.  Helping bring new awesome people who are excited about what we’re doing into the company is the most important thing I can do both for them, for Kustomer and for making my own job great, so always happy to talk.</p>]]></content:encoded>
+            <author>ben@benmccormick.org (Ben McCormick)</author>
+        </item>
+    </channel>
+</rss>
