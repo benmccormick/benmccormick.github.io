@@ -6,7 +6,7 @@ path: "/2018/01/12/weekly-links-01-12-18/"
 description: "Making Atom faster, a good book, and Mobx-state-tree"
 keywords: "gerrymandering mobx-state-tree atom.io"
 category: "opinion"
-topics: ['Mobx', 'Atom']
+topics: ['Mobx', 'atom']
 key: "weekly-links-01-12-18"
 ---
 

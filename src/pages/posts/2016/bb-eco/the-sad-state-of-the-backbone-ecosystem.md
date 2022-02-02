@@ -9,7 +9,7 @@ category: "frameworks"
 dontfeature: "true"
 key: "backbone-eco"
 readNext: "mn-series,backbone-devs-react,bb-es6-1"
-topics: ['Backbone', 'Marionette']
+topics: ['backbone', 'marionette']
 pageViews: "26823"
 last30pageViews: "379"
 ---

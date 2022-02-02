@@ -6,7 +6,7 @@ path: "/2013/01/03/sublime-text-for-javascript-plugins"
 category: "tools"
 description: "Helpful packages for JS developers"
 pageViews: "6096"
-topics: ['Text Editors', 'Sublime Text']
+topics: ['text editors', 'sublime text']
 last30pageViews: "14"
 ---
 

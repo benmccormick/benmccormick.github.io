@@ -5,7 +5,7 @@ layout: "post"
 path: "/2013/01/01/sublime-text-for-javascript-configuration"
 category: "tools"
 description: "Helpful configuration options for JS developers"
-topics: ['Text Editors', 'Sublime Text']
+topics: ['text editors', 'sublime text']
 pageViews: "9290"
 last30pageViews: "49"
 ---

@@ -6,7 +6,7 @@ path: "/2013/06/11/evergreen-browsers"
 description: "A look at the future of browsers"
 category: "platform"
 pageViews: "214"
-topics: ['Browsers']
+topics: ['browsers']
 last30pageViews: "0"
 ---
 

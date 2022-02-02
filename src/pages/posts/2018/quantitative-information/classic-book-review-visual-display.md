@@ -6,7 +6,7 @@ path: "/2018/03/12/classic-book-review-visual-display/"
 description: "A data visualization modern classic"
 keywords: "data tufte book review"
 category: "reviews"
-topics: ['Book Review']
+topics: ['book review']
 key: "visual-display-review"
 image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0961392142&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
 amazonlink: https://amzn.to/2LFYLDr

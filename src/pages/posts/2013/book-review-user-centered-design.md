@@ -5,7 +5,7 @@ layout: "review"
 path: "/2013/08/12/book-review-user-centered-design"
 description: "A book review of User-Centered Design by Travis Lowdermilk"
 keywords: "Book Review User-Centered Design"
-topics: ['Book Review', 'Design']
+topics: ['book review', 'Design']
 category: "reviews"
 image: https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00C3NX1BW&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=benmccormicko-20&language=en_US
 pageViews: "25"

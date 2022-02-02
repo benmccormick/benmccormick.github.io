@@ -7,7 +7,7 @@ description: "Announcing a port of the Mariana color scheme to Atom"
 keywords: "atom sublime text color schemes"
 category: "tools"
 key: "mariana"
-topics: ['Atom', 'Text Editors']
+topics: ['atom', 'text editors']
 readNext: "interesting-atom,config-portability,orthogonality-css-js"
 pageViews: "0"
 last30pageViews: "0"

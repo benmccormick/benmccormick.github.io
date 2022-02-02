@@ -13,8 +13,10 @@ exports.onPostBuild = ({ graphql, actions }) => {
   return getPages(graphql)
     .then(pages => {
       if (!pages) {
+        console.error('NO PAGES :(');
         return false;
       }
+      console.log('¯_(ツ)_/¯');
       buildFeeds(pages);
       generateSiteMap(pages);
     })

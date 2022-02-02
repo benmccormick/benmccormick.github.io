@@ -241,13 +241,17 @@ function pagesToSitemap(pages) {
 }
 
 function generateSiteMap(pages) {
-  const sitemap = sm.createSitemap({
-    hostname: 'https://benmccormick.org',
-    cacheTime: '60000',
-    urls: pagesToSitemap(pages),
-  });
-  console.log('Generating sitemap.xml');
-  mkFile('/public/sitemap.xml', sitemap.toString());
+  try {
+    const sitemap = sm.createSitemap({
+      hostname: 'https://benmccormick.org',
+      cacheTime: '60000',
+      urls: pagesToSitemap(pages),
+    });
+    console.log('Generating sitemap.xml');
+    mkFile('/public/sitemap.xml', sitemap.toString());
+  } catch (e) {
+    console.log('ERROR', e);
+  }
 }
 
 const addSlugToPage = (node, getNode, createNodeField) => {

@@ -6,7 +6,7 @@ path: "productivity-what-has-worked"
 description: "What has or hasn't helped me work better"
 keywords: ""
 category: "soft-skills"
-topics: ['Leadership', 'Book Review']
+topics: ['Leadership', 'book review']
 key: "productivity-what-has-worked"
 readNext: "radical-candor-book,clean-architecture-book,tech-leads-book"
 isDraft: true

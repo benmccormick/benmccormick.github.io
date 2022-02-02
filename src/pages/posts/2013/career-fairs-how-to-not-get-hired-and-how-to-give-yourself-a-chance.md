@@ -4,7 +4,7 @@ date: "2013-01-25T19:30:00+00:00"
 layout: "post"
 path: "/2013/01/25/career-fairs-how-to-not-get-hired-and-how-to-give-yourself-a-chance"
 description: "What to do when you want a job"
-topics: ['Career Advice']
+topics: ['career advice']
 category: "soft-skills"
 pageViews: "70"
 last30pageViews: "1"

@@ -8,7 +8,7 @@ keywords: "Jest JavaScript testing meetup talk Triangle React"
 category: "tools"
 key: "saving-time-jest"
 readNext: "jest-first,backbone-devs-react,mobx-first"
-topics: ['Jest', 'Testing']
+topics: ['Jest', 'testing']
 pageViews: "499"
 last30pageViews: "59"
 ---

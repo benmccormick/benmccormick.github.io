@@ -106,10 +106,10 @@ module.exports = {
     ],
     featuredTopics: [
       'JavaScript',
-      'Text Editors',
+      'text editors',
       'React',
-      'Backbone',
-      // 'Testing',
+      'backbone',
+      // 'testing',
       'Teams',
     ],
   },
