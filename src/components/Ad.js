@@ -109,7 +109,7 @@ export class Ad extends React.Component {
     }
     let children = failedToShowAd ? <AdFallback /> : null;
     return (
-      <AdWrapper innerRef={el => (this.container = el)} style={styleObj}>
+      <AdWrapper ref={(el) => (this.container = el)} style={styleObj}>
         {children}
       </AdWrapper>
     );
